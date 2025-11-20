@@ -20,30 +20,7 @@ Architecture Overview:
     4. **REST API Interface**: Exposes HTTP endpoints for external system integration
     5. **Prescription Map System**: Handles agricultural prescription map generation and management
     6. **System Metrics**: Monitors system performance and health metrics
-
-Workflow:
-    .. mermaid::
-    
-        graph TD
-            A[System Start] --> B[Initialize Loggers]
-            B --> C[Clean Temporary Files]
-            C --> D[Initialize Mission System]
-            D --> E[Initialize ROS2 System]
-            E --> F[Initialize MQTT System]
-            F --> G[Initialize PM System]
-            G --> H[Initialize Metrics System]
-            H --> I[Initialize REST System]
-            I --> J[System Ready]
-            
-            D --> D1[Create Communication Queues]
-            D1 --> D2[Start GRPC Services]
-            
-            E --> E1[Create ROS2 Action Queue]
-            E1 --> E2[Start ROS2 GRPC Service]
-            
-            F --> F1[Create ThingsBoard Queue]
-            F1 --> F2[Start MQTT GRPC Service]
-            F2 --> F3[Start ThingsBoard Manager]
+    7. **State Vector Management**: Processes and distributes vehicle state vectors
 
 .. note::
     All components are initialized with proper error handling and logging.
@@ -77,6 +54,8 @@ from PrescriptionMap.grpc_pm_fleet import start_grpc_pm
 from PrescriptionMap.src.prescription_map_pubsub.prescription_map_pubsub.subscriber_pm_function import main as start_pm_subs
 from SystemMetrics.metrics_manager import start_metrics_manager
 from SystemMetrics.src.system_metrics_pubsub.system_metrics_pubsub.subscriber_metrics_function import main as start_metrics_subs
+from StateVector.sv_manager import start_sv_manager
+from StateVector.src.state_vector_pubsub.state_vector_pubsub.subscriber_member_function import main as start_sv_subs
 
 from REST import rest_server
 
@@ -150,6 +129,9 @@ def main() -> None:
         # Initialize system metrics monitoring and performance tracking
         initialize_metrics_system(loggers['metrics'])
         
+        # Initialize State Vector management
+        initialize_state_vector_system(loggers['sv'])
+        
         # Initialize REST API system last (depends on all other systems)
         initialize_rest_system(loggers['rest'])
         
@@ -207,7 +189,8 @@ def initialize_loggers() -> Optional[dict]:
             'ros2': create_logger('ROS2', 'Logs/ros2.log'),         # ROS2 communication logging
             'mqtt': create_logger('MQTT', 'Logs/mqtt.log'),         # MQTT/IoT device logging
             'pm': create_logger('PM', 'Logs/pm.log'),               # Prescription map logging
-            'metrics': create_logger('Metrics', 'Logs/metrics.log') # System metrics logging
+            'metrics': create_logger('Metrics', 'Logs/metrics.log'), # System metrics logging
+            'sv': create_logger('SV', 'Logs/state_vector.log')      # State vector logging
         }
     except Exception as e:
         # Log logger creation failure and return None to signal error
@@ -532,6 +515,19 @@ def initialize_rest_system(rest_logger: logging.Logger) -> None:
     except Exception as e:
         # Log REST system initialization failure with full context
         rest_logger.critical(f"REST initialization failed: {str(e)}", exc_info=True)
+        raise
+
+def initialize_state_vector_system(sv_logger: logging.Logger) -> None:
+    """Initializes state vector management.
+    
+    :param sv_logger: Configured state vector logger instance
+    """
+    try:
+        receive_sv_queue = queue.Queue()
+        start_sv_manager(receive_sv_queue, sv_logger)
+        start_sv_subs(receive_sv_queue=receive_sv_queue, sv_logger=sv_logger)
+    except Exception as e:
+        sv_logger.critical(f"State Vector initialization failed: {str(e)}", exc_info=True)
         raise
 
 def clean() -> None:

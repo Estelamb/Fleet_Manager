@@ -276,7 +276,7 @@ class CommandsActionServer(Node):
     commands_action_interface.action.Commands : Custom action interface definition
     """
 
-    def __init__(self, drone_id: int, drone_logger, commands_queue):
+    def __init__(self, drone_id: int, drone_logger, commands_queue, sv_queue):
         """
         Initialize ROS2 action server node with drone-specific configuration and communication setup.
 
@@ -337,51 +337,6 @@ class CommandsActionServer(Node):
             - **Multi-Threading**: Thread-safe design for concurrent operation
             - **Resource Management**: Automatic cleanup and proper disposal
 
-        Examples
-        --------
-        Basic Initialization:
-
-        >>> import queue
-        >>> import logging
-        >>> 
-        >>> # Setup logging and communication queue
-        >>> logger = logging.getLogger('drone1')
-        >>> cmd_queue = queue.Queue()
-        >>> 
-        >>> # Initialize action server
-        >>> server = CommandsActionServer(
-        ...     drone_id=1,
-        ...     drone_logger=logger,
-        ...     commands_queue=cmd_queue
-        ... )
-        >>> # Action server ready at /drone1/commands
-
-        Multi-Drone Fleet Setup:
-
-        >>> # Initialize multiple drones with isolated namespaces
-        >>> servers = []
-        >>> for drone_id in range(1, 4):  # Drones 1, 2, 3
-        ...     logger = logging.getLogger(f'drone{drone_id}')
-        ...     queue = queue.Queue()
-        ...     server = CommandsActionServer(drone_id, logger, queue)
-        ...     servers.append(server)
-
-        Integration with System Architecture:
-
-        >>> # Full system integration example
-        >>> rclpy.init()  # Initialize ROS2 context first
-        >>> 
-        >>> # Create drone-specific components
-        >>> drone_logger = create_logger('Drone1', 'logs/drone1.log')
-        >>> commands_queue = queue.Queue()
-        >>> 
-        >>> # Initialize action server with system integration
-        >>> action_server = CommandsActionServer(1, drone_logger, commands_queue)
-        >>> 
-        >>> # Add to multi-threaded executor for concurrent operation
-        >>> executor = MultiThreadedExecutor()
-        >>> executor.add_node(action_server)
-
         Notes
         -----
         - **Namespace Isolation**: Each drone operates in separate ROS2 namespace
@@ -413,6 +368,10 @@ class CommandsActionServer(Node):
         self.vehicle_id = drone_id  # Internal drone identifier for status reporting
         self.drone_logger = drone_logger  # Logger instance for component-specific logging
         self.commands_queue = commands_queue  # Thread-safe queue for gRPC-ROS2 communication
+        self.sv_queue = sv_queue
+        self.latitude = 40.073670
+        self.longitude = -4.612044
+        
         
         # Create ROS2 action server with custom Commands interface for mission management
         self._action_server = ActionServer(
@@ -495,46 +454,6 @@ class CommandsActionServer(Node):
             - **command_id**: Unique identifier for the executed command
             - **command_data**: Command execution result data or status information
 
-        Examples
-        --------
-        Action Client Usage:
-
-        >>> from rclpy.action import ActionClient
-        >>> from commands_action_interface.action import Commands
-        >>> 
-        >>> # Create action client
-        >>> client = ActionClient(node, Commands, '/drone1/commands')
-        >>> 
-        >>> # Prepare command sequence
-        >>> goal = Commands.Goal()
-        >>> goal.commands_list = [
-        ...     {"type": "takeoff", "altitude": 10},
-        ...     {"type": "move", "x": 100, "y": 200},
-        ...     {"type": "land"}
-        ... ]
-        >>> 
-        >>> # Send goal with feedback callback
-        >>> def feedback_callback(feedback_msg):
-        ...     print(f"Status: {feedback_msg.feedback.command_status}")
-        >>> 
-        >>> future = client.send_goal_async(goal, feedback_callback=feedback_callback)
-
-        Feedback Processing Example:
-
-        >>> # Feedback message structure
-        >>> feedback = Commands.Feedback()
-        >>> feedback.command_status = ["1", "1", "cmd_123", "takeoff_complete"]
-        >>> # Interpretation: Drone 1, In-progress, Command cmd_123, Status data
-
-        Error Handling Example:
-
-        >>> try:
-        ...     result = execute_callback(goal_handle)
-        ...     print(f"Mission completed: {result.plan_result}")
-        ... except Exception as e:
-        ...     print(f"Mission failed: {e}")
-        ...     # Goal automatically aborted with error status
-
         Integration Notes
         ----------------
         System Integration:
@@ -590,7 +509,13 @@ class CommandsActionServer(Node):
                 run_commands_client(json.dumps(command), self.drone_logger)
 
                 # Retrieve command execution status from inter-component communication queue
-                command_id, command_data = self.commands_queue.get()
+                command_id, command_data, latitude, longitude = self.commands_queue.get()
+                
+                if latitude != None and longitude != None:
+                    self.latitude = latitude
+                    self.longitude = longitude
+                
+                self.sv_queue.put({'vehicle_status':'Running', 'latitude': self.latitude, 'longitude': self.longitude})
                 
                 # Format status information for feedback publication to action clients
                 command_status = [
@@ -614,6 +539,7 @@ class CommandsActionServer(Node):
             
             # Mark goal as successfully completed after all commands processed
             goal_handle.succeed()
+            self.sv_queue.put({'vehicle_status':'Available', 'latitude': self.latitude, 'longitude': self.longitude})
             
             # Generate final result message with completion status
             result = Commands.Result()

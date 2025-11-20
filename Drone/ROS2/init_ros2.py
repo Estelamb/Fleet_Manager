@@ -173,6 +173,8 @@ from GRPC.grpc_ros2_metrics import start_grpc_metrics
 from src.commands_action_interface.commands_action_interface.commands_action_server import CommandsActionServer
 from src.prescription_map_pubsub.prescription_map_pubsub.publisher_pm_function import PrescriptionMapPublisher
 from src.system_metrics_pubsub.system_metrics_pubsub.publisher_metrics_function import SystemMetricsPublisher
+from src.state_vector_pubsub.state_vector_pubsub.publisher_member_function import StateVectorPublisher
+from src.state_vector_pubsub.state_vector_pubsub.state_vector import start_state_vector
 
 
 def main(drone_id: int) -> None:
@@ -279,13 +281,16 @@ def main(drone_id: int) -> None:
         drone_logger = create_logger(f'Drone {drone_id}', f'Logs/Drone_{drone_id}.log')
         drone_logger.info(f"[Init ROS2] - Initializing ROS2 drone system for drone ID: {drone_id}")
         
+        sv_queue = queue.Queue()
+        
         # Initialize ROS2 runtime context for multi-node coordination and message passing
         rclpy.init()
 
         # Initialize all core system components with integrated gRPC-ROS2 communication
-        commands_action = initialize_commands_system(drone_id, drone_logger)
+        commands_action = initialize_commands_system(drone_id, drone_logger, sv_queue)
         pm_publisher = initialize_pm_system(drone_id, drone_logger)
         metrics_publisher = initialize_metrics_system(drone_id, drone_logger)
+        sv_publisher = initialize_state_vector_system(drone_id, drone_logger, sv_queue)
 
         # Create and configure multi-threaded ROS2 executor for concurrent operation
         # This enables simultaneous processing of commands, PM data, and metrics
@@ -293,6 +298,7 @@ def main(drone_id: int) -> None:
         executor.add_node(commands_action)  # Add commands action server for mission execution
         executor.add_node(pm_publisher)     # Add PM publisher for agricultural data distribution
         executor.add_node(metrics_publisher)  # Add metrics publisher for system monitoring
+        executor.add_node(sv_publisher)       # Add state vector publisher for drone state updates
 
         drone_logger.info("[Init ROS2] - All system components initialized successfully")
 
@@ -319,7 +325,7 @@ def main(drone_id: int) -> None:
         raise SystemError("Critical startup failure") from e
 
 
-def initialize_commands_system(drone_id: int, drone_logger: logging.Logger) -> CommandsActionServer:
+def initialize_commands_system(drone_id: int, drone_logger: logging.Logger, sv_queue: queue.Queue) -> CommandsActionServer:
     """
     Initialize the commands processing subsystem with ROS2 action server and gRPC interface.
 
@@ -395,7 +401,7 @@ def initialize_commands_system(drone_id: int, drone_logger: logging.Logger) -> C
         
         # Create ROS2 action server with integrated gRPC communication queue
         commands_action = CommandsActionServer(drone_id=drone_id, drone_logger=drone_logger,
-                           commands_queue=commands_queue)
+                           commands_queue=commands_queue, sv_queue=sv_queue)
         
         return commands_action
     except Exception as e:
@@ -587,6 +593,21 @@ def initialize_metrics_system(drone_id: int, drone_logger: logging.Logger) -> Sy
         drone_logger.critical(f"[Init ROS2] - Metrics initialization failed: {str(e)}", exc_info=True)
         raise
 
+def initialize_state_vector_system(drone_id: int, drone_logger: logging.Logger, sv_queue: queue.Queue): -> StateVectorPublisher:
+    try:
+        topic_queue = queue.Queue()
+        
+        start_state_vector(vehicle_id=drone_id, longitude=40.073670, latitude=-4.612044,
+                               action_queue=sv_queue, topic_queue=topic_queue)
+
+        state_publisher = StateVectorPublisher(drone_id=drone_id, drone_logger=drone_logger,
+                               topic_queue=topic_queue)
+
+        return state_publisher
+    except Exception as e:
+        # Log critical initialization failure with full traceback
+        drone_logger.critical(f"[Init ROS2] - Metrics initialization failed: {str(e)}", exc_info=True)
+        raise
 
 if __name__ == "__main__":
     """

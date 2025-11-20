@@ -102,17 +102,6 @@ def process_command(command_str: str, logger: logging.Logger) -> Tuple[int, Dict
     Exception
         If command execution fails due to hardware issues or invalid parameters.
 
-    Examples
-    --------
-    >>> import logging
-    >>> logger = logging.getLogger('drone_commands')
-    >>> takeoff_cmd = '{"id": 1, "command_type": "NAV_TAKEOFF", "related_task": 1, "start_time": 1640995200, "command_status": "NotStarted", "params": {"altitude": 10}}'
-    >>> cmd_id, result = process_command(takeoff_cmd, logger)
-    >>> print(f"Takeoff command {cmd_id} completed: {result}")
-
-    >>> waypoint_cmd = '{"id": 2, "command_type": "NAV_WAYPOINT", "related_task": 1, "start_time": 1640995260, "command_status": "NotStarted", "params": {"latitude": 40.209544, "longitude": -3.465575}}'
-    >>> cmd_id, result = process_command(waypoint_cmd, logger)
-
     See Also
     --------
     parse_command : For JSON string validation and parsing
@@ -140,7 +129,7 @@ def process_command(command_str: str, logger: logging.Logger) -> Tuple[int, Dict
     logger.info("[COMMANDS] - Command executed successfully")
     
     # Return command ID and result data (latitude/longitude handled internally)
-    return command_id, command_data
+    return command_id, command_data, latitude, longitude
 
 def parse_command(command_str: str, logger: logging.Logger) -> Dict:
     """

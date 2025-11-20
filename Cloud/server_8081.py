@@ -18,7 +18,7 @@ from typing import Union
 
 # Configuration constants
 FRONTEND_FILE = 'rest_client.html'
-BACKEND_URL = 'http://localhost:8082/mission'
+BACKEND_URL = 'http://10.32.221.188:8082/mission'
 SERVER_PORT = 8081
 
 app = Flask(__name__)
