@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package plan_communication;
+
+service PlanCommunication {
+  rpc SendPlan (DronePlanRequest) returns (DronePlanResponse) {}
+}
+
+message DronePlanRequest {
+  repeated string drone_plan = 1;
+}
+
+message DronePlanResponse {
+  string confirmation = 1;
+}

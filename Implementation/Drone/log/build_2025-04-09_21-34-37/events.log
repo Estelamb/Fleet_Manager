@@ -1,0 +1,113 @@
+[0.000000] (-) TimerEvent: {}
+[0.002082] (state_vector_pubsub) JobQueued: {'identifier': 'state_vector_pubsub', 'dependencies': OrderedDict()}
+[0.003168] (state_vector_pubsub) JobStarted: {'identifier': 'state_vector_pubsub'}
+[0.099214] (-) TimerEvent: {}
+[0.200621] (-) TimerEvent: {}
+[0.302167] (-) TimerEvent: {}
+[0.404377] (-) TimerEvent: {}
+[0.505684] (-) TimerEvent: {}
+[0.606341] (-) TimerEvent: {}
+[0.706936] (-) TimerEvent: {}
+[0.807512] (-) TimerEvent: {}
+[0.908111] (-) TimerEvent: {}
+[1.008931] (-) TimerEvent: {}
+[1.110011] (-) TimerEvent: {}
+[1.210743] (-) TimerEvent: {}
+[1.311388] (-) TimerEvent: {}
+[1.412107] (-) TimerEvent: {}
+[1.512666] (-) TimerEvent: {}
+[1.613296] (-) TimerEvent: {}
+[1.713888] (-) TimerEvent: {}
+[1.814431] (-) TimerEvent: {}
+[1.915006] (-) TimerEvent: {}
+[2.015521] (-) TimerEvent: {}
+[2.116115] (-) TimerEvent: {}
+[2.216669] (-) TimerEvent: {}
+[2.317244] (-) TimerEvent: {}
+[2.417808] (-) TimerEvent: {}
+[2.518385] (-) TimerEvent: {}
+[2.619000] (-) TimerEvent: {}
+[2.719561] (-) TimerEvent: {}
+[2.820193] (-) TimerEvent: {}
+[2.920844] (-) TimerEvent: {}
+[3.021780] (-) TimerEvent: {}
+[3.123327] (-) TimerEvent: {}
+[3.223977] (-) TimerEvent: {}
+[3.324599] (-) TimerEvent: {}
+[3.425288] (-) TimerEvent: {}
+[3.526002] (-) TimerEvent: {}
+[3.626563] (-) TimerEvent: {}
+[3.727190] (-) TimerEvent: {}
+[3.827767] (-) TimerEvent: {}
+[3.928397] (-) TimerEvent: {}
+[4.029458] (state_vector_pubsub) Command: {'cmd': ['/usr/bin/python3', '-W', 'ignore:setup.py install is deprecated', '-W', 'ignore:easy_install command is deprecated', 'setup.py', 'egg_info', '--egg-base', '../../build/state_vector_pubsub', 'build', '--build-base', '/home/estelamb/PFG_Telematica/Implementation/Drone/build/state_vector_pubsub/build', 'install', '--record', '/home/estelamb/PFG_Telematica/Implementation/Drone/build/state_vector_pubsub/install.log', '--single-version-externally-managed', 'install_data'], 'cwd': '/home/estelamb/PFG_Telematica/Implementation/Drone/src/state_vector_pubsub', 'env': {'LESSOPEN': '| /usr/bin/lesspipe %s', 'USER': 'estelamb', 'SSH_CLIENT': '95.39.166.219 57317 22', 'XDG_SESSION_TYPE': 'tty', 'GIT_ASKPASS': '/home/estelamb/.vscode-server/cli/servers/Stable-7c6fdfb0b8f2f675eb0b47f3d95eeca78962565b/server/extensions/git/dist/askpass.sh', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/aarch64-linux-gnu:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib', 'BROWSER': '/home/estelamb/.vscode-server/cli/servers/Stable-7c6fdfb0b8f2f675eb0b47f3d95eeca78962565b/server/bin/helpers/browser.sh', 'HOME': '/home/estelamb', 'OLDPWD': '/home/estelamb/PFG_Telematica/Implementation/Drone/src', 'TERM_PROGRAM_VERSION': '1.99.1', 'VSCODE_IPC_HOOK_CLI': '/run/user/1004/vscode-ipc-97871dbe-1bb3-4127-8381-c424d408d9cc.sock', 'ROS_PYTHON_VERSION': '3', 'VSCODE_GIT_ASKPASS_MAIN': '/home/estelamb/.vscode-server/cli/servers/Stable-7c6fdfb0b8f2f675eb0b47f3d95eeca78962565b/server/extensions/git/dist/askpass-main.js', 'PS1': '\\[\x1b]633;A\x07\\](.venv) \\[\\033[1;34m\\].-{ \\[\\033[1;35m\\]\\d \\t\\[\\033[1;34m\\] }-{ \\[\\033[1;35m\\]\\u\\[\\033[1;34m\\] }-{ \\[\\033[1;35m\\]\\h\\[\\033[1;34m\\] }-\\n\\[\\033[1;34m\\]|-{ \\[\\033[0;36m\\]\\w\\[\\033[1;34m\\] }-\\n\\[\\033[1;34m\\]\\`-> \\[\\033[0m\\]\\[\x1b]633;B\x07\\]', 'VSCODE_GIT_ASKPASS_NODE': '/home/estelamb/.vscode-server/cli/servers/Stable-7c6fdfb0b8f2f675eb0b47f3d95eeca78962565b/server/node', 'SSL_CERT_FILE': '/usr/lib/ssl/cert.pem', 'PYDEVD_DISABLE_FILE_VALIDATION': '1', 'BUNDLED_DEBUGPY_PATH': '/home/estelamb/.vscode-server/extensions/ms-python.debugpy-2025.6.0-linux-arm64/bundled/libs/debugpy', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1004/bus', 'COLORTERM': 'truecolor', 'NVM_DIR': '/home/estelamb/.nvm', 'ROS_DISTRO': 'jazzy', 'LOGNAME': 'estelamb', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'XDG_SESSION_CLASS': 'user', 'TERM': 'xterm-256color', 'XDG_SESSION_ID': '3239', 'RBENV_SHELL': 'bash', 'PATH': '/home/estelamb/.vscode-server/extensions/ms-python.python-2025.4.0-linux-arm64/python_files/deactivate/bash:/home/estelamb/PFG_Telematica/Implementation/.venv/bin:/home/estelamb/.rbenv/shims:/home/estelamb/.rbenv/bin:/home/estelamb/.vscode-server/extensions/ms-python.python-2025.4.0-linux-arm64/python_files/deactivate/bash:/home/estelamb/PFG_Telematica/Implementation/.venv/bin:/home/estelamb/.vscode-server/cli/servers/Stable-7c6fdfb0b8f2f675eb0b47f3d95eeca78962565b/server/bin/remote-cli:/opt/ros/jazzy/bin:/home/estelamb/.rbenv/shims:/home/estelamb/.rbenv/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin', 'XDG_RUNTIME_DIR': '/run/user/1004', 'SSL_CERT_DIR': '/usr/lib/ssl/certs', 'VSCODE_DEBUGPY_ADAPTER_ENDPOINTS': '/home/estelamb/.vscode-server/extensions/ms-python.debugpy-2025.6.0-linux-arm64/.noConfigDebugAdapterEndpoints/endpoint-d02a8232742ade9d.txt', 'LANG': 'en_US.UTF-8', 'VIRTUAL_ENV_PROMPT': '(.venv)', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:', 'VSCODE_GIT_IPC_HANDLE': '/run/user/1004/vscode-git-31426f1041.sock', 'TERM_PROGRAM': 'vscode', 'AMENT_PREFIX_PATH': '/opt/ros/jazzy', 'SHELL': '/bin/bash', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'VIRTUAL_ENV': '/home/estelamb/PFG_Telematica/Implementation/.venv', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'VSCODE_GIT_ASKPASS_EXTRA_ARGS': '', 'PWD': '/home/estelamb/PFG_Telematica/Implementation/Drone/build/state_vector_pubsub', 'LC_ALL': 'en_US.UTF-8', 'SSH_CONNECTION': '95.39.166.219 57317 192.168.1.136 22', 'XDG_DATA_DIRS': '/usr/local/share:/usr/share:/var/lib/snapd/desktop', 'PYTHONPATH': '/home/estelamb/PFG_Telematica/Implementation/Drone/build/state_vector_pubsub/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/estelamb/PFG_Telematica/Implementation/Drone/install/state_vector_pubsub/lib/python3.12/site-packages:/opt/ros/jazzy/lib/python3.12/site-packages', 'COLCON': '1', 'CMAKE_PREFIX_PATH': '/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor'}, 'shell': False}
+[4.037777] (-) TimerEvent: {}
+[4.138429] (-) TimerEvent: {}
+[4.239554] (-) TimerEvent: {}
+[4.340271] (-) TimerEvent: {}
+[4.441099] (-) TimerEvent: {}
+[4.541627] (-) TimerEvent: {}
+[4.642188] (-) TimerEvent: {}
+[4.742757] (-) TimerEvent: {}
+[4.843315] (-) TimerEvent: {}
+[4.943975] (-) TimerEvent: {}
+[5.044504] (-) TimerEvent: {}
+[5.145081] (-) TimerEvent: {}
+[5.201519] (state_vector_pubsub) StdoutLine: {'line': b'running egg_info\n'}
+[5.202829] (state_vector_pubsub) StdoutLine: {'line': b'creating ../../build/state_vector_pubsub/state_vector_pubsub.egg-info\n'}
+[5.245272] (-) TimerEvent: {}
+[5.289775] (state_vector_pubsub) StdoutLine: {'line': b'writing ../../build/state_vector_pubsub/state_vector_pubsub.egg-info/PKG-INFO\n'}
+[5.291068] (state_vector_pubsub) StdoutLine: {'line': b'writing dependency_links to ../../build/state_vector_pubsub/state_vector_pubsub.egg-info/dependency_links.txt\n'}
+[5.291862] (state_vector_pubsub) StdoutLine: {'line': b'writing entry points to ../../build/state_vector_pubsub/state_vector_pubsub.egg-info/entry_points.txt\n'}
+[5.292639] (state_vector_pubsub) StdoutLine: {'line': b'writing requirements to ../../build/state_vector_pubsub/state_vector_pubsub.egg-info/requires.txt\n'}
+[5.293244] (state_vector_pubsub) StdoutLine: {'line': b'writing top-level names to ../../build/state_vector_pubsub/state_vector_pubsub.egg-info/top_level.txt\n'}
+[5.293894] (state_vector_pubsub) StdoutLine: {'line': b"writing manifest file '../../build/state_vector_pubsub/state_vector_pubsub.egg-info/SOURCES.txt'\n"}
+[5.345429] (-) TimerEvent: {}
+[5.446047] (-) TimerEvent: {}
+[5.471405] (state_vector_pubsub) StdoutLine: {'line': b"reading manifest file '../../build/state_vector_pubsub/state_vector_pubsub.egg-info/SOURCES.txt'\n"}
+[5.472495] (state_vector_pubsub) StdoutLine: {'line': b"adding license file 'LICENSE'\n"}
+[5.475088] (state_vector_pubsub) StdoutLine: {'line': b"writing manifest file '../../build/state_vector_pubsub/state_vector_pubsub.egg-info/SOURCES.txt'\n"}
+[5.475980] (state_vector_pubsub) StdoutLine: {'line': b'running build\n'}
+[5.476750] (state_vector_pubsub) StdoutLine: {'line': b'running build_py\n'}
+[5.477646] (state_vector_pubsub) StdoutLine: {'line': b'creating /home/estelamb/PFG_Telematica/Implementation/Drone/build/state_vector_pubsub/build\n'}
+[5.478287] (state_vector_pubsub) StdoutLine: {'line': b'creating /home/estelamb/PFG_Telematica/Implementation/Drone/build/state_vector_pubsub/build/lib\n'}
+[5.479026] (state_vector_pubsub) StdoutLine: {'line': b'creating /home/estelamb/PFG_Telematica/Implementation/Drone/build/state_vector_pubsub/build/lib/state_vector_pubsub\n'}
+[5.479666] (state_vector_pubsub) StdoutLine: {'line': b'copying state_vector_pubsub/__init__.py -> /home/estelamb/PFG_Telematica/Implementation/Drone/build/state_vector_pubsub/build/lib/state_vector_pubsub\n'}
+[5.480498] (state_vector_pubsub) StdoutLine: {'line': b'copying state_vector_pubsub/state_vector.py -> /home/estelamb/PFG_Telematica/Implementation/Drone/build/state_vector_pubsub/build/lib/state_vector_pubsub\n'}
+[5.483966] (state_vector_pubsub) StdoutLine: {'line': b'copying state_vector_pubsub/publisher_member_function.py -> /home/estelamb/PFG_Telematica/Implementation/Drone/build/state_vector_pubsub/build/lib/state_vector_pubsub\n'}
+[5.484850] (state_vector_pubsub) StdoutLine: {'line': b'running install\n'}
+[5.511203] (state_vector_pubsub) StdoutLine: {'line': b'running install_lib\n'}
+[5.546223] (-) TimerEvent: {}
+[5.613136] (state_vector_pubsub) StdoutLine: {'line': b'creating /home/estelamb/PFG_Telematica/Implementation/Drone/install/state_vector_pubsub/lib/python3.12/site-packages/state_vector_pubsub\n'}
+[5.614080] (state_vector_pubsub) StdoutLine: {'line': b'copying /home/estelamb/PFG_Telematica/Implementation/Drone/build/state_vector_pubsub/build/lib/state_vector_pubsub/__init__.py -> /home/estelamb/PFG_Telematica/Implementation/Drone/install/state_vector_pubsub/lib/python3.12/site-packages/state_vector_pubsub\n'}
+[5.615215] (state_vector_pubsub) StdoutLine: {'line': b'copying /home/estelamb/PFG_Telematica/Implementation/Drone/build/state_vector_pubsub/build/lib/state_vector_pubsub/state_vector.py -> /home/estelamb/PFG_Telematica/Implementation/Drone/install/state_vector_pubsub/lib/python3.12/site-packages/state_vector_pubsub\n'}
+[5.616494] (state_vector_pubsub) StdoutLine: {'line': b'copying /home/estelamb/PFG_Telematica/Implementation/Drone/build/state_vector_pubsub/build/lib/state_vector_pubsub/publisher_member_function.py -> /home/estelamb/PFG_Telematica/Implementation/Drone/install/state_vector_pubsub/lib/python3.12/site-packages/state_vector_pubsub\n'}
+[5.620004] (state_vector_pubsub) StdoutLine: {'line': b'byte-compiling /home/estelamb/PFG_Telematica/Implementation/Drone/install/state_vector_pubsub/lib/python3.12/site-packages/state_vector_pubsub/__init__.py to __init__.cpython-312.pyc\n'}
+[5.621853] (state_vector_pubsub) StdoutLine: {'line': b'byte-compiling /home/estelamb/PFG_Telematica/Implementation/Drone/install/state_vector_pubsub/lib/python3.12/site-packages/state_vector_pubsub/state_vector.py to state_vector.cpython-312.pyc\n'}
+[5.626898] (state_vector_pubsub) StdoutLine: {'line': b'byte-compiling /home/estelamb/PFG_Telematica/Implementation/Drone/install/state_vector_pubsub/lib/python3.12/site-packages/state_vector_pubsub/publisher_member_function.py to publisher_member_function.cpython-312.pyc\n'}
+[5.630159] (state_vector_pubsub) StdoutLine: {'line': b'running install_data\n'}
+[5.630914] (state_vector_pubsub) StdoutLine: {'line': b'creating /home/estelamb/PFG_Telematica/Implementation/Drone/install/state_vector_pubsub/share/ament_index\n'}
+[5.631554] (state_vector_pubsub) StdoutLine: {'line': b'creating /home/estelamb/PFG_Telematica/Implementation/Drone/install/state_vector_pubsub/share/ament_index/resource_index\n'}
+[5.632171] (state_vector_pubsub) StdoutLine: {'line': b'creating /home/estelamb/PFG_Telematica/Implementation/Drone/install/state_vector_pubsub/share/ament_index/resource_index/packages\n'}
+[5.632775] (state_vector_pubsub) StdoutLine: {'line': b'copying resource/state_vector_pubsub -> /home/estelamb/PFG_Telematica/Implementation/Drone/install/state_vector_pubsub/share/ament_index/resource_index/packages\n'}
+[5.633329] (state_vector_pubsub) StdoutLine: {'line': b'copying package.xml -> /home/estelamb/PFG_Telematica/Implementation/Drone/install/state_vector_pubsub/share/state_vector_pubsub\n'}
+[5.633850] (state_vector_pubsub) StdoutLine: {'line': b'running install_egg_info\n'}
+[5.646356] (-) TimerEvent: {}
+[5.731777] (state_vector_pubsub) StdoutLine: {'line': b'Copying ../../build/state_vector_pubsub/state_vector_pubsub.egg-info to /home/estelamb/PFG_Telematica/Implementation/Drone/install/state_vector_pubsub/lib/python3.12/site-packages/state_vector_pubsub-0.0.0-py3.12.egg-info\n'}
+[5.738152] (state_vector_pubsub) StdoutLine: {'line': b'running install_scripts\n'}
+[5.746504] (-) TimerEvent: {}
+[5.847084] (-) TimerEvent: {}
+[5.948331] (-) TimerEvent: {}
+[6.049101] (-) TimerEvent: {}
+[6.149796] (-) TimerEvent: {}
+[6.250490] (-) TimerEvent: {}
+[6.353866] (-) TimerEvent: {}
+[6.454427] (-) TimerEvent: {}
+[6.555099] (-) TimerEvent: {}
+[6.594046] (state_vector_pubsub) StdoutLine: {'line': b'Installing talker script to /home/estelamb/PFG_Telematica/Implementation/Drone/install/state_vector_pubsub/lib/state_vector_pubsub\n'}
+[6.598051] (state_vector_pubsub) StdoutLine: {'line': b"writing list of installed files to '/home/estelamb/PFG_Telematica/Implementation/Drone/build/state_vector_pubsub/install.log'\n"}
+[6.655464] (-) TimerEvent: {}
+[6.757900] (-) TimerEvent: {}
+[6.772113] (state_vector_pubsub) CommandEnded: {'returncode': 0}
+[6.816166] (state_vector_pubsub) JobEnded: {'identifier': 'state_vector_pubsub', 'rc': 0}
+[6.818823] (-) EventReactorShutdown: {}

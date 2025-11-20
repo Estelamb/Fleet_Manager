@@ -1,0 +1,166 @@
+[2025-04-10 00:08:01,360][Drone 3][INFO][State Vector] - std_msgs.msg.String(data="{'vehicle_id': 3, 'vehicle_status': 'Available', 'battery_capacity': 100, 'battery_percentage': 65.0, 'last_update': '2025-04-09 23:48:25', 'longitude': -4.611144, 'latitude': 40.07367, 'altitude': 113.37371283053183, 'roll': -119.36532140461844, 'pitch': -1.483427838383406, 'yaw': 106.5617551187122, 'gimbal_pitch': -77, 'linear_speed': 49}")
+[2025-04-10 00:08:03,361][Drone 3][INFO][State Vector] - std_msgs.msg.String(data="{'vehicle_id': 3, 'vehicle_status': 'Available', 'battery_capacity': 100, 'battery_percentage': 65.0, 'last_update': '2025-04-09 23:48:25', 'longitude': -4.611144, 'latitude': 40.07367, 'altitude': 113.37371283053183, 'roll': -119.36532140461844, 'pitch': -1.483427838383406, 'yaw': 106.5617551187122, 'gimbal_pitch': -77, 'linear_speed': 49}")
+[2025-04-10 00:08:05,359][Drone 3][INFO][State Vector] - std_msgs.msg.String(data="{'vehicle_id': 3, 'vehicle_status': 'Available', 'battery_capacity': 100, 'battery_percentage': 65.0, 'last_update': '2025-04-09 23:48:25', 'longitude': -4.611144, 'latitude': 40.07367, 'altitude': 113.37371283053183, 'roll': -119.36532140461844, 'pitch': -1.483427838383406, 'yaw': 106.5617551187122, 'gimbal_pitch': -77, 'linear_speed': 49}")
+[2025-04-10 00:08:07,361][Drone 3][INFO][State Vector] - std_msgs.msg.String(data="{'vehicle_id': 3, 'vehicle_status': 'Available', 'battery_capacity': 100, 'battery_percentage': 65.0, 'last_update': '2025-04-09 23:48:25', 'longitude': -4.611144, 'latitude': 40.07367, 'altitude': 113.37371283053183, 'roll': -119.36532140461844, 'pitch': -1.483427838383406, 'yaw': 106.5617551187122, 'gimbal_pitch': -77, 'linear_speed': 49}")
+[2025-04-10 00:08:09,361][Drone 3][INFO][State Vector] - std_msgs.msg.String(data="{'vehicle_id': 3, 'vehicle_status': 'Available', 'battery_capacity': 100, 'battery_percentage': 65.0, 'last_update': '2025-04-09 23:48:25', 'longitude': -4.611144, 'latitude': 40.07367, 'altitude': 113.37371283053183, 'roll': -119.36532140461844, 'pitch': -1.483427838383406, 'yaw': 106.5617551187122, 'gimbal_pitch': -77, 'linear_speed': 49}")
+[2025-04-10 00:08:11,361][Drone 3][INFO][State Vector] - std_msgs.msg.String(data="{'vehicle_id': 3, 'vehicle_status': 'Available', 'battery_capacity': 100, 'battery_percentage': 65.0, 'last_update': '2025-04-09 23:48:25', 'longitude': -4.611144, 'latitude': 40.07367, 'altitude': 113.37371283053183, 'roll': -119.36532140461844, 'pitch': -1.483427838383406, 'yaw': 106.5617551187122, 'gimbal_pitch': -77, 'linear_speed': 49}")
+[2025-04-10 00:08:13,360][Drone 3][INFO][State Vector] - std_msgs.msg.String(data="{'vehicle_id': 3, 'vehicle_status': 'Available', 'battery_capacity': 100, 'battery_percentage': 65.0, 'last_update': '2025-04-09 23:48:25', 'longitude': -4.611144, 'latitude': 40.07367, 'altitude': 113.37371283053183, 'roll': -119.36532140461844, 'pitch': -1.483427838383406, 'yaw': 106.5617551187122, 'gimbal_pitch': -77, 'linear_speed': 49}")
+[2025-04-10 00:08:15,360][Drone 3][INFO][State Vector] - std_msgs.msg.String(data="{'vehicle_id': 3, 'vehicle_status': 'Available', 'battery_capacity': 100, 'battery_percentage': 65.0, 'last_update': '2025-04-09 23:48:25', 'longitude': -4.611144, 'latitude': 40.07367, 'altitude': 113.37371283053183, 'roll': -119.36532140461844, 'pitch': -1.483427838383406, 'yaw': 106.5617551187122, 'gimbal_pitch': -77, 'linear_speed': 49}")
+[2025-04-10 00:08:17,359][Drone 3][INFO][State Vector] - std_msgs.msg.String(data="{'vehicle_id': 3, 'vehicle_status': 'Available', 'battery_capacity': 100, 'battery_percentage': 65.0, 'last_update': '2025-04-09 23:48:25', 'longitude': -4.611144, 'latitude': 40.07367, 'altitude': 113.37371283053183, 'roll': -119.36532140461844, 'pitch': -1.483427838383406, 'yaw': 106.5617551187122, 'gimbal_pitch': -77, 'linear_speed': 49}")
+[2025-04-10 00:08:19,359][Drone 3][INFO][State Vector] - std_msgs.msg.String(data="{'vehicle_id': 3, 'vehicle_status': 'Available', 'battery_capacity': 100, 'battery_percentage': 65.0, 'last_update': '2025-04-09 23:48:25', 'longitude': -4.611144, 'latitude': 40.07367, 'altitude': 113.37371283053183, 'roll': -119.36532140461844, 'pitch': -1.483427838383406, 'yaw': 106.5617551187122, 'gimbal_pitch': -77, 'linear_speed': 49}")
+[2025-04-10 00:08:21,359][Drone 3][INFO][State Vector] - std_msgs.msg.String(data="{'vehicle_id': 3, 'vehicle_status': 'Available', 'battery_capacity': 100, 'battery_percentage': 65.0, 'last_update': '2025-04-09 23:48:25', 'longitude': -4.611144, 'latitude': 40.07367, 'altitude': 113.37371283053183, 'roll': -119.36532140461844, 'pitch': -1.483427838383406, 'yaw': 106.5617551187122, 'gimbal_pitch': -77, 'linear_speed': 49}")
+[2025-04-10 00:08:23,360][Drone 3][INFO][State Vector] - std_msgs.msg.String(data="{'vehicle_id': 3, 'vehicle_status': 'Available', 'battery_capacity': 100, 'battery_percentage': 65.0, 'last_update': '2025-04-09 23:48:25', 'longitude': -4.611144, 'latitude': 40.07367, 'altitude': 113.37371283053183, 'roll': -119.36532140461844, 'pitch': -1.483427838383406, 'yaw': 106.5617551187122, 'gimbal_pitch': -77, 'linear_speed': 49}")
+[2025-04-10 00:08:25,359][Drone 3][INFO][State Vector] - std_msgs.msg.String(data="{'vehicle_id': 3, 'vehicle_status': 'Available', 'battery_capacity': 100, 'battery_percentage': 65.0, 'last_update': '2025-04-09 23:48:25', 'longitude': -4.611144, 'latitude': 40.07367, 'altitude': 113.37371283053183, 'roll': -119.36532140461844, 'pitch': -1.483427838383406, 'yaw': 106.5617551187122, 'gimbal_pitch': -77, 'linear_speed': 49}")
+[2025-04-10 00:08:27,361][Drone 3][INFO][State Vector] - std_msgs.msg.String(data="{'vehicle_id': 3, 'vehicle_status': 'Available', 'battery_capacity': 100, 'battery_percentage': 65.0, 'last_update': '2025-04-09 23:48:25', 'longitude': -4.611144, 'latitude': 40.07367, 'altitude': 113.37371283053183, 'roll': -119.36532140461844, 'pitch': -1.483427838383406, 'yaw': 106.5617551187122, 'gimbal_pitch': -77, 'linear_speed': 49}")
+[2025-04-10 00:08:29,359][Drone 3][INFO][State Vector] - std_msgs.msg.String(data="{'vehicle_id': 3, 'vehicle_status': 'Available', 'battery_capacity': 100, 'battery_percentage': 65.0, 'last_update': '2025-04-09 23:48:25', 'longitude': -4.611144, 'latitude': 40.07367, 'altitude': 113.37371283053183, 'roll': -119.36532140461844, 'pitch': -1.483427838383406, 'yaw': 106.5617551187122, 'gimbal_pitch': -77, 'linear_speed': 49}")
+[2025-04-10 00:08:31,361][Drone 3][INFO][State Vector] - std_msgs.msg.String(data="{'vehicle_id': 3, 'vehicle_status': 'Available', 'battery_capacity': 100, 'battery_percentage': 65.0, 'last_update': '2025-04-09 23:48:25', 'longitude': -4.611144, 'latitude': 40.07367, 'altitude': 113.37371283053183, 'roll': -119.36532140461844, 'pitch': -1.483427838383406, 'yaw': 106.5617551187122, 'gimbal_pitch': -77, 'linear_speed': 49}")
+[2025-04-10 00:08:33,361][Drone 3][INFO][State Vector] - std_msgs.msg.String(data="{'vehicle_id': 3, 'vehicle_status': 'Available', 'battery_capacity': 100, 'battery_percentage': 65.0, 'last_update': '2025-04-09 23:48:25', 'longitude': -4.611144, 'latitude': 40.07367, 'altitude': 113.37371283053183, 'roll': -119.36532140461844, 'pitch': -1.483427838383406, 'yaw': 106.5617551187122, 'gimbal_pitch': -77, 'linear_speed': 49}")
+[2025-04-10 00:08:35,360][Drone 3][INFO][State Vector] - std_msgs.msg.String(data="{'vehicle_id': 3, 'vehicle_status': 'Available', 'battery_capacity': 100, 'battery_percentage': 65.0, 'last_update': '2025-04-09 23:48:25', 'longitude': -4.611144, 'latitude': 40.07367, 'altitude': 113.37371283053183, 'roll': -119.36532140461844, 'pitch': -1.483427838383406, 'yaw': 106.5617551187122, 'gimbal_pitch': -77, 'linear_speed': 49}")
+[2025-04-10 00:08:37,360][Drone 3][INFO][State Vector] - std_msgs.msg.String(data="{'vehicle_id': 3, 'vehicle_status': 'Available', 'battery_capacity': 100, 'battery_percentage': 65.0, 'last_update': '2025-04-09 23:48:25', 'longitude': -4.611144, 'latitude': 40.07367, 'altitude': 113.37371283053183, 'roll': -119.36532140461844, 'pitch': -1.483427838383406, 'yaw': 106.5617551187122, 'gimbal_pitch': -77, 'linear_speed': 49}")
+[2025-04-10 00:08:39,359][Drone 3][INFO][State Vector] - std_msgs.msg.String(data="{'vehicle_id': 3, 'vehicle_status': 'Available', 'battery_capacity': 100, 'battery_percentage': 65.0, 'last_update': '2025-04-09 23:48:25', 'longitude': -4.611144, 'latitude': 40.07367, 'altitude': 113.37371283053183, 'roll': -119.36532140461844, 'pitch': -1.483427838383406, 'yaw': 106.5617551187122, 'gimbal_pitch': -77, 'linear_speed': 49}")
+[2025-04-10 00:08:41,360][Drone 3][INFO][State Vector] - std_msgs.msg.String(data="{'vehicle_id': 3, 'vehicle_status': 'Available', 'battery_capacity': 100, 'battery_percentage': 65.0, 'last_update': '2025-04-09 23:48:25', 'longitude': -4.611144, 'latitude': 40.07367, 'altitude': 113.37371283053183, 'roll': -119.36532140461844, 'pitch': -1.483427838383406, 'yaw': 106.5617551187122, 'gimbal_pitch': -77, 'linear_speed': 49}")
+[2025-04-10 00:08:43,359][Drone 3][INFO][State Vector] - std_msgs.msg.String(data="{'vehicle_id': 3, 'vehicle_status': 'Available', 'battery_capacity': 100, 'battery_percentage': 65.0, 'last_update': '2025-04-09 23:48:25', 'longitude': -4.611144, 'latitude': 40.07367, 'altitude': 113.37371283053183, 'roll': -119.36532140461844, 'pitch': -1.483427838383406, 'yaw': 106.5617551187122, 'gimbal_pitch': -77, 'linear_speed': 49}")
+[2025-04-10 00:08:45,359][Drone 3][INFO][State Vector] - std_msgs.msg.String(data="{'vehicle_id': 3, 'vehicle_status': 'Available', 'battery_capacity': 100, 'battery_percentage': 65.0, 'last_update': '2025-04-09 23:48:25', 'longitude': -4.611144, 'latitude': 40.07367, 'altitude': 113.37371283053183, 'roll': -119.36532140461844, 'pitch': -1.483427838383406, 'yaw': 106.5617551187122, 'gimbal_pitch': -77, 'linear_speed': 49}")
+[2025-04-10 00:08:47,359][Drone 3][INFO][State Vector] - std_msgs.msg.String(data="{'vehicle_id': 3, 'vehicle_status': 'Available', 'battery_capacity': 100, 'battery_percentage': 65.0, 'last_update': '2025-04-09 23:48:25', 'longitude': -4.611144, 'latitude': 40.07367, 'altitude': 113.37371283053183, 'roll': -119.36532140461844, 'pitch': -1.483427838383406, 'yaw': 106.5617551187122, 'gimbal_pitch': -77, 'linear_speed': 49}")
+[2025-04-10 00:08:49,360][Drone 3][INFO][State Vector] - std_msgs.msg.String(data="{'vehicle_id': 3, 'vehicle_status': 'Available', 'battery_capacity': 100, 'battery_percentage': 65.0, 'last_update': '2025-04-09 23:48:25', 'longitude': -4.611144, 'latitude': 40.07367, 'altitude': 113.37371283053183, 'roll': -119.36532140461844, 'pitch': -1.483427838383406, 'yaw': 106.5617551187122, 'gimbal_pitch': -77, 'linear_speed': 49}")
+[2025-04-10 00:08:51,360][Drone 3][INFO][State Vector] - std_msgs.msg.String(data="{'vehicle_id': 3, 'vehicle_status': 'Available', 'battery_capacity': 100, 'battery_percentage': 65.0, 'last_update': '2025-04-09 23:48:25', 'longitude': -4.611144, 'latitude': 40.07367, 'altitude': 113.37371283053183, 'roll': -119.36532140461844, 'pitch': -1.483427838383406, 'yaw': 106.5617551187122, 'gimbal_pitch': -77, 'linear_speed': 49}")
+[2025-04-10 00:08:53,360][Drone 3][INFO][State Vector] - std_msgs.msg.String(data="{'vehicle_id': 3, 'vehicle_status': 'Available', 'battery_capacity': 100, 'battery_percentage': 65.0, 'last_update': '2025-04-09 23:48:25', 'longitude': -4.611144, 'latitude': 40.07367, 'altitude': 113.37371283053183, 'roll': -119.36532140461844, 'pitch': -1.483427838383406, 'yaw': 106.5617551187122, 'gimbal_pitch': -77, 'linear_speed': 49}")
+[2025-04-10 00:08:55,359][Drone 3][INFO][State Vector] - std_msgs.msg.String(data="{'vehicle_id': 3, 'vehicle_status': 'Available', 'battery_capacity': 100, 'battery_percentage': 65.0, 'last_update': '2025-04-09 23:48:25', 'longitude': -4.611144, 'latitude': 40.07367, 'altitude': 113.37371283053183, 'roll': -119.36532140461844, 'pitch': -1.483427838383406, 'yaw': 106.5617551187122, 'gimbal_pitch': -77, 'linear_speed': 49}")
+[2025-04-10 00:08:57,360][Drone 3][INFO][State Vector] - std_msgs.msg.String(data="{'vehicle_id': 3, 'vehicle_status': 'Available', 'battery_capacity': 100, 'battery_percentage': 65.0, 'last_update': '2025-04-09 23:48:25', 'longitude': -4.611144, 'latitude': 40.07367, 'altitude': 113.37371283053183, 'roll': -119.36532140461844, 'pitch': -1.483427838383406, 'yaw': 106.5617551187122, 'gimbal_pitch': -77, 'linear_speed': 49}")
+[2025-04-10 00:08:57,541][Drone 3][INFO] - Ctrl+C received, shutting down.
+[2025-04-10 13:27:51,145][Drone 3][INFO] - Action server started.
+[2025-04-10 13:27:51,176][Drone 3][INFO] - State vector publisher started.
+[2025-04-10 13:27:51,178][Drone 3][INFO] - Spinning executor to run both nodes...
+[2025-04-10 13:28:01,180][Drone 3][INFO][State Vector] - State Vector sent
+[2025-04-10 13:28:11,179][Drone 3][INFO][State Vector] - State Vector sent
+[2025-04-10 13:28:21,179][Drone 3][INFO][State Vector] - State Vector sent
+[2025-04-10 13:28:31,179][Drone 3][INFO][State Vector] - State Vector sent
+[2025-04-10 13:28:41,179][Drone 3][INFO][State Vector] - State Vector sent
+[2025-04-10 13:28:51,179][Drone 3][INFO][State Vector] - State Vector sent
+[2025-04-10 13:29:01,179][Drone 3][INFO][State Vector] - State Vector sent
+[2025-04-10 13:29:11,179][Drone 3][INFO][State Vector] - State Vector sent
+[2025-04-10 13:29:21,179][Drone 3][INFO][State Vector] - State Vector sent
+[2025-04-10 13:29:31,179][Drone 3][INFO][State Vector] - State Vector sent
+[2025-04-10 13:29:41,179][Drone 3][INFO][State Vector] - State Vector sent
+[2025-04-10 13:29:51,179][Drone 3][INFO][State Vector] - State Vector sent
+[2025-04-10 13:30:01,179][Drone 3][INFO][State Vector] - State Vector sent
+[2025-04-10 13:30:11,178][Drone 3][INFO][State Vector] - State Vector sent
+[2025-04-10 13:30:21,179][Drone 3][INFO][State Vector] - State Vector sent
+[2025-04-10 13:30:31,178][Drone 3][INFO][State Vector] - State Vector sent
+[2025-04-10 13:30:41,179][Drone 3][INFO][State Vector] - State Vector sent
+[2025-04-10 13:30:51,178][Drone 3][INFO][State Vector] - State Vector sent
+[2025-04-10 13:31:01,179][Drone 3][INFO][State Vector] - State Vector sent
+[2025-04-10 13:31:11,179][Drone 3][INFO][State Vector] - State Vector sent
+[2025-04-10 13:31:21,179][Drone 3][INFO][State Vector] - State Vector sent
+[2025-04-10 13:31:31,179][Drone 3][INFO][State Vector] - State Vector sent
+[2025-04-10 13:31:41,179][Drone 3][INFO][State Vector] - State Vector sent
+[2025-04-10 13:31:51,180][Drone 3][INFO][State Vector] - State Vector sent
+[2025-04-10 13:32:01,178][Drone 3][INFO][State Vector] - State Vector sent
+[2025-04-10 13:32:11,179][Drone 3][INFO][State Vector] - State Vector sent
+[2025-04-10 13:32:21,179][Drone 3][INFO][State Vector] - State Vector sent
+[2025-04-10 13:32:31,179][Drone 3][INFO][State Vector] - State Vector sent
+[2025-04-10 13:32:41,179][Drone 3][INFO][State Vector] - State Vector sent
+[2025-04-10 13:32:42,168][Drone 3][INFO] - Ctrl+C received, shutting down.
+[2025-04-10 13:39:52,936][Drone 3][INFO] - Action server started.
+[2025-04-10 13:39:52,968][Drone 3][INFO] - State vector publisher started.
+[2025-04-10 13:39:52,970][Drone 3][INFO] - Spinning executor to run both nodes...
+[2025-04-10 13:40:02,972][Drone 3][INFO][State Vector] - State Vector sent
+[2025-04-10 13:40:12,972][Drone 3][INFO][State Vector] - State Vector sent
+[2025-04-10 13:40:22,972][Drone 3][INFO][State Vector] - State Vector sent
+[2025-04-10 13:40:32,971][Drone 3][INFO][State Vector] - State Vector sent
+[2025-04-10 13:40:42,972][Drone 3][INFO][State Vector] - State Vector sent
+[2025-04-10 13:40:52,972][Drone 3][INFO][State Vector] - State Vector sent
+[2025-04-10 13:41:02,971][Drone 3][INFO][State Vector] - State Vector sent
+[2025-04-10 13:41:12,971][Drone 3][INFO][State Vector] - State Vector sent
+[2025-04-10 13:41:22,971][Drone 3][INFO][State Vector] - State Vector sent
+[2025-04-10 13:41:32,971][Drone 3][INFO][State Vector] - State Vector sent
+[2025-04-10 13:41:42,971][Drone 3][INFO][State Vector] - State Vector sent
+[2025-04-10 13:41:52,971][Drone 3][INFO][State Vector] - State Vector sent
+[2025-04-10 13:42:01,305][Drone 3][INFO] - Ctrl+C received, shutting down.
+[2025-04-10 13:49:39,041][Drone 3][INFO] - Action server started.
+[2025-04-10 13:49:39,073][Drone 3][INFO] - State vector publisher started.
+[2025-04-10 13:49:39,075][Drone 3][INFO] - Spinning executor to run both nodes...
+[2025-04-10 13:49:49,076][Drone 3][INFO][State Vector] - State Vector sent
+[2025-04-10 13:49:59,076][Drone 3][INFO][State Vector] - State Vector sent
+[2025-04-10 13:50:09,077][Drone 3][INFO][State Vector] - State Vector sent
+[2025-04-10 13:50:17,715][Drone 3][INFO] - Executing goal...
+[2025-04-10 13:50:19,076][Drone 3][INFO][State Vector] - State Vector sent
+[2025-04-10 13:50:27,717][Drone 3][INFO] - Feedback: ['3', '1', '100', 'Picture taken']
+[2025-04-10 13:50:29,076][Drone 3][INFO][State Vector] - State Vector sent
+[2025-04-10 13:50:39,076][Drone 3][INFO][State Vector] - State Vector sent
+[2025-04-10 13:50:48,720][Drone 3][INFO] - Feedback: ['3', '1', '200', 'WP reached']
+[2025-04-10 13:50:49,076][Drone 3][INFO][State Vector] - State Vector sent
+[2025-04-10 13:50:59,076][Drone 3][INFO][State Vector] - State Vector sent
+[2025-04-10 13:51:09,076][Drone 3][INFO][State Vector] - State Vector sent
+[2025-04-10 13:51:09,724][Drone 3][INFO] - Feedback: ['3', '1', '300', 'WP reached']
+[2025-04-10 13:51:19,076][Drone 3][INFO][State Vector] - State Vector sent
+[2025-04-10 13:51:20,726][Drone 3][INFO] - Feedback: ['3', '1', '400', 'Picture taken']
+[2025-04-10 13:51:29,076][Drone 3][INFO][State Vector] - State Vector sent
+[2025-04-10 13:51:31,730][Drone 3][INFO] - Feedback: ['3', '1', '500', '[1.0, 2]']
+[2025-04-10 13:51:39,076][Drone 3][INFO][State Vector] - State Vector sent
+[2025-04-10 13:51:49,076][Drone 3][INFO][State Vector] - State Vector sent
+[2025-04-10 13:51:52,733][Drone 3][INFO] - Feedback: ['3', '1', '600', 'WP reached']
+[2025-04-10 13:51:59,076][Drone 3][INFO][State Vector] - State Vector sent
+[2025-04-10 13:52:03,737][Drone 3][INFO] - Feedback: ['3', '1', '700', 'Picture taken']
+[2025-04-10 13:52:09,076][Drone 3][INFO][State Vector] - State Vector sent
+[2025-04-10 13:52:14,743][Drone 3][INFO] - Feedback: ['3', '1', '800', '[1.0, 3]']
+[2025-04-10 13:52:19,076][Drone 3][INFO][State Vector] - State Vector sent
+[2025-04-10 13:52:29,076][Drone 3][INFO][State Vector] - State Vector sent
+[2025-04-10 13:52:35,746][Drone 3][INFO] - Feedback: ['3', '1', '900', 'WP reached']
+[2025-04-10 13:52:39,077][Drone 3][INFO][State Vector] - State Vector sent
+[2025-04-10 13:52:46,750][Drone 3][INFO] - Feedback: ['3', '1', '110', '[1.0, 1]']
+[2025-04-10 13:52:49,076][Drone 3][INFO][State Vector] - State Vector sent
+[2025-04-10 13:52:59,075][Drone 3][INFO][State Vector] - State Vector sent
+[2025-04-10 13:53:07,753][Drone 3][INFO] - Feedback: ['3', '1', '1110', 'WP reached']
+[2025-04-10 13:53:09,077][Drone 3][INFO][State Vector] - State Vector sent
+[2025-04-10 13:53:18,758][Drone 3][INFO] - Feedback: ['3', '1', '112', 'Picture taken']
+[2025-04-10 13:53:19,076][Drone 3][INFO][State Vector] - State Vector sent
+[2025-04-10 13:53:29,076][Drone 3][INFO][State Vector] - State Vector sent
+[2025-04-10 13:53:29,762][Drone 3][INFO] - Feedback: ['3', '1', '1400', '[1.0, 0]']
+[2025-04-10 13:53:39,077][Drone 3][INFO][State Vector] - State Vector sent
+[2025-04-10 13:53:49,076][Drone 3][INFO][State Vector] - State Vector sent
+[2025-04-10 13:53:50,765][Drone 3][INFO] - Feedback: ['3', '1', '1500', 'Returned home']
+[2025-04-10 13:53:59,076][Drone 3][INFO][State Vector] - State Vector sent
+[2025-04-10 13:54:09,076][Drone 3][INFO][State Vector] - State Vector sent
+[2025-04-10 13:54:11,769][Drone 3][INFO] - Feedback: ['3', '1', '1600', 'Landing successful']
+[2025-04-10 13:54:19,076][Drone 3][INFO][State Vector] - State Vector sent
+[2025-04-10 13:54:29,076][Drone 3][INFO][State Vector] - State Vector sent
+[2025-04-10 13:54:39,076][Drone 3][INFO][State Vector] - State Vector sent
+[2025-04-10 13:54:49,076][Drone 3][INFO][State Vector] - State Vector sent
+[2025-04-10 13:54:59,076][Drone 3][INFO][State Vector] - State Vector sent
+[2025-04-10 13:55:09,076][Drone 3][INFO][State Vector] - State Vector sent
+[2025-04-10 13:55:19,076][Drone 3][INFO][State Vector] - State Vector sent
+[2025-04-10 13:55:29,075][Drone 3][INFO][State Vector] - State Vector sent
+[2025-04-10 13:55:30,297][Drone 3][INFO] - Executing goal...
+[2025-04-10 13:55:39,076][Drone 3][INFO][State Vector] - State Vector sent
+[2025-04-10 13:55:40,300][Drone 3][INFO] - Feedback: ['3', '1', '100', 'Picture taken']
+[2025-04-10 13:55:49,076][Drone 3][INFO][State Vector] - State Vector sent
+[2025-04-10 13:55:57,145][Drone 3][INFO] - Ctrl+C received, shutting down.
+[2025-04-10 13:55:59,963][Drone 3][INFO] - Action server started.
+[2025-04-10 13:55:59,984][Drone 3][INFO] - State vector publisher started.
+[2025-04-10 13:55:59,985][Drone 3][INFO] - Spinning executor to run both nodes...
+[2025-04-10 13:56:07,751][Drone 3][INFO] - Executing goal...
+[2025-04-10 13:56:09,987][Drone 3][INFO][State Vector] - State Vector sent
+[2025-04-10 13:56:17,754][Drone 3][INFO] - Feedback: ['3', '1', '100', 'Picture taken']
+[2025-04-10 13:56:19,988][Drone 3][INFO][State Vector] - State Vector sent
+[2025-04-10 13:56:29,987][Drone 3][INFO][State Vector] - State Vector sent
+[2025-04-10 13:56:38,758][Drone 3][INFO] - Feedback: ['3', '1', '200', 'WP reached']
+[2025-04-10 13:56:39,988][Drone 3][INFO][State Vector] - State Vector sent
+[2025-04-10 13:56:49,987][Drone 3][INFO][State Vector] - State Vector sent
+[2025-04-10 13:56:59,762][Drone 3][INFO] - Feedback: ['3', '1', '300', 'WP reached']
+[2025-04-10 13:56:59,986][Drone 3][INFO][State Vector] - State Vector sent
+[2025-04-10 13:57:09,987][Drone 3][INFO][State Vector] - State Vector sent
+[2025-04-10 13:57:10,766][Drone 3][INFO] - Feedback: ['3', '1', '400', 'Picture taken']
+[2025-04-10 13:57:19,988][Drone 3][INFO][State Vector] - State Vector sent
+[2025-04-10 13:57:21,769][Drone 3][INFO] - Feedback: ['3', '1', '500', '[1.0, 1]']
+[2025-04-10 13:57:29,988][Drone 3][INFO][State Vector] - State Vector sent
+[2025-04-10 13:57:39,987][Drone 3][INFO][State Vector] - State Vector sent
+[2025-04-10 13:57:42,773][Drone 3][INFO] - Feedback: ['3', '1', '600', 'WP reached']
+[2025-04-10 13:57:49,988][Drone 3][INFO][State Vector] - State Vector sent
+[2025-04-10 13:57:53,776][Drone 3][INFO] - Feedback: ['3', '1', '700', 'Picture taken']
+[2025-04-10 13:57:59,987][Drone 3][INFO][State Vector] - State Vector sent
+[2025-04-10 13:58:04,779][Drone 3][INFO] - Feedback: ['3', '1', '800', '[1.0, 1]']
+[2025-04-10 13:58:09,989][Drone 3][INFO][State Vector] - State Vector sent
+[2025-04-10 13:58:19,989][Drone 3][INFO][State Vector] - State Vector sent
+[2025-04-10 13:58:25,781][Drone 3][INFO] - Feedback: ['3', '1', '900', 'WP reached']
+[2025-04-10 13:58:28,153][Drone 3][INFO] - Ctrl+C received, shutting down.

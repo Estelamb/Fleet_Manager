@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package pm_communication;
+
+service PMCommunication {
+  rpc SendPM (PMRequest) returns (PMResponse) {}
+}
+
+message PMRequest {
+  repeated string pm_message = 1;
+}
+
+message PMResponse {
+  string confirmation = 1;
+}

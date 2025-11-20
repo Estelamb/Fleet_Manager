@@ -1,0 +1,242 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-863d5d9ce7042c14ffa9.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.20"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12,
+						13,
+						14,
+						15,
+						16,
+						17,
+						18
+					]
+				},
+				{
+					"build" : "commands_action_interface__py",
+					"jsonFile" : "directory-commands_action_interface__py-42a0869ebc79535cfab2.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.20"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "/home/estelamb/PFG_Telematica/Implementation/FleetManager/ROS2/build/commands_action_interface/commands_action_interface__py",
+					"targetIndexes" : 
+					[
+						4
+					]
+				}
+			],
+			"name" : "",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0,
+						1
+					],
+					"name" : "commands_action_interface",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12,
+						13,
+						14,
+						15,
+						16,
+						17,
+						18
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "ament_cmake_python_build_commands_action_interface_egg::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ament_cmake_python_build_commands_action_interface_egg-f119ae148efe6d23a44a.json",
+					"name" : "ament_cmake_python_build_commands_action_interface_egg",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "ament_cmake_python_copy_commands_action_interface::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ament_cmake_python_copy_commands_action_interface-84a054e692512a4b4313.json",
+					"name" : "ament_cmake_python_copy_commands_action_interface",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "commands_action_interface::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-commands_action_interface-553fb212e28a860c21b3.json",
+					"name" : "commands_action_interface",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "commands_action_interface__cpp::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-commands_action_interface__cpp-6ce84c1d55b8660c3a33.json",
+					"name" : "commands_action_interface__cpp",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "commands_action_interface__py::@ed40f69e9684499fc3fb",
+					"jsonFile" : "target-commands_action_interface__py-7dd04d3febef20654340.json",
+					"name" : "commands_action_interface__py",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "commands_action_interface__rosidl_generator_c::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-commands_action_interface__rosidl_generator_c-532665996f3a73c4d5dd.json",
+					"name" : "commands_action_interface__rosidl_generator_c",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "commands_action_interface__rosidl_generator_py::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-commands_action_interface__rosidl_generator_py-f584d7d4b1c755983290.json",
+					"name" : "commands_action_interface__rosidl_generator_py",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "commands_action_interface__rosidl_generator_type_description::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-commands_action_interface__rosidl_generator_type_description-8e29f89b918f6cfd036a.json",
+					"name" : "commands_action_interface__rosidl_generator_type_description",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "commands_action_interface__rosidl_typesupport_c::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-commands_action_interface__rosidl_typesupport_c-5fb00f67abb676588053.json",
+					"name" : "commands_action_interface__rosidl_typesupport_c",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "commands_action_interface__rosidl_typesupport_cpp::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-commands_action_interface__rosidl_typesupport_cpp-c5ebe082e8b57973e4f9.json",
+					"name" : "commands_action_interface__rosidl_typesupport_cpp",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "commands_action_interface__rosidl_typesupport_fastrtps_c::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-commands_action_interface__rosidl_typesupport_fastrtps_c-4377d56b5ee7bfd7a108.json",
+					"name" : "commands_action_interface__rosidl_typesupport_fastrtps_c",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "commands_action_interface__rosidl_typesupport_fastrtps_cpp::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-commands_action_interface__rosidl_typesupport_fastrtps_cpp-a7fe01e9f9fac3cf29f5.json",
+					"name" : "commands_action_interface__rosidl_typesupport_fastrtps_cpp",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "commands_action_interface__rosidl_typesupport_introspection_c::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-commands_action_interface__rosidl_typesupport_introspection_c-599c708cbb72a4e0312b.json",
+					"name" : "commands_action_interface__rosidl_typesupport_introspection_c",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "commands_action_interface__rosidl_typesupport_introspection_cpp::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-commands_action_interface__rosidl_typesupport_introspection_cpp-6ef0829b2ed6da7e5ebe.json",
+					"name" : "commands_action_interface__rosidl_typesupport_introspection_cpp",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "commands_action_interface_s__rosidl_typesupport_c::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-commands_action_interface_s__rosidl_typesupport_c-92b496b3bd08e5c149ec.json",
+					"name" : "commands_action_interface_s__rosidl_typesupport_c",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "commands_action_interface_s__rosidl_typesupport_fastrtps_c::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-commands_action_interface_s__rosidl_typesupport_fastrtps_c-247117e7d41cdba55246.json",
+					"name" : "commands_action_interface_s__rosidl_typesupport_fastrtps_c",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "commands_action_interface_s__rosidl_typesupport_introspection_c::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-commands_action_interface_s__rosidl_typesupport_introspection_c-a9e074b5e85e13b5e071.json",
+					"name" : "commands_action_interface_s__rosidl_typesupport_introspection_c",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "commands_action_interface_uninstall::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-commands_action_interface_uninstall-60fc4c9cafa6dfc6041b.json",
+					"name" : "commands_action_interface_uninstall",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "uninstall::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-uninstall-f9f7d4e434b7acd178f7.json",
+					"name" : "uninstall",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/home/estelamb/PFG_Telematica/Implementation/FleetManager/ROS2/build/commands_action_interface",
+		"source" : "/home/estelamb/PFG_Telematica/Implementation/FleetManager/ROS2/src/commands_action_interface"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 6
+	}
+}

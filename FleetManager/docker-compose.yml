@@ -1,0 +1,25 @@
+services:
+  fleet_manager:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: fleet_manager:latest
+    networks:
+      fleet_net:
+        ipv4_address: 192.168.100.140
+    ports:
+      - "8080:8080"
+      - "8082:8082"
+      - "8883:8883"
+    container_name: fleet_manager
+    volumes:
+      - ./PMs/Running:/home/FleetManager/PrescriptionMap/pm_generation/Drone/PMs
+      - ./PMs/Running:/home/FleetManager/PrescriptionMap/pm_generation/ISOBUS/PMs
+      - ./PMs/Running:/home/FleetManager/PrescriptionMap/pm_generation/Received
+      - ./PMs/Finished:/home/FleetManager/PrescriptionMap/pm_generation/Finished
+      - ./Logs:/home/FleetManager/Logs
+      - ./Missions:/home/FleetManager/Missions
+
+networks:
+  fleet_net:
+    external: true

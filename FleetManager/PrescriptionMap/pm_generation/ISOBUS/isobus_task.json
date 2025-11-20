@@ -1,0 +1,76 @@
+{
+    "Task": [{
+			"TaskId": null,
+			"TaskDesignator": "Düngung,Neubauer",
+			"CustomerIdRef": "CTR1",
+			"FarmIdRef": "FRM1",
+			"PartfieldIdRef": "PFD1",
+			"ResponsibleWorkerIdRef":"WKR1",
+			"DefaultTreatmentZoneCode":1,
+			"TaskStatus":1,
+			"PositionLostTreatmentZoneCode":2,
+			"OutOfFieldTreatmentZoneCode":3,
+			"TreatmentZone": [{
+				"TreatmentZoneCode": 0,
+				"TreatmentZoneDesignator": "SiteSpecific",
+				"ProcessDataVariable":[
+					{
+						"ProcessDataValue":0,
+						"UoM":"mm3/m2",
+						"ProductIdRef":"PDT1"
+					}
+				]
+			},
+			{
+				"TreatmentZoneCode": 1,
+				"TreatmentZoneDesignator": "Default",
+				"ProcessDataVariable":[
+					{
+						"ProcessDataValue":476000,
+						"UoM":"mm3/m2",
+						"ProductIdRef":"PDT1"
+					}
+				]
+			},
+			{
+				"TreatmentZoneCode": 2,
+				"TreatmentZoneDesignator": "PositionLost",
+				"ProcessDataVariable":[
+					{
+						"ProcessDataValue":476000,
+						"UoM":"mm3/m2",
+						"ProductIdRef":"PDT1"
+					}
+				]
+			},
+			{
+				"TreatmentZoneCode": 3,
+				"TreatmentZoneDesignator": "OutOfField",
+				"ProcessDataVariable":[
+					{
+						"ProcessDataValue":0,
+						"UoM":"mm3/m2",
+						"ProductIdRef":"PDT1"
+					}
+				]
+			}],
+			"OperTechPractice":{
+				"CulturalPracticeIdRef": null
+			},
+			"ProductAllocation": {
+				"ProductIdRef": null
+			},
+			"Grid":{
+				"GridMinimumNorthPosition": null,
+				"GridMinimumEastPosition": null,
+				"GridCellNorthSize": null,
+				"GridCellEastSize": null,
+				"GridMaximumColumn": null,
+				"GridMaximumRow": null,
+				"GridType":2,
+				"TreatmentZoneCode":0,
+				"GridCell":[]
+			}
+		}
+	]
+}

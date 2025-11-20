@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package db_request_communication;
+
+service DBReqCommunication {
+  rpc SendDBReq (DBReqRequest) returns (DBReqResponse) {}
+}
+
+message DBReqRequest {
+  repeated string db_request = 1;
+}
+
+message DBReqResponse {
+  string confirmation = 1;
+}

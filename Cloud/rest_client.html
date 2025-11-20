@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Send Mission to Fleet Manager</title>
+    <style>
+        /* Light mode (default) */
+        :root {
+            --bg-color: #f0f4f0;
+            --text-color: #333;
+            --container-bg: white;
+            --mission-item-bg: white;
+            --mission-item-hover: #dce6f7; /* Pastel blue for hover */
+            --mission-item-selected: #b3c7f3; /* Pastel blue for selected */
+            --waypoint-bg: #f8f8f8;
+            --button-bg: #003399; /* UPM blue */
+            --button-hover: #002266; /* Darker shade of UPM blue for hover */
+        }
+
+        /* Dark mode */
+        [data-theme="dark"] {
+            --bg-color: #1a1a1a;
+            --text-color: #e0e0e0;
+            --container-bg: #2d2d2d;
+            --mission-item-bg: #2d2d2d;
+            --mission-item-hover: #3d3d3d;
+            --mission-item-selected: #4d4d4d;
+            --waypoint-bg: #3d3d3d;
+            --button-bg: #003399; /* Changed to UPM blue */
+            --button-hover: #002266; /* Darker shade of UPM blue for hover */
+        }
+
+        /* Add styles for input and textarea in dark mode */
+        [data-theme="dark"] input,
+        [data-theme="dark"] textarea {
+            background-color: #3d3d3d; /* Grey background for dark mode */
+            color: #e0e0e0; /* Light text color for contrast */
+            border: 1px solid #555; /* Subtle border for input boxes */
+        }
+
+        [data-theme="dark"] input::placeholder,
+        [data-theme="dark"] textarea::placeholder {
+            color: #aaa; /* Lighter grey for placeholder text */
+        }
+
+        [data-theme="dark"] input[type="file"] {
+            background-color: #3d3d3d; /* Grey background for dark mode */
+            color: #e0e0e0; /* Light text color for contrast */
+            border: 1px solid #555; /* Subtle border for input boxes */
+            padding: 5px; /* Add some padding for better appearance */
+            border-radius: 4px; /* Match the rounded corners of other inputs */
+            cursor: pointer; /* Ensure it looks clickable */
+        }
+
+        [data-theme="dark"] input[type="file"]::file-selector-button {
+            background-color: #555; /* Slightly darker grey for the button */
+            color: #e0e0e0; /* Light text color */
+            border: none; /* Remove default border */
+            padding: 5px 10px; /* Add padding for better appearance */
+            border-radius: 4px; /* Match the rounded corners */
+            cursor: pointer; /* Ensure it looks clickable */
+            transition: background-color 0.3s; /* Smooth hover effect */
+        }
+
+        [data-theme="dark"] input[type="file"]::file-selector-button:hover {
+            background-color: #666; /* Darker grey on hover */
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        /* Remove the flex layout for the container */
+        .container {
+            display: block; /* Change to block layout */
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Make each section span the full width */
+        .mission-list, .mission-details {
+            width: 100%; /* Full width */
+            background-color: var(--container-bg);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin-bottom: 20px; /* Add spacing between sections */
+            transition: background-color 0.3s;
+        }
+
+        .mission-item {
+            padding: 10px;
+            margin: 5px 0;
+            cursor: pointer;
+            border-radius: 4px;
+            background-color: var(--mission-item-bg);
+            border: 1px solid #ccc; /* Add a light grey border around each mission */
+            transition: background-color 0.2s, border-color 0.2s;
+        }
+
+        .mission-item:hover {
+            background-color: var(--mission-item-hover); /* Pastel blue for hover */
+            border-color: #003399; /* UPM blue border on hover */
+        }
+
+        .mission-item.selected {
+            background-color: var(--mission-item-selected); /* Pastel blue for selected */
+            border-color: #003399; /* UPM blue border for selected */
+            color: white; /* Ensure text is readable on blue background */
+        }
+
+        button {
+            background-color: var(--button-bg);
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 15px;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: var(--button-hover);
+        }
+
+        .waypoint-list {
+            margin-top: 10px;
+            padding: 10px;
+            background-color: var(--waypoint-bg);
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+
+        .theme-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background-color: var(--container-bg); /* Match the container background */
+            color: var(--text-color); /* Match the text color */
+            padding: 10px 15px; /* Add padding for better appearance */
+            border-radius: 8px; /* Match the rounded corners of other sections */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+            border: none; /* Remove the border */
+            cursor: pointer;
+            font-size: 16px; /* Adjust font size */
+            transition: background-color 0.3s, color 0.3s; /* Smooth transition for hover effects */
+            display: flex; /* Ensure the button content is centered */
+            align-items: center; /* Center content vertically */
+            justify-content: center; /* Center content horizontally */
+            text-align: center; /* Center text inside the button */
+        }
+
+        .theme-toggle:hover {
+            background-color: var(--mission-item-hover); /* Use hover color for consistency */
+            color: var(--button-bg); /* Change text color on hover */
+        }
+
+        /* Keep the "Add New Mission" section consistent */
+        .mission-add {
+            width: 100%; /* Full width */
+            background-color: var(--container-bg);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin-top: 20px; /* Add consistent spacing above the section */
+            box-sizing: border-box; /* Include padding and border in width calculation */
+        }
+
+        .mission-add h2 {
+            margin-bottom: 15px;
+        }
+
+        .mission-add form label {
+            display: block;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        .mission-add form input,
+        .mission-add form textarea {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        .mission-add form button {
+            display: inline-block;
+            background-color: var(--button-bg);
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .mission-add form button:hover {
+            background-color: var(--button-hover);
+        }
+
+        #add-mission-status {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        .grey-box {
+            background-color: var(--waypoint-bg); /* Use the same grey background as Navigation Area */
+            padding: 10px;
+            border-radius: 4px;
+            margin-top: 10px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); /* Optional: subtle shadow for better appearance */
+        }
+
+        /* Flex container for Available Missions and Mission Details */
+        .missions-container {
+            display: flex; /* Use flexbox layout */
+            gap: 20px; /* Add spacing between the two sections */
+            margin-bottom: 20px; /* Add spacing below the row */
+            width: 100%; /* Ensure it spans the full width */
+            box-sizing: border-box; /* Include padding and border in width calculation */
+        }
+
+        /* Available Missions section */
+        .mission-list,
+        .mission-details {
+            flex: 1; /* Equal width for both sections */
+            background-color: var(--container-bg);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s;
+        }
+
+        /* Mission Details section */
+        .mission-details {
+            flex: 2; /* Take up more space than the mission list */
+            background-color: var(--container-bg);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s;
+        }
+
+        h1 {
+            font-size: 2rem; /* Adjust font size if needed */
+            text-align: left; /* Align the title to the left */
+            margin-bottom: 40px; /* Add more space below the title */
+        }
+
+        /* Header container for title and dark mode button */
+        .header-container {
+            display: flex; /* Use flexbox layout */
+            justify-content: space-between; /* Space out the title and button */
+            align-items: center; /* Align items vertically */
+            margin-bottom: 40px; /* Add space below the header */
+            width: 100%; /* Ensure it spans the full width */
+            max-width: 1200px; /* Match the width of the missions-container */
+            margin-left: auto; /* Center the header horizontally */
+            margin-right: auto; /* Center the header horizontally */
+            padding: 0 20px; /* Add padding to align with the container */
+            box-sizing: border-box; /* Include padding in width calculation */
+        }
+
+        /* Title styling */
+        h1 {
+            font-size: 2rem; /* Adjust font size if needed */
+            text-align: left; /* Align the title to the left */
+            margin: 0; /* Remove default margin */
+        }
+
+        /* Dark mode button styling */
+        .theme-toggle {
+            background-color: var(--container-bg); /* Match the container background */
+            color: var(--text-color); /* Match the text color */
+            padding: 10px 15px; /* Add padding for better appearance */
+            border-radius: 8px; /* Match the rounded corners of other sections */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+            border: none; /* Remove the border */
+            cursor: pointer;
+            font-size: 16px; /* Adjust font size */
+            transition: background-color 0.3s, color 0.3s; /* Smooth transition for hover effects */
+        }
+
+        .theme-toggle:hover {
+            background-color: var(--mission-item-hover); /* Use hover color for consistency */
+            color: var(--button-bg); /* Change text color on hover */
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <div class="header-container">
+        <!-- Title aligned to the left -->
+        <h1>Send Mission to Fleet Manager</h1>
+
+        <!-- Dark mode button aligned to the right -->
+        <button class="theme-toggle" onclick="toggleTheme()" id="theme-icon">
+            🌙
+        </button>
+    </div>
+
+    <!-- Main Content Section -->
+    <div class="container">
+        <!-- Row for Available Missions and Mission Details -->
+        <div class="missions-container">
+            <!-- Available Missions Section -->
+            <div class="mission-list">
+                <h2>Available Missions</h2>
+                <div id="missions-container"></div>
+            </div>
+
+            <!-- Mission Details Section -->
+            <div class="mission-details">
+                <h2>Mission Details</h2>
+                <div id="selected-mission">
+                    <p>Select a mission from the list to view details</p>
+                </div>
+                <button onclick="sendMission()" id="send-button" disabled>Send to Fleet</button>
+                <div id="status-message"></div>
+            </div>
+        </div>
+
+        <!-- Add New Mission Section -->
+        <div class="mission-add">
+            <h2>Add New Mission</h2>
+            <form id="add-mission-form">
+                <label for="mission-name">Mission Name:</label>
+                <input type="text" id="mission-name" required>
+                <br>
+                <label for="mission-description">Mission Description:</label>
+                <textarea id="mission-description" required></textarea>
+                <br>
+                <label for="mission-file">Upload Mission JSON File:</label>
+                <input type="file" id="mission-file" accept=".json" required>
+                <br>
+                <button type="submit">Add Mission</button>
+            </form>
+            <div id="add-mission-status"></div>
+        </div>
+    </div>
+
+    <script>
+        // Predefined missions
+        let missions = []; // Initialize as an empty array
+
+        let selectedMission = null;
+
+        // Initialize mission list
+        function initMissions() {
+            const container = document.getElementById('missions-container');
+            container.innerHTML = ''; // Clear existing missions
+
+            if (missions.length === 0) {
+                // Show a message when no missions are available
+                container.innerHTML = '<p>No missions added yet.</p>';
+                return;
+            }
+
+            missions.forEach(mission => {
+                const div = document.createElement('div');
+                div.className = 'mission-item';
+                div.innerHTML = `
+                    <h3>${mission.name}</h3>
+                    <p>${mission.description}</p>
+                    <small>${mission.date}</small>
+                `;
+                div.addEventListener('click', function () {
+                    selectMission.call(this, mission);
+                });
+                container.appendChild(div);
+            });
+        }
+
+        // Handle mission selection
+        function selectMission(mission) {
+            selectedMission = mission;
+
+            // Remove 'selected' class from all mission items
+            document.querySelectorAll('.mission-item').forEach(item => 
+                item.classList.remove('selected')
+            );
+
+            // Add 'selected' class to the clicked mission item
+            this.classList.add('selected');
+
+            // Get the mission details container
+            const detailsDiv = document.getElementById('selected-mission');
+
+            // Render mission details
+            detailsDiv.innerHTML = `
+                <h3>${mission.name || 'Unnamed Mission'}</h3>
+                <p>${mission.description || 'No description available.'}</p>
+                <p><strong>Time Added:</strong> ${mission.date || 'N/A'}</p>
+                <div class="grey-box">
+                    <p><strong>Mission ID:</strong> ${mission.id || 'N/A'}</p>
+                </div>
+                <div class="grey-box">
+                    <strong>Tasks:</strong>
+                    <ul>
+                        ${mission.tasks && mission.tasks.length > 0
+                            ? mission.tasks.map(task => `
+                                <li>Task ID: ${task.id}, Task Type: ${task.taskType}</li>
+                            `).join('')
+                            : '<li>No tasks available.</li>'}
+                    </ul>
+                </div>
+                <div class="grey-box">
+                    <strong>Navigation Area:</strong>
+                    <ul>
+                        ${mission.waypoints && mission.waypoints.length > 0
+                            ? mission.waypoints.map(wp => `
+                                <li>${wp.latitude.toFixed(6)}, ${wp.longitude.toFixed(6)}</li>
+                            `).join('')
+                            : '<li>No waypoints available.</li>'}
+                    </ul>
+                </div>
+                <div class="grey-box">
+                    <strong>Vehicles:</strong>
+                    <ul>
+                        ${mission.vehicles && mission.vehicles.length > 0
+                            ? mission.vehicles.map(vehicle => `
+                                <li>Vehicle ID: ${vehicle.id}, Type: ${vehicle.type}</li>
+                            `).join('')
+                            : '<li>No vehicles available.</li>'}
+                    </ul>
+                </div>
+            `;
+
+            // Enable the "Send to Cloud" button
+            document.getElementById('send-button').disabled = false;
+        }
+
+        async function sendMission() {
+            if (!selectedMission) return;
+        
+            const xhr = new XMLHttpRequest();
+            xhr.open('POST', 'http://localhost:8081/mission');
+            xhr.setRequestHeader('Content-Type', 'application/json');
+        
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === 4) {
+                    document.getElementById('status-message').textContent =
+                        xhr.status === 200 ? 'Success!' : `Error: ${xhr.status}`;
+                }
+            };
+        
+            // Send raw JSON if available, else fallback to the displayed mission object
+            const payload = selectedMission.rawJson || selectedMission;
+            xhr.send(JSON.stringify(payload));
+        }
+
+        // Add new mission functionality
+        document.getElementById('add-mission-form').addEventListener('submit', async (event) => {
+            event.preventDefault();
+
+            const name = document.getElementById('mission-name').value;
+            const description = document.getElementById('mission-description').value;
+            const fileInput = document.getElementById('mission-file');
+            const statusDiv = document.getElementById('add-mission-status');
+
+            if (!fileInput.files.length) {
+                statusDiv.textContent = 'Please upload a valid JSON file.';
+                statusDiv.style.color = 'red';
+                return;
+            }
+
+            const file = fileInput.files[0];
+            try {
+                const fileContent = await file.text();
+                const missionData = JSON.parse(fileContent);
+
+                // Validate the JSON structure
+                if (!missionData.missionId) {
+                    throw new Error('Invalid JSON structure: "missionId" is missing.');
+                }
+                if (!missionData.navigationArea || !Array.isArray(missionData.navigationArea.area)) {
+                    throw new Error('Invalid JSON structure: "navigationArea.area" must be an array.');
+                }
+                if (!Array.isArray(missionData.tasks)) {
+                    throw new Error('Invalid JSON structure: "tasks" must be an array.');
+                }
+                if (!Array.isArray(missionData.vehicles)) {
+                    throw new Error('Invalid JSON structure: "vehicles" must be an array.');
+                }
+
+                // Format the current date and time as YYYY-MM-DD HH:MM:SS
+                const now = new Date();
+                const formattedDate = now.toLocaleString('en-GB', {
+                    year: 'numeric',
+                    month: '2-digit',
+                    day: '2-digit',
+                    hour: '2-digit',
+                    minute: '2-digit',
+                    second: '2-digit',
+                    hour12: false
+                }).replace(',', ''); // Remove the comma between date and time
+
+                const newMission = {
+                    id: missionData.missionId, // Use the missionId from the JSON file
+                    name,
+                    description,
+                    waypoints: missionData.navigationArea.area, // Extract navigation area as waypoints
+                    tasks: missionData.tasks, // Extract tasks
+                    vehicles: missionData.vehicles, // Extract vehicles
+                    date: formattedDate, // Save creation time in the desired format
+                    rawJson: missionData // Store the raw JSON data
+                };
+
+                missions.push(newMission); // Add to the missions list
+                initMissions(); // Refresh the mission list
+
+                statusDiv.textContent = 'Mission added successfully!';
+                statusDiv.style.color = 'green';
+
+                // Reset the form
+                document.getElementById('add-mission-form').reset();
+            } catch (error) {
+                statusDiv.textContent = `Error: ${error.message}`;
+                statusDiv.style.color = 'red';
+            }
+        });
+
+        // Theme toggle functionality
+        function toggleTheme() {
+            const body = document.body;
+            const currentTheme = body.getAttribute('data-theme');
+            const themeIcon = document.getElementById('theme-icon');
+
+            if (currentTheme === 'dark') {
+                body.removeAttribute('data-theme');
+                localStorage.setItem('theme', 'light');
+                themeIcon.textContent = '🌙'; // Moon for light mode
+            } else {
+                body.setAttribute('data-theme', 'dark');
+                localStorage.setItem('theme', 'dark');
+                themeIcon.textContent = '☀️'; // Sun for dark mode
+            }
+        }
+
+        // Load saved theme preference
+        function loadTheme() {
+            const savedTheme = localStorage.getItem('theme') || 'light';
+            const themeIcon = document.getElementById('theme-icon');
+
+            if (savedTheme === 'dark') {
+                document.body.setAttribute('data-theme', 'dark');
+                themeIcon.textContent = '☀️'; // Sun for dark mode
+            } else {
+                themeIcon.textContent = '🌙'; // Moon for light mode
+            }
+        }
+
+        // Initialize on load
+        window.onload = () => {
+            initMissions();
+            loadTheme();
+        };
+    </script>
+</html>

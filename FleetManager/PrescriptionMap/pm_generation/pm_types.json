@@ -1,0 +1,4 @@
+{
+  "Drone": "PrescriptionMap/pm_generation/Drone/pm_drone_fleet.py",
+  "ISOBUS": "PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py"
+}

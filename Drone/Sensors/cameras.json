@@ -1,0 +1,5 @@
+{
+  "Pi_Camera": "Sensors/Cameras/pi_camera.py",
+  "Camera_Simulator": "Sensors/Cameras/camera_simulator.py",
+  "Camera_Test_Simulator": "Sensors/Cameras/camera_test_simulator.py"
+}

@@ -1,0 +1,300 @@
+{
+    "3": {
+        "10": {
+            "task_type": "TRANSIT",
+            "id": 10,
+            "mission_id": 2,
+            "task_status": "NotAssigned",
+            "assigned_vehicle_id": 3,
+            "task_dependency": null,
+            "commands": {
+                "100": {
+                    "related_task": {
+                        "id": 10,
+                        "mission_id": 2
+                    },
+                    "id": 100,
+                    "command_type": "NAV_TAKEOFF",
+                    "command_status": "NotAssigned",
+                    "start_time": 1,
+                    "params": [
+                        0.0,
+                        0.0,
+                        40.07367,
+                        -4.611144
+                    ]
+                },
+                "200": {
+                    "related_task": {
+                        "id": 10,
+                        "mission_id": 2
+                    },
+                    "id": 200,
+                    "command_type": "NAV_WAYPOINT",
+                    "command_status": "NotAssigned",
+                    "start_time": 2,
+                    "params": [
+                        0.0,
+                        0.0,
+                        0.0,
+                        0.0,
+                        40.074105,
+                        -4.61065,
+                        0.0
+                    ]
+                }
+            }
+        },
+        "11": {
+            "task_type": "SURVEY",
+            "id": 11,
+            "mission_id": 2,
+            "task_status": "NotAssigned",
+            "assigned_vehicle_id": 3,
+            "task_dependency": null,
+            "commands": {
+                "300": {
+                    "related_task": {
+                        "id": 11,
+                        "mission_id": 2
+                    },
+                    "id": 300,
+                    "command_type": "NAV_WAYPOINT",
+                    "command_status": "NotAssigned",
+                    "start_time": 3,
+                    "params": [
+                        0.0,
+                        0.0,
+                        0.0,
+                        0.0,
+                        40.073403,
+                        -4.609633,
+                        0.0
+                    ]
+                },
+                "400": {
+                    "related_task": {
+                        "id": 11,
+                        "mission_id": 2
+                    },
+                    "id": 400,
+                    "command_type": "CAMERA_IMAGE",
+                    "command_status": "NotAssigned",
+                    "start_time": 4,
+                    "params": [
+                        0.0,
+                        0.0,
+                        0.0,
+                        0.0
+                    ]
+                },
+                "500": {
+                    "related_task": {
+                        "id": 11,
+                        "mission_id": 2
+                    },
+                    "id": 500,
+                    "command_type": "ANALYZE_IMAGE",
+                    "command_status": "NotAssigned",
+                    "start_time": 5,
+                    "params": [
+                        1.0,
+                        40.073403,
+                        -4.609633
+                    ]
+                },
+                "600": {
+                    "related_task": {
+                        "id": 11,
+                        "mission_id": 2
+                    },
+                    "id": 600,
+                    "command_type": "NAV_WAYPOINT",
+                    "command_status": "NotAssigned",
+                    "start_time": 6,
+                    "params": [
+                        0.0,
+                        0.0,
+                        0.0,
+                        0.0,
+                        40.073341,
+                        -4.607561,
+                        0.0
+                    ]
+                },
+                "700": {
+                    "related_task": {
+                        "id": 11,
+                        "mission_id": 2
+                    },
+                    "id": 700,
+                    "command_type": "CAMERA_IMAGE",
+                    "command_status": "NotAssigned",
+                    "start_time": 7,
+                    "params": [
+                        0.0,
+                        0.0,
+                        0.0,
+                        0.0
+                    ]
+                },
+                "800": {
+                    "related_task": {
+                        "id": 11,
+                        "mission_id": 2
+                    },
+                    "id": 800,
+                    "command_type": "ANALYZE_IMAGE",
+                    "command_status": "NotAssigned",
+                    "start_time": 8,
+                    "params": [
+                        1.0,
+                        40.073341,
+                        -4.607561
+                    ]
+                },
+                "900": {
+                    "related_task": {
+                        "id": 11,
+                        "mission_id": 2
+                    },
+                    "id": 900,
+                    "command_type": "NAV_WAYPOINT",
+                    "command_status": "NotAssigned",
+                    "start_time": 9,
+                    "params": [
+                        0.0,
+                        0.0,
+                        0.0,
+                        0.0,
+                        40.072432,
+                        -4.60764,
+                        0.0
+                    ]
+                },
+                "100": {
+                    "related_task": {
+                        "id": 11,
+                        "mission_id": 2
+                    },
+                    "id": 100,
+                    "command_type": "CAMERA_IMAGE",
+                    "command_status": "NotAssigned",
+                    "start_time": 10,
+                    "params": [
+                        0.0,
+                        0.0,
+                        0.0,
+                        0.0
+                    ]
+                },
+                "110": {
+                    "related_task": {
+                        "id": 11,
+                        "mission_id": 2
+                    },
+                    "id": 110,
+                    "command_type": "ANALYZE_IMAGE",
+                    "command_status": "NotAssigned",
+                    "start_time": 11,
+                    "params": [
+                        1.0,
+                        40.072432,
+                        -4.60764
+                    ]
+                },
+                "1110": {
+                    "related_task": {
+                        "id": 11,
+                        "mission_id": 2
+                    },
+                    "id": 1110,
+                    "command_type": "NAV_WAYPOINT",
+                    "command_status": "NotAssigned",
+                    "start_time": 12,
+                    "params": [
+                        0.0,
+                        0.0,
+                        0.0,
+                        0.0,
+                        40.072115,
+                        -4.609683,
+                        0.0
+                    ]
+                },
+                "112": {
+                    "related_task": {
+                        "id": 11,
+                        "mission_id": 2
+                    },
+                    "id": 112,
+                    "command_type": "CAMERA_IMAGE",
+                    "command_status": "NotAssigned",
+                    "start_time": 13,
+                    "params": [
+                        0.0,
+                        0.0,
+                        0.0,
+                        0.0
+                    ]
+                },
+                "1400": {
+                    "related_task": {
+                        "id": 11,
+                        "mission_id": 2
+                    },
+                    "id": 1400,
+                    "command_type": "ANALYZE_IMAGE",
+                    "command_status": "NotAssigned",
+                    "start_time": 14,
+                    "params": [
+                        1.0,
+                        40.072115,
+                        -4.609683
+                    ]
+                }
+            }
+        },
+        "12": {
+            "task_type": "TRANSIT",
+            "id": 12,
+            "mission_id": 3,
+            "task_status": "NotAssigned",
+            "assigned_vehicle_id": 3,
+            "task_dependency": null,
+            "commands": {
+                "1500": {
+                    "related_task": {
+                        "id": 12,
+                        "mission_id": 2
+                    },
+                    "id": 1500,
+                    "command_type": "NAV_HOME",
+                    "command_status": "NotAssigned",
+                    "start_time": 15,
+                    "params": [
+                        0.0
+                    ]
+                },
+                "1600": {
+                    "related_task": {
+                        "id": 12,
+                        "mission_id": 2
+                    },
+                    "id": 1600,
+                    "command_type": "NAV_LAND",
+                    "command_status": "NotAssigned",
+                    "start_time": 16,
+                    "params": [
+                        0.0,
+                        0.0,
+                        0.0,
+                        40.07367,
+                        -4.611144,
+                        0.0
+                    ]
+                }
+            }
+        }
+    }
+}

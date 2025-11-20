@@ -1,0 +1,14 @@
+# Train images
+train: data_directory\train.txt
+
+# Validation images
+val: data_directory\val.txt
+
+# Test images
+test: data_directory\test.txt
+
+# Number of classes
+nc: 1
+
+# Class names
+names: ['Leaf']

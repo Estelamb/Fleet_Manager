@@ -1,0 +1,14 @@
+{
+	"backtraceGraph" : 
+	{
+		"commands" : [],
+		"files" : [],
+		"nodes" : []
+	},
+	"installers" : [],
+	"paths" : 
+	{
+		"build" : "commands_action_interface__py",
+		"source" : "/home/estelamb/PFG_Telematica/Implementation/Drone/build/commands_action_interface/commands_action_interface__py"
+	}
+}

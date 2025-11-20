@@ -1,0 +1,630 @@
+[0.000000] (-) TimerEvent: {}
+[0.002072] (commands_action_interface) JobQueued: {'identifier': 'commands_action_interface', 'dependencies': OrderedDict()}
+[0.002794] (commands_action_interface) JobStarted: {'identifier': 'commands_action_interface'}
+[0.042388] (commands_action_interface) JobProgress: {'identifier': 'commands_action_interface', 'progress': 'cmake'}
+[0.045427] (commands_action_interface) Command: {'cmd': ['/usr/bin/cmake', '/home/estelamb/PFG_Telematica/Implementation/FleetManager/ROS2/src/commands_action_interface', '-DCMAKE_INSTALL_PREFIX=/home/estelamb/PFG_Telematica/Implementation/FleetManager/ROS2/install/commands_action_interface'], 'cwd': '/home/estelamb/PFG_Telematica/Implementation/FleetManager/ROS2/build/commands_action_interface', 'env': OrderedDict({'LESSOPEN': '| /usr/bin/lesspipe %s', 'USER': 'estelamb', 'SSH_CLIENT': '95.39.166.219 57317 22', 'XDG_SESSION_TYPE': 'tty', 'GIT_ASKPASS': '/home/estelamb/.vscode-server/cli/servers/Stable-7c6fdfb0b8f2f675eb0b47f3d95eeca78962565b/server/extensions/git/dist/askpass.sh', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/aarch64-linux-gnu:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib', 'BROWSER': '/home/estelamb/.vscode-server/cli/servers/Stable-7c6fdfb0b8f2f675eb0b47f3d95eeca78962565b/server/bin/helpers/browser.sh', 'HOME': '/home/estelamb', 'OLDPWD': '/home/estelamb/PFG_Telematica/Implementation/FleetManager/ROS2/src', 'TERM_PROGRAM_VERSION': '1.99.1', 'VSCODE_IPC_HOOK_CLI': '/run/user/1004/vscode-ipc-97871dbe-1bb3-4127-8381-c424d408d9cc.sock', 'ROS_PYTHON_VERSION': '3', 'VSCODE_GIT_ASKPASS_MAIN': '/home/estelamb/.vscode-server/cli/servers/Stable-7c6fdfb0b8f2f675eb0b47f3d95eeca78962565b/server/extensions/git/dist/askpass-main.js', 'PS1': '\\[\x1b]633;A\x07\\](.venv) \\[\\033[1;34m\\].-{ \\[\\033[1;35m\\]\\d \\t\\[\\033[1;34m\\] }-{ \\[\\033[1;35m\\]\\u\\[\\033[1;34m\\] }-{ \\[\\033[1;35m\\]\\h\\[\\033[1;34m\\] }-\\n\\[\\033[1;34m\\]|-{ \\[\\033[0;36m\\]\\w\\[\\033[1;34m\\] }-\\n\\[\\033[1;34m\\]\\`-> \\[\\033[0m\\]\\[\x1b]633;B\x07\\]', 'VSCODE_GIT_ASKPASS_NODE': '/home/estelamb/.vscode-server/cli/servers/Stable-7c6fdfb0b8f2f675eb0b47f3d95eeca78962565b/server/node', 'SSL_CERT_FILE': '/usr/lib/ssl/cert.pem', 'PYDEVD_DISABLE_FILE_VALIDATION': '1', 'BUNDLED_DEBUGPY_PATH': '/home/estelamb/.vscode-server/extensions/ms-python.debugpy-2025.6.0-linux-arm64/bundled/libs/debugpy', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1004/bus', 'COLORTERM': 'truecolor', 'NVM_DIR': '/home/estelamb/.nvm', 'ROS_DISTRO': 'jazzy', 'LOGNAME': 'estelamb', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'XDG_SESSION_CLASS': 'user', 'TERM': 'xterm-256color', 'XDG_SESSION_ID': '3239', 'RBENV_SHELL': 'bash', 'PATH': '/home/estelamb/.vscode-server/extensions/ms-python.python-2025.4.0-linux-arm64/python_files/deactivate/bash:/home/estelamb/PFG_Telematica/Implementation/.venv/bin:/home/estelamb/.rbenv/shims:/home/estelamb/.rbenv/bin:/home/estelamb/.vscode-server/extensions/ms-python.python-2025.4.0-linux-arm64/python_files/deactivate/bash:/home/estelamb/PFG_Telematica/Implementation/.venv/bin:/home/estelamb/.vscode-server/cli/servers/Stable-7c6fdfb0b8f2f675eb0b47f3d95eeca78962565b/server/bin/remote-cli:/opt/ros/jazzy/bin:/home/estelamb/.rbenv/shims:/home/estelamb/.rbenv/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin', 'XDG_RUNTIME_DIR': '/run/user/1004', 'SSL_CERT_DIR': '/usr/lib/ssl/certs', 'VSCODE_DEBUGPY_ADAPTER_ENDPOINTS': '/home/estelamb/.vscode-server/extensions/ms-python.debugpy-2025.6.0-linux-arm64/.noConfigDebugAdapterEndpoints/endpoint-d02a8232742ade9d.txt', 'LANG': 'en_US.UTF-8', 'VIRTUAL_ENV_PROMPT': '(.venv)', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:', 'VSCODE_GIT_IPC_HANDLE': '/run/user/1004/vscode-git-31426f1041.sock', 'TERM_PROGRAM': 'vscode', 'AMENT_PREFIX_PATH': '/opt/ros/jazzy', 'SHELL': '/bin/bash', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'VIRTUAL_ENV': '/home/estelamb/PFG_Telematica/Implementation/.venv', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'VSCODE_GIT_ASKPASS_EXTRA_ARGS': '', 'PWD': '/home/estelamb/PFG_Telematica/Implementation/FleetManager/ROS2/build/commands_action_interface', 'LC_ALL': 'en_US.UTF-8', 'SSH_CONNECTION': '95.39.166.219 57317 192.168.1.136 22', 'XDG_DATA_DIRS': '/usr/local/share:/usr/share:/var/lib/snapd/desktop', 'PYTHONPATH': '/opt/ros/jazzy/lib/python3.12/site-packages', 'COLCON': '1', 'CMAKE_PREFIX_PATH': '/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy'}), 'shell': False}
+[0.098955] (-) TimerEvent: {}
+[0.200747] (-) TimerEvent: {}
+[0.301668] (-) TimerEvent: {}
+[0.389792] (commands_action_interface) StdoutLine: {'line': b'-- The C compiler identification is GNU 13.3.0\n'}
+[0.401874] (-) TimerEvent: {}
+[0.502612] (-) TimerEvent: {}
+[0.603365] (-) TimerEvent: {}
+[0.698645] (commands_action_interface) StdoutLine: {'line': b'-- The CXX compiler identification is GNU 13.3.0\n'}
+[0.703515] (-) TimerEvent: {}
+[0.798190] (commands_action_interface) StdoutLine: {'line': b'-- Detecting C compiler ABI info\n'}
+[0.803686] (-) TimerEvent: {}
+[0.904406] (-) TimerEvent: {}
+[1.005098] (-) TimerEvent: {}
+[1.105738] (-) TimerEvent: {}
+[1.206446] (-) TimerEvent: {}
+[1.297728] (commands_action_interface) StdoutLine: {'line': b'-- Detecting C compiler ABI info - done\n'}
+[1.306616] (-) TimerEvent: {}
+[1.334345] (commands_action_interface) StdoutLine: {'line': b'-- Check for working C compiler: /usr/bin/cc - skipped\n'}
+[1.335382] (commands_action_interface) StdoutLine: {'line': b'-- Detecting C compile features\n'}
+[1.337108] (commands_action_interface) StdoutLine: {'line': b'-- Detecting C compile features - done\n'}
+[1.383049] (commands_action_interface) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info\n'}
+[1.406810] (-) TimerEvent: {}
+[1.507450] (-) TimerEvent: {}
+[1.608177] (-) TimerEvent: {}
+[1.708930] (-) TimerEvent: {}
+[1.809705] (-) TimerEvent: {}
+[1.910106] (commands_action_interface) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info - done\n'}
+[1.910718] (-) TimerEvent: {}
+[1.949128] (commands_action_interface) StdoutLine: {'line': b'-- Check for working CXX compiler: /usr/bin/c++ - skipped\n'}
+[1.950163] (commands_action_interface) StdoutLine: {'line': b'-- Detecting CXX compile features\n'}
+[1.951956] (commands_action_interface) StdoutLine: {'line': b'-- Detecting CXX compile features - done\n'}
+[1.974704] (commands_action_interface) StdoutLine: {'line': b'-- Found ament_cmake: 2.5.3 (/opt/ros/jazzy/share/ament_cmake/cmake)\n'}
+[2.010920] (-) TimerEvent: {}
+[2.111575] (-) TimerEvent: {}
+[2.212197] (-) TimerEvent: {}
+[2.312803] (-) TimerEvent: {}
+[2.413384] (-) TimerEvent: {}
+[2.513959] (-) TimerEvent: {}
+[2.534747] (commands_action_interface) StdoutLine: {'line': b'-- Found Python3: /home/estelamb/PFG_Telematica/Implementation/.venv/bin/python3 (found version "3.12.3") found components: Interpreter \n'}
+[2.614149] (-) TimerEvent: {}
+[2.714768] (-) TimerEvent: {}
+[2.815480] (-) TimerEvent: {}
+[2.916369] (-) TimerEvent: {}
+[3.016956] (-) TimerEvent: {}
+[3.117574] (-) TimerEvent: {}
+[3.161178] (commands_action_interface) StdoutLine: {'line': b'-- Found ament_lint_auto: 0.17.1 (/opt/ros/jazzy/share/ament_lint_auto/cmake)\n'}
+[3.217736] (-) TimerEvent: {}
+[3.318358] (-) TimerEvent: {}
+[3.418934] (-) TimerEvent: {}
+[3.519724] (-) TimerEvent: {}
+[3.620668] (-) TimerEvent: {}
+[3.718494] (commands_action_interface) StdoutLine: {'line': b'-- Found rosidl_default_generators: 1.6.0 (/opt/ros/jazzy/share/rosidl_default_generators/cmake)\n'}
+[3.720807] (-) TimerEvent: {}
+[3.764470] (commands_action_interface) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[3.820996] (-) TimerEvent: {}
+[3.921683] (-) TimerEvent: {}
+[4.022321] (-) TimerEvent: {}
+[4.122907] (-) TimerEvent: {}
+[4.130030] (commands_action_interface) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[4.223084] (-) TimerEvent: {}
+[4.323714] (-) TimerEvent: {}
+[4.410632] (commands_action_interface) StdoutLine: {'line': b'-- Found rosidl_adapter: 4.6.5 (/opt/ros/jazzy/share/rosidl_adapter/cmake)\n'}
+[4.423881] (-) TimerEvent: {}
+[4.524522] (-) TimerEvent: {}
+[4.625147] (-) TimerEvent: {}
+[4.725731] (-) TimerEvent: {}
+[4.826373] (-) TimerEvent: {}
+[4.926981] (-) TimerEvent: {}
+[5.027614] (-) TimerEvent: {}
+[5.128182] (-) TimerEvent: {}
+[5.228769] (-) TimerEvent: {}
+[5.329341] (-) TimerEvent: {}
+[5.429930] (-) TimerEvent: {}
+[5.530600] (-) TimerEvent: {}
+[5.631196] (-) TimerEvent: {}
+[5.732044] (-) TimerEvent: {}
+[5.832799] (-) TimerEvent: {}
+[5.933421] (-) TimerEvent: {}
+[6.034198] (-) TimerEvent: {}
+[6.135262] (-) TimerEvent: {}
+[6.236231] (-) TimerEvent: {}
+[6.337001] (-) TimerEvent: {}
+[6.437902] (-) TimerEvent: {}
+[6.538647] (-) TimerEvent: {}
+[6.639370] (-) TimerEvent: {}
+[6.740023] (-) TimerEvent: {}
+[6.758633] (commands_action_interface) StdoutLine: {'line': b'-- Found ament_cmake_ros: 0.12.0 (/opt/ros/jazzy/share/ament_cmake_ros/cmake)\n'}
+[6.840198] (-) TimerEvent: {}
+[6.940833] (-) TimerEvent: {}
+[7.041527] (-) TimerEvent: {}
+[7.142151] (-) TimerEvent: {}
+[7.242766] (-) TimerEvent: {}
+[7.343427] (-) TimerEvent: {}
+[7.444043] (-) TimerEvent: {}
+[7.544716] (-) TimerEvent: {}
+[7.645512] (-) TimerEvent: {}
+[7.746264] (-) TimerEvent: {}
+[7.846953] (-) TimerEvent: {}
+[7.947831] (-) TimerEvent: {}
+[8.048513] (-) TimerEvent: {}
+[8.149103] (-) TimerEvent: {}
+[8.249864] (-) TimerEvent: {}
+[8.350568] (-) TimerEvent: {}
+[8.451133] (-) TimerEvent: {}
+[8.515514] (commands_action_interface) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[8.551363] (-) TimerEvent: {}
+[8.652077] (-) TimerEvent: {}
+[8.752793] (-) TimerEvent: {}
+[8.853383] (-) TimerEvent: {}
+[8.953953] (-) TimerEvent: {}
+[9.054526] (-) TimerEvent: {}
+[9.155109] (-) TimerEvent: {}
+[9.255998] (-) TimerEvent: {}
+[9.356956] (-) TimerEvent: {}
+[9.457668] (-) TimerEvent: {}
+[9.558414] (-) TimerEvent: {}
+[9.659132] (-) TimerEvent: {}
+[9.759983] (-) TimerEvent: {}
+[9.861196] (-) TimerEvent: {}
+[9.961877] (-) TimerEvent: {}
+[10.062435] (-) TimerEvent: {}
+[10.162991] (-) TimerEvent: {}
+[10.263621] (-) TimerEvent: {}
+[10.364370] (-) TimerEvent: {}
+[10.465055] (-) TimerEvent: {}
+[10.566068] (-) TimerEvent: {}
+[10.666829] (-) TimerEvent: {}
+[10.767481] (-) TimerEvent: {}
+[10.768016] (commands_action_interface) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[10.793150] (commands_action_interface) StdoutLine: {'line': b'-- Found python_cmake_module: 0.11.1 (/opt/ros/jazzy/share/python_cmake_module/cmake)\n'}
+[10.867687] (-) TimerEvent: {}
+[10.968684] (-) TimerEvent: {}
+[11.069402] (-) TimerEvent: {}
+[11.169959] (-) TimerEvent: {}
+[11.270525] (-) TimerEvent: {}
+[11.316510] (commands_action_interface) StdoutLine: {'line': b'-- Found PythonExtra: /home/estelamb/PFG_Telematica/Implementation/.venv/bin/python3  \n'}
+[11.370676] (-) TimerEvent: {}
+[11.472475] (-) TimerEvent: {}
+[11.573129] (-) TimerEvent: {}
+[11.673952] (-) TimerEvent: {}
+[11.774792] (-) TimerEvent: {}
+[11.875729] (-) TimerEvent: {}
+[11.976393] (-) TimerEvent: {}
+[12.077115] (-) TimerEvent: {}
+[12.177908] (-) TimerEvent: {}
+[12.278622] (-) TimerEvent: {}
+[12.379166] (-) TimerEvent: {}
+[12.479755] (-) TimerEvent: {}
+[12.580370] (-) TimerEvent: {}
+[12.681030] (-) TimerEvent: {}
+[12.781801] (-) TimerEvent: {}
+[12.882705] (-) TimerEvent: {}
+[12.983372] (-) TimerEvent: {}
+[13.080402] (commands_action_interface) StdoutLine: {'line': b'-- Found Python3: /home/estelamb/PFG_Telematica/Implementation/.venv/bin/python3 (found version "3.12.3") found components: Interpreter Development NumPy Development.Module Development.Embed \n'}
+[13.083563] (-) TimerEvent: {}
+[13.184203] (-) TimerEvent: {}
+[13.261822] (commands_action_interface) StdoutLine: {'line': b"-- Added test 'lint_cmake' to check CMake code style\n"}
+[13.272398] (commands_action_interface) StdoutLine: {'line': b"-- Added test 'xmllint' to check XML markup files\n"}
+[13.284421] (-) TimerEvent: {}
+[13.309124] (commands_action_interface) StdoutLine: {'line': b'-- Configuring done (13.2s)\n'}
+[13.384597] (-) TimerEvent: {}
+[13.485211] (-) TimerEvent: {}
+[13.535904] (commands_action_interface) StdoutLine: {'line': b'-- Generating done (0.2s)\n'}
+[13.585429] (-) TimerEvent: {}
+[13.595646] (commands_action_interface) StdoutLine: {'line': b'-- Build files have been written to: /home/estelamb/PFG_Telematica/Implementation/FleetManager/ROS2/build/commands_action_interface\n'}
+[13.639621] (commands_action_interface) CommandEnded: {'returncode': 0}
+[13.641419] (commands_action_interface) JobProgress: {'identifier': 'commands_action_interface', 'progress': 'build'}
+[13.643390] (commands_action_interface) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/estelamb/PFG_Telematica/Implementation/FleetManager/ROS2/build/commands_action_interface', '--', '-j4', '-l4'], 'cwd': '/home/estelamb/PFG_Telematica/Implementation/FleetManager/ROS2/build/commands_action_interface', 'env': OrderedDict({'LESSOPEN': '| /usr/bin/lesspipe %s', 'USER': 'estelamb', 'SSH_CLIENT': '95.39.166.219 57317 22', 'XDG_SESSION_TYPE': 'tty', 'GIT_ASKPASS': '/home/estelamb/.vscode-server/cli/servers/Stable-7c6fdfb0b8f2f675eb0b47f3d95eeca78962565b/server/extensions/git/dist/askpass.sh', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/aarch64-linux-gnu:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib', 'BROWSER': '/home/estelamb/.vscode-server/cli/servers/Stable-7c6fdfb0b8f2f675eb0b47f3d95eeca78962565b/server/bin/helpers/browser.sh', 'HOME': '/home/estelamb', 'OLDPWD': '/home/estelamb/PFG_Telematica/Implementation/FleetManager/ROS2/src', 'TERM_PROGRAM_VERSION': '1.99.1', 'VSCODE_IPC_HOOK_CLI': '/run/user/1004/vscode-ipc-97871dbe-1bb3-4127-8381-c424d408d9cc.sock', 'ROS_PYTHON_VERSION': '3', 'VSCODE_GIT_ASKPASS_MAIN': '/home/estelamb/.vscode-server/cli/servers/Stable-7c6fdfb0b8f2f675eb0b47f3d95eeca78962565b/server/extensions/git/dist/askpass-main.js', 'PS1': '\\[\x1b]633;A\x07\\](.venv) \\[\\033[1;34m\\].-{ \\[\\033[1;35m\\]\\d \\t\\[\\033[1;34m\\] }-{ \\[\\033[1;35m\\]\\u\\[\\033[1;34m\\] }-{ \\[\\033[1;35m\\]\\h\\[\\033[1;34m\\] }-\\n\\[\\033[1;34m\\]|-{ \\[\\033[0;36m\\]\\w\\[\\033[1;34m\\] }-\\n\\[\\033[1;34m\\]\\`-> \\[\\033[0m\\]\\[\x1b]633;B\x07\\]', 'VSCODE_GIT_ASKPASS_NODE': '/home/estelamb/.vscode-server/cli/servers/Stable-7c6fdfb0b8f2f675eb0b47f3d95eeca78962565b/server/node', 'SSL_CERT_FILE': '/usr/lib/ssl/cert.pem', 'PYDEVD_DISABLE_FILE_VALIDATION': '1', 'BUNDLED_DEBUGPY_PATH': '/home/estelamb/.vscode-server/extensions/ms-python.debugpy-2025.6.0-linux-arm64/bundled/libs/debugpy', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1004/bus', 'COLORTERM': 'truecolor', 'NVM_DIR': '/home/estelamb/.nvm', 'ROS_DISTRO': 'jazzy', 'LOGNAME': 'estelamb', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'XDG_SESSION_CLASS': 'user', 'TERM': 'xterm-256color', 'XDG_SESSION_ID': '3239', 'RBENV_SHELL': 'bash', 'PATH': '/home/estelamb/.vscode-server/extensions/ms-python.python-2025.4.0-linux-arm64/python_files/deactivate/bash:/home/estelamb/PFG_Telematica/Implementation/.venv/bin:/home/estelamb/.rbenv/shims:/home/estelamb/.rbenv/bin:/home/estelamb/.vscode-server/extensions/ms-python.python-2025.4.0-linux-arm64/python_files/deactivate/bash:/home/estelamb/PFG_Telematica/Implementation/.venv/bin:/home/estelamb/.vscode-server/cli/servers/Stable-7c6fdfb0b8f2f675eb0b47f3d95eeca78962565b/server/bin/remote-cli:/opt/ros/jazzy/bin:/home/estelamb/.rbenv/shims:/home/estelamb/.rbenv/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin', 'XDG_RUNTIME_DIR': '/run/user/1004', 'SSL_CERT_DIR': '/usr/lib/ssl/certs', 'VSCODE_DEBUGPY_ADAPTER_ENDPOINTS': '/home/estelamb/.vscode-server/extensions/ms-python.debugpy-2025.6.0-linux-arm64/.noConfigDebugAdapterEndpoints/endpoint-d02a8232742ade9d.txt', 'LANG': 'en_US.UTF-8', 'VIRTUAL_ENV_PROMPT': '(.venv)', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:', 'VSCODE_GIT_IPC_HANDLE': '/run/user/1004/vscode-git-31426f1041.sock', 'TERM_PROGRAM': 'vscode', 'AMENT_PREFIX_PATH': '/opt/ros/jazzy', 'SHELL': '/bin/bash', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'VIRTUAL_ENV': '/home/estelamb/PFG_Telematica/Implementation/.venv', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'VSCODE_GIT_ASKPASS_EXTRA_ARGS': '', 'PWD': '/home/estelamb/PFG_Telematica/Implementation/FleetManager/ROS2/build/commands_action_interface', 'LC_ALL': 'en_US.UTF-8', 'SSH_CONNECTION': '95.39.166.219 57317 192.168.1.136 22', 'XDG_DATA_DIRS': '/usr/local/share:/usr/share:/var/lib/snapd/desktop', 'PYTHONPATH': '/opt/ros/jazzy/lib/python3.12/site-packages', 'COLCON': '1', 'CMAKE_PREFIX_PATH': '/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy'}), 'shell': False}
+[13.685621] (-) TimerEvent: {}
+[13.786265] (-) TimerEvent: {}
+[13.887009] (-) TimerEvent: {}
+[13.940776] (commands_action_interface) StdoutLine: {'line': b'[  2%] \x1b[34m\x1b[1mGenerating type hashes for ROS interfaces\x1b[0m\n'}
+[13.987827] (-) TimerEvent: {}
+[13.995600] (commands_action_interface) StdoutLine: {'line': b'[  2%] Built target ament_cmake_python_copy_commands_action_interface\n'}
+[14.088090] (-) TimerEvent: {}
+[14.189727] (-) TimerEvent: {}
+[14.290454] (-) TimerEvent: {}
+[14.393094] (-) TimerEvent: {}
+[14.493757] (-) TimerEvent: {}
+[14.596440] (-) TimerEvent: {}
+[14.698013] (-) TimerEvent: {}
+[14.800946] (-) TimerEvent: {}
+[14.901658] (-) TimerEvent: {}
+[14.956365] (commands_action_interface) StdoutLine: {'line': b'[  2%] Built target commands_action_interface__rosidl_generator_type_description\n'}
+[15.001935] (-) TimerEvent: {}
+[15.018949] (commands_action_interface) StdoutLine: {'line': b'[  5%] \x1b[34m\x1b[1mGenerating C code for ROS interfaces\x1b[0m\n'}
+[15.078024] (commands_action_interface) StdoutLine: {'line': b'[  8%] \x1b[34m\x1b[1mGenerating C++ code for ROS interfaces\x1b[0m\n'}
+[15.099100] (commands_action_interface) StdoutLine: {'line': b'running egg_info\n'}
+[15.102100] (-) TimerEvent: {}
+[15.200876] (commands_action_interface) StdoutLine: {'line': b'creating commands_action_interface.egg-info\n'}
+[15.203389] (commands_action_interface) StdoutLine: {'line': b'writing commands_action_interface.egg-info/PKG-INFO\n'}
+[15.204744] (-) TimerEvent: {}
+[15.206544] (commands_action_interface) StdoutLine: {'line': b'writing dependency_links to commands_action_interface.egg-info/dependency_links.txt\n'}
+[15.207169] (commands_action_interface) StdoutLine: {'line': b'writing top-level names to commands_action_interface.egg-info/top_level.txt\n'}
+[15.213017] (commands_action_interface) StdoutLine: {'line': b"writing manifest file 'commands_action_interface.egg-info/SOURCES.txt'\n"}
+[15.307468] (-) TimerEvent: {}
+[15.408374] (-) TimerEvent: {}
+[15.510494] (-) TimerEvent: {}
+[15.512469] (commands_action_interface) StdoutLine: {'line': b"reading manifest file 'commands_action_interface.egg-info/SOURCES.txt'\n"}
+[15.515831] (commands_action_interface) StdoutLine: {'line': b"writing manifest file 'commands_action_interface.egg-info/SOURCES.txt'\n"}
+[15.610777] (-) TimerEvent: {}
+[15.712751] (commands_action_interface) StdoutLine: {'line': b'[  8%] Built target ament_cmake_python_build_commands_action_interface_egg\n'}
+[15.713751] (-) TimerEvent: {}
+[15.815751] (-) TimerEvent: {}
+[15.916411] (-) TimerEvent: {}
+[16.017002] (-) TimerEvent: {}
+[16.117613] (-) TimerEvent: {}
+[16.218184] (-) TimerEvent: {}
+[16.318822] (-) TimerEvent: {}
+[16.419422] (-) TimerEvent: {}
+[16.519994] (-) TimerEvent: {}
+[16.620604] (-) TimerEvent: {}
+[16.722992] (-) TimerEvent: {}
+[16.823756] (-) TimerEvent: {}
+[16.924402] (-) TimerEvent: {}
+[17.026497] (-) TimerEvent: {}
+[17.127119] (-) TimerEvent: {}
+[17.229765] (-) TimerEvent: {}
+[17.333364] (-) TimerEvent: {}
+[17.434492] (-) TimerEvent: {}
+[17.538420] (-) TimerEvent: {}
+[17.641481] (-) TimerEvent: {}
+[17.665878] (commands_action_interface) StdoutLine: {'line': b'[  8%] Built target commands_action_interface__cpp\n'}
+[17.741755] (-) TimerEvent: {}
+[17.842617] (-) TimerEvent: {}
+[17.865522] (commands_action_interface) StdoutLine: {'line': b'[ 11%] \x1b[32mBuilding C object CMakeFiles/commands_action_interface__rosidl_generator_c.dir/rosidl_generator_c/commands_action_interface/action/detail/commands__description.c.o\x1b[0m\n'}
+[17.867716] (commands_action_interface) StdoutLine: {'line': b'[ 14%] \x1b[32mBuilding C object CMakeFiles/commands_action_interface__rosidl_generator_c.dir/rosidl_generator_c/commands_action_interface/action/detail/commands__functions.c.o\x1b[0m\n'}
+[17.870950] (commands_action_interface) StdoutLine: {'line': b'[ 17%] \x1b[32mBuilding C object CMakeFiles/commands_action_interface__rosidl_generator_c.dir/rosidl_generator_c/commands_action_interface/action/detail/commands__type_support.c.o\x1b[0m\n'}
+[17.942841] (-) TimerEvent: {}
+[18.044549] (-) TimerEvent: {}
+[18.147089] (-) TimerEvent: {}
+[18.249818] (-) TimerEvent: {}
+[18.352205] (-) TimerEvent: {}
+[18.452897] (-) TimerEvent: {}
+[18.553593] (-) TimerEvent: {}
+[18.626143] (commands_action_interface) StdoutLine: {'line': b'[ 20%] \x1b[32m\x1b[1mLinking C shared library libcommands_action_interface__rosidl_generator_c.so\x1b[0m\n'}
+[18.653803] (-) TimerEvent: {}
+[18.754489] (-) TimerEvent: {}
+[18.838934] (commands_action_interface) StdoutLine: {'line': b'[ 20%] Built target commands_action_interface__rosidl_generator_c\n'}
+[18.856844] (-) TimerEvent: {}
+[18.904016] (commands_action_interface) StdoutLine: {'line': b'[ 23%] \x1b[34m\x1b[1mGenerating C++ type support for eProsima Fast-RTPS\x1b[0m\n'}
+[18.905124] (commands_action_interface) StdoutLine: {'line': b'[ 29%] \x1b[34m\x1b[1mGenerating C++ type support dispatch for ROS interfaces\x1b[0m\n'}
+[18.906583] (commands_action_interface) StdoutLine: {'line': b'[ 29%] \x1b[34m\x1b[1mGenerating C++ introspection for ROS interfaces\x1b[0m\n'}
+[18.912112] (commands_action_interface) StdoutLine: {'line': b'[ 32%] \x1b[34m\x1b[1mGenerating C type support for eProsima Fast-RTPS\x1b[0m\n'}
+[18.957038] (-) TimerEvent: {}
+[19.061543] (-) TimerEvent: {}
+[19.162774] (-) TimerEvent: {}
+[19.264088] (-) TimerEvent: {}
+[19.369830] (-) TimerEvent: {}
+[19.470698] (-) TimerEvent: {}
+[19.574817] (-) TimerEvent: {}
+[19.675980] (-) TimerEvent: {}
+[19.780439] (-) TimerEvent: {}
+[19.881052] (-) TimerEvent: {}
+[19.984527] (-) TimerEvent: {}
+[20.085358] (-) TimerEvent: {}
+[20.186015] (-) TimerEvent: {}
+[20.290425] (-) TimerEvent: {}
+[20.391071] (-) TimerEvent: {}
+[20.491805] (-) TimerEvent: {}
+[20.592539] (-) TimerEvent: {}
+[20.697502] (-) TimerEvent: {}
+[20.798400] (-) TimerEvent: {}
+[20.899221] (-) TimerEvent: {}
+[21.001403] (-) TimerEvent: {}
+[21.049665] (commands_action_interface) StdoutLine: {'line': b'[ 35%] \x1b[32mBuilding CXX object CMakeFiles/commands_action_interface__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/commands_action_interface/action/commands__type_support.cpp.o\x1b[0m\n'}
+[21.101601] (-) TimerEvent: {}
+[21.205458] (-) TimerEvent: {}
+[21.306170] (-) TimerEvent: {}
+[21.409492] (-) TimerEvent: {}
+[21.512477] (-) TimerEvent: {}
+[21.572480] (commands_action_interface) StdoutLine: {'line': b'[ 38%] \x1b[32mBuilding CXX object CMakeFiles/commands_action_interface__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/commands_action_interface/action/detail/commands__type_support.cpp.o\x1b[0m\n'}
+[21.612641] (-) TimerEvent: {}
+[21.715475] (-) TimerEvent: {}
+[21.816257] (-) TimerEvent: {}
+[21.917928] (-) TimerEvent: {}
+[22.022581] (-) TimerEvent: {}
+[22.123569] (-) TimerEvent: {}
+[22.225873] (-) TimerEvent: {}
+[22.330455] (-) TimerEvent: {}
+[22.431356] (-) TimerEvent: {}
+[22.535440] (-) TimerEvent: {}
+[22.636909] (-) TimerEvent: {}
+[22.741929] (-) TimerEvent: {}
+[22.843540] (-) TimerEvent: {}
+[22.944584] (-) TimerEvent: {}
+[23.048886] (-) TimerEvent: {}
+[23.096341] (commands_action_interface) StdoutLine: {'line': b'[ 41%] \x1b[32mBuilding CXX object CMakeFiles/commands_action_interface__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/commands_action_interface/action/detail/commands__type_support_c.cpp.o\x1b[0m\n'}
+[23.152038] (-) TimerEvent: {}
+[23.171568] (commands_action_interface) StdoutLine: {'line': b'[ 44%] \x1b[32mBuilding CXX object CMakeFiles/commands_action_interface__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/commands_action_interface/action/detail/dds_fastrtps/commands__type_support.cpp.o\x1b[0m\n'}
+[23.254629] (-) TimerEvent: {}
+[23.357925] (-) TimerEvent: {}
+[23.460526] (-) TimerEvent: {}
+[23.567481] (-) TimerEvent: {}
+[23.668452] (-) TimerEvent: {}
+[23.769448] (-) TimerEvent: {}
+[23.872793] (-) TimerEvent: {}
+[23.977814] (-) TimerEvent: {}
+[24.078775] (-) TimerEvent: {}
+[24.182477] (-) TimerEvent: {}
+[24.283635] (-) TimerEvent: {}
+[24.384686] (-) TimerEvent: {}
+[24.489451] (-) TimerEvent: {}
+[24.590593] (-) TimerEvent: {}
+[24.691524] (-) TimerEvent: {}
+[24.794850] (-) TimerEvent: {}
+[24.896257] (-) TimerEvent: {}
+[24.999024] (-) TimerEvent: {}
+[25.101928] (-) TimerEvent: {}
+[25.203158] (-) TimerEvent: {}
+[25.306892] (-) TimerEvent: {}
+[25.410512] (-) TimerEvent: {}
+[25.511378] (-) TimerEvent: {}
+[25.612467] (-) TimerEvent: {}
+[25.715826] (-) TimerEvent: {}
+[25.820785] (-) TimerEvent: {}
+[25.921784] (-) TimerEvent: {}
+[26.022789] (-) TimerEvent: {}
+[26.125938] (-) TimerEvent: {}
+[26.230761] (-) TimerEvent: {}
+[26.331642] (-) TimerEvent: {}
+[26.433370] (-) TimerEvent: {}
+[26.535484] (-) TimerEvent: {}
+[26.636465] (-) TimerEvent: {}
+[26.727603] (commands_action_interface) StdoutLine: {'line': b'[ 47%] \x1b[32m\x1b[1mLinking CXX shared library libcommands_action_interface__rosidl_typesupport_cpp.so\x1b[0m\n'}
+[26.736665] (-) TimerEvent: {}
+[26.840938] (-) TimerEvent: {}
+[26.944553] (-) TimerEvent: {}
+[27.046536] (-) TimerEvent: {}
+[27.148567] (-) TimerEvent: {}
+[27.250407] (-) TimerEvent: {}
+[27.349461] (commands_action_interface) StdoutLine: {'line': b'[ 47%] Built target commands_action_interface__rosidl_typesupport_cpp\n'}
+[27.350459] (-) TimerEvent: {}
+[27.429459] (commands_action_interface) StdoutLine: {'line': b'[ 50%] \x1b[34m\x1b[1mGenerating C introspection for ROS interfaces\x1b[0m\n'}
+[27.452536] (-) TimerEvent: {}
+[27.557018] (-) TimerEvent: {}
+[27.660517] (-) TimerEvent: {}
+[27.761451] (-) TimerEvent: {}
+[27.798753] (commands_action_interface) StdoutLine: {'line': b'[ 52%] \x1b[32m\x1b[1mLinking CXX shared library libcommands_action_interface__rosidl_typesupport_fastrtps_c.so\x1b[0m\n'}
+[27.861782] (-) TimerEvent: {}
+[27.964122] (-) TimerEvent: {}
+[28.070473] (-) TimerEvent: {}
+[28.171254] (-) TimerEvent: {}
+[28.270622] (commands_action_interface) StdoutLine: {'line': b'[ 55%] \x1b[32m\x1b[1mLinking CXX shared library libcommands_action_interface__rosidl_typesupport_introspection_cpp.so\x1b[0m\n'}
+[28.271345] (-) TimerEvent: {}
+[28.374728] (-) TimerEvent: {}
+[28.396224] (commands_action_interface) StdoutLine: {'line': b'[ 55%] Built target commands_action_interface__rosidl_typesupport_fastrtps_c\n'}
+[28.477546] (-) TimerEvent: {}
+[28.489100] (commands_action_interface) StdoutLine: {'line': b'[ 58%] \x1b[34m\x1b[1mGenerating C type support dispatch for ROS interfaces\x1b[0m\n'}
+[28.580485] (-) TimerEvent: {}
+[28.681460] (-) TimerEvent: {}
+[28.782455] (-) TimerEvent: {}
+[28.884666] (-) TimerEvent: {}
+[28.899639] (commands_action_interface) StdoutLine: {'line': b'[ 58%] Built target commands_action_interface__rosidl_typesupport_introspection_cpp\n'}
+[28.987486] (-) TimerEvent: {}
+[29.088262] (-) TimerEvent: {}
+[29.191705] (-) TimerEvent: {}
+[29.292542] (-) TimerEvent: {}
+[29.394268] (-) TimerEvent: {}
+[29.495748] (-) TimerEvent: {}
+[29.597221] (-) TimerEvent: {}
+[29.699034] (-) TimerEvent: {}
+[29.799770] (-) TimerEvent: {}
+[29.903692] (-) TimerEvent: {}
+[30.004520] (-) TimerEvent: {}
+[30.105173] (-) TimerEvent: {}
+[30.206570] (-) TimerEvent: {}
+[30.312584] (-) TimerEvent: {}
+[30.414648] (-) TimerEvent: {}
+[30.434488] (commands_action_interface) StdoutLine: {'line': b'[ 61%] \x1b[32mBuilding C object CMakeFiles/commands_action_interface__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/commands_action_interface/action/detail/commands__type_support.c.o\x1b[0m\n'}
+[30.447718] (commands_action_interface) StdoutLine: {'line': b'[ 64%] \x1b[32mBuilding CXX object CMakeFiles/commands_action_interface__rosidl_typesupport_c.dir/rosidl_typesupport_c/commands_action_interface/action/commands__type_support.cpp.o\x1b[0m\n'}
+[30.514881] (-) TimerEvent: {}
+[30.621478] (-) TimerEvent: {}
+[30.722379] (-) TimerEvent: {}
+[30.825374] (-) TimerEvent: {}
+[30.921597] (commands_action_interface) StdoutLine: {'line': b'[ 67%] \x1b[32m\x1b[1mLinking CXX shared library libcommands_action_interface__rosidl_typesupport_c.so\x1b[0m\n'}
+[30.925597] (-) TimerEvent: {}
+[31.009628] (commands_action_interface) StdoutLine: {'line': b'[ 70%] \x1b[32m\x1b[1mLinking C shared library libcommands_action_interface__rosidl_typesupport_introspection_c.so\x1b[0m\n'}
+[31.025864] (-) TimerEvent: {}
+[31.127568] (-) TimerEvent: {}
+[31.161109] (commands_action_interface) StdoutLine: {'line': b'[ 70%] Built target commands_action_interface__rosidl_typesupport_c\n'}
+[31.207741] (commands_action_interface) StdoutLine: {'line': b'[ 70%] Built target commands_action_interface__rosidl_typesupport_introspection_c\n'}
+[31.227776] (-) TimerEvent: {}
+[31.328472] (-) TimerEvent: {}
+[31.433462] (-) TimerEvent: {}
+[31.504590] (commands_action_interface) StdoutLine: {'line': b'[ 73%] \x1b[32m\x1b[1mLinking CXX shared library libcommands_action_interface__rosidl_typesupport_fastrtps_cpp.so\x1b[0m\n'}
+[31.533667] (-) TimerEvent: {}
+[31.634516] (-) TimerEvent: {}
+[31.735382] (-) TimerEvent: {}
+[31.836104] (-) TimerEvent: {}
+[31.909386] (commands_action_interface) StdoutLine: {'line': b'[ 73%] Built target commands_action_interface__rosidl_typesupport_fastrtps_cpp\n'}
+[31.936345] (-) TimerEvent: {}
+[32.024168] (commands_action_interface) StdoutLine: {'line': b'[ 73%] Built target commands_action_interface\n'}
+[32.036484] (-) TimerEvent: {}
+[32.133351] (commands_action_interface) StdoutLine: {'line': b'[ 76%] \x1b[34m\x1b[1mGenerating Python code for ROS interfaces\x1b[0m\n'}
+[32.136667] (-) TimerEvent: {}
+[32.237434] (-) TimerEvent: {}
+[32.338376] (-) TimerEvent: {}
+[32.439009] (-) TimerEvent: {}
+[32.539629] (-) TimerEvent: {}
+[32.640251] (-) TimerEvent: {}
+[32.740836] (-) TimerEvent: {}
+[32.841422] (-) TimerEvent: {}
+[32.941982] (-) TimerEvent: {}
+[33.042573] (-) TimerEvent: {}
+[33.143134] (-) TimerEvent: {}
+[33.243783] (-) TimerEvent: {}
+[33.344551] (-) TimerEvent: {}
+[33.445093] (-) TimerEvent: {}
+[33.545694] (-) TimerEvent: {}
+[33.646313] (-) TimerEvent: {}
+[33.746875] (-) TimerEvent: {}
+[33.847451] (-) TimerEvent: {}
+[33.948046] (-) TimerEvent: {}
+[34.048793] (-) TimerEvent: {}
+[34.149443] (-) TimerEvent: {}
+[34.250069] (-) TimerEvent: {}
+[34.350684] (-) TimerEvent: {}
+[34.451217] (-) TimerEvent: {}
+[34.551807] (-) TimerEvent: {}
+[34.652377] (-) TimerEvent: {}
+[34.752920] (-) TimerEvent: {}
+[34.853492] (-) TimerEvent: {}
+[34.954060] (-) TimerEvent: {}
+[35.054658] (-) TimerEvent: {}
+[35.155206] (-) TimerEvent: {}
+[35.255783] (-) TimerEvent: {}
+[35.356385] (-) TimerEvent: {}
+[35.456924] (-) TimerEvent: {}
+[35.557459] (-) TimerEvent: {}
+[35.657986] (-) TimerEvent: {}
+[35.758601] (-) TimerEvent: {}
+[35.859213] (-) TimerEvent: {}
+[35.886004] (commands_action_interface) StdoutLine: {'line': b'[ 76%] Built target commands_action_interface__py\n'}
+[35.959509] (-) TimerEvent: {}
+[35.996272] (commands_action_interface) StdoutLine: {'line': b'[ 79%] \x1b[32mBuilding C object CMakeFiles/commands_action_interface__rosidl_generator_py.dir/rosidl_generator_py/commands_action_interface/action/_commands_s.c.o\x1b[0m\n'}
+[36.059682] (-) TimerEvent: {}
+[36.160359] (-) TimerEvent: {}
+[36.260978] (-) TimerEvent: {}
+[36.361658] (-) TimerEvent: {}
+[36.462385] (-) TimerEvent: {}
+[36.563037] (-) TimerEvent: {}
+[36.663777] (-) TimerEvent: {}
+[36.764431] (-) TimerEvent: {}
+[36.865144] (-) TimerEvent: {}
+[36.966663] (-) TimerEvent: {}
+[37.066433] (commands_action_interface) StdoutLine: {'line': b'[ 82%] \x1b[32m\x1b[1mLinking C shared library libcommands_action_interface__rosidl_generator_py.so\x1b[0m\n'}
+[37.067073] (-) TimerEvent: {}
+[37.167660] (-) TimerEvent: {}
+[37.268445] (-) TimerEvent: {}
+[37.315943] (commands_action_interface) StdoutLine: {'line': b'[ 82%] Built target commands_action_interface__rosidl_generator_py\n'}
+[37.369480] (-) TimerEvent: {}
+[37.437993] (commands_action_interface) StdoutLine: {'line': b'[ 85%] \x1b[32mBuilding C object CMakeFiles/commands_action_interface_s__rosidl_typesupport_fastrtps_c.dir/rosidl_generator_py/commands_action_interface/_commands_action_interface_s.ep.rosidl_typesupport_fastrtps_c.c.o\x1b[0m\n'}
+[37.444507] (commands_action_interface) StdoutLine: {'line': b'[ 88%] \x1b[32mBuilding C object CMakeFiles/commands_action_interface_s__rosidl_typesupport_introspection_c.dir/rosidl_generator_py/commands_action_interface/_commands_action_interface_s.ep.rosidl_typesupport_introspection_c.c.o\x1b[0m\n'}
+[37.451456] (commands_action_interface) StdoutLine: {'line': b'[ 91%] \x1b[32mBuilding C object CMakeFiles/commands_action_interface_s__rosidl_typesupport_c.dir/rosidl_generator_py/commands_action_interface/_commands_action_interface_s.ep.rosidl_typesupport_c.c.o\x1b[0m\n'}
+[37.469690] (-) TimerEvent: {}
+[37.570485] (-) TimerEvent: {}
+[37.671888] (-) TimerEvent: {}
+[37.776483] (-) TimerEvent: {}
+[37.877238] (-) TimerEvent: {}
+[37.978148] (-) TimerEvent: {}
+[38.079058] (-) TimerEvent: {}
+[38.182887] (-) TimerEvent: {}
+[38.260312] (commands_action_interface) StdoutLine: {'line': b'[ 94%] \x1b[32m\x1b[1mLinking C shared module rosidl_generator_py/commands_action_interface/commands_action_interface_s__rosidl_typesupport_c.so\x1b[0m\n'}
+[38.283188] (-) TimerEvent: {}
+[38.317353] (commands_action_interface) StdoutLine: {'line': b'[ 97%] \x1b[32m\x1b[1mLinking C shared module rosidl_generator_py/commands_action_interface/commands_action_interface_s__rosidl_typesupport_fastrtps_c.so\x1b[0m\n'}
+[38.340457] (commands_action_interface) StdoutLine: {'line': b'[100%] \x1b[32m\x1b[1mLinking C shared module rosidl_generator_py/commands_action_interface/commands_action_interface_s__rosidl_typesupport_introspection_c.so\x1b[0m\n'}
+[38.385444] (-) TimerEvent: {}
+[38.475594] (commands_action_interface) StdoutLine: {'line': b'[100%] Built target commands_action_interface_s__rosidl_typesupport_c\n'}
+[38.485656] (-) TimerEvent: {}
+[38.528389] (commands_action_interface) StdoutLine: {'line': b'[100%] Built target commands_action_interface_s__rosidl_typesupport_fastrtps_c\n'}
+[38.541115] (commands_action_interface) StdoutLine: {'line': b'[100%] Built target commands_action_interface_s__rosidl_typesupport_introspection_c\n'}
+[38.585849] (-) TimerEvent: {}
+[38.600364] (commands_action_interface) CommandEnded: {'returncode': 0}
+[38.602401] (commands_action_interface) JobProgress: {'identifier': 'commands_action_interface', 'progress': 'install'}
+[38.652575] (commands_action_interface) Command: {'cmd': ['/usr/bin/cmake', '--install', '/home/estelamb/PFG_Telematica/Implementation/FleetManager/ROS2/build/commands_action_interface'], 'cwd': '/home/estelamb/PFG_Telematica/Implementation/FleetManager/ROS2/build/commands_action_interface', 'env': OrderedDict({'LESSOPEN': '| /usr/bin/lesspipe %s', 'USER': 'estelamb', 'SSH_CLIENT': '95.39.166.219 57317 22', 'XDG_SESSION_TYPE': 'tty', 'GIT_ASKPASS': '/home/estelamb/.vscode-server/cli/servers/Stable-7c6fdfb0b8f2f675eb0b47f3d95eeca78962565b/server/extensions/git/dist/askpass.sh', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/aarch64-linux-gnu:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib', 'BROWSER': '/home/estelamb/.vscode-server/cli/servers/Stable-7c6fdfb0b8f2f675eb0b47f3d95eeca78962565b/server/bin/helpers/browser.sh', 'HOME': '/home/estelamb', 'OLDPWD': '/home/estelamb/PFG_Telematica/Implementation/FleetManager/ROS2/src', 'TERM_PROGRAM_VERSION': '1.99.1', 'VSCODE_IPC_HOOK_CLI': '/run/user/1004/vscode-ipc-97871dbe-1bb3-4127-8381-c424d408d9cc.sock', 'ROS_PYTHON_VERSION': '3', 'VSCODE_GIT_ASKPASS_MAIN': '/home/estelamb/.vscode-server/cli/servers/Stable-7c6fdfb0b8f2f675eb0b47f3d95eeca78962565b/server/extensions/git/dist/askpass-main.js', 'PS1': '\\[\x1b]633;A\x07\\](.venv) \\[\\033[1;34m\\].-{ \\[\\033[1;35m\\]\\d \\t\\[\\033[1;34m\\] }-{ \\[\\033[1;35m\\]\\u\\[\\033[1;34m\\] }-{ \\[\\033[1;35m\\]\\h\\[\\033[1;34m\\] }-\\n\\[\\033[1;34m\\]|-{ \\[\\033[0;36m\\]\\w\\[\\033[1;34m\\] }-\\n\\[\\033[1;34m\\]\\`-> \\[\\033[0m\\]\\[\x1b]633;B\x07\\]', 'VSCODE_GIT_ASKPASS_NODE': '/home/estelamb/.vscode-server/cli/servers/Stable-7c6fdfb0b8f2f675eb0b47f3d95eeca78962565b/server/node', 'SSL_CERT_FILE': '/usr/lib/ssl/cert.pem', 'PYDEVD_DISABLE_FILE_VALIDATION': '1', 'BUNDLED_DEBUGPY_PATH': '/home/estelamb/.vscode-server/extensions/ms-python.debugpy-2025.6.0-linux-arm64/bundled/libs/debugpy', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1004/bus', 'COLORTERM': 'truecolor', 'NVM_DIR': '/home/estelamb/.nvm', 'ROS_DISTRO': 'jazzy', 'LOGNAME': 'estelamb', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'XDG_SESSION_CLASS': 'user', 'TERM': 'xterm-256color', 'XDG_SESSION_ID': '3239', 'RBENV_SHELL': 'bash', 'PATH': '/home/estelamb/.vscode-server/extensions/ms-python.python-2025.4.0-linux-arm64/python_files/deactivate/bash:/home/estelamb/PFG_Telematica/Implementation/.venv/bin:/home/estelamb/.rbenv/shims:/home/estelamb/.rbenv/bin:/home/estelamb/.vscode-server/extensions/ms-python.python-2025.4.0-linux-arm64/python_files/deactivate/bash:/home/estelamb/PFG_Telematica/Implementation/.venv/bin:/home/estelamb/.vscode-server/cli/servers/Stable-7c6fdfb0b8f2f675eb0b47f3d95eeca78962565b/server/bin/remote-cli:/opt/ros/jazzy/bin:/home/estelamb/.rbenv/shims:/home/estelamb/.rbenv/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin', 'XDG_RUNTIME_DIR': '/run/user/1004', 'SSL_CERT_DIR': '/usr/lib/ssl/certs', 'VSCODE_DEBUGPY_ADAPTER_ENDPOINTS': '/home/estelamb/.vscode-server/extensions/ms-python.debugpy-2025.6.0-linux-arm64/.noConfigDebugAdapterEndpoints/endpoint-d02a8232742ade9d.txt', 'LANG': 'en_US.UTF-8', 'VIRTUAL_ENV_PROMPT': '(.venv)', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:', 'VSCODE_GIT_IPC_HANDLE': '/run/user/1004/vscode-git-31426f1041.sock', 'TERM_PROGRAM': 'vscode', 'AMENT_PREFIX_PATH': '/opt/ros/jazzy', 'SHELL': '/bin/bash', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'VIRTUAL_ENV': '/home/estelamb/PFG_Telematica/Implementation/.venv', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'VSCODE_GIT_ASKPASS_EXTRA_ARGS': '', 'PWD': '/home/estelamb/PFG_Telematica/Implementation/FleetManager/ROS2/build/commands_action_interface', 'LC_ALL': 'en_US.UTF-8', 'SSH_CONNECTION': '95.39.166.219 57317 192.168.1.136 22', 'XDG_DATA_DIRS': '/usr/local/share:/usr/share:/var/lib/snapd/desktop', 'PYTHONPATH': '/opt/ros/jazzy/lib/python3.12/site-packages', 'COLCON': '1', 'CMAKE_PREFIX_PATH': '/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy'}), 'shell': False}
+[38.686036] (-) TimerEvent: {}
+[38.697683] (commands_action_interface) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[38.698976] (commands_action_interface) StdoutLine: {'line': b'-- Installing: /home/estelamb/PFG_Telematica/Implementation/FleetManager/ROS2/install/commands_action_interface/share/ament_index/resource_index/rosidl_interfaces/commands_action_interface\n'}
+[38.700951] (commands_action_interface) StdoutLine: {'line': b'-- Installing: /home/estelamb/PFG_Telematica/Implementation/FleetManager/ROS2/install/commands_action_interface/share/commands_action_interface/action/Commands.json\n'}
+[38.702414] (commands_action_interface) StdoutLine: {'line': b'-- Installing: /home/estelamb/PFG_Telematica/Implementation/FleetManager/ROS2/install/commands_action_interface/include/commands_action_interface/commands_action_interface\n'}
+[38.703334] (commands_action_interface) StdoutLine: {'line': b'-- Installing: /home/estelamb/PFG_Telematica/Implementation/FleetManager/ROS2/install/commands_action_interface/include/commands_action_interface/commands_action_interface/msg\n'}
+[38.704111] (commands_action_interface) StdoutLine: {'line': b'-- Installing: /home/estelamb/PFG_Telematica/Implementation/FleetManager/ROS2/install/commands_action_interface/include/commands_action_interface/commands_action_interface/msg/rosidl_generator_c__visibility_control.h\n'}
+[38.705403] (commands_action_interface) StdoutLine: {'line': b'-- Installing: /home/estelamb/PFG_Telematica/Implementation/FleetManager/ROS2/install/commands_action_interface/include/commands_action_interface/commands_action_interface/action\n'}
+[38.706211] (commands_action_interface) StdoutLine: {'line': b'-- Installing: /home/estelamb/PFG_Telematica/Implementation/FleetManager/ROS2/install/commands_action_interface/include/commands_action_interface/commands_action_interface/action/commands.h\n'}
+[38.707342] (commands_action_interface) StdoutLine: {'line': b'-- Installing: /home/estelamb/PFG_Telematica/Implementation/FleetManager/ROS2/install/commands_action_interface/include/commands_action_interface/commands_action_interface/action/detail\n'}
+[38.708164] (commands_action_interface) StdoutLine: {'line': b'-- Installing: /home/estelamb/PFG_Telematica/Implementation/FleetManager/ROS2/install/commands_action_interface/include/commands_action_interface/commands_action_interface/action/detail/commands__type_support.h\n'}
+[38.709565] (commands_action_interface) StdoutLine: {'line': b'-- Installing: /home/estelamb/PFG_Telematica/Implementation/FleetManager/ROS2/install/commands_action_interface/include/commands_action_interface/commands_action_interface/action/detail/commands__struct.h\n'}
+[38.710899] (commands_action_interface) StdoutLine: {'line': b'-- Installing: /home/estelamb/PFG_Telematica/Implementation/FleetManager/ROS2/install/commands_action_interface/include/commands_action_interface/commands_action_interface/action/detail/commands__type_support.c\n'}
+[38.712203] (commands_action_interface) StdoutLine: {'line': b'-- Installing: /home/estelamb/PFG_Telematica/Implementation/FleetManager/ROS2/install/commands_action_interface/include/commands_action_interface/commands_action_interface/action/detail/commands__functions.c\n'}
+[38.714072] (commands_action_interface) StdoutLine: {'line': b'-- Installing: /home/estelamb/PFG_Telematica/Implementation/FleetManager/ROS2/install/commands_action_interface/include/commands_action_interface/commands_action_interface/action/detail/commands__functions.h\n'}
+[38.715951] (commands_action_interface) StdoutLine: {'line': b'-- Installing: /home/estelamb/PFG_Telematica/Implementation/FleetManager/ROS2/install/commands_action_interface/include/commands_action_interface/commands_action_interface/action/detail/commands__description.c\n'}
+[38.718323] (commands_action_interface) StdoutLine: {'line': b'-- Installing: /home/estelamb/PFG_Telematica/Implementation/FleetManager/ROS2/install/commands_action_interface/share/commands_action_interface/environment/library_path.sh\n'}
+[38.719733] (commands_action_interface) StdoutLine: {'line': b'-- Installing: /home/estelamb/PFG_Telematica/Implementation/FleetManager/ROS2/install/commands_action_interface/share/commands_action_interface/environment/library_path.dsv\n'}
+[38.721636] (commands_action_interface) StdoutLine: {'line': b'-- Installing: /home/estelamb/PFG_Telematica/Implementation/FleetManager/ROS2/install/commands_action_interface/lib/libcommands_action_interface__rosidl_generator_c.so\n'}
+[38.725463] (commands_action_interface) StdoutLine: {'line': b'-- Set non-toolchain portion of runtime path of "/home/estelamb/PFG_Telematica/Implementation/FleetManager/ROS2/install/commands_action_interface/lib/libcommands_action_interface__rosidl_generator_c.so" to ""\n'}
+[38.726106] (commands_action_interface) StdoutLine: {'line': b'-- Up-to-date: /home/estelamb/PFG_Telematica/Implementation/FleetManager/ROS2/install/commands_action_interface/include/commands_action_interface/commands_action_interface\n'}
+[38.726586] (commands_action_interface) StdoutLine: {'line': b'-- Up-to-date: /home/estelamb/PFG_Telematica/Implementation/FleetManager/ROS2/install/commands_action_interface/include/commands_action_interface/commands_action_interface/msg\n'}
+[38.727015] (commands_action_interface) StdoutLine: {'line': b'-- Installing: /home/estelamb/PFG_Telematica/Implementation/FleetManager/ROS2/install/commands_action_interface/include/commands_action_interface/commands_action_interface/msg/rosidl_typesupport_fastrtps_c__visibility_control.h\n'}
+[38.728395] (commands_action_interface) StdoutLine: {'line': b'-- Up-to-date: /home/estelamb/PFG_Telematica/Implementation/FleetManager/ROS2/install/commands_action_interface/include/commands_action_interface/commands_action_interface/action\n'}
+[38.728941] (commands_action_interface) StdoutLine: {'line': b'-- Up-to-date: /home/estelamb/PFG_Telematica/Implementation/FleetManager/ROS2/install/commands_action_interface/include/commands_action_interface/commands_action_interface/action/detail\n'}
+[38.729370] (commands_action_interface) StdoutLine: {'line': b'-- Installing: /home/estelamb/PFG_Telematica/Implementation/FleetManager/ROS2/install/commands_action_interface/include/commands_action_interface/commands_action_interface/action/detail/commands__rosidl_typesupport_fastrtps_c.h\n'}
+[38.731223] (commands_action_interface) StdoutLine: {'line': b'-- Installing: /home/estelamb/PFG_Telematica/Implementation/FleetManager/ROS2/install/commands_action_interface/lib/libcommands_action_interface__rosidl_typesupport_fastrtps_c.so\n'}
+[38.735145] (commands_action_interface) StdoutLine: {'line': b'-- Set non-toolchain portion of runtime path of "/home/estelamb/PFG_Telematica/Implementation/FleetManager/ROS2/install/commands_action_interface/lib/libcommands_action_interface__rosidl_typesupport_fastrtps_c.so" to ""\n'}
+[38.735862] (commands_action_interface) StdoutLine: {'line': b'-- Up-to-date: /home/estelamb/PFG_Telematica/Implementation/FleetManager/ROS2/install/commands_action_interface/include/commands_action_interface/commands_action_interface\n'}
+[38.736327] (commands_action_interface) StdoutLine: {'line': b'-- Up-to-date: /home/estelamb/PFG_Telematica/Implementation/FleetManager/ROS2/install/commands_action_interface/include/commands_action_interface/commands_action_interface/msg\n'}
+[38.736797] (commands_action_interface) StdoutLine: {'line': b'-- Installing: /home/estelamb/PFG_Telematica/Implementation/FleetManager/ROS2/install/commands_action_interface/include/commands_action_interface/commands_action_interface/msg/rosidl_typesupport_introspection_c__visibility_control.h\n'}
+[38.737965] (commands_action_interface) StdoutLine: {'line': b'-- Up-to-date: /home/estelamb/PFG_Telematica/Implementation/FleetManager/ROS2/install/commands_action_interface/include/commands_action_interface/commands_action_interface/action\n'}
+[38.738458] (commands_action_interface) StdoutLine: {'line': b'-- Up-to-date: /home/estelamb/PFG_Telematica/Implementation/FleetManager/ROS2/install/commands_action_interface/include/commands_action_interface/commands_action_interface/action/detail\n'}
+[38.739008] (commands_action_interface) StdoutLine: {'line': b'-- Installing: /home/estelamb/PFG_Telematica/Implementation/FleetManager/ROS2/install/commands_action_interface/include/commands_action_interface/commands_action_interface/action/detail/commands__rosidl_typesupport_introspection_c.h\n'}
+[38.740509] (commands_action_interface) StdoutLine: {'line': b'-- Installing: /home/estelamb/PFG_Telematica/Implementation/FleetManager/ROS2/install/commands_action_interface/include/commands_action_interface/commands_action_interface/action/detail/commands__type_support.c\n'}
+[38.742932] (commands_action_interface) StdoutLine: {'line': b'-- Installing: /home/estelamb/PFG_Telematica/Implementation/FleetManager/ROS2/install/commands_action_interface/lib/libcommands_action_interface__rosidl_typesupport_introspection_c.so\n'}
+[38.746384] (commands_action_interface) StdoutLine: {'line': b'-- Set non-toolchain portion of runtime path of "/home/estelamb/PFG_Telematica/Implementation/FleetManager/ROS2/install/commands_action_interface/lib/libcommands_action_interface__rosidl_typesupport_introspection_c.so" to ""\n'}
+[38.747037] (commands_action_interface) StdoutLine: {'line': b'-- Installing: /home/estelamb/PFG_Telematica/Implementation/FleetManager/ROS2/install/commands_action_interface/lib/libcommands_action_interface__rosidl_typesupport_c.so\n'}
+[38.750431] (commands_action_interface) StdoutLine: {'line': b'-- Set non-toolchain portion of runtime path of "/home/estelamb/PFG_Telematica/Implementation/FleetManager/ROS2/install/commands_action_interface/lib/libcommands_action_interface__rosidl_typesupport_c.so" to ""\n'}
+[38.751348] (commands_action_interface) StdoutLine: {'line': b'-- Up-to-date: /home/estelamb/PFG_Telematica/Implementation/FleetManager/ROS2/install/commands_action_interface/include/commands_action_interface/commands_action_interface\n'}
+[38.752043] (commands_action_interface) StdoutLine: {'line': b'-- Up-to-date: /home/estelamb/PFG_Telematica/Implementation/FleetManager/ROS2/install/commands_action_interface/include/commands_action_interface/commands_action_interface/msg\n'}
+[38.752468] (commands_action_interface) StdoutLine: {'line': b'-- Installing: /home/estelamb/PFG_Telematica/Implementation/FleetManager/ROS2/install/commands_action_interface/include/commands_action_interface/commands_action_interface/msg/rosidl_generator_cpp__visibility_control.hpp\n'}
+[38.753310] (commands_action_interface) StdoutLine: {'line': b'-- Up-to-date: /home/estelamb/PFG_Telematica/Implementation/FleetManager/ROS2/install/commands_action_interface/include/commands_action_interface/commands_action_interface/action\n'}
+[38.753822] (commands_action_interface) StdoutLine: {'line': b'-- Installing: /home/estelamb/PFG_Telematica/Implementation/FleetManager/ROS2/install/commands_action_interface/include/commands_action_interface/commands_action_interface/action/commands.hpp\n'}
+[38.755195] (commands_action_interface) StdoutLine: {'line': b'-- Up-to-date: /home/estelamb/PFG_Telematica/Implementation/FleetManager/ROS2/install/commands_action_interface/include/commands_action_interface/commands_action_interface/action/detail\n'}
+[38.755993] (commands_action_interface) StdoutLine: {'line': b'-- Installing: /home/estelamb/PFG_Telematica/Implementation/FleetManager/ROS2/install/commands_action_interface/include/commands_action_interface/commands_action_interface/action/detail/commands__type_support.hpp\n'}
+[38.757329] (commands_action_interface) StdoutLine: {'line': b'-- Installing: /home/estelamb/PFG_Telematica/Implementation/FleetManager/ROS2/install/commands_action_interface/include/commands_action_interface/commands_action_interface/action/detail/commands__traits.hpp\n'}
+[38.758819] (commands_action_interface) StdoutLine: {'line': b'-- Installing: /home/estelamb/PFG_Telematica/Implementation/FleetManager/ROS2/install/commands_action_interface/include/commands_action_interface/commands_action_interface/action/detail/commands__struct.hpp\n'}
+[38.760393] (commands_action_interface) StdoutLine: {'line': b'-- Installing: /home/estelamb/PFG_Telematica/Implementation/FleetManager/ROS2/install/commands_action_interface/include/commands_action_interface/commands_action_interface/action/detail/commands__builder.hpp\n'}
+[38.761936] (commands_action_interface) StdoutLine: {'line': b'-- Up-to-date: /home/estelamb/PFG_Telematica/Implementation/FleetManager/ROS2/install/commands_action_interface/include/commands_action_interface/commands_action_interface\n'}
+[38.762539] (commands_action_interface) StdoutLine: {'line': b'-- Up-to-date: /home/estelamb/PFG_Telematica/Implementation/FleetManager/ROS2/install/commands_action_interface/include/commands_action_interface/commands_action_interface/msg\n'}
+[38.762989] (commands_action_interface) StdoutLine: {'line': b'-- Installing: /home/estelamb/PFG_Telematica/Implementation/FleetManager/ROS2/install/commands_action_interface/include/commands_action_interface/commands_action_interface/msg/rosidl_typesupport_fastrtps_cpp__visibility_control.h\n'}
+[38.764261] (commands_action_interface) StdoutLine: {'line': b'-- Up-to-date: /home/estelamb/PFG_Telematica/Implementation/FleetManager/ROS2/install/commands_action_interface/include/commands_action_interface/commands_action_interface/action\n'}
+[38.764841] (commands_action_interface) StdoutLine: {'line': b'-- Up-to-date: /home/estelamb/PFG_Telematica/Implementation/FleetManager/ROS2/install/commands_action_interface/include/commands_action_interface/commands_action_interface/action/detail\n'}
+[38.765234] (commands_action_interface) StdoutLine: {'line': b'-- Installing: /home/estelamb/PFG_Telematica/Implementation/FleetManager/ROS2/install/commands_action_interface/include/commands_action_interface/commands_action_interface/action/detail/commands__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[38.766802] (commands_action_interface) StdoutLine: {'line': b'-- Installing: /home/estelamb/PFG_Telematica/Implementation/FleetManager/ROS2/install/commands_action_interface/include/commands_action_interface/commands_action_interface/action/detail/dds_fastrtps\n'}
+[38.767952] (commands_action_interface) StdoutLine: {'line': b'-- Installing: /home/estelamb/PFG_Telematica/Implementation/FleetManager/ROS2/install/commands_action_interface/lib/libcommands_action_interface__rosidl_typesupport_fastrtps_cpp.so\n'}
+[38.772722] (commands_action_interface) StdoutLine: {'line': b'-- Set non-toolchain portion of runtime path of "/home/estelamb/PFG_Telematica/Implementation/FleetManager/ROS2/install/commands_action_interface/lib/libcommands_action_interface__rosidl_typesupport_fastrtps_cpp.so" to ""\n'}
+[38.773386] (commands_action_interface) StdoutLine: {'line': b'-- Up-to-date: /home/estelamb/PFG_Telematica/Implementation/FleetManager/ROS2/install/commands_action_interface/include/commands_action_interface/commands_action_interface\n'}
+[38.773907] (commands_action_interface) StdoutLine: {'line': b'-- Up-to-date: /home/estelamb/PFG_Telematica/Implementation/FleetManager/ROS2/install/commands_action_interface/include/commands_action_interface/commands_action_interface/action\n'}
+[38.774357] (commands_action_interface) StdoutLine: {'line': b'-- Up-to-date: /home/estelamb/PFG_Telematica/Implementation/FleetManager/ROS2/install/commands_action_interface/include/commands_action_interface/commands_action_interface/action/detail\n'}
+[38.774772] (commands_action_interface) StdoutLine: {'line': b'-- Installing: /home/estelamb/PFG_Telematica/Implementation/FleetManager/ROS2/install/commands_action_interface/include/commands_action_interface/commands_action_interface/action/detail/commands__rosidl_typesupport_introspection_cpp.hpp\n'}
+[38.776150] (commands_action_interface) StdoutLine: {'line': b'-- Installing: /home/estelamb/PFG_Telematica/Implementation/FleetManager/ROS2/install/commands_action_interface/include/commands_action_interface/commands_action_interface/action/detail/commands__type_support.cpp\n'}
+[38.778257] (commands_action_interface) StdoutLine: {'line': b'-- Installing: /home/estelamb/PFG_Telematica/Implementation/FleetManager/ROS2/install/commands_action_interface/lib/libcommands_action_interface__rosidl_typesupport_introspection_cpp.so\n'}
+[38.783116] (commands_action_interface) StdoutLine: {'line': b'-- Set non-toolchain portion of runtime path of "/home/estelamb/PFG_Telematica/Implementation/FleetManager/ROS2/install/commands_action_interface/lib/libcommands_action_interface__rosidl_typesupport_introspection_cpp.so" to ""\n'}
+[38.783738] (commands_action_interface) StdoutLine: {'line': b'-- Installing: /home/estelamb/PFG_Telematica/Implementation/FleetManager/ROS2/install/commands_action_interface/lib/libcommands_action_interface__rosidl_typesupport_cpp.so\n'}
+[38.786177] (-) TimerEvent: {}
+[38.787772] (commands_action_interface) StdoutLine: {'line': b'-- Set non-toolchain portion of runtime path of "/home/estelamb/PFG_Telematica/Implementation/FleetManager/ROS2/install/commands_action_interface/lib/libcommands_action_interface__rosidl_typesupport_cpp.so" to ""\n'}
+[38.788440] (commands_action_interface) StdoutLine: {'line': b'-- Installing: /home/estelamb/PFG_Telematica/Implementation/FleetManager/ROS2/install/commands_action_interface/share/commands_action_interface/environment/pythonpath.sh\n'}
+[38.789714] (commands_action_interface) StdoutLine: {'line': b'-- Installing: /home/estelamb/PFG_Telematica/Implementation/FleetManager/ROS2/install/commands_action_interface/share/commands_action_interface/environment/pythonpath.dsv\n'}
+[38.790949] (commands_action_interface) StdoutLine: {'line': b'-- Installing: /home/estelamb/PFG_Telematica/Implementation/FleetManager/ROS2/install/commands_action_interface/lib/python3.12/site-packages/commands_action_interface-0.0.0-py3.12.egg-info\n'}
+[38.792065] (commands_action_interface) StdoutLine: {'line': b'-- Installing: /home/estelamb/PFG_Telematica/Implementation/FleetManager/ROS2/install/commands_action_interface/lib/python3.12/site-packages/commands_action_interface-0.0.0-py3.12.egg-info/SOURCES.txt\n'}
+[38.793617] (commands_action_interface) StdoutLine: {'line': b'-- Installing: /home/estelamb/PFG_Telematica/Implementation/FleetManager/ROS2/install/commands_action_interface/lib/python3.12/site-packages/commands_action_interface-0.0.0-py3.12.egg-info/top_level.txt\n'}
+[38.795069] (commands_action_interface) StdoutLine: {'line': b'-- Installing: /home/estelamb/PFG_Telematica/Implementation/FleetManager/ROS2/install/commands_action_interface/lib/python3.12/site-packages/commands_action_interface-0.0.0-py3.12.egg-info/PKG-INFO\n'}
+[38.796415] (commands_action_interface) StdoutLine: {'line': b'-- Installing: /home/estelamb/PFG_Telematica/Implementation/FleetManager/ROS2/install/commands_action_interface/lib/python3.12/site-packages/commands_action_interface-0.0.0-py3.12.egg-info/dependency_links.txt\n'}
+[38.798067] (commands_action_interface) StdoutLine: {'line': b'-- Installing: /home/estelamb/PFG_Telematica/Implementation/FleetManager/ROS2/install/commands_action_interface/lib/python3.12/site-packages/commands_action_interface\n'}
+[38.798972] (commands_action_interface) StdoutLine: {'line': b'-- Installing: /home/estelamb/PFG_Telematica/Implementation/FleetManager/ROS2/install/commands_action_interface/lib/python3.12/site-packages/commands_action_interface/commands_action_interface_s__rosidl_typesupport_c.so\n'}
+[38.801096] (commands_action_interface) StdoutLine: {'line': b'-- Installing: /home/estelamb/PFG_Telematica/Implementation/FleetManager/ROS2/install/commands_action_interface/lib/python3.12/site-packages/commands_action_interface/_commands_action_interface_s.ep.rosidl_typesupport_c.c\n'}
+[38.802990] (commands_action_interface) StdoutLine: {'line': b'-- Installing: /home/estelamb/PFG_Telematica/Implementation/FleetManager/ROS2/install/commands_action_interface/lib/python3.12/site-packages/commands_action_interface/_commands_action_interface_s.ep.rosidl_typesupport_fastrtps_c.c\n'}
+[38.804722] (commands_action_interface) StdoutLine: {'line': b'-- Installing: /home/estelamb/PFG_Telematica/Implementation/FleetManager/ROS2/install/commands_action_interface/lib/python3.12/site-packages/commands_action_interface/commands_action_interface_s__rosidl_typesupport_fastrtps_c.so\n'}
+[38.806754] (commands_action_interface) StdoutLine: {'line': b'-- Installing: /home/estelamb/PFG_Telematica/Implementation/FleetManager/ROS2/install/commands_action_interface/lib/python3.12/site-packages/commands_action_interface/_commands_action_interface_s.ep.rosidl_typesupport_introspection_c.c\n'}
+[38.808464] (commands_action_interface) StdoutLine: {'line': b'-- Installing: /home/estelamb/PFG_Telematica/Implementation/FleetManager/ROS2/install/commands_action_interface/lib/python3.12/site-packages/commands_action_interface/__init__.py\n'}
+[38.809599] (commands_action_interface) StdoutLine: {'line': b'-- Installing: /home/estelamb/PFG_Telematica/Implementation/FleetManager/ROS2/install/commands_action_interface/lib/python3.12/site-packages/commands_action_interface/commands_action_interface_s__rosidl_typesupport_introspection_c.so\n'}
+[38.811462] (commands_action_interface) StdoutLine: {'line': b'-- Installing: /home/estelamb/PFG_Telematica/Implementation/FleetManager/ROS2/install/commands_action_interface/lib/python3.12/site-packages/commands_action_interface/action\n'}
+[38.812273] (commands_action_interface) StdoutLine: {'line': b'-- Installing: /home/estelamb/PFG_Telematica/Implementation/FleetManager/ROS2/install/commands_action_interface/lib/python3.12/site-packages/commands_action_interface/action/_commands_s.c\n'}
+[38.813937] (commands_action_interface) StdoutLine: {'line': b'-- Installing: /home/estelamb/PFG_Telematica/Implementation/FleetManager/ROS2/install/commands_action_interface/lib/python3.12/site-packages/commands_action_interface/action/_commands.py\n'}
+[38.815592] (commands_action_interface) StdoutLine: {'line': b'-- Installing: /home/estelamb/PFG_Telematica/Implementation/FleetManager/ROS2/install/commands_action_interface/lib/python3.12/site-packages/commands_action_interface/action/__init__.py\n'}
+[38.886520] (-) TimerEvent: {}
+[38.987411] (-) TimerEvent: {}
+[39.051891] (commands_action_interface) StdoutLine: {'line': b"Listing '/home/estelamb/PFG_Telematica/Implementation/FleetManager/ROS2/install/commands_action_interface/lib/python3.12/site-packages/commands_action_interface'...\n"}
+[39.053492] (commands_action_interface) StdoutLine: {'line': b"Compiling '/home/estelamb/PFG_Telematica/Implementation/FleetManager/ROS2/install/commands_action_interface/lib/python3.12/site-packages/commands_action_interface/__init__.py'...\n"}
+[39.054522] (commands_action_interface) StdoutLine: {'line': b"Listing '/home/estelamb/PFG_Telematica/Implementation/FleetManager/ROS2/install/commands_action_interface/lib/python3.12/site-packages/commands_action_interface/action'...\n"}
+[39.055692] (commands_action_interface) StdoutLine: {'line': b"Compiling '/home/estelamb/PFG_Telematica/Implementation/FleetManager/ROS2/install/commands_action_interface/lib/python3.12/site-packages/commands_action_interface/action/__init__.py'...\n"}
+[39.056689] (commands_action_interface) StdoutLine: {'line': b"Compiling '/home/estelamb/PFG_Telematica/Implementation/FleetManager/ROS2/install/commands_action_interface/lib/python3.12/site-packages/commands_action_interface/action/_commands.py'...\n"}
+[39.087651] (-) TimerEvent: {}
+[39.088587] (commands_action_interface) StdoutLine: {'line': b'-- Installing: /home/estelamb/PFG_Telematica/Implementation/FleetManager/ROS2/install/commands_action_interface/lib/python3.12/site-packages/commands_action_interface/commands_action_interface_s__rosidl_typesupport_fastrtps_c.so\n'}
+[39.091089] (commands_action_interface) StdoutLine: {'line': b'-- Set non-toolchain portion of runtime path of "/home/estelamb/PFG_Telematica/Implementation/FleetManager/ROS2/install/commands_action_interface/lib/python3.12/site-packages/commands_action_interface/commands_action_interface_s__rosidl_typesupport_fastrtps_c.so" to ""\n'}
+[39.093473] (commands_action_interface) StdoutLine: {'line': b'-- Installing: /home/estelamb/PFG_Telematica/Implementation/FleetManager/ROS2/install/commands_action_interface/lib/python3.12/site-packages/commands_action_interface/commands_action_interface_s__rosidl_typesupport_introspection_c.so\n'}
+[39.096893] (commands_action_interface) StdoutLine: {'line': b'-- Set non-toolchain portion of runtime path of "/home/estelamb/PFG_Telematica/Implementation/FleetManager/ROS2/install/commands_action_interface/lib/python3.12/site-packages/commands_action_interface/commands_action_interface_s__rosidl_typesupport_introspection_c.so" to ""\n'}
+[39.098819] (commands_action_interface) StdoutLine: {'line': b'-- Installing: /home/estelamb/PFG_Telematica/Implementation/FleetManager/ROS2/install/commands_action_interface/lib/python3.12/site-packages/commands_action_interface/commands_action_interface_s__rosidl_typesupport_c.so\n'}
+[39.103545] (commands_action_interface) StdoutLine: {'line': b'-- Set non-toolchain portion of runtime path of "/home/estelamb/PFG_Telematica/Implementation/FleetManager/ROS2/install/commands_action_interface/lib/python3.12/site-packages/commands_action_interface/commands_action_interface_s__rosidl_typesupport_c.so" to ""\n'}
+[39.104205] (commands_action_interface) StdoutLine: {'line': b'-- Installing: /home/estelamb/PFG_Telematica/Implementation/FleetManager/ROS2/install/commands_action_interface/lib/libcommands_action_interface__rosidl_generator_py.so\n'}
+[39.107537] (commands_action_interface) StdoutLine: {'line': b'-- Set non-toolchain portion of runtime path of "/home/estelamb/PFG_Telematica/Implementation/FleetManager/ROS2/install/commands_action_interface/lib/libcommands_action_interface__rosidl_generator_py.so" to ""\n'}
+[39.108314] (commands_action_interface) StdoutLine: {'line': b'-- Installing: /home/estelamb/PFG_Telematica/Implementation/FleetManager/ROS2/install/commands_action_interface/share/commands_action_interface/action/Commands.idl\n'}
+[39.109511] (commands_action_interface) StdoutLine: {'line': b'-- Installing: /home/estelamb/PFG_Telematica/Implementation/FleetManager/ROS2/install/commands_action_interface/share/commands_action_interface/action/Commands.action\n'}
+[39.111248] (commands_action_interface) StdoutLine: {'line': b'-- Installing: /home/estelamb/PFG_Telematica/Implementation/FleetManager/ROS2/install/commands_action_interface/share/ament_index/resource_index/package_run_dependencies/commands_action_interface\n'}
+[39.113114] (commands_action_interface) StdoutLine: {'line': b'-- Installing: /home/estelamb/PFG_Telematica/Implementation/FleetManager/ROS2/install/commands_action_interface/share/ament_index/resource_index/parent_prefix_path/commands_action_interface\n'}
+[39.114534] (commands_action_interface) StdoutLine: {'line': b'-- Installing: /home/estelamb/PFG_Telematica/Implementation/FleetManager/ROS2/install/commands_action_interface/share/commands_action_interface/environment/ament_prefix_path.sh\n'}
+[39.115906] (commands_action_interface) StdoutLine: {'line': b'-- Installing: /home/estelamb/PFG_Telematica/Implementation/FleetManager/ROS2/install/commands_action_interface/share/commands_action_interface/environment/ament_prefix_path.dsv\n'}
+[39.117232] (commands_action_interface) StdoutLine: {'line': b'-- Installing: /home/estelamb/PFG_Telematica/Implementation/FleetManager/ROS2/install/commands_action_interface/share/commands_action_interface/environment/path.sh\n'}
+[39.118593] (commands_action_interface) StdoutLine: {'line': b'-- Installing: /home/estelamb/PFG_Telematica/Implementation/FleetManager/ROS2/install/commands_action_interface/share/commands_action_interface/environment/path.dsv\n'}
+[39.119954] (commands_action_interface) StdoutLine: {'line': b'-- Installing: /home/estelamb/PFG_Telematica/Implementation/FleetManager/ROS2/install/commands_action_interface/share/commands_action_interface/local_setup.bash\n'}
+[39.121325] (commands_action_interface) StdoutLine: {'line': b'-- Installing: /home/estelamb/PFG_Telematica/Implementation/FleetManager/ROS2/install/commands_action_interface/share/commands_action_interface/local_setup.sh\n'}
+[39.122672] (commands_action_interface) StdoutLine: {'line': b'-- Installing: /home/estelamb/PFG_Telematica/Implementation/FleetManager/ROS2/install/commands_action_interface/share/commands_action_interface/local_setup.zsh\n'}
+[39.123995] (commands_action_interface) StdoutLine: {'line': b'-- Installing: /home/estelamb/PFG_Telematica/Implementation/FleetManager/ROS2/install/commands_action_interface/share/commands_action_interface/local_setup.dsv\n'}
+[39.125466] (commands_action_interface) StdoutLine: {'line': b'-- Installing: /home/estelamb/PFG_Telematica/Implementation/FleetManager/ROS2/install/commands_action_interface/share/commands_action_interface/package.dsv\n'}
+[39.127384] (commands_action_interface) StdoutLine: {'line': b'-- Installing: /home/estelamb/PFG_Telematica/Implementation/FleetManager/ROS2/install/commands_action_interface/share/ament_index/resource_index/packages/commands_action_interface\n'}
+[39.129301] (commands_action_interface) StdoutLine: {'line': b'-- Installing: /home/estelamb/PFG_Telematica/Implementation/FleetManager/ROS2/install/commands_action_interface/share/commands_action_interface/cmake/export_commands_action_interface__rosidl_generator_cExport.cmake\n'}
+[39.130980] (commands_action_interface) StdoutLine: {'line': b'-- Installing: /home/estelamb/PFG_Telematica/Implementation/FleetManager/ROS2/install/commands_action_interface/share/commands_action_interface/cmake/export_commands_action_interface__rosidl_generator_cExport-noconfig.cmake\n'}
+[39.132717] (commands_action_interface) StdoutLine: {'line': b'-- Installing: /home/estelamb/PFG_Telematica/Implementation/FleetManager/ROS2/install/commands_action_interface/share/commands_action_interface/cmake/export_commands_action_interface__rosidl_typesupport_fastrtps_cExport.cmake\n'}
+[39.134426] (commands_action_interface) StdoutLine: {'line': b'-- Installing: /home/estelamb/PFG_Telematica/Implementation/FleetManager/ROS2/install/commands_action_interface/share/commands_action_interface/cmake/export_commands_action_interface__rosidl_typesupport_fastrtps_cExport-noconfig.cmake\n'}
+[39.136171] (commands_action_interface) StdoutLine: {'line': b'-- Installing: /home/estelamb/PFG_Telematica/Implementation/FleetManager/ROS2/install/commands_action_interface/share/commands_action_interface/cmake/commands_action_interface__rosidl_typesupport_introspection_cExport.cmake\n'}
+[39.137887] (commands_action_interface) StdoutLine: {'line': b'-- Installing: /home/estelamb/PFG_Telematica/Implementation/FleetManager/ROS2/install/commands_action_interface/share/commands_action_interface/cmake/commands_action_interface__rosidl_typesupport_introspection_cExport-noconfig.cmake\n'}
+[39.139648] (commands_action_interface) StdoutLine: {'line': b'-- Installing: /home/estelamb/PFG_Telematica/Implementation/FleetManager/ROS2/install/commands_action_interface/share/commands_action_interface/cmake/commands_action_interface__rosidl_typesupport_cExport.cmake\n'}
+[39.141327] (commands_action_interface) StdoutLine: {'line': b'-- Installing: /home/estelamb/PFG_Telematica/Implementation/FleetManager/ROS2/install/commands_action_interface/share/commands_action_interface/cmake/commands_action_interface__rosidl_typesupport_cExport-noconfig.cmake\n'}
+[39.142978] (commands_action_interface) StdoutLine: {'line': b'-- Installing: /home/estelamb/PFG_Telematica/Implementation/FleetManager/ROS2/install/commands_action_interface/share/commands_action_interface/cmake/export_commands_action_interface__rosidl_generator_cppExport.cmake\n'}
+[39.144740] (commands_action_interface) StdoutLine: {'line': b'-- Installing: /home/estelamb/PFG_Telematica/Implementation/FleetManager/ROS2/install/commands_action_interface/share/commands_action_interface/cmake/export_commands_action_interface__rosidl_typesupport_fastrtps_cppExport.cmake\n'}
+[39.146461] (commands_action_interface) StdoutLine: {'line': b'-- Installing: /home/estelamb/PFG_Telematica/Implementation/FleetManager/ROS2/install/commands_action_interface/share/commands_action_interface/cmake/export_commands_action_interface__rosidl_typesupport_fastrtps_cppExport-noconfig.cmake\n'}
+[39.148198] (commands_action_interface) StdoutLine: {'line': b'-- Installing: /home/estelamb/PFG_Telematica/Implementation/FleetManager/ROS2/install/commands_action_interface/share/commands_action_interface/cmake/commands_action_interface__rosidl_typesupport_introspection_cppExport.cmake\n'}
+[39.149904] (commands_action_interface) StdoutLine: {'line': b'-- Installing: /home/estelamb/PFG_Telematica/Implementation/FleetManager/ROS2/install/commands_action_interface/share/commands_action_interface/cmake/commands_action_interface__rosidl_typesupport_introspection_cppExport-noconfig.cmake\n'}
+[39.151686] (commands_action_interface) StdoutLine: {'line': b'-- Installing: /home/estelamb/PFG_Telematica/Implementation/FleetManager/ROS2/install/commands_action_interface/share/commands_action_interface/cmake/commands_action_interface__rosidl_typesupport_cppExport.cmake\n'}
+[39.153432] (commands_action_interface) StdoutLine: {'line': b'-- Installing: /home/estelamb/PFG_Telematica/Implementation/FleetManager/ROS2/install/commands_action_interface/share/commands_action_interface/cmake/commands_action_interface__rosidl_typesupport_cppExport-noconfig.cmake\n'}
+[39.155108] (commands_action_interface) StdoutLine: {'line': b'-- Installing: /home/estelamb/PFG_Telematica/Implementation/FleetManager/ROS2/install/commands_action_interface/share/commands_action_interface/cmake/export_commands_action_interface__rosidl_generator_pyExport.cmake\n'}
+[39.156816] (commands_action_interface) StdoutLine: {'line': b'-- Installing: /home/estelamb/PFG_Telematica/Implementation/FleetManager/ROS2/install/commands_action_interface/share/commands_action_interface/cmake/export_commands_action_interface__rosidl_generator_pyExport-noconfig.cmake\n'}
+[39.158794] (commands_action_interface) StdoutLine: {'line': b'-- Installing: /home/estelamb/PFG_Telematica/Implementation/FleetManager/ROS2/install/commands_action_interface/share/commands_action_interface/cmake/rosidl_cmake-extras.cmake\n'}
+[39.160456] (commands_action_interface) StdoutLine: {'line': b'-- Installing: /home/estelamb/PFG_Telematica/Implementation/FleetManager/ROS2/install/commands_action_interface/share/commands_action_interface/cmake/ament_cmake_export_dependencies-extras.cmake\n'}
+[39.162152] (commands_action_interface) StdoutLine: {'line': b'-- Installing: /home/estelamb/PFG_Telematica/Implementation/FleetManager/ROS2/install/commands_action_interface/share/commands_action_interface/cmake/ament_cmake_export_include_directories-extras.cmake\n'}
+[39.163914] (commands_action_interface) StdoutLine: {'line': b'-- Installing: /home/estelamb/PFG_Telematica/Implementation/FleetManager/ROS2/install/commands_action_interface/share/commands_action_interface/cmake/ament_cmake_export_libraries-extras.cmake\n'}
+[39.165687] (commands_action_interface) StdoutLine: {'line': b'-- Installing: /home/estelamb/PFG_Telematica/Implementation/FleetManager/ROS2/install/commands_action_interface/share/commands_action_interface/cmake/ament_cmake_export_targets-extras.cmake\n'}
+[39.167427] (commands_action_interface) StdoutLine: {'line': b'-- Installing: /home/estelamb/PFG_Telematica/Implementation/FleetManager/ROS2/install/commands_action_interface/share/commands_action_interface/cmake/rosidl_cmake_export_typesupport_targets-extras.cmake\n'}
+[39.169032] (commands_action_interface) StdoutLine: {'line': b'-- Installing: /home/estelamb/PFG_Telematica/Implementation/FleetManager/ROS2/install/commands_action_interface/share/commands_action_interface/cmake/rosidl_cmake_export_typesupport_libraries-extras.cmake\n'}
+[39.170662] (commands_action_interface) StdoutLine: {'line': b'-- Installing: /home/estelamb/PFG_Telematica/Implementation/FleetManager/ROS2/install/commands_action_interface/share/commands_action_interface/cmake/commands_action_interfaceConfig.cmake\n'}
+[39.172061] (commands_action_interface) StdoutLine: {'line': b'-- Installing: /home/estelamb/PFG_Telematica/Implementation/FleetManager/ROS2/install/commands_action_interface/share/commands_action_interface/cmake/commands_action_interfaceConfig-version.cmake\n'}
+[39.173712] (commands_action_interface) StdoutLine: {'line': b'-- Installing: /home/estelamb/PFG_Telematica/Implementation/FleetManager/ROS2/install/commands_action_interface/share/commands_action_interface/package.xml\n'}
+[39.182788] (commands_action_interface) CommandEnded: {'returncode': 0}
+[39.187799] (-) TimerEvent: {}
+[39.288725] (-) TimerEvent: {}
+[39.316689] (commands_action_interface) JobEnded: {'identifier': 'commands_action_interface', 'rc': 0}
+[39.319966] (-) EventReactorShutdown: {}

@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package command_communication;
+
+service CommandCommunication {
+  rpc SendCommand (CommandRequest) returns (CommandResponse) {}
+}
+
+message CommandRequest {
+  repeated string command = 1;
+}
+
+message CommandResponse {
+  string confirmation = 1;
+}

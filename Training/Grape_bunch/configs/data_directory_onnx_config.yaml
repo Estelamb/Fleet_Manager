@@ -1,0 +1,14 @@
+# Train images
+train: data_directory\train_onnx.txt
+
+# Validation images
+val: data_directory\val_onnx.txt
+
+# Test images
+test: data_directory\test_onnx.txt
+
+# Number of classes
+nc: 3
+
+# Class names
+names: ['Chardonnay', 'PinotNoir', 'PinotGris']

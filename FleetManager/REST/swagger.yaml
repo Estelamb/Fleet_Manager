@@ -1,0 +1,234 @@
+openapi: 3.0.0
+info:
+  title: Mission Data API
+  version: 1.0.0
+servers:
+  - url: /
+paths:
+  /mission:
+    post:
+      summary: Submit a mission and receive the mission ID
+      operationId: mission_post
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Mission"
+        required: true
+      responses:
+        "200":
+          description: Successfully received mission
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/MissionIdResponse"
+        "400":
+          description: Invalid input
+        "500":
+          description: Server error
+      x-openapi-router-controller: REST.default_controller
+components:
+  schemas:
+    Mission:
+      required:
+        - commands
+        - missionId
+        - tasks
+        - vehicles
+        - navigationArea
+      type: object
+      properties:
+        missionId:
+          type: integer
+          example: 1
+        tasks:
+          type: array
+          items:
+            $ref: "#/components/schemas/Task"
+        vehicles:
+          type: array
+          items:
+            $ref: "#/components/schemas/Vehicle"
+        commands:
+          type: array
+          items:
+            $ref: "#/components/schemas/Command"
+        navigationArea:
+          $ref: "#/components/schemas/NavigationArea"
+
+    Coordinate:
+      type: object
+      required:
+        - latitude
+        - longitude
+        - altitude
+      properties:
+        latitude:
+          type: number
+          example: 40.209823
+        longitude:
+          type: number
+          example: -3.467171
+        altitude:
+          type: number
+          example: 0
+
+    NavigationArea:
+      type: object
+      properties:
+        area:
+          type: array
+          items:
+            $ref: "#/components/schemas/Coordinate"
+
+    Task:
+      required:
+        - assignedVehicleId
+        - id
+        - missionId
+        - taskStatus
+        - taskType
+      type: object
+      properties:
+        taskType:
+          type: string
+          example: TRANSIT
+          enum:
+            - TRANSIT
+            - SURVEY
+            - TREATMENT
+        id:
+          type: integer
+          example: 1
+        missionId:
+          type: integer
+          example: 1
+        taskStatus:
+          type: string
+          example: NotAssigned
+          enum:
+            - NotAssigned
+            - Assigned
+            - InProgress
+            - Completed
+            - Failed
+        assignedVehicleId:
+          type: integer
+          example: 1
+        # Made optional since not in your JSON
+        taskDependency:
+          $ref: "#/components/schemas/TaskDependency"
+
+    TaskDependency:
+      type: object
+      properties:
+        dependencyStatus:
+          type: string
+          example: NotModified
+          enum:
+            - NotModified
+            - Modified
+        dependencyTaskId:
+          type: integer
+          example: 2
+        dependencyTaskStatus:
+          type: string
+          example: Finished
+          enum:
+            - Finished
+            - Failed
+        dependencyResultType:
+          type: array
+          items:
+            type: integer
+          example: [0]
+
+    Vehicle:
+      required:
+        - id
+        - type
+      type: object
+      properties:
+        id:
+          type: integer
+          example: 1
+        type:
+          type: string
+          example: AUAV
+          enum:
+            - AUAV
+            - AGROBOT
+
+    Command:
+      required:
+        - commandStatus
+        - commandType
+        - id
+        - params
+        - relatedTask
+        - startTime
+      type: object
+      properties:
+        relatedTask:
+          $ref: "#/components/schemas/RelatedTask"
+        id:
+          type: integer
+          example: 1
+        commandType:
+          type: string
+          example: NAV_TAKEOFF
+          enum:
+            - NAV_TAKEOFF
+            - NAV_WAYPOINT
+            - CAMERA_IMAGE
+            - ANALYZE_IMAGE
+            - NAV_HOME
+            - NAV_LAND
+            - SPRAY
+        commandStatus:
+          type: string
+          example: NotAssigned
+          enum:
+            - NotAssigned
+            - Assigned
+            - Executing
+            - Completed
+            - Failed
+        startTime:
+          type: integer
+          example: 1
+        # Changed to support mixed types
+        params:
+          type: array
+          items:
+            oneOf:
+              - type: string
+              - type: number
+              - type: array
+                items:
+                  oneOf:
+                    - type: string
+                    - type: number
+          example: [0.0, 0.0, 40.209232, -3.465646]
+
+    RelatedTask:
+      required:
+        - id
+        - missionId
+      type: object
+      properties:
+        id:
+          type: integer
+          example: 1
+        missionId:
+          type: integer
+          example: 1
+
+    MissionIdResponse:
+      required:
+        - missionId
+      type: object
+      properties:
+        missionId:
+          type: integer
+          example: 1

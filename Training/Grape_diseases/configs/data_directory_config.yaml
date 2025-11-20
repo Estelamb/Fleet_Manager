@@ -1,0 +1,14 @@
+# Train images
+train: data_directory\train.txt
+
+# Validation images
+val: data_directory\val.txt
+
+# Test images
+test: data_directory\test.txt
+
+# Number of classes
+nc: 4
+
+# Class names
+names: ['Healthy', 'Black_measles', 'Black_rot', 'Isariopsis']

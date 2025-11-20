@@ -1,0 +1,237 @@
+[0.080s] Invoking command in '/home/estelamb/PFG_Telematica/Implementation/Drone/build/commands_action_interface': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy VIRTUAL_ENV_PROMPT=(.venv) /usr/bin/cmake /home/estelamb/PFG_Telematica/Implementation/Drone/src/commands_action_interface -DCMAKE_INSTALL_PREFIX=/home/estelamb/PFG_Telematica/Implementation/Drone/install/commands_action_interface
+[0.405s] -- The C compiler identification is GNU 13.3.0
+[0.723s] -- The CXX compiler identification is GNU 13.3.0
+[0.815s] -- Detecting C compiler ABI info
+[1.340s] -- Detecting C compiler ABI info - done
+[1.378s] -- Check for working C compiler: /usr/bin/cc - skipped
+[1.379s] -- Detecting C compile features
+[1.381s] -- Detecting C compile features - done
+[1.434s] -- Detecting CXX compiler ABI info
+[1.986s] -- Detecting CXX compiler ABI info - done
+[2.027s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[2.028s] -- Detecting CXX compile features
+[2.030s] -- Detecting CXX compile features - done
+[2.055s] -- Found ament_cmake: 2.5.3 (/opt/ros/jazzy/share/ament_cmake/cmake)
+[2.637s] -- Found Python3: /home/estelamb/PFG_Telematica/Implementation/.venv/bin/python3 (found version "3.12.3") found components: Interpreter 
+[3.308s] -- Found ament_lint_auto: 0.17.1 (/opt/ros/jazzy/share/ament_lint_auto/cmake)
+[3.895s] -- Found rosidl_default_generators: 1.6.0 (/opt/ros/jazzy/share/rosidl_default_generators/cmake)
+[3.945s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[4.341s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[4.688s] -- Found rosidl_adapter: 4.6.5 (/opt/ros/jazzy/share/rosidl_adapter/cmake)
+[7.215s] -- Found ament_cmake_ros: 0.12.0 (/opt/ros/jazzy/share/ament_cmake_ros/cmake)
+[9.037s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[11.253s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[11.276s] -- Found python_cmake_module: 0.11.1 (/opt/ros/jazzy/share/python_cmake_module/cmake)
+[11.801s] -- Found PythonExtra: /home/estelamb/PFG_Telematica/Implementation/.venv/bin/python3  
+[13.508s] -- Found Python3: /home/estelamb/PFG_Telematica/Implementation/.venv/bin/python3 (found version "3.12.3") found components: Interpreter Development NumPy Development.Module Development.Embed 
+[13.687s] -- Added test 'flake8' to check Python code syntax and style conventions
+[13.688s] -- Configured 'flake8' exclude dirs and/or files: 
+[13.692s] -- Added test 'lint_cmake' to check CMake code style
+[13.695s] -- Added test 'pep257' to check Python code against some of the docstring style conventions in PEP 257
+[13.706s] -- Added test 'xmllint' to check XML markup files
+[13.742s] -- Configuring done (13.6s)
+[13.970s] -- Generating done (0.2s)
+[14.043s] -- Build files have been written to: /home/estelamb/PFG_Telematica/Implementation/Drone/build/commands_action_interface
+[14.087s] Invoked command in '/home/estelamb/PFG_Telematica/Implementation/Drone/build/commands_action_interface' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy VIRTUAL_ENV_PROMPT=(.venv) /usr/bin/cmake /home/estelamb/PFG_Telematica/Implementation/Drone/src/commands_action_interface -DCMAKE_INSTALL_PREFIX=/home/estelamb/PFG_Telematica/Implementation/Drone/install/commands_action_interface
+[14.095s] Invoking command in '/home/estelamb/PFG_Telematica/Implementation/Drone/build/commands_action_interface': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy VIRTUAL_ENV_PROMPT=(.venv) /usr/bin/cmake --build /home/estelamb/PFG_Telematica/Implementation/Drone/build/commands_action_interface -- -j4 -l4
+[14.377s] [  2%] [34m[1mGenerating type hashes for ROS interfaces[0m
+[14.427s] [  2%] Built target ament_cmake_python_copy_commands_action_interface
+[15.387s] [  2%] Built target commands_action_interface__rosidl_generator_type_description
+[15.451s] [  5%] [34m[1mGenerating C code for ROS interfaces[0m
+[15.520s] [  8%] [34m[1mGenerating C++ code for ROS interfaces[0m
+[15.549s] running egg_info
+[15.654s] creating commands_action_interface.egg-info
+[15.656s] writing commands_action_interface.egg-info/PKG-INFO
+[15.659s] writing dependency_links to commands_action_interface.egg-info/dependency_links.txt
+[15.660s] writing top-level names to commands_action_interface.egg-info/top_level.txt
+[15.661s] writing manifest file 'commands_action_interface.egg-info/SOURCES.txt'
+[15.960s] reading manifest file 'commands_action_interface.egg-info/SOURCES.txt'
+[15.964s] writing manifest file 'commands_action_interface.egg-info/SOURCES.txt'
+[16.153s] [  8%] Built target ament_cmake_python_build_commands_action_interface_egg
+[17.999s] [  8%] Built target commands_action_interface__cpp
+[18.189s] [ 14%] [32mBuilding C object CMakeFiles/commands_action_interface__rosidl_generator_c.dir/rosidl_generator_c/commands_action_interface/action/detail/commands__functions.c.o[0m
+[18.190s] [ 14%] [32mBuilding C object CMakeFiles/commands_action_interface__rosidl_generator_c.dir/rosidl_generator_c/commands_action_interface/action/detail/commands__description.c.o[0m
+[18.195s] [ 17%] [32mBuilding C object CMakeFiles/commands_action_interface__rosidl_generator_c.dir/rosidl_generator_c/commands_action_interface/action/detail/commands__type_support.c.o[0m
+[18.954s] [ 20%] [32m[1mLinking C shared library libcommands_action_interface__rosidl_generator_c.so[0m
+[19.174s] [ 20%] Built target commands_action_interface__rosidl_generator_c
+[19.238s] [ 23%] [34m[1mGenerating C++ type support for eProsima Fast-RTPS[0m
+[19.240s] [ 29%] [34m[1mGenerating C++ type support dispatch for ROS interfaces[0m
+[19.243s] [ 29%] [34m[1mGenerating C++ introspection for ROS interfaces[0m
+[19.247s] [ 32%] [34m[1mGenerating C type support for eProsima Fast-RTPS[0m
+[20.967s] [ 35%] [32mBuilding CXX object CMakeFiles/commands_action_interface__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/commands_action_interface/action/commands__type_support.cpp.o[0m
+[21.484s] [ 38%] [32mBuilding CXX object CMakeFiles/commands_action_interface__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/commands_action_interface/action/detail/commands__type_support.cpp.o[0m
+[22.414s] [ 41%] [32mBuilding CXX object CMakeFiles/commands_action_interface__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/commands_action_interface/action/detail/dds_fastrtps/commands__type_support.cpp.o[0m
+[22.808s] [ 44%] [32mBuilding CXX object CMakeFiles/commands_action_interface__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/commands_action_interface/action/detail/commands__type_support_c.cpp.o[0m
+[26.422s] [ 47%] [32m[1mLinking CXX shared library libcommands_action_interface__rosidl_typesupport_cpp.so[0m
+[26.973s] [ 47%] Built target commands_action_interface__rosidl_typesupport_cpp
+[27.052s] [ 50%] [34m[1mGenerating C introspection for ROS interfaces[0m
+[27.674s] [ 52%] [32m[1mLinking CXX shared library libcommands_action_interface__rosidl_typesupport_fastrtps_c.so[0m
+[28.041s] [ 55%] [32m[1mLinking CXX shared library libcommands_action_interface__rosidl_typesupport_introspection_cpp.so[0m
+[28.191s] [ 55%] Built target commands_action_interface__rosidl_typesupport_fastrtps_c
+[28.273s] [ 58%] [34m[1mGenerating C type support dispatch for ROS interfaces[0m
+[28.762s] [ 58%] Built target commands_action_interface__rosidl_typesupport_introspection_cpp
+[29.883s] [ 61%] [32mBuilding C object CMakeFiles/commands_action_interface__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/commands_action_interface/action/detail/commands__type_support.c.o[0m
+[30.161s] [ 64%] [32mBuilding CXX object CMakeFiles/commands_action_interface__rosidl_typesupport_c.dir/rosidl_typesupport_c/commands_action_interface/action/commands__type_support.cpp.o[0m
+[30.370s] [ 67%] [32m[1mLinking C shared library libcommands_action_interface__rosidl_typesupport_introspection_c.so[0m
+[30.540s] [ 70%] [32m[1mLinking CXX shared library libcommands_action_interface__rosidl_typesupport_c.so[0m
+[30.575s] [ 70%] Built target commands_action_interface__rosidl_typesupport_introspection_c
+[30.585s] [ 73%] [32m[1mLinking CXX shared library libcommands_action_interface__rosidl_typesupport_fastrtps_cpp.so[0m
+[30.773s] [ 73%] Built target commands_action_interface__rosidl_typesupport_c
+[31.006s] [ 73%] Built target commands_action_interface__rosidl_typesupport_fastrtps_cpp
+[31.122s] [ 73%] Built target commands_action_interface
+[31.236s] [ 76%] [34m[1mGenerating Python code for ROS interfaces[0m
+[34.977s] [ 76%] Built target commands_action_interface__py
+[35.090s] [ 79%] [32mBuilding C object CMakeFiles/commands_action_interface__rosidl_generator_py.dir/rosidl_generator_py/commands_action_interface/action/_commands_s.c.o[0m
+[36.176s] [ 82%] [32m[1mLinking C shared library libcommands_action_interface__rosidl_generator_py.so[0m
+[36.433s] [ 82%] Built target commands_action_interface__rosidl_generator_py
+[36.555s] [ 85%] [32mBuilding C object CMakeFiles/commands_action_interface_s__rosidl_typesupport_introspection_c.dir/rosidl_generator_py/commands_action_interface/_commands_action_interface_s.ep.rosidl_typesupport_introspection_c.c.o[0m
+[36.561s] [ 88%] [32mBuilding C object CMakeFiles/commands_action_interface_s__rosidl_typesupport_fastrtps_c.dir/rosidl_generator_py/commands_action_interface/_commands_action_interface_s.ep.rosidl_typesupport_fastrtps_c.c.o[0m
+[36.564s] [ 91%] [32mBuilding C object CMakeFiles/commands_action_interface_s__rosidl_typesupport_c.dir/rosidl_generator_py/commands_action_interface/_commands_action_interface_s.ep.rosidl_typesupport_c.c.o[0m
+[37.273s] [ 94%] [32m[1mLinking C shared module rosidl_generator_py/commands_action_interface/commands_action_interface_s__rosidl_typesupport_c.so[0m
+[37.285s] [ 97%] [32m[1mLinking C shared module rosidl_generator_py/commands_action_interface/commands_action_interface_s__rosidl_typesupport_introspection_c.so[0m
+[37.310s] [100%] [32m[1mLinking C shared module rosidl_generator_py/commands_action_interface/commands_action_interface_s__rosidl_typesupport_fastrtps_c.so[0m
+[37.481s] [100%] Built target commands_action_interface_s__rosidl_typesupport_c
+[37.503s] [100%] Built target commands_action_interface_s__rosidl_typesupport_introspection_c
+[37.509s] [100%] Built target commands_action_interface_s__rosidl_typesupport_fastrtps_c
+[37.569s] Invoked command in '/home/estelamb/PFG_Telematica/Implementation/Drone/build/commands_action_interface' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy VIRTUAL_ENV_PROMPT=(.venv) /usr/bin/cmake --build /home/estelamb/PFG_Telematica/Implementation/Drone/build/commands_action_interface -- -j4 -l4
+[37.619s] Invoking command in '/home/estelamb/PFG_Telematica/Implementation/Drone/build/commands_action_interface': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy VIRTUAL_ENV_PROMPT=(.venv) /usr/bin/cmake --install /home/estelamb/PFG_Telematica/Implementation/Drone/build/commands_action_interface
+[37.658s] -- Install configuration: ""
+[37.659s] -- Installing: /home/estelamb/PFG_Telematica/Implementation/Drone/install/commands_action_interface/share/ament_index/resource_index/rosidl_interfaces/commands_action_interface
+[37.661s] -- Installing: /home/estelamb/PFG_Telematica/Implementation/Drone/install/commands_action_interface/share/commands_action_interface/action/Commands.json
+[37.663s] -- Installing: /home/estelamb/PFG_Telematica/Implementation/Drone/install/commands_action_interface/include/commands_action_interface/commands_action_interface
+[37.664s] -- Installing: /home/estelamb/PFG_Telematica/Implementation/Drone/install/commands_action_interface/include/commands_action_interface/commands_action_interface/msg
+[37.664s] -- Installing: /home/estelamb/PFG_Telematica/Implementation/Drone/install/commands_action_interface/include/commands_action_interface/commands_action_interface/msg/rosidl_generator_c__visibility_control.h
+[37.666s] -- Installing: /home/estelamb/PFG_Telematica/Implementation/Drone/install/commands_action_interface/include/commands_action_interface/commands_action_interface/action
+[37.666s] -- Installing: /home/estelamb/PFG_Telematica/Implementation/Drone/install/commands_action_interface/include/commands_action_interface/commands_action_interface/action/commands.h
+[37.668s] -- Installing: /home/estelamb/PFG_Telematica/Implementation/Drone/install/commands_action_interface/include/commands_action_interface/commands_action_interface/action/detail
+[37.668s] -- Installing: /home/estelamb/PFG_Telematica/Implementation/Drone/install/commands_action_interface/include/commands_action_interface/commands_action_interface/action/detail/commands__type_support.h
+[37.670s] -- Installing: /home/estelamb/PFG_Telematica/Implementation/Drone/install/commands_action_interface/include/commands_action_interface/commands_action_interface/action/detail/commands__struct.h
+[37.671s] -- Installing: /home/estelamb/PFG_Telematica/Implementation/Drone/install/commands_action_interface/include/commands_action_interface/commands_action_interface/action/detail/commands__type_support.c
+[37.672s] -- Installing: /home/estelamb/PFG_Telematica/Implementation/Drone/install/commands_action_interface/include/commands_action_interface/commands_action_interface/action/detail/commands__functions.c
+[37.674s] -- Installing: /home/estelamb/PFG_Telematica/Implementation/Drone/install/commands_action_interface/include/commands_action_interface/commands_action_interface/action/detail/commands__functions.h
+[37.676s] -- Installing: /home/estelamb/PFG_Telematica/Implementation/Drone/install/commands_action_interface/include/commands_action_interface/commands_action_interface/action/detail/commands__description.c
+[37.679s] -- Installing: /home/estelamb/PFG_Telematica/Implementation/Drone/install/commands_action_interface/share/commands_action_interface/environment/library_path.sh
+[37.680s] -- Installing: /home/estelamb/PFG_Telematica/Implementation/Drone/install/commands_action_interface/share/commands_action_interface/environment/library_path.dsv
+[37.682s] -- Installing: /home/estelamb/PFG_Telematica/Implementation/Drone/install/commands_action_interface/lib/libcommands_action_interface__rosidl_generator_c.so
+[37.685s] -- Set non-toolchain portion of runtime path of "/home/estelamb/PFG_Telematica/Implementation/Drone/install/commands_action_interface/lib/libcommands_action_interface__rosidl_generator_c.so" to ""
+[37.686s] -- Up-to-date: /home/estelamb/PFG_Telematica/Implementation/Drone/install/commands_action_interface/include/commands_action_interface/commands_action_interface
+[37.686s] -- Up-to-date: /home/estelamb/PFG_Telematica/Implementation/Drone/install/commands_action_interface/include/commands_action_interface/commands_action_interface/msg
+[37.687s] -- Installing: /home/estelamb/PFG_Telematica/Implementation/Drone/install/commands_action_interface/include/commands_action_interface/commands_action_interface/msg/rosidl_typesupport_fastrtps_c__visibility_control.h
+[37.688s] -- Up-to-date: /home/estelamb/PFG_Telematica/Implementation/Drone/install/commands_action_interface/include/commands_action_interface/commands_action_interface/action
+[37.689s] -- Up-to-date: /home/estelamb/PFG_Telematica/Implementation/Drone/install/commands_action_interface/include/commands_action_interface/commands_action_interface/action/detail
+[37.689s] -- Installing: /home/estelamb/PFG_Telematica/Implementation/Drone/install/commands_action_interface/include/commands_action_interface/commands_action_interface/action/detail/commands__rosidl_typesupport_fastrtps_c.h
+[37.691s] -- Installing: /home/estelamb/PFG_Telematica/Implementation/Drone/install/commands_action_interface/lib/libcommands_action_interface__rosidl_typesupport_fastrtps_c.so
+[37.695s] -- Set non-toolchain portion of runtime path of "/home/estelamb/PFG_Telematica/Implementation/Drone/install/commands_action_interface/lib/libcommands_action_interface__rosidl_typesupport_fastrtps_c.so" to ""
+[37.696s] -- Up-to-date: /home/estelamb/PFG_Telematica/Implementation/Drone/install/commands_action_interface/include/commands_action_interface/commands_action_interface
+[37.696s] -- Up-to-date: /home/estelamb/PFG_Telematica/Implementation/Drone/install/commands_action_interface/include/commands_action_interface/commands_action_interface/msg
+[37.696s] -- Installing: /home/estelamb/PFG_Telematica/Implementation/Drone/install/commands_action_interface/include/commands_action_interface/commands_action_interface/msg/rosidl_typesupport_introspection_c__visibility_control.h
+[37.697s] -- Up-to-date: /home/estelamb/PFG_Telematica/Implementation/Drone/install/commands_action_interface/include/commands_action_interface/commands_action_interface/action
+[37.698s] -- Up-to-date: /home/estelamb/PFG_Telematica/Implementation/Drone/install/commands_action_interface/include/commands_action_interface/commands_action_interface/action/detail
+[37.699s] -- Installing: /home/estelamb/PFG_Telematica/Implementation/Drone/install/commands_action_interface/include/commands_action_interface/commands_action_interface/action/detail/commands__rosidl_typesupport_introspection_c.h
+[37.700s] -- Installing: /home/estelamb/PFG_Telematica/Implementation/Drone/install/commands_action_interface/include/commands_action_interface/commands_action_interface/action/detail/commands__type_support.c
+[37.702s] -- Installing: /home/estelamb/PFG_Telematica/Implementation/Drone/install/commands_action_interface/lib/libcommands_action_interface__rosidl_typesupport_introspection_c.so
+[37.706s] -- Set non-toolchain portion of runtime path of "/home/estelamb/PFG_Telematica/Implementation/Drone/install/commands_action_interface/lib/libcommands_action_interface__rosidl_typesupport_introspection_c.so" to ""
+[37.706s] -- Installing: /home/estelamb/PFG_Telematica/Implementation/Drone/install/commands_action_interface/lib/libcommands_action_interface__rosidl_typesupport_c.so
+[37.709s] -- Set non-toolchain portion of runtime path of "/home/estelamb/PFG_Telematica/Implementation/Drone/install/commands_action_interface/lib/libcommands_action_interface__rosidl_typesupport_c.so" to ""
+[37.711s] -- Up-to-date: /home/estelamb/PFG_Telematica/Implementation/Drone/install/commands_action_interface/include/commands_action_interface/commands_action_interface
+[37.711s] -- Up-to-date: /home/estelamb/PFG_Telematica/Implementation/Drone/install/commands_action_interface/include/commands_action_interface/commands_action_interface/msg
+[37.712s] -- Installing: /home/estelamb/PFG_Telematica/Implementation/Drone/install/commands_action_interface/include/commands_action_interface/commands_action_interface/msg/rosidl_generator_cpp__visibility_control.hpp
+[37.712s] -- Up-to-date: /home/estelamb/PFG_Telematica/Implementation/Drone/install/commands_action_interface/include/commands_action_interface/commands_action_interface/action
+[37.713s] -- Installing: /home/estelamb/PFG_Telematica/Implementation/Drone/install/commands_action_interface/include/commands_action_interface/commands_action_interface/action/commands.hpp
+[37.714s] -- Up-to-date: /home/estelamb/PFG_Telematica/Implementation/Drone/install/commands_action_interface/include/commands_action_interface/commands_action_interface/action/detail
+[37.714s] -- Installing: /home/estelamb/PFG_Telematica/Implementation/Drone/install/commands_action_interface/include/commands_action_interface/commands_action_interface/action/detail/commands__type_support.hpp
+[37.716s] -- Installing: /home/estelamb/PFG_Telematica/Implementation/Drone/install/commands_action_interface/include/commands_action_interface/commands_action_interface/action/detail/commands__traits.hpp
+[37.717s] -- Installing: /home/estelamb/PFG_Telematica/Implementation/Drone/install/commands_action_interface/include/commands_action_interface/commands_action_interface/action/detail/commands__struct.hpp
+[37.719s] -- Installing: /home/estelamb/PFG_Telematica/Implementation/Drone/install/commands_action_interface/include/commands_action_interface/commands_action_interface/action/detail/commands__builder.hpp
+[37.720s] -- Up-to-date: /home/estelamb/PFG_Telematica/Implementation/Drone/install/commands_action_interface/include/commands_action_interface/commands_action_interface
+[37.721s] -- Up-to-date: /home/estelamb/PFG_Telematica/Implementation/Drone/install/commands_action_interface/include/commands_action_interface/commands_action_interface/msg
+[37.721s] -- Installing: /home/estelamb/PFG_Telematica/Implementation/Drone/install/commands_action_interface/include/commands_action_interface/commands_action_interface/msg/rosidl_typesupport_fastrtps_cpp__visibility_control.h
+[37.723s] -- Up-to-date: /home/estelamb/PFG_Telematica/Implementation/Drone/install/commands_action_interface/include/commands_action_interface/commands_action_interface/action
+[37.724s] -- Up-to-date: /home/estelamb/PFG_Telematica/Implementation/Drone/install/commands_action_interface/include/commands_action_interface/commands_action_interface/action/detail
+[37.724s] -- Installing: /home/estelamb/PFG_Telematica/Implementation/Drone/install/commands_action_interface/include/commands_action_interface/commands_action_interface/action/detail/commands__rosidl_typesupport_fastrtps_cpp.hpp
+[37.726s] -- Installing: /home/estelamb/PFG_Telematica/Implementation/Drone/install/commands_action_interface/include/commands_action_interface/commands_action_interface/action/detail/dds_fastrtps
+[37.727s] -- Installing: /home/estelamb/PFG_Telematica/Implementation/Drone/install/commands_action_interface/lib/libcommands_action_interface__rosidl_typesupport_fastrtps_cpp.so
+[37.732s] -- Set non-toolchain portion of runtime path of "/home/estelamb/PFG_Telematica/Implementation/Drone/install/commands_action_interface/lib/libcommands_action_interface__rosidl_typesupport_fastrtps_cpp.so" to ""
+[37.732s] -- Up-to-date: /home/estelamb/PFG_Telematica/Implementation/Drone/install/commands_action_interface/include/commands_action_interface/commands_action_interface
+[37.733s] -- Up-to-date: /home/estelamb/PFG_Telematica/Implementation/Drone/install/commands_action_interface/include/commands_action_interface/commands_action_interface/action
+[37.733s] -- Up-to-date: /home/estelamb/PFG_Telematica/Implementation/Drone/install/commands_action_interface/include/commands_action_interface/commands_action_interface/action/detail
+[37.734s] -- Installing: /home/estelamb/PFG_Telematica/Implementation/Drone/install/commands_action_interface/include/commands_action_interface/commands_action_interface/action/detail/commands__rosidl_typesupport_introspection_cpp.hpp
+[37.735s] -- Installing: /home/estelamb/PFG_Telematica/Implementation/Drone/install/commands_action_interface/include/commands_action_interface/commands_action_interface/action/detail/commands__type_support.cpp
+[37.737s] -- Installing: /home/estelamb/PFG_Telematica/Implementation/Drone/install/commands_action_interface/lib/libcommands_action_interface__rosidl_typesupport_introspection_cpp.so
+[37.742s] -- Set non-toolchain portion of runtime path of "/home/estelamb/PFG_Telematica/Implementation/Drone/install/commands_action_interface/lib/libcommands_action_interface__rosidl_typesupport_introspection_cpp.so" to ""
+[37.743s] -- Installing: /home/estelamb/PFG_Telematica/Implementation/Drone/install/commands_action_interface/lib/libcommands_action_interface__rosidl_typesupport_cpp.so
+[37.747s] -- Set non-toolchain portion of runtime path of "/home/estelamb/PFG_Telematica/Implementation/Drone/install/commands_action_interface/lib/libcommands_action_interface__rosidl_typesupport_cpp.so" to ""
+[37.748s] -- Installing: /home/estelamb/PFG_Telematica/Implementation/Drone/install/commands_action_interface/share/commands_action_interface/environment/pythonpath.sh
+[37.749s] -- Installing: /home/estelamb/PFG_Telematica/Implementation/Drone/install/commands_action_interface/share/commands_action_interface/environment/pythonpath.dsv
+[37.751s] -- Installing: /home/estelamb/PFG_Telematica/Implementation/Drone/install/commands_action_interface/lib/python3.12/site-packages/commands_action_interface-0.0.0-py3.12.egg-info
+[37.751s] -- Installing: /home/estelamb/PFG_Telematica/Implementation/Drone/install/commands_action_interface/lib/python3.12/site-packages/commands_action_interface-0.0.0-py3.12.egg-info/SOURCES.txt
+[37.753s] -- Installing: /home/estelamb/PFG_Telematica/Implementation/Drone/install/commands_action_interface/lib/python3.12/site-packages/commands_action_interface-0.0.0-py3.12.egg-info/top_level.txt
+[37.754s] -- Installing: /home/estelamb/PFG_Telematica/Implementation/Drone/install/commands_action_interface/lib/python3.12/site-packages/commands_action_interface-0.0.0-py3.12.egg-info/PKG-INFO
+[37.755s] -- Installing: /home/estelamb/PFG_Telematica/Implementation/Drone/install/commands_action_interface/lib/python3.12/site-packages/commands_action_interface-0.0.0-py3.12.egg-info/dependency_links.txt
+[37.757s] -- Installing: /home/estelamb/PFG_Telematica/Implementation/Drone/install/commands_action_interface/lib/python3.12/site-packages/commands_action_interface
+[37.757s] -- Installing: /home/estelamb/PFG_Telematica/Implementation/Drone/install/commands_action_interface/lib/python3.12/site-packages/commands_action_interface/commands_action_interface_s__rosidl_typesupport_c.so
+[37.759s] -- Installing: /home/estelamb/PFG_Telematica/Implementation/Drone/install/commands_action_interface/lib/python3.12/site-packages/commands_action_interface/_commands_action_interface_s.ep.rosidl_typesupport_c.c
+[37.761s] -- Installing: /home/estelamb/PFG_Telematica/Implementation/Drone/install/commands_action_interface/lib/python3.12/site-packages/commands_action_interface/_commands_action_interface_s.ep.rosidl_typesupport_fastrtps_c.c
+[37.763s] -- Installing: /home/estelamb/PFG_Telematica/Implementation/Drone/install/commands_action_interface/lib/python3.12/site-packages/commands_action_interface/commands_action_interface_s__rosidl_typesupport_fastrtps_c.so
+[37.767s] -- Installing: /home/estelamb/PFG_Telematica/Implementation/Drone/install/commands_action_interface/lib/python3.12/site-packages/commands_action_interface/_commands_action_interface_s.ep.rosidl_typesupport_introspection_c.c
+[37.767s] -- Installing: /home/estelamb/PFG_Telematica/Implementation/Drone/install/commands_action_interface/lib/python3.12/site-packages/commands_action_interface/__init__.py
+[37.770s] -- Installing: /home/estelamb/PFG_Telematica/Implementation/Drone/install/commands_action_interface/lib/python3.12/site-packages/commands_action_interface/commands_action_interface_s__rosidl_typesupport_introspection_c.so
+[37.774s] -- Installing: /home/estelamb/PFG_Telematica/Implementation/Drone/install/commands_action_interface/lib/python3.12/site-packages/commands_action_interface/action
+[37.774s] -- Installing: /home/estelamb/PFG_Telematica/Implementation/Drone/install/commands_action_interface/lib/python3.12/site-packages/commands_action_interface/action/_commands_s.c
+[37.775s] -- Installing: /home/estelamb/PFG_Telematica/Implementation/Drone/install/commands_action_interface/lib/python3.12/site-packages/commands_action_interface/action/_commands.py
+[37.778s] -- Installing: /home/estelamb/PFG_Telematica/Implementation/Drone/install/commands_action_interface/lib/python3.12/site-packages/commands_action_interface/action/__init__.py
+[38.025s] Listing '/home/estelamb/PFG_Telematica/Implementation/Drone/install/commands_action_interface/lib/python3.12/site-packages/commands_action_interface'...
+[38.027s] Compiling '/home/estelamb/PFG_Telematica/Implementation/Drone/install/commands_action_interface/lib/python3.12/site-packages/commands_action_interface/__init__.py'...
+[38.028s] Listing '/home/estelamb/PFG_Telematica/Implementation/Drone/install/commands_action_interface/lib/python3.12/site-packages/commands_action_interface/action'...
+[38.030s] Compiling '/home/estelamb/PFG_Telematica/Implementation/Drone/install/commands_action_interface/lib/python3.12/site-packages/commands_action_interface/action/__init__.py'...
+[38.031s] Compiling '/home/estelamb/PFG_Telematica/Implementation/Drone/install/commands_action_interface/lib/python3.12/site-packages/commands_action_interface/action/_commands.py'...
+[38.058s] -- Installing: /home/estelamb/PFG_Telematica/Implementation/Drone/install/commands_action_interface/lib/python3.12/site-packages/commands_action_interface/commands_action_interface_s__rosidl_typesupport_fastrtps_c.so
+[38.061s] -- Set non-toolchain portion of runtime path of "/home/estelamb/PFG_Telematica/Implementation/Drone/install/commands_action_interface/lib/python3.12/site-packages/commands_action_interface/commands_action_interface_s__rosidl_typesupport_fastrtps_c.so" to ""
+[38.063s] -- Installing: /home/estelamb/PFG_Telematica/Implementation/Drone/install/commands_action_interface/lib/python3.12/site-packages/commands_action_interface/commands_action_interface_s__rosidl_typesupport_introspection_c.so
+[38.066s] -- Set non-toolchain portion of runtime path of "/home/estelamb/PFG_Telematica/Implementation/Drone/install/commands_action_interface/lib/python3.12/site-packages/commands_action_interface/commands_action_interface_s__rosidl_typesupport_introspection_c.so" to ""
+[38.068s] -- Installing: /home/estelamb/PFG_Telematica/Implementation/Drone/install/commands_action_interface/lib/python3.12/site-packages/commands_action_interface/commands_action_interface_s__rosidl_typesupport_c.so
+[38.071s] -- Set non-toolchain portion of runtime path of "/home/estelamb/PFG_Telematica/Implementation/Drone/install/commands_action_interface/lib/python3.12/site-packages/commands_action_interface/commands_action_interface_s__rosidl_typesupport_c.so" to ""
+[38.072s] -- Installing: /home/estelamb/PFG_Telematica/Implementation/Drone/install/commands_action_interface/lib/libcommands_action_interface__rosidl_generator_py.so
+[38.075s] -- Set non-toolchain portion of runtime path of "/home/estelamb/PFG_Telematica/Implementation/Drone/install/commands_action_interface/lib/libcommands_action_interface__rosidl_generator_py.so" to ""
+[38.076s] -- Installing: /home/estelamb/PFG_Telematica/Implementation/Drone/install/commands_action_interface/share/commands_action_interface/action/Commands.idl
+[38.077s] -- Installing: /home/estelamb/PFG_Telematica/Implementation/Drone/install/commands_action_interface/share/commands_action_interface/action/Commands.action
+[38.079s] -- Installing: /home/estelamb/PFG_Telematica/Implementation/Drone/install/commands_action_interface/share/ament_index/resource_index/package_run_dependencies/commands_action_interface
+[38.081s] -- Installing: /home/estelamb/PFG_Telematica/Implementation/Drone/install/commands_action_interface/share/ament_index/resource_index/parent_prefix_path/commands_action_interface
+[38.082s] -- Installing: /home/estelamb/PFG_Telematica/Implementation/Drone/install/commands_action_interface/share/commands_action_interface/environment/ament_prefix_path.sh
+[38.083s] -- Installing: /home/estelamb/PFG_Telematica/Implementation/Drone/install/commands_action_interface/share/commands_action_interface/environment/ament_prefix_path.dsv
+[38.084s] -- Installing: /home/estelamb/PFG_Telematica/Implementation/Drone/install/commands_action_interface/share/commands_action_interface/environment/path.sh
+[38.086s] -- Installing: /home/estelamb/PFG_Telematica/Implementation/Drone/install/commands_action_interface/share/commands_action_interface/environment/path.dsv
+[38.087s] -- Installing: /home/estelamb/PFG_Telematica/Implementation/Drone/install/commands_action_interface/share/commands_action_interface/local_setup.bash
+[38.088s] -- Installing: /home/estelamb/PFG_Telematica/Implementation/Drone/install/commands_action_interface/share/commands_action_interface/local_setup.sh
+[38.090s] -- Installing: /home/estelamb/PFG_Telematica/Implementation/Drone/install/commands_action_interface/share/commands_action_interface/local_setup.zsh
+[38.091s] -- Installing: /home/estelamb/PFG_Telematica/Implementation/Drone/install/commands_action_interface/share/commands_action_interface/local_setup.dsv
+[38.092s] -- Installing: /home/estelamb/PFG_Telematica/Implementation/Drone/install/commands_action_interface/share/commands_action_interface/package.dsv
+[38.094s] -- Installing: /home/estelamb/PFG_Telematica/Implementation/Drone/install/commands_action_interface/share/ament_index/resource_index/packages/commands_action_interface
+[38.096s] -- Installing: /home/estelamb/PFG_Telematica/Implementation/Drone/install/commands_action_interface/share/commands_action_interface/cmake/export_commands_action_interface__rosidl_generator_cExport.cmake
+[38.098s] -- Installing: /home/estelamb/PFG_Telematica/Implementation/Drone/install/commands_action_interface/share/commands_action_interface/cmake/export_commands_action_interface__rosidl_generator_cExport-noconfig.cmake
+[38.099s] -- Installing: /home/estelamb/PFG_Telematica/Implementation/Drone/install/commands_action_interface/share/commands_action_interface/cmake/export_commands_action_interface__rosidl_typesupport_fastrtps_cExport.cmake
+[38.101s] -- Installing: /home/estelamb/PFG_Telematica/Implementation/Drone/install/commands_action_interface/share/commands_action_interface/cmake/export_commands_action_interface__rosidl_typesupport_fastrtps_cExport-noconfig.cmake
+[38.103s] -- Installing: /home/estelamb/PFG_Telematica/Implementation/Drone/install/commands_action_interface/share/commands_action_interface/cmake/commands_action_interface__rosidl_typesupport_introspection_cExport.cmake
+[38.104s] -- Installing: /home/estelamb/PFG_Telematica/Implementation/Drone/install/commands_action_interface/share/commands_action_interface/cmake/commands_action_interface__rosidl_typesupport_introspection_cExport-noconfig.cmake
+[38.106s] -- Installing: /home/estelamb/PFG_Telematica/Implementation/Drone/install/commands_action_interface/share/commands_action_interface/cmake/commands_action_interface__rosidl_typesupport_cExport.cmake
+[38.108s] -- Installing: /home/estelamb/PFG_Telematica/Implementation/Drone/install/commands_action_interface/share/commands_action_interface/cmake/commands_action_interface__rosidl_typesupport_cExport-noconfig.cmake
+[38.110s] -- Installing: /home/estelamb/PFG_Telematica/Implementation/Drone/install/commands_action_interface/share/commands_action_interface/cmake/export_commands_action_interface__rosidl_generator_cppExport.cmake
+[38.111s] -- Installing: /home/estelamb/PFG_Telematica/Implementation/Drone/install/commands_action_interface/share/commands_action_interface/cmake/export_commands_action_interface__rosidl_typesupport_fastrtps_cppExport.cmake
+[38.114s] -- Installing: /home/estelamb/PFG_Telematica/Implementation/Drone/install/commands_action_interface/share/commands_action_interface/cmake/export_commands_action_interface__rosidl_typesupport_fastrtps_cppExport-noconfig.cmake
+[38.115s] -- Installing: /home/estelamb/PFG_Telematica/Implementation/Drone/install/commands_action_interface/share/commands_action_interface/cmake/commands_action_interface__rosidl_typesupport_introspection_cppExport.cmake
+[38.117s] -- Installing: /home/estelamb/PFG_Telematica/Implementation/Drone/install/commands_action_interface/share/commands_action_interface/cmake/commands_action_interface__rosidl_typesupport_introspection_cppExport-noconfig.cmake
+[38.119s] -- Installing: /home/estelamb/PFG_Telematica/Implementation/Drone/install/commands_action_interface/share/commands_action_interface/cmake/commands_action_interface__rosidl_typesupport_cppExport.cmake
+[38.120s] -- Installing: /home/estelamb/PFG_Telematica/Implementation/Drone/install/commands_action_interface/share/commands_action_interface/cmake/commands_action_interface__rosidl_typesupport_cppExport-noconfig.cmake
+[38.122s] -- Installing: /home/estelamb/PFG_Telematica/Implementation/Drone/install/commands_action_interface/share/commands_action_interface/cmake/export_commands_action_interface__rosidl_generator_pyExport.cmake
+[38.124s] -- Installing: /home/estelamb/PFG_Telematica/Implementation/Drone/install/commands_action_interface/share/commands_action_interface/cmake/export_commands_action_interface__rosidl_generator_pyExport-noconfig.cmake
+[38.125s] -- Installing: /home/estelamb/PFG_Telematica/Implementation/Drone/install/commands_action_interface/share/commands_action_interface/cmake/rosidl_cmake-extras.cmake
+[38.127s] -- Installing: /home/estelamb/PFG_Telematica/Implementation/Drone/install/commands_action_interface/share/commands_action_interface/cmake/ament_cmake_export_dependencies-extras.cmake
+[38.128s] -- Installing: /home/estelamb/PFG_Telematica/Implementation/Drone/install/commands_action_interface/share/commands_action_interface/cmake/ament_cmake_export_include_directories-extras.cmake
+[38.130s] -- Installing: /home/estelamb/PFG_Telematica/Implementation/Drone/install/commands_action_interface/share/commands_action_interface/cmake/ament_cmake_export_libraries-extras.cmake
+[38.131s] -- Installing: /home/estelamb/PFG_Telematica/Implementation/Drone/install/commands_action_interface/share/commands_action_interface/cmake/ament_cmake_export_targets-extras.cmake
+[38.132s] -- Installing: /home/estelamb/PFG_Telematica/Implementation/Drone/install/commands_action_interface/share/commands_action_interface/cmake/rosidl_cmake_export_typesupport_targets-extras.cmake
+[38.134s] -- Installing: /home/estelamb/PFG_Telematica/Implementation/Drone/install/commands_action_interface/share/commands_action_interface/cmake/rosidl_cmake_export_typesupport_libraries-extras.cmake
+[38.136s] -- Installing: /home/estelamb/PFG_Telematica/Implementation/Drone/install/commands_action_interface/share/commands_action_interface/cmake/commands_action_interfaceConfig.cmake
+[38.137s] -- Installing: /home/estelamb/PFG_Telematica/Implementation/Drone/install/commands_action_interface/share/commands_action_interface/cmake/commands_action_interfaceConfig-version.cmake
+[38.138s] -- Installing: /home/estelamb/PFG_Telematica/Implementation/Drone/install/commands_action_interface/share/commands_action_interface/package.xml
+[38.148s] Invoked command in '/home/estelamb/PFG_Telematica/Implementation/Drone/build/commands_action_interface' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy VIRTUAL_ENV_PROMPT=(.venv) /usr/bin/cmake --install /home/estelamb/PFG_Telematica/Implementation/Drone/build/commands_action_interface

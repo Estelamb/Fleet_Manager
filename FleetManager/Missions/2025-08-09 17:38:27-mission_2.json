@@ -1,0 +1,1569 @@
+{
+    "mission_id": 2,
+    "tasks": [
+        {
+            "task_type": "TRANSIT",
+            "id": 1001,
+            "mission_id": 2,
+            "task_status": "NotAssigned",
+            "assigned_vehicle_id": 1,
+            "task_dependency": null
+        },
+        {
+            "task_type": "SURVEY",
+            "id": 1002,
+            "mission_id": 2,
+            "task_status": "NotAssigned",
+            "assigned_vehicle_id": 1,
+            "task_dependency": null
+        },
+        {
+            "task_type": "TRANSIT",
+            "id": 1003,
+            "mission_id": 2,
+            "task_status": "NotAssigned",
+            "assigned_vehicle_id": 1,
+            "task_dependency": null
+        }
+    ],
+    "vehicles": [
+        {
+            "id": 1,
+            "type": "AUAV"
+        }
+    ],
+    "commands": [
+        {
+            "related_task": {
+                "id": 1001,
+                "mission_id": 2
+            },
+            "id": 1001,
+            "command_type": "NAV_TAKEOFF",
+            "command_status": "NotAssigned",
+            "start_time": 1,
+            "params": [
+                0.0,
+                0.0,
+                40.20772,
+                -3.466688
+            ]
+        },
+        {
+            "related_task": {
+                "id": 1001,
+                "mission_id": 2
+            },
+            "id": 1002,
+            "command_type": "NAV_WAYPOINT",
+            "command_status": "NotAssigned",
+            "start_time": 2,
+            "params": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                40.20772,
+                -3.466688,
+                0.0
+            ]
+        },
+        {
+            "related_task": {
+                "id": 1002,
+                "mission_id": 2
+            },
+            "id": 1003,
+            "command_type": "NAV_WAYPOINT",
+            "command_status": "NotAssigned",
+            "start_time": 3,
+            "params": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                40.207874,
+                -3.467592,
+                0.0
+            ]
+        },
+        {
+            "related_task": {
+                "id": 1002,
+                "mission_id": 2
+            },
+            "id": 1004,
+            "command_type": "CAMERA_IMAGE",
+            "command_status": "NotAssigned",
+            "start_time": 4,
+            "params": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                "Camera_Test_Simulator"
+            ]
+        },
+        {
+            "related_task": {
+                "id": 1002,
+                "mission_id": 2
+            },
+            "id": 1005,
+            "command_type": "ANALYZE_IMAGE",
+            "command_status": "NotAssigned",
+            "start_time": 5,
+            "params": [
+                [
+                    "Grape_Diseases_Hailo8",
+                    "Grape_Bunch_Hailo8"
+                ],
+                40.207874,
+                -3.467592,
+                [
+                    0,
+                    0
+                ],
+                [
+                    "ISOBUS",
+                    "Drone"
+                ]
+            ]
+        },
+        {
+            "related_task": {
+                "id": 1002,
+                "mission_id": 2
+            },
+            "id": 1006,
+            "command_type": "NAV_WAYPOINT",
+            "command_status": "NotAssigned",
+            "start_time": 6,
+            "params": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                40.207868,
+                -3.467482,
+                0.0
+            ]
+        },
+        {
+            "related_task": {
+                "id": 1002,
+                "mission_id": 2
+            },
+            "id": 1007,
+            "command_type": "CAMERA_IMAGE",
+            "command_status": "NotAssigned",
+            "start_time": 7,
+            "params": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                "Camera_Test_Simulator"
+            ]
+        },
+        {
+            "related_task": {
+                "id": 1002,
+                "mission_id": 2
+            },
+            "id": 1008,
+            "command_type": "ANALYZE_IMAGE",
+            "command_status": "NotAssigned",
+            "start_time": 8,
+            "params": [
+                [
+                    "Grape_Diseases_Hailo8",
+                    "Grape_Bunch_Hailo8"
+                ],
+                40.207868,
+                -3.467482,
+                [
+                    0,
+                    1
+                ],
+                [
+                    "ISOBUS",
+                    "Drone"
+                ]
+            ]
+        },
+        {
+            "related_task": {
+                "id": 1002,
+                "mission_id": 2
+            },
+            "id": 1009,
+            "command_type": "NAV_WAYPOINT",
+            "command_status": "NotAssigned",
+            "start_time": 9,
+            "params": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                40.207862,
+                -3.467372,
+                0.0
+            ]
+        },
+        {
+            "related_task": {
+                "id": 1002,
+                "mission_id": 2
+            },
+            "id": 1010,
+            "command_type": "CAMERA_IMAGE",
+            "command_status": "NotAssigned",
+            "start_time": 10,
+            "params": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                "Camera_Test_Simulator"
+            ]
+        },
+        {
+            "related_task": {
+                "id": 1002,
+                "mission_id": 2
+            },
+            "id": 1011,
+            "command_type": "ANALYZE_IMAGE",
+            "command_status": "NotAssigned",
+            "start_time": 11,
+            "params": [
+                [
+                    "Grape_Diseases_Hailo8",
+                    "Grape_Bunch_Hailo8"
+                ],
+                40.207862,
+                -3.467372,
+                [
+                    0,
+                    2
+                ],
+                [
+                    "ISOBUS",
+                    "Drone"
+                ]
+            ]
+        },
+        {
+            "related_task": {
+                "id": 1002,
+                "mission_id": 2
+            },
+            "id": 1012,
+            "command_type": "NAV_WAYPOINT",
+            "command_status": "NotAssigned",
+            "start_time": 12,
+            "params": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                40.207855,
+                -3.467262,
+                0.0
+            ]
+        },
+        {
+            "related_task": {
+                "id": 1002,
+                "mission_id": 2
+            },
+            "id": 1013,
+            "command_type": "CAMERA_IMAGE",
+            "command_status": "NotAssigned",
+            "start_time": 13,
+            "params": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                "Camera_Test_Simulator"
+            ]
+        },
+        {
+            "related_task": {
+                "id": 1002,
+                "mission_id": 2
+            },
+            "id": 1014,
+            "command_type": "ANALYZE_IMAGE",
+            "command_status": "NotAssigned",
+            "start_time": 14,
+            "params": [
+                [
+                    "Grape_Diseases_Hailo8",
+                    "Grape_Bunch_Hailo8"
+                ],
+                40.207855,
+                -3.467262,
+                [
+                    0,
+                    3
+                ],
+                [
+                    "ISOBUS",
+                    "Drone"
+                ]
+            ]
+        },
+        {
+            "related_task": {
+                "id": 1002,
+                "mission_id": 2
+            },
+            "id": 1015,
+            "command_type": "NAV_WAYPOINT",
+            "command_status": "NotAssigned",
+            "start_time": 15,
+            "params": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                40.207848,
+                -3.467152,
+                0.0
+            ]
+        },
+        {
+            "related_task": {
+                "id": 1002,
+                "mission_id": 2
+            },
+            "id": 1016,
+            "command_type": "CAMERA_IMAGE",
+            "command_status": "NotAssigned",
+            "start_time": 16,
+            "params": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                "Camera_Test_Simulator"
+            ]
+        },
+        {
+            "related_task": {
+                "id": 1002,
+                "mission_id": 2
+            },
+            "id": 1017,
+            "command_type": "ANALYZE_IMAGE",
+            "command_status": "NotAssigned",
+            "start_time": 17,
+            "params": [
+                [
+                    "Grape_Diseases_Hailo8",
+                    "Grape_Bunch_Hailo8"
+                ],
+                40.207848,
+                -3.467152,
+                [
+                    0,
+                    4
+                ],
+                [
+                    "ISOBUS",
+                    "Drone"
+                ]
+            ]
+        },
+        {
+            "related_task": {
+                "id": 1002,
+                "mission_id": 2
+            },
+            "id": 1018,
+            "command_type": "NAV_WAYPOINT",
+            "command_status": "NotAssigned",
+            "start_time": 18,
+            "params": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                40.207842,
+                -3.467042,
+                0.0
+            ]
+        },
+        {
+            "related_task": {
+                "id": 1002,
+                "mission_id": 2
+            },
+            "id": 1019,
+            "command_type": "CAMERA_IMAGE",
+            "command_status": "NotAssigned",
+            "start_time": 19,
+            "params": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                "Camera_Test_Simulator"
+            ]
+        },
+        {
+            "related_task": {
+                "id": 1002,
+                "mission_id": 2
+            },
+            "id": 1020,
+            "command_type": "ANALYZE_IMAGE",
+            "command_status": "NotAssigned",
+            "start_time": 20,
+            "params": [
+                [
+                    "Grape_Diseases_Hailo8",
+                    "Grape_Bunch_Hailo8"
+                ],
+                40.207842,
+                -3.467042,
+                [
+                    0,
+                    5
+                ],
+                [
+                    "ISOBUS",
+                    "Drone"
+                ]
+            ]
+        },
+        {
+            "related_task": {
+                "id": 1002,
+                "mission_id": 2
+            },
+            "id": 1021,
+            "command_type": "NAV_WAYPOINT",
+            "command_status": "NotAssigned",
+            "start_time": 21,
+            "params": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                40.207835,
+                -3.466932,
+                0.0
+            ]
+        },
+        {
+            "related_task": {
+                "id": 1002,
+                "mission_id": 2
+            },
+            "id": 1022,
+            "command_type": "CAMERA_IMAGE",
+            "command_status": "NotAssigned",
+            "start_time": 22,
+            "params": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                "Camera_Test_Simulator"
+            ]
+        },
+        {
+            "related_task": {
+                "id": 1002,
+                "mission_id": 2
+            },
+            "id": 1023,
+            "command_type": "ANALYZE_IMAGE",
+            "command_status": "NotAssigned",
+            "start_time": 23,
+            "params": [
+                [
+                    "Grape_Diseases_Hailo8",
+                    "Grape_Bunch_Hailo8"
+                ],
+                40.207835,
+                -3.466932,
+                [
+                    0,
+                    6
+                ],
+                [
+                    "ISOBUS",
+                    "Drone"
+                ]
+            ]
+        },
+        {
+            "related_task": {
+                "id": 1002,
+                "mission_id": 2
+            },
+            "id": 1024,
+            "command_type": "NAV_WAYPOINT",
+            "command_status": "NotAssigned",
+            "start_time": 24,
+            "params": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                40.207758,
+                -3.466904,
+                0.0
+            ]
+        },
+        {
+            "related_task": {
+                "id": 1002,
+                "mission_id": 2
+            },
+            "id": 1025,
+            "command_type": "CAMERA_IMAGE",
+            "command_status": "NotAssigned",
+            "start_time": 25,
+            "params": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                "Camera_Test_Simulator"
+            ]
+        },
+        {
+            "related_task": {
+                "id": 1002,
+                "mission_id": 2
+            },
+            "id": 1026,
+            "command_type": "ANALYZE_IMAGE",
+            "command_status": "NotAssigned",
+            "start_time": 26,
+            "params": [
+                [
+                    "Grape_Diseases_Hailo8",
+                    "Grape_Bunch_Hailo8"
+                ],
+                40.207758,
+                -3.466904,
+                [
+                    1,
+                    6
+                ],
+                [
+                    "ISOBUS",
+                    "Drone"
+                ]
+            ]
+        },
+        {
+            "related_task": {
+                "id": 1002,
+                "mission_id": 2
+            },
+            "id": 1027,
+            "command_type": "NAV_WAYPOINT",
+            "command_status": "NotAssigned",
+            "start_time": 27,
+            "params": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                40.207765,
+                -3.467014,
+                0.0
+            ]
+        },
+        {
+            "related_task": {
+                "id": 1002,
+                "mission_id": 2
+            },
+            "id": 1028,
+            "command_type": "CAMERA_IMAGE",
+            "command_status": "NotAssigned",
+            "start_time": 28,
+            "params": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                "Camera_Test_Simulator"
+            ]
+        },
+        {
+            "related_task": {
+                "id": 1002,
+                "mission_id": 2
+            },
+            "id": 1029,
+            "command_type": "ANALYZE_IMAGE",
+            "command_status": "NotAssigned",
+            "start_time": 29,
+            "params": [
+                [
+                    "Grape_Diseases_Hailo8",
+                    "Grape_Bunch_Hailo8"
+                ],
+                40.207765,
+                -3.467014,
+                [
+                    1,
+                    5
+                ],
+                [
+                    "ISOBUS",
+                    "Drone"
+                ]
+            ]
+        },
+        {
+            "related_task": {
+                "id": 1002,
+                "mission_id": 2
+            },
+            "id": 1030,
+            "command_type": "NAV_WAYPOINT",
+            "command_status": "NotAssigned",
+            "start_time": 30,
+            "params": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                40.207771,
+                -3.467124,
+                0.0
+            ]
+        },
+        {
+            "related_task": {
+                "id": 1002,
+                "mission_id": 2
+            },
+            "id": 1031,
+            "command_type": "CAMERA_IMAGE",
+            "command_status": "NotAssigned",
+            "start_time": 31,
+            "params": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                "Camera_Test_Simulator"
+            ]
+        },
+        {
+            "related_task": {
+                "id": 1002,
+                "mission_id": 2
+            },
+            "id": 1032,
+            "command_type": "ANALYZE_IMAGE",
+            "command_status": "NotAssigned",
+            "start_time": 32,
+            "params": [
+                [
+                    "Grape_Diseases_Hailo8",
+                    "Grape_Bunch_Hailo8"
+                ],
+                40.207771,
+                -3.467124,
+                [
+                    1,
+                    4
+                ],
+                [
+                    "ISOBUS",
+                    "Drone"
+                ]
+            ]
+        },
+        {
+            "related_task": {
+                "id": 1002,
+                "mission_id": 2
+            },
+            "id": 1033,
+            "command_type": "NAV_WAYPOINT",
+            "command_status": "NotAssigned",
+            "start_time": 33,
+            "params": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                40.207778,
+                -3.467234,
+                0.0
+            ]
+        },
+        {
+            "related_task": {
+                "id": 1002,
+                "mission_id": 2
+            },
+            "id": 1034,
+            "command_type": "CAMERA_IMAGE",
+            "command_status": "NotAssigned",
+            "start_time": 34,
+            "params": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                "Camera_Test_Simulator"
+            ]
+        },
+        {
+            "related_task": {
+                "id": 1002,
+                "mission_id": 2
+            },
+            "id": 1035,
+            "command_type": "ANALYZE_IMAGE",
+            "command_status": "NotAssigned",
+            "start_time": 35,
+            "params": [
+                [
+                    "Grape_Diseases_Hailo8",
+                    "Grape_Bunch_Hailo8"
+                ],
+                40.207778,
+                -3.467234,
+                [
+                    1,
+                    3
+                ],
+                [
+                    "ISOBUS",
+                    "Drone"
+                ]
+            ]
+        },
+        {
+            "related_task": {
+                "id": 1002,
+                "mission_id": 2
+            },
+            "id": 1036,
+            "command_type": "NAV_WAYPOINT",
+            "command_status": "NotAssigned",
+            "start_time": 36,
+            "params": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                40.207785,
+                -3.467344,
+                0.0
+            ]
+        },
+        {
+            "related_task": {
+                "id": 1002,
+                "mission_id": 2
+            },
+            "id": 1037,
+            "command_type": "CAMERA_IMAGE",
+            "command_status": "NotAssigned",
+            "start_time": 37,
+            "params": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                "Camera_Test_Simulator"
+            ]
+        },
+        {
+            "related_task": {
+                "id": 1002,
+                "mission_id": 2
+            },
+            "id": 1038,
+            "command_type": "ANALYZE_IMAGE",
+            "command_status": "NotAssigned",
+            "start_time": 38,
+            "params": [
+                [
+                    "Grape_Diseases_Hailo8",
+                    "Grape_Bunch_Hailo8"
+                ],
+                40.207785,
+                -3.467344,
+                [
+                    1,
+                    2
+                ],
+                [
+                    "ISOBUS",
+                    "Drone"
+                ]
+            ]
+        },
+        {
+            "related_task": {
+                "id": 1002,
+                "mission_id": 2
+            },
+            "id": 1039,
+            "command_type": "NAV_WAYPOINT",
+            "command_status": "NotAssigned",
+            "start_time": 39,
+            "params": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                40.207791,
+                -3.467454,
+                0.0
+            ]
+        },
+        {
+            "related_task": {
+                "id": 1002,
+                "mission_id": 2
+            },
+            "id": 1040,
+            "command_type": "CAMERA_IMAGE",
+            "command_status": "NotAssigned",
+            "start_time": 40,
+            "params": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                "Camera_Test_Simulator"
+            ]
+        },
+        {
+            "related_task": {
+                "id": 1002,
+                "mission_id": 2
+            },
+            "id": 1041,
+            "command_type": "ANALYZE_IMAGE",
+            "command_status": "NotAssigned",
+            "start_time": 41,
+            "params": [
+                [
+                    "Grape_Diseases_Hailo8",
+                    "Grape_Bunch_Hailo8"
+                ],
+                40.207791,
+                -3.467454,
+                [
+                    1,
+                    1
+                ],
+                [
+                    "ISOBUS",
+                    "Drone"
+                ]
+            ]
+        },
+        {
+            "related_task": {
+                "id": 1002,
+                "mission_id": 2
+            },
+            "id": 1042,
+            "command_type": "NAV_WAYPOINT",
+            "command_status": "NotAssigned",
+            "start_time": 42,
+            "params": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                40.207798,
+                -3.467564,
+                0.0
+            ]
+        },
+        {
+            "related_task": {
+                "id": 1002,
+                "mission_id": 2
+            },
+            "id": 1043,
+            "command_type": "CAMERA_IMAGE",
+            "command_status": "NotAssigned",
+            "start_time": 43,
+            "params": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                "Camera_Test_Simulator"
+            ]
+        },
+        {
+            "related_task": {
+                "id": 1002,
+                "mission_id": 2
+            },
+            "id": 1044,
+            "command_type": "ANALYZE_IMAGE",
+            "command_status": "NotAssigned",
+            "start_time": 44,
+            "params": [
+                [
+                    "Grape_Diseases_Hailo8",
+                    "Grape_Bunch_Hailo8"
+                ],
+                40.207798,
+                -3.467564,
+                [
+                    1,
+                    0
+                ],
+                [
+                    "ISOBUS",
+                    "Drone"
+                ]
+            ]
+        },
+        {
+            "related_task": {
+                "id": 1002,
+                "mission_id": 2
+            },
+            "id": 1045,
+            "command_type": "NAV_WAYPOINT",
+            "command_status": "NotAssigned",
+            "start_time": 45,
+            "params": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                40.207721,
+                -3.467536,
+                0.0
+            ]
+        },
+        {
+            "related_task": {
+                "id": 1002,
+                "mission_id": 2
+            },
+            "id": 1046,
+            "command_type": "CAMERA_IMAGE",
+            "command_status": "NotAssigned",
+            "start_time": 46,
+            "params": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                "Camera_Test_Simulator"
+            ]
+        },
+        {
+            "related_task": {
+                "id": 1002,
+                "mission_id": 2
+            },
+            "id": 1047,
+            "command_type": "ANALYZE_IMAGE",
+            "command_status": "NotAssigned",
+            "start_time": 47,
+            "params": [
+                [
+                    "Grape_Diseases_Hailo8",
+                    "Grape_Bunch_Hailo8"
+                ],
+                40.207721,
+                -3.467536,
+                [
+                    2,
+                    0
+                ],
+                [
+                    "ISOBUS",
+                    "Drone"
+                ]
+            ]
+        },
+        {
+            "related_task": {
+                "id": 1002,
+                "mission_id": 2
+            },
+            "id": 1048,
+            "command_type": "NAV_WAYPOINT",
+            "command_status": "NotAssigned",
+            "start_time": 48,
+            "params": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                40.207714,
+                -3.467426,
+                0.0
+            ]
+        },
+        {
+            "related_task": {
+                "id": 1002,
+                "mission_id": 2
+            },
+            "id": 1049,
+            "command_type": "CAMERA_IMAGE",
+            "command_status": "NotAssigned",
+            "start_time": 49,
+            "params": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                "Camera_Test_Simulator"
+            ]
+        },
+        {
+            "related_task": {
+                "id": 1002,
+                "mission_id": 2
+            },
+            "id": 1050,
+            "command_type": "ANALYZE_IMAGE",
+            "command_status": "NotAssigned",
+            "start_time": 50,
+            "params": [
+                [
+                    "Grape_Diseases_Hailo8",
+                    "Grape_Bunch_Hailo8"
+                ],
+                40.207714,
+                -3.467426,
+                [
+                    2,
+                    1
+                ],
+                [
+                    "ISOBUS",
+                    "Drone"
+                ]
+            ]
+        },
+        {
+            "related_task": {
+                "id": 1002,
+                "mission_id": 2
+            },
+            "id": 1051,
+            "command_type": "NAV_WAYPOINT",
+            "command_status": "NotAssigned",
+            "start_time": 51,
+            "params": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                40.207708,
+                -3.467326,
+                0.0
+            ]
+        },
+        {
+            "related_task": {
+                "id": 1002,
+                "mission_id": 2
+            },
+            "id": 1052,
+            "command_type": "CAMERA_IMAGE",
+            "command_status": "NotAssigned",
+            "start_time": 52,
+            "params": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                "Camera_Test_Simulator"
+            ]
+        },
+        {
+            "related_task": {
+                "id": 1002,
+                "mission_id": 2
+            },
+            "id": 1053,
+            "command_type": "ANALYZE_IMAGE",
+            "command_status": "NotAssigned",
+            "start_time": 53,
+            "params": [
+                [
+                    "Grape_Diseases_Hailo8",
+                    "Grape_Bunch_Hailo8"
+                ],
+                40.207708,
+                -3.467326,
+                [
+                    2,
+                    2
+                ],
+                [
+                    "ISOBUS",
+                    "Drone"
+                ]
+            ]
+        },
+        {
+            "related_task": {
+                "id": 1002,
+                "mission_id": 2
+            },
+            "id": 1054,
+            "command_type": "NAV_WAYPOINT",
+            "command_status": "NotAssigned",
+            "start_time": 54,
+            "params": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                40.207701,
+                -3.467206,
+                0.0
+            ]
+        },
+        {
+            "related_task": {
+                "id": 1002,
+                "mission_id": 2
+            },
+            "id": 1055,
+            "command_type": "CAMERA_IMAGE",
+            "command_status": "NotAssigned",
+            "start_time": 55,
+            "params": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                "Camera_Test_Simulator"
+            ]
+        },
+        {
+            "related_task": {
+                "id": 1002,
+                "mission_id": 2
+            },
+            "id": 1056,
+            "command_type": "ANALYZE_IMAGE",
+            "command_status": "NotAssigned",
+            "start_time": 56,
+            "params": [
+                [
+                    "Grape_Diseases_Hailo8",
+                    "Grape_Bunch_Hailo8"
+                ],
+                40.207701,
+                -3.467206,
+                [
+                    2,
+                    3
+                ],
+                [
+                    "ISOBUS",
+                    "Drone"
+                ]
+            ]
+        },
+        {
+            "related_task": {
+                "id": 1002,
+                "mission_id": 2
+            },
+            "id": 1057,
+            "command_type": "NAV_WAYPOINT",
+            "command_status": "NotAssigned",
+            "start_time": 57,
+            "params": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                40.207694,
+                -3.467096,
+                0.0
+            ]
+        },
+        {
+            "related_task": {
+                "id": 1002,
+                "mission_id": 2
+            },
+            "id": 1058,
+            "command_type": "CAMERA_IMAGE",
+            "command_status": "NotAssigned",
+            "start_time": 58,
+            "params": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                "Camera_Test_Simulator"
+            ]
+        },
+        {
+            "related_task": {
+                "id": 1002,
+                "mission_id": 2
+            },
+            "id": 1059,
+            "command_type": "ANALYZE_IMAGE",
+            "command_status": "NotAssigned",
+            "start_time": 59,
+            "params": [
+                [
+                    "Grape_Diseases_Hailo8",
+                    "Grape_Bunch_Hailo8"
+                ],
+                40.207694,
+                -3.467096,
+                [
+                    2,
+                    4
+                ],
+                [
+                    "ISOBUS",
+                    "Drone"
+                ]
+            ]
+        },
+        {
+            "related_task": {
+                "id": 1002,
+                "mission_id": 2
+            },
+            "id": 1060,
+            "command_type": "NAV_WAYPOINT",
+            "command_status": "NotAssigned",
+            "start_time": 60,
+            "params": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                40.207688,
+                -3.466986,
+                0.0
+            ]
+        },
+        {
+            "related_task": {
+                "id": 1002,
+                "mission_id": 2
+            },
+            "id": 1061,
+            "command_type": "CAMERA_IMAGE",
+            "command_status": "NotAssigned",
+            "start_time": 61,
+            "params": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                "Camera_Test_Simulator"
+            ]
+        },
+        {
+            "related_task": {
+                "id": 1002,
+                "mission_id": 2
+            },
+            "id": 1062,
+            "command_type": "ANALYZE_IMAGE",
+            "command_status": "NotAssigned",
+            "start_time": 62,
+            "params": [
+                [
+                    "Grape_Diseases_Hailo8",
+                    "Grape_Bunch_Hailo8"
+                ],
+                40.207688,
+                -3.466986,
+                [
+                    2,
+                    5
+                ],
+                [
+                    "ISOBUS",
+                    "Drone"
+                ]
+            ]
+        },
+        {
+            "related_task": {
+                "id": 1002,
+                "mission_id": 2
+            },
+            "id": 1063,
+            "command_type": "NAV_WAYPOINT",
+            "command_status": "NotAssigned",
+            "start_time": 63,
+            "params": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                40.207682,
+                -3.466874,
+                0.0
+            ]
+        },
+        {
+            "related_task": {
+                "id": 1002,
+                "mission_id": 2
+            },
+            "id": 1064,
+            "command_type": "CAMERA_IMAGE",
+            "command_status": "NotAssigned",
+            "start_time": 64,
+            "params": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                "Camera_Test_Simulator"
+            ]
+        },
+        {
+            "related_task": {
+                "id": 1002,
+                "mission_id": 2
+            },
+            "id": 1065,
+            "command_type": "ANALYZE_IMAGE",
+            "command_status": "NotAssigned",
+            "start_time": 65,
+            "params": [
+                [
+                    "Grape_Diseases_Hailo8",
+                    "Grape_Bunch_Hailo8"
+                ],
+                40.207682,
+                -3.466874,
+                [
+                    2,
+                    6
+                ],
+                [
+                    "ISOBUS",
+                    "Drone"
+                ]
+            ]
+        },
+        {
+            "related_task": {
+                "id": 1003,
+                "mission_id": 2
+            },
+            "id": 1066,
+            "command_type": "NAV_HOME",
+            "command_status": "NotAssigned",
+            "start_time": 66,
+            "params": [
+                0.0
+            ]
+        },
+        {
+            "related_task": {
+                "id": 1003,
+                "mission_id": 2
+            },
+            "id": 1067,
+            "command_type": "NAV_LAND",
+            "command_status": "NotAssigned",
+            "start_time": 67,
+            "params": [
+                0.0,
+                0.0,
+                0.0,
+                40.20772,
+                -3.466688,
+                0.0
+            ]
+        }
+    ],
+    "navigation_area": {
+        "area": [
+            {
+                "latitude": 40.207916,
+                "longitude": -3.467662,
+                "altitude": 0.0
+            },
+            {
+                "latitude": 40.207909,
+                "longitude": -3.467552,
+                "altitude": 0.0
+            },
+            {
+                "latitude": 40.207903,
+                "longitude": -3.467442,
+                "altitude": 0.0
+            },
+            {
+                "latitude": 40.207897,
+                "longitude": -3.467332,
+                "altitude": 0.0
+            },
+            {
+                "latitude": 40.20789,
+                "longitude": -3.467221,
+                "altitude": 0.0
+            },
+            {
+                "latitude": 40.207883,
+                "longitude": -3.467111,
+                "altitude": 0.0
+            },
+            {
+                "latitude": 40.207877,
+                "longitude": -3.467001,
+                "altitude": 0.0
+            },
+            {
+                "latitude": 40.20787,
+                "longitude": -3.466891,
+                "altitude": 0.0
+            },
+            {
+                "latitude": 40.207839,
+                "longitude": -3.467633,
+                "altitude": 0.0
+            },
+            {
+                "latitude": 40.207833,
+                "longitude": -3.467523,
+                "altitude": 0.0
+            },
+            {
+                "latitude": 40.207826,
+                "longitude": -3.467413,
+                "altitude": 0.0
+            },
+            {
+                "latitude": 40.20782,
+                "longitude": -3.467303,
+                "altitude": 0.0
+            },
+            {
+                "latitude": 40.207813,
+                "longitude": -3.467193,
+                "altitude": 0.0
+            },
+            {
+                "latitude": 40.207806,
+                "longitude": -3.467083,
+                "altitude": 0.0
+            },
+            {
+                "latitude": 40.2078,
+                "longitude": -3.466972,
+                "altitude": 0.0
+            },
+            {
+                "latitude": 40.207793,
+                "longitude": -3.466862,
+                "altitude": 0.0
+            },
+            {
+                "latitude": 40.207763,
+                "longitude": -3.467605,
+                "altitude": 0.0
+            },
+            {
+                "latitude": 40.207756,
+                "longitude": -3.467495,
+                "altitude": 0.0
+            },
+            {
+                "latitude": 40.20775,
+                "longitude": -3.467384,
+                "altitude": 0.0
+            },
+            {
+                "latitude": 40.207743,
+                "longitude": -3.467274,
+                "altitude": 0.0
+            },
+            {
+                "latitude": 40.207736,
+                "longitude": -3.467164,
+                "altitude": 0.0
+            },
+            {
+                "latitude": 40.20773,
+                "longitude": -3.467054,
+                "altitude": 0.0
+            },
+            {
+                "latitude": 40.207723,
+                "longitude": -3.466944,
+                "altitude": 0.0
+            },
+            {
+                "latitude": 40.207717,
+                "longitude": -3.466834,
+                "altitude": 0.0
+            },
+            {
+                "latitude": 40.207686,
+                "longitude": -3.467576,
+                "altitude": 0.0
+            },
+            {
+                "latitude": 40.207679,
+                "longitude": -3.467466,
+                "altitude": 0.0
+            },
+            {
+                "latitude": 40.207673,
+                "longitude": -3.467356,
+                "altitude": 0.0
+            },
+            {
+                "latitude": 40.207666,
+                "longitude": -3.467246,
+                "altitude": 0.0
+            },
+            {
+                "latitude": 40.20766,
+                "longitude": -3.467135,
+                "altitude": 0.0
+            },
+            {
+                "latitude": 40.207653,
+                "longitude": -3.467025,
+                "altitude": 0.0
+            },
+            {
+                "latitude": 40.207647,
+                "longitude": -3.466915,
+                "altitude": 0.0
+            },
+            {
+                "latitude": 40.20764,
+                "longitude": -3.466805,
+                "altitude": 0.0
+            }
+        ]
+    }
+}

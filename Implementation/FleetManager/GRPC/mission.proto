@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package mission_communication;
+
+service MissionCommunication {
+  rpc SendMission (MissionRequest) returns (MissionResponse) {}
+}
+
+message MissionRequest {
+  repeated string mission_json = 1;
+}
+
+message MissionResponse {
+  string confirmation = 1;
+}

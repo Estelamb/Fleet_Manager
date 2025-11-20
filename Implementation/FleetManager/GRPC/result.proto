@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package result_communication;
+
+service ResultCommunication {
+  rpc SendResult (DroneResultRequest) returns (DroneResultResponse) {}
+}
+
+message DroneResultRequest {
+  repeated string drone_result = 1;
+}
+
+message DroneResultResponse {
+  string confirmation = 1;
+}

@@ -1,0 +1,56 @@
+{
+  "type_description_msg": {
+    "type_description": {
+      "type_name": "commands_action_interface/action/Commands_GetResult_Response",
+      "fields": [
+        {
+          "name": "status",
+          "type": {
+            "type_id": 2,
+            "capacity": 0,
+            "string_capacity": 0,
+            "nested_type_name": ""
+          },
+          "default_value": ""
+        },
+        {
+          "name": "result",
+          "type": {
+            "type_id": 1,
+            "capacity": 0,
+            "string_capacity": 0,
+            "nested_type_name": "commands_action_interface/action/Commands_Result"
+          },
+          "default_value": ""
+        }
+      ]
+    },
+    "referenced_type_descriptions": [
+      {
+        "type_name": "commands_action_interface/action/Commands_Result",
+        "fields": [
+          {
+            "name": "plan_result",
+            "type": {
+              "type_id": 161,
+              "capacity": 0,
+              "string_capacity": 0,
+              "nested_type_name": ""
+            },
+            "default_value": ""
+          }
+        ]
+      }
+    ]
+  },
+  "type_hashes": [
+    {
+      "type_name": "commands_action_interface/action/Commands_GetResult_Response",
+      "hash_string": "RIHS01_6b4dc611317d0be1147d9ce402bdc2763954931d27f50e5ceee9baa3ab11d73a"
+    },
+    {
+      "type_name": "commands_action_interface/action/Commands_Result",
+      "hash_string": "RIHS01_cc22d073aec4639d59e3e87716b1665fa9b40cd625250ce8ceab177073e6e437"
+    }
+  ]
+}

@@ -1,0 +1,1314 @@
+[2025-04-10 13:13:15,769] - [MQTT][INFO][gRPC MQTT] - Server started on [::]:50057
+[2025-04-10 13:26:19,749] - [MQTT][INFO][gRPC MQTT] - Server thread initialized
+[2025-04-10 13:26:19,752] - [MQTT][INFO][gRPC MQTT] - Server started on [::]:50057
+[2025-04-10 13:26:24,008] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:26:24,010] - [MQTT][INFO] - Received State vector from 1
+[2025-04-10 13:26:24,730] - [MQTT][INFO] - Published
+[2025-04-10 13:26:26,063] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:26:26,065] - [MQTT][INFO] - Received State vector from 1
+[2025-04-10 13:26:26,070] - [MQTT][INFO] - Published
+[2025-04-10 13:26:27,999] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:26:28,003] - [MQTT][INFO] - Received State vector from 1
+[2025-04-10 13:26:28,006] - [MQTT][INFO] - Published
+[2025-04-10 13:26:30,045] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:26:30,047] - [MQTT][INFO] - Received State vector from 1
+[2025-04-10 13:26:30,050] - [MQTT][INFO] - Published
+[2025-04-10 13:26:32,094] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:26:32,096] - [MQTT][INFO] - Received State vector from 1
+[2025-04-10 13:26:32,099] - [MQTT][INFO] - Published
+[2025-04-10 13:27:32,874] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:27:32,876] - [MQTT][INFO] - Received State vector from 1
+[2025-04-10 13:27:32,879] - [MQTT][INFO] - Published
+[2025-04-10 13:27:42,788] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:27:42,790] - [MQTT][INFO] - Received State vector from 1
+[2025-04-10 13:27:42,794] - [MQTT][INFO] - Published
+[2025-04-10 13:27:52,850] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:27:52,852] - [MQTT][INFO] - Received State vector from 1
+[2025-04-10 13:27:52,854] - [MQTT][INFO] - Published
+[2025-04-10 13:27:54,970] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:27:54,971] - [MQTT][INFO] - Received State vector from 2
+[2025-04-10 13:27:55,721] - [MQTT][INFO] - Published
+[2025-04-10 13:28:01,223] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:28:01,224] - [MQTT][INFO] - Received State vector from 3
+[2025-04-10 13:28:01,918] - [MQTT][INFO] - Published
+[2025-04-10 13:28:02,863] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:28:02,865] - [MQTT][INFO] - Received State vector from 1
+[2025-04-10 13:28:02,869] - [MQTT][INFO] - Published
+[2025-04-10 13:28:04,976] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:28:04,978] - [MQTT][INFO] - Received State vector from 2
+[2025-04-10 13:28:04,981] - [MQTT][INFO] - Published
+[2025-04-10 13:28:11,294] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:28:11,295] - [MQTT][INFO] - Received State vector from 3
+[2025-04-10 13:28:11,299] - [MQTT][INFO] - Published
+[2025-04-10 13:28:12,942] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:28:12,944] - [MQTT][INFO] - Received State vector from 1
+[2025-04-10 13:28:12,960] - [MQTT][INFO] - Published
+[2025-04-10 13:28:14,998] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:28:15,000] - [MQTT][INFO] - Received State vector from 2
+[2025-04-10 13:28:15,003] - [MQTT][INFO] - Published
+[2025-04-10 13:28:19,152] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:28:19,913] - [MQTT][INFO] - Published
+[2025-04-10 13:28:20,660] - [MQTT][INFO] - Published
+[2025-04-10 13:28:21,266] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:28:21,400] - [MQTT][INFO] - Published
+[2025-04-10 13:28:22,135] - [MQTT][INFO] - Published
+[2025-04-10 13:28:22,882] - [MQTT][INFO] - Published
+[2025-04-10 13:28:22,885] - [MQTT][INFO] - Sent mission data 1 to ThingsBoard
+[2025-04-10 13:28:22,887] - [MQTT][INFO] - Received State vector from 3
+[2025-04-10 13:28:22,890] - [MQTT][INFO] - Published
+[2025-04-10 13:28:22,952] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:28:22,954] - [MQTT][INFO] - Received State vector from 1
+[2025-04-10 13:28:22,976] - [MQTT][INFO]Created Mission→Vehicle relation for 1 → 1
+[2025-04-10 13:28:22,978] - [MQTT][INFO] - Published
+[2025-04-10 13:28:24,993] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:28:24,994] - [MQTT][INFO] - Received State vector from 2
+[2025-04-10 13:28:25,022] - [MQTT][INFO]Created Mission→Vehicle relation for 1 → 2
+[2025-04-10 13:28:25,025] - [MQTT][INFO] - Published
+[2025-04-10 13:28:31,247] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:28:31,248] - [MQTT][INFO] - Received State vector from 3
+[2025-04-10 13:28:31,252] - [MQTT][INFO] - Published
+[2025-04-10 13:28:32,903] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:28:32,904] - [MQTT][INFO] - Received State vector from 1
+[2025-04-10 13:28:32,929] - [MQTT][INFO]Created Mission→Vehicle relation for 1 → 1
+[2025-04-10 13:28:32,931] - [MQTT][INFO] - Published
+[2025-04-10 13:28:34,968] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:28:34,970] - [MQTT][INFO] - Received State vector from 2
+[2025-04-10 13:28:34,992] - [MQTT][INFO]Created Mission→Vehicle relation for 1 → 2
+[2025-04-10 13:28:34,994] - [MQTT][INFO] - Published
+[2025-04-10 13:28:41,226] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:28:41,227] - [MQTT][INFO] - Received State vector from 3
+[2025-04-10 13:28:41,230] - [MQTT][INFO] - Published
+[2025-04-10 13:28:42,868] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:28:42,870] - [MQTT][INFO] - Received State vector from 1
+[2025-04-10 13:28:42,893] - [MQTT][INFO]Created Mission→Vehicle relation for 1 → 1
+[2025-04-10 13:28:42,895] - [MQTT][INFO] - Published
+[2025-04-10 13:28:44,976] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:28:44,978] - [MQTT][INFO] - Received State vector from 2
+[2025-04-10 13:28:45,001] - [MQTT][INFO]Created Mission→Vehicle relation for 1 → 2
+[2025-04-10 13:28:45,002] - [MQTT][INFO] - Published
+[2025-04-10 13:28:51,273] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:28:51,275] - [MQTT][INFO] - Received State vector from 3
+[2025-04-10 13:28:51,277] - [MQTT][INFO] - Published
+[2025-04-10 13:28:52,788] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:28:52,790] - [MQTT][INFO] - Received State vector from 1
+[2025-04-10 13:28:52,808] - [MQTT][INFO]Created Mission→Vehicle relation for 1 → 1
+[2025-04-10 13:28:52,810] - [MQTT][INFO] - Published
+[2025-04-10 13:28:55,030] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:28:55,032] - [MQTT][INFO] - Received State vector from 2
+[2025-04-10 13:28:55,054] - [MQTT][INFO]Created Mission→Vehicle relation for 1 → 2
+[2025-04-10 13:28:55,056] - [MQTT][INFO] - Published
+[2025-04-10 13:31:28,682] - [MQTT][INFO][gRPC MQTT] - Server thread initialized
+[2025-04-10 13:31:28,684] - [MQTT][INFO][gRPC MQTT] - Server started on [::]:50057
+[2025-04-10 13:31:31,291] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:31:31,292] - [MQTT][INFO] - Received State vector from 3
+[2025-04-10 13:31:32,012] - [MQTT][INFO] - Published
+[2025-04-10 13:31:32,785] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:31:32,787] - [MQTT][INFO] - Received State vector from 1
+[2025-04-10 13:31:33,494] - [MQTT][INFO] - Published
+[2025-04-10 13:31:34,288] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:31:35,018] - [MQTT][INFO] - Published
+[2025-04-10 13:31:35,060] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:31:35,764] - [MQTT][INFO] - Published
+[2025-04-10 13:31:36,729] - [MQTT][INFO] - Published
+[2025-04-10 13:31:37,606] - [MQTT][INFO] - Published
+[2025-04-10 13:31:38,342] - [MQTT][INFO] - Published
+[2025-04-10 13:31:38,344] - [MQTT][INFO] - Sent mission data 1 to ThingsBoard
+[2025-04-10 13:31:38,345] - [MQTT][INFO] - Received State vector from 2
+[2025-04-10 13:31:39,061] - [MQTT][INFO]Created Mission→Vehicle relation for 1 → 2
+[2025-04-10 13:31:39,062] - [MQTT][INFO] - Published
+[2025-04-10 13:31:41,359] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:31:41,360] - [MQTT][INFO] - Received State vector from 3
+[2025-04-10 13:31:41,363] - [MQTT][INFO] - Published
+[2025-04-10 13:31:42,814] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:31:42,816] - [MQTT][INFO] - Received State vector from 1
+[2025-04-10 13:31:42,839] - [MQTT][INFO]Created Mission→Vehicle relation for 1 → 1
+[2025-04-10 13:31:42,841] - [MQTT][INFO] - Published
+[2025-04-10 13:31:45,068] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:31:45,070] - [MQTT][INFO] - Received State vector from 2
+[2025-04-10 13:31:45,088] - [MQTT][INFO]Created Mission→Vehicle relation for 1 → 2
+[2025-04-10 13:31:45,089] - [MQTT][INFO] - Published
+[2025-04-10 13:31:51,367] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:31:51,368] - [MQTT][INFO] - Received State vector from 3
+[2025-04-10 13:31:51,372] - [MQTT][INFO] - Published
+[2025-04-10 13:31:52,849] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:31:52,851] - [MQTT][INFO] - Received State vector from 1
+[2025-04-10 13:31:52,871] - [MQTT][INFO]Created Mission→Vehicle relation for 1 → 1
+[2025-04-10 13:31:52,873] - [MQTT][INFO] - Published
+[2025-04-10 13:31:54,969] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:31:54,971] - [MQTT][INFO] - Received State vector from 2
+[2025-04-10 13:31:54,992] - [MQTT][INFO]Created Mission→Vehicle relation for 1 → 2
+[2025-04-10 13:31:54,994] - [MQTT][INFO] - Published
+[2025-04-10 13:32:01,254] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:32:01,256] - [MQTT][INFO] - Received State vector from 3
+[2025-04-10 13:32:01,262] - [MQTT][INFO] - Published
+[2025-04-10 13:32:02,962] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:32:02,964] - [MQTT][INFO] - Received State vector from 1
+[2025-04-10 13:32:02,987] - [MQTT][INFO]Created Mission→Vehicle relation for 1 → 1
+[2025-04-10 13:32:02,989] - [MQTT][INFO] - Published
+[2025-04-10 13:32:05,008] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:32:05,009] - [MQTT][INFO] - Received State vector from 2
+[2025-04-10 13:32:05,031] - [MQTT][INFO]Created Mission→Vehicle relation for 1 → 2
+[2025-04-10 13:32:05,034] - [MQTT][INFO] - Published
+[2025-04-10 13:32:11,266] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:32:11,268] - [MQTT][INFO] - Received State vector from 3
+[2025-04-10 13:32:11,271] - [MQTT][INFO] - Published
+[2025-04-10 13:32:12,950] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:32:12,951] - [MQTT][INFO] - Received State vector from 1
+[2025-04-10 13:32:12,975] - [MQTT][INFO]Created Mission→Vehicle relation for 1 → 1
+[2025-04-10 13:32:12,977] - [MQTT][INFO] - Published
+[2025-04-10 13:32:15,036] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:32:15,037] - [MQTT][INFO] - Received State vector from 2
+[2025-04-10 13:32:15,058] - [MQTT][INFO]Created Mission→Vehicle relation for 1 → 2
+[2025-04-10 13:32:15,060] - [MQTT][INFO] - Published
+[2025-04-10 13:32:21,288] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:32:21,290] - [MQTT][INFO] - Received State vector from 3
+[2025-04-10 13:32:21,293] - [MQTT][INFO] - Published
+[2025-04-10 13:32:22,786] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:32:22,788] - [MQTT][INFO] - Received State vector from 1
+[2025-04-10 13:32:22,809] - [MQTT][INFO]Created Mission→Vehicle relation for 1 → 1
+[2025-04-10 13:32:22,811] - [MQTT][INFO] - Published
+[2025-04-10 13:32:25,036] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:32:25,037] - [MQTT][INFO] - Received State vector from 2
+[2025-04-10 13:32:25,058] - [MQTT][INFO]Created Mission→Vehicle relation for 1 → 2
+[2025-04-10 13:32:25,060] - [MQTT][INFO] - Published
+[2025-04-10 13:32:31,292] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:32:31,293] - [MQTT][INFO] - Received State vector from 3
+[2025-04-10 13:32:31,296] - [MQTT][INFO] - Published
+[2025-04-10 13:32:32,788] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:32:32,790] - [MQTT][INFO] - Received State vector from 1
+[2025-04-10 13:32:32,811] - [MQTT][INFO]Created Mission→Vehicle relation for 1 → 1
+[2025-04-10 13:32:32,813] - [MQTT][INFO] - Published
+[2025-04-10 13:32:35,034] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:32:35,036] - [MQTT][INFO] - Received State vector from 2
+[2025-04-10 13:32:35,058] - [MQTT][INFO]Created Mission→Vehicle relation for 1 → 2
+[2025-04-10 13:32:35,060] - [MQTT][INFO] - Published
+[2025-04-10 13:39:46,398] - [MQTT][INFO][gRPC MQTT] - Server thread initialized
+[2025-04-10 13:39:46,402] - [MQTT][INFO][gRPC MQTT] - Server started on [::]:50057
+[2025-04-10 13:39:53,965] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:39:54,738] - [MQTT][INFO] - Published
+[2025-04-10 13:39:55,481] - [MQTT][INFO] - Published
+[2025-04-10 13:39:56,243] - [MQTT][INFO] - Published
+[2025-04-10 13:39:57,005] - [MQTT][INFO] - Published
+[2025-04-10 13:39:57,542] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:39:57,829] - [MQTT][INFO] - Published
+[2025-04-10 13:39:57,831] - [MQTT][INFO] - Sent mission data 1 to ThingsBoard
+[2025-04-10 13:39:57,833] - [MQTT][INFO] - Received State vector from 1
+[2025-04-10 13:39:58,583] - [MQTT][INFO]Created Mission→Vehicle relation for 1 → 1
+[2025-04-10 13:39:58,585] - [MQTT][INFO] - Published
+[2025-04-10 13:39:59,657] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:39:59,659] - [MQTT][INFO] - Received State vector from 2
+[2025-04-10 13:40:00,412] - [MQTT][INFO]Created Mission→Vehicle relation for 1 → 2
+[2025-04-10 13:40:00,415] - [MQTT][INFO] - Published
+[2025-04-10 13:40:03,184] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:40:03,186] - [MQTT][INFO] - Received State vector from 3
+[2025-04-10 13:40:03,903] - [MQTT][INFO] - Published
+[2025-04-10 13:40:07,455] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:40:07,456] - [MQTT][INFO] - Received State vector from 1
+[2025-04-10 13:40:07,480] - [MQTT][INFO]Created Mission→Vehicle relation for 1 → 1
+[2025-04-10 13:40:07,482] - [MQTT][INFO] - Published
+[2025-04-10 13:40:09,699] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:40:09,701] - [MQTT][INFO] - Received State vector from 2
+[2025-04-10 13:40:09,725] - [MQTT][INFO]Created Mission→Vehicle relation for 1 → 2
+[2025-04-10 13:40:09,726] - [MQTT][INFO] - Published
+[2025-04-10 13:40:13,188] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:40:13,190] - [MQTT][INFO] - Received State vector from 3
+[2025-04-10 13:40:13,194] - [MQTT][INFO] - Published
+[2025-04-10 13:40:17,531] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:40:17,534] - [MQTT][INFO] - Received State vector from 1
+[2025-04-10 13:40:17,557] - [MQTT][INFO]Created Mission→Vehicle relation for 1 → 1
+[2025-04-10 13:40:17,559] - [MQTT][INFO] - Published
+[2025-04-10 13:40:19,689] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:40:19,692] - [MQTT][INFO] - Received State vector from 2
+[2025-04-10 13:40:19,715] - [MQTT][INFO]Created Mission→Vehicle relation for 1 → 2
+[2025-04-10 13:40:19,717] - [MQTT][INFO] - Published
+[2025-04-10 13:40:23,196] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:40:23,198] - [MQTT][INFO] - Received State vector from 3
+[2025-04-10 13:40:23,202] - [MQTT][INFO] - Published
+[2025-04-10 13:40:27,464] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:40:27,466] - [MQTT][INFO] - Received State vector from 1
+[2025-04-10 13:40:27,489] - [MQTT][INFO]Created Mission→Vehicle relation for 1 → 1
+[2025-04-10 13:40:27,492] - [MQTT][INFO] - Published
+[2025-04-10 13:40:29,712] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:40:29,714] - [MQTT][INFO] - Received State vector from 2
+[2025-04-10 13:40:29,738] - [MQTT][INFO]Created Mission→Vehicle relation for 1 → 2
+[2025-04-10 13:40:29,740] - [MQTT][INFO] - Published
+[2025-04-10 13:40:33,015] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:40:33,017] - [MQTT][INFO] - Received State vector from 3
+[2025-04-10 13:40:33,020] - [MQTT][INFO] - Published
+[2025-04-10 13:40:37,462] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:40:37,464] - [MQTT][INFO] - Received State vector from 1
+[2025-04-10 13:40:37,488] - [MQTT][INFO]Created Mission→Vehicle relation for 1 → 1
+[2025-04-10 13:40:37,490] - [MQTT][INFO] - Published
+[2025-04-10 13:40:39,711] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:40:39,713] - [MQTT][INFO] - Received State vector from 2
+[2025-04-10 13:40:39,737] - [MQTT][INFO]Created Mission→Vehicle relation for 1 → 2
+[2025-04-10 13:40:39,739] - [MQTT][INFO] - Published
+[2025-04-10 13:40:43,044] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:40:43,046] - [MQTT][INFO] - Received State vector from 3
+[2025-04-10 13:40:43,049] - [MQTT][INFO] - Published
+[2025-04-10 13:40:47,491] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:40:47,493] - [MQTT][INFO] - Received State vector from 1
+[2025-04-10 13:40:47,517] - [MQTT][INFO]Created Mission→Vehicle relation for 1 → 1
+[2025-04-10 13:40:47,518] - [MQTT][INFO] - Published
+[2025-04-10 13:40:49,740] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:40:49,742] - [MQTT][INFO] - Received State vector from 2
+[2025-04-10 13:40:49,767] - [MQTT][INFO]Created Mission→Vehicle relation for 1 → 2
+[2025-04-10 13:40:49,769] - [MQTT][INFO] - Published
+[2025-04-10 13:40:53,063] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:40:53,065] - [MQTT][INFO] - Received State vector from 3
+[2025-04-10 13:40:53,070] - [MQTT][INFO] - Published
+[2025-04-10 13:40:57,511] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:40:57,513] - [MQTT][INFO] - Received State vector from 1
+[2025-04-10 13:40:57,534] - [MQTT][INFO]Created Mission→Vehicle relation for 1 → 1
+[2025-04-10 13:40:57,536] - [MQTT][INFO] - Published
+[2025-04-10 13:40:59,799] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:40:59,801] - [MQTT][INFO] - Received State vector from 2
+[2025-04-10 13:40:59,824] - [MQTT][INFO]Created Mission→Vehicle relation for 1 → 2
+[2025-04-10 13:40:59,826] - [MQTT][INFO] - Published
+[2025-04-10 13:41:03,044] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:41:03,046] - [MQTT][INFO] - Received State vector from 3
+[2025-04-10 13:41:03,049] - [MQTT][INFO] - Published
+[2025-04-10 13:44:45,822] - [MQTT][INFO][gRPC MQTT] - Server thread initialized
+[2025-04-10 13:44:45,824] - [MQTT][INFO][gRPC MQTT] - Server started on [::]:50057
+[2025-04-10 13:44:50,802] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:44:51,549] - [MQTT][INFO] - Published
+[2025-04-10 13:44:51,731] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:44:52,302] - [MQTT][INFO] - Published
+[2025-04-10 13:44:53,042] - [MQTT][INFO] - Published
+[2025-04-10 13:44:53,777] - [MQTT][INFO] - Published
+[2025-04-10 13:44:54,510] - [MQTT][INFO] - Published
+[2025-04-10 13:44:54,512] - [MQTT][INFO] - Sent mission data 1 to ThingsBoard
+[2025-04-10 13:44:54,513] - [MQTT][INFO] - Received State vector from 1
+[2025-04-10 13:44:55,245] - [MQTT][INFO]Created Mission→Vehicle relation for 1 → 1
+[2025-04-10 13:44:55,247] - [MQTT][INFO] - Published
+[2025-04-10 13:48:54,762] - [MQTT][INFO][gRPC MQTT] - Server thread initialized
+[2025-04-10 13:48:54,767] - [MQTT][INFO][gRPC MQTT] - Server started on [::]:50057
+[2025-04-10 13:49:04,209] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:49:04,935] - [MQTT][INFO] - Published
+[2025-04-10 13:49:05,678] - [MQTT][INFO] - Published
+[2025-04-10 13:49:06,410] - [MQTT][INFO] - Published
+[2025-04-10 13:49:07,155] - [MQTT][INFO] - Published
+[2025-04-10 13:49:07,886] - [MQTT][INFO] - Published
+[2025-04-10 13:49:07,888] - [MQTT][INFO] - Sent mission data 1 to ThingsBoard
+[2025-04-10 13:49:13,275] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:49:13,276] - [MQTT][INFO] - Received State vector from 1
+[2025-04-10 13:49:14,010] - [MQTT][INFO]Created Mission→Vehicle relation for 1 → 1
+[2025-04-10 13:49:14,013] - [MQTT][INFO] - Published
+[2025-04-10 13:49:23,375] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:49:23,377] - [MQTT][INFO] - Received State vector from 1
+[2025-04-10 13:49:23,400] - [MQTT][INFO]Created Mission→Vehicle relation for 1 → 1
+[2025-04-10 13:49:23,402] - [MQTT][INFO] - Published
+[2025-04-10 13:49:24,335] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:49:25,133] - [MQTT][INFO]Created Mission→Feedback relation for 1
+[2025-04-10 13:49:25,135] - [MQTT][INFO] - Published
+[2025-04-10 13:49:25,137] - [MQTT][INFO]Created feedback device Feedback 1.1
+[2025-04-10 13:49:25,139] - [MQTT][INFO] - Published
+[2025-04-10 13:49:25,142] - [MQTT][INFO] - Published
+[2025-04-10 13:49:25,144] - [MQTT][INFO] - Published
+[2025-04-10 13:49:25,148] - [MQTT][INFO] - Published
+[2025-04-10 13:49:25,150] - [MQTT][INFO] - Sent mission data 1 to ThingsBoard
+[2025-04-10 13:49:33,499] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:49:33,501] - [MQTT][INFO] - Received State vector from 1
+[2025-04-10 13:49:33,523] - [MQTT][INFO]Created Mission→Vehicle relation for 1 → 1
+[2025-04-10 13:49:33,525] - [MQTT][INFO] - Published
+[2025-04-10 13:49:43,491] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:49:43,492] - [MQTT][INFO] - Received State vector from 1
+[2025-04-10 13:49:43,516] - [MQTT][INFO]Created Mission→Vehicle relation for 1 → 1
+[2025-04-10 13:49:43,518] - [MQTT][INFO] - Published
+[2025-04-10 13:49:45,366] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:49:45,943] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:49:46,116] - [MQTT][INFO]Created Mission→Feedback relation for 1
+[2025-04-10 13:49:46,118] - [MQTT][INFO] - Published
+[2025-04-10 13:49:46,119] - [MQTT][INFO]Created feedback device Feedback 1.2
+[2025-04-10 13:49:46,121] - [MQTT][INFO] - Published
+[2025-04-10 13:49:46,123] - [MQTT][INFO] - Published
+[2025-04-10 13:49:46,125] - [MQTT][INFO] - Published
+[2025-04-10 13:49:46,127] - [MQTT][INFO] - Published
+[2025-04-10 13:49:46,128] - [MQTT][INFO] - Sent mission data 1 to ThingsBoard
+[2025-04-10 13:49:46,129] - [MQTT][INFO] - Received State vector from 2
+[2025-04-10 13:49:46,835] - [MQTT][INFO]Created Mission→Vehicle relation for 1 → 2
+[2025-04-10 13:49:46,837] - [MQTT][INFO] - Published
+[2025-04-10 13:49:49,185] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:49:49,187] - [MQTT][INFO] - Received State vector from 3
+[2025-04-10 13:49:49,897] - [MQTT][INFO] - Published
+[2025-04-10 13:49:53,279] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:49:53,280] - [MQTT][INFO] - Received State vector from 1
+[2025-04-10 13:49:53,304] - [MQTT][INFO]Created Mission→Vehicle relation for 1 → 1
+[2025-04-10 13:49:53,306] - [MQTT][INFO] - Published
+[2025-04-10 13:49:55,926] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:49:55,928] - [MQTT][INFO] - Received State vector from 2
+[2025-04-10 13:49:55,949] - [MQTT][INFO]Created Mission→Vehicle relation for 1 → 2
+[2025-04-10 13:49:55,951] - [MQTT][INFO] - Published
+[2025-04-10 13:49:59,175] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:49:59,176] - [MQTT][INFO] - Received State vector from 3
+[2025-04-10 13:49:59,181] - [MQTT][INFO] - Published
+[2025-04-10 13:50:03,303] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:50:03,305] - [MQTT][INFO] - Received State vector from 1
+[2025-04-10 13:50:03,326] - [MQTT][INFO]Created Mission→Vehicle relation for 1 → 1
+[2025-04-10 13:50:03,329] - [MQTT][INFO] - Published
+[2025-04-10 13:50:06,120] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:50:06,122] - [MQTT][INFO] - Received State vector from 2
+[2025-04-10 13:50:06,148] - [MQTT][INFO]Created Mission→Vehicle relation for 1 → 2
+[2025-04-10 13:50:06,150] - [MQTT][INFO] - Published
+[2025-04-10 13:50:06,284] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:50:07,059] - [MQTT][INFO]Created Mission→Feedback relation for 1
+[2025-04-10 13:50:07,061] - [MQTT][INFO] - Published
+[2025-04-10 13:50:07,063] - [MQTT][INFO]Created feedback device Feedback 1.3
+[2025-04-10 13:50:07,066] - [MQTT][INFO] - Published
+[2025-04-10 13:50:07,068] - [MQTT][INFO] - Published
+[2025-04-10 13:50:07,071] - [MQTT][INFO] - Published
+[2025-04-10 13:50:07,073] - [MQTT][INFO] - Published
+[2025-04-10 13:50:07,074] - [MQTT][INFO] - Sent mission data 1 to ThingsBoard
+[2025-04-10 13:50:09,176] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:50:09,178] - [MQTT][INFO] - Received State vector from 3
+[2025-04-10 13:50:09,181] - [MQTT][INFO] - Published
+[2025-04-10 13:50:13,468] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:50:13,470] - [MQTT][INFO] - Received State vector from 1
+[2025-04-10 13:50:13,492] - [MQTT][INFO]Created Mission→Vehicle relation for 1 → 1
+[2025-04-10 13:50:13,493] - [MQTT][INFO] - Published
+[2025-04-10 13:50:15,913] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:50:15,915] - [MQTT][INFO] - Received State vector from 2
+[2025-04-10 13:50:16,459] - [MQTT][INFO]Created Mission→Vehicle relation for 1 → 2
+[2025-04-10 13:50:16,461] - [MQTT][INFO] - Published
+[2025-04-10 13:50:17,285] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:50:17,718] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:50:18,045] - [MQTT][INFO]Created Mission→Feedback relation for 1
+[2025-04-10 13:50:18,047] - [MQTT][INFO] - Published
+[2025-04-10 13:50:18,049] - [MQTT][INFO]Created feedback device Feedback 1.4
+[2025-04-10 13:50:18,050] - [MQTT][INFO] - Published
+[2025-04-10 13:50:18,053] - [MQTT][INFO] - Published
+[2025-04-10 13:50:18,055] - [MQTT][INFO] - Published
+[2025-04-10 13:50:18,057] - [MQTT][INFO] - Published
+[2025-04-10 13:50:18,058] - [MQTT][INFO] - Sent mission data 1 to ThingsBoard
+[2025-04-10 13:50:18,747] - [MQTT][INFO] - Published
+[2025-04-10 13:50:19,172] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:50:19,482] - [MQTT][INFO] - Published
+[2025-04-10 13:50:20,215] - [MQTT][INFO] - Published
+[2025-04-10 13:50:20,955] - [MQTT][INFO] - Published
+[2025-04-10 13:50:21,686] - [MQTT][INFO] - Published
+[2025-04-10 13:50:21,688] - [MQTT][INFO] - Sent mission data 2 to ThingsBoard
+[2025-04-10 13:50:21,690] - [MQTT][INFO] - Received State vector from 3
+[2025-04-10 13:50:21,711] - [MQTT][INFO]Created Mission→Vehicle relation for 2 → 3
+[2025-04-10 13:50:21,713] - [MQTT][INFO] - Published
+[2025-04-10 13:50:23,305] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:50:23,306] - [MQTT][INFO] - Received State vector from 1
+[2025-04-10 13:50:23,329] - [MQTT][INFO]Created Mission→Vehicle relation for 1 → 1
+[2025-04-10 13:50:23,331] - [MQTT][INFO] - Published
+[2025-04-10 13:50:25,949] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:50:25,950] - [MQTT][INFO] - Received State vector from 2
+[2025-04-10 13:50:25,973] - [MQTT][INFO]Created Mission→Vehicle relation for 1 → 2
+[2025-04-10 13:50:25,975] - [MQTT][INFO] - Published
+[2025-04-10 13:50:27,776] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:50:27,786] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:50:28,287] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:50:28,559] - [MQTT][INFO]Created Mission→Feedback relation for 2
+[2025-04-10 13:50:28,561] - [MQTT][INFO] - Published
+[2025-04-10 13:50:28,564] - [MQTT][INFO]Created feedback device Feedback 2.1
+[2025-04-10 13:50:28,566] - [MQTT][INFO] - Published
+[2025-04-10 13:50:28,569] - [MQTT][INFO] - Published
+[2025-04-10 13:50:28,572] - [MQTT][INFO] - Published
+[2025-04-10 13:50:28,573] - [MQTT][INFO] - Published
+[2025-04-10 13:50:28,574] - [MQTT][INFO] - Sent mission data 2 to ThingsBoard
+[2025-04-10 13:50:29,191] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:50:29,393] - [MQTT][INFO]Created Mission→Feedback relation for 2
+[2025-04-10 13:50:29,395] - [MQTT][INFO] - Published
+[2025-04-10 13:50:29,396] - [MQTT][INFO]Created feedback device Feedback 2.2
+[2025-04-10 13:50:29,398] - [MQTT][INFO] - Published
+[2025-04-10 13:50:29,400] - [MQTT][INFO] - Published
+[2025-04-10 13:50:29,402] - [MQTT][INFO] - Published
+[2025-04-10 13:50:29,404] - [MQTT][INFO] - Published
+[2025-04-10 13:50:29,405] - [MQTT][INFO] - Sent mission data 2 to ThingsBoard
+[2025-04-10 13:50:30,152] - [MQTT][INFO]Created Mission→Feedback relation for 1
+[2025-04-10 13:50:30,155] - [MQTT][INFO] - Published
+[2025-04-10 13:50:30,157] - [MQTT][INFO]Created feedback device Feedback 1.5
+[2025-04-10 13:50:30,160] - [MQTT][INFO] - Published
+[2025-04-10 13:50:30,161] - [MQTT][INFO] - Published
+[2025-04-10 13:50:30,163] - [MQTT][INFO] - Published
+[2025-04-10 13:50:30,164] - [MQTT][INFO] - Published
+[2025-04-10 13:50:30,166] - [MQTT][INFO] - Sent mission data 1 to ThingsBoard
+[2025-04-10 13:50:30,167] - [MQTT][INFO] - Received State vector from 3
+[2025-04-10 13:50:30,184] - [MQTT][INFO]Created Mission→Vehicle relation for 2 → 3
+[2025-04-10 13:50:30,186] - [MQTT][INFO] - Published
+[2025-04-10 13:50:33,308] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:50:33,310] - [MQTT][INFO] - Received State vector from 1
+[2025-04-10 13:50:33,333] - [MQTT][INFO]Created Mission→Vehicle relation for 1 → 1
+[2025-04-10 13:50:33,334] - [MQTT][INFO] - Published
+[2025-04-10 13:50:35,958] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:50:35,960] - [MQTT][INFO] - Received State vector from 2
+[2025-04-10 13:50:35,978] - [MQTT][INFO]Created Mission→Vehicle relation for 1 → 2
+[2025-04-10 13:50:35,979] - [MQTT][INFO] - Published
+[2025-04-10 13:50:39,202] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:50:39,204] - [MQTT][INFO] - Received State vector from 3
+[2025-04-10 13:50:39,228] - [MQTT][INFO]Created Mission→Vehicle relation for 2 → 3
+[2025-04-10 13:50:39,230] - [MQTT][INFO] - Published
+[2025-04-10 13:50:43,268] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:50:43,269] - [MQTT][INFO] - Received State vector from 1
+[2025-04-10 13:50:43,293] - [MQTT][INFO]Created Mission→Vehicle relation for 1 → 1
+[2025-04-10 13:50:43,295] - [MQTT][INFO] - Published
+[2025-04-10 13:50:45,913] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:50:45,914] - [MQTT][INFO] - Received State vector from 2
+[2025-04-10 13:50:45,937] - [MQTT][INFO]Created Mission→Vehicle relation for 1 → 2
+[2025-04-10 13:50:45,939] - [MQTT][INFO] - Published
+[2025-04-10 13:50:48,749] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:50:49,162] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:50:49,360] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:50:49,509] - [MQTT][INFO]Created Mission→Feedback relation for 2
+[2025-04-10 13:50:49,512] - [MQTT][INFO] - Published
+[2025-04-10 13:50:49,514] - [MQTT][INFO]Created feedback device Feedback 2.3
+[2025-04-10 13:50:49,516] - [MQTT][INFO] - Published
+[2025-04-10 13:50:49,519] - [MQTT][INFO] - Published
+[2025-04-10 13:50:49,521] - [MQTT][INFO] - Published
+[2025-04-10 13:50:49,522] - [MQTT][INFO] - Published
+[2025-04-10 13:50:49,523] - [MQTT][INFO] - Sent mission data 2 to ThingsBoard
+[2025-04-10 13:50:49,524] - [MQTT][INFO] - Received State vector from 3
+[2025-04-10 13:50:49,546] - [MQTT][INFO]Created Mission→Vehicle relation for 2 → 3
+[2025-04-10 13:50:49,548] - [MQTT][INFO] - Published
+[2025-04-10 13:50:50,317] - [MQTT][INFO]Created Mission→Feedback relation for 1
+[2025-04-10 13:50:50,319] - [MQTT][INFO] - Published
+[2025-04-10 13:50:50,330] - [MQTT][INFO]Created feedback device Feedback 1.6
+[2025-04-10 13:50:50,331] - [MQTT][INFO] - Published
+[2025-04-10 13:50:50,333] - [MQTT][INFO] - Published
+[2025-04-10 13:50:50,334] - [MQTT][INFO] - Published
+[2025-04-10 13:50:50,336] - [MQTT][INFO] - Published
+[2025-04-10 13:50:50,337] - [MQTT][INFO] - Sent mission data 1 to ThingsBoard
+[2025-04-10 13:50:53,430] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:50:53,431] - [MQTT][INFO] - Received State vector from 1
+[2025-04-10 13:50:53,454] - [MQTT][INFO]Created Mission→Vehicle relation for 1 → 1
+[2025-04-10 13:50:53,455] - [MQTT][INFO] - Published
+[2025-04-10 13:50:55,875] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:50:55,876] - [MQTT][INFO] - Received State vector from 2
+[2025-04-10 13:50:55,899] - [MQTT][INFO]Created Mission→Vehicle relation for 1 → 2
+[2025-04-10 13:50:55,901] - [MQTT][INFO] - Published
+[2025-04-10 13:50:59,138] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:50:59,140] - [MQTT][INFO] - Received State vector from 3
+[2025-04-10 13:50:59,157] - [MQTT][INFO]Created Mission→Vehicle relation for 2 → 3
+[2025-04-10 13:50:59,158] - [MQTT][INFO] - Published
+[2025-04-10 13:51:00,294] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:51:01,100] - [MQTT][INFO]Created Mission→Feedback relation for 1
+[2025-04-10 13:51:01,103] - [MQTT][INFO] - Published
+[2025-04-10 13:51:01,105] - [MQTT][INFO]Created feedback device Feedback 1.7
+[2025-04-10 13:51:01,107] - [MQTT][INFO] - Published
+[2025-04-10 13:51:01,110] - [MQTT][INFO] - Published
+[2025-04-10 13:51:01,113] - [MQTT][INFO] - Published
+[2025-04-10 13:51:01,114] - [MQTT][INFO] - Published
+[2025-04-10 13:51:01,115] - [MQTT][INFO] - Sent mission data 1 to ThingsBoard
+[2025-04-10 13:51:03,280] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:51:03,282] - [MQTT][INFO] - Received State vector from 1
+[2025-04-10 13:51:03,304] - [MQTT][INFO]Created Mission→Vehicle relation for 1 → 1
+[2025-04-10 13:51:03,307] - [MQTT][INFO] - Published
+[2025-04-10 13:51:05,962] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:51:05,964] - [MQTT][INFO] - Received State vector from 2
+[2025-04-10 13:51:05,985] - [MQTT][INFO]Created Mission→Vehicle relation for 1 → 2
+[2025-04-10 13:51:05,986] - [MQTT][INFO] - Published
+[2025-04-10 13:51:09,268] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:51:09,270] - [MQTT][INFO] - Received State vector from 3
+[2025-04-10 13:51:09,553] - [MQTT][INFO]Created Mission→Vehicle relation for 2 → 3
+[2025-04-10 13:51:09,555] - [MQTT][INFO] - Published
+[2025-04-10 13:51:09,749] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:51:10,530] - [MQTT][INFO]Created Mission→Feedback relation for 2
+[2025-04-10 13:51:10,531] - [MQTT][INFO] - Published
+[2025-04-10 13:51:10,532] - [MQTT][INFO]Created feedback device Feedback 2.4
+[2025-04-10 13:51:10,533] - [MQTT][INFO] - Published
+[2025-04-10 13:51:10,535] - [MQTT][INFO] - Published
+[2025-04-10 13:51:10,536] - [MQTT][INFO] - Published
+[2025-04-10 13:51:10,538] - [MQTT][INFO] - Published
+[2025-04-10 13:51:10,539] - [MQTT][INFO] - Sent mission data 2 to ThingsBoard
+[2025-04-10 13:51:11,363] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:51:12,103] - [MQTT][INFO]Created Mission→Feedback relation for 1
+[2025-04-10 13:51:12,105] - [MQTT][INFO] - Published
+[2025-04-10 13:51:12,107] - [MQTT][INFO]Created feedback device Feedback 1.8
+[2025-04-10 13:51:12,110] - [MQTT][INFO] - Published
+[2025-04-10 13:51:12,113] - [MQTT][INFO] - Published
+[2025-04-10 13:51:12,115] - [MQTT][INFO] - Published
+[2025-04-10 13:51:12,116] - [MQTT][INFO] - Published
+[2025-04-10 13:51:12,117] - [MQTT][INFO] - Sent mission data 1 to ThingsBoard
+[2025-04-10 13:51:13,327] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:51:13,328] - [MQTT][INFO] - Received State vector from 1
+[2025-04-10 13:51:13,354] - [MQTT][INFO]Created Mission→Vehicle relation for 1 → 1
+[2025-04-10 13:51:13,356] - [MQTT][INFO] - Published
+[2025-04-10 13:51:16,048] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:51:16,050] - [MQTT][INFO] - Received State vector from 2
+[2025-04-10 13:51:16,067] - [MQTT][INFO]Created Mission→Vehicle relation for 1 → 2
+[2025-04-10 13:51:16,069] - [MQTT][INFO] - Published
+[2025-04-10 13:51:19,294] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:51:19,295] - [MQTT][INFO] - Received State vector from 3
+[2025-04-10 13:51:19,319] - [MQTT][INFO]Created Mission→Vehicle relation for 2 → 3
+[2025-04-10 13:51:19,321] - [MQTT][INFO] - Published
+[2025-04-10 13:51:20,837] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:51:21,608] - [MQTT][INFO]Created Mission→Feedback relation for 2
+[2025-04-10 13:51:21,610] - [MQTT][INFO] - Published
+[2025-04-10 13:51:21,612] - [MQTT][INFO]Created feedback device Feedback 2.5
+[2025-04-10 13:51:21,614] - [MQTT][INFO] - Published
+[2025-04-10 13:51:21,616] - [MQTT][INFO] - Published
+[2025-04-10 13:51:21,618] - [MQTT][INFO] - Published
+[2025-04-10 13:51:21,619] - [MQTT][INFO] - Published
+[2025-04-10 13:51:21,620] - [MQTT][INFO] - Sent mission data 2 to ThingsBoard
+[2025-04-10 13:51:23,351] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:51:23,353] - [MQTT][INFO] - Received State vector from 1
+[2025-04-10 13:51:23,376] - [MQTT][INFO]Created Mission→Vehicle relation for 1 → 1
+[2025-04-10 13:51:23,378] - [MQTT][INFO] - Published
+[2025-04-10 13:51:25,874] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:51:25,876] - [MQTT][INFO] - Received State vector from 2
+[2025-04-10 13:51:25,900] - [MQTT][INFO]Created Mission→Vehicle relation for 1 → 2
+[2025-04-10 13:51:25,902] - [MQTT][INFO] - Published
+[2025-04-10 13:51:29,193] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:51:29,194] - [MQTT][INFO] - Received State vector from 3
+[2025-04-10 13:51:29,217] - [MQTT][INFO]Created Mission→Vehicle relation for 2 → 3
+[2025-04-10 13:51:29,219] - [MQTT][INFO] - Published
+[2025-04-10 13:51:31,765] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:51:32,377] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:51:32,538] - [MQTT][INFO]Created Mission→Feedback relation for 2
+[2025-04-10 13:51:32,540] - [MQTT][INFO] - Published
+[2025-04-10 13:51:32,542] - [MQTT][INFO]Created feedback device Feedback 2.6
+[2025-04-10 13:51:32,544] - [MQTT][INFO] - Published
+[2025-04-10 13:51:32,547] - [MQTT][INFO] - Published
+[2025-04-10 13:51:32,549] - [MQTT][INFO] - Published
+[2025-04-10 13:51:32,551] - [MQTT][INFO] - Published
+[2025-04-10 13:51:32,552] - [MQTT][INFO] - Sent mission data 2 to ThingsBoard
+[2025-04-10 13:51:33,323] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:51:33,330] - [MQTT][INFO]Created Mission→Feedback relation for 1
+[2025-04-10 13:51:33,331] - [MQTT][INFO] - Published
+[2025-04-10 13:51:33,333] - [MQTT][INFO]Created feedback device Feedback 1.9
+[2025-04-10 13:51:33,334] - [MQTT][INFO] - Published
+[2025-04-10 13:51:33,335] - [MQTT][INFO] - Published
+[2025-04-10 13:51:33,337] - [MQTT][INFO] - Published
+[2025-04-10 13:51:33,338] - [MQTT][INFO] - Published
+[2025-04-10 13:51:33,340] - [MQTT][INFO] - Sent mission data 1 to ThingsBoard
+[2025-04-10 13:51:33,341] - [MQTT][INFO] - Received State vector from 1
+[2025-04-10 13:51:33,364] - [MQTT][INFO]Created Mission→Vehicle relation for 1 → 1
+[2025-04-10 13:51:33,366] - [MQTT][INFO] - Published
+[2025-04-10 13:51:36,059] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:51:36,060] - [MQTT][INFO] - Received State vector from 2
+[2025-04-10 13:51:36,083] - [MQTT][INFO]Created Mission→Vehicle relation for 1 → 2
+[2025-04-10 13:51:36,085] - [MQTT][INFO] - Published
+[2025-04-10 13:51:39,306] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:51:39,308] - [MQTT][INFO] - Received State vector from 3
+[2025-04-10 13:51:39,330] - [MQTT][INFO]Created Mission→Vehicle relation for 2 → 3
+[2025-04-10 13:51:39,333] - [MQTT][INFO] - Published
+[2025-04-10 13:51:43,311] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:51:43,362] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:51:44,056] - [MQTT][INFO]Created Mission→Feedback relation for 1
+[2025-04-10 13:51:44,058] - [MQTT][INFO] - Published
+[2025-04-10 13:51:44,060] - [MQTT][INFO]Created feedback device Feedback 1.10
+[2025-04-10 13:51:44,062] - [MQTT][INFO] - Published
+[2025-04-10 13:51:44,064] - [MQTT][INFO] - Published
+[2025-04-10 13:51:44,066] - [MQTT][INFO] - Published
+[2025-04-10 13:51:44,067] - [MQTT][INFO] - Published
+[2025-04-10 13:51:44,069] - [MQTT][INFO] - Sent mission data 1 to ThingsBoard
+[2025-04-10 13:51:44,070] - [MQTT][INFO] - Received State vector from 1
+[2025-04-10 13:51:44,091] - [MQTT][INFO]Created Mission→Vehicle relation for 1 → 1
+[2025-04-10 13:51:44,094] - [MQTT][INFO] - Published
+[2025-04-10 13:51:46,069] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:51:46,070] - [MQTT][INFO] - Received State vector from 2
+[2025-04-10 13:51:46,093] - [MQTT][INFO]Created Mission→Vehicle relation for 1 → 2
+[2025-04-10 13:51:46,095] - [MQTT][INFO] - Published
+[2025-04-10 13:51:49,150] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:51:49,151] - [MQTT][INFO] - Received State vector from 3
+[2025-04-10 13:51:49,170] - [MQTT][INFO]Created Mission→Vehicle relation for 2 → 3
+[2025-04-10 13:51:49,171] - [MQTT][INFO] - Published
+[2025-04-10 13:51:52,760] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:51:53,409] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:51:53,548] - [MQTT][INFO]Created Mission→Feedback relation for 2
+[2025-04-10 13:51:53,550] - [MQTT][INFO] - Published
+[2025-04-10 13:51:53,551] - [MQTT][INFO]Created feedback device Feedback 2.7
+[2025-04-10 13:51:53,553] - [MQTT][INFO] - Published
+[2025-04-10 13:51:53,555] - [MQTT][INFO] - Published
+[2025-04-10 13:51:53,557] - [MQTT][INFO] - Published
+[2025-04-10 13:51:53,559] - [MQTT][INFO] - Published
+[2025-04-10 13:51:53,560] - [MQTT][INFO] - Sent mission data 2 to ThingsBoard
+[2025-04-10 13:51:53,562] - [MQTT][INFO] - Received State vector from 1
+[2025-04-10 13:51:53,578] - [MQTT][INFO]Created Mission→Vehicle relation for 1 → 1
+[2025-04-10 13:51:53,579] - [MQTT][INFO] - Published
+[2025-04-10 13:51:54,385] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:51:55,158] - [MQTT][INFO]Created Mission→Feedback relation for 1
+[2025-04-10 13:51:55,160] - [MQTT][INFO] - Published
+[2025-04-10 13:51:55,161] - [MQTT][INFO]Created feedback device Feedback 1.11
+[2025-04-10 13:51:55,162] - [MQTT][INFO] - Published
+[2025-04-10 13:51:55,164] - [MQTT][INFO] - Published
+[2025-04-10 13:51:55,165] - [MQTT][INFO] - Published
+[2025-04-10 13:51:55,167] - [MQTT][INFO] - Published
+[2025-04-10 13:51:55,168] - [MQTT][INFO] - Sent mission data 1 to ThingsBoard
+[2025-04-10 13:51:55,873] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:51:55,874] - [MQTT][INFO] - Received State vector from 2
+[2025-04-10 13:51:55,897] - [MQTT][INFO]Created Mission→Vehicle relation for 1 → 2
+[2025-04-10 13:51:55,899] - [MQTT][INFO] - Published
+[2025-04-10 13:51:59,161] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:51:59,162] - [MQTT][INFO] - Received State vector from 3
+[2025-04-10 13:51:59,185] - [MQTT][INFO]Created Mission→Vehicle relation for 2 → 3
+[2025-04-10 13:51:59,187] - [MQTT][INFO] - Published
+[2025-04-10 13:52:03,292] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:52:03,294] - [MQTT][INFO] - Received State vector from 1
+[2025-04-10 13:52:03,318] - [MQTT][INFO]Created Mission→Vehicle relation for 1 → 1
+[2025-04-10 13:52:03,320] - [MQTT][INFO] - Published
+[2025-04-10 13:52:03,763] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:52:04,522] - [MQTT][INFO]Created Mission→Feedback relation for 2
+[2025-04-10 13:52:04,525] - [MQTT][INFO] - Published
+[2025-04-10 13:52:04,533] - [MQTT][INFO]Created feedback device Feedback 2.8
+[2025-04-10 13:52:04,534] - [MQTT][INFO] - Published
+[2025-04-10 13:52:04,536] - [MQTT][INFO] - Published
+[2025-04-10 13:52:04,538] - [MQTT][INFO] - Published
+[2025-04-10 13:52:04,540] - [MQTT][INFO] - Published
+[2025-04-10 13:52:04,542] - [MQTT][INFO] - Sent mission data 2 to ThingsBoard
+[2025-04-10 13:52:05,943] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:52:05,945] - [MQTT][INFO] - Received State vector from 2
+[2025-04-10 13:52:05,966] - [MQTT][INFO]Created Mission→Vehicle relation for 1 → 2
+[2025-04-10 13:52:05,968] - [MQTT][INFO] - Published
+[2025-04-10 13:52:09,188] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:52:09,190] - [MQTT][INFO] - Received State vector from 3
+[2025-04-10 13:52:09,212] - [MQTT][INFO]Created Mission→Vehicle relation for 2 → 3
+[2025-04-10 13:52:09,214] - [MQTT][INFO] - Published
+[2025-04-10 13:52:13,266] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:52:13,268] - [MQTT][INFO] - Received State vector from 1
+[2025-04-10 13:52:13,293] - [MQTT][INFO]Created Mission→Vehicle relation for 1 → 1
+[2025-04-10 13:52:13,295] - [MQTT][INFO] - Published
+[2025-04-10 13:52:14,829] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:52:15,310] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:52:15,618] - [MQTT][INFO]Created Mission→Feedback relation for 2
+[2025-04-10 13:52:15,620] - [MQTT][INFO] - Published
+[2025-04-10 13:52:15,621] - [MQTT][INFO]Created feedback device Feedback 2.9
+[2025-04-10 13:52:15,623] - [MQTT][INFO] - Published
+[2025-04-10 13:52:15,625] - [MQTT][INFO] - Published
+[2025-04-10 13:52:15,627] - [MQTT][INFO] - Published
+[2025-04-10 13:52:15,629] - [MQTT][INFO] - Published
+[2025-04-10 13:52:15,630] - [MQTT][INFO] - Sent mission data 2 to ThingsBoard
+[2025-04-10 13:52:15,910] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:52:16,429] - [MQTT][INFO]Created Mission→Feedback relation for 1
+[2025-04-10 13:52:16,431] - [MQTT][INFO] - Published
+[2025-04-10 13:52:16,433] - [MQTT][INFO]Created feedback device Feedback 1.12
+[2025-04-10 13:52:16,434] - [MQTT][INFO] - Published
+[2025-04-10 13:52:16,436] - [MQTT][INFO] - Published
+[2025-04-10 13:52:16,438] - [MQTT][INFO] - Published
+[2025-04-10 13:52:16,439] - [MQTT][INFO] - Published
+[2025-04-10 13:52:16,440] - [MQTT][INFO] - Sent mission data 1 to ThingsBoard
+[2025-04-10 13:52:16,441] - [MQTT][INFO] - Received State vector from 2
+[2025-04-10 13:52:16,465] - [MQTT][INFO]Created Mission→Vehicle relation for 1 → 2
+[2025-04-10 13:52:16,467] - [MQTT][INFO] - Published
+[2025-04-10 13:52:19,172] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:52:19,174] - [MQTT][INFO] - Received State vector from 3
+[2025-04-10 13:52:19,191] - [MQTT][INFO]Created Mission→Vehicle relation for 2 → 3
+[2025-04-10 13:52:19,193] - [MQTT][INFO] - Published
+[2025-04-10 13:52:23,426] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:52:23,427] - [MQTT][INFO] - Received State vector from 1
+[2025-04-10 13:52:23,449] - [MQTT][INFO]Created Mission→Vehicle relation for 1 → 1
+[2025-04-10 13:52:23,451] - [MQTT][INFO] - Published
+[2025-04-10 13:52:25,970] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:52:25,972] - [MQTT][INFO] - Received State vector from 2
+[2025-04-10 13:52:25,996] - [MQTT][INFO]Created Mission→Vehicle relation for 1 → 2
+[2025-04-10 13:52:25,998] - [MQTT][INFO] - Published
+[2025-04-10 13:52:26,312] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:52:27,065] - [MQTT][INFO]Created Mission→Feedback relation for 1
+[2025-04-10 13:52:27,066] - [MQTT][INFO] - Published
+[2025-04-10 13:52:27,068] - [MQTT][INFO]Created feedback device Feedback 1.13
+[2025-04-10 13:52:27,070] - [MQTT][INFO] - Published
+[2025-04-10 13:52:27,072] - [MQTT][INFO] - Published
+[2025-04-10 13:52:27,074] - [MQTT][INFO] - Published
+[2025-04-10 13:52:27,075] - [MQTT][INFO] - Published
+[2025-04-10 13:52:27,077] - [MQTT][INFO] - Sent mission data 1 to ThingsBoard
+[2025-04-10 13:52:29,273] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:52:29,275] - [MQTT][INFO] - Received State vector from 3
+[2025-04-10 13:52:29,297] - [MQTT][INFO]Created Mission→Vehicle relation for 2 → 3
+[2025-04-10 13:52:29,298] - [MQTT][INFO] - Published
+[2025-04-10 13:52:33,321] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:52:33,323] - [MQTT][INFO] - Received State vector from 1
+[2025-04-10 13:52:33,345] - [MQTT][INFO]Created Mission→Vehicle relation for 1 → 1
+[2025-04-10 13:52:33,347] - [MQTT][INFO] - Published
+[2025-04-10 13:52:35,773] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:52:36,022] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:52:36,596] - [MQTT][INFO]Created Mission→Feedback relation for 2
+[2025-04-10 13:52:36,598] - [MQTT][INFO] - Published
+[2025-04-10 13:52:36,601] - [MQTT][INFO]Created feedback device Feedback 2.10
+[2025-04-10 13:52:36,603] - [MQTT][INFO] - Published
+[2025-04-10 13:52:36,604] - [MQTT][INFO] - Published
+[2025-04-10 13:52:36,606] - [MQTT][INFO] - Published
+[2025-04-10 13:52:36,608] - [MQTT][INFO] - Published
+[2025-04-10 13:52:36,609] - [MQTT][INFO] - Sent mission data 2 to ThingsBoard
+[2025-04-10 13:52:36,610] - [MQTT][INFO] - Received State vector from 2
+[2025-04-10 13:52:36,631] - [MQTT][INFO]Created Mission→Vehicle relation for 1 → 2
+[2025-04-10 13:52:36,633] - [MQTT][INFO] - Published
+[2025-04-10 13:52:37,389] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:52:38,144] - [MQTT][INFO]Created Mission→Feedback relation for 1
+[2025-04-10 13:52:38,147] - [MQTT][INFO] - Published
+[2025-04-10 13:52:38,149] - [MQTT][INFO]Created feedback device Feedback 1.14
+[2025-04-10 13:52:38,151] - [MQTT][INFO] - Published
+[2025-04-10 13:52:38,154] - [MQTT][INFO] - Published
+[2025-04-10 13:52:38,157] - [MQTT][INFO] - Published
+[2025-04-10 13:52:38,158] - [MQTT][INFO] - Published
+[2025-04-10 13:52:38,159] - [MQTT][INFO] - Sent mission data 1 to ThingsBoard
+[2025-04-10 13:52:39,125] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:52:39,127] - [MQTT][INFO] - Received State vector from 3
+[2025-04-10 13:52:39,151] - [MQTT][INFO]Created Mission→Vehicle relation for 2 → 3
+[2025-04-10 13:52:39,154] - [MQTT][INFO] - Published
+[2025-04-10 13:52:43,452] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:52:43,454] - [MQTT][INFO] - Received State vector from 1
+[2025-04-10 13:52:43,477] - [MQTT][INFO]Created Mission→Vehicle relation for 1 → 1
+[2025-04-10 13:52:43,479] - [MQTT][INFO] - Published
+[2025-04-10 13:52:45,969] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:52:45,971] - [MQTT][INFO] - Received State vector from 2
+[2025-04-10 13:52:45,995] - [MQTT][INFO]Created Mission→Vehicle relation for 1 → 2
+[2025-04-10 13:52:45,998] - [MQTT][INFO] - Published
+[2025-04-10 13:52:46,843] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:52:47,588] - [MQTT][INFO]Created Mission→Feedback relation for 2
+[2025-04-10 13:52:47,590] - [MQTT][INFO] - Published
+[2025-04-10 13:52:47,592] - [MQTT][INFO]Created feedback device Feedback 2.11
+[2025-04-10 13:52:47,593] - [MQTT][INFO] - Published
+[2025-04-10 13:52:47,595] - [MQTT][INFO] - Published
+[2025-04-10 13:52:47,598] - [MQTT][INFO] - Published
+[2025-04-10 13:52:47,600] - [MQTT][INFO] - Published
+[2025-04-10 13:52:47,601] - [MQTT][INFO] - Sent mission data 2 to ThingsBoard
+[2025-04-10 13:52:49,316] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:52:49,317] - [MQTT][INFO] - Received State vector from 3
+[2025-04-10 13:52:49,339] - [MQTT][INFO]Created Mission→Vehicle relation for 2 → 3
+[2025-04-10 13:52:49,341] - [MQTT][INFO] - Published
+[2025-04-10 13:52:53,409] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:52:53,416] - [MQTT][INFO] - Received State vector from 1
+[2025-04-10 13:52:53,441] - [MQTT][INFO]Created Mission→Vehicle relation for 1 → 1
+[2025-04-10 13:52:53,446] - [MQTT][INFO] - Published
+[2025-04-10 13:52:56,034] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:52:56,036] - [MQTT][INFO] - Received State vector from 2
+[2025-04-10 13:52:56,052] - [MQTT][INFO]Created Mission→Vehicle relation for 1 → 2
+[2025-04-10 13:52:56,053] - [MQTT][INFO] - Published
+[2025-04-10 13:52:57,406] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:52:58,170] - [MQTT][INFO]Created Mission→Feedback relation for 1
+[2025-04-10 13:52:58,171] - [MQTT][INFO] - Published
+[2025-04-10 13:52:58,173] - [MQTT][INFO]Created feedback device Feedback 1.15
+[2025-04-10 13:52:58,174] - [MQTT][INFO] - Published
+[2025-04-10 13:52:58,177] - [MQTT][INFO] - Published
+[2025-04-10 13:52:58,179] - [MQTT][INFO] - Published
+[2025-04-10 13:52:58,181] - [MQTT][INFO] - Published
+[2025-04-10 13:52:58,183] - [MQTT][INFO] - Sent mission data 1 to ThingsBoard
+[2025-04-10 13:52:58,315] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:52:59,069] - [MQTT][INFO]Created Mission→Feedback relation for 1
+[2025-04-10 13:52:59,070] - [MQTT][INFO] - Published
+[2025-04-10 13:52:59,072] - [MQTT][INFO]Created feedback device Feedback 1.16
+[2025-04-10 13:52:59,074] - [MQTT][INFO] - Published
+[2025-04-10 13:52:59,076] - [MQTT][INFO] - Published
+[2025-04-10 13:52:59,082] - [MQTT][INFO] - Published
+[2025-04-10 13:52:59,087] - [MQTT][INFO] - Published
+[2025-04-10 13:52:59,089] - [MQTT][INFO] - Sent mission data 1 to ThingsBoard
+[2025-04-10 13:52:59,117] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:52:59,118] - [MQTT][INFO] - Received State vector from 3
+[2025-04-10 13:52:59,133] - [MQTT][INFO]Created Mission→Vehicle relation for 2 → 3
+[2025-04-10 13:52:59,135] - [MQTT][INFO] - Published
+[2025-04-10 13:53:03,460] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:53:03,462] - [MQTT][INFO] - Received State vector from 1
+[2025-04-10 13:53:03,487] - [MQTT][INFO]Created Mission→Vehicle relation for 1 → 1
+[2025-04-10 13:53:03,489] - [MQTT][INFO] - Published
+[2025-04-10 13:53:05,908] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:53:05,909] - [MQTT][INFO] - Received State vector from 2
+[2025-04-10 13:53:05,934] - [MQTT][INFO]Created Mission→Vehicle relation for 1 → 2
+[2025-04-10 13:53:05,937] - [MQTT][INFO] - Published
+[2025-04-10 13:53:07,847] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:53:08,597] - [MQTT][INFO]Created Mission→Feedback relation for 2
+[2025-04-10 13:53:08,599] - [MQTT][INFO] - Published
+[2025-04-10 13:53:08,601] - [MQTT][INFO]Created feedback device Feedback 2.12
+[2025-04-10 13:53:08,604] - [MQTT][INFO] - Published
+[2025-04-10 13:53:08,607] - [MQTT][INFO] - Published
+[2025-04-10 13:53:08,609] - [MQTT][INFO] - Published
+[2025-04-10 13:53:08,610] - [MQTT][INFO] - Published
+[2025-04-10 13:53:08,611] - [MQTT][INFO] - Sent mission data 2 to ThingsBoard
+[2025-04-10 13:53:09,186] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:53:09,187] - [MQTT][INFO] - Received State vector from 3
+[2025-04-10 13:53:09,209] - [MQTT][INFO]Created Mission→Vehicle relation for 2 → 3
+[2025-04-10 13:53:09,211] - [MQTT][INFO] - Published
+[2025-04-10 13:53:13,296] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:53:13,298] - [MQTT][INFO] - Received State vector from 1
+[2025-04-10 13:53:13,320] - [MQTT][INFO]Created Mission→Vehicle relation for 1 → 1
+[2025-04-10 13:53:13,322] - [MQTT][INFO] - Published
+[2025-04-10 13:53:15,943] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:53:15,944] - [MQTT][INFO] - Received State vector from 2
+[2025-04-10 13:53:15,970] - [MQTT][INFO]Created Mission→Vehicle relation for 1 → 2
+[2025-04-10 13:53:15,972] - [MQTT][INFO] - Published
+[2025-04-10 13:53:18,391] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:53:18,800] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:53:19,145] - [MQTT][INFO]Created Mission→Feedback relation for 1
+[2025-04-10 13:53:19,152] - [MQTT][INFO] - Published
+[2025-04-10 13:53:19,153] - [MQTT][INFO]Created feedback device Feedback 1.17
+[2025-04-10 13:53:19,155] - [MQTT][INFO] - Published
+[2025-04-10 13:53:19,157] - [MQTT][INFO] - Published
+[2025-04-10 13:53:19,161] - [MQTT][INFO] - Published
+[2025-04-10 13:53:19,163] - [MQTT][INFO] - Published
+[2025-04-10 13:53:19,166] - [MQTT][INFO] - Sent mission data 1 to ThingsBoard
+[2025-04-10 13:53:19,191] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:53:19,408] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:53:19,956] - [MQTT][INFO]Created Mission→Feedback relation for 2
+[2025-04-10 13:53:19,959] - [MQTT][INFO] - Published
+[2025-04-10 13:53:19,961] - [MQTT][INFO]Created feedback device Feedback 2.13
+[2025-04-10 13:53:19,963] - [MQTT][INFO] - Published
+[2025-04-10 13:53:19,968] - [MQTT][INFO] - Published
+[2025-04-10 13:53:19,969] - [MQTT][INFO] - Published
+[2025-04-10 13:53:19,970] - [MQTT][INFO] - Published
+[2025-04-10 13:53:19,971] - [MQTT][INFO] - Sent mission data 2 to ThingsBoard
+[2025-04-10 13:53:19,972] - [MQTT][INFO] - Received State vector from 3
+[2025-04-10 13:53:19,994] - [MQTT][INFO]Created Mission→Vehicle relation for 2 → 3
+[2025-04-10 13:53:19,996] - [MQTT][INFO] - Published
+[2025-04-10 13:53:20,754] - [MQTT][INFO]Created Mission→Feedback relation for 1
+[2025-04-10 13:53:20,756] - [MQTT][INFO] - Published
+[2025-04-10 13:53:20,759] - [MQTT][INFO]Created feedback device Feedback 1.18
+[2025-04-10 13:53:20,761] - [MQTT][INFO] - Published
+[2025-04-10 13:53:20,765] - [MQTT][INFO] - Published
+[2025-04-10 13:53:20,767] - [MQTT][INFO] - Published
+[2025-04-10 13:53:20,768] - [MQTT][INFO] - Published
+[2025-04-10 13:53:20,769] - [MQTT][INFO] - Sent mission data 1 to ThingsBoard
+[2025-04-10 13:53:23,273] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:53:23,275] - [MQTT][INFO] - Received State vector from 1
+[2025-04-10 13:53:23,297] - [MQTT][INFO]Created Mission→Vehicle relation for 1 → 1
+[2025-04-10 13:53:23,299] - [MQTT][INFO] - Published
+[2025-04-10 13:53:25,931] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:53:25,933] - [MQTT][INFO] - Received State vector from 2
+[2025-04-10 13:53:25,958] - [MQTT][INFO]Created Mission→Vehicle relation for 1 → 2
+[2025-04-10 13:53:25,960] - [MQTT][INFO] - Published
+[2025-04-10 13:53:29,191] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:53:29,193] - [MQTT][INFO] - Received State vector from 3
+[2025-04-10 13:53:29,210] - [MQTT][INFO]Created Mission→Vehicle relation for 2 → 3
+[2025-04-10 13:53:29,211] - [MQTT][INFO] - Published
+[2025-04-10 13:53:29,863] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:53:30,627] - [MQTT][INFO]Created Mission→Feedback relation for 2
+[2025-04-10 13:53:30,629] - [MQTT][INFO] - Published
+[2025-04-10 13:53:30,631] - [MQTT][INFO]Created feedback device Feedback 2.14
+[2025-04-10 13:53:30,633] - [MQTT][INFO] - Published
+[2025-04-10 13:53:30,635] - [MQTT][INFO] - Published
+[2025-04-10 13:53:30,636] - [MQTT][INFO] - Published
+[2025-04-10 13:53:30,638] - [MQTT][INFO] - Published
+[2025-04-10 13:53:30,639] - [MQTT][INFO] - Sent mission data 2 to ThingsBoard
+[2025-04-10 13:53:33,308] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:53:33,310] - [MQTT][INFO] - Received State vector from 1
+[2025-04-10 13:53:33,334] - [MQTT][INFO]Created Mission→Vehicle relation for 1 → 1
+[2025-04-10 13:53:33,337] - [MQTT][INFO] - Published
+[2025-04-10 13:53:35,961] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:53:35,963] - [MQTT][INFO] - Received State vector from 2
+[2025-04-10 13:53:35,987] - [MQTT][INFO]Created Mission→Vehicle relation for 1 → 2
+[2025-04-10 13:53:35,989] - [MQTT][INFO] - Published
+[2025-04-10 13:53:39,208] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:53:39,210] - [MQTT][INFO] - Received State vector from 3
+[2025-04-10 13:53:39,233] - [MQTT][INFO]Created Mission→Vehicle relation for 2 → 3
+[2025-04-10 13:53:39,236] - [MQTT][INFO] - Published
+[2025-04-10 13:53:39,397] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:53:40,154] - [MQTT][INFO]Created Mission→Feedback relation for 1
+[2025-04-10 13:53:40,155] - [MQTT][INFO] - Published
+[2025-04-10 13:53:40,157] - [MQTT][INFO]Created feedback device Feedback 1.19
+[2025-04-10 13:53:40,159] - [MQTT][INFO] - Published
+[2025-04-10 13:53:40,161] - [MQTT][INFO] - Published
+[2025-04-10 13:53:40,164] - [MQTT][INFO] - Published
+[2025-04-10 13:53:40,168] - [MQTT][INFO] - Published
+[2025-04-10 13:53:40,171] - [MQTT][INFO] - Sent mission data 1 to ThingsBoard
+[2025-04-10 13:53:43,275] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:53:43,276] - [MQTT][INFO] - Received State vector from 1
+[2025-04-10 13:53:43,300] - [MQTT][INFO]Created Mission→Vehicle relation for 1 → 1
+[2025-04-10 13:53:43,302] - [MQTT][INFO] - Published
+[2025-04-10 13:53:45,919] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:53:45,920] - [MQTT][INFO] - Received State vector from 2
+[2025-04-10 13:53:45,944] - [MQTT][INFO]Created Mission→Vehicle relation for 1 → 2
+[2025-04-10 13:53:45,945] - [MQTT][INFO] - Published
+[2025-04-10 13:53:49,201] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:53:49,202] - [MQTT][INFO] - Received State vector from 3
+[2025-04-10 13:53:49,223] - [MQTT][INFO]Created Mission→Vehicle relation for 2 → 3
+[2025-04-10 13:53:49,225] - [MQTT][INFO] - Published
+[2025-04-10 13:53:50,464] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:53:50,878] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:53:51,252] - [MQTT][INFO]Created Mission→Feedback relation for 1
+[2025-04-10 13:53:51,254] - [MQTT][INFO] - Published
+[2025-04-10 13:53:51,256] - [MQTT][INFO]Created feedback device Feedback 1.20
+[2025-04-10 13:53:51,258] - [MQTT][INFO] - Published
+[2025-04-10 13:53:51,259] - [MQTT][INFO] - Published
+[2025-04-10 13:53:51,261] - [MQTT][INFO] - Published
+[2025-04-10 13:53:51,263] - [MQTT][INFO] - Published
+[2025-04-10 13:53:51,265] - [MQTT][INFO] - Sent mission data 1 to ThingsBoard
+[2025-04-10 13:53:52,032] - [MQTT][INFO]Created Mission→Feedback relation for 2
+[2025-04-10 13:53:52,034] - [MQTT][INFO] - Published
+[2025-04-10 13:53:52,037] - [MQTT][INFO]Created feedback device Feedback 2.15
+[2025-04-10 13:53:52,039] - [MQTT][INFO] - Published
+[2025-04-10 13:53:52,043] - [MQTT][INFO] - Published
+[2025-04-10 13:53:52,045] - [MQTT][INFO] - Published
+[2025-04-10 13:53:52,046] - [MQTT][INFO] - Published
+[2025-04-10 13:53:52,047] - [MQTT][INFO] - Sent mission data 2 to ThingsBoard
+[2025-04-10 13:53:53,312] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:53:53,313] - [MQTT][INFO] - Received State vector from 1
+[2025-04-10 13:53:53,337] - [MQTT][INFO]Created Mission→Vehicle relation for 1 → 1
+[2025-04-10 13:53:53,339] - [MQTT][INFO] - Published
+[2025-04-10 13:53:55,956] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:53:55,958] - [MQTT][INFO] - Received State vector from 2
+[2025-04-10 13:53:55,982] - [MQTT][INFO]Created Mission→Vehicle relation for 1 → 2
+[2025-04-10 13:53:55,984] - [MQTT][INFO] - Published
+[2025-04-10 13:53:59,201] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:53:59,202] - [MQTT][INFO] - Received State vector from 3
+[2025-04-10 13:53:59,224] - [MQTT][INFO]Created Mission→Vehicle relation for 2 → 3
+[2025-04-10 13:53:59,225] - [MQTT][INFO] - Published
+[2025-04-10 13:54:03,335] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:54:03,337] - [MQTT][INFO] - Received State vector from 1
+[2025-04-10 13:54:03,362] - [MQTT][INFO]Created Mission→Vehicle relation for 1 → 1
+[2025-04-10 13:54:03,364] - [MQTT][INFO] - Published
+[2025-04-10 13:54:05,878] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:54:05,880] - [MQTT][INFO] - Received State vector from 2
+[2025-04-10 13:54:05,898] - [MQTT][INFO]Created Mission→Vehicle relation for 1 → 2
+[2025-04-10 13:54:05,900] - [MQTT][INFO] - Published
+[2025-04-10 13:54:09,150] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:54:09,151] - [MQTT][INFO] - Received State vector from 3
+[2025-04-10 13:54:09,172] - [MQTT][INFO]Created Mission→Vehicle relation for 2 → 3
+[2025-04-10 13:54:09,174] - [MQTT][INFO] - Published
+[2025-04-10 13:54:11,401] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:54:11,813] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:54:12,153] - [MQTT][INFO]Created Mission→Feedback relation for 1
+[2025-04-10 13:54:12,155] - [MQTT][INFO] - Published
+[2025-04-10 13:54:12,158] - [MQTT][INFO]Created feedback device Feedback 1.21
+[2025-04-10 13:54:12,160] - [MQTT][INFO] - Published
+[2025-04-10 13:54:12,163] - [MQTT][INFO] - Published
+[2025-04-10 13:54:12,164] - [MQTT][INFO] - Published
+[2025-04-10 13:54:12,166] - [MQTT][INFO] - Published
+[2025-04-10 13:54:12,167] - [MQTT][INFO] - Sent mission data 1 to ThingsBoard
+[2025-04-10 13:54:12,822] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:54:12,920] - [MQTT][INFO]Created Mission→Feedback relation for 2
+[2025-04-10 13:54:12,922] - [MQTT][INFO] - Published
+[2025-04-10 13:54:12,924] - [MQTT][INFO]Created feedback device Feedback 2.16
+[2025-04-10 13:54:12,925] - [MQTT][INFO] - Published
+[2025-04-10 13:54:12,927] - [MQTT][INFO] - Published
+[2025-04-10 13:54:12,930] - [MQTT][INFO] - Published
+[2025-04-10 13:54:12,932] - [MQTT][INFO] - Published
+[2025-04-10 13:54:12,933] - [MQTT][INFO] - Sent mission data 2 to ThingsBoard
+[2025-04-10 13:54:12,952] - [MQTT][INFO]Deleted relation to vehicle 3
+[2025-04-10 13:54:13,395] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:54:15,880] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:54:19,133] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:54:22,445] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:54:23,401] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:54:25,899] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:54:29,150] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:54:33,404] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:54:34,499] - [MQTT][INFO]Completely cleaned up mission 2
+[2025-04-10 13:54:34,501] - [MQTT][INFO] - Received State vector from 1
+[2025-04-10 13:54:34,520] - [MQTT][INFO]Created Mission→Vehicle relation for 1 → 1
+[2025-04-10 13:54:34,522] - [MQTT][INFO] - Published
+[2025-04-10 13:54:34,524] - [MQTT][INFO] - Received State vector from 2
+[2025-04-10 13:54:34,548] - [MQTT][INFO]Created Mission→Vehicle relation for 1 → 2
+[2025-04-10 13:54:34,550] - [MQTT][INFO] - Published
+[2025-04-10 13:54:34,552] - [MQTT][INFO] - Received State vector from 3
+[2025-04-10 13:54:34,554] - [MQTT][INFO] - Published
+[2025-04-10 13:54:35,298] - [MQTT][INFO]Created Mission→Feedback relation for 1
+[2025-04-10 13:54:35,300] - [MQTT][INFO] - Published
+[2025-04-10 13:54:35,303] - [MQTT][INFO]Created feedback device Feedback 1.22
+[2025-04-10 13:54:35,305] - [MQTT][INFO] - Published
+[2025-04-10 13:54:35,308] - [MQTT][INFO] - Published
+[2025-04-10 13:54:35,310] - [MQTT][INFO] - Published
+[2025-04-10 13:54:35,312] - [MQTT][INFO] - Published
+[2025-04-10 13:54:35,313] - [MQTT][INFO] - Sent mission data 1 to ThingsBoard
+[2025-04-10 13:54:35,314] - [MQTT][INFO] - Received State vector from 1
+[2025-04-10 13:54:35,333] - [MQTT][INFO]Created Mission→Vehicle relation for 1 → 1
+[2025-04-10 13:54:35,335] - [MQTT][INFO] - Published
+[2025-04-10 13:54:35,339] - [MQTT][INFO] - Received State vector from 2
+[2025-04-10 13:54:35,366] - [MQTT][INFO]Created Mission→Vehicle relation for 1 → 2
+[2025-04-10 13:54:35,367] - [MQTT][INFO] - Published
+[2025-04-10 13:54:35,369] - [MQTT][INFO] - Received State vector from 3
+[2025-04-10 13:54:35,371] - [MQTT][INFO] - Published
+[2025-04-10 13:54:35,372] - [MQTT][INFO] - Received State vector from 1
+[2025-04-10 13:54:35,392] - [MQTT][INFO]Created Mission→Vehicle relation for 1 → 1
+[2025-04-10 13:54:35,394] - [MQTT][INFO] - Published
+[2025-04-10 13:54:35,881] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:54:35,883] - [MQTT][INFO] - Received State vector from 2
+[2025-04-10 13:54:35,908] - [MQTT][INFO]Created Mission→Vehicle relation for 1 → 2
+[2025-04-10 13:54:35,910] - [MQTT][INFO] - Published
+[2025-04-10 13:54:39,127] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:54:39,128] - [MQTT][INFO] - Received State vector from 3
+[2025-04-10 13:54:39,133] - [MQTT][INFO] - Published
+[2025-04-10 13:54:43,409] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:54:43,444] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:54:44,158] - [MQTT][INFO]Created Mission→Feedback relation for 1
+[2025-04-10 13:54:44,160] - [MQTT][INFO] - Published
+[2025-04-10 13:54:44,161] - [MQTT][INFO]Created feedback device Feedback 1.23
+[2025-04-10 13:54:44,163] - [MQTT][INFO] - Published
+[2025-04-10 13:54:44,165] - [MQTT][INFO] - Published
+[2025-04-10 13:54:44,167] - [MQTT][INFO] - Published
+[2025-04-10 13:54:44,169] - [MQTT][INFO] - Published
+[2025-04-10 13:54:44,170] - [MQTT][INFO] - Sent mission data 1 to ThingsBoard
+[2025-04-10 13:54:44,172] - [MQTT][INFO] - Received State vector from 1
+[2025-04-10 13:54:44,193] - [MQTT][INFO]Created Mission→Vehicle relation for 1 → 1
+[2025-04-10 13:54:44,195] - [MQTT][INFO] - Published
+[2025-04-10 13:54:45,883] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:54:45,884] - [MQTT][INFO] - Received State vector from 2
+[2025-04-10 13:54:45,908] - [MQTT][INFO]Created Mission→Vehicle relation for 1 → 2
+[2025-04-10 13:54:45,910] - [MQTT][INFO] - Published
+[2025-04-10 13:54:49,171] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:54:49,173] - [MQTT][INFO] - Received State vector from 3
+[2025-04-10 13:54:49,177] - [MQTT][INFO] - Published
+[2025-04-10 13:54:53,433] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:54:53,435] - [MQTT][INFO] - Received State vector from 1
+[2025-04-10 13:54:53,459] - [MQTT][INFO]Created Mission→Vehicle relation for 1 → 1
+[2025-04-10 13:54:53,462] - [MQTT][INFO] - Published
+[2025-04-10 13:54:54,507] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:54:55,296] - [MQTT][INFO]Created Mission→Feedback relation for 1
+[2025-04-10 13:54:55,299] - [MQTT][INFO] - Published
+[2025-04-10 13:54:55,301] - [MQTT][INFO]Created feedback device Feedback 1.24
+[2025-04-10 13:54:55,303] - [MQTT][INFO] - Published
+[2025-04-10 13:54:55,306] - [MQTT][INFO] - Published
+[2025-04-10 13:54:55,307] - [MQTT][INFO] - Published
+[2025-04-10 13:54:55,309] - [MQTT][INFO] - Published
+[2025-04-10 13:54:55,310] - [MQTT][INFO] - Sent mission data 1 to ThingsBoard
+[2025-04-10 13:54:55,916] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:54:55,918] - [MQTT][INFO] - Received State vector from 2
+[2025-04-10 13:54:55,944] - [MQTT][INFO]Created Mission→Vehicle relation for 1 → 2
+[2025-04-10 13:54:55,946] - [MQTT][INFO] - Published
+[2025-04-10 13:54:59,164] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:54:59,166] - [MQTT][INFO] - Received State vector from 3
+[2025-04-10 13:54:59,169] - [MQTT][INFO] - Published
+[2025-04-10 13:55:03,266] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:55:03,268] - [MQTT][INFO] - Received State vector from 1
+[2025-04-10 13:55:03,292] - [MQTT][INFO]Created Mission→Vehicle relation for 1 → 1
+[2025-04-10 13:55:03,295] - [MQTT][INFO] - Published
+[2025-04-10 13:55:05,943] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:55:05,945] - [MQTT][INFO] - Received State vector from 2
+[2025-04-10 13:55:05,969] - [MQTT][INFO]Created Mission→Vehicle relation for 1 → 2
+[2025-04-10 13:55:05,972] - [MQTT][INFO] - Published
+[2025-04-10 13:55:09,191] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:55:09,193] - [MQTT][INFO] - Received State vector from 3
+[2025-04-10 13:55:09,196] - [MQTT][INFO] - Published
+[2025-04-10 13:55:13,452] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:55:13,454] - [MQTT][INFO] - Received State vector from 1
+[2025-04-10 13:55:13,478] - [MQTT][INFO]Created Mission→Vehicle relation for 1 → 1
+[2025-04-10 13:55:13,480] - [MQTT][INFO] - Published
+[2025-04-10 13:55:15,410] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:55:15,964] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:55:16,193] - [MQTT][INFO]Created Mission→Feedback relation for 1
+[2025-04-10 13:55:16,195] - [MQTT][INFO] - Published
+[2025-04-10 13:55:16,197] - [MQTT][INFO]Created feedback device Feedback 1.25
+[2025-04-10 13:55:16,199] - [MQTT][INFO] - Published
+[2025-04-10 13:55:16,200] - [MQTT][INFO] - Published
+[2025-04-10 13:55:16,203] - [MQTT][INFO] - Published
+[2025-04-10 13:55:16,205] - [MQTT][INFO] - Published
+[2025-04-10 13:55:16,207] - [MQTT][INFO] - Sent mission data 1 to ThingsBoard
+[2025-04-10 13:55:16,208] - [MQTT][INFO] - Received State vector from 2
+[2025-04-10 13:55:16,228] - [MQTT][INFO]Created Mission→Vehicle relation for 1 → 2
+[2025-04-10 13:55:16,230] - [MQTT][INFO] - Published
+[2025-04-10 13:55:19,208] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:55:19,210] - [MQTT][INFO] - Received State vector from 3
+[2025-04-10 13:55:19,213] - [MQTT][INFO] - Published
+[2025-04-10 13:55:23,280] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:55:23,281] - [MQTT][INFO] - Received State vector from 1
+[2025-04-10 13:55:23,305] - [MQTT][INFO]Created Mission→Vehicle relation for 1 → 1
+[2025-04-10 13:55:23,307] - [MQTT][INFO] - Published
+[2025-04-10 13:55:25,947] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:55:25,948] - [MQTT][INFO] - Received State vector from 2
+[2025-04-10 13:55:25,967] - [MQTT][INFO]Created Mission→Vehicle relation for 1 → 2
+[2025-04-10 13:55:25,968] - [MQTT][INFO] - Published
+[2025-04-10 13:55:26,414] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:55:27,209] - [MQTT][INFO]Created Mission→Feedback relation for 1
+[2025-04-10 13:55:27,211] - [MQTT][INFO] - Published
+[2025-04-10 13:55:27,213] - [MQTT][INFO]Created feedback device Feedback 1.26
+[2025-04-10 13:55:27,215] - [MQTT][INFO] - Published
+[2025-04-10 13:55:27,217] - [MQTT][INFO] - Published
+[2025-04-10 13:55:27,219] - [MQTT][INFO] - Published
+[2025-04-10 13:55:27,221] - [MQTT][INFO] - Published
+[2025-04-10 13:55:27,222] - [MQTT][INFO] - Sent mission data 1 to ThingsBoard
+[2025-04-10 13:55:29,195] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:55:29,198] - [MQTT][INFO] - Received State vector from 3
+[2025-04-10 13:55:29,201] - [MQTT][INFO] - Published
+[2025-04-10 13:55:30,306] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:55:31,002] - [MQTT][INFO] - Published
+[2025-04-10 13:55:31,713] - [MQTT][INFO] - Published
+[2025-04-10 13:55:32,434] - [MQTT][INFO] - Published
+[2025-04-10 13:55:33,155] - [MQTT][INFO] - Published
+[2025-04-10 13:55:33,278] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:55:33,888] - [MQTT][INFO] - Published
+[2025-04-10 13:55:33,889] - [MQTT][INFO] - Sent mission data 2 to ThingsBoard
+[2025-04-10 13:55:33,891] - [MQTT][INFO] - Received State vector from 1
+[2025-04-10 13:55:33,910] - [MQTT][INFO]Created Mission→Vehicle relation for 1 → 1
+[2025-04-10 13:55:33,912] - [MQTT][INFO] - Published
+[2025-04-10 13:55:35,966] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:55:35,968] - [MQTT][INFO] - Received State vector from 2
+[2025-04-10 13:55:36,017] - [MQTT][INFO]Created Mission→Vehicle relation for 1 → 2
+[2025-04-10 13:55:36,019] - [MQTT][INFO] - Published
+[2025-04-10 13:55:39,227] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:55:39,228] - [MQTT][INFO] - Received State vector from 3
+[2025-04-10 13:55:39,248] - [MQTT][INFO]Created Mission→Vehicle relation for 2 → 3
+[2025-04-10 13:55:39,250] - [MQTT][INFO] - Published
+[2025-04-10 13:55:40,346] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:55:40,358] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:55:41,106] - [MQTT][INFO]Created Mission→Feedback relation for 2
+[2025-04-10 13:55:41,108] - [MQTT][INFO] - Published
+[2025-04-10 13:55:41,109] - [MQTT][INFO]Created feedback device Feedback 2.1
+[2025-04-10 13:55:41,111] - [MQTT][INFO] - Published
+[2025-04-10 13:55:41,113] - [MQTT][INFO] - Published
+[2025-04-10 13:55:41,115] - [MQTT][INFO] - Published
+[2025-04-10 13:55:41,117] - [MQTT][INFO] - Published
+[2025-04-10 13:55:41,118] - [MQTT][INFO] - Sent mission data 2 to ThingsBoard
+[2025-04-10 13:55:41,857] - [MQTT][INFO]Created Mission→Feedback relation for 2
+[2025-04-10 13:55:41,859] - [MQTT][INFO] - Published
+[2025-04-10 13:55:41,862] - [MQTT][INFO]Created feedback device Feedback 2.2
+[2025-04-10 13:55:41,864] - [MQTT][INFO] - Published
+[2025-04-10 13:55:41,867] - [MQTT][INFO] - Published
+[2025-04-10 13:55:41,870] - [MQTT][INFO] - Published
+[2025-04-10 13:55:41,871] - [MQTT][INFO] - Published
+[2025-04-10 13:55:41,872] - [MQTT][INFO] - Sent mission data 2 to ThingsBoard
+[2025-04-10 13:55:43,336] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:55:43,337] - [MQTT][INFO] - Received State vector from 1
+[2025-04-10 13:55:43,360] - [MQTT][INFO]Created Mission→Vehicle relation for 1 → 1
+[2025-04-10 13:55:43,362] - [MQTT][INFO] - Published
+[2025-04-10 13:55:46,048] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:55:46,050] - [MQTT][INFO] - Received State vector from 2
+[2025-04-10 13:55:46,072] - [MQTT][INFO]Created Mission→Vehicle relation for 1 → 2
+[2025-04-10 13:55:46,074] - [MQTT][INFO] - Published
+[2025-04-10 13:55:47,420] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:55:48,165] - [MQTT][INFO]Created Mission→Feedback relation for 1
+[2025-04-10 13:55:48,167] - [MQTT][INFO] - Published
+[2025-04-10 13:55:48,168] - [MQTT][INFO]Created feedback device Feedback 1.27
+[2025-04-10 13:55:48,170] - [MQTT][INFO] - Published
+[2025-04-10 13:55:48,172] - [MQTT][INFO] - Published
+[2025-04-10 13:55:48,174] - [MQTT][INFO] - Published
+[2025-04-10 13:55:48,176] - [MQTT][INFO] - Published
+[2025-04-10 13:55:48,177] - [MQTT][INFO] - Sent mission data 1 to ThingsBoard
+[2025-04-10 13:55:49,154] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:55:49,156] - [MQTT][INFO] - Received State vector from 3
+[2025-04-10 13:55:49,172] - [MQTT][INFO]Created Mission→Vehicle relation for 2 → 3
+[2025-04-10 13:55:49,173] - [MQTT][INFO] - Published
+[2025-04-10 13:56:04,191] - [MQTT][INFO][gRPC MQTT] - Server thread initialized
+[2025-04-10 13:56:04,193] - [MQTT][INFO][gRPC MQTT] - Server started on [::]:50057
+[2025-04-10 13:56:07,772] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:56:08,486] - [MQTT][INFO] - Published
+[2025-04-10 13:56:09,209] - [MQTT][INFO] - Published
+[2025-04-10 13:56:09,927] - [MQTT][INFO] - Published
+[2025-04-10 13:56:10,104] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:56:10,665] - [MQTT][INFO] - Published
+[2025-04-10 13:56:11,395] - [MQTT][INFO] - Published
+[2025-04-10 13:56:11,397] - [MQTT][INFO] - Sent mission data 2 to ThingsBoard
+[2025-04-10 13:56:11,399] - [MQTT][INFO] - Received State vector from 3
+[2025-04-10 13:56:12,120] - [MQTT][INFO]Created Mission→Vehicle relation for 2 → 3
+[2025-04-10 13:56:12,122] - [MQTT][INFO] - Published
+[2025-04-10 13:56:17,798] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:56:17,808] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:56:18,582] - [MQTT][INFO]Created Mission→Feedback relation for 2
+[2025-04-10 13:56:18,584] - [MQTT][INFO] - Published
+[2025-04-10 13:56:18,586] - [MQTT][INFO]Created feedback device Feedback 2.1
+[2025-04-10 13:56:18,587] - [MQTT][INFO] - Published
+[2025-04-10 13:56:18,589] - [MQTT][INFO] - Published
+[2025-04-10 13:56:18,591] - [MQTT][INFO] - Published
+[2025-04-10 13:56:18,593] - [MQTT][INFO] - Published
+[2025-04-10 13:56:18,594] - [MQTT][INFO] - Sent mission data 2 to ThingsBoard
+[2025-04-10 13:56:19,333] - [MQTT][INFO]Created Mission→Feedback relation for 2
+[2025-04-10 13:56:19,335] - [MQTT][INFO] - Published
+[2025-04-10 13:56:19,336] - [MQTT][INFO]Created feedback device Feedback 2.2
+[2025-04-10 13:56:19,338] - [MQTT][INFO] - Published
+[2025-04-10 13:56:19,340] - [MQTT][INFO] - Published
+[2025-04-10 13:56:19,342] - [MQTT][INFO] - Published
+[2025-04-10 13:56:19,344] - [MQTT][INFO] - Published
+[2025-04-10 13:56:19,346] - [MQTT][INFO] - Sent mission data 2 to ThingsBoard
+[2025-04-10 13:56:20,283] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:56:20,284] - [MQTT][INFO] - Received State vector from 3
+[2025-04-10 13:56:20,306] - [MQTT][INFO]Created Mission→Vehicle relation for 2 → 3
+[2025-04-10 13:56:20,307] - [MQTT][INFO] - Published
+[2025-04-10 13:56:30,029] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:56:30,030] - [MQTT][INFO] - Received State vector from 3
+[2025-04-10 13:56:30,048] - [MQTT][INFO]Created Mission→Vehicle relation for 2 → 3
+[2025-04-10 13:56:30,049] - [MQTT][INFO] - Published
+[2025-04-10 13:56:38,790] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:56:39,543] - [MQTT][INFO]Created Mission→Feedback relation for 2
+[2025-04-10 13:56:39,545] - [MQTT][INFO] - Published
+[2025-04-10 13:56:39,547] - [MQTT][INFO]Created feedback device Feedback 2.3
+[2025-04-10 13:56:39,549] - [MQTT][INFO] - Published
+[2025-04-10 13:56:39,551] - [MQTT][INFO] - Published
+[2025-04-10 13:56:39,553] - [MQTT][INFO] - Published
+[2025-04-10 13:56:39,555] - [MQTT][INFO] - Published
+[2025-04-10 13:56:39,556] - [MQTT][INFO] - Sent mission data 2 to ThingsBoard
+[2025-04-10 13:56:40,193] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:56:40,194] - [MQTT][INFO] - Received State vector from 3
+[2025-04-10 13:56:40,218] - [MQTT][INFO]Created Mission→Vehicle relation for 2 → 3
+[2025-04-10 13:56:40,219] - [MQTT][INFO] - Published
+[2025-04-10 13:56:50,102] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:56:50,103] - [MQTT][INFO] - Received State vector from 3
+[2025-04-10 13:56:50,128] - [MQTT][INFO]Created Mission→Vehicle relation for 2 → 3
+[2025-04-10 13:56:50,130] - [MQTT][INFO] - Published
+[2025-04-10 13:56:59,790] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:57:00,226] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:57:00,658] - [MQTT][INFO]Created Mission→Feedback relation for 2
+[2025-04-10 13:57:00,659] - [MQTT][INFO] - Published
+[2025-04-10 13:57:00,660] - [MQTT][INFO]Created feedback device Feedback 2.4
+[2025-04-10 13:57:00,661] - [MQTT][INFO] - Published
+[2025-04-10 13:57:00,663] - [MQTT][INFO] - Published
+[2025-04-10 13:57:00,665] - [MQTT][INFO] - Published
+[2025-04-10 13:57:00,667] - [MQTT][INFO] - Published
+[2025-04-10 13:57:00,668] - [MQTT][INFO] - Sent mission data 2 to ThingsBoard
+[2025-04-10 13:57:00,669] - [MQTT][INFO] - Received State vector from 3
+[2025-04-10 13:57:00,691] - [MQTT][INFO]Created Mission→Vehicle relation for 2 → 3
+[2025-04-10 13:57:00,693] - [MQTT][INFO] - Published
+[2025-04-10 13:57:10,127] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:57:10,128] - [MQTT][INFO] - Received State vector from 3
+[2025-04-10 13:57:10,151] - [MQTT][INFO]Created Mission→Vehicle relation for 2 → 3
+[2025-04-10 13:57:10,153] - [MQTT][INFO] - Published
+[2025-04-10 13:57:10,799] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:57:11,632] - [MQTT][INFO]Created Mission→Feedback relation for 2
+[2025-04-10 13:57:11,633] - [MQTT][INFO] - Published
+[2025-04-10 13:57:11,635] - [MQTT][INFO]Created feedback device Feedback 2.5
+[2025-04-10 13:57:11,636] - [MQTT][INFO] - Published
+[2025-04-10 13:57:11,639] - [MQTT][INFO] - Published
+[2025-04-10 13:57:11,641] - [MQTT][INFO] - Published
+[2025-04-10 13:57:11,643] - [MQTT][INFO] - Published
+[2025-04-10 13:57:11,644] - [MQTT][INFO] - Sent mission data 2 to ThingsBoard
+[2025-04-10 13:57:20,023] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:57:20,025] - [MQTT][INFO] - Received State vector from 3
+[2025-04-10 13:57:20,052] - [MQTT][INFO]Created Mission→Vehicle relation for 2 → 3
+[2025-04-10 13:57:20,054] - [MQTT][INFO] - Published
+[2025-04-10 13:57:21,826] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:57:22,611] - [MQTT][INFO]Created Mission→Feedback relation for 2
+[2025-04-10 13:57:22,613] - [MQTT][INFO] - Published
+[2025-04-10 13:57:22,615] - [MQTT][INFO]Created feedback device Feedback 2.6
+[2025-04-10 13:57:22,617] - [MQTT][INFO] - Published
+[2025-04-10 13:57:22,619] - [MQTT][INFO] - Published
+[2025-04-10 13:57:22,622] - [MQTT][INFO] - Published
+[2025-04-10 13:57:22,623] - [MQTT][INFO] - Published
+[2025-04-10 13:57:22,624] - [MQTT][INFO] - Sent mission data 2 to ThingsBoard
+[2025-04-10 13:57:30,134] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:57:30,136] - [MQTT][INFO] - Received State vector from 3
+[2025-04-10 13:57:30,158] - [MQTT][INFO]Created Mission→Vehicle relation for 2 → 3
+[2025-04-10 13:57:30,159] - [MQTT][INFO] - Published
+[2025-04-10 13:57:40,281] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:57:40,282] - [MQTT][INFO] - Received State vector from 3
+[2025-04-10 13:57:40,307] - [MQTT][INFO]Created Mission→Vehicle relation for 2 → 3
+[2025-04-10 13:57:40,309] - [MQTT][INFO] - Published
+[2025-04-10 13:57:42,858] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:57:43,631] - [MQTT][INFO]Created Mission→Feedback relation for 2
+[2025-04-10 13:57:43,634] - [MQTT][INFO] - Published
+[2025-04-10 13:57:43,636] - [MQTT][INFO]Created feedback device Feedback 2.7
+[2025-04-10 13:57:43,638] - [MQTT][INFO] - Published
+[2025-04-10 13:57:43,642] - [MQTT][INFO] - Published
+[2025-04-10 13:57:43,643] - [MQTT][INFO] - Published
+[2025-04-10 13:57:43,644] - [MQTT][INFO] - Published
+[2025-04-10 13:57:43,645] - [MQTT][INFO] - Sent mission data 2 to ThingsBoard
+[2025-04-10 13:57:50,344] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:57:50,346] - [MQTT][INFO] - Received State vector from 3
+[2025-04-10 13:57:50,368] - [MQTT][INFO]Created Mission→Vehicle relation for 2 → 3
+[2025-04-10 13:57:50,370] - [MQTT][INFO] - Published
+[2025-04-10 13:57:53,820] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:57:54,568] - [MQTT][INFO]Created Mission→Feedback relation for 2
+[2025-04-10 13:57:54,570] - [MQTT][INFO] - Published
+[2025-04-10 13:57:54,572] - [MQTT][INFO]Created feedback device Feedback 2.8
+[2025-04-10 13:57:54,573] - [MQTT][INFO] - Published
+[2025-04-10 13:57:54,574] - [MQTT][INFO] - Published
+[2025-04-10 13:57:54,576] - [MQTT][INFO] - Published
+[2025-04-10 13:57:54,578] - [MQTT][INFO] - Published
+[2025-04-10 13:57:54,580] - [MQTT][INFO] - Sent mission data 2 to ThingsBoard
+[2025-04-10 13:58:00,226] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:58:00,228] - [MQTT][INFO] - Received State vector from 3
+[2025-04-10 13:58:00,246] - [MQTT][INFO]Created Mission→Vehicle relation for 2 → 3
+[2025-04-10 13:58:00,248] - [MQTT][INFO] - Published
+[2025-04-10 13:58:04,801] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:58:05,562] - [MQTT][INFO]Created Mission→Feedback relation for 2
+[2025-04-10 13:58:05,564] - [MQTT][INFO] - Published
+[2025-04-10 13:58:05,565] - [MQTT][INFO]Created feedback device Feedback 2.9
+[2025-04-10 13:58:05,567] - [MQTT][INFO] - Published
+[2025-04-10 13:58:05,569] - [MQTT][INFO] - Published
+[2025-04-10 13:58:05,572] - [MQTT][INFO] - Published
+[2025-04-10 13:58:05,574] - [MQTT][INFO] - Published
+[2025-04-10 13:58:05,575] - [MQTT][INFO] - Sent mission data 2 to ThingsBoard
+[2025-04-10 13:58:10,090] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:58:10,092] - [MQTT][INFO] - Received State vector from 3
+[2025-04-10 13:58:10,116] - [MQTT][INFO]Created Mission→Vehicle relation for 2 → 3
+[2025-04-10 13:58:10,118] - [MQTT][INFO] - Published
+[2025-04-10 13:58:20,034] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:58:20,036] - [MQTT][INFO] - Received State vector from 3
+[2025-04-10 13:58:20,061] - [MQTT][INFO]Created Mission→Vehicle relation for 2 → 3
+[2025-04-10 13:58:20,063] - [MQTT][INFO] - Published
+[2025-04-10 13:58:25,887] - [MQTT][INFO][gRPC MQTT] - Received data payload
+[2025-04-10 13:58:26,661] - [MQTT][INFO]Created Mission→Feedback relation for 2
+[2025-04-10 13:58:26,663] - [MQTT][INFO] - Published
+[2025-04-10 13:58:26,664] - [MQTT][INFO]Created feedback device Feedback 2.10
+[2025-04-10 13:58:26,666] - [MQTT][INFO] - Published
+[2025-04-10 13:58:26,668] - [MQTT][INFO] - Published
+[2025-04-10 13:58:26,670] - [MQTT][INFO] - Published
+[2025-04-10 13:58:26,672] - [MQTT][INFO] - Published
+[2025-04-10 13:58:26,673] - [MQTT][INFO] - Sent mission data 2 to ThingsBoard

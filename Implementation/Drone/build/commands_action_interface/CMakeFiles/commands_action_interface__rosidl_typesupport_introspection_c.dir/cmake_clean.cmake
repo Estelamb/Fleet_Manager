@@ -1,0 +1,13 @@
+file(REMOVE_RECURSE
+  "CMakeFiles/commands_action_interface__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/commands_action_interface/action/detail/commands__type_support.c.o"
+  "CMakeFiles/commands_action_interface__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/commands_action_interface/action/detail/commands__type_support.c.o.d"
+  "libcommands_action_interface__rosidl_typesupport_introspection_c.pdb"
+  "libcommands_action_interface__rosidl_typesupport_introspection_c.so"
+  "rosidl_typesupport_introspection_c/commands_action_interface/action/detail/commands__rosidl_typesupport_introspection_c.h"
+  "rosidl_typesupport_introspection_c/commands_action_interface/action/detail/commands__type_support.c"
+)
+
+# Per-language clean rules from dependency scanning.
+foreach(lang C)
+  include(CMakeFiles/commands_action_interface__rosidl_typesupport_introspection_c.dir/cmake_clean_${lang}.cmake OPTIONAL)
+endforeach()

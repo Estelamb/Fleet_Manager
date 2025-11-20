@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package mqtt_communication;
+
+service MQTTCommunication {
+  rpc SendMQTT (MQTTRequest) returns (MQTTResponse) {}
+}
+
+message MQTTRequest {
+  repeated string mqtt_message = 1;
+}
+
+message MQTTResponse {
+  string confirmation = 1;
+}
