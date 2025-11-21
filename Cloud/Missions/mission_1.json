@@ -145,11 +145,36 @@
       "missionId": 1,
       "taskStatus": "NotAssigned",
       "assignedVehicleId": 1
+    },
+    {
+      "taskType": "TRANSIT",
+      "id": 4,
+      "missionId": 1,
+      "taskStatus": "NotAssigned",
+      "assignedVehicleId": 2
+    },
+    {
+      "taskType": "TREATMENT",
+      "id": 5,
+      "missionId": 1,
+      "taskStatus": "NotAssigned",
+      "assignedVehicleId": 2
+    },
+    {
+      "taskType": "TRANSIT",
+      "id": 6,
+      "missionId": 1,
+      "taskStatus": "NotAssigned",
+      "assignedVehicleId": 2
     }
   ],
   "vehicles": [
     {
       "id": 1,
+      "type": "AUAV"
+    },
+    {
+      "id": 2,
       "type": "AUAV"
     }
   ],
@@ -199,6 +224,40 @@
     {"relatedTask": {"id": 2, "missionId": 1}, "id": 43, "commandType": "CAMERA_IMAGE", "commandStatus": "NotAssigned", "startTime": 43, "params": [0.0, 0.0, 0.0, 0.0, "Camera_Test_Simulator"]},
     {"relatedTask": {"id": 2, "missionId": 1}, "id": 44, "commandType": "ANALYZE_IMAGE", "commandStatus": "NotAssigned", "startTime": 44, "params": [["Grape_Bunch_Hailo8"], 40.209730, -3.465575, [0, 6], ["ISOBUS"]]},
     {"relatedTask": {"id": 3, "missionId": 1}, "id": 45, "commandType": "NAV_HOME", "commandStatus": "NotAssigned", "startTime": 45, "params": [0.0]},
-    {"relatedTask": {"id": 3, "missionId": 1}, "id": 46, "commandType": "NAV_LAND", "commandStatus": "NotAssigned", "startTime": 46, "params": [0.0, 0.0, 0.0, 40.209232, -3.465646, 0.0]}
+    {"relatedTask": {"id": 3, "missionId": 1}, "id": 46, "commandType": "NAV_LAND", "commandStatus": "NotAssigned", "startTime": 46, "params": [0.0, 0.0, 0.0, 40.209232, -3.465646, 0.0]},
+
+    {"relatedTask": {"id": 4, "missionId": 1}, "id": 47, "commandType": "NAV_TAKEOFF", "commandStatus": "NotAssigned", "startTime": 47, "params": [0.0, 0.0, 40.209232, -3.465646]},
+    {"relatedTask": {"id": 4, "missionId": 1}, "id": 48, "commandType": "NAV_WAYPOINT", "commandStatus": "NotAssigned", "startTime": 48, "params": [0.0, 0.0, 0.0, 0.0, 40.209451, -3.465453, 0.0]},
+    {"relatedTask": {"id": 5, "missionId": 1}, "id": 49, "commandType": "NAV_WAYPOINT", "commandStatus": "NotAssigned", "startTime": 49, "params": [0.0, 0.0, 0.0, 0.0, 40.209544, -3.465575, 0.0]},
+    {"relatedTask": {"id": 5, "missionId": 1}, "id": 50, "commandType": "SPRAY", "commandStatus": "NotAssigned", "startTime": 50, "params": [0.0, 0.0, 40.209544, -3.465575, 0.0]},
+    {"relatedTask": {"id": 5, "missionId": 1}, "id": 51, "commandType": "NAV_WAYPOINT", "commandStatus": "NotAssigned", "startTime": 51, "params": [0.0, 0.0, 0.0, 0.0, 40.209544, -3.465821, 0.0]},
+    {"relatedTask": {"id": 5, "missionId": 1}, "id": 52, "commandType": "SPRAY", "commandStatus": "NotAssigned", "startTime": 52, "params": [0.0, 0.0, 40.209544, -3.465821]},
+    {"relatedTask": {"id": 5, "missionId": 1}, "id": 53, "commandType": "NAV_WAYPOINT", "commandStatus": "NotAssigned", "startTime": 53, "params": [0.0, 0.0, 0.0, 0.0, 40.209544, -3.466066, 0.0]},
+    {"relatedTask": {"id": 5, "missionId": 1}, "id": 54, "commandType": "SPRAY", "commandStatus": "NotAssigned", "startTime": 54, "params": [0.0, 0.0, 40.209544, -3.466066]},
+    {"relatedTask": {"id": 5, "missionId": 1}, "id": 55, "commandType": "NAV_WAYPOINT", "commandStatus": "NotAssigned", "startTime": 55, "params": [0.0, 0.0, 0.0, 0.0, 40.209544, -3.466312, 0.0]},
+    {"relatedTask": {"id": 5, "missionId": 1}, "id": 56, "commandType": "SPRAY", "commandStatus": "NotAssigned", "startTime": 56, "params": [0.0, 0.0, 40.209544, -3.466312]},
+    {"relatedTask": {"id": 5, "missionId": 1}, "id": 57, "commandType": "NAV_WAYPOINT", "commandStatus": "NotAssigned", "startTime": 57, "params": [0.0, 0.0, 0.0, 0.0, 40.209544, -3.466557, 0.0]},
+    {"relatedTask": {"id": 5, "missionId": 1}, "id": 58, "commandType": "SPRAY", "commandStatus": "NotAssigned", "startTime": 58, "params": [0.0, 0.0, 40.209544, -3.466557]},
+    {"relatedTask": {"id": 5, "missionId": 1}, "id": 59, "commandType": "NAV_WAYPOINT", "commandStatus": "NotAssigned", "startTime": 59, "params": [0.0, 0.0, 0.0, 0.0, 40.209544, -3.466803, 0.0]},
+    {"relatedTask": {"id": 5, "missionId": 1}, "id": 60, "commandType": "SPRAY", "commandStatus": "NotAssigned", "startTime": 60, "params": [0.0, 0.0, 40.209544, -3.466803]},
+    {"relatedTask": {"id": 5, "missionId": 1}, "id": 61, "commandType": "NAV_WAYPOINT", "commandStatus": "NotAssigned", "startTime": 61, "params": [0.0, 0.0, 0.0, 0.0, 40.209544, -3.467048, 0.0]},
+    {"relatedTask": {"id": 5, "missionId": 1}, "id": 62, "commandType": "SPRAY", "commandStatus": "NotAssigned", "startTime": 62, "params": [0.0, 0.0, 40.209544, -3.467048]},
+    {"relatedTask": {"id": 5, "missionId": 1}, "id": 63, "commandType": "NAV_WAYPOINT", "commandStatus": "NotAssigned", "startTime": 63, "params": [0.0, 0.0, 0.0, 0.0, 40.209730, -3.467048, 0.0]},
+    {"relatedTask": {"id": 5, "missionId": 1}, "id": 64, "commandType": "SPRAY", "commandStatus": "NotAssigned", "startTime": 64, "params": [0.0, 0.0, 40.209730, -3.467048]},
+    {"relatedTask": {"id": 5, "missionId": 1}, "id": 65, "commandType": "NAV_WAYPOINT", "commandStatus": "NotAssigned", "startTime": 65, "params": [0.0, 0.0, 0.0, 0.0, 40.209730, -3.466803, 0.0]},
+    {"relatedTask": {"id": 5, "missionId": 1}, "id": 66, "commandType": "SPRAY", "commandStatus": "NotAssigned", "startTime": 66, "params": [0.0, 0.0, 40.209730, -3.466803]},
+    {"relatedTask": {"id": 5, "missionId": 1}, "id": 67, "commandType": "NAV_WAYPOINT", "commandStatus": "NotAssigned", "startTime": 67, "params": [0.0, 0.0, 0.0, 0.0, 40.209730, -3.466557, 0.0]},
+    {"relatedTask": {"id": 5, "missionId": 1}, "id": 68, "commandType": "SPRAY", "commandStatus": "NotAssigned", "startTime": 68, "params": [0.0, 0.0, 40.209730, -3.466557]},
+    {"relatedTask": {"id": 5, "missionId": 1}, "id": 69, "commandType": "NAV_WAYPOINT", "commandStatus": "NotAssigned", "startTime": 69, "params": [0.0, 0.0, 0.0, 0.0, 40.209730, -3.466312, 0.0]},
+    {"relatedTask": {"id": 5, "missionId": 1}, "id": 70, "commandType": "SPRAY", "commandStatus": "NotAssigned", "startTime": 70, "params": [0.0, 0.0, 40.209730, -3.466312]},
+    {"relatedTask": {"id": 5, "missionId": 1}, "id": 71, "commandType": "NAV_WAYPOINT", "commandStatus": "NotAssigned", "startTime": 71, "params": [0.0, 0.0, 0.0, 0.0, 40.209730, -3.466066, 0.0]},
+    {"relatedTask": {"id": 5, "missionId": 1}, "id": 72, "commandType": "SPRAY", "commandStatus": "NotAssigned", "startTime": 72, "params": [0.0, 0.0, 40.209730, -3.466066]},
+    {"relatedTask": {"id": 5, "missionId": 1}, "id": 73, "commandType": "NAV_WAYPOINT", "commandStatus": "NotAssigned", "startTime": 73, "params": [0.0, 0.0, 0.0, 0.0, 40.209730, -3.465821, 0.0]},
+    {"relatedTask": {"id": 5, "missionId": 1}, "id": 74, "commandType": "SPRAY", "commandStatus": "NotAssigned", "startTime": 74, "params": [0.0, 0.0, 40.209730, -3.465821]},
+    {"relatedTask": {"id": 5, "missionId": 1}, "id": 75, "commandType": "NAV_WAYPOINT", "commandStatus": "NotAssigned", "startTime": 75, "params": [0.0, 0.0, 0.0, 0.0, 40.209730, -3.465575, 0.0]},
+    {"relatedTask": {"id": 5, "missionId": 1}, "id": 76, "commandType": "SPRAY", "commandStatus": "NotAssigned", "startTime": 76, "params": [0.0, 0.0, 40.209730, -3.465575]},
+    {"relatedTask": {"id": 6, "missionId": 1}, "id": 77, "commandType": "NAV_HOME", "commandStatus": "NotAssigned", "startTime": 77, "params": [0.0]},
+    {"relatedTask": {"id": 6, "missionId": 1}, "id": 78, "commandType": "NAV_LAND", "commandStatus": "NotAssigned", "startTime": 78, "params": [0.0, 0.0, 0.0, 40.209232, -3.465646, 0.0]}
+
   ]
 }
