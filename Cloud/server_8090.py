@@ -19,20 +19,14 @@ from typing import Union
 # Configuration constants
 FRONTEND_FILE = 'rest_client.html'
 BACKEND_URL = 'http://10.32.221.188:8082/mission'
-SERVER_PORT = 8081
+SERVER_PORT = 8090
 
 app = Flask(__name__)
 
 @app.route('/')
 def serve_html() -> Union[str, Response]:
-    """Serve the frontend HTML file with CORS headers.
-    
-    :return: HTML content or error response
-    :rtype: Union[str, Response]
-    :raises IOError: If the HTML file cannot be read
-    """
     try:
-        with open(FRONTEND_FILE, 'r') as f:
+        with open(FRONTEND_FILE, 'r', encoding='utf-8') as f:
             return f.read()
     except FileNotFoundError as e:
         return Response(
@@ -40,7 +34,14 @@ def serve_html() -> Union[str, Response]:
             status=500,
             mimetype='text/plain'
         )
-
+    except UnicodeDecodeError as e:
+        return Response(
+            f"Encoding error reading frontend file: {str(e)}. "
+            "Try saving the HTML file using UTF-8.",
+            status=500,
+            mimetype='text/plain'
+        )
+        
 @app.route('/mission', methods=['OPTIONS'])
 def handle_options() -> Response:
     """Handle CORS preflight requests.
