@@ -243,7 +243,7 @@ class MetricDevice:
         # Create metric device if not exists for this vehicle
         if vehicle_id not in self.metrics:
             # Generate descriptive device name for vehicle metrics
-            device_name = f"Vehicle {vehicle_id}"
+            device_name = f"RPI5 - Vehicle {vehicle_id}"
             
             # Create ThingsBoard device with RPI5 type for embedded systems
             device_id, access_token = self.base.create_device(device_name, "RPI5")

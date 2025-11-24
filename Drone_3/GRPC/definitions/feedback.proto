@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package feedback_communication;
+
+service FeedbackCommunication {
+  rpc SendFeedback (FeedbackRequest) returns (FeedbackResponse) {}
+}
+
+message FeedbackRequest {
+  repeated string feedback = 1;
+}
+
+message FeedbackResponse {
+  string confirmation = 1;
+}

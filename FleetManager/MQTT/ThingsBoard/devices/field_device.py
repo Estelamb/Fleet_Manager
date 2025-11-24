@@ -136,7 +136,7 @@ class FieldDevice:
         :type telemetry_topic: str
         """
         self.base = BaseDevice(tb_api, mqtt_logger, tb_host, port, telemetry_topic)
-        self.fields = {}  # Dictionary: mission_id -> list of field device data
+        self.fields = {}  # mission_id -> list of field device info
         self.mqtt_logger = mqtt_logger
     
     def handle_message(self, message, mission_id, mission_device_id):
@@ -244,34 +244,25 @@ class FieldDevice:
         # Initialize field list for mission if not exists
         if mission_id not in self.fields:
             self.fields[mission_id] = []
-            
-        # Process each field in the mission
-        for i, field in enumerate(message['fields']):
-            # Expand field list if processing new fields
+
+        for i, field in enumerate(message.get('fields', [])):
             if i >= len(self.fields[mission_id]):
                 self.fields[mission_id].append({})
-                
-            # Create field device with sequential naming
-            field_device_id, field_access_token = self.base.create_device(
-                f"Field {mission_id}.{i+1}", "Field"
-            )
-            
-            # Store field device credentials
-            self.fields[mission_id][i]['device_id'] = field_device_id
-            self.fields[mission_id][i]['access_token'] = field_access_token
 
-            # Create MQTT client and transmit initial field telemetry
-            client = self.base.create_client(field_access_token)
+            field_name = f"Field {mission_id}.{i+1}"
+            device_id, access_token = self.base.create_device(field_name, "Field")
+
+            self.fields[mission_id][i]['device_id'] = device_id
+            self.fields[mission_id][i]['access_token'] = access_token
+
+            client = self.base.create_client(access_token)
             self.base.send_telemetry(client, field)
+
+            if mission_device_id and device_id:
+                self.base.tb.create_relation(mission_device_id, device_id, "FIELD")
+
+            self.mqtt_logger.info(f"[FieldDevice] Sent telemetry for {field_name}")
             
-            # Create relationship between mission and field device
-            if mission_device_id and field_device_id:
-                self.base.tb.create_relation(
-                    mission_device_id, 
-                    field_device_id, 
-                    "FIELD"
-                )
-    
     def cleanup(self, mission_id):
         """Clean up all field devices associated with a completed mission.
         
@@ -317,12 +308,12 @@ class FieldDevice:
             ThingsBoard server load conditions.
         """
         # Check if mission has field devices to clean up
-        if mission_id in self.fields:
-            # Clean up each field device for this mission
-            for field in self.fields[mission_id]:
-                if 'device_id' in field:
-                    # Delete field device from ThingsBoard with retry mechanism
-                    self.base.delete_device_with_retry(field['device_id'])
-                    
-            # Remove mission field data from local storage
-            del self.fields[mission_id]
+        if mission_id not in self.fields:
+            return
+
+        for field in self.fields[mission_id]:
+            if 'device_id' in field:
+                self.base.delete_device_with_retry(field['device_id'])
+
+        del self.fields[mission_id]
+        self.mqtt_logger.info(f"[FieldDevice] Cleaned up all field devices for mission {mission_id}")

@@ -1,0 +1,22 @@
+services:
+  ros2_drone_2:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: ros2_drone_2:latest
+    networks:
+      fleet_net:
+        ipv4_address: 192.168.100.130
+    ports:
+      - "52002:52002"
+      - "52003:52003"
+      - "52004:52004"
+    container_name: ros2_drone_2
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    volumes:
+      - ./Logs:/home/ros2_ws/Logs
+
+networks:
+  fleet_net:
+    external: true

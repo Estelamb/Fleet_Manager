@@ -1,0 +1,142 @@
+[
+    {
+        "model_name": "Grape_Bunch_Hailo8",
+        "execution_time": 0.01696324348449707,
+        "image": "40.209544_-3.465575"
+    },
+    {
+        "model_name": "Grape_Bunch_Hailo8",
+        "execution_time": 0.016741037368774414,
+        "image": "40.209544_-3.465821"
+    },
+    {
+        "model_name": "Grape_Bunch_Hailo8",
+        "execution_time": 0.016740798950195312,
+        "image": "40.209544_-3.466066"
+    },
+    {
+        "model_name": "Grape_Bunch_Hailo8",
+        "execution_time": 0.016908884048461914,
+        "image": "40.209544_-3.466312"
+    },
+    {
+        "model_name": "Grape_Bunch_Hailo8",
+        "execution_time": 0.01676201820373535,
+        "image": "40.209544_-3.466557"
+    },
+    {
+        "model_name": "Grape_Bunch_Hailo8",
+        "execution_time": 0.016847848892211914,
+        "image": "40.209544_-3.466803"
+    },
+    {
+        "model_name": "Grape_Bunch_Hailo8",
+        "execution_time": 0.016897201538085938,
+        "image": "40.209544_-3.467048"
+    },
+    {
+        "model_name": "Grape_Bunch_Hailo8",
+        "execution_time": 0.01680922508239746,
+        "image": "40.20973_-3.467048"
+    },
+    {
+        "model_name": "Grape_Bunch_Hailo8",
+        "execution_time": 0.01694512367248535,
+        "image": "40.20973_-3.466803"
+    },
+    {
+        "model_name": "Grape_Bunch_Hailo8",
+        "execution_time": 0.016813278198242188,
+        "image": "40.20973_-3.466557"
+    },
+    {
+        "model_name": "Grape_Bunch_Hailo8",
+        "execution_time": 0.016742944717407227,
+        "image": "40.20973_-3.466312"
+    },
+    {
+        "model_name": "Grape_Bunch_Hailo8",
+        "execution_time": 0.016951560974121094,
+        "image": "40.20973_-3.466066"
+    },
+    {
+        "model_name": "Grape_Bunch_Hailo8",
+        "execution_time": 0.01691603660583496,
+        "image": "40.20973_-3.465821"
+    },
+    {
+        "model_name": "Grape_Bunch_Hailo8",
+        "execution_time": 0.016848325729370117,
+        "image": "40.20973_-3.465575"
+    },
+    {
+        "model_name": "Grape_Bunch_Hailo8L",
+        "execution_time": 0.020834922790527344,
+        "image": "40.209544_-3.465575"
+    },
+    {
+        "model_name": "Grape_Bunch_Hailo8L",
+        "execution_time": 0.02076435089111328,
+        "image": "40.209544_-3.465821"
+    },
+    {
+        "model_name": "Grape_Bunch_Hailo8L",
+        "execution_time": 0.02128434181213379,
+        "image": "40.209544_-3.466066"
+    },
+    {
+        "model_name": "Grape_Bunch_Hailo8L",
+        "execution_time": 0.020917415618896484,
+        "image": "40.209544_-3.466312"
+    },
+    {
+        "model_name": "Grape_Bunch_Hailo8L",
+        "execution_time": 0.020467519760131836,
+        "image": "40.209544_-3.466557"
+    },
+    {
+        "model_name": "Grape_Bunch_Hailo8L",
+        "execution_time": 0.021227359771728516,
+        "image": "40.209544_-3.466803"
+    },
+    {
+        "model_name": "Grape_Bunch_Hailo8L",
+        "execution_time": 0.02132391929626465,
+        "image": "40.209544_-3.467048"
+    },
+    {
+        "model_name": "Grape_Bunch_Hailo8L",
+        "execution_time": 0.021337509155273438,
+        "image": "40.20973_-3.467048"
+    },
+    {
+        "model_name": "Grape_Bunch_Hailo8L",
+        "execution_time": 0.020787954330444336,
+        "image": "40.20973_-3.466803"
+    },
+    {
+        "model_name": "Grape_Bunch_Hailo8L",
+        "execution_time": 0.021380901336669922,
+        "image": "40.20973_-3.466557"
+    },
+    {
+        "model_name": "Grape_Bunch_Hailo8L",
+        "execution_time": 0.021620578384399414,
+        "image": "40.20973_-3.466312"
+    },
+    {
+        "model_name": "Grape_Bunch_Hailo8L",
+        "execution_time": 0.02136850357055664,
+        "image": "40.20973_-3.466066"
+    },
+    {
+        "model_name": "Grape_Bunch_Hailo8L",
+        "execution_time": 0.020940303802490234,
+        "image": "40.20973_-3.465821"
+    },
+    {
+        "model_name": "Grape_Bunch_Hailo8L",
+        "execution_time": 0.020353284072875977,
+        "image": "40.20973_-3.465575"
+    }
+]

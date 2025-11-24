@@ -259,11 +259,17 @@ def treatment(mission_id: int, plans: dict, vehicle_id: int, task_id: int, task_
                     # - result[0] and result[1] contain analysis outcomes
                     if (
                         command['params'][2] == command_result['params'][1] and
-                        command['params'][3] == command_result['params'][2] and
-                        command['params'][0] == command_result['result'][0]
+                        command['params'][3] == command_result['params'][2]
                     ):
-                        # Update spray intensity/amount based on analysis results
-                        plans[vehicle_id][task_id]['commands'][command_id]['params'][1] = command_result['result'][1]
+                    
+                        # --- Convertir diccionario a arrays ---
+                        dic = command_result['result'][1]     # {'Grape_bunch': 5.95, 'Grape_quality': 6.8}
+                        params_array_0 = list(dic.keys())     # ['Grape_bunch', 'Grape_quality']
+                        params_array_1 = list(dic.values())   # [5.95, 6.8]
+                    
+                        # Actualizar SPRAY con nuevos parámetros
+                        plans[vehicle_id][task_id]['commands'][command_id]['params'][0] = params_array_0
+                        plans[vehicle_id][task_id]['commands'][command_id]['params'][1] = params_array_1
                         mission_logger.info(f"[Mission {mission_id}][Dependency] - Updated 'SPRAY' command ID {command_id} with new parameters.")
     except KeyError as e:
         # Handle missing keys in command or result structures

@@ -37,12 +37,12 @@
     ]
   },
   "tasks": [
-    {"taskType": "TRANSIT", "id": 1001, "missionId": 2, "taskStatus": "NotAssigned", "assignedVehicleId": 1},
-    {"taskType": "SURVEY", "id": 1002, "missionId": 2, "taskStatus": "NotAssigned", "assignedVehicleId": 1},
-    {"taskType": "TRANSIT", "id": 1003, "missionId": 2, "taskStatus": "NotAssigned", "assignedVehicleId": 1}
+    {"taskType": "TRANSIT", "id": 1001, "missionId": 2, "taskStatus": "NotAssigned", "assignedVehicleId": 3},
+    {"taskType": "SURVEY", "id": 1002, "missionId": 2, "taskStatus": "NotAssigned", "assignedVehicleId": 3},
+    {"taskType": "TRANSIT", "id": 1003, "missionId": 2, "taskStatus": "NotAssigned", "assignedVehicleId": 3}
   ],
   "vehicles": [
-    {"id": 1, "type": "AUAV"}
+    {"id": 3, "type": "AUAV"}
   ],
   "commands": [
     {"relatedTask": {"id": 1001, "missionId": 2}, "id": 1001, "commandType": "NAV_TAKEOFF", "commandStatus": "NotAssigned", "startTime": 1, "params": [0.0, 0.0, 40.207720, -3.466688]},

@@ -31,179 +31,101 @@ from MQTT.ThingsBoard.devices.base_device import BaseDevice
 
 
 class VehicleDevice:
-    """
-    ThingsBoard device manager for agricultural vehicle monitoring.
-    
-    This class manages ThingsBoard devices that represent vehicles in the agricultural
-    fleet management system. Each vehicle gets its own device for tracking real-time
-    status, location, battery levels, and mission assignments.
-    
-    The class maintains a registry of active vehicles with their associated device
-    information and MQTT connections. It automatically creates relationships between
-    vehicles and their assigned missions, enabling comprehensive fleet monitoring.
-    
-    Attributes:
-        base (BaseDevice): Base device manager for ThingsBoard operations
-        vehicles (dict): Registry of active vehicles with device information
-        mqtt_logger: Logger instance for MQTT operations
-        
-    Note:
-        Vehicle devices automatically establish relationships with missions when
-        vehicles are assigned to specific agricultural operations.
-        
-    Warning:
-        Vehicle telemetry data includes sensitive location information that should
-        be handled according to privacy and security requirements.
-    
-    See Also:
-        :class:`BaseDevice`: Base class for ThingsBoard device operations
-        :class:`mission_device.MissionDevice`: Mission device manager
-        :mod:`MQTT.ThingsBoard.tb_manager`: ThingsBoard connection manager
-    """
-    
     def __init__(self, tb_api, mqtt_logger, tb_host, port, telemetry_topic):
-        """
-        Initialize the vehicle device manager.
-        
-        Sets up the base device manager and initializes the vehicle registry
-        for tracking active vehicles and their associated ThingsBoard devices.
-        
-        Args:
-            tb_api: ThingsBoard REST API client instance
-            mqtt_logger: Logger instance for MQTT operations and debugging
-            tb_host (str): ThingsBoard server hostname or IP address
-            port (int): ThingsBoard MQTT port (typically 1883)
-            telemetry_topic (str): MQTT topic for telemetry data transmission
-            
-        Example:
-            ::
-            
-                tb_api = RestClientCE(base_url="http://localhost:8080")
-                vehicle_device = VehicleDevice(
-                    tb_api=tb_api,
-                    mqtt_logger=logger,
-                    tb_host="localhost", 
-                    port=1883,
-                    telemetry_topic="v1/devices/me/telemetry"
-                )
-        """
         self.base = BaseDevice(tb_api, mqtt_logger, tb_host, port, telemetry_topic)
-        self.vehicles = {}  # Registry of active vehicles: {vehicle_id: vehicle_data}
+        self.vehicles = {}
+        self.clients = {}
         self.mqtt_logger = mqtt_logger
     
     def handle_message(self, message, missions):
-        """
-        Process vehicle message and create/update corresponding ThingsBoard device.
-        
-        This method handles incoming vehicle messages by creating new vehicle devices
-        or updating existing ones. It also establishes relationships between vehicles
-        and their assigned missions, and sends comprehensive telemetry data including
-        location, battery status, orientation, and operational parameters.
-        
-        The method performs the following operations:
-        1. Creates a new ThingsBoard device for the vehicle if it doesn't exist
-        2. Establishes MQTT client connection with the device token
-        3. Creates relationships with assigned missions
-        4. Sends comprehensive telemetry data to the device
-        
-        Args:
-            message (dict): Vehicle message containing vehicle telemetry with keys:
-                - vehicle_id (str): Unique identifier for the vehicle
-                - telemetry (dict): Vehicle telemetry data including:
-                    - time (str): Timestamp of the telemetry
-                    - vehicle_id (str): Vehicle identifier
-                    - vehicle_status (str): Current operational status
-                    - battery_capacity (float): Total battery capacity
-                    - battery_percentage (float): Current battery level percentage
-                    - last_update (str): Last update timestamp
-                    - longitude (float): GPS longitude coordinate
-                    - latitude (float): GPS latitude coordinate
-                    - altitude (float): Vehicle altitude in meters
-                    - roll (float): Roll angle in degrees
-                    - pitch (float): Pitch angle in degrees
-                    - yaw (float): Yaw angle in degrees
-                    - gimbal_pitch (float): Gimbal pitch angle (for drones)
-                    - linear_speed (float): Current linear speed
-            missions (dict): Active missions registry for relationship creation
-                
-        Example:
-            ::
-            
-                message = {
-                    'vehicle_id': 'DRONE_001',
-                    'telemetry': {
-                        'time': '2025-01-15T14:30:00Z',
-                        'vehicle_id': 'DRONE_001',
-                        'vehicle_status': 'ACTIVE',
-                        'battery_capacity': 5000,
-                        'battery_percentage': 85.5,
-                        'last_update': '2025-01-15T14:30:00Z',
-                        'longitude': -3.7038,
-                        'latitude': 40.4168,
-                        'altitude': 50.0,
-                        'roll': 0.2,
-                        'pitch': -0.1,
-                        'yaw': 45.0,
-                        'gimbal_pitch': -15.0,
-                        'linear_speed': 5.2
-                    }
-                }
-                vehicle_device.handle_message(message, active_missions)
-                
-        Note:
-            The vehicle device is created with device type "Drone" but can represent
-            any type of agricultural vehicle. Mission relationships are automatically
-            created based on vehicle assignments in the missions registry.
-            
-        Warning:
-            Telemetry data includes GPS coordinates and should be handled securely
-            according to privacy and operational security requirements.
-        """
         vehicle_id = message['vehicle_id']
-                    
-        # Create vehicle device if it doesn't exist
+        telemetry = message['telemetry']
+        
+        self.mqtt_logger.info(f"[VehicleDevice] Processing StateVector for vehicle {vehicle_id}")
+        self.mqtt_logger.info(f"[VehicleDevice] Current vehicles: {list(self.vehicles.keys())}")
+        
+        # Crear dispositivo si no existe
         if vehicle_id not in self.vehicles:
-            device_id, access_token = self.base.create_device(f"Vehicle {vehicle_id}", "Drone")
+            self.mqtt_logger.info(f"[VehicleDevice] Creating new device for vehicle {vehicle_id}")
+            device_id, access_token = self.base.create_device(
+                f"Vehicle {vehicle_id}", "Drone"
+            )
+            
+            if not device_id or not access_token:
+                self.mqtt_logger.error(f"[VehicleDevice] FAILED to create device for {vehicle_id}")
+                return
+            else:
+                self.mqtt_logger.info(f"[VehicleDevice] Successfully created device {device_id} for {vehicle_id}")
+
             self.vehicles[vehicle_id] = {
                 'device_id': device_id,
-                'access_token': access_token,
-                'client': self.base.create_client(access_token)
+                'access_token': access_token
             }
+            self.clients[vehicle_id] = self.base.create_client(access_token)
+            
+            # Verificar que el cliente se creó
+            if self.clients[vehicle_id]:
+                self.mqtt_logger.info(f"[VehicleDevice] MQTT client created for {vehicle_id}")
+            else:
+                self.mqtt_logger.error(f"[VehicleDevice] FAILED to create MQTT client for {vehicle_id}")
+        else:
+            self.mqtt_logger.info(f"[VehicleDevice] Vehicle {vehicle_id} already exists with device_id: {self.vehicles[vehicle_id]['device_id']}")
 
         vehicle_device_id = self.vehicles[vehicle_id]['device_id']
+        client = self.clients[vehicle_id]
+        
+        self.mqtt_logger.info(f"[VehicleDevice] Sending telemetry for vehicle {vehicle_id} with device {vehicle_device_id}")
 
-        # Create relationships with assigned missions
-        for mid, mission in missions.items():
-            if vehicle_id in mission['vehicles']:
-                mission_device_id = mission['device_id']
-                if mission_device_id and vehicle_device_id:
-                    self.base.tb.create_relation(
-                        mission_device_id, 
-                        vehicle_device_id, 
-                        "ASSIGNED_TO"
-                    )
-
-        # Prepare comprehensive telemetry data
+        # Enviar telemetría
         telemetry_data = {
-            'Time': message['telemetry']['time'],
-            'Vehicle ID': message['telemetry']['vehicle_id'],
-            'Vehicle Status': message['telemetry']['vehicle_status'],
-            'Battery Capacity': message['telemetry']['battery_capacity'],
-            'Battery Percentage': message['telemetry']['battery_percentage'],
-            'Last Update': message['telemetry']['last_update'],
-            'longitude': message['telemetry']['longitude'],
-            'latitude': message['telemetry']['latitude'],
-            'Altitude': message['telemetry']['altitude'],
-            'Roll': message['telemetry']['roll'],
-            'Pitch': message['telemetry']['pitch'],
-            'Yaw': message['telemetry']['yaw'],
-            'Gimbal Pitch': message['telemetry']['gimbal_pitch'],
-            'Linear Speed': message['telemetry']['linear_speed']
+            'Time': telemetry['time'],
+            'Vehicle ID': telemetry['vehicle_id'],
+            'Vehicle Status': telemetry['vehicle_status'],
+            'Battery Capacity': telemetry['battery_capacity'],
+            'Battery Percentage': telemetry['battery_percentage'],
+            'Last Update': telemetry['last_update'],
+            'longitude': telemetry['longitude'],
+            'latitude': telemetry['latitude'],
+            'Altitude': telemetry['altitude'],
+            'Roll': telemetry['roll'],
+            'Pitch': telemetry['pitch'],
+            'Yaw': telemetry['yaw'],
+            'Gimbal Pitch': telemetry['gimbal_pitch'],
+            'Linear Speed': telemetry['linear_speed']
         }
 
-        # Send telemetry data to ThingsBoard
+        self.base.send_telemetry(client, telemetry_data)
+        self.mqtt_logger.info(f"[VehicleDevice] Telemetry sent for vehicle {vehicle_id}")
+        
+        # Intentar crear relaciones con misiones
+        self._create_mission_relations(vehicle_id, vehicle_device_id, missions)
 
-        self.base.send_telemetry(
-            self.vehicles[vehicle_id]['client'], 
-            telemetry_data
-        )
+    def _create_mission_relations(self, vehicle_id, vehicle_device_id, missions):
+        """Crear relaciones con todas las misiones que incluyan este vehículo"""
+        self.mqtt_logger.info(f"[VehicleDevice] Checking missions for vehicle {vehicle_id}")
+        self.mqtt_logger.info(f"[VehicleDevice] Available missions: {list(missions.keys())}")
+        
+        for mission_id, mission_data in missions.items():
+            mission_vehicles = mission_data.get('vehicles', [])
+            self.mqtt_logger.info(f"[VehicleDevice] Mission {mission_id} has vehicles: {mission_vehicles}")
+            
+            if vehicle_id in mission_vehicles:
+                mission_device_id = mission_data.get('device_id')
+                self.mqtt_logger.info(f"[VehicleDevice] Vehicle {vehicle_id} belongs to mission {mission_id}")
+                self.mqtt_logger.info(f"[VehicleDevice] Mission device ID: {mission_device_id}, Vehicle device ID: {vehicle_device_id}")
+                
+                if mission_device_id and vehicle_device_id:
+                    self.mqtt_logger.info(f"[VehicleDevice] Attempting to create relation: {mission_device_id} -> {vehicle_device_id}")
+                    
+                    success = self.base.tb.create_relation(
+                        mission_device_id,
+                        vehicle_device_id,
+                        "ASSIGNED_TO"
+                    )
+                    
+                    if success:
+                        self.mqtt_logger.info(f"[VehicleDevice] SUCCESS: Created relation mission {mission_id} -> vehicle {vehicle_id}")
+                    else:
+                        self.mqtt_logger.error(f"[VehicleDevice] FAILED: Could not create relation mission {mission_id} -> vehicle {vehicle_id}")
+                else:
+                    self.mqtt_logger.error(f"[VehicleDevice] Missing device IDs: mission_device_id={mission_device_id}, vehicle_device_id={vehicle_device_id}")

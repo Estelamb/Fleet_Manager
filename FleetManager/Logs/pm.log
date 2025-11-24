@@ -9227,3 +9227,1859 @@ ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json w
 [2025-08-09 17:51:26,889][PM][INFO][PM Manager] - Removed received file: 1_isobus_pm_received.json
 [2025-08-09 17:51:26,889][PM][INFO][PM Manager] - ALL files match for vehicle 1
 [2025-08-09 17:51:26,889][PM][INFO][PM Manager] - Finish status deactivated for vehicle 1
+[2025-11-21 13:42:03,446][PM][INFO][PM Subscriber] - Started dynamic PM subscriber
+[2025-11-21 13:42:03,455][PM][INFO][gRPC PM] - Server running on port [::]:50087
+[2025-11-21 13:50:17,447][PM][INFO][PM Subscriber] - Discovered new drone: ID 1
+[2025-11-21 13:52:19,446][PM][INFO][PM Subscriber] - Discovered new drone: ID 2
+[2025-11-21 19:55:28,713][PM][INFO][PM Subscriber] - Started dynamic PM subscriber
+[2025-11-21 19:55:28,723][PM][INFO][gRPC PM] - Server running on port [::]:50087
+[2025-11-21 19:55:30,713][PM][INFO][PM Subscriber] - Discovered new drone: ID 2
+[2025-11-21 19:56:34,713][PM][INFO][PM Subscriber] - Discovered new drone: ID 1
+[2025-11-21 19:57:38,194][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-21 19:57:38,197][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-21 19:57:38,299][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 5.95} at grid: [1, 6]
+[2025-11-21 19:57:54,995][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-21 19:57:55,000][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-21 19:57:55,136][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 5.95} at grid: [1, 5]
+[2025-11-21 19:59:31,519][PM][INFO][PM Subscriber] - Started dynamic PM subscriber
+[2025-11-21 19:59:31,523][PM][INFO][gRPC PM] - Server running on port [::]:50087
+[2025-11-21 19:59:33,520][PM][INFO][PM Subscriber] - Discovered new drone: ID 1
+[2025-11-21 20:00:20,107][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-21 20:00:20,111][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-21 20:00:20,220][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 5.95} at grid: [1, 6]
+[2025-11-21 20:00:36,905][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-21 20:00:36,910][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-21 20:00:37,001][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 5.95} at grid: [1, 5]
+[2025-11-21 20:00:53,825][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-21 20:00:53,826][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-21 20:00:53,903][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 5.95} at grid: [1, 4]
+[2025-11-21 20:01:10,601][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-21 20:01:10,603][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-21 20:01:11,109][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 3.95} at grid: [1, 3]
+[2025-11-21 20:01:27,529][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-21 20:01:27,532][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-21 20:01:27,655][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 7.95} at grid: [1, 2]
+[2025-11-21 20:01:44,275][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-21 20:01:44,277][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-21 20:01:44,359][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 1.95} at grid: [1, 1]
+[2025-11-21 20:02:01,037][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-21 20:02:01,040][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-21 20:02:01,121][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 5.95} at grid: [1, 0]
+[2025-11-21 20:02:17,845][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-21 20:02:17,850][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-21 20:02:17,937][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 7.95} at grid: [0, 0]
+[2025-11-21 20:02:34,656][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-21 20:02:34,659][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-21 20:02:34,749][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 1.95} at grid: [0, 1]
+[2025-11-21 20:02:51,573][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-21 20:02:51,577][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-21 20:02:51,671][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 3.95} at grid: [0, 2]
+[2025-11-21 20:03:08,309][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-21 20:03:08,315][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-21 20:03:08,437][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 7.95} at grid: [0, 3]
+[2025-11-21 20:03:25,256][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-21 20:03:25,257][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-21 20:03:25,334][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 9.95} at grid: [0, 4]
+[2025-11-21 20:03:41,984][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-21 20:03:41,989][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-21 20:03:42,098][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 3.95} at grid: [0, 5]
+[2025-11-21 20:03:58,783][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-21 20:03:58,785][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-21 20:03:58,910][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 3.95} at grid: [0, 6]
+[2025-11-21 20:04:09,815][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-21 20:04:09,816][PM][INFO][PM Manager] - Received finish signal for vehicle 1
+[2025-11-21 20:04:09,816][PM][INFO][PM Manager] - Finish status activated for vehicle 1
+[2025-11-21 20:04:09,817][PM][INFO][PM Manager] - Starting comparison for vehicle 1
+[2025-11-21 20:04:09,817][PM][INFO][PM Manager] - Received files base names: []
+[2025-11-21 20:04:09,818][PM][INFO][PM Manager] - Found 0 unique matched file pairs for vehicle 1
+[2025-11-21 20:04:09,819][PM][INFO][PM Manager] - No matching file pairs found for vehicle 1
+[2025-11-21 20:14:55,659][PM][INFO][PM Subscriber] - Started dynamic PM subscriber
+[2025-11-21 20:14:55,663][PM][INFO][gRPC PM] - Server running on port [::]:50087
+[2025-11-21 20:14:57,660][PM][INFO][PM Subscriber] - Discovered new drone: ID 1
+[2025-11-21 20:14:57,664][PM][INFO][PM Subscriber] - Discovered new drone: ID 2
+[2025-11-21 20:15:38,379][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-21 20:15:38,384][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-21 20:15:38,473][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 5.95} at grid: [1, 6]
+[2025-11-21 20:15:55,181][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-21 20:15:55,183][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-21 20:15:55,271][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 5.95} at grid: [1, 5]
+[2025-11-21 20:16:12,095][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-21 20:16:12,096][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-21 20:16:12,185][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 5.95} at grid: [1, 4]
+[2025-11-21 20:16:28,881][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-21 20:16:28,884][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-21 20:16:28,967][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 3.95} at grid: [1, 3]
+[2025-11-21 20:16:45,793][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-21 20:16:45,794][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-21 20:16:45,873][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 7.95} at grid: [1, 2]
+[2025-11-21 20:17:02,497][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-21 20:17:02,499][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-21 20:17:02,604][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 1.95} at grid: [1, 1]
+[2025-11-21 20:17:19,428][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-21 20:17:19,429][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-21 20:17:19,521][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 5.95} at grid: [1, 0]
+[2025-11-21 20:17:36,207][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-21 20:17:36,209][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-21 20:17:36,295][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 7.95} at grid: [0, 0]
+[2025-11-21 20:17:53,015][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-21 20:17:53,016][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-21 20:17:53,100][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 1.95} at grid: [0, 1]
+[2025-11-21 20:18:09,924][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-21 20:18:09,926][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-21 20:18:10,017][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 3.95} at grid: [0, 2]
+[2025-11-21 20:18:26,645][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-21 20:18:26,649][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-21 20:18:26,763][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 7.95} at grid: [0, 3]
+[2025-11-21 20:18:43,584][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-21 20:18:43,585][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-21 20:18:43,743][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 9.95} at grid: [0, 4]
+[2025-11-21 20:19:00,363][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-21 20:19:00,364][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-21 20:19:01,363][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 3.95} at grid: [0, 5]
+[2025-11-21 20:19:17,184][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-21 20:19:17,185][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-21 20:19:17,265][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 3.95} at grid: [0, 6]
+[2025-11-21 20:19:28,179][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-21 20:19:28,180][PM][INFO][PM Manager] - Received finish signal for vehicle 1
+[2025-11-21 20:19:28,181][PM][INFO][PM Manager] - Finish status activated for vehicle 1
+[2025-11-21 20:19:28,181][PM][INFO][PM Manager] - Starting comparison for vehicle 1
+[2025-11-21 20:19:28,182][PM][INFO][PM Manager] - Received files base names: []
+[2025-11-21 20:19:28,183][PM][INFO][PM Manager] - Found 0 unique matched file pairs for vehicle 1
+[2025-11-21 20:19:28,184][PM][INFO][PM Manager] - No matching file pairs found for vehicle 1
+[2025-11-21 20:24:58,156][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-21 20:24:58,160][PM][INFO][PM Manager] - Received finish signal for vehicle 2
+[2025-11-21 20:24:58,161][PM][INFO][PM Manager] - Finish status activated for vehicle 2
+[2025-11-21 20:24:58,161][PM][INFO][PM Manager] - Starting comparison for vehicle 2
+[2025-11-21 20:24:58,162][PM][INFO][PM Manager] - Received files base names: []
+[2025-11-21 20:24:58,163][PM][INFO][PM Manager] - Found 0 unique matched file pairs for vehicle 2
+[2025-11-21 20:24:58,163][PM][INFO][PM Manager] - No matching file pairs found for vehicle 2
+[2025-11-21 20:27:48,148][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-21 20:27:48,150][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-21 20:27:48,279][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 5.95} at grid: [1, 6]
+[2025-11-21 20:28:05,100][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-21 20:28:05,101][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-21 20:28:05,182][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 5.95} at grid: [1, 5]
+[2025-11-21 20:28:22,404][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-21 20:28:22,405][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-21 20:28:22,487][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 5.95} at grid: [1, 4]
+[2025-11-21 20:28:39,717][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-21 20:28:39,720][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-21 20:28:39,812][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 3.95} at grid: [1, 3]
+[2025-11-21 20:28:56,919][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-21 20:28:56,921][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-21 20:28:57,037][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 7.95} at grid: [1, 2]
+[2025-11-21 20:29:14,136][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-21 20:29:14,138][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-21 20:29:14,227][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 1.95} at grid: [1, 1]
+[2025-11-21 20:29:31,454][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-21 20:29:31,454][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-21 20:29:31,565][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 5.95} at grid: [1, 0]
+[2025-11-21 20:29:48,388][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-21 20:29:48,389][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-21 20:29:48,468][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 7.95} at grid: [0, 0]
+[2025-11-21 20:30:05,351][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-21 20:30:05,353][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-21 20:30:06,181][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 1.95} at grid: [0, 1]
+[2025-11-21 20:30:22,407][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-21 20:30:22,409][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-21 20:30:22,490][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 3.95} at grid: [0, 2]
+[2025-11-21 20:30:39,311][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-21 20:30:39,312][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-21 20:30:39,398][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 7.95} at grid: [0, 3]
+[2025-11-21 20:30:56,222][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-21 20:30:56,223][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-21 20:30:56,323][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 9.95} at grid: [0, 4]
+[2025-11-21 20:31:13,145][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-21 20:31:13,146][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-21 20:31:13,240][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 3.95} at grid: [0, 5]
+[2025-11-21 20:31:30,063][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-21 20:31:30,064][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-21 20:31:30,142][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 3.95} at grid: [0, 6]
+[2025-11-21 20:31:41,025][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-21 20:31:41,025][PM][INFO][PM Manager] - Received finish signal for vehicle 1
+[2025-11-21 20:31:41,026][PM][INFO][PM Manager] - Finish status activated for vehicle 1
+[2025-11-21 20:31:41,027][PM][INFO][PM Manager] - Starting comparison for vehicle 1
+[2025-11-21 20:31:41,027][PM][INFO][PM Manager] - Received files base names: []
+[2025-11-21 20:31:41,028][PM][INFO][PM Manager] - Found 0 unique matched file pairs for vehicle 1
+[2025-11-21 20:31:41,028][PM][INFO][PM Manager] - No matching file pairs found for vehicle 1
+[2025-11-21 20:37:15,118][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-21 20:37:15,119][PM][INFO][PM Manager] - Received finish signal for vehicle 2
+[2025-11-21 20:37:15,119][PM][INFO][PM Manager] - Finish status activated for vehicle 2
+[2025-11-21 20:37:15,119][PM][INFO][PM Manager] - Starting comparison for vehicle 2
+[2025-11-21 20:37:15,119][PM][INFO][PM Manager] - Received files base names: []
+[2025-11-21 20:37:15,120][PM][INFO][PM Manager] - Found 0 unique matched file pairs for vehicle 2
+[2025-11-21 20:37:15,120][PM][INFO][PM Manager] - No matching file pairs found for vehicle 2
+[2025-11-21 20:48:55,641][PM][INFO][PM Subscriber] - Started dynamic PM subscriber
+[2025-11-21 20:48:55,652][PM][INFO][gRPC PM] - Server running on port [::]:50087
+[2025-11-21 20:48:57,642][PM][INFO][PM Subscriber] - Discovered new drone: ID 1
+[2025-11-21 20:48:57,645][PM][INFO][PM Subscriber] - Discovered new drone: ID 2
+[2025-11-21 20:49:36,850][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-21 20:49:36,853][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-21 20:49:36,940][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 5.95} at grid: [1, 6]
+[2025-11-21 20:49:53,656][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-21 20:49:53,659][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-21 20:49:53,750][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 5.95} at grid: [1, 5]
+[2025-11-21 20:50:10,449][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-21 20:50:10,452][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-21 20:50:10,538][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 5.95} at grid: [1, 4]
+[2025-11-21 20:50:27,360][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-21 20:50:27,361][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-21 20:50:27,469][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 3.95} at grid: [1, 3]
+[2025-11-21 20:50:44,124][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-21 20:50:44,126][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-21 20:50:44,213][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 7.95} at grid: [1, 2]
+[2025-11-21 20:51:00,925][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-21 20:51:00,929][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-21 20:51:01,032][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 1.95} at grid: [1, 1]
+[2025-11-21 20:51:17,857][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-21 20:51:17,858][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-21 20:51:17,937][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 5.95} at grid: [1, 0]
+[2025-11-21 20:51:34,621][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-21 20:51:34,621][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-21 20:51:34,710][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 7.95} at grid: [0, 0]
+[2025-11-21 20:51:51,427][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-21 20:51:51,428][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-21 20:51:51,510][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 1.95} at grid: [0, 1]
+[2025-11-21 20:52:08,230][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-21 20:52:08,232][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-21 20:52:09,539][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 3.95} at grid: [0, 2]
+[2025-11-21 20:52:25,161][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-21 20:52:25,162][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-21 20:52:25,247][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 7.95} at grid: [0, 3]
+[2025-11-21 20:52:41,954][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-21 20:52:41,956][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-21 20:52:42,044][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 9.95} at grid: [0, 4]
+[2025-11-21 20:52:58,754][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-21 20:52:58,756][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-21 20:52:58,850][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 3.95} at grid: [0, 5]
+[2025-11-21 20:53:15,528][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-21 20:53:15,532][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-21 20:53:15,653][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 3.95} at grid: [0, 6]
+[2025-11-21 20:53:26,558][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-21 20:53:26,558][PM][INFO][PM Manager] - Received finish signal for vehicle 1
+[2025-11-21 20:53:26,559][PM][INFO][PM Manager] - Finish status activated for vehicle 1
+[2025-11-21 20:53:26,559][PM][INFO][PM Manager] - Starting comparison for vehicle 1
+[2025-11-21 20:53:26,560][PM][INFO][PM Manager] - Received files base names: []
+[2025-11-21 20:53:26,560][PM][INFO][PM Manager] - Found 0 unique matched file pairs for vehicle 1
+[2025-11-21 20:53:26,561][PM][INFO][PM Manager] - No matching file pairs found for vehicle 1
+[2025-11-21 20:59:05,796][PM][INFO][PM Subscriber] - Started dynamic PM subscriber
+[2025-11-21 20:59:05,801][PM][INFO][gRPC PM] - Server running on port [::]:50087
+[2025-11-21 20:59:07,797][PM][INFO][PM Subscriber] - Discovered new drone: ID 1
+[2025-11-21 20:59:07,802][PM][INFO][PM Subscriber] - Discovered new drone: ID 2
+[2025-11-21 20:59:50,829][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-21 20:59:50,834][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-21 20:59:50,964][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 5.95} at grid: [1, 6]
+[2025-11-21 21:00:07,793][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-21 21:00:07,794][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-21 21:00:07,889][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 5.95} at grid: [1, 5]
+[2025-11-21 21:00:24,578][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-21 21:00:24,581][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-21 21:00:24,688][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 5.95} at grid: [1, 4]
+[2025-11-21 21:00:41,512][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-21 21:00:41,513][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-21 21:00:41,598][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 3.95} at grid: [1, 3]
+[2025-11-21 21:00:58,269][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-21 21:00:58,271][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-21 21:00:58,367][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 7.95} at grid: [1, 2]
+[2025-11-21 21:01:15,063][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-21 21:01:15,067][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-21 21:01:15,901][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 1.95} at grid: [1, 1]
+[2025-11-21 21:01:31,927][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-21 21:01:31,929][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-21 21:01:32,035][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 5.95} at grid: [1, 0]
+[2025-11-21 21:01:48,746][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-21 21:01:48,749][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-21 21:01:48,835][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 7.95} at grid: [0, 0]
+[2025-11-21 21:02:05,539][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-21 21:02:05,543][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-21 21:02:05,637][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 1.95} at grid: [0, 1]
+[2025-11-21 21:02:22,347][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-21 21:02:22,351][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-21 21:02:22,494][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 3.95} at grid: [0, 2]
+[2025-11-21 21:02:39,147][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-21 21:02:39,150][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-21 21:02:39,248][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 7.95} at grid: [0, 3]
+[2025-11-21 21:02:56,073][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-21 21:02:56,074][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-21 21:02:56,179][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 9.95} at grid: [0, 4]
+[2025-11-21 21:03:12,803][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-21 21:03:12,805][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-21 21:03:12,889][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 3.95} at grid: [0, 5]
+[2025-11-21 21:03:29,596][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-21 21:03:29,600][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-21 21:03:29,744][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 3.95} at grid: [0, 6]
+[2025-11-21 21:03:40,621][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-21 21:03:40,621][PM][INFO][PM Manager] - Received finish signal for vehicle 1
+[2025-11-21 21:03:40,622][PM][INFO][PM Manager] - Finish status activated for vehicle 1
+[2025-11-21 21:03:40,622][PM][INFO][PM Manager] - Starting comparison for vehicle 1
+[2025-11-21 21:03:40,623][PM][INFO][PM Manager] - Received files base names: []
+[2025-11-21 21:03:40,627][PM][INFO][PM Manager] - Found 0 unique matched file pairs for vehicle 1
+[2025-11-21 21:03:40,627][PM][INFO][PM Manager] - No matching file pairs found for vehicle 1
+[2025-11-21 21:09:10,728][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-21 21:09:10,729][PM][INFO][PM Manager] - Received finish signal for vehicle 2
+[2025-11-21 21:09:10,729][PM][INFO][PM Manager] - Finish status activated for vehicle 2
+[2025-11-21 21:09:10,729][PM][INFO][PM Manager] - Starting comparison for vehicle 2
+[2025-11-21 21:09:10,729][PM][INFO][PM Manager] - Received files base names: []
+[2025-11-21 21:09:10,730][PM][INFO][PM Manager] - Found 0 unique matched file pairs for vehicle 2
+[2025-11-21 21:09:10,730][PM][INFO][PM Manager] - No matching file pairs found for vehicle 2
+[2025-11-21 21:10:43,797][PM][INFO][PM Subscriber] - Discovered new drone: ID 3
+[2025-11-21 21:12:30,742][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-21 21:12:30,744][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-21 21:12:30,914][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/Drone/pm_drone_fleet.py
+[2025-11-21 21:12:31,026][PM][INFO][PM Manager] - PM output: 
+Creating new PM: 3_Black_measles.json
+Drone PM: 3_Black_measles.json at [0][0] = 2.2
+Creating new PM: 3_Black_rot.json
+Drone PM: 3_Black_rot.json at [0][0] = 1.7
+Creating new PM: 3_Isariopsis.json
+Drone PM: 3_Isariopsis.json at [0][0] = 1.8599999999999999
+Creating new PM: 3_Grape_bunch.json
+Drone PM: 3_Grape_bunch.json at [0][0] = 1.95
+[2025-11-21 21:12:31,036][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/3_isobus_pm.json with treatments: {'Black_measles': 2.2, 'Black_rot': 1.7, 'Isariopsis': 1.8599999999999999, 'Grape_bunch': 1.95} at grid: [0, 0]
+[2025-11-21 21:12:47,869][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-21 21:12:47,869][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-21 21:12:47,964][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 5.95} at grid: [1, 6]
+[2025-11-21 21:13:04,794][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-21 21:13:04,795][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-21 21:13:04,890][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 5.95} at grid: [1, 5]
+[2025-11-21 21:13:21,718][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-21 21:13:21,719][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-21 21:13:21,900][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 5.95} at grid: [1, 4]
+[2025-11-21 21:13:38,741][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-21 21:13:38,744][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-21 21:13:38,902][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 3.95} at grid: [1, 3]
+[2025-11-21 21:14:29,912][PM][INFO][PM Subscriber] - Started dynamic PM subscriber
+[2025-11-21 21:14:29,913][PM][INFO][gRPC PM] - Server running on port [::]:50087
+[2025-11-21 21:14:31,913][PM][INFO][PM Subscriber] - Discovered new drone: ID 1
+[2025-11-21 21:14:31,917][PM][INFO][PM Subscriber] - Discovered new drone: ID 2
+[2025-11-21 21:14:31,919][PM][INFO][PM Subscriber] - Discovered new drone: ID 3
+[2025-11-21 21:16:33,729][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-21 21:16:33,733][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-21 21:16:33,883][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 5.95} at grid: [1, 6]
+[2025-11-21 21:16:38,757][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-21 21:16:38,762][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-21 21:16:38,816][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/Drone/pm_drone_fleet.py
+[2025-11-21 21:16:38,904][PM][INFO][PM Manager] - PM output: 
+Creating new PM: 3_Black_measles.json
+Drone PM: 3_Black_measles.json at [0][0] = 2.2
+Creating new PM: 3_Black_rot.json
+Drone PM: 3_Black_rot.json at [0][0] = 1.7
+Creating new PM: 3_Isariopsis.json
+Drone PM: 3_Isariopsis.json at [0][0] = 1.8599999999999999
+Creating new PM: 3_Grape_bunch.json
+Drone PM: 3_Grape_bunch.json at [0][0] = 1.95
+[2025-11-21 21:16:38,915][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/3_isobus_pm.json with treatments: {'Black_measles': 2.2, 'Black_rot': 1.7, 'Isariopsis': 1.8599999999999999, 'Grape_bunch': 1.95} at grid: [0, 0]
+[2025-11-21 21:16:50,551][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-21 21:16:50,552][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-21 21:16:50,637][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 5.95} at grid: [1, 5]
+[2025-11-21 21:17:01,880][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-21 21:17:01,882][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-21 21:17:01,940][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/Drone/pm_drone_fleet.py
+[2025-11-21 21:17:02,026][PM][INFO][PM Manager] - PM output: 
+Drone PM: 3_Black_measles.json at [0][1] = 2.7
+Drone PM: 3_Black_rot.json at [0][1] = 2.2
+Drone PM: 3_Isariopsis.json at [0][1] = 3.3600000000000003
+Drone PM: 3_Grape_bunch.json at [0][1] = 3.95
+[2025-11-21 21:17:02,031][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/3_isobus_pm.json with treatments: {'Black_measles': 2.7, 'Black_rot': 2.2, 'Isariopsis': 3.3600000000000003, 'Grape_bunch': 3.95} at grid: [0, 1]
+[2025-11-21 21:17:07,449][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-21 21:17:07,450][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-21 21:17:07,546][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 5.95} at grid: [1, 4]
+[2025-11-21 21:17:21,981][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-21 21:17:21,990][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-21 21:17:22,753][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/Drone/pm_drone_fleet.py
+[2025-11-21 21:17:22,838][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/3_isobus_pm.json with treatments: {'Black_measles': 2.2, 'Black_rot': 1.7, 'Isariopsis': 1.8599999999999999, 'Grape_bunch': 1.95} at grid: [0, 2]
+[2025-11-21 21:17:22,841][PM][INFO][PM Manager] - PM output: 
+Drone PM: 3_Black_measles.json at [0][2] = 2.2
+Drone PM: 3_Black_rot.json at [0][2] = 1.7
+Drone PM: 3_Isariopsis.json at [0][2] = 1.8599999999999999
+Drone PM: 3_Grape_bunch.json at [0][2] = 1.95
+[2025-11-21 21:17:24,344][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-21 21:17:24,346][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-21 21:17:24,440][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 3.95} at grid: [1, 3]
+[2025-11-21 21:17:41,468][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-21 21:17:41,469][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-21 21:17:41,591][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 7.95} at grid: [1, 2]
+[2025-11-21 21:17:42,804][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-21 21:17:42,806][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-21 21:17:42,848][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/Drone/pm_drone_fleet.py
+[2025-11-21 21:17:42,910][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/3_isobus_pm.json with treatments: {'Black_measles': 2.2, 'Black_rot': 1.7, 'Isariopsis': 2.36, 'Grape_bunch': 5.95} at grid: [0, 3]
+[2025-11-21 21:17:42,918][PM][INFO][PM Manager] - PM output: 
+Drone PM: 3_Black_measles.json at [0][3] = 2.2
+Drone PM: 3_Black_rot.json at [0][3] = 1.7
+Drone PM: 3_Isariopsis.json at [0][3] = 2.36
+Drone PM: 3_Grape_bunch.json at [0][3] = 5.95
+[2025-11-21 21:17:58,345][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-21 21:17:58,348][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-21 21:17:58,457][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 1.95} at grid: [1, 1]
+[2025-11-21 21:18:02,879][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-21 21:18:02,918][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-21 21:18:02,975][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/Drone/pm_drone_fleet.py
+[2025-11-21 21:18:03,051][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/3_isobus_pm.json with treatments: {'Black_measles': 2.2, 'Black_rot': 1.7, 'Isariopsis': 1.8599999999999999, 'Grape_bunch': 1.95} at grid: [0, 4]
+[2025-11-21 21:18:03,056][PM][INFO][PM Manager] - PM output: 
+Drone PM: 3_Black_measles.json at [0][4] = 2.2
+Drone PM: 3_Black_rot.json at [0][4] = 1.7
+Drone PM: 3_Isariopsis.json at [0][4] = 1.8599999999999999
+Drone PM: 3_Grape_bunch.json at [0][4] = 1.95
+[2025-11-21 21:18:15,280][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-21 21:18:15,281][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-21 21:18:15,381][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 5.95} at grid: [1, 0]
+[2025-11-21 21:18:23,201][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-21 21:18:23,201][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-21 21:18:23,253][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/Drone/pm_drone_fleet.py
+[2025-11-21 21:18:23,328][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/3_isobus_pm.json with treatments: {'Black_measles': 2.2, 'Black_rot': 1.7, 'Isariopsis': 2.36, 'Grape_bunch': 5.95} at grid: [0, 5]
+[2025-11-21 21:18:23,334][PM][INFO][PM Manager] - PM output: 
+Drone PM: 3_Black_measles.json at [0][5] = 2.2
+Drone PM: 3_Black_rot.json at [0][5] = 1.7
+Drone PM: 3_Isariopsis.json at [0][5] = 2.36
+Drone PM: 3_Grape_bunch.json at [0][5] = 5.95
+[2025-11-21 21:18:32,155][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-21 21:18:32,156][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-21 21:18:32,267][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 7.95} at grid: [0, 0]
+[2025-11-21 21:18:43,688][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-21 21:18:43,688][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-21 21:18:43,741][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/Drone/pm_drone_fleet.py
+[2025-11-21 21:18:43,843][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/3_isobus_pm.json with treatments: {'Black_measles': 2.2, 'Black_rot': 1.7, 'Isariopsis': 1.8599999999999999, 'Grape_bunch': 9.95} at grid: [0, 6]
+[2025-11-21 21:18:43,844][PM][INFO][PM Manager] - PM output: 
+Drone PM: 3_Black_measles.json at [0][6] = 2.2
+Drone PM: 3_Black_rot.json at [0][6] = 1.7
+Drone PM: 3_Isariopsis.json at [0][6] = 1.8599999999999999
+Drone PM: 3_Grape_bunch.json at [0][6] = 9.95
+[2025-11-21 21:18:49,112][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-21 21:18:49,115][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-21 21:18:49,240][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 1.95} at grid: [0, 1]
+[2025-11-21 21:19:06,077][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-21 21:19:06,078][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-21 21:19:06,643][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 3.95} at grid: [0, 2]
+[2025-11-21 21:19:06,661][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-21 21:19:06,664][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-21 21:19:06,729][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/Drone/pm_drone_fleet.py
+[2025-11-21 21:19:06,793][PM][INFO][PM Manager] - PM output: 
+Drone PM: 3_Black_measles.json at [1][6] = 2.2
+Drone PM: 3_Black_rot.json at [1][6] = 2.2
+Drone PM: 3_Isariopsis.json at [1][6] = 1.8599999999999999
+Drone PM: 3_Grape_bunch.json at [1][6] = 5.95
+[2025-11-21 21:19:06,798][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/3_isobus_pm.json with treatments: {'Black_measles': 2.2, 'Black_rot': 2.2, 'Isariopsis': 1.8599999999999999, 'Grape_bunch': 5.95} at grid: [1, 6]
+[2025-11-21 21:19:23,054][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-21 21:19:23,059][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-21 21:19:23,199][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 7.95} at grid: [0, 3]
+[2025-11-21 21:19:26,836][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-21 21:19:26,838][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-21 21:19:26,927][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/Drone/pm_drone_fleet.py
+[2025-11-21 21:19:27,007][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/3_isobus_pm.json with treatments: {'Black_measles': 2.2, 'Black_rot': 1.7, 'Isariopsis': 1.8599999999999999, 'Grape_bunch': 3.95} at grid: [1, 5]
+[2025-11-21 21:19:27,020][PM][INFO][PM Manager] - PM output: 
+Drone PM: 3_Black_measles.json at [1][5] = 2.2
+Drone PM: 3_Black_rot.json at [1][5] = 1.7
+Drone PM: 3_Isariopsis.json at [1][5] = 1.8599999999999999
+Drone PM: 3_Grape_bunch.json at [1][5] = 3.95
+[2025-11-21 21:19:41,480][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-21 21:19:41,481][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-21 21:19:41,620][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 9.95} at grid: [0, 4]
+[2025-11-21 21:19:47,072][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-21 21:19:47,074][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-21 21:19:47,133][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/Drone/pm_drone_fleet.py
+[2025-11-21 21:19:47,210][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/3_isobus_pm.json with treatments: {'Black_measles': 2.7, 'Black_rot': 2.2, 'Isariopsis': 3.3600000000000003, 'Grape_bunch': 3.95} at grid: [1, 4]
+[2025-11-21 21:19:47,219][PM][INFO][PM Manager] - PM output: 
+Drone PM: 3_Black_measles.json at [1][4] = 2.7
+Drone PM: 3_Black_rot.json at [1][4] = 2.2
+Drone PM: 3_Isariopsis.json at [1][4] = 3.3600000000000003
+Drone PM: 3_Grape_bunch.json at [1][4] = 3.95
+[2025-11-21 21:19:58,311][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-21 21:19:58,314][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-21 21:19:58,434][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 3.95} at grid: [0, 5]
+[2025-11-21 21:20:07,105][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-21 21:20:07,107][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-21 21:20:07,159][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/Drone/pm_drone_fleet.py
+[2025-11-21 21:20:07,222][PM][INFO][PM Manager] - PM output: 
+Drone PM: 3_Black_measles.json at [1][3] = 2.2
+Drone PM: 3_Black_rot.json at [1][3] = 1.7
+Drone PM: 3_Isariopsis.json at [1][3] = 1.8599999999999999
+Drone PM: 3_Grape_bunch.json at [1][3] = 1.95
+[2025-11-21 21:20:07,232][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/3_isobus_pm.json with treatments: {'Black_measles': 2.2, 'Black_rot': 1.7, 'Isariopsis': 1.8599999999999999, 'Grape_bunch': 1.95} at grid: [1, 3]
+[2025-11-21 21:20:15,257][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-21 21:20:15,258][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-21 21:20:15,391][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 3.95} at grid: [0, 6]
+[2025-11-21 21:20:26,216][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-21 21:20:26,216][PM][INFO][PM Manager] - Received finish signal for vehicle 1
+[2025-11-21 21:20:26,216][PM][INFO][PM Manager] - Finish status activated for vehicle 1
+[2025-11-21 21:20:26,217][PM][INFO][PM Manager] - Starting comparison for vehicle 1
+[2025-11-21 21:20:26,217][PM][INFO][PM Manager] - Received files base names: []
+[2025-11-21 21:20:26,218][PM][INFO][PM Manager] - Found 0 unique matched file pairs for vehicle 1
+[2025-11-21 21:20:26,219][PM][INFO][PM Manager] - No matching file pairs found for vehicle 1
+[2025-11-21 21:20:27,422][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-21 21:20:27,425][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-21 21:20:27,816][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/Drone/pm_drone_fleet.py
+[2025-11-21 21:20:27,881][PM][INFO][PM Manager] - PM output: 
+Drone PM: 3_Black_measles.json at [1][2] = 2.2
+Drone PM: 3_Black_rot.json at [1][2] = 1.7
+Drone PM: 3_Isariopsis.json at [1][2] = 1.8599999999999999
+Drone PM: 3_Grape_bunch.json at [1][2] = 3.95
+[2025-11-21 21:20:27,888][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/3_isobus_pm.json with treatments: {'Black_measles': 2.2, 'Black_rot': 1.7, 'Isariopsis': 1.8599999999999999, 'Grape_bunch': 3.95} at grid: [1, 2]
+[2025-11-21 21:20:47,727][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-21 21:20:47,728][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-21 21:20:47,790][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/Drone/pm_drone_fleet.py
+[2025-11-21 21:20:47,863][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/3_isobus_pm.json with treatments: {'Black_measles': 2.2, 'Black_rot': 1.7, 'Isariopsis': 1.8599999999999999, 'Grape_bunch': 5.95} at grid: [1, 1]
+[2025-11-21 21:20:47,864][PM][INFO][PM Manager] - PM output: 
+Drone PM: 3_Black_measles.json at [1][1] = 2.2
+Drone PM: 3_Black_rot.json at [1][1] = 1.7
+Drone PM: 3_Isariopsis.json at [1][1] = 1.8599999999999999
+Drone PM: 3_Grape_bunch.json at [1][1] = 5.95
+[2025-11-21 21:21:08,299][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-21 21:21:08,300][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-21 21:21:08,367][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/Drone/pm_drone_fleet.py
+[2025-11-21 21:21:08,439][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/3_isobus_pm.json with treatments: {'Black_measles': 2.2, 'Black_rot': 1.7, 'Isariopsis': 1.8599999999999999, 'Grape_bunch': 9.95} at grid: [1, 0]
+[2025-11-21 21:21:08,446][PM][INFO][PM Manager] - PM output: 
+Drone PM: 3_Black_measles.json at [1][0] = 2.2
+Drone PM: 3_Black_rot.json at [1][0] = 1.7
+Drone PM: 3_Isariopsis.json at [1][0] = 1.8599999999999999
+Drone PM: 3_Grape_bunch.json at [1][0] = 9.95
+[2025-11-21 21:21:28,285][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-21 21:21:28,287][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-21 21:21:28,364][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/Drone/pm_drone_fleet.py
+[2025-11-21 21:21:28,430][PM][INFO][PM Manager] - PM output: 
+Drone PM: 3_Black_measles.json at [2][0] = 2.2
+Drone PM: 3_Black_rot.json at [2][0] = 1.7
+Drone PM: 3_Isariopsis.json at [2][0] = 1.8599999999999999
+Drone PM: 3_Grape_bunch.json at [2][0] = 1.95
+[2025-11-21 21:21:28,431][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/3_isobus_pm.json with treatments: {'Black_measles': 2.2, 'Black_rot': 1.7, 'Isariopsis': 1.8599999999999999, 'Grape_bunch': 1.95} at grid: [2, 0]
+[2025-11-21 21:21:50,465][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-21 21:21:50,466][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-21 21:21:50,527][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/Drone/pm_drone_fleet.py
+[2025-11-21 21:21:50,590][PM][INFO][PM Manager] - PM output: 
+Drone PM: 3_Black_measles.json at [2][1] = 2.2
+Drone PM: 3_Black_rot.json at [2][1] = 2.2
+Drone PM: 3_Isariopsis.json at [2][1] = 1.8599999999999999
+Drone PM: 3_Grape_bunch.json at [2][1] = 5.95
+[2025-11-21 21:21:50,593][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/3_isobus_pm.json with treatments: {'Black_measles': 2.2, 'Black_rot': 2.2, 'Isariopsis': 1.8599999999999999, 'Grape_bunch': 5.95} at grid: [2, 1]
+[2025-11-21 21:22:10,829][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-21 21:22:10,831][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-21 21:22:10,924][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/Drone/pm_drone_fleet.py
+[2025-11-21 21:22:11,008][PM][INFO][PM Manager] - PM output: 
+Drone PM: 3_Black_measles.json at [2][2] = 2.7
+Drone PM: 3_Black_rot.json at [2][2] = 2.2
+Drone PM: 3_Isariopsis.json at [2][2] = 2.86
+Drone PM: 3_Grape_bunch.json at [2][2] = 7.95
+[2025-11-21 21:22:11,009][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/3_isobus_pm.json with treatments: {'Black_measles': 2.7, 'Black_rot': 2.2, 'Isariopsis': 2.86, 'Grape_bunch': 7.95} at grid: [2, 2]
+[2025-11-21 21:22:31,131][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-21 21:22:31,134][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-21 21:22:31,528][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/Drone/pm_drone_fleet.py
+[2025-11-21 21:22:31,602][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/3_isobus_pm.json with treatments: {'Black_measles': 2.7, 'Black_rot': 2.2, 'Isariopsis': 3.3600000000000003, 'Grape_bunch': 3.95} at grid: [2, 3]
+[2025-11-21 21:22:31,612][PM][INFO][PM Manager] - PM output: 
+Drone PM: 3_Black_measles.json at [2][3] = 2.7
+Drone PM: 3_Black_rot.json at [2][3] = 2.2
+Drone PM: 3_Isariopsis.json at [2][3] = 3.3600000000000003
+Drone PM: 3_Grape_bunch.json at [2][3] = 3.95
+[2025-11-21 21:22:51,306][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-21 21:22:51,310][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-21 21:22:51,375][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/Drone/pm_drone_fleet.py
+[2025-11-21 21:22:51,444][PM][INFO][PM Manager] - PM output: 
+Drone PM: 3_Black_measles.json at [2][4] = 2.2
+Drone PM: 3_Black_rot.json at [2][4] = 2.2
+Drone PM: 3_Isariopsis.json at [2][4] = 1.8599999999999999
+Drone PM: 3_Grape_bunch.json at [2][4] = 1.95
+[2025-11-21 21:22:51,453][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/3_isobus_pm.json with treatments: {'Black_measles': 2.2, 'Black_rot': 2.2, 'Isariopsis': 1.8599999999999999, 'Grape_bunch': 1.95} at grid: [2, 4]
+[2025-11-21 21:23:11,314][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-21 21:23:11,316][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-21 21:23:11,377][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/Drone/pm_drone_fleet.py
+[2025-11-21 21:23:11,457][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/3_isobus_pm.json with treatments: {'Black_measles': 2.2, 'Black_rot': 1.7, 'Isariopsis': 1.8599999999999999, 'Grape_bunch': 1.95} at grid: [2, 5]
+[2025-11-21 21:23:11,462][PM][INFO][PM Manager] - PM output: 
+Drone PM: 3_Black_measles.json at [2][5] = 2.2
+Drone PM: 3_Black_rot.json at [2][5] = 1.7
+Drone PM: 3_Isariopsis.json at [2][5] = 1.8599999999999999
+Drone PM: 3_Grape_bunch.json at [2][5] = 1.95
+[2025-11-21 21:23:31,747][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-21 21:23:31,752][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-21 21:23:31,834][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/Drone/pm_drone_fleet.py
+[2025-11-21 21:23:31,907][PM][INFO][PM Manager] - PM output: 
+Drone PM: 3_Black_measles.json at [2][6] = 2.2
+Drone PM: 3_Black_rot.json at [2][6] = 1.7
+Drone PM: 3_Isariopsis.json at [2][6] = 2.36
+Drone PM: 3_Grape_bunch.json at [2][6] = 5.95
+[2025-11-21 21:23:31,912][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/3_isobus_pm.json with treatments: {'Black_measles': 2.2, 'Black_rot': 1.7, 'Isariopsis': 2.36, 'Grape_bunch': 5.95} at grid: [2, 6]
+[2025-11-21 21:23:32,779][PM][INFO][PM Subscriber] - PM received from Drone 3
+[2025-11-21 21:23:32,781][PM][INFO][PM Manager] - Received PM for vehicle 3 with filename: Isariopsis
+[2025-11-21 21:23:32,782][PM][INFO][PM Manager] - Saving received PM to PrescriptionMap/pm_generation/Received/3_Isariopsis_received.json
+[2025-11-21 21:23:32,785][PM][INFO][PM Manager] - Received PM saved: PrescriptionMap/pm_generation/Received/3_Isariopsis_received.json
+[2025-11-21 21:23:32,785][PM][INFO][PM Manager] - Finish not activated for vehicle 3, skipping comparison
+[2025-11-21 21:23:32,786][PM][INFO][PM Subscriber] - PM data added to queue for Drone 3
+[2025-11-21 21:23:32,788][PM][INFO][PM Subscriber] - PM received from Drone 3
+[2025-11-21 21:23:32,789][PM][INFO][PM Manager] - Received PM for vehicle 3 with filename: Black_measles
+[2025-11-21 21:23:32,789][PM][INFO][PM Manager] - Saving received PM to PrescriptionMap/pm_generation/Received/3_Black_measles_received.json
+[2025-11-21 21:23:32,790][PM][INFO][PM Manager] - Received PM saved: PrescriptionMap/pm_generation/Received/3_Black_measles_received.json
+[2025-11-21 21:23:32,790][PM][INFO][PM Manager] - Finish not activated for vehicle 3, skipping comparison
+[2025-11-21 21:23:32,790][PM][INFO][PM Subscriber] - PM data added to queue for Drone 3
+[2025-11-21 21:23:32,792][PM][INFO][PM Subscriber] - PM received from Drone 3
+[2025-11-21 21:23:32,793][PM][INFO][PM Manager] - Received PM for vehicle 3 with filename: Black_rot
+[2025-11-21 21:23:32,793][PM][INFO][PM Manager] - Saving received PM to PrescriptionMap/pm_generation/Received/3_Black_rot_received.json
+[2025-11-21 21:23:32,794][PM][INFO][PM Manager] - Received PM saved: PrescriptionMap/pm_generation/Received/3_Black_rot_received.json
+[2025-11-21 21:23:32,794][PM][INFO][PM Manager] - Finish not activated for vehicle 3, skipping comparison
+[2025-11-21 21:23:32,794][PM][INFO][PM Subscriber] - PM data added to queue for Drone 3
+[2025-11-21 21:23:32,795][PM][INFO][PM Subscriber] - PM received from Drone 3
+[2025-11-21 21:23:32,796][PM][INFO][PM Manager] - Received PM for vehicle 3 with filename: Grape_bunch
+[2025-11-21 21:23:32,797][PM][INFO][PM Manager] - Saving received PM to PrescriptionMap/pm_generation/Received/3_Grape_bunch_received.json
+[2025-11-21 21:23:32,798][PM][INFO][PM Manager] - Received PM saved: PrescriptionMap/pm_generation/Received/3_Grape_bunch_received.json
+[2025-11-21 21:23:32,798][PM][INFO][PM Manager] - Finish not activated for vehicle 3, skipping comparison
+[2025-11-21 21:23:32,798][PM][INFO][PM Subscriber] - PM data added to queue for Drone 3
+[2025-11-21 21:23:42,795][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-21 21:23:42,796][PM][INFO][PM Manager] - Received finish signal for vehicle 3
+[2025-11-21 21:23:42,796][PM][INFO][PM Manager] - Finish status activated for vehicle 3
+[2025-11-21 21:23:42,796][PM][INFO][PM Manager] - Starting comparison for vehicle 3
+[2025-11-21 21:23:42,797][PM][INFO][PM Manager] - Received files base names: ['3_Black_measles', '3_Black_rot', '3_Grape_bunch', '3_Isariopsis']
+[2025-11-21 21:23:42,797][PM][INFO][PM Manager] - Found matching pair: 3_Isariopsis.json <-> 3_Isariopsis_received.json
+[2025-11-21 21:23:42,797][PM][INFO][PM Manager] - Found matching pair: 3_Black_rot.json <-> 3_Black_rot_received.json
+[2025-11-21 21:23:42,797][PM][INFO][PM Manager] - Found matching pair: 3_Grape_bunch.json <-> 3_Grape_bunch_received.json
+[2025-11-21 21:23:42,798][PM][INFO][PM Manager] - Found matching pair: 3_Black_measles.json <-> 3_Black_measles_received.json
+[2025-11-21 21:23:42,798][PM][INFO][PM Manager] - Found 4 unique matched file pairs for vehicle 3
+[2025-11-21 21:23:42,798][PM][INFO][PM Manager] - Content matches for vehicle 3, file 3_Black_measles
+[2025-11-21 21:23:42,799][PM][INFO][PM Manager] - Moved generated file to Finished: 20251121_212342_3_Black_measles.json
+[2025-11-21 21:23:42,799][PM][INFO][PM Manager] - Removed received file: 3_Black_measles_received.json
+[2025-11-21 21:23:42,800][PM][INFO][PM Manager] - Content matches for vehicle 3, file 3_Grape_bunch
+[2025-11-21 21:23:42,800][PM][INFO][PM Manager] - Moved generated file to Finished: 20251121_212342_3_Grape_bunch.json
+[2025-11-21 21:23:42,801][PM][INFO][PM Manager] - Removed received file: 3_Grape_bunch_received.json
+[2025-11-21 21:23:42,801][PM][INFO][PM Manager] - Content matches for vehicle 3, file 3_Black_rot
+[2025-11-21 21:23:42,802][PM][INFO][PM Manager] - Moved generated file to Finished: 20251121_212342_3_Black_rot.json
+[2025-11-21 21:23:42,802][PM][INFO][PM Manager] - Removed received file: 3_Black_rot_received.json
+[2025-11-21 21:23:42,803][PM][INFO][PM Manager] - Content matches for vehicle 3, file 3_Isariopsis
+[2025-11-21 21:23:42,803][PM][INFO][PM Manager] - Moved generated file to Finished: 20251121_212342_3_Isariopsis.json
+[2025-11-21 21:23:42,804][PM][INFO][PM Manager] - Removed received file: 3_Isariopsis_received.json
+[2025-11-21 21:23:42,804][PM][INFO][PM Manager] - ALL files match for vehicle 3
+[2025-11-21 21:23:42,804][PM][INFO][PM Manager] - Finish status deactivated for vehicle 3
+[2025-11-21 21:25:56,158][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-21 21:25:56,160][PM][INFO][PM Manager] - Received finish signal for vehicle 2
+[2025-11-21 21:25:56,161][PM][INFO][PM Manager] - Finish status activated for vehicle 2
+[2025-11-21 21:25:56,163][PM][INFO][PM Manager] - Starting comparison for vehicle 2
+[2025-11-21 21:25:56,164][PM][INFO][PM Manager] - Received files base names: []
+[2025-11-21 21:25:56,164][PM][INFO][PM Manager] - Found 0 unique matched file pairs for vehicle 2
+[2025-11-21 21:25:56,164][PM][INFO][PM Manager] - No matching file pairs found for vehicle 2
+[2025-11-24 09:42:59,723][PM][INFO][PM Subscriber] - Started dynamic PM subscriber
+[2025-11-24 09:42:59,729][PM][INFO][gRPC PM] - Server running on port [::]:50087
+[2025-11-24 09:43:15,724][PM][INFO][PM Subscriber] - Discovered new drone: ID 1
+[2025-11-24 10:09:50,881][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-24 10:09:50,886][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-24 10:09:50,930][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/Drone/pm_drone_fleet.py
+[2025-11-24 10:09:51,011][PM][INFO][PM Manager] - PM output: 
+Creating new PM: 1_Black_measles.json
+Drone PM: 1_Black_measles.json at [0][0] = 2.2
+Creating new PM: 1_Black_rot.json
+Drone PM: 1_Black_rot.json at [0][0] = 1.7
+Creating new PM: 1_Isariopsis.json
+Drone PM: 1_Isariopsis.json at [0][0] = 1.8599999999999999
+Creating new PM: 1_Grape_bunch.json
+Drone PM: 1_Grape_bunch.json at [0][0] = 1.95
+[2025-11-24 10:09:51,018][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Black_measles': 2.2, 'Black_rot': 1.7, 'Isariopsis': 1.8599999999999999, 'Grape_bunch': 1.95} at grid: [0, 0]
+[2025-11-24 10:10:11,044][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-24 10:10:11,045][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-24 10:10:11,078][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/Drone/pm_drone_fleet.py
+[2025-11-24 10:10:11,142][PM][INFO][PM Manager] - PM output: 
+Drone PM: 1_Black_measles.json at [0][1] = 2.7
+Drone PM: 1_Black_rot.json at [0][1] = 2.2
+Drone PM: 1_Isariopsis.json at [0][1] = 3.3600000000000003
+Drone PM: 1_Grape_bunch.json at [0][1] = 3.95
+[2025-11-24 10:10:11,142][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Black_measles': 2.7, 'Black_rot': 2.2, 'Isariopsis': 3.3600000000000003, 'Grape_bunch': 3.95} at grid: [0, 1]
+[2025-11-24 10:10:33,856][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-24 10:10:33,859][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-24 10:10:33,896][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/Drone/pm_drone_fleet.py
+[2025-11-24 10:10:33,973][PM][INFO][PM Manager] - PM output: 
+Drone PM: 1_Black_measles.json at [0][2] = 2.2
+Drone PM: 1_Black_rot.json at [0][2] = 1.7
+Drone PM: 1_Isariopsis.json at [0][2] = 1.8599999999999999
+Drone PM: 1_Grape_bunch.json at [0][2] = 1.95
+[2025-11-24 10:10:33,973][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Black_measles': 2.2, 'Black_rot': 1.7, 'Isariopsis': 1.8599999999999999, 'Grape_bunch': 1.95} at grid: [0, 2]
+[2025-11-24 10:10:54,058][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-24 10:10:54,062][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-24 10:10:54,119][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/Drone/pm_drone_fleet.py
+[2025-11-24 10:10:54,196][PM][INFO][PM Manager] - PM output: 
+Drone PM: 1_Black_measles.json at [0][3] = 2.2
+Drone PM: 1_Black_rot.json at [0][3] = 1.7
+Drone PM: 1_Isariopsis.json at [0][3] = 2.36
+Drone PM: 1_Grape_bunch.json at [0][3] = 5.95
+[2025-11-24 10:10:54,200][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Black_measles': 2.2, 'Black_rot': 1.7, 'Isariopsis': 2.36, 'Grape_bunch': 5.95} at grid: [0, 3]
+[2025-11-24 10:11:14,027][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-24 10:11:14,028][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-24 10:11:14,083][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/Drone/pm_drone_fleet.py
+[2025-11-24 10:11:14,144][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Black_measles': 2.2, 'Black_rot': 1.7, 'Isariopsis': 1.8599999999999999, 'Grape_bunch': 1.95} at grid: [0, 4]
+[2025-11-24 10:11:14,147][PM][INFO][PM Manager] - PM output: 
+Drone PM: 1_Black_measles.json at [0][4] = 2.2
+Drone PM: 1_Black_rot.json at [0][4] = 1.7
+Drone PM: 1_Isariopsis.json at [0][4] = 1.8599999999999999
+Drone PM: 1_Grape_bunch.json at [0][4] = 1.95
+[2025-11-24 10:11:34,209][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-24 10:11:34,216][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-24 10:11:34,263][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/Drone/pm_drone_fleet.py
+[2025-11-24 10:11:34,335][PM][INFO][PM Manager] - PM output: 
+Drone PM: 1_Black_measles.json at [0][5] = 2.2
+Drone PM: 1_Black_rot.json at [0][5] = 1.7
+Drone PM: 1_Isariopsis.json at [0][5] = 2.36
+Drone PM: 1_Grape_bunch.json at [0][5] = 5.95
+[2025-11-24 10:11:34,341][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Black_measles': 2.2, 'Black_rot': 1.7, 'Isariopsis': 2.36, 'Grape_bunch': 5.95} at grid: [0, 5]
+[2025-11-24 10:11:54,839][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-24 10:11:54,841][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-24 10:11:54,901][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/Drone/pm_drone_fleet.py
+[2025-11-24 10:11:54,971][PM][INFO][PM Manager] - PM output: 
+Drone PM: 1_Black_measles.json at [0][6] = 2.2
+Drone PM: 1_Black_rot.json at [0][6] = 1.7
+Drone PM: 1_Isariopsis.json at [0][6] = 1.8599999999999999
+Drone PM: 1_Grape_bunch.json at [0][6] = 9.95
+[2025-11-24 10:11:54,986][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Black_measles': 2.2, 'Black_rot': 1.7, 'Isariopsis': 1.8599999999999999, 'Grape_bunch': 9.95} at grid: [0, 6]
+[2025-11-24 10:12:14,905][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-24 10:12:14,907][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-24 10:12:14,967][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/Drone/pm_drone_fleet.py
+[2025-11-24 10:12:15,043][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Black_measles': 2.2, 'Black_rot': 2.2, 'Isariopsis': 1.8599999999999999, 'Grape_bunch': 5.95} at grid: [1, 6]
+[2025-11-24 10:12:15,046][PM][INFO][PM Manager] - PM output: 
+Drone PM: 1_Black_measles.json at [1][6] = 2.2
+Drone PM: 1_Black_rot.json at [1][6] = 2.2
+Drone PM: 1_Isariopsis.json at [1][6] = 1.8599999999999999
+Drone PM: 1_Grape_bunch.json at [1][6] = 5.95
+[2025-11-24 10:12:35,274][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-24 10:12:35,275][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-24 10:12:35,320][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/Drone/pm_drone_fleet.py
+[2025-11-24 10:12:35,387][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Black_measles': 2.2, 'Black_rot': 1.7, 'Isariopsis': 1.8599999999999999, 'Grape_bunch': 3.95} at grid: [1, 5]
+[2025-11-24 10:12:35,389][PM][INFO][PM Manager] - PM output: 
+Drone PM: 1_Black_measles.json at [1][5] = 2.2
+Drone PM: 1_Black_rot.json at [1][5] = 1.7
+Drone PM: 1_Isariopsis.json at [1][5] = 1.8599999999999999
+Drone PM: 1_Grape_bunch.json at [1][5] = 3.95
+[2025-11-24 10:12:55,426][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-24 10:12:55,429][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-24 10:12:55,493][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/Drone/pm_drone_fleet.py
+[2025-11-24 10:12:55,552][PM][INFO][PM Manager] - PM output: 
+Drone PM: 1_Black_measles.json at [1][4] = 2.7
+Drone PM: 1_Black_rot.json at [1][4] = 2.2
+Drone PM: 1_Isariopsis.json at [1][4] = 3.3600000000000003
+Drone PM: 1_Grape_bunch.json at [1][4] = 3.95
+[2025-11-24 10:12:55,554][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Black_measles': 2.7, 'Black_rot': 2.2, 'Isariopsis': 3.3600000000000003, 'Grape_bunch': 3.95} at grid: [1, 4]
+[2025-11-24 10:13:15,268][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-24 10:13:15,271][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-24 10:13:15,317][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/Drone/pm_drone_fleet.py
+[2025-11-24 10:13:15,387][PM][INFO][PM Manager] - PM output: 
+Drone PM: 1_Black_measles.json at [1][3] = 2.2
+Drone PM: 1_Black_rot.json at [1][3] = 1.7
+Drone PM: 1_Isariopsis.json at [1][3] = 1.8599999999999999
+Drone PM: 1_Grape_bunch.json at [1][3] = 1.95
+[2025-11-24 10:13:15,401][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Black_measles': 2.2, 'Black_rot': 1.7, 'Isariopsis': 1.8599999999999999, 'Grape_bunch': 1.95} at grid: [1, 3]
+[2025-11-24 10:13:35,427][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-24 10:13:35,430][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-24 10:13:35,509][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/Drone/pm_drone_fleet.py
+[2025-11-24 10:13:35,570][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Black_measles': 2.2, 'Black_rot': 1.7, 'Isariopsis': 1.8599999999999999, 'Grape_bunch': 3.95} at grid: [1, 2]
+[2025-11-24 10:13:35,570][PM][INFO][PM Manager] - PM output: 
+Drone PM: 1_Black_measles.json at [1][2] = 2.2
+Drone PM: 1_Black_rot.json at [1][2] = 1.7
+Drone PM: 1_Isariopsis.json at [1][2] = 1.8599999999999999
+Drone PM: 1_Grape_bunch.json at [1][2] = 3.95
+[2025-11-24 10:13:55,679][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-24 10:13:55,681][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-24 10:13:55,735][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/Drone/pm_drone_fleet.py
+[2025-11-24 10:13:55,809][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Black_measles': 2.2, 'Black_rot': 1.7, 'Isariopsis': 1.8599999999999999, 'Grape_bunch': 5.95} at grid: [1, 1]
+[2025-11-24 10:13:55,818][PM][INFO][PM Manager] - PM output: 
+Drone PM: 1_Black_measles.json at [1][1] = 2.2
+Drone PM: 1_Black_rot.json at [1][1] = 1.7
+Drone PM: 1_Isariopsis.json at [1][1] = 1.8599999999999999
+Drone PM: 1_Grape_bunch.json at [1][1] = 5.95
+[2025-11-24 10:14:36,268][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-24 10:14:36,269][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-24 10:14:36,344][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/Drone/pm_drone_fleet.py
+[2025-11-24 10:14:36,404][PM][INFO][PM Manager] - PM output: 
+Drone PM: 1_Black_measles.json at [2][0] = 2.2
+Drone PM: 1_Black_rot.json at [2][0] = 1.7
+Drone PM: 1_Isariopsis.json at [2][0] = 1.8599999999999999
+Drone PM: 1_Grape_bunch.json at [2][0] = 1.95
+[2025-11-24 10:14:36,407][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Black_measles': 2.2, 'Black_rot': 1.7, 'Isariopsis': 1.8599999999999999, 'Grape_bunch': 1.95} at grid: [2, 0]
+[2025-11-24 10:14:52,633][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-24 10:14:52,634][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-24 10:14:52,805][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 5.95} at grid: [1, 6]
+[2025-11-24 10:14:56,830][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-24 10:14:56,832][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-24 10:14:56,883][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/Drone/pm_drone_fleet.py
+[2025-11-24 10:14:56,945][PM][INFO][PM Manager] - PM output: 
+Drone PM: 1_Black_measles.json at [2][1] = 2.2
+Drone PM: 1_Black_rot.json at [2][1] = 2.2
+Drone PM: 1_Isariopsis.json at [2][1] = 1.8599999999999999
+Drone PM: 1_Grape_bunch.json at [2][1] = 5.95
+[2025-11-24 10:14:56,950][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Black_measles': 2.2, 'Black_rot': 2.2, 'Isariopsis': 1.8599999999999999, 'Grape_bunch': 5.95} at grid: [2, 1]
+[2025-11-24 10:15:16,984][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-24 10:15:16,985][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-24 10:15:17,035][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/Drone/pm_drone_fleet.py
+[2025-11-24 10:15:17,101][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Black_measles': 2.7, 'Black_rot': 2.2, 'Isariopsis': 2.86, 'Grape_bunch': 7.95} at grid: [2, 2]
+[2025-11-24 10:15:17,101][PM][INFO][PM Manager] - PM output: 
+Drone PM: 1_Black_measles.json at [2][2] = 2.7
+Drone PM: 1_Black_rot.json at [2][2] = 2.2
+Drone PM: 1_Isariopsis.json at [2][2] = 2.86
+Drone PM: 1_Grape_bunch.json at [2][2] = 7.95
+[2025-11-24 10:15:26,327][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-24 10:15:26,328][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-24 10:15:26,450][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 5.95} at grid: [1, 4]
+[2025-11-24 10:15:37,095][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-24 10:15:37,098][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-24 10:15:37,168][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/Drone/pm_drone_fleet.py
+[2025-11-24 10:15:37,255][PM][INFO][PM Manager] - PM output: 
+Drone PM: 1_Black_measles.json at [2][3] = 2.7
+Drone PM: 1_Black_rot.json at [2][3] = 2.2
+Drone PM: 1_Isariopsis.json at [2][3] = 3.3600000000000003
+Drone PM: 1_Grape_bunch.json at [2][3] = 3.95
+[2025-11-24 10:15:37,258][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Black_measles': 2.7, 'Black_rot': 2.2, 'Isariopsis': 3.3600000000000003, 'Grape_bunch': 3.95} at grid: [2, 3]
+[2025-11-24 10:15:43,154][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-24 10:15:43,156][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-24 10:15:46,299][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 3.95} at grid: [1, 3]
+[2025-11-24 10:17:48,347][PM][INFO][PM Subscriber] - Started dynamic PM subscriber
+[2025-11-24 10:17:48,356][PM][INFO][gRPC PM] - Server running on port [::]:50087
+[2025-11-24 10:17:50,348][PM][INFO][PM Subscriber] - Discovered new drone: ID 1
+[2025-11-24 10:18:04,348][PM][INFO][PM Subscriber] - Discovered new drone: ID 2
+[2025-11-24 10:20:49,742][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-24 10:20:49,754][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-24 10:20:49,931][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 5.95} at grid: [1, 6]
+[2025-11-24 10:21:06,584][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-24 10:21:06,587][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-24 10:21:06,690][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 5.95} at grid: [1, 5]
+[2025-11-24 10:21:23,393][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-24 10:21:23,395][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-24 10:21:23,475][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 5.95} at grid: [1, 4]
+[2025-11-24 10:21:40,191][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-24 10:21:40,194][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-24 10:21:40,298][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 3.95} at grid: [1, 3]
+[2025-11-24 10:21:57,140][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-24 10:21:57,144][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-24 10:21:57,322][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 7.95} at grid: [1, 2]
+[2025-11-24 10:22:13,999][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-24 10:22:14,001][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-24 10:22:14,112][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 1.95} at grid: [1, 1]
+[2025-11-24 10:22:30,938][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-24 10:22:30,939][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-24 10:22:31,039][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 5.95} at grid: [1, 0]
+[2025-11-24 10:22:47,665][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-24 10:22:47,666][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-24 10:22:47,749][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 7.95} at grid: [0, 0]
+[2025-11-24 10:23:04,648][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-24 10:23:04,651][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-24 10:23:04,783][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 1.95} at grid: [0, 1]
+[2025-11-24 10:23:21,485][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-24 10:23:21,488][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-24 10:23:21,639][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 3.95} at grid: [0, 2]
+[2025-11-24 10:23:38,470][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-24 10:23:38,471][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-24 10:23:38,563][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 7.95} at grid: [0, 3]
+[2025-11-24 10:23:55,390][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-24 10:23:55,391][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-24 10:23:55,497][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 9.95} at grid: [0, 4]
+[2025-11-24 10:24:12,192][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-24 10:24:12,194][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-24 10:24:12,287][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 3.95} at grid: [0, 5]
+[2025-11-24 10:24:29,114][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-24 10:24:29,117][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-24 10:24:29,238][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 3.95} at grid: [0, 6]
+[2025-11-24 10:24:40,109][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-24 10:24:40,110][PM][INFO][PM Manager] - Received finish signal for vehicle 1
+[2025-11-24 10:24:40,111][PM][INFO][PM Manager] - Finish status activated for vehicle 1
+[2025-11-24 10:24:40,111][PM][INFO][PM Manager] - Starting comparison for vehicle 1
+[2025-11-24 10:24:40,112][PM][INFO][PM Manager] - Received files base names: []
+[2025-11-24 10:24:40,112][PM][INFO][PM Manager] - Found 0 unique matched file pairs for vehicle 1
+[2025-11-24 10:24:40,113][PM][INFO][PM Manager] - No matching file pairs found for vehicle 1
+[2025-11-24 10:30:10,012][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-24 10:30:10,013][PM][INFO][PM Manager] - Received finish signal for vehicle 2
+[2025-11-24 10:30:10,014][PM][INFO][PM Manager] - Finish status activated for vehicle 2
+[2025-11-24 10:30:10,014][PM][INFO][PM Manager] - Starting comparison for vehicle 2
+[2025-11-24 10:30:10,020][PM][INFO][PM Manager] - Received files base names: []
+[2025-11-24 10:30:10,021][PM][INFO][PM Manager] - Found 0 unique matched file pairs for vehicle 2
+[2025-11-24 10:30:10,021][PM][INFO][PM Manager] - No matching file pairs found for vehicle 2
+[2025-11-24 10:34:19,212][PM][INFO][PM Subscriber] - Started dynamic PM subscriber
+[2025-11-24 10:34:19,219][PM][INFO][gRPC PM] - Server running on port [::]:50087
+[2025-11-24 10:34:21,213][PM][INFO][PM Subscriber] - Discovered new drone: ID 1
+[2025-11-24 10:34:21,216][PM][INFO][PM Subscriber] - Discovered new drone: ID 2
+[2025-11-24 10:36:05,310][PM][INFO][PM Subscriber] - Started dynamic PM subscriber
+[2025-11-24 10:36:05,311][PM][INFO][gRPC PM] - Server running on port [::]:50087
+[2025-11-24 10:36:07,311][PM][INFO][PM Subscriber] - Discovered new drone: ID 1
+[2025-11-24 10:36:07,315][PM][INFO][PM Subscriber] - Discovered new drone: ID 2
+[2025-11-24 10:48:53,665][PM][INFO][PM Subscriber] - Started dynamic PM subscriber
+[2025-11-24 10:48:53,677][PM][INFO][gRPC PM] - Server running on port [::]:50087
+[2025-11-24 10:48:55,666][PM][INFO][PM Subscriber] - Discovered new drone: ID 1
+[2025-11-24 10:48:55,671][PM][INFO][PM Subscriber] - Discovered new drone: ID 2
+[2025-11-24 10:50:30,792][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-24 10:50:30,819][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-24 10:50:30,962][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 5.95} at grid: [1, 6]
+[2025-11-24 10:50:47,789][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-24 10:50:47,790][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-24 10:50:47,904][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 5.95} at grid: [1, 5]
+[2025-11-24 10:51:04,734][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-24 10:51:04,736][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-24 10:51:04,837][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 5.95} at grid: [1, 4]
+[2025-11-24 10:51:21,662][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-24 10:51:21,664][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-24 10:51:21,782][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 3.95} at grid: [1, 3]
+[2025-11-24 10:51:38,606][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-24 10:51:38,607][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-24 10:51:38,710][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 7.95} at grid: [1, 2]
+[2025-11-24 10:51:55,423][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-24 10:51:55,424][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-24 10:51:55,526][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 1.95} at grid: [1, 1]
+[2025-11-24 10:52:12,408][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-24 10:52:12,415][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-24 10:52:13,230][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 5.95} at grid: [1, 0]
+[2025-11-24 10:52:29,524][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-24 10:52:29,526][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-24 10:52:29,697][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 7.95} at grid: [0, 0]
+[2025-11-24 10:53:22,999][PM][INFO][PM Subscriber] - Started dynamic PM subscriber
+[2025-11-24 10:53:23,008][PM][INFO][gRPC PM] - Server running on port [::]:50087
+[2025-11-24 10:53:25,000][PM][INFO][PM Subscriber] - Discovered new drone: ID 1
+[2025-11-24 10:53:25,004][PM][INFO][PM Subscriber] - Discovered new drone: ID 2
+[2025-11-24 10:54:31,330][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-24 10:54:31,333][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-24 10:54:31,450][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 5.95} at grid: [1, 6]
+[2025-11-24 10:54:48,153][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-24 10:54:48,157][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-24 10:54:48,254][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 5.95} at grid: [1, 5]
+[2025-11-24 10:55:05,076][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-24 10:55:05,077][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-24 10:55:05,180][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 5.95} at grid: [1, 4]
+[2025-11-24 10:55:21,868][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-24 10:55:21,870][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-24 10:55:22,002][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 3.95} at grid: [1, 3]
+[2025-11-24 10:55:38,693][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-24 10:55:38,696][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-24 10:55:38,808][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 7.95} at grid: [1, 2]
+[2025-11-24 10:55:55,503][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-24 10:55:55,505][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-24 10:55:55,599][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 1.95} at grid: [1, 1]
+[2025-11-24 10:56:38,480][PM][INFO][PM Subscriber] - Started dynamic PM subscriber
+[2025-11-24 10:56:38,490][PM][INFO][gRPC PM] - Server running on port [::]:50087
+[2025-11-24 10:56:40,481][PM][INFO][PM Subscriber] - Discovered new drone: ID 1
+[2025-11-24 10:56:40,484][PM][INFO][PM Subscriber] - Discovered new drone: ID 2
+[2025-11-24 10:57:18,293][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-24 10:57:18,327][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-24 10:57:18,440][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 5.95} at grid: [1, 6]
+[2025-11-24 10:57:35,109][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-24 10:57:35,111][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-24 10:57:35,191][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 5.95} at grid: [1, 5]
+[2025-11-24 10:57:51,910][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-24 10:57:51,918][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-24 10:57:52,023][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 5.95} at grid: [1, 4]
+[2025-11-24 10:58:08,724][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-24 10:58:08,726][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-24 10:58:08,846][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 3.95} at grid: [1, 3]
+[2025-11-24 10:58:25,529][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-24 10:58:25,530][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-24 10:58:25,667][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 7.95} at grid: [1, 2]
+[2025-11-24 10:58:42,336][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-24 10:58:42,340][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-24 10:58:42,452][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 1.95} at grid: [1, 1]
+[2025-11-24 10:58:59,160][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-24 10:58:59,163][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-24 10:58:59,270][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 5.95} at grid: [1, 0]
+[2025-11-24 10:59:16,105][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-24 10:59:16,106][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-24 10:59:16,192][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 7.95} at grid: [0, 0]
+[2025-11-24 10:59:33,019][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-24 10:59:33,020][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-24 10:59:33,115][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 1.95} at grid: [0, 1]
+[2025-11-24 11:00:09,973][PM][INFO][PM Subscriber] - Started dynamic PM subscriber
+[2025-11-24 11:00:09,982][PM][INFO][gRPC PM] - Server running on port [::]:50087
+[2025-11-24 11:00:11,974][PM][INFO][PM Subscriber] - Discovered new drone: ID 1
+[2025-11-24 11:00:11,977][PM][INFO][PM Subscriber] - Discovered new drone: ID 2
+[2025-11-24 11:00:53,209][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-24 11:00:53,232][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-24 11:00:53,340][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 5.95} at grid: [1, 6]
+[2025-11-24 11:01:11,564][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-24 11:01:11,565][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-24 11:01:11,662][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 5.95} at grid: [1, 5]
+[2025-11-24 11:01:28,380][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-24 11:01:28,382][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-24 11:01:28,470][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 5.95} at grid: [1, 4]
+[2025-11-24 11:01:45,292][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-24 11:01:45,293][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-24 11:01:45,381][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 3.95} at grid: [1, 3]
+[2025-11-24 11:02:02,053][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-24 11:02:02,055][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-24 11:02:02,145][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 7.95} at grid: [1, 2]
+[2025-11-24 11:02:18,869][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-24 11:02:18,871][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-24 11:02:18,980][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 1.95} at grid: [1, 1]
+[2025-11-24 11:02:36,861][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-24 11:02:36,866][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-24 11:02:36,974][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 5.95} at grid: [1, 0]
+[2025-11-24 11:02:53,689][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-24 11:02:53,691][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-24 11:02:53,783][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 7.95} at grid: [0, 0]
+[2025-11-24 11:03:10,499][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-24 11:03:10,501][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-24 11:03:10,585][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 1.95} at grid: [0, 1]
+[2025-11-24 11:03:28,512][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-24 11:03:28,516][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-24 11:03:28,654][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 3.95} at grid: [0, 2]
+[2025-11-24 11:03:45,326][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-24 11:03:45,328][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-24 11:03:45,424][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 7.95} at grid: [0, 3]
+[2025-11-24 11:04:19,587][PM][INFO][PM Subscriber] - Started dynamic PM subscriber
+[2025-11-24 11:04:19,589][PM][INFO][gRPC PM] - Server running on port [::]:50087
+[2025-11-24 11:04:21,588][PM][INFO][PM Subscriber] - Discovered new drone: ID 1
+[2025-11-24 11:04:21,593][PM][INFO][PM Subscriber] - Discovered new drone: ID 2
+[2025-11-24 11:04:57,650][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-24 11:04:57,667][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-24 11:04:57,757][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 5.95} at grid: [1, 6]
+[2025-11-24 11:05:14,786][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-24 11:05:14,787][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-24 11:05:14,872][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 5.95} at grid: [1, 5]
+[2025-11-24 11:05:31,565][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-24 11:05:31,567][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-24 11:05:31,662][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 5.95} at grid: [1, 4]
+[2025-11-24 11:05:48,693][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-24 11:05:48,694][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-24 11:05:48,787][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 3.95} at grid: [1, 3]
+[2025-11-24 11:06:20,435][PM][INFO][PM Subscriber] - Started dynamic PM subscriber
+[2025-11-24 11:06:20,451][PM][INFO][gRPC PM] - Server running on port [::]:50087
+[2025-11-24 11:06:22,436][PM][INFO][PM Subscriber] - Discovered new drone: ID 1
+[2025-11-24 11:06:22,440][PM][INFO][PM Subscriber] - Discovered new drone: ID 2
+[2025-11-24 11:07:09,054][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-24 11:07:09,087][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-24 11:07:09,173][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 5.95} at grid: [1, 6]
+[2025-11-24 11:07:25,837][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-24 11:07:25,839][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-24 11:07:25,965][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 5.95} at grid: [1, 5]
+[2025-11-24 11:07:42,636][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-24 11:07:42,640][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-24 11:07:42,740][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 5.95} at grid: [1, 4]
+[2025-11-24 11:07:59,446][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-24 11:07:59,448][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-24 11:07:59,528][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 3.95} at grid: [1, 3]
+[2025-11-24 11:08:16,352][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-24 11:08:16,353][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-24 11:08:16,463][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 7.95} at grid: [1, 2]
+[2025-11-24 11:08:33,085][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-24 11:08:33,086][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-24 11:08:33,180][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 1.95} at grid: [1, 1]
+[2025-11-24 11:08:50,007][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-24 11:08:50,009][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-24 11:08:50,098][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 5.95} at grid: [1, 0]
+[2025-11-24 11:09:06,723][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-24 11:09:06,724][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-24 11:09:06,811][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 7.95} at grid: [0, 0]
+[2025-11-24 11:09:23,639][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-24 11:09:23,641][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-24 11:09:23,758][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 1.95} at grid: [0, 1]
+[2025-11-24 11:09:40,393][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-24 11:09:40,394][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-24 11:09:40,507][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 3.95} at grid: [0, 2]
+[2025-11-24 11:09:57,202][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-24 11:09:57,205][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-24 11:09:57,308][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 7.95} at grid: [0, 3]
+[2025-11-24 11:10:14,132][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-24 11:10:14,133][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-24 11:10:14,274][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 9.95} at grid: [0, 4]
+[2025-11-24 11:10:32,901][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-24 11:10:32,902][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-24 11:10:32,997][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 3.95} at grid: [0, 5]
+[2025-11-24 11:10:49,673][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-24 11:10:49,677][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-24 11:10:50,535][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 3.95} at grid: [0, 6]
+[2025-11-24 11:11:00,758][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-24 11:11:00,759][PM][INFO][PM Manager] - Received finish signal for vehicle 1
+[2025-11-24 11:11:00,759][PM][INFO][PM Manager] - Finish status activated for vehicle 1
+[2025-11-24 11:11:00,760][PM][INFO][PM Manager] - Starting comparison for vehicle 1
+[2025-11-24 11:11:00,760][PM][INFO][PM Manager] - Received files base names: []
+[2025-11-24 11:11:00,761][PM][INFO][PM Manager] - Found 0 unique matched file pairs for vehicle 1
+[2025-11-24 11:11:00,761][PM][INFO][PM Manager] - No matching file pairs found for vehicle 1
+[2025-11-24 11:16:31,454][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-24 11:16:31,454][PM][INFO][PM Manager] - Received finish signal for vehicle 2
+[2025-11-24 11:16:31,454][PM][INFO][PM Manager] - Finish status activated for vehicle 2
+[2025-11-24 11:16:31,455][PM][INFO][PM Manager] - Starting comparison for vehicle 2
+[2025-11-24 11:16:31,455][PM][INFO][PM Manager] - Received files base names: []
+[2025-11-24 11:16:31,456][PM][INFO][PM Manager] - Found 0 unique matched file pairs for vehicle 2
+[2025-11-24 11:16:31,456][PM][INFO][PM Manager] - No matching file pairs found for vehicle 2
+[2025-11-24 12:03:17,767][PM][INFO][PM Subscriber] - Started dynamic PM subscriber
+[2025-11-24 12:03:17,779][PM][INFO][gRPC PM] - Server running on port [::]:50087
+[2025-11-24 12:03:19,768][PM][INFO][PM Subscriber] - Discovered new drone: ID 1
+[2025-11-24 12:03:19,771][PM][INFO][PM Subscriber] - Discovered new drone: ID 2
+[2025-11-24 12:04:27,388][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-24 12:04:27,389][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-24 12:04:27,494][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 5.95} at grid: [1, 6]
+[2025-11-24 12:04:44,717][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-24 12:04:44,719][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-24 12:04:44,806][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 5.95} at grid: [1, 5]
+[2025-11-24 12:05:01,630][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-24 12:05:01,630][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-24 12:05:01,712][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 5.95} at grid: [1, 4]
+[2025-11-24 12:05:18,545][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-24 12:05:18,547][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-24 12:05:18,640][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 3.95} at grid: [1, 3]
+[2025-11-24 12:05:35,486][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-24 12:05:35,488][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-24 12:05:35,579][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 7.95} at grid: [1, 2]
+[2025-11-24 12:05:52,401][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-24 12:05:52,402][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-24 12:05:52,510][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 1.95} at grid: [1, 1]
+[2025-11-24 12:06:09,334][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-24 12:06:09,335][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-24 12:06:09,437][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 5.95} at grid: [1, 0]
+[2025-11-24 12:06:26,262][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-24 12:06:26,264][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-24 12:06:26,382][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 7.95} at grid: [0, 0]
+[2025-11-24 12:06:43,209][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-24 12:06:43,210][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-24 12:06:43,327][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 1.95} at grid: [0, 1]
+[2025-11-24 12:07:00,151][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-24 12:07:00,152][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-24 12:07:00,236][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 3.95} at grid: [0, 2]
+[2025-11-24 12:07:17,058][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-24 12:07:17,059][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-24 12:07:17,166][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 7.95} at grid: [0, 3]
+[2025-11-24 12:07:33,990][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-24 12:07:33,991][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-24 12:07:34,082][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 9.95} at grid: [0, 4]
+[2025-11-24 12:07:50,903][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-24 12:07:50,904][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-24 12:07:50,995][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 3.95} at grid: [0, 5]
+[2025-11-24 12:08:07,887][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-24 12:08:07,889][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-24 12:08:08,049][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 3.95} at grid: [0, 6]
+[2025-11-24 12:08:18,919][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-24 12:08:18,920][PM][INFO][PM Manager] - Received finish signal for vehicle 1
+[2025-11-24 12:08:18,921][PM][INFO][PM Manager] - Finish status activated for vehicle 1
+[2025-11-24 12:08:18,922][PM][INFO][PM Manager] - Starting comparison for vehicle 1
+[2025-11-24 12:08:18,925][PM][INFO][PM Manager] - Received files base names: []
+[2025-11-24 12:08:18,925][PM][INFO][PM Manager] - Found 0 unique matched file pairs for vehicle 1
+[2025-11-24 12:08:18,926][PM][INFO][PM Manager] - No matching file pairs found for vehicle 1
+[2025-11-24 12:11:10,148][PM][INFO][PM Subscriber] - Started dynamic PM subscriber
+[2025-11-24 12:11:10,161][PM][INFO][gRPC PM] - Server running on port [::]:50087
+[2025-11-24 12:11:12,149][PM][INFO][PM Subscriber] - Discovered new drone: ID 1
+[2025-11-24 12:11:12,152][PM][INFO][PM Subscriber] - Discovered new drone: ID 2
+[2025-11-24 12:12:32,242][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-24 12:12:32,268][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-24 12:12:32,351][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 5.95} at grid: [1, 6]
+[2025-11-24 12:12:48,979][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-24 12:12:48,980][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-24 12:12:49,067][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 5.95} at grid: [1, 5]
+[2025-11-24 12:13:05,742][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-24 12:13:05,746][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-24 12:13:05,841][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 5.95} at grid: [1, 4]
+[2025-11-24 12:13:22,665][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-24 12:13:22,668][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-24 12:13:22,755][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 3.95} at grid: [1, 3]
+[2025-11-24 12:13:39,409][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-24 12:13:39,410][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-24 12:13:39,504][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 7.95} at grid: [1, 2]
+[2025-11-24 12:13:56,329][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-24 12:13:56,330][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-24 12:13:56,426][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 1.95} at grid: [1, 1]
+[2025-11-24 12:14:13,093][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-24 12:14:13,096][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-24 12:14:13,199][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 5.95} at grid: [1, 0]
+[2025-11-24 12:14:29,922][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-24 12:14:29,925][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-24 12:14:30,020][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 7.95} at grid: [0, 0]
+[2025-11-24 12:14:46,848][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-24 12:14:46,849][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-24 12:14:46,943][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 1.95} at grid: [0, 1]
+[2025-11-24 12:15:03,631][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-24 12:15:03,634][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-24 12:15:03,788][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 3.95} at grid: [0, 2]
+[2025-11-24 12:15:20,462][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-24 12:15:20,464][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-24 12:15:20,654][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 7.95} at grid: [0, 3]
+[2025-11-24 12:15:38,180][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-24 12:15:38,183][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-24 12:15:38,274][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 9.95} at grid: [0, 4]
+[2025-11-24 12:15:54,980][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-24 12:15:54,982][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-24 12:15:55,071][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 3.95} at grid: [0, 5]
+[2025-11-24 12:16:11,792][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-24 12:16:11,795][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-24 12:16:12,481][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 3.95} at grid: [0, 6]
+[2025-11-24 12:16:22,901][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-24 12:16:22,901][PM][INFO][PM Manager] - Received finish signal for vehicle 1
+[2025-11-24 12:16:22,902][PM][INFO][PM Manager] - Finish status activated for vehicle 1
+[2025-11-24 12:16:22,902][PM][INFO][PM Manager] - Starting comparison for vehicle 1
+[2025-11-24 12:16:22,902][PM][INFO][PM Manager] - Received files base names: []
+[2025-11-24 12:16:22,903][PM][INFO][PM Manager] - Found 0 unique matched file pairs for vehicle 1
+[2025-11-24 12:16:22,903][PM][INFO][PM Manager] - No matching file pairs found for vehicle 1
+[2025-11-24 12:21:53,407][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-24 12:21:53,407][PM][INFO][PM Manager] - Received finish signal for vehicle 2
+[2025-11-24 12:21:53,407][PM][INFO][PM Manager] - Finish status activated for vehicle 2
+[2025-11-24 12:21:53,408][PM][INFO][PM Manager] - Starting comparison for vehicle 2
+[2025-11-24 12:21:53,408][PM][INFO][PM Manager] - Received files base names: []
+[2025-11-24 12:21:53,409][PM][INFO][PM Manager] - Found 0 unique matched file pairs for vehicle 2
+[2025-11-24 12:21:53,409][PM][INFO][PM Manager] - No matching file pairs found for vehicle 2
+[2025-11-24 12:24:56,411][PM][INFO][PM Subscriber] - Started dynamic PM subscriber
+[2025-11-24 12:24:56,411][PM][INFO][gRPC PM] - Server running on port [::]:50087
+[2025-11-24 12:24:58,411][PM][INFO][PM Subscriber] - Discovered new drone: ID 1
+[2025-11-24 12:24:58,415][PM][INFO][PM Subscriber] - Discovered new drone: ID 2
+[2025-11-24 12:26:08,192][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-24 12:26:08,207][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-24 12:26:08,342][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 5.95} at grid: [1, 6]
+[2025-11-24 12:26:25,169][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-24 12:26:25,170][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-24 12:26:25,257][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 5.95} at grid: [1, 5]
+[2025-11-24 12:26:42,085][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-24 12:26:42,086][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-24 12:26:42,186][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 5.95} at grid: [1, 4]
+[2025-11-24 12:26:59,008][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-24 12:26:59,009][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-24 12:26:59,095][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 3.95} at grid: [1, 3]
+[2025-11-24 12:27:15,916][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-24 12:27:15,917][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-24 12:27:16,004][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 7.95} at grid: [1, 2]
+[2025-11-24 12:27:32,827][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-24 12:27:32,829][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-24 12:27:32,916][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 1.95} at grid: [1, 1]
+[2025-11-24 12:27:49,762][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-24 12:27:49,765][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-24 12:27:49,873][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 5.95} at grid: [1, 0]
+[2025-11-24 12:28:06,694][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-24 12:28:06,695][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-24 12:28:06,796][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 7.95} at grid: [0, 0]
+[2025-11-24 12:28:23,618][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-24 12:28:23,619][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-24 12:28:23,706][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 1.95} at grid: [0, 1]
+[2025-11-24 12:28:40,528][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-24 12:28:40,529][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-24 12:28:40,636][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 3.95} at grid: [0, 2]
+[2025-11-24 12:28:57,464][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-24 12:28:57,465][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-24 12:28:57,554][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 7.95} at grid: [0, 3]
+[2025-11-24 12:29:14,416][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-24 12:29:14,420][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-24 12:29:14,518][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 9.95} at grid: [0, 4]
+[2025-11-24 12:29:31,346][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-24 12:29:31,347][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-24 12:29:31,450][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 3.95} at grid: [0, 5]
+[2025-11-24 12:29:48,272][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-24 12:29:48,273][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-24 12:29:48,378][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 3.95} at grid: [0, 6]
+[2025-11-24 12:29:59,245][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-24 12:29:59,245][PM][INFO][PM Manager] - Received finish signal for vehicle 1
+[2025-11-24 12:29:59,246][PM][INFO][PM Manager] - Finish status activated for vehicle 1
+[2025-11-24 12:29:59,246][PM][INFO][PM Manager] - Starting comparison for vehicle 1
+[2025-11-24 12:29:59,247][PM][INFO][PM Manager] - Received files base names: []
+[2025-11-24 12:29:59,248][PM][INFO][PM Manager] - Found 0 unique matched file pairs for vehicle 1
+[2025-11-24 12:29:59,248][PM][INFO][PM Manager] - No matching file pairs found for vehicle 1
+[2025-11-24 12:32:45,574][PM][INFO][PM Subscriber] - Started dynamic PM subscriber
+[2025-11-24 12:32:45,585][PM][INFO][gRPC PM] - Server running on port [::]:50087
+[2025-11-24 12:32:47,575][PM][INFO][PM Subscriber] - Discovered new drone: ID 1
+[2025-11-24 12:32:47,578][PM][INFO][PM Subscriber] - Discovered new drone: ID 2
+[2025-11-24 12:33:30,050][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-24 12:33:30,071][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-24 12:33:30,185][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 5.95} at grid: [1, 6]
+[2025-11-24 12:33:47,011][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-24 12:33:47,012][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-24 12:33:47,115][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 5.95} at grid: [1, 5]
+[2025-11-24 12:34:03,940][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-24 12:34:03,942][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-24 12:34:04,044][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 5.95} at grid: [1, 4]
+[2025-11-24 12:40:29,752][PM][INFO][PM Subscriber] - Started dynamic PM subscriber
+[2025-11-24 12:40:29,753][PM][INFO][gRPC PM] - Server running on port [::]:50087
+[2025-11-24 12:40:31,754][PM][INFO][PM Subscriber] - Discovered new drone: ID 1
+[2025-11-24 12:40:31,757][PM][INFO][PM Subscriber] - Discovered new drone: ID 2
+[2025-11-24 12:41:24,908][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-24 12:41:24,928][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-24 12:41:25,037][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 5.95} at grid: [1, 6]
+[2025-11-24 12:41:41,690][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-24 12:41:41,693][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-24 12:41:41,797][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 5.95} at grid: [1, 5]
+[2025-11-24 12:41:58,620][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-24 12:41:58,621][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-24 12:41:58,739][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 5.95} at grid: [1, 4]
+[2025-11-24 12:42:15,367][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-24 12:42:15,368][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-24 12:42:15,456][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 3.95} at grid: [1, 3]
+[2025-11-24 12:42:32,129][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-24 12:42:32,131][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-24 12:42:32,242][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 7.95} at grid: [1, 2]
+[2025-11-24 12:42:48,922][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-24 12:42:48,925][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-24 12:42:49,027][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 1.95} at grid: [1, 1]
+[2025-11-24 12:43:05,952][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-24 12:43:05,957][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-24 12:43:09,098][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 5.95} at grid: [1, 0]
+[2025-11-24 12:44:18,577][PM][INFO][PM Subscriber] - Started dynamic PM subscriber
+[2025-11-24 12:44:18,577][PM][INFO][gRPC PM] - Server running on port [::]:50087
+[2025-11-24 12:44:20,577][PM][INFO][PM Subscriber] - Discovered new drone: ID 1
+[2025-11-24 12:44:20,581][PM][INFO][PM Subscriber] - Discovered new drone: ID 2
+[2025-11-24 12:45:26,124][PM][INFO][PM Subscriber] - Started dynamic PM subscriber
+[2025-11-24 12:45:26,133][PM][INFO][gRPC PM] - Server running on port [::]:50087
+[2025-11-24 12:45:28,125][PM][INFO][PM Subscriber] - Discovered new drone: ID 1
+[2025-11-24 12:45:28,128][PM][INFO][PM Subscriber] - Discovered new drone: ID 2
+[2025-11-24 12:46:09,767][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-24 12:46:09,799][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-24 12:46:09,945][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 5.95} at grid: [1, 6]
+[2025-11-24 12:46:26,593][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-24 12:46:26,596][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-24 12:46:26,680][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 5.95} at grid: [1, 5]
+[2025-11-24 12:46:43,403][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-24 12:46:43,405][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-24 12:46:43,497][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 5.95} at grid: [1, 4]
+[2025-11-24 12:47:00,325][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-24 12:47:00,326][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-24 12:47:00,435][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 3.95} at grid: [1, 3]
+[2025-11-24 12:47:17,107][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-24 12:47:17,109][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-24 12:47:17,201][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 7.95} at grid: [1, 2]
+[2025-11-24 12:47:33,925][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-24 12:47:33,926][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-24 12:47:34,014][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 1.95} at grid: [1, 1]
+[2025-11-24 12:47:50,840][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-24 12:47:50,841][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-24 12:47:50,928][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 5.95} at grid: [1, 0]
+[2025-11-24 12:48:07,753][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-24 12:48:07,755][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-24 12:48:07,843][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 7.95} at grid: [0, 0]
+[2025-11-24 12:48:25,701][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-24 12:48:25,703][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-24 12:48:26,341][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 1.95} at grid: [0, 1]
+[2025-11-24 12:48:42,562][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-24 12:48:42,564][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-24 12:48:42,685][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 3.95} at grid: [0, 2]
+[2025-11-24 12:48:59,346][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-24 12:48:59,348][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-24 12:48:59,444][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 7.95} at grid: [0, 3]
+[2025-11-24 12:49:16,148][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-24 12:49:16,152][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-24 12:49:16,245][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 9.95} at grid: [0, 4]
+[2025-11-24 12:49:32,950][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-24 12:49:32,952][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-24 12:49:33,050][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 3.95} at grid: [0, 5]
+[2025-11-24 12:49:49,749][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-24 12:49:49,751][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-24 12:49:49,878][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 3.95} at grid: [0, 6]
+[2025-11-24 12:49:50,772][PM][INFO][PM Subscriber] - PM received from Drone 1
+[2025-11-24 12:49:50,776][PM][INFO][PM Manager] - Received PM for vehicle 1 with filename: isobus_pm
+[2025-11-24 12:49:50,776][PM][INFO][PM Manager] - Saving received PM to PrescriptionMap/pm_generation/Received/1_isobus_pm_received.json
+[2025-11-24 12:49:50,778][PM][INFO][PM Manager] - Received PM saved: PrescriptionMap/pm_generation/Received/1_isobus_pm_received.json
+[2025-11-24 12:49:50,778][PM][INFO][PM Manager] - Finish not activated for vehicle 1, skipping comparison
+[2025-11-24 12:49:50,778][PM][INFO][PM Subscriber] - PM data added to queue for Drone 1
+[2025-11-24 12:50:00,779][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-24 12:50:00,780][PM][INFO][PM Manager] - Received finish signal for vehicle 1
+[2025-11-24 12:50:00,780][PM][INFO][PM Manager] - Finish status activated for vehicle 1
+[2025-11-24 12:50:00,781][PM][INFO][PM Manager] - Starting comparison for vehicle 1
+[2025-11-24 12:50:00,783][PM][INFO][PM Manager] - Received files base names: ['1_isobus_pm']
+[2025-11-24 12:50:00,784][PM][INFO][PM Manager] - Found matching pair: 1_isobus_pm.json <-> 1_isobus_pm_received.json
+[2025-11-24 12:50:00,784][PM][INFO][PM Manager] - Found 1 unique matched file pairs for vehicle 1
+[2025-11-24 12:50:00,785][PM][INFO][PM Manager] - Content matches for vehicle 1, file 1_isobus_pm
+[2025-11-24 12:50:00,786][PM][INFO][PM Manager] - Moved generated file to Finished: 20251124_125000_1_isobus_pm.json
+[2025-11-24 12:50:00,786][PM][INFO][PM Manager] - Removed received file: 1_isobus_pm_received.json
+[2025-11-24 12:50:00,786][PM][INFO][PM Manager] - ALL files match for vehicle 1
+[2025-11-24 12:50:00,786][PM][INFO][PM Manager] - Finish status deactivated for vehicle 1
+[2025-11-24 12:52:47,270][PM][INFO][PM Subscriber] - Started dynamic PM subscriber
+[2025-11-24 12:52:47,272][PM][INFO][gRPC PM] - Server running on port [::]:50087
+[2025-11-24 12:52:49,272][PM][INFO][PM Subscriber] - Discovered new drone: ID 1
+[2025-11-24 12:52:49,276][PM][INFO][PM Subscriber] - Discovered new drone: ID 2
+[2025-11-24 12:53:28,798][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-24 12:53:28,831][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-24 12:53:28,923][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 5.95} at grid: [1, 6]
+[2025-11-24 12:53:45,589][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-24 12:53:45,592][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-24 12:53:45,678][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 5.95} at grid: [1, 5]
+[2025-11-24 12:54:02,701][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-24 12:54:02,703][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-24 12:54:02,798][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 5.95} at grid: [1, 4]
+[2025-11-24 12:54:19,824][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-24 12:54:19,828][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-24 12:54:19,949][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 3.95} at grid: [1, 3]
+[2025-11-24 12:54:36,614][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-24 12:54:36,616][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-24 12:54:36,714][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 7.95} at grid: [1, 2]
+[2025-11-24 12:54:54,138][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-24 12:54:54,139][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-24 12:54:54,247][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 1.95} at grid: [1, 1]
+[2025-11-24 12:55:11,476][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-24 12:55:11,478][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-24 12:55:11,597][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 5.95} at grid: [1, 0]
+[2025-11-24 12:55:28,899][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-24 12:55:28,901][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-24 12:55:29,026][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 7.95} at grid: [0, 0]
+[2025-11-24 12:55:46,053][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-24 12:55:46,055][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-24 12:55:47,064][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 1.95} at grid: [0, 1]
+[2025-11-24 12:56:03,688][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-24 12:56:03,689][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-24 12:56:03,833][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 3.95} at grid: [0, 2]
+[2025-11-24 12:56:20,898][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-24 12:56:20,902][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-24 12:56:21,003][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 7.95} at grid: [0, 3]
+[2025-11-24 12:56:57,451][PM][INFO][PM Subscriber] - Started dynamic PM subscriber
+[2025-11-24 12:56:57,451][PM][INFO][gRPC PM] - Server running on port [::]:50087
+[2025-11-24 12:56:59,451][PM][INFO][PM Subscriber] - Discovered new drone: ID 1
+[2025-11-24 12:56:59,455][PM][INFO][PM Subscriber] - Discovered new drone: ID 2
+[2025-11-24 12:57:41,114][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-24 12:57:41,167][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-24 12:57:41,288][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 5.95} at grid: [1, 6]
+[2025-11-24 12:57:57,978][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-24 12:57:57,981][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-24 12:57:58,097][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 5.95} at grid: [1, 5]
+[2025-11-24 12:58:14,921][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-24 12:58:14,922][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-24 12:58:15,029][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 5.95} at grid: [1, 4]
+[2025-11-24 12:58:31,696][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-24 12:58:31,697][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-24 12:58:31,806][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 3.95} at grid: [1, 3]
+[2025-11-24 12:58:48,514][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-24 12:58:48,516][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-24 12:58:49,326][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 7.95} at grid: [1, 2]
+[2025-11-24 12:59:05,350][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-24 12:59:05,351][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-24 12:59:05,441][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 1.95} at grid: [1, 1]
+[2025-11-24 12:59:22,137][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-24 12:59:22,140][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-24 12:59:22,236][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 5.95} at grid: [1, 0]
+[2025-11-24 12:59:40,952][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-24 12:59:40,956][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-24 12:59:41,092][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 7.95} at grid: [0, 0]
+[2025-11-24 12:59:57,794][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-24 12:59:57,796][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-24 12:59:57,906][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 1.95} at grid: [0, 1]
+[2025-11-24 13:00:56,236][PM][INFO][PM Subscriber] - Started dynamic PM subscriber
+[2025-11-24 13:00:56,247][PM][INFO][gRPC PM] - Server running on port [::]:50087
+[2025-11-24 13:00:58,237][PM][INFO][PM Subscriber] - Discovered new drone: ID 1
+[2025-11-24 13:00:58,241][PM][INFO][PM Subscriber] - Discovered new drone: ID 2
+[2025-11-24 13:01:42,536][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-24 13:01:42,555][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-24 13:01:42,672][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 5.95} at grid: [1, 6]
+[2025-11-24 13:01:59,493][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-24 13:01:59,494][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-24 13:01:59,594][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 5.95} at grid: [1, 5]
+[2025-11-24 13:02:32,994][PM][INFO][PM Subscriber] - Started dynamic PM subscriber
+[2025-11-24 13:02:33,009][PM][INFO][gRPC PM] - Server running on port [::]:50087
+[2025-11-24 13:02:34,995][PM][INFO][PM Subscriber] - Discovered new drone: ID 1
+[2025-11-24 13:02:34,998][PM][INFO][PM Subscriber] - Discovered new drone: ID 2
+[2025-11-24 13:03:20,686][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-24 13:03:20,703][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-24 13:03:20,826][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 5.95} at grid: [1, 6]
+[2025-11-24 13:03:37,514][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-24 13:03:37,516][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-24 13:03:37,602][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 5.95} at grid: [1, 5]
+[2025-11-24 13:03:54,316][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-24 13:03:54,323][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-24 13:03:54,422][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 5.95} at grid: [1, 4]
+[2025-11-24 13:04:11,113][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-24 13:04:11,117][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-24 13:04:11,205][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 3.95} at grid: [1, 3]
+[2025-11-24 13:04:27,902][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-24 13:04:27,906][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-24 13:04:28,148][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 7.95} at grid: [1, 2]
+[2025-11-24 13:04:44,772][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-24 13:04:44,773][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-24 13:04:44,885][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 1.95} at grid: [1, 1]
+[2025-11-24 13:05:01,566][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-24 13:05:01,568][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-24 13:05:01,663][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 5.95} at grid: [1, 0]
+[2025-11-24 13:05:18,384][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-24 13:05:18,387][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-24 13:05:18,486][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 7.95} at grid: [0, 0]
+[2025-11-24 13:05:35,209][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-24 13:05:35,209][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-24 13:05:35,293][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 1.95} at grid: [0, 1]
+[2025-11-24 13:05:52,117][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-24 13:05:52,119][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-24 13:05:52,325][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 3.95} at grid: [0, 2]
+[2025-11-24 13:06:08,844][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-24 13:06:08,848][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-24 13:06:08,969][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 7.95} at grid: [0, 3]
+[2025-11-24 13:06:25,673][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-24 13:06:25,675][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-24 13:06:25,768][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 9.95} at grid: [0, 4]
+[2025-11-24 13:06:42,592][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-24 13:06:42,594][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-24 13:06:42,700][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 3.95} at grid: [0, 5]
+[2025-11-24 13:06:59,325][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-24 13:06:59,337][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-24 13:06:59,446][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 3.95} at grid: [0, 6]
+[2025-11-24 13:07:00,379][PM][INFO][PM Subscriber] - PM received from Drone 1
+[2025-11-24 13:07:00,383][PM][INFO][PM Manager] - Received PM for vehicle 1 with filename: isobus_pm
+[2025-11-24 13:07:00,383][PM][INFO][PM Manager] - Saving received PM to PrescriptionMap/pm_generation/Received/1_isobus_pm_received.json
+[2025-11-24 13:07:00,384][PM][INFO][PM Manager] - Received PM saved: PrescriptionMap/pm_generation/Received/1_isobus_pm_received.json
+[2025-11-24 13:07:00,385][PM][INFO][PM Manager] - Finish not activated for vehicle 1, skipping comparison
+[2025-11-24 13:07:00,385][PM][INFO][PM Subscriber] - PM data added to queue for Drone 1
+[2025-11-24 13:07:10,327][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-24 13:07:10,327][PM][INFO][PM Manager] - Received finish signal for vehicle 1
+[2025-11-24 13:07:10,328][PM][INFO][PM Manager] - Finish status activated for vehicle 1
+[2025-11-24 13:07:10,328][PM][INFO][PM Manager] - Starting comparison for vehicle 1
+[2025-11-24 13:07:10,328][PM][INFO][PM Manager] - Received files base names: ['1_isobus_pm']
+[2025-11-24 13:07:10,328][PM][INFO][PM Manager] - Found matching pair: 1_isobus_pm.json <-> 1_isobus_pm_received.json
+[2025-11-24 13:07:10,329][PM][INFO][PM Manager] - Found 1 unique matched file pairs for vehicle 1
+[2025-11-24 13:07:10,330][PM][INFO][PM Manager] - Content matches for vehicle 1, file 1_isobus_pm
+[2025-11-24 13:07:10,330][PM][INFO][PM Manager] - Moved generated file to Finished: 20251124_130710_1_isobus_pm.json
+[2025-11-24 13:07:10,330][PM][INFO][PM Manager] - Removed received file: 1_isobus_pm_received.json
+[2025-11-24 13:07:10,331][PM][INFO][PM Manager] - ALL files match for vehicle 1
+[2025-11-24 13:07:10,331][PM][INFO][PM Manager] - Finish status deactivated for vehicle 1
+[2025-11-24 13:12:40,256][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-24 13:12:40,258][PM][INFO][PM Manager] - Received finish signal for vehicle 2
+[2025-11-24 13:12:40,259][PM][INFO][PM Manager] - Finish status activated for vehicle 2
+[2025-11-24 13:12:40,262][PM][INFO][PM Manager] - Starting comparison for vehicle 2
+[2025-11-24 13:12:40,263][PM][INFO][PM Manager] - Received files base names: []
+[2025-11-24 13:12:40,265][PM][INFO][PM Manager] - Found 0 unique matched file pairs for vehicle 2
+[2025-11-24 13:12:40,265][PM][INFO][PM Manager] - No matching file pairs found for vehicle 2
+[2025-11-24 13:15:25,643][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-24 13:15:25,644][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-24 13:15:25,754][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 5.95} at grid: [1, 6]
+[2025-11-24 13:15:45,027][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-24 13:15:45,030][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-24 13:15:45,135][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 5.95} at grid: [1, 5]
+[2025-11-24 13:16:01,961][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-24 13:16:01,962][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-24 13:16:02,067][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 5.95} at grid: [1, 4]
+[2025-11-24 13:16:18,896][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-24 13:16:18,898][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-24 13:16:19,013][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 3.95} at grid: [1, 3]
+[2025-11-24 13:16:35,836][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-24 13:16:35,837][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-24 13:16:35,949][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 7.95} at grid: [1, 2]
+[2025-11-24 13:16:52,775][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-24 13:16:52,776][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-24 13:16:52,867][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 1.95} at grid: [1, 1]
+[2025-11-24 13:17:09,694][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-24 13:17:09,695][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-24 13:17:09,842][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 5.95} at grid: [1, 0]
+[2025-11-24 13:17:26,668][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-24 13:17:26,669][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-24 13:17:28,822][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 7.95} at grid: [0, 0]
+[2025-11-24 13:17:43,446][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-24 13:17:43,448][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-24 13:17:43,557][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 1.95} at grid: [0, 1]
+[2025-11-24 13:18:00,409][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-24 13:18:00,412][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-24 13:18:00,531][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 3.95} at grid: [0, 2]
+[2025-11-24 13:18:17,355][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-24 13:18:17,357][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-24 13:18:17,479][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 7.95} at grid: [0, 3]
+[2025-11-24 13:18:34,303][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-24 13:18:34,304][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-24 13:18:34,422][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 9.95} at grid: [0, 4]
+[2025-11-24 13:18:51,450][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-24 13:18:51,451][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-24 13:18:51,544][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 3.95} at grid: [0, 5]
+[2025-11-24 13:19:08,571][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-24 13:19:08,574][PM][INFO][PM Manager] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py
+[2025-11-24 13:19:08,711][PM][INFO][PM Manager] - PM output: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/1_isobus_pm.json with treatments: {'Grape_bunch': 3.95} at grid: [0, 6]
+[2025-11-24 13:19:09,579][PM][INFO][PM Subscriber] - PM received from Drone 1
+[2025-11-24 13:19:09,584][PM][INFO][PM Manager] - Received PM for vehicle 1 with filename: isobus_pm
+[2025-11-24 13:19:09,584][PM][INFO][PM Manager] - Saving received PM to PrescriptionMap/pm_generation/Received/1_isobus_pm_received.json
+[2025-11-24 13:19:09,586][PM][INFO][PM Manager] - Received PM saved: PrescriptionMap/pm_generation/Received/1_isobus_pm_received.json
+[2025-11-24 13:19:09,586][PM][INFO][PM Manager] - Finish not activated for vehicle 1, skipping comparison
+[2025-11-24 13:19:09,587][PM][INFO][PM Subscriber] - PM data added to queue for Drone 1
+[2025-11-24 13:19:19,592][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-24 13:19:19,593][PM][INFO][PM Manager] - Received finish signal for vehicle 1
+[2025-11-24 13:19:19,594][PM][INFO][PM Manager] - Finish status activated for vehicle 1
+[2025-11-24 13:19:19,594][PM][INFO][PM Manager] - Starting comparison for vehicle 1
+[2025-11-24 13:19:19,596][PM][INFO][PM Manager] - Received files base names: ['1_isobus_pm']
+[2025-11-24 13:19:19,600][PM][INFO][PM Manager] - Found matching pair: 1_isobus_pm.json <-> 1_isobus_pm_received.json
+[2025-11-24 13:19:19,601][PM][INFO][PM Manager] - Found 1 unique matched file pairs for vehicle 1
+[2025-11-24 13:19:19,602][PM][INFO][PM Manager] - Content matches for vehicle 1, file 1_isobus_pm
+[2025-11-24 13:19:19,603][PM][INFO][PM Manager] - Moved generated file to Finished: 20251124_131919_1_isobus_pm.json
+[2025-11-24 13:19:19,603][PM][INFO][PM Manager] - Removed received file: 1_isobus_pm_received.json
+[2025-11-24 13:19:19,603][PM][INFO][PM Manager] - ALL files match for vehicle 1
+[2025-11-24 13:19:19,603][PM][INFO][PM Manager] - Finish status deactivated for vehicle 1
+[2025-11-24 13:24:49,568][PM][INFO][gRPC PM] - Data PM received from Mission Management
+[2025-11-24 13:24:49,569][PM][INFO][PM Manager] - Received finish signal for vehicle 2
+[2025-11-24 13:24:49,570][PM][INFO][PM Manager] - Finish status activated for vehicle 2
+[2025-11-24 13:24:49,570][PM][INFO][PM Manager] - Starting comparison for vehicle 2
+[2025-11-24 13:24:49,570][PM][INFO][PM Manager] - Received files base names: []
+[2025-11-24 13:24:49,572][PM][INFO][PM Manager] - Found 0 unique matched file pairs for vehicle 2
+[2025-11-24 13:24:49,574][PM][INFO][PM Manager] - No matching file pairs found for vehicle 2

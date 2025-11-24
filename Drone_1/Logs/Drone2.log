@@ -1,0 +1,92 @@
+[2025-11-21 14:52:23,911][Drone 2][INFO][Init Drone] - Complete cleanup finished
+[2025-11-21 14:52:23,912][Drone 2][INFO][gRPC Metrics] - Metrics client thread started successfully
+[2025-11-21 14:52:23,914][Drone 2][INFO][Init Drone] - All system components initialized successfully
+[2025-11-21 14:52:23,926][Drone 2][INFO][gRPC Commands] - Server running on port 51001
+[2025-11-21 14:52:23,954][Drone 2][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2025-11-21 14:52:33,987][Drone 2][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2025-11-21 14:52:44,121][Drone 2][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2025-11-21 14:52:54,159][Drone 2][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2025-11-21 14:53:04,196][Drone 2][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2025-11-21 14:53:14,237][Drone 2][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2025-11-21 14:53:24,270][Drone 2][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2025-11-21 14:53:34,305][Drone 2][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2025-11-21 14:53:44,338][Drone 2][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2025-11-21 14:53:54,381][Drone 2][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2025-11-21 14:54:04,414][Drone 2][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2025-11-21 14:54:14,446][Drone 2][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2025-11-21 14:54:24,479][Drone 2][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2025-11-21 14:54:34,513][Drone 2][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2025-11-21 14:54:44,546][Drone 2][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2025-11-21 14:54:54,579][Drone 2][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2025-11-21 14:55:04,612][Drone 2][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2025-11-21 14:55:14,645][Drone 2][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2025-11-21 14:55:24,678][Drone 2][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2025-11-21 14:55:34,711][Drone 2][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2025-11-21 14:55:46,799][Drone 2][ERROR][gRPC Metrics] - Connection error: <_InactiveRpcError of RPC that terminated with:
+	status = StatusCode.UNAVAILABLE
+	details = "Socket closed"
+	debug_error_string = "UNKNOWN:Error received from peer  {grpc_message:"Socket closed", grpc_status:14}"
+>
+[2025-11-21 20:56:03,647][Drone 2][INFO][Init Drone] - Complete cleanup finished
+[2025-11-21 20:56:03,649][Drone 2][INFO][gRPC Metrics] - Metrics client thread started successfully
+[2025-11-21 20:56:03,650][Drone 2][INFO][Init Drone] - All system components initialized successfully
+[2025-11-21 20:56:03,662][Drone 2][INFO][gRPC Commands] - Server running on port 51001
+[2025-11-21 20:56:03,689][Drone 2][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2025-11-21 20:56:13,728][Drone 2][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2025-11-21 20:56:23,761][Drone 2][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2025-11-21 20:56:33,795][Drone 2][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2025-11-21 20:56:43,829][Drone 2][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2025-11-21 20:56:53,866][Drone 2][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2025-11-21 20:57:03,899][Drone 2][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2025-11-21 20:57:13,934][Drone 2][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2025-11-21 20:57:19,707][Drone 2][INFO][gRPC Commands] - Command received
+[2025-11-21 20:57:19,708][Drone 2][INFO][COMMANDS] - Processing NAV_WAYPOINT command
+[2025-11-21 20:57:19,708][Drone 2][INFO][NAV_WAYPOINT] - Going to WP...
+[2025-11-21 20:57:23,968][Drone 2][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2025-11-21 20:57:29,708][Drone 2][INFO][NAV_WAYPOINT] - Waypoint reached
+[2025-11-21 20:57:29,708][Drone 2][INFO][COMMANDS] - Command executed successfully
+[2025-11-21 20:57:29,711][Drone 2][INFO][gRPC Commands] - Feedback sent to ROS2
+[2025-11-21 20:57:30,739][Drone 2][INFO][gRPC Commands] - Command received
+[2025-11-21 20:57:30,740][Drone 2][INFO][COMMANDS] - Processing CAMERA_IMAGE command
+[2025-11-21 20:57:30,740][Drone 2][INFO][CAMERA_IMAGE] - Taking picture...
+[2025-11-21 20:57:31,794][Drone 2][INFO][CAMERA_IMAGE] - Picture taken successfully as 40.209544_-3.465575.jpg
+[2025-11-21 20:57:31,794][Drone 2][INFO][COMMANDS] - Command executed successfully
+[2025-11-21 20:57:31,797][Drone 2][INFO][gRPC Commands] - Feedback sent to ROS2
+[2025-11-21 20:57:32,822][Drone 2][INFO][gRPC Commands] - Command received
+[2025-11-21 20:57:32,822][Drone 2][INFO][COMMANDS] - Processing ANALYZE_IMAGE command
+[2025-11-21 20:57:32,822][Drone 2][INFO][ANALYZE_IMAGE] - Analyzing image...
+[2025-11-21 20:57:32,823][Drone 2][INFO][ANALYZE_IMAGE] - Starting analysis for agricultural image: Images/Camera/40.209544_-3.465575.jpg
+[2025-11-21 20:57:32,823][Drone 2][INFO][ANALYZE_IMAGE] - Executing agricultural model: Images/Models/Grape_Bunch_Hailo8/init_grape_bunch_hailo8.py
+[2025-11-21 20:57:34,003][Drone 2][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2025-11-21 20:57:37,096][Drone 2][INFO][ANALYZE_IMAGE] - Model execution completed with output: {'Grape_bunch': 5.95}
+[2025-11-21 20:57:38,096][Drone 2][INFO][ANALYZE_IMAGE] - Analysis completed
+[2025-11-21 20:57:38,099][Drone 2][INFO][PM_MANAGER] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus.py
+[2025-11-21 20:57:38,163][Drone 2][INFO][PM_MANAGER] - PM output [0]: 
+Script execution failed: PrescriptionMap/pm_generation/ISOBUS/pm_isobus.py
+Return code: 1
+Stderr: Traceback (most recent call last):
+  File "/home/estela/Fleet_Manager/Drone/PrescriptionMap/pm_generation/ISOBUS/pm_isobus.py", line 798, in <module>
+    generate_pm(amount, grid, long, lat)
+  File "/home/estela/Fleet_Manager/Drone/PrescriptionMap/pm_generation/ISOBUS/pm_isobus.py", line 343, in generate_pm
+    with open(path, "w") as f:
+         ^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'PrescriptionMap/pm_generation/ISOBUS/PMs/isobus_pm.json'
+[2025-11-21 20:57:38,166][Drone 2][INFO][COMMANDS] - Command executed successfully
+[2025-11-21 20:57:38,169][Drone 2][INFO][gRPC Commands] - Feedback sent to ROS2
+[2025-11-21 20:57:44,041][Drone 2][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2025-11-21 20:57:54,074][Drone 2][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2025-11-21 20:57:56,015][Drone 2][INFO][gRPC Commands] - Command received
+[2025-11-21 20:57:56,015][Drone 2][INFO][COMMANDS] - Processing NAV_WAYPOINT command
+[2025-11-21 20:57:56,016][Drone 2][INFO][NAV_WAYPOINT] - Going to WP...
+[2025-11-21 20:58:04,107][Drone 2][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2025-11-21 20:58:06,018][Drone 2][INFO][NAV_WAYPOINT] - Waypoint reached
+[2025-11-21 20:58:06,019][Drone 2][INFO][COMMANDS] - Command executed successfully
+[2025-11-21 20:58:06,022][Drone 2][INFO][gRPC Commands] - Feedback sent to ROS2
+[2025-11-21 20:58:09,169][Drone 2][INFO][gRPC Commands] - Command received
+[2025-11-21 20:58:09,169][Drone 2][INFO][COMMANDS] - Processing ANALYZE_IMAGE command
+[2025-11-21 20:58:09,169][Drone 2][INFO][ANALYZE_IMAGE] - Analyzing image...
+[2025-11-21 20:58:09,169][Drone 2][INFO][ANALYZE_IMAGE] - Starting analysis for agricultural image: Images/Camera/40.209544_-3.466066.jpg
+[2025-11-21 20:58:09,169][Drone 2][INFO][ANALYZE_IMAGE] - Executing agricultural model: Images/Models/Grape_Bunch_Hailo8/init_grape_bunch_hailo8.py
+[2025-11-21 20:58:14,140][Drone 2][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2025-11-21 20:58:24,277][Drone 2][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2025-11-21 20:58:34,309][Drone 2][INFO][gRPC Metrics] - System Metrics sent to ROS2

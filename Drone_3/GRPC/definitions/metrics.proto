@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package metrics_communication;
+
+service MetricsCommunication {
+  rpc SendMetrics (MetricsRequest) returns (MetricsResponse) {}
+}
+
+message MetricsRequest {
+  repeated string metrics = 1;
+}
+
+message MetricsResponse {
+  string confirmation = 1;
+}

@@ -232,12 +232,76 @@ class DevicesManager:
         msg_type = message['type']
         
         if msg_type == 'Mission':
-            # Handle mission creation and coordination
-            # Process mission through mission device and coordinate with field device
-            mission_id, mission_device_id = self.mission_device.handle_message(message)
-            self.field_device.handle_message(message, mission_id, mission_device_id)
+            self.mqtt_logger.info(f"[DevicesManager] Processing Mission: {message.get('mission_id')}")
             
-        elif msg_type == 'Telemetry':
+            # Crear/actualizar misión
+            mission_id, mission_device_id = self.mission_device.handle_message(message)
+            self.mqtt_logger.info(f"[DevicesManager] Mission created with ID: {mission_id}, Device ID: {mission_device_id}")
+            
+            self.field_device.handle_message(message, mission_id, mission_device_id)
+        
+            # CAMBIO AQUÍ: Extraer vehicle_ids del telemetry en lugar del message
+            vehicle_ids = message.get('telemetry', {}).get('vehicles_id', [])
+            self.mqtt_logger.info(f"[DevicesManager] Mission vehicles from telemetry: {vehicle_ids}")
+
+            # FORZAR creación de relaciones con vehículos
+            for vehicle_id in vehicle_ids:
+                self.mqtt_logger.info(f"[DevicesManager] Processing vehicle {vehicle_id} for mission {mission_id}")
+                
+                # Verificar si el vehículo existe
+                if vehicle_id in self.vehicle_device.vehicles:
+                    vehicle_device_id = self.vehicle_device.vehicles[vehicle_id]["device_id"]
+                    self.mqtt_logger.info(f"[DevicesManager] Vehicle exists, creating relation: {mission_device_id} -> {vehicle_device_id}")
+                    
+                    success = self.mission_device.base.tb.create_relation(
+                        mission_device_id,
+                        vehicle_device_id,
+                        "ASSIGNED_TO"
+                    )
+                    
+                    if success:
+                        self.mqtt_logger.info(f"[DevicesManager] SUCCESS: Relation created for vehicle {vehicle_id}")
+                    else:
+                        self.mqtt_logger.error(f"[DevicesManager] FAILED: Relation creation for vehicle {vehicle_id}")
+                else:
+                    self.mqtt_logger.warning(f"[DevicesManager] Vehicle {vehicle_id} not found in vehicle_device.vehicles")
+                    
+                    # Intentar crear el vehículo si no existe
+                    self.mqtt_logger.info(f"[DevicesManager] Attempting to create missing vehicle {vehicle_id}")
+                    fake_statevector = {
+                        'vehicle_id': vehicle_id,
+                        'telemetry': {
+                            'time': '2024-01-01T00:00:00Z',
+                            'vehicle_id': vehicle_id,
+                            'vehicle_status': 'UNKNOWN',
+                            'battery_capacity': 0,
+                            'battery_percentage': 0,
+                            'last_update': '2024-01-01T00:00:00Z',
+                            'longitude': 0,
+                            'latitude': 0,
+                            'altitude': 0,
+                            'roll': 0,
+                            'pitch': 0,
+                            'yaw': 0,
+                            'gimbal_pitch': 0,
+                            'linear_speed': 0
+                        }
+                    }
+                    self.vehicle_device.handle_message(fake_statevector, self.mission_device.missions)
+                    
+                    # Intentar relación nuevamente
+                    if vehicle_id in self.vehicle_device.vehicles:
+                        vehicle_device_id = self.vehicle_device.vehicles[vehicle_id]["device_id"]
+                        success = self.mission_device.base.tb.create_relation(
+                            mission_device_id,
+                            vehicle_device_id,
+                            "ASSIGNED_TO"
+                        )
+                        if success:
+                            self.mqtt_logger.info(f"[DevicesManager] SUCCESS: Relation created after vehicle creation")
+            
+            
+        elif msg_type == 'Feedback':
             # Handle real-time telemetry data processing and distribution
             mission_id = message['mission_id']
             
@@ -256,42 +320,46 @@ class DevicesManager:
                     self.mission_device.base.send_telemetry(client, field_data)
         
         elif msg_type == 'StateVector':
-            # Handle vehicle state and position updates
-            # Pass mission context to vehicle handler for proper coordination
+            # Para StateVector sin misión, procesar normalmente
+            vehicle_id = message['vehicle_id']
+            self.mqtt_logger.info(f"[DevicesManager] Processing StateVector for vehicle {vehicle_id}")
+            
             self.vehicle_device.handle_message(
                 message, 
                 self.mission_device.missions
             )
+            
         
         elif msg_type == 'Finish':
-            # Handle mission completion and comprehensive cleanup
             mission_id = message['mission_id']
             mission = self.mission_device.missions.get(mission_id, {})
             mission_device_id = mission.get('device_id')
             
-            # Cleanup all mission-related devices in proper order
-            self.feedback_device.cleanup(mission_id, mission_device_id)
-            self.field_device.cleanup(mission_id)
-            self.mission_device.cleanup(mission_id)
-            
-            # Clean up vehicle-mission relationships
-            if mission_device_id:
-                for vehicle_id in mission.get('vehicles', []):
-                    vehicle = self.vehicle_device.vehicles.get(vehicle_id, {})
+            self.mqtt_logger.info(f"[DevicesManager] Processing Finish for mission {mission_id}")
+
+            # Eliminar relaciones vehículo-misión
+            vehicle_ids = mission.get('vehicles', [])
+            for vehicle_id in vehicle_ids:
+                vehicle = self.vehicle_device.vehicles.get(vehicle_id)
+                if vehicle:
                     vehicle_device_id = vehicle.get('device_id')
                     if vehicle_device_id:
-                        # Remove vehicle assignment relationship
+                        self.mqtt_logger.info(f"[DevicesManager] Deleting relation: {mission_device_id} -> {vehicle_device_id}")
                         self.mission_device.base.tb.delete_relation(
-                            mission_device_id, 
-                            vehicle_device_id, 
+                            mission_device_id,
+                            vehicle_device_id,
                             "ASSIGNED_TO"
                         )
 
-            # Clean up vehicle metrics for completed mission
-            if 'vehicles' in mission:
-                for vehicle_id in mission['vehicles']:
-                    self.metric_device.cleanup(vehicle_id)
+            # Limpieza normal
+            self.feedback_device.cleanup(mission_id, mission_device_id)
+            self.field_device.cleanup(mission_id)
+            self.mission_device.cleanup(mission_id)
 
+            # Limpiar métricas de vehículos
+            for vehicle_id in vehicle_ids:
+                self.metric_device.cleanup(vehicle_id)
+                
         elif msg_type == 'Treatment':
             # Handle agricultural treatment operations
             self.treatment_device.handle_message(message)

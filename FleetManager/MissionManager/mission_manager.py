@@ -906,6 +906,7 @@ class MissionManagerThread(threading.Thread):
                 'plans': plan_summary,
                 'tasks': task_summary,
                 'vehicles': vehicle_summary,
+                'vehicles_id': list(self.plans.keys())
             }
             
             return telemetry

@@ -1,0 +1,6 @@
+paho-mqtt==1.6.1
+concurrent-log-handler
+picamera2>=0.3.13
+python-dateutil>=2.9.0
+grpcio
+grpcio-tools

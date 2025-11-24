@@ -139,28 +139,39 @@ class MissionDevice:
         """
         mission_id = message['mission_id']
         
-        # Initialize mission entry if not exists
+        self.mqtt_logger.info(f"[MissionDevice] Processing mission {mission_id}")
+
+        # Inicializar misión si no existe
         if mission_id not in self.missions:
             self.missions[mission_id] = {
                 'device_id': None,
                 'access_token': None,
-                'fields': [{} for _ in message['fields']],  # Initialize field placeholders
-                'vehicles': message.get('vehicles', [])
+                'fields': [{} for _ in message.get('fields', [])],
+                'vehicles': []
             }
 
-        # Create ThingsBoard device for the mission
-        mission_device_id, access_token = self.base.create_device(f"Mission {mission_id}", "Mission")
-        
-        # Update mission registry with device information
-        self.missions[mission_id]['device_id'] = mission_device_id
-        self.missions[mission_id]['access_token'] = access_token
-        self.missions[mission_id]['vehicles'] = message.get('vehicles', [])
+        # Crear dispositivo de misión en ThingsBoard si no existe
+        if self.missions[mission_id]['device_id'] is None:
+            mission_device_id, access_token = self.base.create_device(f"Mission {mission_id}", "Mission")
+            self.missions[mission_id]['device_id'] = mission_device_id
+            self.missions[mission_id]['access_token'] = access_token
+            client = self.base.create_client(access_token)
+            # Enviar telemetría inicial si viene
+            if 'telemetry' in message:
+                self.base.send_telemetry(client, message['telemetry'])
+        else:
+            mission_device_id = self.missions[mission_id]['device_id']
 
-        # Establish MQTT connection and send initial telemetry
-        client = self.base.create_client(access_token)
-        self.base.send_telemetry(client, message['telemetry'])
-        
-        return mission_id, mission_device_id
+        # CAMBIO AQUÍ: Usar vehicles_id del telemetry en lugar de vehicles del message
+        if 'telemetry' in message and 'vehicles_id' in message['telemetry']:
+            vehicles_from_telemetry = message['telemetry']['vehicles_id']
+            if vehicles_from_telemetry is not None:
+                for vehicle_id in vehicles_from_telemetry:
+                    if vehicle_id not in self.missions[mission_id]['vehicles']:
+                        self.missions[mission_id]['vehicles'].append(vehicle_id)
+                self.mqtt_logger.info(f"[MissionDevice] Updated vehicles for mission {mission_id}: {self.missions[mission_id]['vehicles']}")
+
+        return mission_id, self.missions[mission_id]['device_id']
     
     def cleanup(self, mission_id):
         """

@@ -11,66 +11,37 @@ REST API Proxy Server Module
     - Proxies API requests to backend service
     - Adds necessary CORS headers to responses
 """
-
 from flask import Flask, request, Response
 import requests
-from typing import Union
 
-# Configuration constants
 FRONTEND_FILE = 'rest_client.html'
-BACKEND_URL = 'http://10.32.221.188:8082/mission'
+BACKEND_URL = 'http://192.168.0.42:8082/mission'
 SERVER_PORT = 8090
 
 app = Flask(__name__)
 
 @app.route('/')
-def serve_html() -> Union[str, Response]:
-    try:
-        with open(FRONTEND_FILE, 'r', encoding='utf-8') as f:
-            return f.read()
-    except FileNotFoundError as e:
-        return Response(
-            f"Frontend file not found: {str(e)}",
-            status=500,
-            mimetype='text/plain'
-        )
-    except UnicodeDecodeError as e:
-        return Response(
-            f"Encoding error reading frontend file: {str(e)}. "
-            "Try saving the HTML file using UTF-8.",
-            status=500,
-            mimetype='text/plain'
-        )
-        
+def serve_html():
+    with open(FRONTEND_FILE, 'r', encoding='utf-8') as f:
+        return f.read()
+
+# CORS preflight
 @app.route('/mission', methods=['OPTIONS'])
-def handle_options() -> Response:
-    """Handle CORS preflight requests.
-    
-    :return: Empty response with CORS headers
-    :rtype: Response
-    """
+def handle_options():
     resp = Response()
+    resp.status_code = 200
     resp.headers['Access-Control-Allow-Origin'] = '*'
     resp.headers['Access-Control-Allow-Methods'] = 'POST, OPTIONS'
-    resp.headers['Access-Control-Allow-Headers'] = 'Content-Type'
+    resp.headers['Access-Control-Allow-Headers'] = '*'
     return resp
 
+# Proxy POST
 @app.route('/mission', methods=['POST'])
-def proxy_mission() -> Response:
-    """Proxy mission requests to backend API with CORS support.
-    
-    :return: Proxied response from backend with CORS headers
-    :rtype: Response
-    
-    .. note::
-        Preserves all headers and status codes from the backend service
-        while adding required CORS access headers
-    """
+def proxy_mission():
     try:
-        # Forward request to backend API
         backend_resp = requests.post(
             BACKEND_URL,
-            headers={'Content-Type': 'application/json'},
+            headers={'Content-Type': request.headers.get('Content-Type', 'application/json')},
             data=request.get_data(),
             timeout=10
         )
@@ -81,16 +52,16 @@ def proxy_mission() -> Response:
             headers={'Access-Control-Allow-Origin': '*'}
         )
 
-    # Create proxy response with CORS headers
-    return Response(
+    resp = Response(
         backend_resp.content,
         status=backend_resp.status_code,
-        headers={
-            'Content-Type': backend_resp.headers.get('Content-Type', 'application/json'),
-            'Access-Control-Allow-Origin': '*'
-        }
+        mimetype=backend_resp.headers.get('Content-Type', 'application/json')
     )
+    # Añadir CORS headers en la respuesta POST
+    resp.headers['Access-Control-Allow-Origin'] = '*'
+    resp.headers['Access-Control-Allow-Methods'] = 'POST, OPTIONS'
+    resp.headers['Access-Control-Allow-Headers'] = '*'
+    return resp
 
 if __name__ == '__main__':
-    """Run the development server on configured port."""
-    app.run(port=SERVER_PORT)
+    app.run(host="0.0.0.0", port=SERVER_PORT)

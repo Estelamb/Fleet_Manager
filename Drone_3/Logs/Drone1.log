@@ -1,0 +1,626 @@
+[2025-11-21 14:51:21,990][Drone 1][INFO][Init Drone] - Complete cleanup finished
+[2025-11-21 14:51:21,992][Drone 1][INFO][gRPC Metrics] - Metrics client thread started successfully
+[2025-11-21 14:51:21,994][Drone 1][INFO][Init Drone] - All system components initialized successfully
+[2025-11-21 14:51:22,006][Drone 1][INFO][gRPC Commands] - Server running on port 51001
+[2025-11-21 14:51:22,036][Drone 1][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2025-11-21 14:51:32,070][Drone 1][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2025-11-21 14:51:42,108][Drone 1][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2025-11-21 14:51:52,141][Drone 1][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2025-11-21 14:52:02,173][Drone 1][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2025-11-21 14:52:12,215][Drone 1][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2025-11-21 14:52:22,256][Drone 1][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2025-11-21 14:52:32,289][Drone 1][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2025-11-21 14:52:42,324][Drone 1][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2025-11-21 14:52:52,358][Drone 1][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2025-11-21 14:53:02,394][Drone 1][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2025-11-21 14:53:12,431][Drone 1][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2025-11-21 14:53:22,463][Drone 1][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2025-11-21 14:53:32,496][Drone 1][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2025-11-21 14:53:42,534][Drone 1][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2025-11-21 14:53:42,874][Drone 1][INFO][gRPC Commands] - Command received
+[2025-11-21 14:53:42,875][Drone 1][INFO][COMMANDS] - Processing NAV_TAKEOFF command
+[2025-11-21 14:53:42,875][Drone 1][INFO][NAV_TAKEOFF] - Taking off...
+[2025-11-21 14:53:52,568][Drone 1][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2025-11-21 14:53:52,875][Drone 1][INFO][NAV_TAKEOFF] - Takeoff successful
+[2025-11-21 14:53:52,876][Drone 1][INFO][COMMANDS] - Command executed successfully
+[2025-11-21 14:53:52,876][Drone 1][ERROR][gRPC Commands] - Error in SendCommand: too many values to unpack (expected 2)
+Traceback (most recent call last):
+  File "/home/estela/Fleet_Manager/Drone/GRPC/grpc_drone_commands.py", line 212, in SendCommand
+    command_id, command_data = process_command(command, self.logger)
+    ^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: too many values to unpack (expected 2)
+[2025-11-21 14:54:02,602][Drone 1][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2025-11-21 14:54:12,635][Drone 1][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2025-11-21 14:54:22,669][Drone 1][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2025-11-21 14:54:32,702][Drone 1][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2025-11-21 14:54:42,735][Drone 1][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2025-11-21 14:54:52,768][Drone 1][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2025-11-21 14:55:02,801][Drone 1][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2025-11-21 14:55:12,834][Drone 1][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2025-11-21 14:55:22,866][Drone 1][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2025-11-21 14:55:32,906][Drone 1][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2025-11-21 20:55:35,750][Drone 1][INFO][Init Drone] - Complete cleanup finished
+[2025-11-21 20:55:35,751][Drone 1][INFO][gRPC Metrics] - Metrics client thread started successfully
+[2025-11-21 20:55:35,751][Drone 1][INFO][Init Drone] - All system components initialized successfully
+[2025-11-21 20:55:35,808][Drone 1][INFO][gRPC Commands] - Server running on port 51001
+[2025-11-21 20:55:35,854][Drone 1][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2025-11-21 20:55:45,887][Drone 1][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2025-11-21 20:55:55,924][Drone 1][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2025-11-21 20:56:05,956][Drone 1][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2025-11-21 20:56:15,991][Drone 1][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2025-11-21 20:56:26,042][Drone 1][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2025-11-21 20:56:36,080][Drone 1][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2025-11-21 20:56:46,114][Drone 1][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2025-11-21 20:56:56,147][Drone 1][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2025-11-21 20:56:57,645][Drone 1][INFO][gRPC Commands] - Command received
+[2025-11-21 20:56:57,645][Drone 1][INFO][COMMANDS] - Processing NAV_TAKEOFF command
+[2025-11-21 20:56:57,646][Drone 1][INFO][NAV_TAKEOFF] - Taking off...
+[2025-11-21 20:57:06,180][Drone 1][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2025-11-21 20:57:07,646][Drone 1][INFO][NAV_TAKEOFF] - Takeoff successful
+[2025-11-21 20:57:07,646][Drone 1][INFO][COMMANDS] - Command executed successfully
+[2025-11-21 20:57:07,650][Drone 1][INFO][gRPC Commands] - Feedback sent to ROS2
+[2025-11-21 20:57:08,670][Drone 1][INFO][gRPC Commands] - Command received
+[2025-11-21 20:57:08,670][Drone 1][INFO][COMMANDS] - Processing NAV_WAYPOINT command
+[2025-11-21 20:57:08,670][Drone 1][INFO][NAV_WAYPOINT] - Going to WP...
+[2025-11-21 20:57:16,213][Drone 1][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2025-11-21 20:57:18,671][Drone 1][INFO][NAV_WAYPOINT] - Waypoint reached
+[2025-11-21 20:57:18,671][Drone 1][INFO][COMMANDS] - Command executed successfully
+[2025-11-21 20:57:18,675][Drone 1][INFO][gRPC Commands] - Feedback sent to ROS2
+[2025-11-21 20:57:26,246][Drone 1][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2025-11-21 20:57:36,281][Drone 1][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2025-11-21 20:57:39,194][Drone 1][INFO][gRPC Commands] - Command received
+[2025-11-21 20:57:39,194][Drone 1][INFO][COMMANDS] - Processing NAV_WAYPOINT command
+[2025-11-21 20:57:39,194][Drone 1][INFO][NAV_WAYPOINT] - Going to WP...
+[2025-11-21 20:57:46,314][Drone 1][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2025-11-21 20:57:49,194][Drone 1][INFO][NAV_WAYPOINT] - Waypoint reached
+[2025-11-21 20:57:49,195][Drone 1][INFO][COMMANDS] - Command executed successfully
+[2025-11-21 20:57:49,197][Drone 1][INFO][gRPC Commands] - Feedback sent to ROS2
+[2025-11-21 20:57:50,218][Drone 1][INFO][gRPC Commands] - Command received
+[2025-11-21 20:57:50,218][Drone 1][INFO][COMMANDS] - Processing CAMERA_IMAGE command
+[2025-11-21 20:57:50,219][Drone 1][INFO][CAMERA_IMAGE] - Taking picture...
+[2025-11-21 20:57:51,257][Drone 1][INFO][CAMERA_IMAGE] - Picture taken successfully as 40.209544_-3.465821.jpg
+[2025-11-21 20:57:51,257][Drone 1][INFO][COMMANDS] - Command executed successfully
+[2025-11-21 20:57:51,260][Drone 1][INFO][gRPC Commands] - Feedback sent to ROS2
+[2025-11-21 20:57:52,297][Drone 1][INFO][gRPC Commands] - Command received
+[2025-11-21 20:57:52,297][Drone 1][INFO][COMMANDS] - Processing ANALYZE_IMAGE command
+[2025-11-21 20:57:52,297][Drone 1][INFO][ANALYZE_IMAGE] - Analyzing image...
+[2025-11-21 20:57:52,298][Drone 1][INFO][ANALYZE_IMAGE] - Starting analysis for agricultural image: Images/Camera/40.209544_-3.465821.jpg
+[2025-11-21 20:57:52,298][Drone 1][INFO][ANALYZE_IMAGE] - Executing agricultural model: Images/Models/Grape_Bunch_Hailo8/init_grape_bunch_hailo8.py
+[2025-11-21 20:57:53,915][Drone 1][INFO][ANALYZE_IMAGE] - Model execution completed with output: {'Grape_bunch': 5.95}
+[2025-11-21 20:57:54,915][Drone 1][INFO][ANALYZE_IMAGE] - Analysis completed
+[2025-11-21 20:57:54,916][Drone 1][INFO][PM_MANAGER] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus.py
+[2025-11-21 20:57:54,976][Drone 1][INFO][PM_MANAGER] - PM output [0]: 
+Script execution failed: PrescriptionMap/pm_generation/ISOBUS/pm_isobus.py
+Return code: 1
+Stderr: Traceback (most recent call last):
+  File "/home/estela/Fleet_Manager/Drone/PrescriptionMap/pm_generation/ISOBUS/pm_isobus.py", line 798, in <module>
+    generate_pm(amount, grid, long, lat)
+  File "/home/estela/Fleet_Manager/Drone/PrescriptionMap/pm_generation/ISOBUS/pm_isobus.py", line 343, in generate_pm
+    with open(path, "w") as f:
+         ^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'PrescriptionMap/pm_generation/ISOBUS/PMs/isobus_pm.json'
+[2025-11-21 20:57:54,980][Drone 1][INFO][COMMANDS] - Command executed successfully
+[2025-11-21 20:57:54,984][Drone 1][INFO][gRPC Commands] - Feedback sent to ROS2
+[2025-11-21 20:57:56,348][Drone 1][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2025-11-21 20:58:06,384][Drone 1][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2025-11-21 20:58:07,050][Drone 1][INFO][gRPC Commands] - Command received
+[2025-11-21 20:58:07,050][Drone 1][INFO][COMMANDS] - Processing CAMERA_IMAGE command
+[2025-11-21 20:58:07,052][Drone 1][INFO][CAMERA_IMAGE] - Taking picture...
+[2025-11-21 20:58:08,143][Drone 1][INFO][CAMERA_IMAGE] - Picture taken successfully as 40.209544_-3.465821.jpg
+[2025-11-21 20:58:08,144][Drone 1][INFO][COMMANDS] - Command executed successfully
+[2025-11-21 20:58:08,147][Drone 1][INFO][gRPC Commands] - Feedback sent to ROS2
+[2025-11-21 20:58:16,417][Drone 1][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2025-11-21 20:58:26,451][Drone 1][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2025-11-21 20:58:36,484][Drone 1][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2025-11-21 20:58:46,516][Drone 1][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2025-11-21 20:59:20,185][Drone 1][INFO][Init Drone] - Complete cleanup finished
+[2025-11-21 20:59:20,187][Drone 1][INFO][gRPC Metrics] - Metrics client thread started successfully
+[2025-11-21 20:59:20,189][Drone 1][INFO][Init Drone] - All system components initialized successfully
+[2025-11-21 20:59:20,216][Drone 1][INFO][gRPC Commands] - Server running on port 51001
+[2025-11-21 20:59:20,252][Drone 1][ERROR][gRPC Metrics] - Connection error: <_InactiveRpcError of RPC that terminated with:
+	status = StatusCode.UNAVAILABLE
+	details = "failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:51004: Failed to connect to remote host: connect: Connection refused (111)"
+	debug_error_string = "UNKNOWN:Error received from peer  {grpc_status:14, grpc_message:"failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:51004: Failed to connect to remote host: connect: Connection refused (111)"}"
+>
+[2025-11-21 20:59:28,220][Drone 1][INFO][Init Drone] - Complete cleanup finished
+[2025-11-21 20:59:28,221][Drone 1][INFO][gRPC Metrics] - Metrics client thread started successfully
+[2025-11-21 20:59:28,222][Drone 1][INFO][Init Drone] - All system components initialized successfully
+[2025-11-21 20:59:28,235][Drone 1][INFO][gRPC Commands] - Server running on port 51001
+[2025-11-21 20:59:28,265][Drone 1][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2025-11-21 20:59:38,302][Drone 1][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2025-11-21 20:59:42,253][Drone 1][INFO][gRPC Commands] - Command received
+[2025-11-21 20:59:42,254][Drone 1][INFO][COMMANDS] - Processing NAV_TAKEOFF command
+[2025-11-21 20:59:42,254][Drone 1][INFO][NAV_TAKEOFF] - Taking off...
+[2025-11-21 20:59:48,335][Drone 1][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2025-11-21 20:59:52,254][Drone 1][INFO][NAV_TAKEOFF] - Takeoff successful
+[2025-11-21 20:59:52,254][Drone 1][INFO][COMMANDS] - Command executed successfully
+[2025-11-21 20:59:52,257][Drone 1][INFO][gRPC Commands] - Feedback sent to ROS2
+[2025-11-21 20:59:53,279][Drone 1][INFO][gRPC Commands] - Command received
+[2025-11-21 20:59:53,280][Drone 1][INFO][COMMANDS] - Processing NAV_WAYPOINT command
+[2025-11-21 20:59:53,280][Drone 1][INFO][NAV_WAYPOINT] - Going to WP...
+[2025-11-21 20:59:58,368][Drone 1][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2025-11-21 21:00:03,280][Drone 1][INFO][NAV_WAYPOINT] - Waypoint reached
+[2025-11-21 21:00:03,281][Drone 1][INFO][COMMANDS] - Command executed successfully
+[2025-11-21 21:00:03,283][Drone 1][INFO][gRPC Commands] - Feedback sent to ROS2
+[2025-11-21 21:00:04,304][Drone 1][INFO][gRPC Commands] - Command received
+[2025-11-21 21:00:04,305][Drone 1][INFO][COMMANDS] - Processing NAV_WAYPOINT command
+[2025-11-21 21:00:04,305][Drone 1][INFO][NAV_WAYPOINT] - Going to WP...
+[2025-11-21 21:00:08,406][Drone 1][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2025-11-21 21:00:14,305][Drone 1][INFO][NAV_WAYPOINT] - Waypoint reached
+[2025-11-21 21:00:14,305][Drone 1][INFO][COMMANDS] - Command executed successfully
+[2025-11-21 21:00:14,309][Drone 1][INFO][gRPC Commands] - Feedback sent to ROS2
+[2025-11-21 21:00:15,339][Drone 1][INFO][gRPC Commands] - Command received
+[2025-11-21 21:00:15,341][Drone 1][INFO][COMMANDS] - Processing CAMERA_IMAGE command
+[2025-11-21 21:00:15,342][Drone 1][INFO][CAMERA_IMAGE] - Taking picture...
+[2025-11-21 21:00:16,403][Drone 1][INFO][CAMERA_IMAGE] - Picture taken successfully as 40.209544_-3.465575.jpg
+[2025-11-21 21:00:16,404][Drone 1][INFO][COMMANDS] - Command executed successfully
+[2025-11-21 21:00:16,407][Drone 1][INFO][gRPC Commands] - Feedback sent to ROS2
+[2025-11-21 21:00:17,432][Drone 1][INFO][gRPC Commands] - Command received
+[2025-11-21 21:00:17,432][Drone 1][INFO][COMMANDS] - Processing ANALYZE_IMAGE command
+[2025-11-21 21:00:17,432][Drone 1][INFO][ANALYZE_IMAGE] - Analyzing image...
+[2025-11-21 21:00:17,432][Drone 1][INFO][ANALYZE_IMAGE] - Starting analysis for agricultural image: Images/Camera/40.209544_-3.465575.jpg
+[2025-11-21 21:00:17,432][Drone 1][INFO][ANALYZE_IMAGE] - Executing agricultural model: Images/Models/Grape_Bunch_Hailo8/init_grape_bunch_hailo8.py
+[2025-11-21 21:00:18,441][Drone 1][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2025-11-21 21:00:19,015][Drone 1][INFO][ANALYZE_IMAGE] - Model execution completed with output: {'Grape_bunch': 5.95}
+[2025-11-21 21:00:20,015][Drone 1][INFO][ANALYZE_IMAGE] - Analysis completed
+[2025-11-21 21:00:20,017][Drone 1][INFO][PM_MANAGER] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus.py
+[2025-11-21 21:00:20,081][Drone 1][INFO][PM_MANAGER] - PM output [0]: 
+Script execution failed: PrescriptionMap/pm_generation/ISOBUS/pm_isobus.py
+Return code: 1
+Stderr: Traceback (most recent call last):
+  File "/home/estela/Fleet_Manager/Drone/PrescriptionMap/pm_generation/ISOBUS/pm_isobus.py", line 798, in <module>
+    generate_pm(amount, grid, long, lat)
+  File "/home/estela/Fleet_Manager/Drone/PrescriptionMap/pm_generation/ISOBUS/pm_isobus.py", line 343, in generate_pm
+    with open(path, "w") as f:
+         ^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'PrescriptionMap/pm_generation/ISOBUS/PMs/isobus_pm.json'
+[2025-11-21 21:00:20,085][Drone 1][INFO][COMMANDS] - Command executed successfully
+[2025-11-21 21:00:20,088][Drone 1][INFO][gRPC Commands] - Feedback sent to ROS2
+[2025-11-21 21:00:21,106][Drone 1][INFO][gRPC Commands] - Command received
+[2025-11-21 21:00:21,106][Drone 1][INFO][COMMANDS] - Processing NAV_WAYPOINT command
+[2025-11-21 21:00:21,107][Drone 1][INFO][NAV_WAYPOINT] - Going to WP...
+[2025-11-21 21:00:28,475][Drone 1][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2025-11-21 21:00:31,107][Drone 1][INFO][NAV_WAYPOINT] - Waypoint reached
+[2025-11-21 21:00:31,107][Drone 1][INFO][COMMANDS] - Command executed successfully
+[2025-11-21 21:00:31,110][Drone 1][INFO][gRPC Commands] - Feedback sent to ROS2
+[2025-11-21 21:00:32,134][Drone 1][INFO][gRPC Commands] - Command received
+[2025-11-21 21:00:32,135][Drone 1][INFO][COMMANDS] - Processing CAMERA_IMAGE command
+[2025-11-21 21:00:32,135][Drone 1][INFO][CAMERA_IMAGE] - Taking picture...
+[2025-11-21 21:00:33,190][Drone 1][INFO][CAMERA_IMAGE] - Picture taken successfully as 40.209544_-3.465821.jpg
+[2025-11-21 21:00:33,191][Drone 1][INFO][COMMANDS] - Command executed successfully
+[2025-11-21 21:00:33,194][Drone 1][INFO][gRPC Commands] - Feedback sent to ROS2
+[2025-11-21 21:00:34,218][Drone 1][INFO][gRPC Commands] - Command received
+[2025-11-21 21:00:34,219][Drone 1][INFO][COMMANDS] - Processing ANALYZE_IMAGE command
+[2025-11-21 21:00:34,219][Drone 1][INFO][ANALYZE_IMAGE] - Analyzing image...
+[2025-11-21 21:00:34,219][Drone 1][INFO][ANALYZE_IMAGE] - Starting analysis for agricultural image: Images/Camera/40.209544_-3.465821.jpg
+[2025-11-21 21:00:34,219][Drone 1][INFO][ANALYZE_IMAGE] - Executing agricultural model: Images/Models/Grape_Bunch_Hailo8/init_grape_bunch_hailo8.py
+[2025-11-21 21:00:35,831][Drone 1][INFO][ANALYZE_IMAGE] - Model execution completed with output: {'Grape_bunch': 5.95}
+[2025-11-21 21:00:36,832][Drone 1][INFO][ANALYZE_IMAGE] - Analysis completed
+[2025-11-21 21:00:36,832][Drone 1][INFO][PM_MANAGER] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus.py
+[2025-11-21 21:00:36,888][Drone 1][INFO][PM_MANAGER] - PM output [0]: 
+Script execution failed: PrescriptionMap/pm_generation/ISOBUS/pm_isobus.py
+Return code: 1
+Stderr: Traceback (most recent call last):
+  File "/home/estela/Fleet_Manager/Drone/PrescriptionMap/pm_generation/ISOBUS/pm_isobus.py", line 798, in <module>
+    generate_pm(amount, grid, long, lat)
+  File "/home/estela/Fleet_Manager/Drone/PrescriptionMap/pm_generation/ISOBUS/pm_isobus.py", line 343, in generate_pm
+    with open(path, "w") as f:
+         ^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'PrescriptionMap/pm_generation/ISOBUS/PMs/isobus_pm.json'
+[2025-11-21 21:00:36,890][Drone 1][INFO][COMMANDS] - Command executed successfully
+[2025-11-21 21:00:36,893][Drone 1][INFO][gRPC Commands] - Feedback sent to ROS2
+[2025-11-21 21:00:37,917][Drone 1][INFO][gRPC Commands] - Command received
+[2025-11-21 21:00:37,917][Drone 1][INFO][COMMANDS] - Processing NAV_WAYPOINT command
+[2025-11-21 21:00:37,917][Drone 1][INFO][NAV_WAYPOINT] - Going to WP...
+[2025-11-21 21:00:38,511][Drone 1][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2025-11-21 21:00:47,918][Drone 1][INFO][NAV_WAYPOINT] - Waypoint reached
+[2025-11-21 21:00:47,918][Drone 1][INFO][COMMANDS] - Command executed successfully
+[2025-11-21 21:00:47,920][Drone 1][INFO][gRPC Commands] - Feedback sent to ROS2
+[2025-11-21 21:00:48,544][Drone 1][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2025-11-21 21:00:48,945][Drone 1][INFO][gRPC Commands] - Command received
+[2025-11-21 21:00:48,945][Drone 1][INFO][COMMANDS] - Processing CAMERA_IMAGE command
+[2025-11-21 21:00:48,945][Drone 1][INFO][CAMERA_IMAGE] - Taking picture...
+[2025-11-21 21:00:49,983][Drone 1][INFO][CAMERA_IMAGE] - Picture taken successfully as 40.209544_-3.466066.jpg
+[2025-11-21 21:00:49,983][Drone 1][INFO][COMMANDS] - Command executed successfully
+[2025-11-21 21:00:49,987][Drone 1][INFO][gRPC Commands] - Feedback sent to ROS2
+[2025-11-21 21:00:51,012][Drone 1][INFO][gRPC Commands] - Command received
+[2025-11-21 21:00:51,013][Drone 1][INFO][COMMANDS] - Processing ANALYZE_IMAGE command
+[2025-11-21 21:00:51,013][Drone 1][INFO][ANALYZE_IMAGE] - Analyzing image...
+[2025-11-21 21:00:51,013][Drone 1][INFO][ANALYZE_IMAGE] - Starting analysis for agricultural image: Images/Camera/40.209544_-3.466066.jpg
+[2025-11-21 21:00:51,013][Drone 1][INFO][ANALYZE_IMAGE] - Executing agricultural model: Images/Models/Grape_Bunch_Hailo8/init_grape_bunch_hailo8.py
+[2025-11-21 21:00:52,667][Drone 1][INFO][ANALYZE_IMAGE] - Model execution completed with output: {'Grape_bunch': 5.95}
+[2025-11-21 21:00:53,667][Drone 1][INFO][ANALYZE_IMAGE] - Analysis completed
+[2025-11-21 21:00:53,668][Drone 1][INFO][PM_MANAGER] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus.py
+[2025-11-21 21:00:53,723][Drone 1][INFO][PM_MANAGER] - PM output [0]: 
+Script execution failed: PrescriptionMap/pm_generation/ISOBUS/pm_isobus.py
+Return code: 1
+Stderr: Traceback (most recent call last):
+  File "/home/estela/Fleet_Manager/Drone/PrescriptionMap/pm_generation/ISOBUS/pm_isobus.py", line 798, in <module>
+    generate_pm(amount, grid, long, lat)
+  File "/home/estela/Fleet_Manager/Drone/PrescriptionMap/pm_generation/ISOBUS/pm_isobus.py", line 343, in generate_pm
+    with open(path, "w") as f:
+         ^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'PrescriptionMap/pm_generation/ISOBUS/PMs/isobus_pm.json'
+[2025-11-21 21:00:53,725][Drone 1][INFO][COMMANDS] - Command executed successfully
+[2025-11-21 21:00:53,728][Drone 1][INFO][gRPC Commands] - Feedback sent to ROS2
+[2025-11-21 21:00:54,752][Drone 1][INFO][gRPC Commands] - Command received
+[2025-11-21 21:00:54,753][Drone 1][INFO][COMMANDS] - Processing NAV_WAYPOINT command
+[2025-11-21 21:00:54,753][Drone 1][INFO][NAV_WAYPOINT] - Going to WP...
+[2025-11-21 21:00:58,576][Drone 1][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2025-11-21 21:01:04,753][Drone 1][INFO][NAV_WAYPOINT] - Waypoint reached
+[2025-11-21 21:01:04,753][Drone 1][INFO][COMMANDS] - Command executed successfully
+[2025-11-21 21:01:04,756][Drone 1][INFO][gRPC Commands] - Feedback sent to ROS2
+[2025-11-21 21:01:05,786][Drone 1][INFO][gRPC Commands] - Command received
+[2025-11-21 21:01:05,786][Drone 1][INFO][COMMANDS] - Processing CAMERA_IMAGE command
+[2025-11-21 21:01:05,786][Drone 1][INFO][CAMERA_IMAGE] - Taking picture...
+[2025-11-21 21:01:06,824][Drone 1][INFO][CAMERA_IMAGE] - Picture taken successfully as 40.209544_-3.466312.jpg
+[2025-11-21 21:01:06,824][Drone 1][INFO][COMMANDS] - Command executed successfully
+[2025-11-21 21:01:06,827][Drone 1][INFO][gRPC Commands] - Feedback sent to ROS2
+[2025-11-21 21:01:07,855][Drone 1][INFO][gRPC Commands] - Command received
+[2025-11-21 21:01:07,855][Drone 1][INFO][COMMANDS] - Processing ANALYZE_IMAGE command
+[2025-11-21 21:01:07,855][Drone 1][INFO][ANALYZE_IMAGE] - Analyzing image...
+[2025-11-21 21:01:07,855][Drone 1][INFO][ANALYZE_IMAGE] - Starting analysis for agricultural image: Images/Camera/40.209544_-3.466312.jpg
+[2025-11-21 21:01:07,856][Drone 1][INFO][ANALYZE_IMAGE] - Executing agricultural model: Images/Models/Grape_Bunch_Hailo8/init_grape_bunch_hailo8.py
+[2025-11-21 21:01:08,611][Drone 1][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2025-11-21 21:01:09,526][Drone 1][INFO][ANALYZE_IMAGE] - Model execution completed with output: {'Grape_bunch': 3.95}
+[2025-11-21 21:01:10,527][Drone 1][INFO][ANALYZE_IMAGE] - Analysis completed
+[2025-11-21 21:01:10,527][Drone 1][INFO][PM_MANAGER] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus.py
+[2025-11-21 21:01:10,586][Drone 1][INFO][PM_MANAGER] - PM output [0]: 
+Script execution failed: PrescriptionMap/pm_generation/ISOBUS/pm_isobus.py
+Return code: 1
+Stderr: Traceback (most recent call last):
+  File "/home/estela/Fleet_Manager/Drone/PrescriptionMap/pm_generation/ISOBUS/pm_isobus.py", line 798, in <module>
+    generate_pm(amount, grid, long, lat)
+  File "/home/estela/Fleet_Manager/Drone/PrescriptionMap/pm_generation/ISOBUS/pm_isobus.py", line 343, in generate_pm
+    with open(path, "w") as f:
+         ^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'PrescriptionMap/pm_generation/ISOBUS/PMs/isobus_pm.json'
+[2025-11-21 21:01:10,589][Drone 1][INFO][COMMANDS] - Command executed successfully
+[2025-11-21 21:01:10,592][Drone 1][INFO][gRPC Commands] - Feedback sent to ROS2
+[2025-11-21 21:01:11,633][Drone 1][INFO][gRPC Commands] - Command received
+[2025-11-21 21:01:11,633][Drone 1][INFO][COMMANDS] - Processing NAV_WAYPOINT command
+[2025-11-21 21:01:11,633][Drone 1][INFO][NAV_WAYPOINT] - Going to WP...
+[2025-11-21 21:01:18,645][Drone 1][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2025-11-21 21:01:21,633][Drone 1][INFO][NAV_WAYPOINT] - Waypoint reached
+[2025-11-21 21:01:21,634][Drone 1][INFO][COMMANDS] - Command executed successfully
+[2025-11-21 21:01:21,636][Drone 1][INFO][gRPC Commands] - Feedback sent to ROS2
+[2025-11-21 21:01:22,672][Drone 1][INFO][gRPC Commands] - Command received
+[2025-11-21 21:01:22,672][Drone 1][INFO][COMMANDS] - Processing CAMERA_IMAGE command
+[2025-11-21 21:01:22,672][Drone 1][INFO][CAMERA_IMAGE] - Taking picture...
+[2025-11-21 21:01:23,710][Drone 1][INFO][CAMERA_IMAGE] - Picture taken successfully as 40.209544_-3.466557.jpg
+[2025-11-21 21:01:23,710][Drone 1][INFO][COMMANDS] - Command executed successfully
+[2025-11-21 21:01:23,713][Drone 1][INFO][gRPC Commands] - Feedback sent to ROS2
+[2025-11-21 21:01:24,734][Drone 1][INFO][gRPC Commands] - Command received
+[2025-11-21 21:01:24,735][Drone 1][INFO][COMMANDS] - Processing ANALYZE_IMAGE command
+[2025-11-21 21:01:24,735][Drone 1][INFO][ANALYZE_IMAGE] - Analyzing image...
+[2025-11-21 21:01:24,735][Drone 1][INFO][ANALYZE_IMAGE] - Starting analysis for agricultural image: Images/Camera/40.209544_-3.466557.jpg
+[2025-11-21 21:01:24,736][Drone 1][INFO][ANALYZE_IMAGE] - Executing agricultural model: Images/Models/Grape_Bunch_Hailo8/init_grape_bunch_hailo8.py
+[2025-11-21 21:01:26,368][Drone 1][INFO][ANALYZE_IMAGE] - Model execution completed with output: {'Grape_bunch': 7.95}
+[2025-11-21 21:01:27,369][Drone 1][INFO][ANALYZE_IMAGE] - Analysis completed
+[2025-11-21 21:01:27,369][Drone 1][INFO][PM_MANAGER] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus.py
+[2025-11-21 21:01:27,430][Drone 1][INFO][PM_MANAGER] - PM output [0]: 
+Script execution failed: PrescriptionMap/pm_generation/ISOBUS/pm_isobus.py
+Return code: 1
+Stderr: Traceback (most recent call last):
+  File "/home/estela/Fleet_Manager/Drone/PrescriptionMap/pm_generation/ISOBUS/pm_isobus.py", line 798, in <module>
+    generate_pm(amount, grid, long, lat)
+  File "/home/estela/Fleet_Manager/Drone/PrescriptionMap/pm_generation/ISOBUS/pm_isobus.py", line 343, in generate_pm
+    with open(path, "w") as f:
+         ^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'PrescriptionMap/pm_generation/ISOBUS/PMs/isobus_pm.json'
+[2025-11-21 21:01:27,433][Drone 1][INFO][COMMANDS] - Command executed successfully
+[2025-11-21 21:01:27,436][Drone 1][INFO][gRPC Commands] - Feedback sent to ROS2
+[2025-11-21 21:01:28,459][Drone 1][INFO][gRPC Commands] - Command received
+[2025-11-21 21:01:28,459][Drone 1][INFO][COMMANDS] - Processing NAV_WAYPOINT command
+[2025-11-21 21:01:28,459][Drone 1][INFO][NAV_WAYPOINT] - Going to WP...
+[2025-11-21 21:01:28,677][Drone 1][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2025-11-21 21:01:38,459][Drone 1][INFO][NAV_WAYPOINT] - Waypoint reached
+[2025-11-21 21:01:38,460][Drone 1][INFO][COMMANDS] - Command executed successfully
+[2025-11-21 21:01:38,463][Drone 1][INFO][gRPC Commands] - Feedback sent to ROS2
+[2025-11-21 21:01:38,711][Drone 1][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2025-11-21 21:01:39,491][Drone 1][INFO][gRPC Commands] - Command received
+[2025-11-21 21:01:39,492][Drone 1][INFO][COMMANDS] - Processing CAMERA_IMAGE command
+[2025-11-21 21:01:39,492][Drone 1][INFO][CAMERA_IMAGE] - Taking picture...
+[2025-11-21 21:01:40,530][Drone 1][INFO][CAMERA_IMAGE] - Picture taken successfully as 40.209544_-3.466803.jpg
+[2025-11-21 21:01:40,530][Drone 1][INFO][COMMANDS] - Command executed successfully
+[2025-11-21 21:01:40,533][Drone 1][INFO][gRPC Commands] - Feedback sent to ROS2
+[2025-11-21 21:01:41,553][Drone 1][INFO][gRPC Commands] - Command received
+[2025-11-21 21:01:41,553][Drone 1][INFO][COMMANDS] - Processing ANALYZE_IMAGE command
+[2025-11-21 21:01:41,553][Drone 1][INFO][ANALYZE_IMAGE] - Analyzing image...
+[2025-11-21 21:01:41,554][Drone 1][INFO][ANALYZE_IMAGE] - Starting analysis for agricultural image: Images/Camera/40.209544_-3.466803.jpg
+[2025-11-21 21:01:41,554][Drone 1][INFO][ANALYZE_IMAGE] - Executing agricultural model: Images/Models/Grape_Bunch_Hailo8/init_grape_bunch_hailo8.py
+[2025-11-21 21:01:43,135][Drone 1][INFO][ANALYZE_IMAGE] - Model execution completed with output: {'Grape_bunch': 1.95}
+[2025-11-21 21:01:44,136][Drone 1][INFO][ANALYZE_IMAGE] - Analysis completed
+[2025-11-21 21:01:44,137][Drone 1][INFO][PM_MANAGER] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus.py
+[2025-11-21 21:01:44,216][Drone 1][INFO][PM_MANAGER] - PM output [0]: 
+Script execution failed: PrescriptionMap/pm_generation/ISOBUS/pm_isobus.py
+Return code: 1
+Stderr: Traceback (most recent call last):
+  File "/home/estela/Fleet_Manager/Drone/PrescriptionMap/pm_generation/ISOBUS/pm_isobus.py", line 798, in <module>
+    generate_pm(amount, grid, long, lat)
+  File "/home/estela/Fleet_Manager/Drone/PrescriptionMap/pm_generation/ISOBUS/pm_isobus.py", line 343, in generate_pm
+    with open(path, "w") as f:
+         ^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'PrescriptionMap/pm_generation/ISOBUS/PMs/isobus_pm.json'
+[2025-11-21 21:01:44,220][Drone 1][INFO][COMMANDS] - Command executed successfully
+[2025-11-21 21:01:44,224][Drone 1][INFO][gRPC Commands] - Feedback sent to ROS2
+[2025-11-21 21:01:45,242][Drone 1][INFO][gRPC Commands] - Command received
+[2025-11-21 21:01:45,243][Drone 1][INFO][COMMANDS] - Processing NAV_WAYPOINT command
+[2025-11-21 21:01:45,243][Drone 1][INFO][NAV_WAYPOINT] - Going to WP...
+[2025-11-21 21:01:48,743][Drone 1][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2025-11-21 21:01:55,243][Drone 1][INFO][NAV_WAYPOINT] - Waypoint reached
+[2025-11-21 21:01:55,243][Drone 1][INFO][COMMANDS] - Command executed successfully
+[2025-11-21 21:01:55,247][Drone 1][INFO][gRPC Commands] - Feedback sent to ROS2
+[2025-11-21 21:01:56,275][Drone 1][INFO][gRPC Commands] - Command received
+[2025-11-21 21:01:56,275][Drone 1][INFO][COMMANDS] - Processing CAMERA_IMAGE command
+[2025-11-21 21:01:56,276][Drone 1][INFO][CAMERA_IMAGE] - Taking picture...
+[2025-11-21 21:01:57,314][Drone 1][INFO][CAMERA_IMAGE] - Picture taken successfully as 40.209544_-3.467048.jpg
+[2025-11-21 21:01:57,314][Drone 1][INFO][COMMANDS] - Command executed successfully
+[2025-11-21 21:01:57,317][Drone 1][INFO][gRPC Commands] - Feedback sent to ROS2
+[2025-11-21 21:01:58,337][Drone 1][INFO][gRPC Commands] - Command received
+[2025-11-21 21:01:58,338][Drone 1][INFO][COMMANDS] - Processing ANALYZE_IMAGE command
+[2025-11-21 21:01:58,338][Drone 1][INFO][ANALYZE_IMAGE] - Analyzing image...
+[2025-11-21 21:01:58,338][Drone 1][INFO][ANALYZE_IMAGE] - Starting analysis for agricultural image: Images/Camera/40.209544_-3.467048.jpg
+[2025-11-21 21:01:58,339][Drone 1][INFO][ANALYZE_IMAGE] - Executing agricultural model: Images/Models/Grape_Bunch_Hailo8/init_grape_bunch_hailo8.py
+[2025-11-21 21:01:58,778][Drone 1][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2025-11-21 21:01:59,965][Drone 1][INFO][ANALYZE_IMAGE] - Model execution completed with output: {'Grape_bunch': 5.95}
+[2025-11-21 21:02:00,966][Drone 1][INFO][ANALYZE_IMAGE] - Analysis completed
+[2025-11-21 21:02:00,967][Drone 1][INFO][PM_MANAGER] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus.py
+[2025-11-21 21:02:01,022][Drone 1][INFO][PM_MANAGER] - PM output [0]: 
+Script execution failed: PrescriptionMap/pm_generation/ISOBUS/pm_isobus.py
+Return code: 1
+Stderr: Traceback (most recent call last):
+  File "/home/estela/Fleet_Manager/Drone/PrescriptionMap/pm_generation/ISOBUS/pm_isobus.py", line 798, in <module>
+    generate_pm(amount, grid, long, lat)
+  File "/home/estela/Fleet_Manager/Drone/PrescriptionMap/pm_generation/ISOBUS/pm_isobus.py", line 343, in generate_pm
+    with open(path, "w") as f:
+         ^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'PrescriptionMap/pm_generation/ISOBUS/PMs/isobus_pm.json'
+[2025-11-21 21:02:01,025][Drone 1][INFO][COMMANDS] - Command executed successfully
+[2025-11-21 21:02:01,028][Drone 1][INFO][gRPC Commands] - Feedback sent to ROS2
+[2025-11-21 21:02:02,053][Drone 1][INFO][gRPC Commands] - Command received
+[2025-11-21 21:02:02,053][Drone 1][INFO][COMMANDS] - Processing NAV_WAYPOINT command
+[2025-11-21 21:02:02,053][Drone 1][INFO][NAV_WAYPOINT] - Going to WP...
+[2025-11-21 21:02:08,814][Drone 1][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2025-11-21 21:02:12,054][Drone 1][INFO][NAV_WAYPOINT] - Waypoint reached
+[2025-11-21 21:02:12,054][Drone 1][INFO][COMMANDS] - Command executed successfully
+[2025-11-21 21:02:12,056][Drone 1][INFO][gRPC Commands] - Feedback sent to ROS2
+[2025-11-21 21:02:13,089][Drone 1][INFO][gRPC Commands] - Command received
+[2025-11-21 21:02:13,089][Drone 1][INFO][COMMANDS] - Processing CAMERA_IMAGE command
+[2025-11-21 21:02:13,089][Drone 1][INFO][CAMERA_IMAGE] - Taking picture...
+[2025-11-21 21:02:14,141][Drone 1][INFO][CAMERA_IMAGE] - Picture taken successfully as 40.20973_-3.467048.jpg
+[2025-11-21 21:02:14,142][Drone 1][INFO][COMMANDS] - Command executed successfully
+[2025-11-21 21:02:14,144][Drone 1][INFO][gRPC Commands] - Feedback sent to ROS2
+[2025-11-21 21:02:15,167][Drone 1][INFO][gRPC Commands] - Command received
+[2025-11-21 21:02:15,167][Drone 1][INFO][COMMANDS] - Processing ANALYZE_IMAGE command
+[2025-11-21 21:02:15,167][Drone 1][INFO][ANALYZE_IMAGE] - Analyzing image...
+[2025-11-21 21:02:15,167][Drone 1][INFO][ANALYZE_IMAGE] - Starting analysis for agricultural image: Images/Camera/40.20973_-3.467048.jpg
+[2025-11-21 21:02:15,168][Drone 1][INFO][ANALYZE_IMAGE] - Executing agricultural model: Images/Models/Grape_Bunch_Hailo8/init_grape_bunch_hailo8.py
+[2025-11-21 21:02:16,770][Drone 1][INFO][ANALYZE_IMAGE] - Model execution completed with output: {'Grape_bunch': 7.95}
+[2025-11-21 21:02:17,771][Drone 1][INFO][ANALYZE_IMAGE] - Analysis completed
+[2025-11-21 21:02:17,772][Drone 1][INFO][PM_MANAGER] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus.py
+[2025-11-21 21:02:17,829][Drone 1][INFO][PM_MANAGER] - PM output [0]: 
+Script execution failed: PrescriptionMap/pm_generation/ISOBUS/pm_isobus.py
+Return code: 1
+Stderr: Traceback (most recent call last):
+  File "/home/estela/Fleet_Manager/Drone/PrescriptionMap/pm_generation/ISOBUS/pm_isobus.py", line 798, in <module>
+    generate_pm(amount, grid, long, lat)
+  File "/home/estela/Fleet_Manager/Drone/PrescriptionMap/pm_generation/ISOBUS/pm_isobus.py", line 343, in generate_pm
+    with open(path, "w") as f:
+         ^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'PrescriptionMap/pm_generation/ISOBUS/PMs/isobus_pm.json'
+[2025-11-21 21:02:17,831][Drone 1][INFO][COMMANDS] - Command executed successfully
+[2025-11-21 21:02:17,834][Drone 1][INFO][gRPC Commands] - Feedback sent to ROS2
+[2025-11-21 21:02:18,852][Drone 1][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2025-11-21 21:02:18,859][Drone 1][INFO][gRPC Commands] - Command received
+[2025-11-21 21:02:18,860][Drone 1][INFO][COMMANDS] - Processing NAV_WAYPOINT command
+[2025-11-21 21:02:18,860][Drone 1][INFO][NAV_WAYPOINT] - Going to WP...
+[2025-11-21 21:02:28,860][Drone 1][INFO][NAV_WAYPOINT] - Waypoint reached
+[2025-11-21 21:02:28,861][Drone 1][INFO][COMMANDS] - Command executed successfully
+[2025-11-21 21:02:28,864][Drone 1][INFO][gRPC Commands] - Feedback sent to ROS2
+[2025-11-21 21:02:28,887][Drone 1][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2025-11-21 21:02:29,893][Drone 1][INFO][gRPC Commands] - Command received
+[2025-11-21 21:02:29,893][Drone 1][INFO][COMMANDS] - Processing CAMERA_IMAGE command
+[2025-11-21 21:02:29,894][Drone 1][INFO][CAMERA_IMAGE] - Taking picture...
+[2025-11-21 21:02:30,930][Drone 1][INFO][CAMERA_IMAGE] - Picture taken successfully as 40.20973_-3.466803.jpg
+[2025-11-21 21:02:30,931][Drone 1][INFO][COMMANDS] - Command executed successfully
+[2025-11-21 21:02:30,934][Drone 1][INFO][gRPC Commands] - Feedback sent to ROS2
+[2025-11-21 21:02:31,954][Drone 1][INFO][gRPC Commands] - Command received
+[2025-11-21 21:02:31,955][Drone 1][INFO][COMMANDS] - Processing ANALYZE_IMAGE command
+[2025-11-21 21:02:31,955][Drone 1][INFO][ANALYZE_IMAGE] - Analyzing image...
+[2025-11-21 21:02:31,955][Drone 1][INFO][ANALYZE_IMAGE] - Starting analysis for agricultural image: Images/Camera/40.20973_-3.466803.jpg
+[2025-11-21 21:02:31,955][Drone 1][INFO][ANALYZE_IMAGE] - Executing agricultural model: Images/Models/Grape_Bunch_Hailo8/init_grape_bunch_hailo8.py
+[2025-11-21 21:02:33,581][Drone 1][INFO][ANALYZE_IMAGE] - Model execution completed with output: {'Grape_bunch': 1.95}
+[2025-11-21 21:02:34,581][Drone 1][INFO][ANALYZE_IMAGE] - Analysis completed
+[2025-11-21 21:02:34,582][Drone 1][INFO][PM_MANAGER] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus.py
+[2025-11-21 21:02:34,639][Drone 1][INFO][PM_MANAGER] - PM output [0]: 
+Script execution failed: PrescriptionMap/pm_generation/ISOBUS/pm_isobus.py
+Return code: 1
+Stderr: Traceback (most recent call last):
+  File "/home/estela/Fleet_Manager/Drone/PrescriptionMap/pm_generation/ISOBUS/pm_isobus.py", line 798, in <module>
+    generate_pm(amount, grid, long, lat)
+  File "/home/estela/Fleet_Manager/Drone/PrescriptionMap/pm_generation/ISOBUS/pm_isobus.py", line 343, in generate_pm
+    with open(path, "w") as f:
+         ^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'PrescriptionMap/pm_generation/ISOBUS/PMs/isobus_pm.json'
+[2025-11-21 21:02:34,642][Drone 1][INFO][COMMANDS] - Command executed successfully
+[2025-11-21 21:02:34,645][Drone 1][INFO][gRPC Commands] - Feedback sent to ROS2
+[2025-11-21 21:02:35,668][Drone 1][INFO][gRPC Commands] - Command received
+[2025-11-21 21:02:35,668][Drone 1][INFO][COMMANDS] - Processing NAV_WAYPOINT command
+[2025-11-21 21:02:35,668][Drone 1][INFO][NAV_WAYPOINT] - Going to WP...
+[2025-11-21 21:02:38,920][Drone 1][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2025-11-21 21:02:45,668][Drone 1][INFO][NAV_WAYPOINT] - Waypoint reached
+[2025-11-21 21:02:45,668][Drone 1][INFO][COMMANDS] - Command executed successfully
+[2025-11-21 21:02:45,671][Drone 1][INFO][gRPC Commands] - Feedback sent to ROS2
+[2025-11-21 21:02:46,701][Drone 1][INFO][gRPC Commands] - Command received
+[2025-11-21 21:02:46,702][Drone 1][INFO][COMMANDS] - Processing CAMERA_IMAGE command
+[2025-11-21 21:02:46,702][Drone 1][INFO][CAMERA_IMAGE] - Taking picture...
+[2025-11-21 21:02:47,739][Drone 1][INFO][CAMERA_IMAGE] - Picture taken successfully as 40.20973_-3.466557.jpg
+[2025-11-21 21:02:47,739][Drone 1][INFO][COMMANDS] - Command executed successfully
+[2025-11-21 21:02:47,742][Drone 1][INFO][gRPC Commands] - Feedback sent to ROS2
+[2025-11-21 21:02:48,766][Drone 1][INFO][gRPC Commands] - Command received
+[2025-11-21 21:02:48,767][Drone 1][INFO][COMMANDS] - Processing ANALYZE_IMAGE command
+[2025-11-21 21:02:48,767][Drone 1][INFO][ANALYZE_IMAGE] - Analyzing image...
+[2025-11-21 21:02:48,767][Drone 1][INFO][ANALYZE_IMAGE] - Starting analysis for agricultural image: Images/Camera/40.20973_-3.466557.jpg
+[2025-11-21 21:02:48,768][Drone 1][INFO][ANALYZE_IMAGE] - Executing agricultural model: Images/Models/Grape_Bunch_Hailo8/init_grape_bunch_hailo8.py
+[2025-11-21 21:02:48,954][Drone 1][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2025-11-21 21:02:50,420][Drone 1][INFO][ANALYZE_IMAGE] - Model execution completed with output: {'Grape_bunch': 3.95}
+[2025-11-21 21:02:51,421][Drone 1][INFO][ANALYZE_IMAGE] - Analysis completed
+[2025-11-21 21:02:51,422][Drone 1][INFO][PM_MANAGER] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus.py
+[2025-11-21 21:02:51,479][Drone 1][INFO][PM_MANAGER] - PM output [0]: 
+Script execution failed: PrescriptionMap/pm_generation/ISOBUS/pm_isobus.py
+Return code: 1
+Stderr: Traceback (most recent call last):
+  File "/home/estela/Fleet_Manager/Drone/PrescriptionMap/pm_generation/ISOBUS/pm_isobus.py", line 798, in <module>
+    generate_pm(amount, grid, long, lat)
+  File "/home/estela/Fleet_Manager/Drone/PrescriptionMap/pm_generation/ISOBUS/pm_isobus.py", line 343, in generate_pm
+    with open(path, "w") as f:
+         ^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'PrescriptionMap/pm_generation/ISOBUS/PMs/isobus_pm.json'
+[2025-11-21 21:02:51,482][Drone 1][INFO][COMMANDS] - Command executed successfully
+[2025-11-21 21:02:51,485][Drone 1][INFO][gRPC Commands] - Feedback sent to ROS2
+[2025-11-21 21:02:52,527][Drone 1][INFO][gRPC Commands] - Command received
+[2025-11-21 21:02:52,528][Drone 1][INFO][COMMANDS] - Processing NAV_WAYPOINT command
+[2025-11-21 21:02:52,528][Drone 1][INFO][NAV_WAYPOINT] - Going to WP...
+[2025-11-21 21:02:58,987][Drone 1][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2025-11-21 21:03:02,528][Drone 1][INFO][NAV_WAYPOINT] - Waypoint reached
+[2025-11-21 21:03:02,529][Drone 1][INFO][COMMANDS] - Command executed successfully
+[2025-11-21 21:03:02,532][Drone 1][INFO][gRPC Commands] - Feedback sent to ROS2
+[2025-11-21 21:03:03,559][Drone 1][INFO][gRPC Commands] - Command received
+[2025-11-21 21:03:03,559][Drone 1][INFO][COMMANDS] - Processing CAMERA_IMAGE command
+[2025-11-21 21:03:03,559][Drone 1][INFO][CAMERA_IMAGE] - Taking picture...
+[2025-11-21 21:03:04,597][Drone 1][INFO][CAMERA_IMAGE] - Picture taken successfully as 40.20973_-3.466312.jpg
+[2025-11-21 21:03:04,597][Drone 1][INFO][COMMANDS] - Command executed successfully
+[2025-11-21 21:03:04,600][Drone 1][INFO][gRPC Commands] - Feedback sent to ROS2
+[2025-11-21 21:03:05,620][Drone 1][INFO][gRPC Commands] - Command received
+[2025-11-21 21:03:05,620][Drone 1][INFO][COMMANDS] - Processing ANALYZE_IMAGE command
+[2025-11-21 21:03:05,620][Drone 1][INFO][ANALYZE_IMAGE] - Analyzing image...
+[2025-11-21 21:03:05,621][Drone 1][INFO][ANALYZE_IMAGE] - Starting analysis for agricultural image: Images/Camera/40.20973_-3.466312.jpg
+[2025-11-21 21:03:05,621][Drone 1][INFO][ANALYZE_IMAGE] - Executing agricultural model: Images/Models/Grape_Bunch_Hailo8/init_grape_bunch_hailo8.py
+[2025-11-21 21:03:07,231][Drone 1][INFO][ANALYZE_IMAGE] - Model execution completed with output: {'Grape_bunch': 7.95}
+[2025-11-21 21:03:08,231][Drone 1][INFO][ANALYZE_IMAGE] - Analysis completed
+[2025-11-21 21:03:08,232][Drone 1][INFO][PM_MANAGER] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus.py
+[2025-11-21 21:03:08,287][Drone 1][INFO][PM_MANAGER] - PM output [0]: 
+Script execution failed: PrescriptionMap/pm_generation/ISOBUS/pm_isobus.py
+Return code: 1
+Stderr: Traceback (most recent call last):
+  File "/home/estela/Fleet_Manager/Drone/PrescriptionMap/pm_generation/ISOBUS/pm_isobus.py", line 798, in <module>
+    generate_pm(amount, grid, long, lat)
+  File "/home/estela/Fleet_Manager/Drone/PrescriptionMap/pm_generation/ISOBUS/pm_isobus.py", line 343, in generate_pm
+    with open(path, "w") as f:
+         ^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'PrescriptionMap/pm_generation/ISOBUS/PMs/isobus_pm.json'
+[2025-11-21 21:03:08,290][Drone 1][INFO][COMMANDS] - Command executed successfully
+[2025-11-21 21:03:08,293][Drone 1][INFO][gRPC Commands] - Feedback sent to ROS2
+[2025-11-21 21:03:09,019][Drone 1][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2025-11-21 21:03:09,340][Drone 1][INFO][gRPC Commands] - Command received
+[2025-11-21 21:03:09,340][Drone 1][INFO][COMMANDS] - Processing NAV_WAYPOINT command
+[2025-11-21 21:03:09,340][Drone 1][INFO][NAV_WAYPOINT] - Going to WP...
+[2025-11-21 21:03:19,055][Drone 1][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2025-11-21 21:03:19,340][Drone 1][INFO][NAV_WAYPOINT] - Waypoint reached
+[2025-11-21 21:03:19,341][Drone 1][INFO][COMMANDS] - Command executed successfully
+[2025-11-21 21:03:19,344][Drone 1][INFO][gRPC Commands] - Feedback sent to ROS2
+[2025-11-21 21:03:20,368][Drone 1][INFO][gRPC Commands] - Command received
+[2025-11-21 21:03:20,369][Drone 1][INFO][COMMANDS] - Processing CAMERA_IMAGE command
+[2025-11-21 21:03:20,369][Drone 1][INFO][CAMERA_IMAGE] - Taking picture...
+[2025-11-21 21:03:21,409][Drone 1][INFO][CAMERA_IMAGE] - Picture taken successfully as 40.20973_-3.466066.jpg
+[2025-11-21 21:03:21,410][Drone 1][INFO][COMMANDS] - Command executed successfully
+[2025-11-21 21:03:21,415][Drone 1][INFO][gRPC Commands] - Feedback sent to ROS2
+[2025-11-21 21:03:22,440][Drone 1][INFO][gRPC Commands] - Command received
+[2025-11-21 21:03:22,440][Drone 1][INFO][COMMANDS] - Processing ANALYZE_IMAGE command
+[2025-11-21 21:03:22,440][Drone 1][INFO][ANALYZE_IMAGE] - Analyzing image...
+[2025-11-21 21:03:22,441][Drone 1][INFO][ANALYZE_IMAGE] - Starting analysis for agricultural image: Images/Camera/40.20973_-3.466066.jpg
+[2025-11-21 21:03:22,441][Drone 1][INFO][ANALYZE_IMAGE] - Executing agricultural model: Images/Models/Grape_Bunch_Hailo8/init_grape_bunch_hailo8.py
+[2025-11-21 21:03:24,057][Drone 1][INFO][ANALYZE_IMAGE] - Model execution completed with output: {'Grape_bunch': 9.95}
+[2025-11-21 21:03:25,057][Drone 1][INFO][ANALYZE_IMAGE] - Analysis completed
+[2025-11-21 21:03:25,058][Drone 1][INFO][PM_MANAGER] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus.py
+[2025-11-21 21:03:25,155][Drone 1][INFO][PM_MANAGER] - PM output [0]: 
+Script execution failed: PrescriptionMap/pm_generation/ISOBUS/pm_isobus.py
+Return code: 1
+Stderr: Traceback (most recent call last):
+  File "/home/estela/Fleet_Manager/Drone/PrescriptionMap/pm_generation/ISOBUS/pm_isobus.py", line 798, in <module>
+    generate_pm(amount, grid, long, lat)
+  File "/home/estela/Fleet_Manager/Drone/PrescriptionMap/pm_generation/ISOBUS/pm_isobus.py", line 343, in generate_pm
+    with open(path, "w") as f:
+         ^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'PrescriptionMap/pm_generation/ISOBUS/PMs/isobus_pm.json'
+[2025-11-21 21:03:25,158][Drone 1][INFO][COMMANDS] - Command executed successfully
+[2025-11-21 21:03:25,162][Drone 1][INFO][gRPC Commands] - Feedback sent to ROS2
+[2025-11-21 21:03:26,187][Drone 1][INFO][gRPC Commands] - Command received
+[2025-11-21 21:03:26,187][Drone 1][INFO][COMMANDS] - Processing NAV_WAYPOINT command
+[2025-11-21 21:03:26,187][Drone 1][INFO][NAV_WAYPOINT] - Going to WP...
+[2025-11-21 21:03:29,088][Drone 1][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2025-11-21 21:03:36,187][Drone 1][INFO][NAV_WAYPOINT] - Waypoint reached
+[2025-11-21 21:03:36,188][Drone 1][INFO][COMMANDS] - Command executed successfully
+[2025-11-21 21:03:36,190][Drone 1][INFO][gRPC Commands] - Feedback sent to ROS2
+[2025-11-21 21:03:37,218][Drone 1][INFO][gRPC Commands] - Command received
+[2025-11-21 21:03:37,218][Drone 1][INFO][COMMANDS] - Processing CAMERA_IMAGE command
+[2025-11-21 21:03:37,219][Drone 1][INFO][CAMERA_IMAGE] - Taking picture...
+[2025-11-21 21:03:38,274][Drone 1][INFO][CAMERA_IMAGE] - Picture taken successfully as 40.20973_-3.465821.jpg
+[2025-11-21 21:03:38,274][Drone 1][INFO][COMMANDS] - Command executed successfully
+[2025-11-21 21:03:38,277][Drone 1][INFO][gRPC Commands] - Feedback sent to ROS2
+[2025-11-21 21:03:39,120][Drone 1][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2025-11-21 21:03:39,296][Drone 1][INFO][gRPC Commands] - Command received
+[2025-11-21 21:03:39,297][Drone 1][INFO][COMMANDS] - Processing ANALYZE_IMAGE command
+[2025-11-21 21:03:39,297][Drone 1][INFO][ANALYZE_IMAGE] - Analyzing image...
+[2025-11-21 21:03:39,297][Drone 1][INFO][ANALYZE_IMAGE] - Starting analysis for agricultural image: Images/Camera/40.20973_-3.465821.jpg
+[2025-11-21 21:03:39,297][Drone 1][INFO][ANALYZE_IMAGE] - Executing agricultural model: Images/Models/Grape_Bunch_Hailo8/init_grape_bunch_hailo8.py
+[2025-11-21 21:03:40,910][Drone 1][INFO][ANALYZE_IMAGE] - Model execution completed with output: {'Grape_bunch': 3.95}
+[2025-11-21 21:03:41,911][Drone 1][INFO][ANALYZE_IMAGE] - Analysis completed
+[2025-11-21 21:03:41,912][Drone 1][INFO][PM_MANAGER] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus.py
+[2025-11-21 21:03:41,968][Drone 1][INFO][PM_MANAGER] - PM output [0]: 
+Script execution failed: PrescriptionMap/pm_generation/ISOBUS/pm_isobus.py
+Return code: 1
+Stderr: Traceback (most recent call last):
+  File "/home/estela/Fleet_Manager/Drone/PrescriptionMap/pm_generation/ISOBUS/pm_isobus.py", line 798, in <module>
+    generate_pm(amount, grid, long, lat)
+  File "/home/estela/Fleet_Manager/Drone/PrescriptionMap/pm_generation/ISOBUS/pm_isobus.py", line 343, in generate_pm
+    with open(path, "w") as f:
+         ^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'PrescriptionMap/pm_generation/ISOBUS/PMs/isobus_pm.json'
+[2025-11-21 21:03:41,971][Drone 1][INFO][COMMANDS] - Command executed successfully
+[2025-11-21 21:03:41,975][Drone 1][INFO][gRPC Commands] - Feedback sent to ROS2
+[2025-11-21 21:03:43,002][Drone 1][INFO][gRPC Commands] - Command received
+[2025-11-21 21:03:43,002][Drone 1][INFO][COMMANDS] - Processing NAV_WAYPOINT command
+[2025-11-21 21:03:43,002][Drone 1][INFO][NAV_WAYPOINT] - Going to WP...
+[2025-11-21 21:03:49,153][Drone 1][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2025-11-21 21:03:53,003][Drone 1][INFO][NAV_WAYPOINT] - Waypoint reached
+[2025-11-21 21:03:53,003][Drone 1][INFO][COMMANDS] - Command executed successfully
+[2025-11-21 21:03:53,006][Drone 1][INFO][gRPC Commands] - Feedback sent to ROS2
+[2025-11-21 21:03:54,029][Drone 1][INFO][gRPC Commands] - Command received
+[2025-11-21 21:03:54,030][Drone 1][INFO][COMMANDS] - Processing CAMERA_IMAGE command
+[2025-11-21 21:03:54,030][Drone 1][INFO][CAMERA_IMAGE] - Taking picture...
+[2025-11-21 21:03:55,069][Drone 1][INFO][CAMERA_IMAGE] - Picture taken successfully as 40.20973_-3.465575.jpg
+[2025-11-21 21:03:55,069][Drone 1][INFO][COMMANDS] - Command executed successfully
+[2025-11-21 21:03:55,072][Drone 1][INFO][gRPC Commands] - Feedback sent to ROS2
+[2025-11-21 21:03:56,095][Drone 1][INFO][gRPC Commands] - Command received
+[2025-11-21 21:03:56,096][Drone 1][INFO][COMMANDS] - Processing ANALYZE_IMAGE command
+[2025-11-21 21:03:56,096][Drone 1][INFO][ANALYZE_IMAGE] - Analyzing image...
+[2025-11-21 21:03:56,096][Drone 1][INFO][ANALYZE_IMAGE] - Starting analysis for agricultural image: Images/Camera/40.20973_-3.465575.jpg
+[2025-11-21 21:03:56,096][Drone 1][INFO][ANALYZE_IMAGE] - Executing agricultural model: Images/Models/Grape_Bunch_Hailo8/init_grape_bunch_hailo8.py
+[2025-11-21 21:03:57,702][Drone 1][INFO][ANALYZE_IMAGE] - Model execution completed with output: {'Grape_bunch': 3.95}
+[2025-11-21 21:03:58,704][Drone 1][INFO][ANALYZE_IMAGE] - Analysis completed
+[2025-11-21 21:03:58,704][Drone 1][INFO][PM_MANAGER] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus.py
+[2025-11-21 21:03:58,763][Drone 1][INFO][PM_MANAGER] - PM output [0]: 
+Script execution failed: PrescriptionMap/pm_generation/ISOBUS/pm_isobus.py
+Return code: 1
+Stderr: Traceback (most recent call last):
+  File "/home/estela/Fleet_Manager/Drone/PrescriptionMap/pm_generation/ISOBUS/pm_isobus.py", line 798, in <module>
+    generate_pm(amount, grid, long, lat)
+  File "/home/estela/Fleet_Manager/Drone/PrescriptionMap/pm_generation/ISOBUS/pm_isobus.py", line 343, in generate_pm
+    with open(path, "w") as f:
+         ^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'PrescriptionMap/pm_generation/ISOBUS/PMs/isobus_pm.json'
+[2025-11-21 21:03:58,766][Drone 1][INFO][COMMANDS] - Command executed successfully
+[2025-11-21 21:03:58,770][Drone 1][INFO][gRPC Commands] - Feedback sent to ROS2
+[2025-11-21 21:03:59,188][Drone 1][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2025-11-21 21:03:59,795][Drone 1][INFO][gRPC Commands] - Command received
+[2025-11-21 21:03:59,795][Drone 1][INFO][COMMANDS] - Processing NAV_HOME command
+[2025-11-21 21:03:59,795][Drone 1][INFO][NAV_HOME] - Returning home...
+[2025-11-21 21:04:09,220][Drone 1][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2025-11-21 21:04:09,796][Drone 1][INFO][NAV_HOME] - Return home successful
+[2025-11-21 21:04:09,796][Drone 1][INFO][COMMANDS] - Command executed successfully
+[2025-11-21 21:04:09,799][Drone 1][INFO][gRPC Commands] - Feedback sent to ROS2
+[2025-11-21 21:04:10,829][Drone 1][INFO][gRPC Commands] - Command received
+[2025-11-21 21:04:10,834][Drone 1][INFO][COMMANDS] - Processing NAV_LAND command
+[2025-11-21 21:04:10,834][Drone 1][INFO][NAV_LAND] - Landing...

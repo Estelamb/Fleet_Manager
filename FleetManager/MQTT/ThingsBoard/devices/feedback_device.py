@@ -136,7 +136,7 @@ class FeedbackDevice:
         :type telemetry_topic: str
         """
         self.base = BaseDevice(tb_api, mqtt_logger, tb_host, port, telemetry_topic)
-        self.feedbacks = {}  # Dictionary: mission_id -> list of feedback devices
+        self.feedbacks = {}  # mission_id -> list of feedback devices
         self.mqtt_logger = mqtt_logger
     
     def handle_message(self, message, mission_id, mission_device_id):
@@ -205,40 +205,42 @@ class FeedbackDevice:
                     mission_device_id="mission_device_uuid"
                 )
         """
-        # Initialize feedback list for mission if not exists
         if mission_id not in self.feedbacks:
             self.feedbacks[mission_id] = []
-            
-        # Generate sequential feedback number for this mission
+
+        # Número secuencial de feedback
         feedback_number = len(self.feedbacks[mission_id]) + 1
         feedback_name = f"Feedback {mission_id}.{feedback_number}"
-        
-        # Create feedback device in ThingsBoard
+
+        # Crear dispositivo Feedback
         device_id, access_token = self.base.create_device(feedback_name, "Feedback")
-        if device_id and access_token:
-            # Set device attribute to identify as feedback device
-            self.base.tb.set_server_attribute(device_id, 'feedback', 'feedback')
-            
-            # Create MQTT client for telemetry transmission
-            client = self.base.create_client(access_token)
-            
-            if client:
-                # Store feedback device information
-                self.feedbacks[mission_id].append({
-                    'device_id': device_id,
-                    'client': client
-                })
-                
-                # Create relationship between mission and feedback device
-                if mission_device_id:
-                    self.base.tb.create_relation(
-                        mission_device_id,
-                        device_id,
-                        "FEEDBACK"
-                    )
-                
-                # Transmit feedback telemetry data
-                self.base.send_telemetry(client, message['telemetry'])
+        if not device_id or not access_token:
+            self.mqtt_logger.error(f"[FeedbackDevice] Failed to create feedback device {feedback_name}")
+            return
+
+        # Establecer atributo para identificar el feedback
+        self.base.tb.set_server_attribute(device_id, 'feedback', 'feedback')
+
+        # Crear cliente MQTT
+        client = self.base.create_client(access_token)
+        if not client:
+            self.mqtt_logger.error(f"[FeedbackDevice] Failed to create MQTT client for {feedback_name}")
+            return
+
+        # Guardar feedback
+        self.feedbacks[mission_id].append({
+            'device_id': device_id,
+            'client': client
+        })
+
+        # Crear relación Mission → Feedback
+        if mission_device_id:
+            if not self.base.tb.create_relation(mission_device_id, device_id, "FEEDBACK"):
+                self.mqtt_logger.error(f"[FeedbackDevice] Failed to create relation for {feedback_name}")
+
+        # Enviar telemetría
+        self.base.send_telemetry(client, message.get('telemetry', {}))
+        self.mqtt_logger.info(f"[FeedbackDevice] Sent telemetry for {feedback_name}")
     
     def cleanup(self, mission_id, mission_device_id):
         """Clean up all feedback devices associated with a completed mission.
@@ -286,23 +288,18 @@ class FeedbackDevice:
             The method ensures graceful cleanup even if some operations fail,
             continuing with remaining cleanup tasks to maximize resource recovery.
         """
-        # Check if mission has feedback devices to clean up
-        if mission_id in self.feedbacks:
-            # Clean up each feedback device for this mission
-            for feedback in self.feedbacks[mission_id]:
-                # Disconnect and clean up MQTT client
-                self.base.delete_client(feedback['client'])
-                
-                # Delete feedback device from ThingsBoard with retry mechanism
-                self.base.delete_device_with_retry(feedback['device_id'])
-                
-                # Remove mission-feedback relationship if mission device exists
-                if mission_device_id:
-                    self.base.tb.delete_relation(
-                        mission_device_id,
-                        feedback['device_id'],
-                        "FEEDBACK"
-                    )
-            
-            # Remove mission feedback data from local storage
-            del self.feedbacks[mission_id]
+        if mission_id not in self.feedbacks:
+            return
+
+        for feedback in self.feedbacks[mission_id]:
+            # Desconectar cliente MQTT
+            self.base.delete_client(feedback['client'])
+            # Eliminar dispositivo con reintentos
+            self.base.delete_device_with_retry(feedback['device_id'])
+            # Eliminar relación Mission → Feedback
+            if mission_device_id:
+                self.base.tb.delete_relation(mission_device_id, feedback['device_id'], "FEEDBACK")
+
+        # Limpiar almacenamiento local
+        del self.feedbacks[mission_id]
+        self.mqtt_logger.info(f"[FeedbackDevice] Cleaned up all feedback devices for mission {mission_id}")

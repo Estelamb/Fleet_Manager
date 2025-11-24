@@ -158,7 +158,15 @@
       "id": 5,
       "missionId": 1,
       "taskStatus": "NotAssigned",
-      "assignedVehicleId": 2
+      "assignedVehicleId": 2,
+      "taskDependency": {
+        "dependencyStatus": "NotModified",
+        "dependencyTaskId": 2,
+        "dependencyTaskStatus": "Finished",
+        "dependencyResultType": [
+          0
+        ]
+      }
     },
     {
       "taskType": "TRANSIT",
