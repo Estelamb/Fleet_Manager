@@ -369,8 +369,8 @@ class CommandsActionServer(Node):
         self.drone_logger = drone_logger  # Logger instance for component-specific logging
         self.commands_queue = commands_queue  # Thread-safe queue for gRPC-ROS2 communication
         self.sv_queue = sv_queue
-        self.latitude = 40.073670
-        self.longitude = -4.612044
+        self.latitude = 40.209232
+        self.longitude = -3.465646
         
         
         # Create ROS2 action server with custom Commands interface for mission management

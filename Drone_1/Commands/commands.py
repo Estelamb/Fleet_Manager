@@ -216,7 +216,7 @@ class Nav_TakeOff(Command):
         systems to manage motor speeds, attitude control, and safety checks.
         """
         self.logger.info("[NAV_TAKEOFF] - Taking off...")
-        time.sleep(10)
+        time.sleep(2)
         
     def result(self):
         """
@@ -312,7 +312,7 @@ class Nav_Land(Command):
         and flight control systems to ensure safe and accurate landing.
         """
         self.logger.info("[NAV_LAND] - Landing...")
-        time.sleep(10)
+        time.sleep(2)
         
     def result(self):
         """
@@ -412,7 +412,7 @@ class Nav_Waypoint(Command):
         GPS modules, and flight control algorithms for precise navigation.
         """
         self.logger.info("[NAV_WAYPOINT] - Going to WP...")
-        time.sleep(10)
+        time.sleep(2)
         
     def result(self):
         """
@@ -493,7 +493,7 @@ class Nav_Home(Command):
         """
         self.logger.info("[NAV_HOME] - Returning home...")
         send_all(self.logger)
-        time.sleep(10)
+        time.sleep(2)
         
     def result(self):
         """
@@ -799,7 +799,7 @@ class Spray(Command):
         flow rates, and spray pattern optimization for precise application.
         """
         self.logger.info("[SPRAY] - Spraying...")
-        time.sleep(10)
+        time.sleep(2)
         
     def result(self):
         """

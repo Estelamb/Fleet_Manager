@@ -1106,3 +1106,164 @@
 [2025-11-24 13:25:01,597][REST][INFO][gRPC REST] - Mission status received from Fleet Management
 [2025-11-24 13:25:01,597][REST][INFO][gRPC REST] - Mission status received from Fleet Management
 [2025-11-24 13:25:01,597][REST][INFO][gRPC REST] - Mission status received from Fleet Management
+[2025-11-25 13:26:51,702][REST][INFO][gRPC REST] - Server running on port [::]:50052
+[2025-11-25 13:33:28,121][REST][INFO][REST Server] - Received Mission
+[2025-11-25 13:33:28,121][REST][INFO][REST Server] - Received Mission
+[2025-11-25 13:33:28,126][REST][INFO][gRPC REST] - Sending mission to Fleet Management
+[2025-11-25 13:33:28,126][REST][INFO][gRPC REST] - Sending mission to Fleet Management
+[2025-11-25 13:33:28,158][REST][INFO][gRPC REST] - ACK received from Fleet Management
+[2025-11-25 13:33:28,158][REST][INFO][gRPC REST] - ACK received from Fleet Management
+[2025-11-25 13:40:52,220][REST][INFO][REST Server] - Received Mission
+[2025-11-25 13:40:52,220][REST][INFO][REST Server] - Received Mission
+[2025-11-25 13:40:52,220][REST][INFO][REST Server] - Received Mission
+[2025-11-25 13:40:52,224][REST][INFO][gRPC REST] - Sending mission to Fleet Management
+[2025-11-25 13:40:52,224][REST][INFO][gRPC REST] - Sending mission to Fleet Management
+[2025-11-25 13:40:52,224][REST][INFO][gRPC REST] - Sending mission to Fleet Management
+[2025-11-25 13:40:52,234][REST][INFO][gRPC REST] - ACK received from Fleet Management
+[2025-11-25 13:40:52,234][REST][INFO][gRPC REST] - ACK received from Fleet Management
+[2025-11-25 13:40:52,234][REST][INFO][gRPC REST] - ACK received from Fleet Management
+[2025-11-25 13:40:53,000][REST][INFO][REST Server] - Received Mission
+[2025-11-25 13:40:53,000][REST][INFO][REST Server] - Received Mission
+[2025-11-25 13:40:53,000][REST][INFO][REST Server] - Received Mission
+[2025-11-25 13:40:53,000][REST][INFO][REST Server] - Received Mission
+[2025-11-25 13:40:53,005][REST][INFO][gRPC REST] - Sending mission to Fleet Management
+[2025-11-25 13:40:53,005][REST][INFO][gRPC REST] - Sending mission to Fleet Management
+[2025-11-25 13:40:53,005][REST][INFO][gRPC REST] - Sending mission to Fleet Management
+[2025-11-25 13:40:53,005][REST][INFO][gRPC REST] - Sending mission to Fleet Management
+[2025-11-25 13:40:53,016][REST][INFO][gRPC REST] - ACK received from Fleet Management
+[2025-11-25 13:40:53,016][REST][INFO][gRPC REST] - ACK received from Fleet Management
+[2025-11-25 13:40:53,016][REST][INFO][gRPC REST] - ACK received from Fleet Management
+[2025-11-25 13:40:53,016][REST][INFO][gRPC REST] - ACK received from Fleet Management
+[2025-11-25 13:40:53,527][REST][INFO][REST Server] - Received Mission
+[2025-11-25 13:40:53,527][REST][INFO][REST Server] - Received Mission
+[2025-11-25 13:40:53,527][REST][INFO][REST Server] - Received Mission
+[2025-11-25 13:40:53,527][REST][INFO][REST Server] - Received Mission
+[2025-11-25 13:40:53,527][REST][INFO][REST Server] - Received Mission
+[2025-11-25 13:40:53,531][REST][INFO][gRPC REST] - Sending mission to Fleet Management
+[2025-11-25 13:40:53,531][REST][INFO][gRPC REST] - Sending mission to Fleet Management
+[2025-11-25 13:40:53,531][REST][INFO][gRPC REST] - Sending mission to Fleet Management
+[2025-11-25 13:40:53,531][REST][INFO][gRPC REST] - Sending mission to Fleet Management
+[2025-11-25 13:40:53,531][REST][INFO][gRPC REST] - Sending mission to Fleet Management
+[2025-11-25 13:40:53,539][REST][INFO][gRPC REST] - ACK received from Fleet Management
+[2025-11-25 13:40:53,539][REST][INFO][gRPC REST] - ACK received from Fleet Management
+[2025-11-25 13:40:53,539][REST][INFO][gRPC REST] - ACK received from Fleet Management
+[2025-11-25 13:40:53,539][REST][INFO][gRPC REST] - ACK received from Fleet Management
+[2025-11-25 13:40:53,539][REST][INFO][gRPC REST] - ACK received from Fleet Management
+[2025-11-25 13:43:44,140][REST][INFO][gRPC REST] - Mission status received from Fleet Management
+[2025-11-25 13:43:44,140][REST][INFO][gRPC REST] - Mission status received from Fleet Management
+[2025-11-25 13:43:44,140][REST][INFO][gRPC REST] - Mission status received from Fleet Management
+[2025-11-25 13:43:44,140][REST][INFO][gRPC REST] - Mission status received from Fleet Management
+[2025-11-25 13:43:44,140][REST][INFO][gRPC REST] - Mission status received from Fleet Management
+[2025-11-25 14:29:29,674][REST][INFO][gRPC REST] - Server running on port [::]:50052
+[2025-11-25 14:35:32,289][REST][INFO][REST Server] - Received Mission
+[2025-11-25 14:35:32,289][REST][INFO][REST Server] - Received Mission
+[2025-11-25 14:35:32,294][REST][INFO][gRPC REST] - Sending mission to Fleet Management
+[2025-11-25 14:35:32,294][REST][INFO][gRPC REST] - Sending mission to Fleet Management
+[2025-11-25 14:35:32,329][REST][INFO][gRPC REST] - ACK received from Fleet Management
+[2025-11-25 14:35:32,329][REST][INFO][gRPC REST] - ACK received from Fleet Management
+[2025-11-25 14:45:46,473][REST][INFO][gRPC REST] - Mission status received from Fleet Management
+[2025-11-25 14:45:46,473][REST][INFO][gRPC REST] - Mission status received from Fleet Management
+[2025-11-26 10:47:41,290][REST][INFO][gRPC REST] - Server running on port [::]:50052
+[2025-11-26 10:52:35,624][REST][INFO][REST Server] - Received Mission
+[2025-11-26 10:52:35,624][REST][INFO][REST Server] - Received Mission
+[2025-11-26 10:52:35,629][REST][INFO][gRPC REST] - Sending mission to Fleet Management
+[2025-11-26 10:52:35,629][REST][INFO][gRPC REST] - Sending mission to Fleet Management
+[2025-11-26 10:52:35,666][REST][INFO][gRPC REST] - ACK received from Fleet Management
+[2025-11-26 10:52:35,666][REST][INFO][gRPC REST] - ACK received from Fleet Management
+[2025-11-26 10:55:02,881][REST][INFO][REST Server] - Received Mission
+[2025-11-26 10:55:02,881][REST][INFO][REST Server] - Received Mission
+[2025-11-26 10:55:02,881][REST][INFO][REST Server] - Received Mission
+[2025-11-26 10:55:02,887][REST][INFO][gRPC REST] - Sending mission to Fleet Management
+[2025-11-26 10:55:02,887][REST][INFO][gRPC REST] - Sending mission to Fleet Management
+[2025-11-26 10:55:02,887][REST][INFO][gRPC REST] - Sending mission to Fleet Management
+[2025-11-26 10:55:02,900][REST][INFO][gRPC REST] - ACK received from Fleet Management
+[2025-11-26 10:55:02,900][REST][INFO][gRPC REST] - ACK received from Fleet Management
+[2025-11-26 10:55:02,900][REST][INFO][gRPC REST] - ACK received from Fleet Management
+[2025-11-26 11:02:49,484][REST][INFO][gRPC REST] - Mission status received from Fleet Management
+[2025-11-26 11:02:49,484][REST][INFO][gRPC REST] - Mission status received from Fleet Management
+[2025-11-26 11:02:49,484][REST][INFO][gRPC REST] - Mission status received from Fleet Management
+[2025-11-26 11:03:02,710][REST][INFO][gRPC REST] - Mission status received from Fleet Management
+[2025-11-26 11:03:02,710][REST][INFO][gRPC REST] - Mission status received from Fleet Management
+[2025-11-26 11:03:02,710][REST][INFO][gRPC REST] - Mission status received from Fleet Management
+[2025-11-26 11:06:29,802][REST][INFO][REST Server] - Received Mission
+[2025-11-26 11:06:29,802][REST][INFO][REST Server] - Received Mission
+[2025-11-26 11:06:29,802][REST][INFO][REST Server] - Received Mission
+[2025-11-26 11:06:29,802][REST][INFO][REST Server] - Received Mission
+[2025-11-26 11:06:29,808][REST][INFO][gRPC REST] - Sending mission to Fleet Management
+[2025-11-26 11:06:29,808][REST][INFO][gRPC REST] - Sending mission to Fleet Management
+[2025-11-26 11:06:29,808][REST][INFO][gRPC REST] - Sending mission to Fleet Management
+[2025-11-26 11:06:29,808][REST][INFO][gRPC REST] - Sending mission to Fleet Management
+[2025-11-26 11:06:29,822][REST][INFO][gRPC REST] - ACK received from Fleet Management
+[2025-11-26 11:06:29,822][REST][INFO][gRPC REST] - ACK received from Fleet Management
+[2025-11-26 11:06:29,822][REST][INFO][gRPC REST] - ACK received from Fleet Management
+[2025-11-26 11:06:29,822][REST][INFO][gRPC REST] - ACK received from Fleet Management
+[2025-11-26 11:06:32,682][REST][INFO][REST Server] - Received Mission
+[2025-11-26 11:06:32,682][REST][INFO][REST Server] - Received Mission
+[2025-11-26 11:06:32,682][REST][INFO][REST Server] - Received Mission
+[2025-11-26 11:06:32,682][REST][INFO][REST Server] - Received Mission
+[2025-11-26 11:06:32,682][REST][INFO][REST Server] - Received Mission
+[2025-11-26 11:06:32,686][REST][INFO][gRPC REST] - Sending mission to Fleet Management
+[2025-11-26 11:06:32,686][REST][INFO][gRPC REST] - Sending mission to Fleet Management
+[2025-11-26 11:06:32,686][REST][INFO][gRPC REST] - Sending mission to Fleet Management
+[2025-11-26 11:06:32,686][REST][INFO][gRPC REST] - Sending mission to Fleet Management
+[2025-11-26 11:06:32,686][REST][INFO][gRPC REST] - Sending mission to Fleet Management
+[2025-11-26 11:06:32,693][REST][INFO][gRPC REST] - ACK received from Fleet Management
+[2025-11-26 11:06:32,693][REST][INFO][gRPC REST] - ACK received from Fleet Management
+[2025-11-26 11:06:32,693][REST][INFO][gRPC REST] - ACK received from Fleet Management
+[2025-11-26 11:06:32,693][REST][INFO][gRPC REST] - ACK received from Fleet Management
+[2025-11-26 11:06:32,693][REST][INFO][gRPC REST] - ACK received from Fleet Management
+[2025-11-26 11:10:29,094][REST][INFO][gRPC REST] - Server running on port [::]:50052
+[2025-11-26 11:10:29,546][REST][INFO][REST Server] - Received Mission
+[2025-11-26 11:10:29,546][REST][INFO][REST Server] - Received Mission
+[2025-11-26 11:10:29,549][REST][INFO][gRPC REST] - Sending mission to Fleet Management
+[2025-11-26 11:10:29,549][REST][INFO][gRPC REST] - Sending mission to Fleet Management
+[2025-11-26 11:10:29,557][REST][INFO][gRPC REST] - ACK received from Fleet Management
+[2025-11-26 11:10:29,557][REST][INFO][gRPC REST] - ACK received from Fleet Management
+[2025-11-26 11:10:32,067][REST][INFO][REST Server] - Received Mission
+[2025-11-26 11:10:32,067][REST][INFO][REST Server] - Received Mission
+[2025-11-26 11:10:32,067][REST][INFO][REST Server] - Received Mission
+[2025-11-26 11:10:32,070][REST][INFO][gRPC REST] - Sending mission to Fleet Management
+[2025-11-26 11:10:32,070][REST][INFO][gRPC REST] - Sending mission to Fleet Management
+[2025-11-26 11:10:32,070][REST][INFO][gRPC REST] - Sending mission to Fleet Management
+[2025-11-26 11:10:32,097][REST][INFO][gRPC REST] - ACK received from Fleet Management
+[2025-11-26 11:10:32,097][REST][INFO][gRPC REST] - ACK received from Fleet Management
+[2025-11-26 11:10:32,097][REST][INFO][gRPC REST] - ACK received from Fleet Management
+[2025-11-26 11:20:42,071][REST][INFO][gRPC REST] - Mission status received from Fleet Management
+[2025-11-26 11:20:42,071][REST][INFO][gRPC REST] - Mission status received from Fleet Management
+[2025-11-26 11:20:42,071][REST][INFO][gRPC REST] - Mission status received from Fleet Management
+[2025-11-26 11:27:14,660][REST][INFO][REST Server] - Received Mission
+[2025-11-26 11:27:14,660][REST][INFO][REST Server] - Received Mission
+[2025-11-26 11:27:14,660][REST][INFO][REST Server] - Received Mission
+[2025-11-26 11:27:14,660][REST][INFO][REST Server] - Received Mission
+[2025-11-26 11:27:14,666][REST][INFO][gRPC REST] - Sending mission to Fleet Management
+[2025-11-26 11:27:14,666][REST][INFO][gRPC REST] - Sending mission to Fleet Management
+[2025-11-26 11:27:14,666][REST][INFO][gRPC REST] - Sending mission to Fleet Management
+[2025-11-26 11:27:14,666][REST][INFO][gRPC REST] - Sending mission to Fleet Management
+[2025-11-26 11:27:14,679][REST][INFO][gRPC REST] - ACK received from Fleet Management
+[2025-11-26 11:27:14,679][REST][INFO][gRPC REST] - ACK received from Fleet Management
+[2025-11-26 11:27:14,679][REST][INFO][gRPC REST] - ACK received from Fleet Management
+[2025-11-26 11:27:14,679][REST][INFO][gRPC REST] - ACK received from Fleet Management
+[2025-11-26 11:35:07,890][REST][INFO][gRPC REST] - Mission status received from Fleet Management
+[2025-11-26 11:35:07,890][REST][INFO][gRPC REST] - Mission status received from Fleet Management
+[2025-11-26 11:35:07,890][REST][INFO][gRPC REST] - Mission status received from Fleet Management
+[2025-11-26 11:35:07,890][REST][INFO][gRPC REST] - Mission status received from Fleet Management
+[2025-11-26 11:35:54,961][REST][INFO][REST Server] - Received Mission
+[2025-11-26 11:35:54,961][REST][INFO][REST Server] - Received Mission
+[2025-11-26 11:35:54,961][REST][INFO][REST Server] - Received Mission
+[2025-11-26 11:35:54,961][REST][INFO][REST Server] - Received Mission
+[2025-11-26 11:35:54,961][REST][INFO][REST Server] - Received Mission
+[2025-11-26 11:35:54,968][REST][INFO][gRPC REST] - Sending mission to Fleet Management
+[2025-11-26 11:35:54,968][REST][INFO][gRPC REST] - Sending mission to Fleet Management
+[2025-11-26 11:35:54,968][REST][INFO][gRPC REST] - Sending mission to Fleet Management
+[2025-11-26 11:35:54,968][REST][INFO][gRPC REST] - Sending mission to Fleet Management
+[2025-11-26 11:35:54,968][REST][INFO][gRPC REST] - Sending mission to Fleet Management
+[2025-11-26 11:35:54,980][REST][INFO][gRPC REST] - ACK received from Fleet Management
+[2025-11-26 11:35:54,980][REST][INFO][gRPC REST] - ACK received from Fleet Management
+[2025-11-26 11:35:54,980][REST][INFO][gRPC REST] - ACK received from Fleet Management
+[2025-11-26 11:35:54,980][REST][INFO][gRPC REST] - ACK received from Fleet Management
+[2025-11-26 11:35:54,980][REST][INFO][gRPC REST] - ACK received from Fleet Management
+[2025-11-26 11:46:13,370][REST][INFO][gRPC REST] - Mission status received from Fleet Management
+[2025-11-26 11:46:13,370][REST][INFO][gRPC REST] - Mission status received from Fleet Management
+[2025-11-26 11:46:13,370][REST][INFO][gRPC REST] - Mission status received from Fleet Management
+[2025-11-26 11:46:13,370][REST][INFO][gRPC REST] - Mission status received from Fleet Management
+[2025-11-26 11:46:13,370][REST][INFO][gRPC REST] - Mission status received from Fleet Management

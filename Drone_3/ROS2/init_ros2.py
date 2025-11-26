@@ -597,7 +597,7 @@ def initialize_state_vector_system(drone_id: int, drone_logger: logging.Logger, 
     try:
         topic_queue = queue.Queue()
         
-        start_state_vector(vehicle_id=drone_id, longitude=40.073670, latitude=-4.612044,
+        start_state_vector(vehicle_id=drone_id, longitude=40.209232, latitude=-3.465646,
                                action_queue=sv_queue, topic_queue=topic_queue)
 
         state_publisher = StateVectorPublisher(drone_id=drone_id, drone_logger=drone_logger,
