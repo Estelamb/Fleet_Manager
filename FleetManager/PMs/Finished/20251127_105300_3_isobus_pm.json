@@ -1,0 +1,825 @@
+{
+  "VersionMajor": 2,
+  "VersionMinor": 1,
+  "ManagementSoftwareManufacturer": "AFARCLOUD ISOBUS Converter",
+  "ManagementSoftwareVersion": "1.0",
+  "DataTransferOrigin": 1,
+  "Customer": {
+    "CustomerId": "CTR1",
+    "CustomerDesignator": "ESTE"
+  },
+  "Farm": {
+    "FarmId": "FRM1",
+    "FarmDesignator": "Hof Hollerweger",
+    "CustomerIdRef": "CTR1"
+  },
+  "OperationTechnique": [
+    {
+      "OperationTechniqueId": "OTQ1",
+      "OperationTechniqueDesignator": "TILLING"
+    },
+    {
+      "OperationTechniqueId": "OTQ2",
+      "OperationTechniqueDesignator": "SUPPLY"
+    },
+    {
+      "OperationTechniqueId": "OTQ3",
+      "OperationTechniqueDesignator": "SOWING"
+    },
+    {
+      "OperationTechniqueId": "OTQ4",
+      "OperationTechniqueDesignator": "CULTIVATE"
+    },
+    {
+      "OperationTechniqueId": "OTQ5",
+      "OperationTechniqueDesignator": "HARVESTING"
+    },
+    {
+      "OperationTechniqueId": "OTQ6",
+      "OperationTechniqueDesignator": "SOILSAMPLE"
+    },
+    {
+      "OperationTechniqueId": "OTQ7",
+      "OperationTechniqueDesignator": "TOFERTILIZE"
+    }
+  ],
+  "Partfield": {
+    "PartfieldId": "PFD1",
+    "PartfieldDesignator": "Neubauer",
+    "PartfieldCode": "4-00",
+    "PartfieldArea": 7000,
+    "FarmIdRef": "FRM1",
+    "CropTypeIdRef": "CTP1",
+    "Polygon": {
+      "PolygonType": 1,
+      "Linestring": {
+        "LinestringType": 1,
+        "Point": [
+          {
+            "PointNorth": 48.05792288175405,
+            "PointType": 2,
+            "PointEast": 14.555920064449309
+          },
+          {
+            "PointNorth": 48.0578291710116,
+            "PointType": 2,
+            "PointEast": 14.555920064449309
+          },
+          {
+            "PointNorth": 48.0578291710116,
+            "PointType": 2,
+            "PointEast": 14.555638730525969
+          },
+          {
+            "PointNorth": 48.0578291710116,
+            "PointType": 2,
+            "PointEast": 14.5554980635643
+          },
+          {
+            "PointNorth": 48.05773546026914,
+            "PointType": 2,
+            "PointEast": 14.5554980635643
+          },
+          {
+            "PointNorth": 48.05773546026914,
+            "PointType": 2,
+            "PointEast": 14.55521672964096
+          },
+          {
+            "PointNorth": 48.05764174952669,
+            "PointType": 2,
+            "PointEast": 14.55521672964096
+          },
+          {
+            "PointNorth": 48.05764174952669,
+            "PointType": 2,
+            "PointEast": 14.55507606267929
+          },
+          {
+            "PointNorth": 48.05764174952669,
+            "PointType": 2,
+            "PointEast": 14.554794728755951
+          },
+          {
+            "PointNorth": 48.05754803878423,
+            "PointType": 2,
+            "PointEast": 14.554794728755951
+          },
+          {
+            "PointNorth": 48.05754803878423,
+            "PointType": 2,
+            "PointEast": 14.554372727870941
+          },
+          {
+            "PointNorth": 48.05764174952669,
+            "PointType": 2,
+            "PointEast": 14.554372727870941
+          },
+          {
+            "PointNorth": 48.05764174952669,
+            "PointType": 2,
+            "PointEast": 14.554232060909271
+          },
+          {
+            "PointNorth": 48.05773546026914,
+            "PointType": 2,
+            "PointEast": 14.554232060909271
+          },
+          {
+            "PointNorth": 48.0578291710116,
+            "PointType": 2,
+            "PointEast": 14.554232060909271
+          },
+          {
+            "PointNorth": 48.05792288175405,
+            "PointType": 2,
+            "PointEast": 14.554232060909271
+          },
+          {
+            "PointNorth": 48.05801659249651,
+            "PointType": 2,
+            "PointEast": 14.554232060909271
+          },
+          {
+            "PointNorth": 48.05801659249651,
+            "PointType": 2,
+            "PointEast": 14.554513394832611
+          },
+          {
+            "PointNorth": 48.058110303238955,
+            "PointType": 2,
+            "PointEast": 14.554513394832611
+          },
+          {
+            "PointNorth": 48.058110303238955,
+            "PointType": 2,
+            "PointEast": 14.554794728755951
+          },
+          {
+            "PointNorth": 48.058110303238955,
+            "PointType": 2,
+            "PointEast": 14.55493539571762
+          },
+          {
+            "PointNorth": 48.05820401398141,
+            "PointType": 2,
+            "PointEast": 14.55493539571762
+          },
+          {
+            "PointNorth": 48.05820401398141,
+            "PointType": 2,
+            "PointEast": 14.55521672964096
+          },
+          {
+            "PointNorth": 48.05820401398141,
+            "PointType": 2,
+            "PointEast": 14.55535739660263
+          },
+          {
+            "PointNorth": 48.058297724723865,
+            "PointType": 2,
+            "PointEast": 14.55535739660263
+          },
+          {
+            "PointNorth": 48.058297724723865,
+            "PointType": 2,
+            "PointEast": 14.555638730525969
+          },
+          {
+            "PointNorth": 48.05839143546632,
+            "PointType": 2,
+            "PointEast": 14.555638730525969
+          },
+          {
+            "PointNorth": 48.05839143546632,
+            "PointType": 2,
+            "PointEast": 14.555779397487639
+          },
+          {
+            "PointNorth": 48.05839143546632,
+            "PointType": 2,
+            "PointEast": 14.556060731410978
+          },
+          {
+            "PointNorth": 48.058485146208774,
+            "PointType": 2,
+            "PointEast": 14.556060731410978
+          },
+          {
+            "PointNorth": 48.058485146208774,
+            "PointType": 2,
+            "PointEast": 14.556201398372648
+          },
+          {
+            "PointNorth": 48.058485146208774,
+            "PointType": 2,
+            "PointEast": 14.556342065334318
+          },
+          {
+            "PointNorth": 48.05857885695123,
+            "PointType": 2,
+            "PointEast": 14.556342065334318
+          },
+          {
+            "PointNorth": 48.05857885695123,
+            "PointType": 2,
+            "PointEast": 14.556764066219328
+          },
+          {
+            "PointNorth": 48.058485146208774,
+            "PointType": 2,
+            "PointEast": 14.556764066219328
+          },
+          {
+            "PointNorth": 48.05839143546632,
+            "PointType": 2,
+            "PointEast": 14.556764066219328
+          },
+          {
+            "PointNorth": 48.058297724723865,
+            "PointType": 2,
+            "PointEast": 14.556764066219328
+          },
+          {
+            "PointNorth": 48.058297724723865,
+            "PointType": 2,
+            "PointEast": 14.556623399257658
+          },
+          {
+            "PointNorth": 48.05820401398141,
+            "PointType": 2,
+            "PointEast": 14.556623399257658
+          },
+          {
+            "PointNorth": 48.05820401398141,
+            "PointType": 2,
+            "PointEast": 14.556482732295988
+          },
+          {
+            "PointNorth": 48.058110303238955,
+            "PointType": 2,
+            "PointEast": 14.556482732295988
+          },
+          {
+            "PointNorth": 48.05801659249651,
+            "PointType": 2,
+            "PointEast": 14.556482732295988
+          },
+          {
+            "PointNorth": 48.05801659249651,
+            "PointType": 2,
+            "PointEast": 14.556342065334318
+          },
+          {
+            "PointNorth": 48.05801659249651,
+            "PointType": 2,
+            "PointEast": 14.556201398372648
+          },
+          {
+            "PointNorth": 48.05792288175405,
+            "PointType": 2,
+            "PointEast": 14.556201398372648
+          },
+          {
+            "PointNorth": 48.05792288175405,
+            "PointType": 2,
+            "PointEast": 14.555920064449309
+          }
+        ]
+      }
+    }
+  },
+  "Product": [
+    {
+      "ProductId": "PDT1",
+      "ProductDesignator": "Wasser"
+    },
+    {
+      "ProductId": "PDT2",
+      "ProductDesignator": "K\u00e4lberg\u00fclle"
+    },
+    {
+      "ProductId": "PDT3",
+      "ProductDesignator": "L.A.T COMPLEX 15/15/15 +3S  Linz"
+    },
+    {
+      "ProductId": "PDT4",
+      "ProductDesignator": "L.A.T NAC 27 N Linz"
+    },
+    {
+      "ProductId": "PDT5",
+      "ProductDesignator": "Combi-Sticks"
+    },
+    {
+      "ProductId": "PDT6",
+      "ProductDesignator": "Star Captan 80 Wg"
+    },
+    {
+      "ProductId": "PDT7",
+      "ProductDesignator": "Posta"
+    },
+    {
+      "ProductId": "PDT8",
+      "ProductDesignator": "Delta Super"
+    },
+    {
+      "ProductId": "PDT9",
+      "ProductDesignator": "GL (ohne Sorte)"
+    },
+    {
+      "ProductId": "PDT10",
+      "ProductDesignator": "WW (WiHaWe)"
+    }
+  ],
+  "CropType": [
+    {
+      "CropTypeId": "CTP1",
+      "CropTypeDesignator": "Dauergr\u00fcnland"
+    }
+  ],
+  "CulturalPractice": [
+    {
+      "CulturalPracticeId": "CPC1",
+      "CulturalPracticeDesignator": "Bodenbearbeitung",
+      "OperationTechniqueReference": [
+        {
+          "OperationTechniqueIdRef": "OTQ1"
+        },
+        {
+          "OperationTechniqueIdRef": "OTQ2"
+        }
+      ]
+    },
+    {
+      "CulturalPracticeId": "CPC2",
+      "CulturalPracticeDesignator": "Aussaat",
+      "OperationTechniqueReference": [
+        {
+          "OperationTechniqueIdRef": "OTQ3"
+        },
+        {
+          "OperationTechniqueIdRef": "OTQ2"
+        }
+      ]
+    },
+    {
+      "CulturalPracticeId": "CPC3",
+      "CulturalPracticeDesignator": "D\u00fcngung",
+      "OperationTechniqueReference": [
+        {
+          "OperationTechniqueIdRef": "OTQ2"
+        }
+      ]
+    },
+    {
+      "CulturalPracticeId": "CPC4",
+      "CulturalPracticeDesignator": "Pflege",
+      "OperationTechniqueReference": [
+        {
+          "OperationTechniqueIdRef": "OTQ2"
+        },
+        {
+          "OperationTechniqueIdRef": "OTQ4"
+        }
+      ]
+    },
+    {
+      "CulturalPracticeId": "CPC5",
+      "CulturalPracticeDesignator": "Pflanzenschutz",
+      "OperationTechniqueReference": [
+        {
+          "OperationTechniqueIdRef": "OTQ2"
+        }
+      ]
+    },
+    {
+      "CulturalPracticeId": "CPC6",
+      "CulturalPracticeDesignator": "Ernte",
+      "OperationTechniqueReference": [
+        {
+          "OperationTechniqueIdRef": "OTQ5"
+        },
+        {
+          "OperationTechniqueIdRef": "OTQ2"
+        }
+      ]
+    },
+    {
+      "CulturalPracticeId": "CPC7",
+      "CulturalPracticeDesignator": "Bodenprobe",
+      "OperationTechniqueReference": [
+        {
+          "OperationTechniqueIdRef": "OTQ6"
+        }
+      ]
+    },
+    {
+      "CulturalPracticeId": "CPC8",
+      "CulturalPracticeDesignator": "D\u00fcngung",
+      "OperationTechniqueReference": [
+        {
+          "OperationTechniqueIdRef": "OTQ7"
+        },
+        {
+          "OperationTechniqueIdRef": "OTQ2"
+        }
+      ]
+    }
+  ],
+  "Worker": {
+    "WorkerId": "WKR1",
+    "WorkerDesignator": "Malaguti",
+    "WorkerFirstName": "Giorgio",
+    "WorkerEMail": "malaguti@estetechnology.com"
+  },
+  "Task": [
+    {
+      "TaskId": "TSK1",
+      "TaskDesignator": "D\u00fcngung,Neubauer",
+      "CustomerIdRef": "CTR1",
+      "FarmIdRef": "FRM1",
+      "PartfieldIdRef": "PFD1",
+      "ResponsibleWorkerIdRef": "WKR1",
+      "DefaultTreatmentZoneCode": 1,
+      "TaskStatus": 1,
+      "PositionLostTreatmentZoneCode": 2,
+      "OutOfFieldTreatmentZoneCode": 3,
+      "TreatmentZone": [
+        {
+          "TreatmentZoneCode": 0,
+          "TreatmentZoneDesignator": "SiteSpecific",
+          "ProcessDataVariable": [
+            {
+              "ProcessDataValue": 0,
+              "UoM": "mm3/m2",
+              "ProductIdRef": "PDT1"
+            }
+          ]
+        },
+        {
+          "TreatmentZoneCode": 1,
+          "TreatmentZoneDesignator": "Default",
+          "ProcessDataVariable": [
+            {
+              "ProcessDataValue": 476000,
+              "UoM": "mm3/m2",
+              "ProductIdRef": "PDT1"
+            }
+          ]
+        },
+        {
+          "TreatmentZoneCode": 2,
+          "TreatmentZoneDesignator": "PositionLost",
+          "ProcessDataVariable": [
+            {
+              "ProcessDataValue": 476000,
+              "UoM": "mm3/m2",
+              "ProductIdRef": "PDT1"
+            }
+          ]
+        },
+        {
+          "TreatmentZoneCode": 3,
+          "TreatmentZoneDesignator": "OutOfField",
+          "ProcessDataVariable": [
+            {
+              "ProcessDataValue": 0,
+              "UoM": "mm3/m2",
+              "ProductIdRef": "PDT1"
+            }
+          ]
+        }
+      ],
+      "OperTechPractice": {
+        "CulturalPracticeIdRef": "Black_measles_treatment"
+      },
+      "ProductAllocation": {
+        "ProductIdRef": "Black_measles_product"
+      },
+      "Grid": {
+        "GridMinimumNorthPosition": "40.207682",
+        "GridMinimumEastPosition": "-3.466874",
+        "GridCellNorthSize": null,
+        "GridCellEastSize": null,
+        "GridMaximumColumn": 7,
+        "GridMaximumRow": 3,
+        "GridType": 2,
+        "TreatmentZoneCode": 0,
+        "GridCell": [
+          2.7,
+          2.7,
+          2.7,
+          2.7,
+          2.7,
+          2.2,
+          2.7,
+          2.7,
+          2.2,
+          2.7,
+          2.7,
+          2.2,
+          2.7,
+          2.2,
+          2.2,
+          2.2,
+          2.2,
+          2.2,
+          2.7,
+          2.7,
+          2.2
+        ]
+      }
+    },
+    {
+      "TaskId": "TSK2",
+      "TaskDesignator": "D\u00fcngung,Neubauer",
+      "CustomerIdRef": "CTR1",
+      "FarmIdRef": "FRM1",
+      "PartfieldIdRef": "PFD1",
+      "ResponsibleWorkerIdRef": "WKR1",
+      "DefaultTreatmentZoneCode": 1,
+      "TaskStatus": 1,
+      "PositionLostTreatmentZoneCode": 2,
+      "OutOfFieldTreatmentZoneCode": 3,
+      "TreatmentZone": [
+        {
+          "TreatmentZoneCode": 0,
+          "TreatmentZoneDesignator": "SiteSpecific",
+          "ProcessDataVariable": [
+            {
+              "ProcessDataValue": 0,
+              "UoM": "mm3/m2",
+              "ProductIdRef": "PDT1"
+            }
+          ]
+        },
+        {
+          "TreatmentZoneCode": 1,
+          "TreatmentZoneDesignator": "Default",
+          "ProcessDataVariable": [
+            {
+              "ProcessDataValue": 476000,
+              "UoM": "mm3/m2",
+              "ProductIdRef": "PDT1"
+            }
+          ]
+        },
+        {
+          "TreatmentZoneCode": 2,
+          "TreatmentZoneDesignator": "PositionLost",
+          "ProcessDataVariable": [
+            {
+              "ProcessDataValue": 476000,
+              "UoM": "mm3/m2",
+              "ProductIdRef": "PDT1"
+            }
+          ]
+        },
+        {
+          "TreatmentZoneCode": 3,
+          "TreatmentZoneDesignator": "OutOfField",
+          "ProcessDataVariable": [
+            {
+              "ProcessDataValue": 0,
+              "UoM": "mm3/m2",
+              "ProductIdRef": "PDT1"
+            }
+          ]
+        }
+      ],
+      "OperTechPractice": {
+        "CulturalPracticeIdRef": "Black_rot_treatment"
+      },
+      "ProductAllocation": {
+        "ProductIdRef": "Black_rot_product"
+      },
+      "Grid": {
+        "GridMinimumNorthPosition": "40.207682",
+        "GridMinimumEastPosition": "-3.466874",
+        "GridCellNorthSize": null,
+        "GridCellEastSize": null,
+        "GridMaximumColumn": 7,
+        "GridMaximumRow": 3,
+        "GridType": 2,
+        "TreatmentZoneCode": 0,
+        "GridCell": [
+          1.7,
+          1.7,
+          1.7,
+          1.7,
+          1.7,
+          1.7,
+          1.7,
+          1.7,
+          1.7,
+          1.7,
+          1.7,
+          1.7,
+          1.7,
+          1.7,
+          1.7,
+          1.7,
+          1.7,
+          1.7,
+          1.7,
+          1.7,
+          1.7
+        ]
+      }
+    },
+    {
+      "TaskId": "TSK3",
+      "TaskDesignator": "D\u00fcngung,Neubauer",
+      "CustomerIdRef": "CTR1",
+      "FarmIdRef": "FRM1",
+      "PartfieldIdRef": "PFD1",
+      "ResponsibleWorkerIdRef": "WKR1",
+      "DefaultTreatmentZoneCode": 1,
+      "TaskStatus": 1,
+      "PositionLostTreatmentZoneCode": 2,
+      "OutOfFieldTreatmentZoneCode": 3,
+      "TreatmentZone": [
+        {
+          "TreatmentZoneCode": 0,
+          "TreatmentZoneDesignator": "SiteSpecific",
+          "ProcessDataVariable": [
+            {
+              "ProcessDataValue": 0,
+              "UoM": "mm3/m2",
+              "ProductIdRef": "PDT1"
+            }
+          ]
+        },
+        {
+          "TreatmentZoneCode": 1,
+          "TreatmentZoneDesignator": "Default",
+          "ProcessDataVariable": [
+            {
+              "ProcessDataValue": 476000,
+              "UoM": "mm3/m2",
+              "ProductIdRef": "PDT1"
+            }
+          ]
+        },
+        {
+          "TreatmentZoneCode": 2,
+          "TreatmentZoneDesignator": "PositionLost",
+          "ProcessDataVariable": [
+            {
+              "ProcessDataValue": 476000,
+              "UoM": "mm3/m2",
+              "ProductIdRef": "PDT1"
+            }
+          ]
+        },
+        {
+          "TreatmentZoneCode": 3,
+          "TreatmentZoneDesignator": "OutOfField",
+          "ProcessDataVariable": [
+            {
+              "ProcessDataValue": 0,
+              "UoM": "mm3/m2",
+              "ProductIdRef": "PDT1"
+            }
+          ]
+        }
+      ],
+      "OperTechPractice": {
+        "CulturalPracticeIdRef": "Isariopsis_treatment"
+      },
+      "ProductAllocation": {
+        "ProductIdRef": "Isariopsis_product"
+      },
+      "Grid": {
+        "GridMinimumNorthPosition": "40.207682",
+        "GridMinimumEastPosition": "-3.466874",
+        "GridCellNorthSize": null,
+        "GridCellEastSize": null,
+        "GridMaximumColumn": 7,
+        "GridMaximumRow": 3,
+        "GridType": 2,
+        "TreatmentZoneCode": 0,
+        "GridCell": [
+          1.3599999999999999,
+          1.3599999999999999,
+          1.3599999999999999,
+          1.3599999999999999,
+          1.3599999999999999,
+          1.3599999999999999,
+          1.3599999999999999,
+          1.3599999999999999,
+          1.3599999999999999,
+          1.3599999999999999,
+          1.3599999999999999,
+          1.3599999999999999,
+          1.3599999999999999,
+          1.3599999999999999,
+          1.3599999999999999,
+          1.3599999999999999,
+          1.3599999999999999,
+          1.3599999999999999,
+          1.3599999999999999,
+          1.3599999999999999,
+          1.3599999999999999
+        ]
+      }
+    },
+    {
+      "TaskId": "TSK4",
+      "TaskDesignator": "D\u00fcngung,Neubauer",
+      "CustomerIdRef": "CTR1",
+      "FarmIdRef": "FRM1",
+      "PartfieldIdRef": "PFD1",
+      "ResponsibleWorkerIdRef": "WKR1",
+      "DefaultTreatmentZoneCode": 1,
+      "TaskStatus": 1,
+      "PositionLostTreatmentZoneCode": 2,
+      "OutOfFieldTreatmentZoneCode": 3,
+      "TreatmentZone": [
+        {
+          "TreatmentZoneCode": 0,
+          "TreatmentZoneDesignator": "SiteSpecific",
+          "ProcessDataVariable": [
+            {
+              "ProcessDataValue": 0,
+              "UoM": "mm3/m2",
+              "ProductIdRef": "PDT1"
+            }
+          ]
+        },
+        {
+          "TreatmentZoneCode": 1,
+          "TreatmentZoneDesignator": "Default",
+          "ProcessDataVariable": [
+            {
+              "ProcessDataValue": 476000,
+              "UoM": "mm3/m2",
+              "ProductIdRef": "PDT1"
+            }
+          ]
+        },
+        {
+          "TreatmentZoneCode": 2,
+          "TreatmentZoneDesignator": "PositionLost",
+          "ProcessDataVariable": [
+            {
+              "ProcessDataValue": 476000,
+              "UoM": "mm3/m2",
+              "ProductIdRef": "PDT1"
+            }
+          ]
+        },
+        {
+          "TreatmentZoneCode": 3,
+          "TreatmentZoneDesignator": "OutOfField",
+          "ProcessDataVariable": [
+            {
+              "ProcessDataValue": 0,
+              "UoM": "mm3/m2",
+              "ProductIdRef": "PDT1"
+            }
+          ]
+        }
+      ],
+      "OperTechPractice": {
+        "CulturalPracticeIdRef": "Grape_bunch_treatment"
+      },
+      "ProductAllocation": {
+        "ProductIdRef": "Grape_bunch_product"
+      },
+      "Grid": {
+        "GridMinimumNorthPosition": "40.207682",
+        "GridMinimumEastPosition": "-3.466874",
+        "GridCellNorthSize": null,
+        "GridCellEastSize": null,
+        "GridMaximumColumn": 7,
+        "GridMaximumRow": 3,
+        "GridType": 2,
+        "TreatmentZoneCode": 0,
+        "GridCell": [
+          1.95,
+          1.95,
+          1.95,
+          1.95,
+          1.95,
+          1.95,
+          1.95,
+          1.95,
+          1.95,
+          1.95,
+          1.95,
+          1.95,
+          1.95,
+          1.95,
+          1.95,
+          1.95,
+          1.95,
+          1.95,
+          1.95,
+          1.95,
+          1.95
+        ]
+      }
+    }
+  ]
+}

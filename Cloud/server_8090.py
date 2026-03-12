@@ -15,7 +15,7 @@ from flask import Flask, request, Response
 import requests
 
 FRONTEND_FILE = 'rest_client.html'
-BACKEND_URL = 'http://192.168.0.42:8082/mission'
+BACKEND_URL = 'http://127.0.0.1:8082/mission'
 SERVER_PORT = 8090
 
 app = Flask(__name__)
