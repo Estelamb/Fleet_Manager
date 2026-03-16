@@ -1267,3 +1267,38 @@
 [2026-03-12 17:51:03,764][Drone 3][INFO][ROS2][gRPC Metrics] - Metrics received from drone and forwarded to ROS2 publisher
 [2026-03-12 17:51:04,039][Drone 3][INFO][ROS2][System Metrics Publisher] - System Metrics published
 [2026-03-12 17:51:04,049][Drone 3][INFO][State Vector] - State Vector sent
+[2026-03-12 17:51:13,797][Drone 3][INFO][ROS2][gRPC Metrics] - Metrics received from drone and forwarded to ROS2 publisher
+[2026-03-12 17:51:14,039][Drone 3][INFO][ROS2][System Metrics Publisher] - System Metrics published
+[2026-03-12 17:51:14,049][Drone 3][INFO][State Vector] - State Vector sent
+[2026-03-12 17:51:23,847][Drone 3][INFO][ROS2][gRPC Metrics] - Metrics received from drone and forwarded to ROS2 publisher
+[2026-03-12 17:51:24,040][Drone 3][INFO][ROS2][System Metrics Publisher] - System Metrics published
+[2026-03-12 17:51:24,050][Drone 3][INFO][State Vector] - State Vector sent
+[2026-03-12 17:51:33,887][Drone 3][INFO][ROS2][gRPC Metrics] - Metrics received from drone and forwarded to ROS2 publisher
+[2026-03-12 17:51:34,039][Drone 3][INFO][ROS2][System Metrics Publisher] - System Metrics published
+[2026-03-12 17:51:34,049][Drone 3][INFO][State Vector] - State Vector sent
+[2026-03-12 17:51:43,924][Drone 3][INFO][ROS2][gRPC Metrics] - Metrics received from drone and forwarded to ROS2 publisher
+[2026-03-12 17:51:44,039][Drone 3][INFO][ROS2][System Metrics Publisher] - System Metrics published
+[2026-03-12 17:51:44,049][Drone 3][INFO][State Vector] - State Vector sent
+[2026-03-12 17:51:53,962][Drone 3][INFO][ROS2][gRPC Metrics] - Metrics received from drone and forwarded to ROS2 publisher
+[2026-03-12 17:51:54,040][Drone 3][INFO][ROS2][System Metrics Publisher] - System Metrics published
+[2026-03-12 17:51:54,049][Drone 3][INFO][State Vector] - State Vector sent
+[2026-03-12 17:52:03,999][Drone 3][INFO][ROS2][gRPC Metrics] - Metrics received from drone and forwarded to ROS2 publisher
+[2026-03-12 17:52:04,039][Drone 3][INFO][ROS2][System Metrics Publisher] - System Metrics published
+[2026-03-12 17:52:04,050][Drone 3][INFO][State Vector] - State Vector sent
+[2026-03-12 17:52:14,036][Drone 3][INFO][ROS2][gRPC Metrics] - Metrics received from drone and forwarded to ROS2 publisher
+[2026-03-12 17:52:14,040][Drone 3][INFO][ROS2][System Metrics Publisher] - System Metrics published
+[2026-03-12 17:52:14,049][Drone 3][INFO][State Vector] - State Vector sent
+[2026-03-12 17:52:24,050][Drone 3][INFO][State Vector] - State Vector sent
+[2026-03-12 17:52:24,073][Drone 3][INFO][ROS2][gRPC Metrics] - Metrics received from drone and forwarded to ROS2 publisher
+[2026-03-12 17:52:25,039][Drone 3][INFO][ROS2][System Metrics Publisher] - System Metrics published
+[2026-03-12 17:52:34,049][Drone 3][INFO][State Vector] - State Vector sent
+[2026-03-12 17:52:34,109][Drone 3][INFO][ROS2][gRPC Metrics] - Metrics received from drone and forwarded to ROS2 publisher
+[2026-03-12 17:52:35,039][Drone 3][INFO][ROS2][System Metrics Publisher] - System Metrics published
+[2026-03-12 17:52:44,049][Drone 3][INFO][State Vector] - State Vector sent
+[2026-03-12 17:52:44,142][Drone 3][INFO][ROS2][gRPC Metrics] - Metrics received from drone and forwarded to ROS2 publisher
+[2026-03-12 17:52:45,039][Drone 3][INFO][ROS2][System Metrics Publisher] - System Metrics published
+[2026-03-12 17:52:54,049][Drone 3][INFO][State Vector] - State Vector sent
+[2026-03-12 17:52:54,178][Drone 3][INFO][ROS2][gRPC Metrics] - Metrics received from drone and forwarded to ROS2 publisher
+[2026-03-12 17:52:55,039][Drone 3][INFO][ROS2][System Metrics Publisher] - System Metrics published
+[2026-03-12 17:52:56,693][Drone 3][INFO][Init ROS2] - Beginning system shutdown and resource cleanup
+[2026-03-12 17:52:56,722][Drone 3][INFO][Init ROS2] - System shutdown completed successfully

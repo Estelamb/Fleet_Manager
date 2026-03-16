@@ -3140,3 +3140,41 @@
 [2026-03-12 17:50:58,996][Drone 1][INFO][State Vector] - State Vector sent
 [2026-03-12 17:51:07,344][Drone 1][INFO][ROS2][gRPC Metrics] - Metrics received from drone and forwarded to ROS2 publisher
 [2026-03-12 17:51:07,986][Drone 1][INFO][ROS2][System Metrics Publisher] - System Metrics published
+[2026-03-12 17:51:08,996][Drone 1][INFO][State Vector] - State Vector sent
+[2026-03-12 17:51:17,384][Drone 1][INFO][ROS2][gRPC Metrics] - Metrics received from drone and forwarded to ROS2 publisher
+[2026-03-12 17:51:17,983][Drone 1][INFO][ROS2][System Metrics Publisher] - System Metrics published
+[2026-03-12 17:51:18,996][Drone 1][INFO][State Vector] - State Vector sent
+[2026-03-12 17:51:27,417][Drone 1][INFO][ROS2][gRPC Metrics] - Metrics received from drone and forwarded to ROS2 publisher
+[2026-03-12 17:51:27,983][Drone 1][INFO][ROS2][System Metrics Publisher] - System Metrics published
+[2026-03-12 17:51:28,996][Drone 1][INFO][State Vector] - State Vector sent
+[2026-03-12 17:51:37,452][Drone 1][INFO][ROS2][gRPC Metrics] - Metrics received from drone and forwarded to ROS2 publisher
+[2026-03-12 17:51:37,983][Drone 1][INFO][ROS2][System Metrics Publisher] - System Metrics published
+[2026-03-12 17:51:38,996][Drone 1][INFO][State Vector] - State Vector sent
+[2026-03-12 17:51:47,490][Drone 1][INFO][ROS2][gRPC Metrics] - Metrics received from drone and forwarded to ROS2 publisher
+[2026-03-12 17:51:47,983][Drone 1][INFO][ROS2][System Metrics Publisher] - System Metrics published
+[2026-03-12 17:51:48,996][Drone 1][INFO][State Vector] - State Vector sent
+[2026-03-12 17:51:57,530][Drone 1][INFO][ROS2][gRPC Metrics] - Metrics received from drone and forwarded to ROS2 publisher
+[2026-03-12 17:51:57,983][Drone 1][INFO][ROS2][System Metrics Publisher] - System Metrics published
+[2026-03-12 17:51:58,996][Drone 1][INFO][State Vector] - State Vector sent
+[2026-03-12 17:52:07,567][Drone 1][INFO][ROS2][gRPC Metrics] - Metrics received from drone and forwarded to ROS2 publisher
+[2026-03-12 17:52:07,983][Drone 1][INFO][ROS2][System Metrics Publisher] - System Metrics published
+[2026-03-12 17:52:08,996][Drone 1][INFO][State Vector] - State Vector sent
+[2026-03-12 17:52:17,605][Drone 1][INFO][ROS2][gRPC Metrics] - Metrics received from drone and forwarded to ROS2 publisher
+[2026-03-12 17:52:17,983][Drone 1][INFO][ROS2][System Metrics Publisher] - System Metrics published
+[2026-03-12 17:52:18,996][Drone 1][INFO][State Vector] - State Vector sent
+[2026-03-12 17:52:27,644][Drone 1][INFO][ROS2][gRPC Metrics] - Metrics received from drone and forwarded to ROS2 publisher
+[2026-03-12 17:52:27,983][Drone 1][INFO][ROS2][System Metrics Publisher] - System Metrics published
+[2026-03-12 17:52:28,996][Drone 1][INFO][State Vector] - State Vector sent
+[2026-03-12 17:52:37,681][Drone 1][INFO][ROS2][gRPC Metrics] - Metrics received from drone and forwarded to ROS2 publisher
+[2026-03-12 17:52:37,983][Drone 1][INFO][ROS2][System Metrics Publisher] - System Metrics published
+[2026-03-12 17:52:38,996][Drone 1][INFO][State Vector] - State Vector sent
+[2026-03-12 17:52:47,714][Drone 1][INFO][ROS2][gRPC Metrics] - Metrics received from drone and forwarded to ROS2 publisher
+[2026-03-12 17:52:47,983][Drone 1][INFO][ROS2][System Metrics Publisher] - System Metrics published
+[2026-03-12 17:52:48,996][Drone 1][INFO][State Vector] - State Vector sent
+[2026-03-12 17:52:56,635][Drone 1][ERROR][ROS2][gRPC Commands] - Connection error: <_InactiveRpcError of RPC that terminated with:
+	status = StatusCode.UNAVAILABLE
+	details = "Socket closed"
+	debug_error_string = "UNKNOWN:Error received from peer  {grpc_message:"Socket closed", grpc_status:14}"
+>
+[2026-03-12 17:52:56,696][Drone 1][INFO][Init ROS2] - Beginning system shutdown and resource cleanup
+[2026-03-12 17:52:56,756][Drone 1][INFO][Init ROS2] - System shutdown completed successfully

@@ -8331,3 +8331,13 @@ ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/isobus_pm.json wit
 [2026-03-12 18:50:58,860][Drone 1][INFO][ANALYZE_IMAGE] - Starting analysis for agricultural image: Images/Camera/40.209544_-3.465821.jpg
 [2026-03-12 18:50:58,860][Drone 1][INFO][ANALYZE_IMAGE] - Executing agricultural model: Images/Models/Grape_Bunch_Hailo8/init_grape_bunch_hailo8.py
 [2026-03-12 18:51:07,346][Drone 1][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2026-03-12 18:51:17,385][Drone 1][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2026-03-12 18:51:27,419][Drone 1][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2026-03-12 18:51:37,453][Drone 1][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2026-03-12 18:51:47,491][Drone 1][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2026-03-12 18:51:57,531][Drone 1][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2026-03-12 18:52:07,568][Drone 1][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2026-03-12 18:52:17,606][Drone 1][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2026-03-12 18:52:27,646][Drone 1][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2026-03-12 18:52:37,682][Drone 1][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2026-03-12 18:52:47,715][Drone 1][INFO][gRPC Metrics] - System Metrics sent to ROS2
