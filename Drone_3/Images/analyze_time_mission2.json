@@ -10928,5 +10928,300 @@
         "model_name": "Grape_Bunch_Hailo8",
         "execution_time": 0.017292261123657227,
         "image": "Images/Camera/40.207682_-3.466874.jpg"
+    },
+    {
+        "model_name": "Leaf_Detection_Hailo8",
+        "execution_time": 0.016973495483398438,
+        "image": "Images/Camera/40.207874_-3.467592.jpg"
+    },
+    {
+        "model_name": "Grape_Diseases_Hailo8",
+        "execution_time": 0.017026185989379883,
+        "image": "Images/Models/Grape_Diseases_Hailo8/Leafs/40.207874_-3.467592"
+    },
+    {
+        "model_name": "Grape_Diseases_Hailo8",
+        "execution_time": 0.008428812026977539,
+        "image": "Images/Models/Grape_Diseases_Hailo8/Leafs/40.207874_-3.467592"
+    },
+    {
+        "model_name": "Grape_Diseases_Hailo8",
+        "execution_time": 0.008400440216064453,
+        "image": "Images/Models/Grape_Diseases_Hailo8/Leafs/40.207874_-3.467592"
+    },
+    {
+        "model_name": "Grape_Diseases_Hailo8",
+        "execution_time": 0.008359670639038086,
+        "image": "Images/Models/Grape_Diseases_Hailo8/Leafs/40.207874_-3.467592"
+    },
+    {
+        "model_name": "Grape_Bunch_Hailo8",
+        "execution_time": 0.017015695571899414,
+        "image": "Images/Camera/40.207874_-3.467592.jpg"
+    },
+    {
+        "model_name": "Leaf_Detection_Hailo8",
+        "execution_time": 0.017827987670898438,
+        "image": "Images/Camera/40.207868_-3.467482.jpg"
+    },
+    {
+        "model_name": "Grape_Diseases_Hailo8",
+        "execution_time": 0.016779661178588867,
+        "image": "Images/Models/Grape_Diseases_Hailo8/Leafs/40.207868_-3.467482"
+    },
+    {
+        "model_name": "Grape_Diseases_Hailo8",
+        "execution_time": 0.008375883102416992,
+        "image": "Images/Models/Grape_Diseases_Hailo8/Leafs/40.207868_-3.467482"
+    },
+    {
+        "model_name": "Grape_Diseases_Hailo8",
+        "execution_time": 0.008376121520996094,
+        "image": "Images/Models/Grape_Diseases_Hailo8/Leafs/40.207868_-3.467482"
+    },
+    {
+        "model_name": "Grape_Diseases_Hailo8",
+        "execution_time": 0.008377313613891602,
+        "image": "Images/Models/Grape_Diseases_Hailo8/Leafs/40.207868_-3.467482"
+    },
+    {
+        "model_name": "Grape_Diseases_Hailo8",
+        "execution_time": 0.008371353149414062,
+        "image": "Images/Models/Grape_Diseases_Hailo8/Leafs/40.207868_-3.467482"
+    },
+    {
+        "model_name": "Grape_Diseases_Hailo8",
+        "execution_time": 0.008352518081665039,
+        "image": "Images/Models/Grape_Diseases_Hailo8/Leafs/40.207868_-3.467482"
+    },
+    {
+        "model_name": "Grape_Diseases_Hailo8",
+        "execution_time": 0.008357048034667969,
+        "image": "Images/Models/Grape_Diseases_Hailo8/Leafs/40.207868_-3.467482"
+    },
+    {
+        "model_name": "Grape_Diseases_Hailo8",
+        "execution_time": 0.008641958236694336,
+        "image": "Images/Models/Grape_Diseases_Hailo8/Leafs/40.207868_-3.467482"
+    },
+    {
+        "model_name": "Grape_Diseases_Hailo8",
+        "execution_time": 0.008345842361450195,
+        "image": "Images/Models/Grape_Diseases_Hailo8/Leafs/40.207868_-3.467482"
+    },
+    {
+        "model_name": "Grape_Diseases_Hailo8",
+        "execution_time": 0.008308649063110352,
+        "image": "Images/Models/Grape_Diseases_Hailo8/Leafs/40.207868_-3.467482"
+    },
+    {
+        "model_name": "Grape_Diseases_Hailo8",
+        "execution_time": 0.00838780403137207,
+        "image": "Images/Models/Grape_Diseases_Hailo8/Leafs/40.207868_-3.467482"
+    },
+    {
+        "model_name": "Grape_Diseases_Hailo8",
+        "execution_time": 0.008306503295898438,
+        "image": "Images/Models/Grape_Diseases_Hailo8/Leafs/40.207868_-3.467482"
+    },
+    {
+        "model_name": "Grape_Bunch_Hailo8",
+        "execution_time": 0.017013072967529297,
+        "image": "Images/Camera/40.207868_-3.467482.jpg"
+    },
+    {
+        "model_name": "Leaf_Detection_Hailo8",
+        "execution_time": 0.017055511474609375,
+        "image": "Images/Camera/40.207862_-3.467372.jpg"
+    },
+    {
+        "model_name": "Grape_Diseases_Hailo8",
+        "execution_time": 0.018198490142822266,
+        "image": "Images/Models/Grape_Diseases_Hailo8/Leafs/40.207862_-3.467372"
+    },
+    {
+        "model_name": "Grape_Diseases_Hailo8",
+        "execution_time": 0.009282112121582031,
+        "image": "Images/Models/Grape_Diseases_Hailo8/Leafs/40.207862_-3.467372"
+    },
+    {
+        "model_name": "Grape_Diseases_Hailo8",
+        "execution_time": 0.00868988037109375,
+        "image": "Images/Models/Grape_Diseases_Hailo8/Leafs/40.207862_-3.467372"
+    },
+    {
+        "model_name": "Grape_Diseases_Hailo8",
+        "execution_time": 0.009321212768554688,
+        "image": "Images/Models/Grape_Diseases_Hailo8/Leafs/40.207862_-3.467372"
+    },
+    {
+        "model_name": "Grape_Bunch_Hailo8",
+        "execution_time": 0.016933917999267578,
+        "image": "Images/Camera/40.207862_-3.467372.jpg"
+    },
+    {
+        "model_name": "Leaf_Detection_Hailo8",
+        "execution_time": 0.017690181732177734,
+        "image": "Images/Camera/40.207855_-3.467262.jpg"
+    },
+    {
+        "model_name": "Grape_Diseases_Hailo8",
+        "execution_time": 0.017114639282226562,
+        "image": "Images/Models/Grape_Diseases_Hailo8/Leafs/40.207855_-3.467262"
+    },
+    {
+        "model_name": "Grape_Diseases_Hailo8",
+        "execution_time": 0.008356809616088867,
+        "image": "Images/Models/Grape_Diseases_Hailo8/Leafs/40.207855_-3.467262"
+    },
+    {
+        "model_name": "Grape_Diseases_Hailo8",
+        "execution_time": 0.008523941040039062,
+        "image": "Images/Models/Grape_Diseases_Hailo8/Leafs/40.207855_-3.467262"
+    },
+    {
+        "model_name": "Grape_Diseases_Hailo8",
+        "execution_time": 0.008553743362426758,
+        "image": "Images/Models/Grape_Diseases_Hailo8/Leafs/40.207855_-3.467262"
+    },
+    {
+        "model_name": "Grape_Diseases_Hailo8",
+        "execution_time": 0.008352994918823242,
+        "image": "Images/Models/Grape_Diseases_Hailo8/Leafs/40.207855_-3.467262"
+    },
+    {
+        "model_name": "Grape_Diseases_Hailo8",
+        "execution_time": 0.008365869522094727,
+        "image": "Images/Models/Grape_Diseases_Hailo8/Leafs/40.207855_-3.467262"
+    },
+    {
+        "model_name": "Grape_Diseases_Hailo8",
+        "execution_time": 0.008376598358154297,
+        "image": "Images/Models/Grape_Diseases_Hailo8/Leafs/40.207855_-3.467262"
+    },
+    {
+        "model_name": "Grape_Diseases_Hailo8",
+        "execution_time": 0.008341312408447266,
+        "image": "Images/Models/Grape_Diseases_Hailo8/Leafs/40.207855_-3.467262"
+    },
+    {
+        "model_name": "Grape_Diseases_Hailo8",
+        "execution_time": 0.008588075637817383,
+        "image": "Images/Models/Grape_Diseases_Hailo8/Leafs/40.207855_-3.467262"
+    },
+    {
+        "model_name": "Grape_Diseases_Hailo8",
+        "execution_time": 0.008611440658569336,
+        "image": "Images/Models/Grape_Diseases_Hailo8/Leafs/40.207855_-3.467262"
+    },
+    {
+        "model_name": "Grape_Diseases_Hailo8",
+        "execution_time": 0.008386850357055664,
+        "image": "Images/Models/Grape_Diseases_Hailo8/Leafs/40.207855_-3.467262"
+    },
+    {
+        "model_name": "Grape_Diseases_Hailo8",
+        "execution_time": 0.008320093154907227,
+        "image": "Images/Models/Grape_Diseases_Hailo8/Leafs/40.207855_-3.467262"
+    },
+    {
+        "model_name": "Grape_Diseases_Hailo8",
+        "execution_time": 0.008382081985473633,
+        "image": "Images/Models/Grape_Diseases_Hailo8/Leafs/40.207855_-3.467262"
+    },
+    {
+        "model_name": "Grape_Diseases_Hailo8",
+        "execution_time": 0.008410453796386719,
+        "image": "Images/Models/Grape_Diseases_Hailo8/Leafs/40.207855_-3.467262"
+    },
+    {
+        "model_name": "Grape_Diseases_Hailo8",
+        "execution_time": 0.00865793228149414,
+        "image": "Images/Models/Grape_Diseases_Hailo8/Leafs/40.207855_-3.467262"
+    },
+    {
+        "model_name": "Grape_Diseases_Hailo8",
+        "execution_time": 0.008401632308959961,
+        "image": "Images/Models/Grape_Diseases_Hailo8/Leafs/40.207855_-3.467262"
+    },
+    {
+        "model_name": "Grape_Diseases_Hailo8",
+        "execution_time": 0.008469581604003906,
+        "image": "Images/Models/Grape_Diseases_Hailo8/Leafs/40.207855_-3.467262"
+    },
+    {
+        "model_name": "Grape_Diseases_Hailo8",
+        "execution_time": 0.008415699005126953,
+        "image": "Images/Models/Grape_Diseases_Hailo8/Leafs/40.207855_-3.467262"
+    },
+    {
+        "model_name": "Grape_Diseases_Hailo8",
+        "execution_time": 0.008336067199707031,
+        "image": "Images/Models/Grape_Diseases_Hailo8/Leafs/40.207855_-3.467262"
+    },
+    {
+        "model_name": "Grape_Diseases_Hailo8",
+        "execution_time": 0.008408546447753906,
+        "image": "Images/Models/Grape_Diseases_Hailo8/Leafs/40.207855_-3.467262"
+    },
+    {
+        "model_name": "Grape_Diseases_Hailo8",
+        "execution_time": 0.008422374725341797,
+        "image": "Images/Models/Grape_Diseases_Hailo8/Leafs/40.207855_-3.467262"
+    },
+    {
+        "model_name": "Grape_Diseases_Hailo8",
+        "execution_time": 0.008367776870727539,
+        "image": "Images/Models/Grape_Diseases_Hailo8/Leafs/40.207855_-3.467262"
+    },
+    {
+        "model_name": "Grape_Diseases_Hailo8",
+        "execution_time": 0.008354663848876953,
+        "image": "Images/Models/Grape_Diseases_Hailo8/Leafs/40.207855_-3.467262"
+    },
+    {
+        "model_name": "Grape_Diseases_Hailo8",
+        "execution_time": 0.008341073989868164,
+        "image": "Images/Models/Grape_Diseases_Hailo8/Leafs/40.207855_-3.467262"
+    },
+    {
+        "model_name": "Grape_Diseases_Hailo8",
+        "execution_time": 0.00834345817565918,
+        "image": "Images/Models/Grape_Diseases_Hailo8/Leafs/40.207855_-3.467262"
+    },
+    {
+        "model_name": "Grape_Bunch_Hailo8",
+        "execution_time": 0.016850948333740234,
+        "image": "Images/Camera/40.207855_-3.467262.jpg"
+    },
+    {
+        "model_name": "Leaf_Detection_Hailo8",
+        "execution_time": 0.021903514862060547,
+        "image": "Images/Camera/40.207848_-3.467152.jpg"
+    },
+    {
+        "model_name": "Grape_Diseases_Hailo8",
+        "execution_time": 0.02112126350402832,
+        "image": "Images/Models/Grape_Diseases_Hailo8/Leafs/40.207848_-3.467152"
+    },
+    {
+        "model_name": "Grape_Diseases_Hailo8",
+        "execution_time": 0.008622407913208008,
+        "image": "Images/Models/Grape_Diseases_Hailo8/Leafs/40.207848_-3.467152"
+    },
+    {
+        "model_name": "Grape_Diseases_Hailo8",
+        "execution_time": 0.008836984634399414,
+        "image": "Images/Models/Grape_Diseases_Hailo8/Leafs/40.207848_-3.467152"
+    },
+    {
+        "model_name": "Grape_Diseases_Hailo8",
+        "execution_time": 0.009606122970581055,
+        "image": "Images/Models/Grape_Diseases_Hailo8/Leafs/40.207848_-3.467152"
+    },
+    {
+        "model_name": "Grape_Bunch_Hailo8",
+        "execution_time": 0.02069258689880371,
+        "image": "Images/Camera/40.207848_-3.467152.jpg"
     }
 ]

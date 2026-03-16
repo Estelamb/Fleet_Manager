@@ -8268,3 +8268,503 @@
 [2026-03-12 17:52:52,603][Drone 2][INFO][State Vector] - State Vector sent
 [2026-03-12 17:52:56,679][Drone 2][INFO][Init ROS2] - Beginning system shutdown and resource cleanup
 [2026-03-12 17:52:56,713][Drone 2][INFO][Init ROS2] - System shutdown completed successfully
+[2026-03-16 14:32:01,487][Drone 2][INFO][Init ROS2] - Initializing ROS2 drone system for drone ID: 2
+[2026-03-16 14:32:01,519][Drone 2][INFO][ROS2][gRPC Commands] - Server running on port 52002
+[2026-03-16 14:32:01,588][Drone 2][INFO][ROS2][Commands Action Server] - Commands action server initialized successfully for drone 2
+[2026-03-16 14:32:01,588][Drone 2][INFO][ROS2][Commands Action Server] - Action service available at: /drone2/commands
+[2026-03-16 14:32:01,598][Drone 2][INFO][ROS2][Prescription Map] - PM publisher initialized for drone 2
+[2026-03-16 14:32:01,598][Drone 2][INFO][ROS2][gRPC PM] - Server running on port 52003
+[2026-03-16 14:32:01,599][Drone 2][INFO][ROS2][Prescription Map] - PM topic service available at: prescription_map/drone_2
+[2026-03-16 14:32:01,607][Drone 2][INFO][ROS2][System Metrics Publisher] - System Metrics publisher initialized for drone 2
+[2026-03-16 14:32:01,608][Drone 2][INFO][ROS2][System Metrics Publisher] - System Metrics topic service available at: system_metrics/drone_2
+[2026-03-16 14:32:01,617][Drone 2][INFO] - State vector publisher started.
+[2026-03-16 14:32:01,617][Drone 2][INFO][ROS2][gRPC Metrics] - Server running on port 52004
+[2026-03-16 14:32:01,618][Drone 2][INFO][Init ROS2] - All system components initialized successfully
+[2026-03-16 14:32:11,049][Drone 2][INFO][ROS2][gRPC Metrics] - Metrics received from drone and forwarded to ROS2 publisher
+[2026-03-16 14:32:11,608][Drone 2][INFO][ROS2][System Metrics Publisher] - System Metrics published
+[2026-03-16 14:32:11,618][Drone 2][INFO][State Vector] - State Vector sent
+[2026-03-16 14:32:21,089][Drone 2][INFO][ROS2][gRPC Metrics] - Metrics received from drone and forwarded to ROS2 publisher
+[2026-03-16 14:32:21,608][Drone 2][INFO][ROS2][System Metrics Publisher] - System Metrics published
+[2026-03-16 14:32:21,618][Drone 2][INFO][State Vector] - State Vector sent
+[2026-03-16 14:32:31,125][Drone 2][INFO][ROS2][gRPC Metrics] - Metrics received from drone and forwarded to ROS2 publisher
+[2026-03-16 14:32:31,608][Drone 2][INFO][ROS2][System Metrics Publisher] - System Metrics published
+[2026-03-16 14:32:31,619][Drone 2][INFO][State Vector] - State Vector sent
+[2026-03-16 14:32:41,162][Drone 2][INFO][ROS2][gRPC Metrics] - Metrics received from drone and forwarded to ROS2 publisher
+[2026-03-16 14:32:41,608][Drone 2][INFO][ROS2][System Metrics Publisher] - System Metrics published
+[2026-03-16 14:32:41,618][Drone 2][INFO][State Vector] - State Vector sent
+[2026-03-16 14:32:51,201][Drone 2][INFO][ROS2][gRPC Metrics] - Metrics received from drone and forwarded to ROS2 publisher
+[2026-03-16 14:32:51,608][Drone 2][INFO][ROS2][System Metrics Publisher] - System Metrics published
+[2026-03-16 14:32:51,618][Drone 2][INFO][State Vector] - State Vector sent
+[2026-03-16 14:33:01,234][Drone 2][INFO][ROS2][gRPC Metrics] - Metrics received from drone and forwarded to ROS2 publisher
+[2026-03-16 14:33:01,608][Drone 2][INFO][ROS2][System Metrics Publisher] - System Metrics published
+[2026-03-16 14:33:01,618][Drone 2][INFO][State Vector] - State Vector sent
+[2026-03-16 14:33:11,272][Drone 2][INFO][ROS2][gRPC Metrics] - Metrics received from drone and forwarded to ROS2 publisher
+[2026-03-16 14:33:11,608][Drone 2][INFO][ROS2][System Metrics Publisher] - System Metrics published
+[2026-03-16 14:33:11,618][Drone 2][INFO][State Vector] - State Vector sent
+[2026-03-16 14:33:21,306][Drone 2][INFO][ROS2][gRPC Metrics] - Metrics received from drone and forwarded to ROS2 publisher
+[2026-03-16 14:33:21,608][Drone 2][INFO][ROS2][System Metrics Publisher] - System Metrics published
+[2026-03-16 14:33:21,618][Drone 2][INFO][State Vector] - State Vector sent
+[2026-03-16 14:33:31,338][Drone 2][INFO][ROS2][gRPC Metrics] - Metrics received from drone and forwarded to ROS2 publisher
+[2026-03-16 14:33:31,608][Drone 2][INFO][ROS2][System Metrics Publisher] - System Metrics published
+[2026-03-16 14:33:31,618][Drone 2][INFO][State Vector] - State Vector sent
+[2026-03-16 14:33:41,374][Drone 2][INFO][ROS2][gRPC Metrics] - Metrics received from drone and forwarded to ROS2 publisher
+[2026-03-16 14:33:41,608][Drone 2][INFO][ROS2][System Metrics Publisher] - System Metrics published
+[2026-03-16 14:33:41,618][Drone 2][INFO][State Vector] - State Vector sent
+[2026-03-16 14:33:51,412][Drone 2][INFO][ROS2][gRPC Metrics] - Metrics received from drone and forwarded to ROS2 publisher
+[2026-03-16 14:33:51,608][Drone 2][INFO][ROS2][System Metrics Publisher] - System Metrics published
+[2026-03-16 14:33:51,618][Drone 2][INFO][State Vector] - State Vector sent
+[2026-03-16 14:34:01,448][Drone 2][INFO][ROS2][gRPC Metrics] - Metrics received from drone and forwarded to ROS2 publisher
+[2026-03-16 14:34:01,608][Drone 2][INFO][ROS2][System Metrics Publisher] - System Metrics published
+[2026-03-16 14:34:01,618][Drone 2][INFO][State Vector] - State Vector sent
+[2026-03-16 14:34:11,488][Drone 2][INFO][ROS2][gRPC Metrics] - Metrics received from drone and forwarded to ROS2 publisher
+[2026-03-16 14:34:11,608][Drone 2][INFO][ROS2][System Metrics Publisher] - System Metrics published
+[2026-03-16 14:34:11,618][Drone 2][INFO][State Vector] - State Vector sent
+[2026-03-16 14:34:21,529][Drone 2][INFO][ROS2][gRPC Metrics] - Metrics received from drone and forwarded to ROS2 publisher
+[2026-03-16 14:34:21,608][Drone 2][INFO][ROS2][System Metrics Publisher] - System Metrics published
+[2026-03-16 14:34:21,619][Drone 2][INFO][State Vector] - State Vector sent
+[2026-03-16 14:34:31,562][Drone 2][INFO][ROS2][gRPC Metrics] - Metrics received from drone and forwarded to ROS2 publisher
+[2026-03-16 14:34:31,608][Drone 2][INFO][ROS2][System Metrics Publisher] - System Metrics published
+[2026-03-16 14:34:31,618][Drone 2][INFO][State Vector] - State Vector sent
+[2026-03-16 14:34:41,595][Drone 2][INFO][ROS2][gRPC Metrics] - Metrics received from drone and forwarded to ROS2 publisher
+[2026-03-16 14:34:41,608][Drone 2][INFO][ROS2][System Metrics Publisher] - System Metrics published
+[2026-03-16 14:34:41,618][Drone 2][INFO][State Vector] - State Vector sent
+[2026-03-16 14:34:51,618][Drone 2][INFO][State Vector] - State Vector sent
+[2026-03-16 14:34:51,631][Drone 2][INFO][ROS2][gRPC Metrics] - Metrics received from drone and forwarded to ROS2 publisher
+[2026-03-16 14:34:52,608][Drone 2][INFO][ROS2][System Metrics Publisher] - System Metrics published
+[2026-03-16 14:35:01,617][Drone 2][INFO][State Vector] - State Vector sent
+[2026-03-16 14:35:01,667][Drone 2][INFO][ROS2][gRPC Metrics] - Metrics received from drone and forwarded to ROS2 publisher
+[2026-03-16 14:35:02,608][Drone 2][INFO][ROS2][System Metrics Publisher] - System Metrics published
+[2026-03-16 14:35:07,486][Drone 2][INFO][ROS2][Commands Action Server] - Executing command sequence goal with 32 commands
+[2026-03-16 14:35:07,487][Drone 2][INFO][ROS2][Commands Action Server] - Processing command 1/32: {"related_task": {"id": 4, "mission_id": 1}, "id": 47, "command_type": "NAV_TAKEOFF", "command_status": "NotStarted", "start_time": 47, "params": [0, 0, 40.209232, -3.465646]}
+[2026-03-16 14:35:07,505][Drone 2][INFO][ROS2][gRPC Commands] - Sending command to commands processor
+[2026-03-16 14:35:09,533][Drone 2][INFO][ROS2][gRPC Commands] - Feedback received from drone and sent to ROS2 server
+[2026-03-16 14:35:09,534][Drone 2][INFO][ROS2][gRPC Commands] - ACK received from commands processor
+[2026-03-16 14:35:09,535][Drone 2][INFO][ROS2][Commands Action Server] - Command feedback published: ['2', '1', '47', 'Takeoff successful']
+[2026-03-16 14:35:10,536][Drone 2][INFO][ROS2][Commands Action Server] - Processing command 2/32: {"related_task": {"id": 4, "mission_id": 1}, "id": 48, "command_type": "NAV_WAYPOINT", "command_status": "NotStarted", "start_time": 48, "params": [0, 0, 0, 0, 40.209451, -3.465453, 0]}
+[2026-03-16 14:35:10,536][Drone 2][INFO][ROS2][gRPC Commands] - Sending command to commands processor
+[2026-03-16 14:35:11,618][Drone 2][INFO][State Vector] - State Vector sent
+[2026-03-16 14:35:11,705][Drone 2][INFO][ROS2][gRPC Metrics] - Metrics received from drone and forwarded to ROS2 publisher
+[2026-03-16 14:35:12,556][Drone 2][INFO][ROS2][gRPC Commands] - Feedback received from drone and sent to ROS2 server
+[2026-03-16 14:35:12,559][Drone 2][INFO][ROS2][gRPC Commands] - ACK received from commands processor
+[2026-03-16 14:35:12,559][Drone 2][INFO][ROS2][Commands Action Server] - Command feedback published: ['2', '1', '48', 'WP reached']
+[2026-03-16 14:35:12,608][Drone 2][INFO][ROS2][System Metrics Publisher] - System Metrics published
+[2026-03-16 14:35:13,560][Drone 2][INFO][ROS2][Commands Action Server] - Processing command 3/32: {"related_task": {"id": 5, "mission_id": 1}, "id": 49, "command_type": "NAV_WAYPOINT", "command_status": "NotStarted", "start_time": 49, "params": [0, 0, 0, 0, 40.209544, -3.465575, 0]}
+[2026-03-16 14:35:13,561][Drone 2][INFO][ROS2][gRPC Commands] - Sending command to commands processor
+[2026-03-16 14:35:15,580][Drone 2][INFO][ROS2][gRPC Commands] - Feedback received from drone and sent to ROS2 server
+[2026-03-16 14:35:15,582][Drone 2][INFO][ROS2][gRPC Commands] - ACK received from commands processor
+[2026-03-16 14:35:15,582][Drone 2][INFO][ROS2][Commands Action Server] - Command feedback published: ['2', '1', '49', 'WP reached']
+[2026-03-16 14:35:16,583][Drone 2][INFO][ROS2][Commands Action Server] - Processing command 4/32: {"related_task": {"id": 5, "mission_id": 1}, "id": 50, "command_type": "SPRAY", "command_status": "NotStarted", "start_time": 50, "params": [["Grape_bunch"], [5.95], 40.209544, -3.465575, 0]}
+[2026-03-16 14:35:16,583][Drone 2][INFO][ROS2][gRPC Commands] - Sending command to commands processor
+[2026-03-16 14:35:18,604][Drone 2][INFO][ROS2][gRPC Commands] - Feedback received from drone and sent to ROS2 server
+[2026-03-16 14:35:18,606][Drone 2][INFO][ROS2][gRPC Commands] - ACK received from commands processor
+[2026-03-16 14:35:18,607][Drone 2][INFO][ROS2][Commands Action Server] - Command feedback published: ['2', '1', '50', "[['Grape_bunch'], [5.95]]"]
+[2026-03-16 14:35:19,608][Drone 2][INFO][ROS2][Commands Action Server] - Processing command 5/32: {"related_task": {"id": 5, "mission_id": 1}, "id": 51, "command_type": "NAV_WAYPOINT", "command_status": "NotStarted", "start_time": 51, "params": [0, 0, 0, 0, 40.209544, -3.465821, 0]}
+[2026-03-16 14:35:19,609][Drone 2][INFO][ROS2][gRPC Commands] - Sending command to commands processor
+[2026-03-16 14:35:21,618][Drone 2][INFO][State Vector] - State Vector sent
+[2026-03-16 14:35:21,630][Drone 2][INFO][ROS2][gRPC Commands] - Feedback received from drone and sent to ROS2 server
+[2026-03-16 14:35:21,633][Drone 2][INFO][ROS2][gRPC Commands] - ACK received from commands processor
+[2026-03-16 14:35:21,634][Drone 2][INFO][ROS2][Commands Action Server] - Command feedback published: ['2', '1', '51', 'WP reached']
+[2026-03-16 14:35:21,741][Drone 2][INFO][ROS2][gRPC Metrics] - Metrics received from drone and forwarded to ROS2 publisher
+[2026-03-16 14:35:22,608][Drone 2][INFO][ROS2][System Metrics Publisher] - System Metrics published
+[2026-03-16 14:35:22,635][Drone 2][INFO][ROS2][Commands Action Server] - Processing command 6/32: {"related_task": {"id": 5, "mission_id": 1}, "id": 52, "command_type": "SPRAY", "command_status": "NotStarted", "start_time": 52, "params": [["Grape_bunch"], [5.95], 40.209544, -3.465821]}
+[2026-03-16 14:35:22,636][Drone 2][INFO][ROS2][gRPC Commands] - Sending command to commands processor
+[2026-03-16 14:35:24,659][Drone 2][INFO][ROS2][gRPC Commands] - Feedback received from drone and sent to ROS2 server
+[2026-03-16 14:35:24,661][Drone 2][INFO][ROS2][gRPC Commands] - ACK received from commands processor
+[2026-03-16 14:35:24,661][Drone 2][INFO][ROS2][Commands Action Server] - Command feedback published: ['2', '1', '52', "[['Grape_bunch'], [5.95]]"]
+[2026-03-16 14:35:25,662][Drone 2][INFO][ROS2][Commands Action Server] - Processing command 7/32: {"related_task": {"id": 5, "mission_id": 1}, "id": 53, "command_type": "NAV_WAYPOINT", "command_status": "NotStarted", "start_time": 53, "params": [0, 0, 0, 0, 40.209544, -3.466066, 0]}
+[2026-03-16 14:35:25,663][Drone 2][INFO][ROS2][gRPC Commands] - Sending command to commands processor
+[2026-03-16 14:35:27,686][Drone 2][INFO][ROS2][gRPC Commands] - Feedback received from drone and sent to ROS2 server
+[2026-03-16 14:35:27,688][Drone 2][INFO][ROS2][gRPC Commands] - ACK received from commands processor
+[2026-03-16 14:35:27,689][Drone 2][INFO][ROS2][Commands Action Server] - Command feedback published: ['2', '1', '53', 'WP reached']
+[2026-03-16 14:35:28,690][Drone 2][INFO][ROS2][Commands Action Server] - Processing command 8/32: {"related_task": {"id": 5, "mission_id": 1}, "id": 54, "command_type": "SPRAY", "command_status": "NotStarted", "start_time": 54, "params": [["Grape_bunch"], [5.95], 40.209544, -3.466066]}
+[2026-03-16 14:35:28,691][Drone 2][INFO][ROS2][gRPC Commands] - Sending command to commands processor
+[2026-03-16 14:35:30,715][Drone 2][INFO][ROS2][gRPC Commands] - Feedback received from drone and sent to ROS2 server
+[2026-03-16 14:35:30,717][Drone 2][INFO][ROS2][gRPC Commands] - ACK received from commands processor
+[2026-03-16 14:35:30,717][Drone 2][INFO][ROS2][Commands Action Server] - Command feedback published: ['2', '1', '54', "[['Grape_bunch'], [5.95]]"]
+[2026-03-16 14:35:31,617][Drone 2][INFO][State Vector] - State Vector sent
+[2026-03-16 14:35:31,718][Drone 2][INFO][ROS2][Commands Action Server] - Processing command 9/32: {"related_task": {"id": 5, "mission_id": 1}, "id": 55, "command_type": "NAV_WAYPOINT", "command_status": "NotStarted", "start_time": 55, "params": [0, 0, 0, 0, 40.209544, -3.466312, 0]}
+[2026-03-16 14:35:31,719][Drone 2][INFO][ROS2][gRPC Commands] - Sending command to commands processor
+[2026-03-16 14:35:31,777][Drone 2][INFO][ROS2][gRPC Metrics] - Metrics received from drone and forwarded to ROS2 publisher
+[2026-03-16 14:35:32,608][Drone 2][INFO][ROS2][System Metrics Publisher] - System Metrics published
+[2026-03-16 14:35:33,760][Drone 2][INFO][ROS2][gRPC Commands] - Feedback received from drone and sent to ROS2 server
+[2026-03-16 14:35:33,762][Drone 2][INFO][ROS2][gRPC Commands] - ACK received from commands processor
+[2026-03-16 14:35:33,763][Drone 2][INFO][ROS2][Commands Action Server] - Command feedback published: ['2', '1', '55', 'WP reached']
+[2026-03-16 14:35:34,764][Drone 2][INFO][ROS2][Commands Action Server] - Processing command 10/32: {"related_task": {"id": 5, "mission_id": 1}, "id": 56, "command_type": "SPRAY", "command_status": "NotStarted", "start_time": 56, "params": [["Grape_bunch"], [3.95], 40.209544, -3.466312]}
+[2026-03-16 14:35:34,765][Drone 2][INFO][ROS2][gRPC Commands] - Sending command to commands processor
+[2026-03-16 14:35:36,791][Drone 2][INFO][ROS2][gRPC Commands] - Feedback received from drone and sent to ROS2 server
+[2026-03-16 14:35:36,793][Drone 2][INFO][ROS2][gRPC Commands] - ACK received from commands processor
+[2026-03-16 14:35:36,794][Drone 2][INFO][ROS2][Commands Action Server] - Command feedback published: ['2', '1', '56', "[['Grape_bunch'], [3.95]]"]
+[2026-03-16 14:35:37,796][Drone 2][INFO][ROS2][Commands Action Server] - Processing command 11/32: {"related_task": {"id": 5, "mission_id": 1}, "id": 57, "command_type": "NAV_WAYPOINT", "command_status": "NotStarted", "start_time": 57, "params": [0, 0, 0, 0, 40.209544, -3.466557, 0]}
+[2026-03-16 14:35:37,796][Drone 2][INFO][ROS2][gRPC Commands] - Sending command to commands processor
+[2026-03-16 14:35:39,821][Drone 2][INFO][ROS2][gRPC Commands] - Feedback received from drone and sent to ROS2 server
+[2026-03-16 14:35:39,823][Drone 2][INFO][ROS2][gRPC Commands] - ACK received from commands processor
+[2026-03-16 14:35:39,824][Drone 2][INFO][ROS2][Commands Action Server] - Command feedback published: ['2', '1', '57', 'WP reached']
+[2026-03-16 14:35:40,824][Drone 2][INFO][ROS2][Commands Action Server] - Processing command 12/32: {"related_task": {"id": 5, "mission_id": 1}, "id": 58, "command_type": "SPRAY", "command_status": "NotStarted", "start_time": 58, "params": [["Grape_bunch"], [7.95], 40.209544, -3.466557]}
+[2026-03-16 14:35:40,825][Drone 2][INFO][ROS2][gRPC Commands] - Sending command to commands processor
+[2026-03-16 14:35:41,617][Drone 2][INFO][State Vector] - State Vector sent
+[2026-03-16 14:35:41,810][Drone 2][INFO][ROS2][gRPC Metrics] - Metrics received from drone and forwarded to ROS2 publisher
+[2026-03-16 14:35:42,608][Drone 2][INFO][ROS2][System Metrics Publisher] - System Metrics published
+[2026-03-16 14:35:42,848][Drone 2][INFO][ROS2][gRPC Commands] - Feedback received from drone and sent to ROS2 server
+[2026-03-16 14:35:42,850][Drone 2][INFO][ROS2][gRPC Commands] - ACK received from commands processor
+[2026-03-16 14:35:42,850][Drone 2][INFO][ROS2][Commands Action Server] - Command feedback published: ['2', '1', '58', "[['Grape_bunch'], [7.95]]"]
+[2026-03-16 14:35:43,851][Drone 2][INFO][ROS2][Commands Action Server] - Processing command 13/32: {"related_task": {"id": 5, "mission_id": 1}, "id": 59, "command_type": "NAV_WAYPOINT", "command_status": "NotStarted", "start_time": 59, "params": [0, 0, 0, 0, 40.209544, -3.466803, 0]}
+[2026-03-16 14:35:43,852][Drone 2][INFO][ROS2][gRPC Commands] - Sending command to commands processor
+[2026-03-16 14:35:45,876][Drone 2][INFO][ROS2][gRPC Commands] - Feedback received from drone and sent to ROS2 server
+[2026-03-16 14:35:45,878][Drone 2][INFO][ROS2][gRPC Commands] - ACK received from commands processor
+[2026-03-16 14:35:45,879][Drone 2][INFO][ROS2][Commands Action Server] - Command feedback published: ['2', '1', '59', 'WP reached']
+[2026-03-16 14:35:46,880][Drone 2][INFO][ROS2][Commands Action Server] - Processing command 14/32: {"related_task": {"id": 5, "mission_id": 1}, "id": 60, "command_type": "SPRAY", "command_status": "NotStarted", "start_time": 60, "params": [["Grape_bunch"], [1.95], 40.209544, -3.466803]}
+[2026-03-16 14:35:46,881][Drone 2][INFO][ROS2][gRPC Commands] - Sending command to commands processor
+[2026-03-16 14:35:48,907][Drone 2][INFO][ROS2][gRPC Commands] - Feedback received from drone and sent to ROS2 server
+[2026-03-16 14:35:48,910][Drone 2][INFO][ROS2][gRPC Commands] - ACK received from commands processor
+[2026-03-16 14:35:48,911][Drone 2][INFO][ROS2][Commands Action Server] - Command feedback published: ['2', '1', '60', "[['Grape_bunch'], [1.95]]"]
+[2026-03-16 14:35:49,912][Drone 2][INFO][ROS2][Commands Action Server] - Processing command 15/32: {"related_task": {"id": 5, "mission_id": 1}, "id": 61, "command_type": "NAV_WAYPOINT", "command_status": "NotStarted", "start_time": 61, "params": [0, 0, 0, 0, 40.209544, -3.467048, 0]}
+[2026-03-16 14:35:49,912][Drone 2][INFO][ROS2][gRPC Commands] - Sending command to commands processor
+[2026-03-16 14:35:51,617][Drone 2][INFO][State Vector] - State Vector sent
+[2026-03-16 14:35:51,843][Drone 2][INFO][ROS2][gRPC Metrics] - Metrics received from drone and forwarded to ROS2 publisher
+[2026-03-16 14:35:51,933][Drone 2][INFO][ROS2][gRPC Commands] - Feedback received from drone and sent to ROS2 server
+[2026-03-16 14:35:51,935][Drone 2][INFO][ROS2][gRPC Commands] - ACK received from commands processor
+[2026-03-16 14:35:51,935][Drone 2][INFO][ROS2][Commands Action Server] - Command feedback published: ['2', '1', '61', 'WP reached']
+[2026-03-16 14:35:52,608][Drone 2][INFO][ROS2][System Metrics Publisher] - System Metrics published
+[2026-03-16 14:35:52,936][Drone 2][INFO][ROS2][Commands Action Server] - Processing command 16/32: {"related_task": {"id": 5, "mission_id": 1}, "id": 62, "command_type": "SPRAY", "command_status": "NotStarted", "start_time": 62, "params": [["Grape_bunch"], [5.95], 40.209544, -3.467048]}
+[2026-03-16 14:35:52,936][Drone 2][INFO][ROS2][gRPC Commands] - Sending command to commands processor
+[2026-03-16 14:35:54,960][Drone 2][INFO][ROS2][gRPC Commands] - Feedback received from drone and sent to ROS2 server
+[2026-03-16 14:35:54,963][Drone 2][INFO][ROS2][gRPC Commands] - ACK received from commands processor
+[2026-03-16 14:35:54,964][Drone 2][INFO][ROS2][Commands Action Server] - Command feedback published: ['2', '1', '62', "[['Grape_bunch'], [5.95]]"]
+[2026-03-16 14:35:55,964][Drone 2][INFO][ROS2][Commands Action Server] - Processing command 17/32: {"related_task": {"id": 5, "mission_id": 1}, "id": 63, "command_type": "NAV_WAYPOINT", "command_status": "NotStarted", "start_time": 63, "params": [0, 0, 0, 0, 40.20973, -3.467048, 0]}
+[2026-03-16 14:35:55,965][Drone 2][INFO][ROS2][gRPC Commands] - Sending command to commands processor
+[2026-03-16 14:35:57,989][Drone 2][INFO][ROS2][gRPC Commands] - Feedback received from drone and sent to ROS2 server
+[2026-03-16 14:35:57,991][Drone 2][INFO][ROS2][gRPC Commands] - ACK received from commands processor
+[2026-03-16 14:35:57,991][Drone 2][INFO][ROS2][Commands Action Server] - Command feedback published: ['2', '1', '63', 'WP reached']
+[2026-03-16 14:35:58,993][Drone 2][INFO][ROS2][Commands Action Server] - Processing command 18/32: {"related_task": {"id": 5, "mission_id": 1}, "id": 64, "command_type": "SPRAY", "command_status": "NotStarted", "start_time": 64, "params": [["Grape_bunch"], [7.95], 40.20973, -3.467048]}
+[2026-03-16 14:35:58,993][Drone 2][INFO][ROS2][gRPC Commands] - Sending command to commands processor
+[2026-03-16 14:36:01,033][Drone 2][INFO][ROS2][gRPC Commands] - Feedback received from drone and sent to ROS2 server
+[2026-03-16 14:36:01,035][Drone 2][INFO][ROS2][gRPC Commands] - ACK received from commands processor
+[2026-03-16 14:36:01,035][Drone 2][INFO][ROS2][Commands Action Server] - Command feedback published: ['2', '1', '64', "[['Grape_bunch'], [7.95]]"]
+[2026-03-16 14:36:01,617][Drone 2][INFO][State Vector] - State Vector sent
+[2026-03-16 14:36:01,879][Drone 2][INFO][ROS2][gRPC Metrics] - Metrics received from drone and forwarded to ROS2 publisher
+[2026-03-16 14:36:02,036][Drone 2][INFO][ROS2][Commands Action Server] - Processing command 19/32: {"related_task": {"id": 5, "mission_id": 1}, "id": 65, "command_type": "NAV_WAYPOINT", "command_status": "NotStarted", "start_time": 65, "params": [0, 0, 0, 0, 40.20973, -3.466803, 0]}
+[2026-03-16 14:36:02,036][Drone 2][INFO][ROS2][gRPC Commands] - Sending command to commands processor
+[2026-03-16 14:36:02,608][Drone 2][INFO][ROS2][System Metrics Publisher] - System Metrics published
+[2026-03-16 14:36:04,059][Drone 2][INFO][ROS2][gRPC Commands] - Feedback received from drone and sent to ROS2 server
+[2026-03-16 14:36:04,061][Drone 2][INFO][ROS2][gRPC Commands] - ACK received from commands processor
+[2026-03-16 14:36:04,062][Drone 2][INFO][ROS2][Commands Action Server] - Command feedback published: ['2', '1', '65', 'WP reached']
+[2026-03-16 14:36:05,064][Drone 2][INFO][ROS2][Commands Action Server] - Processing command 20/32: {"related_task": {"id": 5, "mission_id": 1}, "id": 66, "command_type": "SPRAY", "command_status": "NotStarted", "start_time": 66, "params": [["Grape_bunch"], [1.95], 40.20973, -3.466803]}
+[2026-03-16 14:36:05,064][Drone 2][INFO][ROS2][gRPC Commands] - Sending command to commands processor
+[2026-03-16 14:36:07,123][Drone 2][INFO][ROS2][gRPC Commands] - Feedback received from drone and sent to ROS2 server
+[2026-03-16 14:36:07,126][Drone 2][INFO][ROS2][gRPC Commands] - ACK received from commands processor
+[2026-03-16 14:36:07,127][Drone 2][INFO][ROS2][Commands Action Server] - Command feedback published: ['2', '1', '66', "[['Grape_bunch'], [1.95]]"]
+[2026-03-16 14:36:08,128][Drone 2][INFO][ROS2][Commands Action Server] - Processing command 21/32: {"related_task": {"id": 5, "mission_id": 1}, "id": 67, "command_type": "NAV_WAYPOINT", "command_status": "NotStarted", "start_time": 67, "params": [0, 0, 0, 0, 40.20973, -3.466557, 0]}
+[2026-03-16 14:36:08,128][Drone 2][INFO][ROS2][gRPC Commands] - Sending command to commands processor
+[2026-03-16 14:36:10,150][Drone 2][INFO][ROS2][gRPC Commands] - Feedback received from drone and sent to ROS2 server
+[2026-03-16 14:36:10,152][Drone 2][INFO][ROS2][gRPC Commands] - ACK received from commands processor
+[2026-03-16 14:36:10,153][Drone 2][INFO][ROS2][Commands Action Server] - Command feedback published: ['2', '1', '67', 'WP reached']
+[2026-03-16 14:36:11,153][Drone 2][INFO][ROS2][Commands Action Server] - Processing command 22/32: {"related_task": {"id": 5, "mission_id": 1}, "id": 68, "command_type": "SPRAY", "command_status": "NotStarted", "start_time": 68, "params": [["Grape_bunch"], [3.95], 40.20973, -3.466557]}
+[2026-03-16 14:36:11,154][Drone 2][INFO][ROS2][gRPC Commands] - Sending command to commands processor
+[2026-03-16 14:36:11,617][Drone 2][INFO][State Vector] - State Vector sent
+[2026-03-16 14:36:11,912][Drone 2][INFO][ROS2][gRPC Metrics] - Metrics received from drone and forwarded to ROS2 publisher
+[2026-03-16 14:36:12,608][Drone 2][INFO][ROS2][System Metrics Publisher] - System Metrics published
+[2026-03-16 14:36:13,174][Drone 2][INFO][ROS2][gRPC Commands] - Feedback received from drone and sent to ROS2 server
+[2026-03-16 14:36:13,176][Drone 2][INFO][ROS2][gRPC Commands] - ACK received from commands processor
+[2026-03-16 14:36:13,177][Drone 2][INFO][ROS2][Commands Action Server] - Command feedback published: ['2', '1', '68', "[['Grape_bunch'], [3.95]]"]
+[2026-03-16 14:36:14,179][Drone 2][INFO][ROS2][Commands Action Server] - Processing command 23/32: {"related_task": {"id": 5, "mission_id": 1}, "id": 69, "command_type": "NAV_WAYPOINT", "command_status": "NotStarted", "start_time": 69, "params": [0, 0, 0, 0, 40.20973, -3.466312, 0]}
+[2026-03-16 14:36:14,180][Drone 2][INFO][ROS2][gRPC Commands] - Sending command to commands processor
+[2026-03-16 14:36:16,204][Drone 2][INFO][ROS2][gRPC Commands] - Feedback received from drone and sent to ROS2 server
+[2026-03-16 14:36:16,206][Drone 2][INFO][ROS2][gRPC Commands] - ACK received from commands processor
+[2026-03-16 14:36:16,207][Drone 2][INFO][ROS2][Commands Action Server] - Command feedback published: ['2', '1', '69', 'WP reached']
+[2026-03-16 14:36:17,208][Drone 2][INFO][ROS2][Commands Action Server] - Processing command 24/32: {"related_task": {"id": 5, "mission_id": 1}, "id": 70, "command_type": "SPRAY", "command_status": "NotStarted", "start_time": 70, "params": [["Grape_bunch"], [7.95], 40.20973, -3.466312]}
+[2026-03-16 14:36:17,208][Drone 2][INFO][ROS2][gRPC Commands] - Sending command to commands processor
+[2026-03-16 14:36:19,228][Drone 2][INFO][ROS2][gRPC Commands] - Feedback received from drone and sent to ROS2 server
+[2026-03-16 14:36:19,230][Drone 2][INFO][ROS2][gRPC Commands] - ACK received from commands processor
+[2026-03-16 14:36:19,231][Drone 2][INFO][ROS2][Commands Action Server] - Command feedback published: ['2', '1', '70', "[['Grape_bunch'], [7.95]]"]
+[2026-03-16 14:36:20,232][Drone 2][INFO][ROS2][Commands Action Server] - Processing command 25/32: {"related_task": {"id": 5, "mission_id": 1}, "id": 71, "command_type": "NAV_WAYPOINT", "command_status": "NotStarted", "start_time": 71, "params": [0, 0, 0, 0, 40.20973, -3.466066, 0]}
+[2026-03-16 14:36:20,232][Drone 2][INFO][ROS2][gRPC Commands] - Sending command to commands processor
+[2026-03-16 14:36:21,618][Drone 2][INFO][State Vector] - State Vector sent
+[2026-03-16 14:36:21,950][Drone 2][INFO][ROS2][gRPC Metrics] - Metrics received from drone and forwarded to ROS2 publisher
+[2026-03-16 14:36:22,253][Drone 2][INFO][ROS2][gRPC Commands] - Feedback received from drone and sent to ROS2 server
+[2026-03-16 14:36:22,255][Drone 2][INFO][ROS2][gRPC Commands] - ACK received from commands processor
+[2026-03-16 14:36:22,255][Drone 2][INFO][ROS2][Commands Action Server] - Command feedback published: ['2', '1', '71', 'WP reached']
+[2026-03-16 14:36:22,608][Drone 2][INFO][ROS2][System Metrics Publisher] - System Metrics published
+[2026-03-16 14:36:23,257][Drone 2][INFO][ROS2][Commands Action Server] - Processing command 26/32: {"related_task": {"id": 5, "mission_id": 1}, "id": 72, "command_type": "SPRAY", "command_status": "NotStarted", "start_time": 72, "params": [["Grape_bunch"], [9.95], 40.20973, -3.466066]}
+[2026-03-16 14:36:23,257][Drone 2][INFO][ROS2][gRPC Commands] - Sending command to commands processor
+[2026-03-16 14:36:25,277][Drone 2][INFO][ROS2][gRPC Commands] - Feedback received from drone and sent to ROS2 server
+[2026-03-16 14:36:25,279][Drone 2][INFO][ROS2][gRPC Commands] - ACK received from commands processor
+[2026-03-16 14:36:25,280][Drone 2][INFO][ROS2][Commands Action Server] - Command feedback published: ['2', '1', '72', "[['Grape_bunch'], [9.95]]"]
+[2026-03-16 14:36:26,281][Drone 2][INFO][ROS2][Commands Action Server] - Processing command 27/32: {"related_task": {"id": 5, "mission_id": 1}, "id": 73, "command_type": "NAV_WAYPOINT", "command_status": "NotStarted", "start_time": 73, "params": [0, 0, 0, 0, 40.20973, -3.465821, 0]}
+[2026-03-16 14:36:26,282][Drone 2][INFO][ROS2][gRPC Commands] - Sending command to commands processor
+[2026-03-16 14:36:28,321][Drone 2][INFO][ROS2][gRPC Commands] - Feedback received from drone and sent to ROS2 server
+[2026-03-16 14:36:28,324][Drone 2][INFO][ROS2][gRPC Commands] - ACK received from commands processor
+[2026-03-16 14:36:28,325][Drone 2][INFO][ROS2][Commands Action Server] - Command feedback published: ['2', '1', '73', 'WP reached']
+[2026-03-16 14:36:29,326][Drone 2][INFO][ROS2][Commands Action Server] - Processing command 28/32: {"related_task": {"id": 5, "mission_id": 1}, "id": 74, "command_type": "SPRAY", "command_status": "NotStarted", "start_time": 74, "params": [["Grape_bunch"], [3.95], 40.20973, -3.465821]}
+[2026-03-16 14:36:29,326][Drone 2][INFO][ROS2][gRPC Commands] - Sending command to commands processor
+[2026-03-16 14:36:31,355][Drone 2][INFO][ROS2][gRPC Commands] - Feedback received from drone and sent to ROS2 server
+[2026-03-16 14:36:31,357][Drone 2][INFO][ROS2][gRPC Commands] - ACK received from commands processor
+[2026-03-16 14:36:31,358][Drone 2][INFO][ROS2][Commands Action Server] - Command feedback published: ['2', '1', '74', "[['Grape_bunch'], [3.95]]"]
+[2026-03-16 14:36:31,618][Drone 2][INFO][State Vector] - State Vector sent
+[2026-03-16 14:36:31,983][Drone 2][INFO][ROS2][gRPC Metrics] - Metrics received from drone and forwarded to ROS2 publisher
+[2026-03-16 14:36:32,360][Drone 2][INFO][ROS2][Commands Action Server] - Processing command 29/32: {"related_task": {"id": 5, "mission_id": 1}, "id": 75, "command_type": "NAV_WAYPOINT", "command_status": "NotStarted", "start_time": 75, "params": [0, 0, 0, 0, 40.20973, -3.465575, 0]}
+[2026-03-16 14:36:32,360][Drone 2][INFO][ROS2][gRPC Commands] - Sending command to commands processor
+[2026-03-16 14:36:32,608][Drone 2][INFO][ROS2][System Metrics Publisher] - System Metrics published
+[2026-03-16 14:36:34,383][Drone 2][INFO][ROS2][gRPC Commands] - Feedback received from drone and sent to ROS2 server
+[2026-03-16 14:36:34,384][Drone 2][INFO][ROS2][gRPC Commands] - ACK received from commands processor
+[2026-03-16 14:36:34,385][Drone 2][INFO][ROS2][Commands Action Server] - Command feedback published: ['2', '1', '75', 'WP reached']
+[2026-03-16 14:36:35,386][Drone 2][INFO][ROS2][Commands Action Server] - Processing command 30/32: {"related_task": {"id": 5, "mission_id": 1}, "id": 76, "command_type": "SPRAY", "command_status": "NotStarted", "start_time": 76, "params": [["Grape_bunch"], [3.95], 40.20973, -3.465575]}
+[2026-03-16 14:36:35,387][Drone 2][INFO][ROS2][gRPC Commands] - Sending command to commands processor
+[2026-03-16 14:36:37,415][Drone 2][INFO][ROS2][gRPC Commands] - Feedback received from drone and sent to ROS2 server
+[2026-03-16 14:36:37,417][Drone 2][INFO][ROS2][gRPC Commands] - ACK received from commands processor
+[2026-03-16 14:36:37,418][Drone 2][INFO][ROS2][Commands Action Server] - Command feedback published: ['2', '1', '76', "[['Grape_bunch'], [3.95]]"]
+[2026-03-16 14:36:38,419][Drone 2][INFO][ROS2][Commands Action Server] - Processing command 31/32: {"related_task": {"id": 6, "mission_id": 1}, "id": 77, "command_type": "NAV_HOME", "command_status": "NotStarted", "start_time": 77, "params": [0]}
+[2026-03-16 14:36:38,420][Drone 2][INFO][ROS2][gRPC Commands] - Sending command to commands processor
+[2026-03-16 14:36:40,438][Drone 2][INFO][ROS2][gRPC Commands] - Feedback received from drone and sent to ROS2 server
+[2026-03-16 14:36:40,440][Drone 2][INFO][ROS2][gRPC Commands] - ACK received from commands processor
+[2026-03-16 14:36:40,440][Drone 2][INFO][ROS2][Commands Action Server] - Command feedback published: ['2', '1', '77', 'Returned home']
+[2026-03-16 14:36:41,441][Drone 2][INFO][ROS2][Commands Action Server] - Processing command 32/32: {"related_task": {"id": 6, "mission_id": 1}, "id": 78, "command_type": "NAV_LAND", "command_status": "NotStarted", "start_time": 78, "params": [0, 0, 0, 40.209232, -3.465646, 0]}
+[2026-03-16 14:36:41,442][Drone 2][INFO][ROS2][gRPC Commands] - Sending command to commands processor
+[2026-03-16 14:36:41,618][Drone 2][INFO][State Vector] - State Vector sent
+[2026-03-16 14:36:42,015][Drone 2][INFO][ROS2][gRPC Metrics] - Metrics received from drone and forwarded to ROS2 publisher
+[2026-03-16 14:36:42,608][Drone 2][INFO][ROS2][System Metrics Publisher] - System Metrics published
+[2026-03-16 14:36:43,464][Drone 2][INFO][ROS2][gRPC Commands] - Feedback received from drone and sent to ROS2 server
+[2026-03-16 14:36:43,467][Drone 2][INFO][ROS2][gRPC Commands] - ACK received from commands processor
+[2026-03-16 14:36:43,468][Drone 2][INFO][ROS2][Commands Action Server] - Command feedback published: ['2', '1', '78', 'Landing successful']
+[2026-03-16 14:36:44,469][Drone 2][INFO][ROS2][Commands Action Server] - Command sequence completed successfully: ['2', '2']
+[2026-03-16 14:36:51,618][Drone 2][INFO][State Vector] - State Vector sent
+[2026-03-16 14:36:52,053][Drone 2][INFO][ROS2][gRPC Metrics] - Metrics received from drone and forwarded to ROS2 publisher
+[2026-03-16 14:36:52,608][Drone 2][INFO][ROS2][System Metrics Publisher] - System Metrics published
+[2026-03-16 14:37:01,618][Drone 2][INFO][State Vector] - State Vector sent
+[2026-03-16 14:37:02,089][Drone 2][INFO][ROS2][gRPC Metrics] - Metrics received from drone and forwarded to ROS2 publisher
+[2026-03-16 14:37:02,608][Drone 2][INFO][ROS2][System Metrics Publisher] - System Metrics published
+[2026-03-16 14:37:11,618][Drone 2][INFO][State Vector] - State Vector sent
+[2026-03-16 14:37:12,125][Drone 2][INFO][ROS2][gRPC Metrics] - Metrics received from drone and forwarded to ROS2 publisher
+[2026-03-16 14:37:12,608][Drone 2][INFO][ROS2][System Metrics Publisher] - System Metrics published
+[2026-03-16 14:37:21,618][Drone 2][INFO][State Vector] - State Vector sent
+[2026-03-16 14:37:22,162][Drone 2][INFO][ROS2][gRPC Metrics] - Metrics received from drone and forwarded to ROS2 publisher
+[2026-03-16 14:37:22,608][Drone 2][INFO][ROS2][System Metrics Publisher] - System Metrics published
+[2026-03-16 14:37:31,618][Drone 2][INFO][State Vector] - State Vector sent
+[2026-03-16 14:37:32,201][Drone 2][INFO][ROS2][gRPC Metrics] - Metrics received from drone and forwarded to ROS2 publisher
+[2026-03-16 14:37:32,608][Drone 2][INFO][ROS2][System Metrics Publisher] - System Metrics published
+[2026-03-16 14:37:41,618][Drone 2][INFO][State Vector] - State Vector sent
+[2026-03-16 14:37:42,237][Drone 2][INFO][ROS2][gRPC Metrics] - Metrics received from drone and forwarded to ROS2 publisher
+[2026-03-16 14:37:42,608][Drone 2][INFO][ROS2][System Metrics Publisher] - System Metrics published
+[2026-03-16 14:37:51,618][Drone 2][INFO][State Vector] - State Vector sent
+[2026-03-16 14:37:52,275][Drone 2][INFO][ROS2][gRPC Metrics] - Metrics received from drone and forwarded to ROS2 publisher
+[2026-03-16 14:37:52,608][Drone 2][INFO][ROS2][System Metrics Publisher] - System Metrics published
+[2026-03-16 14:38:01,617][Drone 2][INFO][State Vector] - State Vector sent
+[2026-03-16 14:38:02,308][Drone 2][INFO][ROS2][gRPC Metrics] - Metrics received from drone and forwarded to ROS2 publisher
+[2026-03-16 14:38:02,608][Drone 2][INFO][ROS2][System Metrics Publisher] - System Metrics published
+[2026-03-16 14:38:11,618][Drone 2][INFO][State Vector] - State Vector sent
+[2026-03-16 14:38:12,345][Drone 2][INFO][ROS2][gRPC Metrics] - Metrics received from drone and forwarded to ROS2 publisher
+[2026-03-16 14:38:12,608][Drone 2][INFO][ROS2][System Metrics Publisher] - System Metrics published
+[2026-03-16 14:38:21,618][Drone 2][INFO][State Vector] - State Vector sent
+[2026-03-16 14:38:22,382][Drone 2][INFO][ROS2][gRPC Metrics] - Metrics received from drone and forwarded to ROS2 publisher
+[2026-03-16 14:38:22,609][Drone 2][INFO][ROS2][System Metrics Publisher] - System Metrics published
+[2026-03-16 14:38:31,618][Drone 2][INFO][State Vector] - State Vector sent
+[2026-03-16 14:38:32,419][Drone 2][INFO][ROS2][gRPC Metrics] - Metrics received from drone and forwarded to ROS2 publisher
+[2026-03-16 14:38:32,608][Drone 2][INFO][ROS2][System Metrics Publisher] - System Metrics published
+[2026-03-16 14:38:41,618][Drone 2][INFO][State Vector] - State Vector sent
+[2026-03-16 14:38:42,463][Drone 2][INFO][ROS2][gRPC Metrics] - Metrics received from drone and forwarded to ROS2 publisher
+[2026-03-16 14:38:42,608][Drone 2][INFO][ROS2][System Metrics Publisher] - System Metrics published
+[2026-03-16 14:38:51,618][Drone 2][INFO][State Vector] - State Vector sent
+[2026-03-16 14:38:52,503][Drone 2][INFO][ROS2][gRPC Metrics] - Metrics received from drone and forwarded to ROS2 publisher
+[2026-03-16 14:38:52,608][Drone 2][INFO][ROS2][System Metrics Publisher] - System Metrics published
+[2026-03-16 14:39:01,618][Drone 2][INFO][State Vector] - State Vector sent
+[2026-03-16 14:39:02,544][Drone 2][INFO][ROS2][gRPC Metrics] - Metrics received from drone and forwarded to ROS2 publisher
+[2026-03-16 14:39:02,608][Drone 2][INFO][ROS2][System Metrics Publisher] - System Metrics published
+[2026-03-16 14:39:11,618][Drone 2][INFO][State Vector] - State Vector sent
+[2026-03-16 14:39:12,627][Drone 2][INFO][ROS2][gRPC Metrics] - Metrics received from drone and forwarded to ROS2 publisher
+[2026-03-16 14:39:13,608][Drone 2][INFO][ROS2][System Metrics Publisher] - System Metrics published
+[2026-03-16 14:39:21,618][Drone 2][INFO][State Vector] - State Vector sent
+[2026-03-16 14:39:22,665][Drone 2][INFO][ROS2][gRPC Metrics] - Metrics received from drone and forwarded to ROS2 publisher
+[2026-03-16 14:39:23,608][Drone 2][INFO][ROS2][System Metrics Publisher] - System Metrics published
+[2026-03-16 14:39:31,618][Drone 2][INFO][State Vector] - State Vector sent
+[2026-03-16 14:39:32,701][Drone 2][INFO][ROS2][gRPC Metrics] - Metrics received from drone and forwarded to ROS2 publisher
+[2026-03-16 14:39:33,608][Drone 2][INFO][ROS2][System Metrics Publisher] - System Metrics published
+[2026-03-16 14:39:41,618][Drone 2][INFO][State Vector] - State Vector sent
+[2026-03-16 14:39:42,740][Drone 2][INFO][ROS2][gRPC Metrics] - Metrics received from drone and forwarded to ROS2 publisher
+[2026-03-16 14:39:43,608][Drone 2][INFO][ROS2][System Metrics Publisher] - System Metrics published
+[2026-03-16 14:39:51,617][Drone 2][INFO][State Vector] - State Vector sent
+[2026-03-16 14:39:52,773][Drone 2][INFO][ROS2][gRPC Metrics] - Metrics received from drone and forwarded to ROS2 publisher
+[2026-03-16 14:39:53,608][Drone 2][INFO][ROS2][System Metrics Publisher] - System Metrics published
+[2026-03-16 14:40:01,618][Drone 2][INFO][State Vector] - State Vector sent
+[2026-03-16 14:40:02,893][Drone 2][INFO][ROS2][gRPC Metrics] - Metrics received from drone and forwarded to ROS2 publisher
+[2026-03-16 14:40:03,608][Drone 2][INFO][ROS2][System Metrics Publisher] - System Metrics published
+[2026-03-16 14:40:11,617][Drone 2][INFO][State Vector] - State Vector sent
+[2026-03-16 14:40:12,970][Drone 2][INFO][ROS2][gRPC Metrics] - Metrics received from drone and forwarded to ROS2 publisher
+[2026-03-16 14:40:13,608][Drone 2][INFO][ROS2][System Metrics Publisher] - System Metrics published
+[2026-03-16 14:40:21,617][Drone 2][INFO][State Vector] - State Vector sent
+[2026-03-16 14:40:23,026][Drone 2][INFO][ROS2][gRPC Metrics] - Metrics received from drone and forwarded to ROS2 publisher
+[2026-03-16 14:40:23,608][Drone 2][INFO][ROS2][System Metrics Publisher] - System Metrics published
+[2026-03-16 14:40:31,617][Drone 2][INFO][State Vector] - State Vector sent
+[2026-03-16 14:40:33,060][Drone 2][INFO][ROS2][gRPC Metrics] - Metrics received from drone and forwarded to ROS2 publisher
+[2026-03-16 14:40:33,608][Drone 2][INFO][ROS2][System Metrics Publisher] - System Metrics published
+[2026-03-16 14:40:41,618][Drone 2][INFO][State Vector] - State Vector sent
+[2026-03-16 14:40:43,093][Drone 2][INFO][ROS2][gRPC Metrics] - Metrics received from drone and forwarded to ROS2 publisher
+[2026-03-16 14:40:43,608][Drone 2][INFO][ROS2][System Metrics Publisher] - System Metrics published
+[2026-03-16 14:40:51,617][Drone 2][INFO][State Vector] - State Vector sent
+[2026-03-16 14:40:53,129][Drone 2][INFO][ROS2][gRPC Metrics] - Metrics received from drone and forwarded to ROS2 publisher
+[2026-03-16 14:40:53,608][Drone 2][INFO][ROS2][System Metrics Publisher] - System Metrics published
+[2026-03-16 14:41:01,618][Drone 2][INFO][State Vector] - State Vector sent
+[2026-03-16 14:41:03,166][Drone 2][INFO][ROS2][gRPC Metrics] - Metrics received from drone and forwarded to ROS2 publisher
+[2026-03-16 14:41:03,608][Drone 2][INFO][ROS2][System Metrics Publisher] - System Metrics published
+[2026-03-16 14:41:11,617][Drone 2][INFO][State Vector] - State Vector sent
+[2026-03-16 14:41:13,204][Drone 2][INFO][ROS2][gRPC Metrics] - Metrics received from drone and forwarded to ROS2 publisher
+[2026-03-16 14:41:13,611][Drone 2][INFO][ROS2][System Metrics Publisher] - System Metrics published
+[2026-03-16 14:41:21,618][Drone 2][INFO][State Vector] - State Vector sent
+[2026-03-16 14:41:23,236][Drone 2][INFO][ROS2][gRPC Metrics] - Metrics received from drone and forwarded to ROS2 publisher
+[2026-03-16 14:41:23,608][Drone 2][INFO][ROS2][System Metrics Publisher] - System Metrics published
+[2026-03-16 14:41:31,618][Drone 2][INFO][State Vector] - State Vector sent
+[2026-03-16 14:41:33,272][Drone 2][INFO][ROS2][gRPC Metrics] - Metrics received from drone and forwarded to ROS2 publisher
+[2026-03-16 14:41:33,608][Drone 2][INFO][ROS2][System Metrics Publisher] - System Metrics published
+[2026-03-16 14:41:41,618][Drone 2][INFO][State Vector] - State Vector sent
+[2026-03-16 14:41:43,309][Drone 2][INFO][ROS2][gRPC Metrics] - Metrics received from drone and forwarded to ROS2 publisher
+[2026-03-16 14:41:43,608][Drone 2][INFO][ROS2][System Metrics Publisher] - System Metrics published
+[2026-03-16 14:41:51,618][Drone 2][INFO][State Vector] - State Vector sent
+[2026-03-16 14:41:53,347][Drone 2][INFO][ROS2][gRPC Metrics] - Metrics received from drone and forwarded to ROS2 publisher
+[2026-03-16 14:41:53,608][Drone 2][INFO][ROS2][System Metrics Publisher] - System Metrics published
+[2026-03-16 14:42:01,618][Drone 2][INFO][State Vector] - State Vector sent
+[2026-03-16 14:42:03,385][Drone 2][INFO][ROS2][gRPC Metrics] - Metrics received from drone and forwarded to ROS2 publisher
+[2026-03-16 14:42:03,608][Drone 2][INFO][ROS2][System Metrics Publisher] - System Metrics published
+[2026-03-16 14:42:11,617][Drone 2][INFO][State Vector] - State Vector sent
+[2026-03-16 14:42:21,618][Drone 2][INFO][State Vector] - State Vector sent
+[2026-03-16 14:42:21,705][Drone 2][INFO][Init ROS2] - Beginning system shutdown and resource cleanup
+[2026-03-16 14:42:21,726][Drone 2][INFO][Init ROS2] - System shutdown completed successfully
+[2026-03-16 14:42:25,244][Drone 2][INFO][Init ROS2] - Initializing ROS2 drone system for drone ID: 2
+[2026-03-16 14:42:25,281][Drone 2][INFO][ROS2][gRPC Commands] - Server running on port 52002
+[2026-03-16 14:42:25,389][Drone 2][INFO][ROS2][Commands Action Server] - Commands action server initialized successfully for drone 2
+[2026-03-16 14:42:25,390][Drone 2][INFO][ROS2][Commands Action Server] - Action service available at: /drone2/commands
+[2026-03-16 14:42:25,401][Drone 2][INFO][ROS2][gRPC PM] - Server running on port 52003
+[2026-03-16 14:42:25,404][Drone 2][INFO][ROS2][Prescription Map] - PM publisher initialized for drone 2
+[2026-03-16 14:42:25,405][Drone 2][INFO][ROS2][Prescription Map] - PM topic service available at: prescription_map/drone_2
+[2026-03-16 14:42:25,417][Drone 2][INFO][ROS2][System Metrics Publisher] - System Metrics publisher initialized for drone 2
+[2026-03-16 14:42:25,417][Drone 2][INFO][ROS2][System Metrics Publisher] - System Metrics topic service available at: system_metrics/drone_2
+[2026-03-16 14:42:25,417][Drone 2][INFO][ROS2][gRPC Metrics] - Server running on port 52004
+[2026-03-16 14:42:25,430][Drone 2][INFO] - State vector publisher started.
+[2026-03-16 14:42:25,431][Drone 2][INFO][Init ROS2] - All system components initialized successfully
+[2026-03-16 14:42:35,431][Drone 2][INFO][State Vector] - State Vector sent
+[2026-03-16 14:42:45,431][Drone 2][INFO][State Vector] - State Vector sent
+[2026-03-16 14:42:55,431][Drone 2][INFO][State Vector] - State Vector sent
+[2026-03-16 14:43:05,431][Drone 2][INFO][State Vector] - State Vector sent
+[2026-03-16 14:43:15,431][Drone 2][INFO][State Vector] - State Vector sent
+[2026-03-16 14:43:25,433][Drone 2][INFO][State Vector] - State Vector sent
+[2026-03-16 14:43:31,304][Drone 2][INFO][Init ROS2] - Beginning system shutdown and resource cleanup
+[2026-03-16 14:43:31,318][Drone 2][INFO][Init ROS2] - System shutdown completed successfully
+[2026-03-16 14:43:33,398][Drone 2][INFO][Init ROS2] - Initializing ROS2 drone system for drone ID: 2
+[2026-03-16 14:43:33,425][Drone 2][INFO][ROS2][gRPC Commands] - Server running on port 52002
+[2026-03-16 14:43:33,501][Drone 2][INFO][ROS2][Commands Action Server] - Commands action server initialized successfully for drone 2
+[2026-03-16 14:43:33,501][Drone 2][INFO][ROS2][Commands Action Server] - Action service available at: /drone2/commands
+[2026-03-16 14:43:33,510][Drone 2][INFO][ROS2][Prescription Map] - PM publisher initialized for drone 2
+[2026-03-16 14:43:33,511][Drone 2][INFO][ROS2][gRPC PM] - Server running on port 52003
+[2026-03-16 14:43:33,511][Drone 2][INFO][ROS2][Prescription Map] - PM topic service available at: prescription_map/drone_2
+[2026-03-16 14:43:33,519][Drone 2][INFO][ROS2][System Metrics Publisher] - System Metrics publisher initialized for drone 2
+[2026-03-16 14:43:33,520][Drone 2][INFO][ROS2][System Metrics Publisher] - System Metrics topic service available at: system_metrics/drone_2
+[2026-03-16 14:43:33,527][Drone 2][INFO] - State vector publisher started.
+[2026-03-16 14:43:33,528][Drone 2][INFO][ROS2][gRPC Metrics] - Server running on port 52004
+[2026-03-16 14:43:33,528][Drone 2][INFO][Init ROS2] - All system components initialized successfully
+[2026-03-16 14:43:43,528][Drone 2][INFO][State Vector] - State Vector sent
+[2026-03-16 14:43:53,528][Drone 2][INFO][State Vector] - State Vector sent
+[2026-03-16 14:44:03,528][Drone 2][INFO][State Vector] - State Vector sent
+[2026-03-16 14:44:13,528][Drone 2][INFO][State Vector] - State Vector sent
+[2026-03-16 14:44:23,528][Drone 2][INFO][State Vector] - State Vector sent
+[2026-03-16 14:44:33,528][Drone 2][INFO][State Vector] - State Vector sent
+[2026-03-16 14:44:43,530][Drone 2][INFO][State Vector] - State Vector sent
+[2026-03-16 14:44:53,528][Drone 2][INFO][State Vector] - State Vector sent
+[2026-03-16 14:45:03,528][Drone 2][INFO][State Vector] - State Vector sent
+[2026-03-16 14:45:13,528][Drone 2][INFO][State Vector] - State Vector sent
+[2026-03-16 14:45:23,529][Drone 2][INFO][State Vector] - State Vector sent
+[2026-03-16 14:45:30,120][Drone 2][INFO][Init ROS2] - Beginning system shutdown and resource cleanup
+[2026-03-16 14:45:30,154][Drone 2][INFO][Init ROS2] - System shutdown completed successfully
+[2026-03-16 14:45:33,363][Drone 2][INFO][Init ROS2] - Initializing ROS2 drone system for drone ID: 2
+[2026-03-16 14:45:33,439][Drone 2][INFO][ROS2][gRPC Commands] - Server running on port 52002
+[2026-03-16 14:45:33,597][Drone 2][INFO][ROS2][Commands Action Server] - Commands action server initialized successfully for drone 2
+[2026-03-16 14:45:33,598][Drone 2][INFO][ROS2][Commands Action Server] - Action service available at: /drone2/commands
+[2026-03-16 14:45:33,613][Drone 2][INFO][ROS2][gRPC PM] - Server running on port 52003
+[2026-03-16 14:45:33,626][Drone 2][INFO][ROS2][Prescription Map] - PM publisher initialized for drone 2
+[2026-03-16 14:45:33,627][Drone 2][INFO][ROS2][Prescription Map] - PM topic service available at: prescription_map/drone_2
+[2026-03-16 14:45:33,640][Drone 2][INFO][ROS2][gRPC Metrics] - Server running on port 52004
+[2026-03-16 14:45:33,653][Drone 2][INFO][ROS2][System Metrics Publisher] - System Metrics publisher initialized for drone 2
+[2026-03-16 14:45:33,655][Drone 2][INFO][ROS2][System Metrics Publisher] - System Metrics topic service available at: system_metrics/drone_2
+[2026-03-16 14:45:33,675][Drone 2][INFO] - State vector publisher started.
+[2026-03-16 14:45:33,676][Drone 2][INFO][Init ROS2] - All system components initialized successfully
+[2026-03-16 14:45:43,676][Drone 2][INFO][State Vector] - State Vector sent
+[2026-03-16 14:45:53,676][Drone 2][INFO][State Vector] - State Vector sent
+[2026-03-16 14:46:03,676][Drone 2][INFO][State Vector] - State Vector sent
+[2026-03-16 14:46:07,297][Drone 2][INFO][Init ROS2] - Beginning system shutdown and resource cleanup
+[2026-03-16 14:46:07,332][Drone 2][INFO][Init ROS2] - System shutdown completed successfully
+[2026-03-16 14:46:09,772][Drone 2][INFO][Init ROS2] - Initializing ROS2 drone system for drone ID: 2
+[2026-03-16 14:46:09,806][Drone 2][INFO][ROS2][gRPC Commands] - Server running on port 52002
+[2026-03-16 14:46:09,895][Drone 2][INFO][ROS2][Commands Action Server] - Commands action server initialized successfully for drone 2
+[2026-03-16 14:46:09,895][Drone 2][INFO][ROS2][Commands Action Server] - Action service available at: /drone2/commands
+[2026-03-16 14:46:09,906][Drone 2][INFO][ROS2][Prescription Map] - PM publisher initialized for drone 2
+[2026-03-16 14:46:09,906][Drone 2][INFO][ROS2][gRPC PM] - Server running on port 52003
+[2026-03-16 14:46:09,907][Drone 2][INFO][ROS2][Prescription Map] - PM topic service available at: prescription_map/drone_2
+[2026-03-16 14:46:09,920][Drone 2][INFO][ROS2][System Metrics Publisher] - System Metrics publisher initialized for drone 2
+[2026-03-16 14:46:09,921][Drone 2][INFO][ROS2][System Metrics Publisher] - System Metrics topic service available at: system_metrics/drone_2
+[2026-03-16 14:46:09,934][Drone 2][INFO][ROS2][gRPC Metrics] - Server running on port 52004
+[2026-03-16 14:46:09,934][Drone 2][INFO] - State vector publisher started.
+[2026-03-16 14:46:09,936][Drone 2][INFO][Init ROS2] - All system components initialized successfully
+[2026-03-16 14:46:19,935][Drone 2][INFO][State Vector] - State Vector sent
+[2026-03-16 14:46:29,935][Drone 2][INFO][State Vector] - State Vector sent
+[2026-03-16 14:46:39,935][Drone 2][INFO][State Vector] - State Vector sent
+[2026-03-16 14:46:49,936][Drone 2][INFO][State Vector] - State Vector sent
+[2026-03-16 14:46:56,323][Drone 2][INFO][Init ROS2] - Beginning system shutdown and resource cleanup
+[2026-03-16 14:46:56,340][Drone 2][INFO][Init ROS2] - System shutdown completed successfully
+[2026-03-16 14:46:59,428][Drone 2][INFO][Init ROS2] - Initializing ROS2 drone system for drone ID: 2
+[2026-03-16 14:46:59,457][Drone 2][INFO][ROS2][gRPC Commands] - Server running on port 52002
+[2026-03-16 14:46:59,543][Drone 2][INFO][ROS2][Commands Action Server] - Commands action server initialized successfully for drone 2
+[2026-03-16 14:46:59,544][Drone 2][INFO][ROS2][Commands Action Server] - Action service available at: /drone2/commands
+[2026-03-16 14:46:59,554][Drone 2][INFO][ROS2][Prescription Map] - PM publisher initialized for drone 2
+[2026-03-16 14:46:59,555][Drone 2][INFO][ROS2][gRPC PM] - Server running on port 52003
+[2026-03-16 14:46:59,555][Drone 2][INFO][ROS2][Prescription Map] - PM topic service available at: prescription_map/drone_2
+[2026-03-16 14:46:59,565][Drone 2][INFO][ROS2][System Metrics Publisher] - System Metrics publisher initialized for drone 2
+[2026-03-16 14:46:59,565][Drone 2][INFO][ROS2][System Metrics Publisher] - System Metrics topic service available at: system_metrics/drone_2
+[2026-03-16 14:46:59,566][Drone 2][INFO][ROS2][gRPC Metrics] - Server running on port 52004
+[2026-03-16 14:46:59,575][Drone 2][INFO] - State vector publisher started.
+[2026-03-16 14:46:59,576][Drone 2][INFO][Init ROS2] - All system components initialized successfully
+[2026-03-16 14:47:00,428][Drone 2][INFO][ROS2][gRPC Metrics] - Metrics received from drone and forwarded to ROS2 publisher
+[2026-03-16 14:47:00,566][Drone 2][INFO][ROS2][System Metrics Publisher] - System Metrics published
+[2026-03-16 14:47:09,576][Drone 2][INFO][State Vector] - State Vector sent
+[2026-03-16 14:47:10,468][Drone 2][INFO][ROS2][gRPC Metrics] - Metrics received from drone and forwarded to ROS2 publisher
+[2026-03-16 14:47:10,566][Drone 2][INFO][ROS2][System Metrics Publisher] - System Metrics published
+[2026-03-16 14:47:19,576][Drone 2][INFO][State Vector] - State Vector sent
+[2026-03-16 14:47:20,505][Drone 2][INFO][ROS2][gRPC Metrics] - Metrics received from drone and forwarded to ROS2 publisher
+[2026-03-16 14:47:20,566][Drone 2][INFO][ROS2][System Metrics Publisher] - System Metrics published
+[2026-03-16 14:47:29,575][Drone 2][INFO][State Vector] - State Vector sent
+[2026-03-16 14:47:30,538][Drone 2][INFO][ROS2][gRPC Metrics] - Metrics received from drone and forwarded to ROS2 publisher
+[2026-03-16 14:47:30,566][Drone 2][INFO][ROS2][System Metrics Publisher] - System Metrics published
+[2026-03-16 14:47:39,575][Drone 2][INFO][State Vector] - State Vector sent
+[2026-03-16 14:47:40,575][Drone 2][INFO][ROS2][gRPC Metrics] - Metrics received from drone and forwarded to ROS2 publisher
+[2026-03-16 14:47:41,566][Drone 2][INFO][ROS2][System Metrics Publisher] - System Metrics published
+[2026-03-16 14:47:49,576][Drone 2][INFO][State Vector] - State Vector sent
+[2026-03-16 14:47:50,608][Drone 2][INFO][ROS2][gRPC Metrics] - Metrics received from drone and forwarded to ROS2 publisher
+[2026-03-16 14:47:51,566][Drone 2][INFO][ROS2][System Metrics Publisher] - System Metrics published
+[2026-03-16 14:47:59,576][Drone 2][INFO][State Vector] - State Vector sent
+[2026-03-16 14:48:00,641][Drone 2][INFO][ROS2][gRPC Metrics] - Metrics received from drone and forwarded to ROS2 publisher
+[2026-03-16 14:48:01,566][Drone 2][INFO][ROS2][System Metrics Publisher] - System Metrics published
+[2026-03-16 14:48:09,576][Drone 2][INFO][State Vector] - State Vector sent
+[2026-03-16 14:48:10,675][Drone 2][INFO][ROS2][gRPC Metrics] - Metrics received from drone and forwarded to ROS2 publisher
+[2026-03-16 14:48:11,566][Drone 2][INFO][ROS2][System Metrics Publisher] - System Metrics published
+[2026-03-16 14:48:19,575][Drone 2][INFO][State Vector] - State Vector sent
+[2026-03-16 14:48:20,711][Drone 2][INFO][ROS2][gRPC Metrics] - Metrics received from drone and forwarded to ROS2 publisher
+[2026-03-16 14:48:21,566][Drone 2][INFO][ROS2][System Metrics Publisher] - System Metrics published
+[2026-03-16 14:48:29,576][Drone 2][INFO][State Vector] - State Vector sent
+[2026-03-16 14:48:30,748][Drone 2][INFO][ROS2][gRPC Metrics] - Metrics received from drone and forwarded to ROS2 publisher
+[2026-03-16 14:48:31,566][Drone 2][INFO][ROS2][System Metrics Publisher] - System Metrics published
+[2026-03-16 14:48:39,576][Drone 2][INFO][State Vector] - State Vector sent
+[2026-03-16 14:48:40,785][Drone 2][INFO][ROS2][gRPC Metrics] - Metrics received from drone and forwarded to ROS2 publisher
+[2026-03-16 14:48:41,567][Drone 2][INFO][ROS2][System Metrics Publisher] - System Metrics published
+[2026-03-16 14:48:49,575][Drone 2][INFO][State Vector] - State Vector sent
+[2026-03-16 14:48:50,821][Drone 2][INFO][ROS2][gRPC Metrics] - Metrics received from drone and forwarded to ROS2 publisher
+[2026-03-16 14:48:51,566][Drone 2][INFO][ROS2][System Metrics Publisher] - System Metrics published
+[2026-03-16 14:48:59,576][Drone 2][INFO][State Vector] - State Vector sent
+[2026-03-16 14:49:00,857][Drone 2][INFO][ROS2][gRPC Metrics] - Metrics received from drone and forwarded to ROS2 publisher
+[2026-03-16 14:49:01,566][Drone 2][INFO][ROS2][System Metrics Publisher] - System Metrics published
+[2026-03-16 14:49:09,576][Drone 2][INFO][State Vector] - State Vector sent
+[2026-03-16 14:49:10,900][Drone 2][INFO][ROS2][gRPC Metrics] - Metrics received from drone and forwarded to ROS2 publisher
+[2026-03-16 14:49:11,566][Drone 2][INFO][ROS2][System Metrics Publisher] - System Metrics published
+[2026-03-16 14:49:19,576][Drone 2][INFO][State Vector] - State Vector sent
+[2026-03-16 14:49:20,937][Drone 2][INFO][ROS2][gRPC Metrics] - Metrics received from drone and forwarded to ROS2 publisher
+[2026-03-16 14:49:21,566][Drone 2][INFO][ROS2][System Metrics Publisher] - System Metrics published
+[2026-03-16 14:49:29,576][Drone 2][INFO][State Vector] - State Vector sent
+[2026-03-16 14:49:30,970][Drone 2][INFO][ROS2][gRPC Metrics] - Metrics received from drone and forwarded to ROS2 publisher
+[2026-03-16 14:49:31,566][Drone 2][INFO][ROS2][System Metrics Publisher] - System Metrics published
+[2026-03-16 14:49:39,576][Drone 2][INFO][State Vector] - State Vector sent
+[2026-03-16 14:49:41,004][Drone 2][INFO][ROS2][gRPC Metrics] - Metrics received from drone and forwarded to ROS2 publisher
+[2026-03-16 14:49:41,566][Drone 2][INFO][ROS2][System Metrics Publisher] - System Metrics published

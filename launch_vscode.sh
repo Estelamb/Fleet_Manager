@@ -38,7 +38,7 @@ tmux new-session -d -s $SESSION -n "Drone$ID" "cd Drone_$ID/ROS2 && docker compo
 
 # --- STEP 2: WAIT FOR DOCKER ---
 wait_for_docker $ID
-sleep 10 # Extra buffer for ROS stability
+sleep 15 # Extra buffer for ROS stability
 
 # --- STEP 3: SPLIT HORIZONTALLY FOR PYTHON ---
 # We enter the specific drone's folder to find the .venv and script

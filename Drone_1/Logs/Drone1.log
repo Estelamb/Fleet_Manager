@@ -8341,3 +8341,981 @@ ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/isobus_pm.json wit
 [2026-03-12 18:52:27,646][Drone 1][INFO][gRPC Metrics] - System Metrics sent to ROS2
 [2026-03-12 18:52:37,682][Drone 1][INFO][gRPC Metrics] - System Metrics sent to ROS2
 [2026-03-12 18:52:47,715][Drone 1][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2026-03-16 15:32:00,126][Drone 1][INFO][Init Drone] - Complete cleanup finished
+[2026-03-16 15:32:00,127][Drone 1][INFO][gRPC Metrics] - Metrics client thread started successfully
+[2026-03-16 15:32:00,129][Drone 1][INFO][Init Drone] - All system components initialized successfully
+[2026-03-16 15:32:00,197][Drone 1][INFO][gRPC Commands] - Server running on port 51001
+[2026-03-16 15:32:00,266][Drone 1][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2026-03-16 15:32:10,303][Drone 1][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2026-03-16 15:32:20,340][Drone 1][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2026-03-16 15:32:30,376][Drone 1][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2026-03-16 15:32:40,413][Drone 1][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2026-03-16 15:32:50,452][Drone 1][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2026-03-16 15:32:54,215][Drone 1][INFO][gRPC Commands] - Command received
+[2026-03-16 15:32:54,215][Drone 1][INFO][COMMANDS] - Processing NAV_TAKEOFF command
+[2026-03-16 15:32:54,216][Drone 1][INFO][NAV_TAKEOFF] - Taking off...
+[2026-03-16 15:32:56,216][Drone 1][INFO][NAV_TAKEOFF] - Takeoff successful
+[2026-03-16 15:32:56,217][Drone 1][INFO][COMMANDS] - Command executed successfully
+[2026-03-16 15:32:56,220][Drone 1][INFO][gRPC Commands] - Feedback sent to ROS2
+[2026-03-16 15:32:57,242][Drone 1][INFO][gRPC Commands] - Command received
+[2026-03-16 15:32:57,242][Drone 1][INFO][COMMANDS] - Processing NAV_WAYPOINT command
+[2026-03-16 15:32:57,242][Drone 1][INFO][NAV_WAYPOINT] - Going to WP...
+[2026-03-16 15:32:59,242][Drone 1][INFO][NAV_WAYPOINT] - Waypoint reached
+[2026-03-16 15:32:59,243][Drone 1][INFO][COMMANDS] - Command executed successfully
+[2026-03-16 15:32:59,247][Drone 1][INFO][gRPC Commands] - Feedback sent to ROS2
+[2026-03-16 15:33:00,267][Drone 1][INFO][gRPC Commands] - Command received
+[2026-03-16 15:33:00,268][Drone 1][INFO][COMMANDS] - Processing NAV_WAYPOINT command
+[2026-03-16 15:33:00,268][Drone 1][INFO][NAV_WAYPOINT] - Going to WP...
+[2026-03-16 15:33:00,485][Drone 1][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2026-03-16 15:33:02,268][Drone 1][INFO][NAV_WAYPOINT] - Waypoint reached
+[2026-03-16 15:33:02,268][Drone 1][INFO][COMMANDS] - Command executed successfully
+[2026-03-16 15:33:02,271][Drone 1][INFO][gRPC Commands] - Feedback sent to ROS2
+[2026-03-16 15:33:03,327][Drone 1][INFO][gRPC Commands] - Command received
+[2026-03-16 15:33:03,327][Drone 1][INFO][COMMANDS] - Processing CAMERA_IMAGE command
+[2026-03-16 15:33:03,328][Drone 1][INFO][CAMERA_IMAGE] - Taking picture...
+[2026-03-16 15:33:04,408][Drone 1][INFO][CAMERA_IMAGE] - Picture taken successfully as 40.209544_-3.465575.jpg
+[2026-03-16 15:33:04,410][Drone 1][INFO][COMMANDS] - Command executed successfully
+[2026-03-16 15:33:04,413][Drone 1][INFO][gRPC Commands] - Feedback sent to ROS2
+[2026-03-16 15:33:05,433][Drone 1][INFO][gRPC Commands] - Command received
+[2026-03-16 15:33:05,434][Drone 1][INFO][COMMANDS] - Processing ANALYZE_IMAGE command
+[2026-03-16 15:33:05,434][Drone 1][INFO][ANALYZE_IMAGE] - Analyzing image...
+[2026-03-16 15:33:05,434][Drone 1][INFO][ANALYZE_IMAGE] - Starting analysis for agricultural image: Images/Camera/40.209544_-3.465575.jpg
+[2026-03-16 15:33:05,435][Drone 1][INFO][ANALYZE_IMAGE] - Executing agricultural model: Images/Models/Grape_Bunch_Hailo8/init_grape_bunch_hailo8.py
+[2026-03-16 15:33:09,567][Drone 1][INFO][ANALYZE_IMAGE] - Model execution completed with output: {'Grape_bunch': 5.95}
+[2026-03-16 15:33:10,518][Drone 1][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2026-03-16 15:33:10,567][Drone 1][INFO][ANALYZE_IMAGE] - Analysis completed
+[2026-03-16 15:33:10,570][Drone 1][INFO][PM_MANAGER] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus.py
+[2026-03-16 15:33:10,632][Drone 1][INFO][PM_MANAGER] - PM output [0]: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/isobus_pm.json with treatments: {'Grape_bunch': 5.95} at grid: [1, 6]
+[2026-03-16 15:33:10,635][Drone 1][INFO][COMMANDS] - Command executed successfully
+[2026-03-16 15:33:10,639][Drone 1][INFO][gRPC Commands] - Feedback sent to ROS2
+[2026-03-16 15:33:11,660][Drone 1][INFO][gRPC Commands] - Command received
+[2026-03-16 15:33:11,661][Drone 1][INFO][COMMANDS] - Processing NAV_WAYPOINT command
+[2026-03-16 15:33:11,661][Drone 1][INFO][NAV_WAYPOINT] - Going to WP...
+[2026-03-16 15:33:13,662][Drone 1][INFO][NAV_WAYPOINT] - Waypoint reached
+[2026-03-16 15:33:13,662][Drone 1][INFO][COMMANDS] - Command executed successfully
+[2026-03-16 15:33:13,665][Drone 1][INFO][gRPC Commands] - Feedback sent to ROS2
+[2026-03-16 15:33:14,683][Drone 1][INFO][gRPC Commands] - Command received
+[2026-03-16 15:33:14,684][Drone 1][INFO][COMMANDS] - Processing CAMERA_IMAGE command
+[2026-03-16 15:33:14,684][Drone 1][INFO][CAMERA_IMAGE] - Taking picture...
+[2026-03-16 15:33:15,755][Drone 1][INFO][CAMERA_IMAGE] - Picture taken successfully as 40.209544_-3.465821.jpg
+[2026-03-16 15:33:15,755][Drone 1][INFO][COMMANDS] - Command executed successfully
+[2026-03-16 15:33:15,759][Drone 1][INFO][gRPC Commands] - Feedback sent to ROS2
+[2026-03-16 15:33:16,781][Drone 1][INFO][gRPC Commands] - Command received
+[2026-03-16 15:33:16,782][Drone 1][INFO][COMMANDS] - Processing ANALYZE_IMAGE command
+[2026-03-16 15:33:16,782][Drone 1][INFO][ANALYZE_IMAGE] - Analyzing image...
+[2026-03-16 15:33:16,782][Drone 1][INFO][ANALYZE_IMAGE] - Starting analysis for agricultural image: Images/Camera/40.209544_-3.465821.jpg
+[2026-03-16 15:33:16,782][Drone 1][INFO][ANALYZE_IMAGE] - Executing agricultural model: Images/Models/Grape_Bunch_Hailo8/init_grape_bunch_hailo8.py
+[2026-03-16 15:33:18,430][Drone 1][INFO][ANALYZE_IMAGE] - Model execution completed with output: {'Grape_bunch': 5.95}
+[2026-03-16 15:33:19,431][Drone 1][INFO][ANALYZE_IMAGE] - Analysis completed
+[2026-03-16 15:33:19,432][Drone 1][INFO][PM_MANAGER] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus.py
+[2026-03-16 15:33:19,492][Drone 1][INFO][PM_MANAGER] - PM output [0]: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/isobus_pm.json with treatments: {'Grape_bunch': 5.95} at grid: [1, 5]
+[2026-03-16 15:33:19,495][Drone 1][INFO][COMMANDS] - Command executed successfully
+[2026-03-16 15:33:19,498][Drone 1][INFO][gRPC Commands] - Feedback sent to ROS2
+[2026-03-16 15:33:20,522][Drone 1][INFO][gRPC Commands] - Command received
+[2026-03-16 15:33:20,522][Drone 1][INFO][COMMANDS] - Processing NAV_WAYPOINT command
+[2026-03-16 15:33:20,522][Drone 1][INFO][NAV_WAYPOINT] - Going to WP...
+[2026-03-16 15:33:20,551][Drone 1][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2026-03-16 15:33:22,523][Drone 1][INFO][NAV_WAYPOINT] - Waypoint reached
+[2026-03-16 15:33:22,523][Drone 1][INFO][COMMANDS] - Command executed successfully
+[2026-03-16 15:33:22,527][Drone 1][INFO][gRPC Commands] - Feedback sent to ROS2
+[2026-03-16 15:33:23,551][Drone 1][INFO][gRPC Commands] - Command received
+[2026-03-16 15:33:23,552][Drone 1][INFO][COMMANDS] - Processing CAMERA_IMAGE command
+[2026-03-16 15:33:23,552][Drone 1][INFO][CAMERA_IMAGE] - Taking picture...
+[2026-03-16 15:33:24,621][Drone 1][INFO][CAMERA_IMAGE] - Picture taken successfully as 40.209544_-3.466066.jpg
+[2026-03-16 15:33:24,622][Drone 1][INFO][COMMANDS] - Command executed successfully
+[2026-03-16 15:33:24,625][Drone 1][INFO][gRPC Commands] - Feedback sent to ROS2
+[2026-03-16 15:33:25,647][Drone 1][INFO][gRPC Commands] - Command received
+[2026-03-16 15:33:25,647][Drone 1][INFO][COMMANDS] - Processing ANALYZE_IMAGE command
+[2026-03-16 15:33:25,647][Drone 1][INFO][ANALYZE_IMAGE] - Analyzing image...
+[2026-03-16 15:33:25,648][Drone 1][INFO][ANALYZE_IMAGE] - Starting analysis for agricultural image: Images/Camera/40.209544_-3.466066.jpg
+[2026-03-16 15:33:25,648][Drone 1][INFO][ANALYZE_IMAGE] - Executing agricultural model: Images/Models/Grape_Bunch_Hailo8/init_grape_bunch_hailo8.py
+[2026-03-16 15:33:27,302][Drone 1][INFO][ANALYZE_IMAGE] - Model execution completed with output: {'Grape_bunch': 5.95}
+[2026-03-16 15:33:28,302][Drone 1][INFO][ANALYZE_IMAGE] - Analysis completed
+[2026-03-16 15:33:28,303][Drone 1][INFO][PM_MANAGER] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus.py
+[2026-03-16 15:33:28,394][Drone 1][INFO][PM_MANAGER] - PM output [0]: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/isobus_pm.json with treatments: {'Grape_bunch': 5.95} at grid: [1, 4]
+[2026-03-16 15:33:28,397][Drone 1][INFO][COMMANDS] - Command executed successfully
+[2026-03-16 15:33:28,401][Drone 1][INFO][gRPC Commands] - Feedback sent to ROS2
+[2026-03-16 15:33:29,419][Drone 1][INFO][gRPC Commands] - Command received
+[2026-03-16 15:33:29,419][Drone 1][INFO][COMMANDS] - Processing NAV_WAYPOINT command
+[2026-03-16 15:33:29,420][Drone 1][INFO][NAV_WAYPOINT] - Going to WP...
+[2026-03-16 15:33:30,584][Drone 1][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2026-03-16 15:33:31,420][Drone 1][INFO][NAV_WAYPOINT] - Waypoint reached
+[2026-03-16 15:33:31,420][Drone 1][INFO][COMMANDS] - Command executed successfully
+[2026-03-16 15:33:31,423][Drone 1][INFO][gRPC Commands] - Feedback sent to ROS2
+[2026-03-16 15:33:32,441][Drone 1][INFO][gRPC Commands] - Command received
+[2026-03-16 15:33:32,442][Drone 1][INFO][COMMANDS] - Processing CAMERA_IMAGE command
+[2026-03-16 15:33:32,442][Drone 1][INFO][CAMERA_IMAGE] - Taking picture...
+[2026-03-16 15:33:33,520][Drone 1][INFO][CAMERA_IMAGE] - Picture taken successfully as 40.209544_-3.466312.jpg
+[2026-03-16 15:33:33,521][Drone 1][INFO][COMMANDS] - Command executed successfully
+[2026-03-16 15:33:33,524][Drone 1][INFO][gRPC Commands] - Feedback sent to ROS2
+[2026-03-16 15:33:34,549][Drone 1][INFO][gRPC Commands] - Command received
+[2026-03-16 15:33:34,550][Drone 1][INFO][COMMANDS] - Processing ANALYZE_IMAGE command
+[2026-03-16 15:33:34,550][Drone 1][INFO][ANALYZE_IMAGE] - Analyzing image...
+[2026-03-16 15:33:34,550][Drone 1][INFO][ANALYZE_IMAGE] - Starting analysis for agricultural image: Images/Camera/40.209544_-3.466312.jpg
+[2026-03-16 15:33:34,551][Drone 1][INFO][ANALYZE_IMAGE] - Executing agricultural model: Images/Models/Grape_Bunch_Hailo8/init_grape_bunch_hailo8.py
+[2026-03-16 15:33:36,193][Drone 1][INFO][ANALYZE_IMAGE] - Model execution completed with output: {'Grape_bunch': 3.95}
+[2026-03-16 15:33:37,193][Drone 1][INFO][ANALYZE_IMAGE] - Analysis completed
+[2026-03-16 15:33:37,194][Drone 1][INFO][PM_MANAGER] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus.py
+[2026-03-16 15:33:37,254][Drone 1][INFO][PM_MANAGER] - PM output [0]: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/isobus_pm.json with treatments: {'Grape_bunch': 3.95} at grid: [1, 3]
+[2026-03-16 15:33:37,257][Drone 1][INFO][COMMANDS] - Command executed successfully
+[2026-03-16 15:33:37,260][Drone 1][INFO][gRPC Commands] - Feedback sent to ROS2
+[2026-03-16 15:33:38,280][Drone 1][INFO][gRPC Commands] - Command received
+[2026-03-16 15:33:38,280][Drone 1][INFO][COMMANDS] - Processing NAV_WAYPOINT command
+[2026-03-16 15:33:38,280][Drone 1][INFO][NAV_WAYPOINT] - Going to WP...
+[2026-03-16 15:33:40,280][Drone 1][INFO][NAV_WAYPOINT] - Waypoint reached
+[2026-03-16 15:33:40,280][Drone 1][INFO][COMMANDS] - Command executed successfully
+[2026-03-16 15:33:40,284][Drone 1][INFO][gRPC Commands] - Feedback sent to ROS2
+[2026-03-16 15:33:40,618][Drone 1][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2026-03-16 15:33:41,307][Drone 1][INFO][gRPC Commands] - Command received
+[2026-03-16 15:33:41,308][Drone 1][INFO][COMMANDS] - Processing CAMERA_IMAGE command
+[2026-03-16 15:33:41,308][Drone 1][INFO][CAMERA_IMAGE] - Taking picture...
+[2026-03-16 15:33:42,378][Drone 1][INFO][CAMERA_IMAGE] - Picture taken successfully as 40.209544_-3.466557.jpg
+[2026-03-16 15:33:42,378][Drone 1][INFO][COMMANDS] - Command executed successfully
+[2026-03-16 15:33:42,382][Drone 1][INFO][gRPC Commands] - Feedback sent to ROS2
+[2026-03-16 15:33:43,401][Drone 1][INFO][gRPC Commands] - Command received
+[2026-03-16 15:33:43,401][Drone 1][INFO][COMMANDS] - Processing ANALYZE_IMAGE command
+[2026-03-16 15:33:43,401][Drone 1][INFO][ANALYZE_IMAGE] - Analyzing image...
+[2026-03-16 15:33:43,402][Drone 1][INFO][ANALYZE_IMAGE] - Starting analysis for agricultural image: Images/Camera/40.209544_-3.466557.jpg
+[2026-03-16 15:33:43,402][Drone 1][INFO][ANALYZE_IMAGE] - Executing agricultural model: Images/Models/Grape_Bunch_Hailo8/init_grape_bunch_hailo8.py
+[2026-03-16 15:33:45,024][Drone 1][INFO][ANALYZE_IMAGE] - Model execution completed with output: {'Grape_bunch': 7.95}
+[2026-03-16 15:33:46,025][Drone 1][INFO][ANALYZE_IMAGE] - Analysis completed
+[2026-03-16 15:33:46,026][Drone 1][INFO][PM_MANAGER] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus.py
+[2026-03-16 15:33:46,104][Drone 1][INFO][PM_MANAGER] - PM output [0]: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/isobus_pm.json with treatments: {'Grape_bunch': 7.95} at grid: [1, 2]
+[2026-03-16 15:33:46,107][Drone 1][INFO][COMMANDS] - Command executed successfully
+[2026-03-16 15:33:46,111][Drone 1][INFO][gRPC Commands] - Feedback sent to ROS2
+[2026-03-16 15:33:47,132][Drone 1][INFO][gRPC Commands] - Command received
+[2026-03-16 15:33:47,132][Drone 1][INFO][COMMANDS] - Processing NAV_WAYPOINT command
+[2026-03-16 15:33:47,132][Drone 1][INFO][NAV_WAYPOINT] - Going to WP...
+[2026-03-16 15:33:49,132][Drone 1][INFO][NAV_WAYPOINT] - Waypoint reached
+[2026-03-16 15:33:49,132][Drone 1][INFO][COMMANDS] - Command executed successfully
+[2026-03-16 15:33:49,135][Drone 1][INFO][gRPC Commands] - Feedback sent to ROS2
+[2026-03-16 15:33:50,155][Drone 1][INFO][gRPC Commands] - Command received
+[2026-03-16 15:33:50,155][Drone 1][INFO][COMMANDS] - Processing CAMERA_IMAGE command
+[2026-03-16 15:33:50,156][Drone 1][INFO][CAMERA_IMAGE] - Taking picture...
+[2026-03-16 15:33:50,650][Drone 1][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2026-03-16 15:33:51,216][Drone 1][INFO][CAMERA_IMAGE] - Picture taken successfully as 40.209544_-3.466803.jpg
+[2026-03-16 15:33:51,216][Drone 1][INFO][COMMANDS] - Command executed successfully
+[2026-03-16 15:33:51,219][Drone 1][INFO][gRPC Commands] - Feedback sent to ROS2
+[2026-03-16 15:33:52,237][Drone 1][INFO][gRPC Commands] - Command received
+[2026-03-16 15:33:52,237][Drone 1][INFO][COMMANDS] - Processing ANALYZE_IMAGE command
+[2026-03-16 15:33:52,238][Drone 1][INFO][ANALYZE_IMAGE] - Analyzing image...
+[2026-03-16 15:33:52,238][Drone 1][INFO][ANALYZE_IMAGE] - Starting analysis for agricultural image: Images/Camera/40.209544_-3.466803.jpg
+[2026-03-16 15:33:52,238][Drone 1][INFO][ANALYZE_IMAGE] - Executing agricultural model: Images/Models/Grape_Bunch_Hailo8/init_grape_bunch_hailo8.py
+[2026-03-16 15:33:53,868][Drone 1][INFO][ANALYZE_IMAGE] - Model execution completed with output: {'Grape_bunch': 1.95}
+[2026-03-16 15:33:54,869][Drone 1][INFO][ANALYZE_IMAGE] - Analysis completed
+[2026-03-16 15:33:54,869][Drone 1][INFO][PM_MANAGER] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus.py
+[2026-03-16 15:33:54,926][Drone 1][INFO][PM_MANAGER] - PM output [0]: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/isobus_pm.json with treatments: {'Grape_bunch': 1.95} at grid: [1, 1]
+[2026-03-16 15:33:54,929][Drone 1][INFO][COMMANDS] - Command executed successfully
+[2026-03-16 15:33:54,932][Drone 1][INFO][gRPC Commands] - Feedback sent to ROS2
+[2026-03-16 15:33:55,952][Drone 1][INFO][gRPC Commands] - Command received
+[2026-03-16 15:33:55,952][Drone 1][INFO][COMMANDS] - Processing NAV_WAYPOINT command
+[2026-03-16 15:33:55,952][Drone 1][INFO][NAV_WAYPOINT] - Going to WP...
+[2026-03-16 15:33:57,953][Drone 1][INFO][NAV_WAYPOINT] - Waypoint reached
+[2026-03-16 15:33:57,953][Drone 1][INFO][COMMANDS] - Command executed successfully
+[2026-03-16 15:33:57,957][Drone 1][INFO][gRPC Commands] - Feedback sent to ROS2
+[2026-03-16 15:33:59,010][Drone 1][INFO][gRPC Commands] - Command received
+[2026-03-16 15:33:59,010][Drone 1][INFO][COMMANDS] - Processing CAMERA_IMAGE command
+[2026-03-16 15:33:59,010][Drone 1][INFO][CAMERA_IMAGE] - Taking picture...
+[2026-03-16 15:34:00,095][Drone 1][INFO][CAMERA_IMAGE] - Picture taken successfully as 40.209544_-3.467048.jpg
+[2026-03-16 15:34:00,096][Drone 1][INFO][COMMANDS] - Command executed successfully
+[2026-03-16 15:34:00,100][Drone 1][INFO][gRPC Commands] - Feedback sent to ROS2
+[2026-03-16 15:34:00,687][Drone 1][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2026-03-16 15:34:01,120][Drone 1][INFO][gRPC Commands] - Command received
+[2026-03-16 15:34:01,120][Drone 1][INFO][COMMANDS] - Processing ANALYZE_IMAGE command
+[2026-03-16 15:34:01,120][Drone 1][INFO][ANALYZE_IMAGE] - Analyzing image...
+[2026-03-16 15:34:01,121][Drone 1][INFO][ANALYZE_IMAGE] - Starting analysis for agricultural image: Images/Camera/40.209544_-3.467048.jpg
+[2026-03-16 15:34:01,121][Drone 1][INFO][ANALYZE_IMAGE] - Executing agricultural model: Images/Models/Grape_Bunch_Hailo8/init_grape_bunch_hailo8.py
+[2026-03-16 15:34:02,813][Drone 1][INFO][ANALYZE_IMAGE] - Model execution completed with output: {'Grape_bunch': 5.95}
+[2026-03-16 15:34:03,814][Drone 1][INFO][ANALYZE_IMAGE] - Analysis completed
+[2026-03-16 15:34:03,815][Drone 1][INFO][PM_MANAGER] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus.py
+[2026-03-16 15:34:03,871][Drone 1][INFO][PM_MANAGER] - PM output [0]: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/isobus_pm.json with treatments: {'Grape_bunch': 5.95} at grid: [1, 0]
+[2026-03-16 15:34:03,874][Drone 1][INFO][COMMANDS] - Command executed successfully
+[2026-03-16 15:34:03,877][Drone 1][INFO][gRPC Commands] - Feedback sent to ROS2
+[2026-03-16 15:34:04,898][Drone 1][INFO][gRPC Commands] - Command received
+[2026-03-16 15:34:04,898][Drone 1][INFO][COMMANDS] - Processing NAV_WAYPOINT command
+[2026-03-16 15:34:04,898][Drone 1][INFO][NAV_WAYPOINT] - Going to WP...
+[2026-03-16 15:34:06,898][Drone 1][INFO][NAV_WAYPOINT] - Waypoint reached
+[2026-03-16 15:34:06,899][Drone 1][INFO][COMMANDS] - Command executed successfully
+[2026-03-16 15:34:06,902][Drone 1][INFO][gRPC Commands] - Feedback sent to ROS2
+[2026-03-16 15:34:07,928][Drone 1][INFO][gRPC Commands] - Command received
+[2026-03-16 15:34:07,928][Drone 1][INFO][COMMANDS] - Processing CAMERA_IMAGE command
+[2026-03-16 15:34:07,928][Drone 1][INFO][CAMERA_IMAGE] - Taking picture...
+[2026-03-16 15:34:08,997][Drone 1][INFO][CAMERA_IMAGE] - Picture taken successfully as 40.20973_-3.467048.jpg
+[2026-03-16 15:34:08,997][Drone 1][INFO][COMMANDS] - Command executed successfully
+[2026-03-16 15:34:09,001][Drone 1][INFO][gRPC Commands] - Feedback sent to ROS2
+[2026-03-16 15:34:10,021][Drone 1][INFO][gRPC Commands] - Command received
+[2026-03-16 15:34:10,022][Drone 1][INFO][COMMANDS] - Processing ANALYZE_IMAGE command
+[2026-03-16 15:34:10,022][Drone 1][INFO][ANALYZE_IMAGE] - Analyzing image...
+[2026-03-16 15:34:10,022][Drone 1][INFO][ANALYZE_IMAGE] - Starting analysis for agricultural image: Images/Camera/40.20973_-3.467048.jpg
+[2026-03-16 15:34:10,022][Drone 1][INFO][ANALYZE_IMAGE] - Executing agricultural model: Images/Models/Grape_Bunch_Hailo8/init_grape_bunch_hailo8.py
+[2026-03-16 15:34:10,722][Drone 1][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2026-03-16 15:34:11,638][Drone 1][INFO][ANALYZE_IMAGE] - Model execution completed with output: {'Grape_bunch': 7.95}
+[2026-03-16 15:34:12,638][Drone 1][INFO][ANALYZE_IMAGE] - Analysis completed
+[2026-03-16 15:34:12,639][Drone 1][INFO][PM_MANAGER] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus.py
+[2026-03-16 15:34:12,710][Drone 1][INFO][PM_MANAGER] - PM output [0]: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/isobus_pm.json with treatments: {'Grape_bunch': 7.95} at grid: [0, 0]
+[2026-03-16 15:34:12,713][Drone 1][INFO][COMMANDS] - Command executed successfully
+[2026-03-16 15:34:12,717][Drone 1][INFO][gRPC Commands] - Feedback sent to ROS2
+[2026-03-16 15:34:13,738][Drone 1][INFO][gRPC Commands] - Command received
+[2026-03-16 15:34:13,739][Drone 1][INFO][COMMANDS] - Processing NAV_WAYPOINT command
+[2026-03-16 15:34:13,739][Drone 1][INFO][NAV_WAYPOINT] - Going to WP...
+[2026-03-16 15:34:15,739][Drone 1][INFO][NAV_WAYPOINT] - Waypoint reached
+[2026-03-16 15:34:15,740][Drone 1][INFO][COMMANDS] - Command executed successfully
+[2026-03-16 15:34:15,744][Drone 1][INFO][gRPC Commands] - Feedback sent to ROS2
+[2026-03-16 15:34:16,765][Drone 1][INFO][gRPC Commands] - Command received
+[2026-03-16 15:34:16,765][Drone 1][INFO][COMMANDS] - Processing CAMERA_IMAGE command
+[2026-03-16 15:34:16,766][Drone 1][INFO][CAMERA_IMAGE] - Taking picture...
+[2026-03-16 15:34:17,825][Drone 1][INFO][CAMERA_IMAGE] - Picture taken successfully as 40.20973_-3.466803.jpg
+[2026-03-16 15:34:17,826][Drone 1][INFO][COMMANDS] - Command executed successfully
+[2026-03-16 15:34:17,829][Drone 1][INFO][gRPC Commands] - Feedback sent to ROS2
+[2026-03-16 15:34:18,855][Drone 1][INFO][gRPC Commands] - Command received
+[2026-03-16 15:34:18,855][Drone 1][INFO][COMMANDS] - Processing ANALYZE_IMAGE command
+[2026-03-16 15:34:18,856][Drone 1][INFO][ANALYZE_IMAGE] - Analyzing image...
+[2026-03-16 15:34:18,856][Drone 1][INFO][ANALYZE_IMAGE] - Starting analysis for agricultural image: Images/Camera/40.20973_-3.466803.jpg
+[2026-03-16 15:34:18,857][Drone 1][INFO][ANALYZE_IMAGE] - Executing agricultural model: Images/Models/Grape_Bunch_Hailo8/init_grape_bunch_hailo8.py
+[2026-03-16 15:34:20,506][Drone 1][INFO][ANALYZE_IMAGE] - Model execution completed with output: {'Grape_bunch': 1.95}
+[2026-03-16 15:34:20,755][Drone 1][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2026-03-16 15:34:21,507][Drone 1][INFO][ANALYZE_IMAGE] - Analysis completed
+[2026-03-16 15:34:21,508][Drone 1][INFO][PM_MANAGER] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus.py
+[2026-03-16 15:34:21,574][Drone 1][INFO][PM_MANAGER] - PM output [0]: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/isobus_pm.json with treatments: {'Grape_bunch': 1.95} at grid: [0, 1]
+[2026-03-16 15:34:21,578][Drone 1][INFO][COMMANDS] - Command executed successfully
+[2026-03-16 15:34:21,582][Drone 1][INFO][gRPC Commands] - Feedback sent to ROS2
+[2026-03-16 15:34:22,602][Drone 1][INFO][gRPC Commands] - Command received
+[2026-03-16 15:34:22,602][Drone 1][INFO][COMMANDS] - Processing NAV_WAYPOINT command
+[2026-03-16 15:34:22,603][Drone 1][INFO][NAV_WAYPOINT] - Going to WP...
+[2026-03-16 15:34:24,603][Drone 1][INFO][NAV_WAYPOINT] - Waypoint reached
+[2026-03-16 15:34:24,603][Drone 1][INFO][COMMANDS] - Command executed successfully
+[2026-03-16 15:34:24,607][Drone 1][INFO][gRPC Commands] - Feedback sent to ROS2
+[2026-03-16 15:34:25,627][Drone 1][INFO][gRPC Commands] - Command received
+[2026-03-16 15:34:25,627][Drone 1][INFO][COMMANDS] - Processing CAMERA_IMAGE command
+[2026-03-16 15:34:25,627][Drone 1][INFO][CAMERA_IMAGE] - Taking picture...
+[2026-03-16 15:34:26,699][Drone 1][INFO][CAMERA_IMAGE] - Picture taken successfully as 40.20973_-3.466557.jpg
+[2026-03-16 15:34:26,699][Drone 1][INFO][COMMANDS] - Command executed successfully
+[2026-03-16 15:34:26,702][Drone 1][INFO][gRPC Commands] - Feedback sent to ROS2
+[2026-03-16 15:34:27,725][Drone 1][INFO][gRPC Commands] - Command received
+[2026-03-16 15:34:27,726][Drone 1][INFO][COMMANDS] - Processing ANALYZE_IMAGE command
+[2026-03-16 15:34:27,726][Drone 1][INFO][ANALYZE_IMAGE] - Analyzing image...
+[2026-03-16 15:34:27,726][Drone 1][INFO][ANALYZE_IMAGE] - Starting analysis for agricultural image: Images/Camera/40.20973_-3.466557.jpg
+[2026-03-16 15:34:27,726][Drone 1][INFO][ANALYZE_IMAGE] - Executing agricultural model: Images/Models/Grape_Bunch_Hailo8/init_grape_bunch_hailo8.py
+[2026-03-16 15:34:29,356][Drone 1][INFO][ANALYZE_IMAGE] - Model execution completed with output: {'Grape_bunch': 3.95}
+[2026-03-16 15:34:30,357][Drone 1][INFO][ANALYZE_IMAGE] - Analysis completed
+[2026-03-16 15:34:30,358][Drone 1][INFO][PM_MANAGER] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus.py
+[2026-03-16 15:34:30,431][Drone 1][INFO][PM_MANAGER] - PM output [0]: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/isobus_pm.json with treatments: {'Grape_bunch': 3.95} at grid: [0, 2]
+[2026-03-16 15:34:30,434][Drone 1][INFO][COMMANDS] - Command executed successfully
+[2026-03-16 15:34:30,437][Drone 1][INFO][gRPC Commands] - Feedback sent to ROS2
+[2026-03-16 15:34:30,787][Drone 1][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2026-03-16 15:34:31,460][Drone 1][INFO][gRPC Commands] - Command received
+[2026-03-16 15:34:31,460][Drone 1][INFO][COMMANDS] - Processing NAV_WAYPOINT command
+[2026-03-16 15:34:31,460][Drone 1][INFO][NAV_WAYPOINT] - Going to WP...
+[2026-03-16 15:34:33,461][Drone 1][INFO][NAV_WAYPOINT] - Waypoint reached
+[2026-03-16 15:34:33,461][Drone 1][INFO][COMMANDS] - Command executed successfully
+[2026-03-16 15:34:33,464][Drone 1][INFO][gRPC Commands] - Feedback sent to ROS2
+[2026-03-16 15:34:34,482][Drone 1][INFO][gRPC Commands] - Command received
+[2026-03-16 15:34:34,482][Drone 1][INFO][COMMANDS] - Processing CAMERA_IMAGE command
+[2026-03-16 15:34:34,482][Drone 1][INFO][CAMERA_IMAGE] - Taking picture...
+[2026-03-16 15:34:35,554][Drone 1][INFO][CAMERA_IMAGE] - Picture taken successfully as 40.20973_-3.466312.jpg
+[2026-03-16 15:34:35,554][Drone 1][INFO][COMMANDS] - Command executed successfully
+[2026-03-16 15:34:35,558][Drone 1][INFO][gRPC Commands] - Feedback sent to ROS2
+[2026-03-16 15:34:36,578][Drone 1][INFO][gRPC Commands] - Command received
+[2026-03-16 15:34:36,579][Drone 1][INFO][COMMANDS] - Processing ANALYZE_IMAGE command
+[2026-03-16 15:34:36,579][Drone 1][INFO][ANALYZE_IMAGE] - Analyzing image...
+[2026-03-16 15:34:36,579][Drone 1][INFO][ANALYZE_IMAGE] - Starting analysis for agricultural image: Images/Camera/40.20973_-3.466312.jpg
+[2026-03-16 15:34:36,580][Drone 1][INFO][ANALYZE_IMAGE] - Executing agricultural model: Images/Models/Grape_Bunch_Hailo8/init_grape_bunch_hailo8.py
+[2026-03-16 15:34:38,221][Drone 1][INFO][ANALYZE_IMAGE] - Model execution completed with output: {'Grape_bunch': 7.95}
+[2026-03-16 15:34:39,222][Drone 1][INFO][ANALYZE_IMAGE] - Analysis completed
+[2026-03-16 15:34:39,223][Drone 1][INFO][PM_MANAGER] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus.py
+[2026-03-16 15:34:39,305][Drone 1][INFO][PM_MANAGER] - PM output [0]: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/isobus_pm.json with treatments: {'Grape_bunch': 7.95} at grid: [0, 3]
+[2026-03-16 15:34:39,307][Drone 1][INFO][COMMANDS] - Command executed successfully
+[2026-03-16 15:34:39,311][Drone 1][INFO][gRPC Commands] - Feedback sent to ROS2
+[2026-03-16 15:34:40,339][Drone 1][INFO][gRPC Commands] - Command received
+[2026-03-16 15:34:40,339][Drone 1][INFO][COMMANDS] - Processing NAV_WAYPOINT command
+[2026-03-16 15:34:40,339][Drone 1][INFO][NAV_WAYPOINT] - Going to WP...
+[2026-03-16 15:34:40,820][Drone 1][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2026-03-16 15:34:42,339][Drone 1][INFO][NAV_WAYPOINT] - Waypoint reached
+[2026-03-16 15:34:42,340][Drone 1][INFO][COMMANDS] - Command executed successfully
+[2026-03-16 15:34:42,344][Drone 1][INFO][gRPC Commands] - Feedback sent to ROS2
+[2026-03-16 15:34:43,364][Drone 1][INFO][gRPC Commands] - Command received
+[2026-03-16 15:34:43,364][Drone 1][INFO][COMMANDS] - Processing CAMERA_IMAGE command
+[2026-03-16 15:34:43,364][Drone 1][INFO][CAMERA_IMAGE] - Taking picture...
+[2026-03-16 15:34:44,448][Drone 1][INFO][CAMERA_IMAGE] - Picture taken successfully as 40.20973_-3.466066.jpg
+[2026-03-16 15:34:44,448][Drone 1][INFO][COMMANDS] - Command executed successfully
+[2026-03-16 15:34:44,451][Drone 1][INFO][gRPC Commands] - Feedback sent to ROS2
+[2026-03-16 15:34:45,474][Drone 1][INFO][gRPC Commands] - Command received
+[2026-03-16 15:34:45,474][Drone 1][INFO][COMMANDS] - Processing ANALYZE_IMAGE command
+[2026-03-16 15:34:45,475][Drone 1][INFO][ANALYZE_IMAGE] - Analyzing image...
+[2026-03-16 15:34:45,475][Drone 1][INFO][ANALYZE_IMAGE] - Starting analysis for agricultural image: Images/Camera/40.20973_-3.466066.jpg
+[2026-03-16 15:34:45,475][Drone 1][INFO][ANALYZE_IMAGE] - Executing agricultural model: Images/Models/Grape_Bunch_Hailo8/init_grape_bunch_hailo8.py
+[2026-03-16 15:34:47,119][Drone 1][INFO][ANALYZE_IMAGE] - Model execution completed with output: {'Grape_bunch': 9.95}
+[2026-03-16 15:34:48,119][Drone 1][INFO][ANALYZE_IMAGE] - Analysis completed
+[2026-03-16 15:34:48,120][Drone 1][INFO][PM_MANAGER] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus.py
+[2026-03-16 15:34:48,176][Drone 1][INFO][PM_MANAGER] - PM output [0]: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/isobus_pm.json with treatments: {'Grape_bunch': 9.95} at grid: [0, 4]
+[2026-03-16 15:34:48,179][Drone 1][INFO][COMMANDS] - Command executed successfully
+[2026-03-16 15:34:48,182][Drone 1][INFO][gRPC Commands] - Feedback sent to ROS2
+[2026-03-16 15:34:49,204][Drone 1][INFO][gRPC Commands] - Command received
+[2026-03-16 15:34:49,204][Drone 1][INFO][COMMANDS] - Processing NAV_WAYPOINT command
+[2026-03-16 15:34:49,205][Drone 1][INFO][NAV_WAYPOINT] - Going to WP...
+[2026-03-16 15:34:50,857][Drone 1][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2026-03-16 15:34:51,205][Drone 1][INFO][NAV_WAYPOINT] - Waypoint reached
+[2026-03-16 15:34:51,205][Drone 1][INFO][COMMANDS] - Command executed successfully
+[2026-03-16 15:34:51,209][Drone 1][INFO][gRPC Commands] - Feedback sent to ROS2
+[2026-03-16 15:34:52,230][Drone 1][INFO][gRPC Commands] - Command received
+[2026-03-16 15:34:52,230][Drone 1][INFO][COMMANDS] - Processing CAMERA_IMAGE command
+[2026-03-16 15:34:52,231][Drone 1][INFO][CAMERA_IMAGE] - Taking picture...
+[2026-03-16 15:34:53,296][Drone 1][INFO][CAMERA_IMAGE] - Picture taken successfully as 40.20973_-3.465821.jpg
+[2026-03-16 15:34:53,297][Drone 1][INFO][COMMANDS] - Command executed successfully
+[2026-03-16 15:34:53,300][Drone 1][INFO][gRPC Commands] - Feedback sent to ROS2
+[2026-03-16 15:34:54,318][Drone 1][INFO][gRPC Commands] - Command received
+[2026-03-16 15:34:54,318][Drone 1][INFO][COMMANDS] - Processing ANALYZE_IMAGE command
+[2026-03-16 15:34:54,318][Drone 1][INFO][ANALYZE_IMAGE] - Analyzing image...
+[2026-03-16 15:34:54,319][Drone 1][INFO][ANALYZE_IMAGE] - Starting analysis for agricultural image: Images/Camera/40.20973_-3.465821.jpg
+[2026-03-16 15:34:54,319][Drone 1][INFO][ANALYZE_IMAGE] - Executing agricultural model: Images/Models/Grape_Bunch_Hailo8/init_grape_bunch_hailo8.py
+[2026-03-16 15:34:55,951][Drone 1][INFO][ANALYZE_IMAGE] - Model execution completed with output: {'Grape_bunch': 3.95}
+[2026-03-16 15:34:56,951][Drone 1][INFO][ANALYZE_IMAGE] - Analysis completed
+[2026-03-16 15:34:56,952][Drone 1][INFO][PM_MANAGER] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus.py
+[2026-03-16 15:34:58,557][Drone 1][INFO][PM_MANAGER] - PM output [0]: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/isobus_pm.json with treatments: {'Grape_bunch': 3.95} at grid: [0, 5]
+[2026-03-16 15:34:58,561][Drone 1][INFO][COMMANDS] - Command executed successfully
+[2026-03-16 15:34:58,564][Drone 1][INFO][gRPC Commands] - Feedback sent to ROS2
+[2026-03-16 15:34:59,584][Drone 1][INFO][gRPC Commands] - Command received
+[2026-03-16 15:34:59,584][Drone 1][INFO][COMMANDS] - Processing NAV_WAYPOINT command
+[2026-03-16 15:34:59,585][Drone 1][INFO][NAV_WAYPOINT] - Going to WP...
+[2026-03-16 15:35:00,890][Drone 1][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2026-03-16 15:35:01,585][Drone 1][INFO][NAV_WAYPOINT] - Waypoint reached
+[2026-03-16 15:35:01,585][Drone 1][INFO][COMMANDS] - Command executed successfully
+[2026-03-16 15:35:01,588][Drone 1][INFO][gRPC Commands] - Feedback sent to ROS2
+[2026-03-16 15:35:02,618][Drone 1][INFO][gRPC Commands] - Command received
+[2026-03-16 15:35:02,619][Drone 1][INFO][COMMANDS] - Processing CAMERA_IMAGE command
+[2026-03-16 15:35:02,619][Drone 1][INFO][CAMERA_IMAGE] - Taking picture...
+[2026-03-16 15:35:03,690][Drone 1][INFO][CAMERA_IMAGE] - Picture taken successfully as 40.20973_-3.465575.jpg
+[2026-03-16 15:35:03,690][Drone 1][INFO][COMMANDS] - Command executed successfully
+[2026-03-16 15:35:03,694][Drone 1][INFO][gRPC Commands] - Feedback sent to ROS2
+[2026-03-16 15:35:04,717][Drone 1][INFO][gRPC Commands] - Command received
+[2026-03-16 15:35:04,717][Drone 1][INFO][COMMANDS] - Processing ANALYZE_IMAGE command
+[2026-03-16 15:35:04,718][Drone 1][INFO][ANALYZE_IMAGE] - Analyzing image...
+[2026-03-16 15:35:04,718][Drone 1][INFO][ANALYZE_IMAGE] - Starting analysis for agricultural image: Images/Camera/40.20973_-3.465575.jpg
+[2026-03-16 15:35:04,718][Drone 1][INFO][ANALYZE_IMAGE] - Executing agricultural model: Images/Models/Grape_Bunch_Hailo8/init_grape_bunch_hailo8.py
+[2026-03-16 15:35:06,382][Drone 1][INFO][ANALYZE_IMAGE] - Model execution completed with output: {'Grape_bunch': 3.95}
+[2026-03-16 15:35:07,383][Drone 1][INFO][ANALYZE_IMAGE] - Analysis completed
+[2026-03-16 15:35:07,384][Drone 1][INFO][PM_MANAGER] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus.py
+[2026-03-16 15:35:07,445][Drone 1][INFO][PM_MANAGER] - PM output [0]: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/isobus_pm.json with treatments: {'Grape_bunch': 3.95} at grid: [0, 6]
+[2026-03-16 15:35:07,448][Drone 1][INFO][COMMANDS] - Command executed successfully
+[2026-03-16 15:35:07,451][Drone 1][INFO][gRPC Commands] - Feedback sent to ROS2
+[2026-03-16 15:35:08,472][Drone 1][INFO][gRPC Commands] - Command received
+[2026-03-16 15:35:08,473][Drone 1][INFO][COMMANDS] - Processing NAV_HOME command
+[2026-03-16 15:35:08,473][Drone 1][INFO][NAV_HOME] - Returning home...
+[2026-03-16 15:35:08,474][Drone 1][INFO][gRPC PM] - Sending PM to ROS2
+[2026-03-16 15:35:08,478][Drone 1][INFO][gRPC PM] - ACK received from ROS2
+[2026-03-16 15:35:08,479][Drone 1][INFO][PM Manager] - Moved sent file to Finished: isobus_pm.json -> 20260316_153508_isobus_pm.json
+[2026-03-16 15:35:10,479][Drone 1][INFO][NAV_HOME] - Return home successful
+[2026-03-16 15:35:10,480][Drone 1][INFO][COMMANDS] - Command executed successfully
+[2026-03-16 15:35:10,484][Drone 1][INFO][gRPC Commands] - Feedback sent to ROS2
+[2026-03-16 15:35:10,929][Drone 1][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2026-03-16 15:35:11,504][Drone 1][INFO][gRPC Commands] - Command received
+[2026-03-16 15:35:11,505][Drone 1][INFO][COMMANDS] - Processing NAV_LAND command
+[2026-03-16 15:35:11,505][Drone 1][INFO][NAV_LAND] - Landing...
+[2026-03-16 15:35:13,506][Drone 1][INFO][NAV_LAND] - Landing successful
+[2026-03-16 15:35:13,506][Drone 1][INFO][COMMANDS] - Command executed successfully
+[2026-03-16 15:35:13,509][Drone 1][INFO][gRPC Commands] - Feedback sent to ROS2
+[2026-03-16 15:35:20,966][Drone 1][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2026-03-16 15:35:30,999][Drone 1][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2026-03-16 15:35:41,033][Drone 1][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2026-03-16 15:35:51,066][Drone 1][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2026-03-16 15:36:01,099][Drone 1][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2026-03-16 15:36:11,131][Drone 1][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2026-03-16 15:36:21,164][Drone 1][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2026-03-16 15:36:31,201][Drone 1][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2026-03-16 15:36:41,234][Drone 1][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2026-03-16 15:36:51,271][Drone 1][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2026-03-16 15:37:01,308][Drone 1][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2026-03-16 15:37:11,344][Drone 1][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2026-03-16 15:37:21,381][Drone 1][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2026-03-16 15:37:31,417][Drone 1][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2026-03-16 15:37:41,456][Drone 1][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2026-03-16 15:37:51,493][Drone 1][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2026-03-16 15:38:01,527][Drone 1][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2026-03-16 15:38:11,564][Drone 1][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2026-03-16 15:38:21,601][Drone 1][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2026-03-16 15:38:31,639][Drone 1][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2026-03-16 15:38:41,676][Drone 1][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2026-03-16 15:38:51,741][Drone 1][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2026-03-16 15:39:01,780][Drone 1][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2026-03-16 15:39:11,817][Drone 1][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2026-03-16 15:39:21,854][Drone 1][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2026-03-16 15:39:31,891][Drone 1][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2026-03-16 15:39:41,928][Drone 1][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2026-03-16 15:39:51,960][Drone 1][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2026-03-16 15:40:01,997][Drone 1][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2026-03-16 15:40:12,030][Drone 1][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2026-03-16 15:40:22,065][Drone 1][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2026-03-16 15:40:32,097][Drone 1][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2026-03-16 15:40:42,133][Drone 1][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2026-03-16 15:40:52,171][Drone 1][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2026-03-16 15:41:02,310][Drone 1][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2026-03-16 15:41:21,891][Drone 1][INFO][Init Drone] - Complete cleanup finished
+[2026-03-16 15:41:21,892][Drone 1][INFO][gRPC Metrics] - Metrics client thread started successfully
+[2026-03-16 15:41:21,893][Drone 1][INFO][Init Drone] - All system components initialized successfully
+[2026-03-16 15:41:21,904][Drone 1][INFO][gRPC Commands] - Server running on port 51001
+[2026-03-16 15:41:21,939][Drone 1][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2026-03-16 15:41:31,976][Drone 1][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2026-03-16 15:41:42,013][Drone 1][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2026-03-16 15:41:52,054][Drone 1][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2026-03-16 15:42:02,090][Drone 1][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2026-03-16 15:42:12,134][Drone 1][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2026-03-16 15:42:22,192][Drone 1][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2026-03-16 15:42:32,228][Drone 1][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2026-03-16 15:42:42,262][Drone 1][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2026-03-16 15:42:52,300][Drone 1][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2026-03-16 15:43:02,336][Drone 1][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2026-03-16 15:43:12,377][Drone 1][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2026-03-16 15:43:26,800][Drone 1][INFO][Init Drone] - Complete cleanup finished
+[2026-03-16 15:43:26,801][Drone 1][INFO][gRPC Metrics] - Metrics client thread started successfully
+[2026-03-16 15:43:26,802][Drone 1][INFO][Init Drone] - All system components initialized successfully
+[2026-03-16 15:43:26,820][Drone 1][INFO][gRPC Commands] - Server running on port 51001
+[2026-03-16 15:43:26,871][Drone 1][ERROR][gRPC Metrics] - Connection error: <_InactiveRpcError of RPC that terminated with:
+	status = StatusCode.UNAVAILABLE
+	details = "failed to connect to all addresses; last error: UNAVAILABLE: ipv4:127.0.0.1:51004: recvmsg:Connection reset by peer"
+	debug_error_string = "UNKNOWN:Error received from peer  {grpc_message:"failed to connect to all addresses; last error: UNAVAILABLE: ipv4:127.0.0.1:51004: recvmsg:Connection reset by peer", grpc_status:14}"
+>
+[2026-03-16 15:43:46,419][Drone 1][INFO][gRPC Commands] - Command received
+[2026-03-16 15:43:46,419][Drone 1][INFO][COMMANDS] - Processing NAV_TAKEOFF command
+[2026-03-16 15:43:46,420][Drone 1][INFO][NAV_TAKEOFF] - Taking off...
+[2026-03-16 15:43:48,420][Drone 1][INFO][NAV_TAKEOFF] - Takeoff successful
+[2026-03-16 15:43:48,420][Drone 1][INFO][COMMANDS] - Command executed successfully
+[2026-03-16 15:43:48,425][Drone 1][INFO][gRPC Commands] - Feedback sent to ROS2
+[2026-03-16 15:43:49,453][Drone 1][INFO][gRPC Commands] - Command received
+[2026-03-16 15:43:49,454][Drone 1][INFO][COMMANDS] - Processing NAV_WAYPOINT command
+[2026-03-16 15:43:49,454][Drone 1][INFO][NAV_WAYPOINT] - Going to WP...
+[2026-03-16 15:43:51,454][Drone 1][INFO][NAV_WAYPOINT] - Waypoint reached
+[2026-03-16 15:43:51,455][Drone 1][INFO][COMMANDS] - Command executed successfully
+[2026-03-16 15:43:51,458][Drone 1][INFO][gRPC Commands] - Feedback sent to ROS2
+[2026-03-16 15:43:52,479][Drone 1][INFO][gRPC Commands] - Command received
+[2026-03-16 15:43:52,479][Drone 1][INFO][COMMANDS] - Processing NAV_WAYPOINT command
+[2026-03-16 15:43:52,479][Drone 1][INFO][NAV_WAYPOINT] - Going to WP...
+[2026-03-16 15:43:54,480][Drone 1][INFO][NAV_WAYPOINT] - Waypoint reached
+[2026-03-16 15:43:54,480][Drone 1][INFO][COMMANDS] - Command executed successfully
+[2026-03-16 15:43:54,483][Drone 1][INFO][gRPC Commands] - Feedback sent to ROS2
+[2026-03-16 15:43:55,515][Drone 1][INFO][gRPC Commands] - Command received
+[2026-03-16 15:43:55,515][Drone 1][INFO][COMMANDS] - Processing CAMERA_IMAGE command
+[2026-03-16 15:43:55,516][Drone 1][INFO][CAMERA_IMAGE] - Taking picture...
+[2026-03-16 15:43:56,559][Drone 1][INFO][CAMERA_IMAGE] - Picture taken successfully as 40.209544_-3.465575.jpg
+[2026-03-16 15:43:56,560][Drone 1][INFO][COMMANDS] - Command executed successfully
+[2026-03-16 15:43:56,562][Drone 1][INFO][gRPC Commands] - Feedback sent to ROS2
+[2026-03-16 15:43:57,599][Drone 1][INFO][gRPC Commands] - Command received
+[2026-03-16 15:43:57,599][Drone 1][INFO][COMMANDS] - Processing ANALYZE_IMAGE command
+[2026-03-16 15:43:57,599][Drone 1][INFO][ANALYZE_IMAGE] - Analyzing image...
+[2026-03-16 15:43:57,600][Drone 1][INFO][ANALYZE_IMAGE] - Starting analysis for agricultural image: Images/Camera/40.209544_-3.465575.jpg
+[2026-03-16 15:43:57,600][Drone 1][INFO][ANALYZE_IMAGE] - Executing agricultural model: Images/Models/Grape_Bunch_Hailo8/init_grape_bunch_hailo8.py
+[2026-03-16 15:43:59,286][Drone 1][INFO][ANALYZE_IMAGE] - Model execution completed with output: {'Grape_bunch': 5.95}
+[2026-03-16 15:44:00,286][Drone 1][INFO][ANALYZE_IMAGE] - Analysis completed
+[2026-03-16 15:44:00,288][Drone 1][INFO][PM_MANAGER] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus.py
+[2026-03-16 15:44:00,368][Drone 1][INFO][PM_MANAGER] - PM output [0]: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/isobus_pm.json with treatments: {'Grape_bunch': 5.95} at grid: [1, 6]
+[2026-03-16 15:44:00,371][Drone 1][INFO][COMMANDS] - Command executed successfully
+[2026-03-16 15:44:00,374][Drone 1][INFO][gRPC Commands] - Feedback sent to ROS2
+[2026-03-16 15:44:01,413][Drone 1][INFO][gRPC Commands] - Command received
+[2026-03-16 15:44:01,413][Drone 1][INFO][COMMANDS] - Processing NAV_WAYPOINT command
+[2026-03-16 15:44:01,414][Drone 1][INFO][NAV_WAYPOINT] - Going to WP...
+[2026-03-16 15:44:03,414][Drone 1][INFO][NAV_WAYPOINT] - Waypoint reached
+[2026-03-16 15:44:03,414][Drone 1][INFO][COMMANDS] - Command executed successfully
+[2026-03-16 15:44:03,418][Drone 1][INFO][gRPC Commands] - Feedback sent to ROS2
+[2026-03-16 15:44:04,437][Drone 1][INFO][gRPC Commands] - Command received
+[2026-03-16 15:44:04,437][Drone 1][INFO][COMMANDS] - Processing CAMERA_IMAGE command
+[2026-03-16 15:44:04,437][Drone 1][INFO][CAMERA_IMAGE] - Taking picture...
+[2026-03-16 15:44:05,492][Drone 1][INFO][CAMERA_IMAGE] - Picture taken successfully as 40.209544_-3.465821.jpg
+[2026-03-16 15:44:05,492][Drone 1][INFO][COMMANDS] - Command executed successfully
+[2026-03-16 15:44:05,495][Drone 1][INFO][gRPC Commands] - Feedback sent to ROS2
+[2026-03-16 15:44:06,515][Drone 1][INFO][gRPC Commands] - Command received
+[2026-03-16 15:44:06,516][Drone 1][INFO][COMMANDS] - Processing ANALYZE_IMAGE command
+[2026-03-16 15:44:06,516][Drone 1][INFO][ANALYZE_IMAGE] - Analyzing image...
+[2026-03-16 15:44:06,516][Drone 1][INFO][ANALYZE_IMAGE] - Starting analysis for agricultural image: Images/Camera/40.209544_-3.465821.jpg
+[2026-03-16 15:44:06,517][Drone 1][INFO][ANALYZE_IMAGE] - Executing agricultural model: Images/Models/Grape_Bunch_Hailo8/init_grape_bunch_hailo8.py
+[2026-03-16 15:44:08,178][Drone 1][INFO][ANALYZE_IMAGE] - Model execution completed with output: {'Grape_bunch': 5.95}
+[2026-03-16 15:44:09,178][Drone 1][INFO][ANALYZE_IMAGE] - Analysis completed
+[2026-03-16 15:44:09,179][Drone 1][INFO][PM_MANAGER] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus.py
+[2026-03-16 15:44:10,413][Drone 1][INFO][PM_MANAGER] - PM output [0]: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/isobus_pm.json with treatments: {'Grape_bunch': 5.95} at grid: [1, 5]
+[2026-03-16 15:44:10,416][Drone 1][INFO][COMMANDS] - Command executed successfully
+[2026-03-16 15:44:10,421][Drone 1][INFO][gRPC Commands] - Feedback sent to ROS2
+[2026-03-16 15:44:11,466][Drone 1][INFO][gRPC Commands] - Command received
+[2026-03-16 15:44:11,467][Drone 1][INFO][COMMANDS] - Processing NAV_WAYPOINT command
+[2026-03-16 15:44:11,467][Drone 1][INFO][NAV_WAYPOINT] - Going to WP...
+[2026-03-16 15:44:13,467][Drone 1][INFO][NAV_WAYPOINT] - Waypoint reached
+[2026-03-16 15:44:13,468][Drone 1][INFO][COMMANDS] - Command executed successfully
+[2026-03-16 15:44:13,471][Drone 1][INFO][gRPC Commands] - Feedback sent to ROS2
+[2026-03-16 15:44:14,491][Drone 1][INFO][gRPC Commands] - Command received
+[2026-03-16 15:44:14,491][Drone 1][INFO][COMMANDS] - Processing CAMERA_IMAGE command
+[2026-03-16 15:44:14,491][Drone 1][INFO][CAMERA_IMAGE] - Taking picture...
+[2026-03-16 15:44:15,537][Drone 1][INFO][CAMERA_IMAGE] - Picture taken successfully as 40.209544_-3.466066.jpg
+[2026-03-16 15:44:15,538][Drone 1][INFO][COMMANDS] - Command executed successfully
+[2026-03-16 15:44:15,541][Drone 1][INFO][gRPC Commands] - Feedback sent to ROS2
+[2026-03-16 15:44:16,563][Drone 1][INFO][gRPC Commands] - Command received
+[2026-03-16 15:44:16,563][Drone 1][INFO][COMMANDS] - Processing ANALYZE_IMAGE command
+[2026-03-16 15:44:16,564][Drone 1][INFO][ANALYZE_IMAGE] - Analyzing image...
+[2026-03-16 15:44:16,564][Drone 1][INFO][ANALYZE_IMAGE] - Starting analysis for agricultural image: Images/Camera/40.209544_-3.466066.jpg
+[2026-03-16 15:44:16,564][Drone 1][INFO][ANALYZE_IMAGE] - Executing agricultural model: Images/Models/Grape_Bunch_Hailo8/init_grape_bunch_hailo8.py
+[2026-03-16 15:44:18,217][Drone 1][INFO][ANALYZE_IMAGE] - Model execution completed with output: {'Grape_bunch': 5.95}
+[2026-03-16 15:44:19,217][Drone 1][INFO][ANALYZE_IMAGE] - Analysis completed
+[2026-03-16 15:44:19,218][Drone 1][INFO][PM_MANAGER] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus.py
+[2026-03-16 15:44:19,273][Drone 1][INFO][PM_MANAGER] - PM output [0]: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/isobus_pm.json with treatments: {'Grape_bunch': 5.95} at grid: [1, 4]
+[2026-03-16 15:44:19,275][Drone 1][INFO][COMMANDS] - Command executed successfully
+[2026-03-16 15:44:19,278][Drone 1][INFO][gRPC Commands] - Feedback sent to ROS2
+[2026-03-16 15:44:20,301][Drone 1][INFO][gRPC Commands] - Command received
+[2026-03-16 15:44:20,301][Drone 1][INFO][COMMANDS] - Processing NAV_WAYPOINT command
+[2026-03-16 15:44:20,302][Drone 1][INFO][NAV_WAYPOINT] - Going to WP...
+[2026-03-16 15:44:22,302][Drone 1][INFO][NAV_WAYPOINT] - Waypoint reached
+[2026-03-16 15:44:22,302][Drone 1][INFO][COMMANDS] - Command executed successfully
+[2026-03-16 15:44:22,306][Drone 1][INFO][gRPC Commands] - Feedback sent to ROS2
+[2026-03-16 15:44:23,329][Drone 1][INFO][gRPC Commands] - Command received
+[2026-03-16 15:44:23,329][Drone 1][INFO][COMMANDS] - Processing CAMERA_IMAGE command
+[2026-03-16 15:44:23,329][Drone 1][INFO][CAMERA_IMAGE] - Taking picture...
+[2026-03-16 15:44:24,367][Drone 1][INFO][CAMERA_IMAGE] - Picture taken successfully as 40.209544_-3.466312.jpg
+[2026-03-16 15:44:24,367][Drone 1][INFO][COMMANDS] - Command executed successfully
+[2026-03-16 15:44:24,370][Drone 1][INFO][gRPC Commands] - Feedback sent to ROS2
+[2026-03-16 15:44:25,389][Drone 1][INFO][gRPC Commands] - Command received
+[2026-03-16 15:44:25,389][Drone 1][INFO][COMMANDS] - Processing ANALYZE_IMAGE command
+[2026-03-16 15:44:25,389][Drone 1][INFO][ANALYZE_IMAGE] - Analyzing image...
+[2026-03-16 15:44:25,389][Drone 1][INFO][ANALYZE_IMAGE] - Starting analysis for agricultural image: Images/Camera/40.209544_-3.466312.jpg
+[2026-03-16 15:44:25,390][Drone 1][INFO][ANALYZE_IMAGE] - Executing agricultural model: Images/Models/Grape_Bunch_Hailo8/init_grape_bunch_hailo8.py
+[2026-03-16 15:44:27,038][Drone 1][INFO][ANALYZE_IMAGE] - Model execution completed with output: {'Grape_bunch': 3.95}
+[2026-03-16 15:44:28,038][Drone 1][INFO][ANALYZE_IMAGE] - Analysis completed
+[2026-03-16 15:44:28,039][Drone 1][INFO][PM_MANAGER] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus.py
+[2026-03-16 15:44:28,095][Drone 1][INFO][PM_MANAGER] - PM output [0]: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/isobus_pm.json with treatments: {'Grape_bunch': 3.95} at grid: [1, 3]
+[2026-03-16 15:44:28,098][Drone 1][INFO][COMMANDS] - Command executed successfully
+[2026-03-16 15:44:28,100][Drone 1][INFO][gRPC Commands] - Feedback sent to ROS2
+[2026-03-16 15:44:29,119][Drone 1][INFO][gRPC Commands] - Command received
+[2026-03-16 15:44:29,119][Drone 1][INFO][COMMANDS] - Processing NAV_WAYPOINT command
+[2026-03-16 15:44:29,119][Drone 1][INFO][NAV_WAYPOINT] - Going to WP...
+[2026-03-16 15:44:31,120][Drone 1][INFO][NAV_WAYPOINT] - Waypoint reached
+[2026-03-16 15:44:31,283][Drone 1][INFO][COMMANDS] - Command executed successfully
+[2026-03-16 15:44:31,290][Drone 1][INFO][gRPC Commands] - Feedback sent to ROS2
+[2026-03-16 15:44:32,311][Drone 1][INFO][gRPC Commands] - Command received
+[2026-03-16 15:44:32,316][Drone 1][INFO][COMMANDS] - Processing CAMERA_IMAGE command
+[2026-03-16 15:44:32,317][Drone 1][INFO][CAMERA_IMAGE] - Taking picture...
+[2026-03-16 15:44:33,366][Drone 1][INFO][CAMERA_IMAGE] - Picture taken successfully as 40.209544_-3.466557.jpg
+[2026-03-16 15:44:33,366][Drone 1][INFO][COMMANDS] - Command executed successfully
+[2026-03-16 15:44:33,370][Drone 1][INFO][gRPC Commands] - Feedback sent to ROS2
+[2026-03-16 15:44:34,391][Drone 1][INFO][gRPC Commands] - Command received
+[2026-03-16 15:44:34,391][Drone 1][INFO][COMMANDS] - Processing ANALYZE_IMAGE command
+[2026-03-16 15:44:34,391][Drone 1][INFO][ANALYZE_IMAGE] - Analyzing image...
+[2026-03-16 15:44:34,392][Drone 1][INFO][ANALYZE_IMAGE] - Starting analysis for agricultural image: Images/Camera/40.209544_-3.466557.jpg
+[2026-03-16 15:44:34,392][Drone 1][INFO][ANALYZE_IMAGE] - Executing agricultural model: Images/Models/Grape_Bunch_Hailo8/init_grape_bunch_hailo8.py
+[2026-03-16 15:44:36,294][Drone 1][INFO][ANALYZE_IMAGE] - Model execution completed with output: {'Grape_bunch': 7.95}
+[2026-03-16 15:44:37,295][Drone 1][INFO][ANALYZE_IMAGE] - Analysis completed
+[2026-03-16 15:44:37,296][Drone 1][INFO][PM_MANAGER] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus.py
+[2026-03-16 15:44:37,358][Drone 1][INFO][PM_MANAGER] - PM output [0]: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/isobus_pm.json with treatments: {'Grape_bunch': 7.95} at grid: [1, 2]
+[2026-03-16 15:44:37,362][Drone 1][INFO][COMMANDS] - Command executed successfully
+[2026-03-16 15:44:37,365][Drone 1][INFO][gRPC Commands] - Feedback sent to ROS2
+[2026-03-16 15:44:48,900][Drone 1][INFO][Init Drone] - Complete cleanup finished
+[2026-03-16 15:44:48,901][Drone 1][INFO][gRPC Metrics] - Metrics client thread started successfully
+[2026-03-16 15:44:48,902][Drone 1][INFO][Init Drone] - All system components initialized successfully
+[2026-03-16 15:44:48,915][Drone 1][INFO][gRPC Commands] - Server running on port 51001
+[2026-03-16 15:44:57,037][Drone 1][ERROR][gRPC Metrics] - Connection error: <_InactiveRpcError of RPC that terminated with:
+	status = StatusCode.UNAVAILABLE
+	details = "Socket closed"
+	debug_error_string = "UNKNOWN:Error received from peer  {grpc_message:"Socket closed", grpc_status:14}"
+>
+[2026-03-16 15:45:21,350][Drone 1][INFO][Init Drone] - Complete cleanup finished
+[2026-03-16 15:45:21,351][Drone 1][INFO][gRPC Metrics] - Metrics client thread started successfully
+[2026-03-16 15:45:21,353][Drone 1][INFO][Init Drone] - All system components initialized successfully
+[2026-03-16 15:45:21,367][Drone 1][INFO][gRPC Commands] - Server running on port 51001
+[2026-03-16 15:45:21,400][Drone 1][ERROR][gRPC Metrics] - Connection error: <_InactiveRpcError of RPC that terminated with:
+	status = StatusCode.UNAVAILABLE
+	details = "failed to connect to all addresses; last error: UNAVAILABLE: ipv4:127.0.0.1:51004: recvmsg:Connection reset by peer"
+	debug_error_string = "UNKNOWN:Error received from peer  {grpc_message:"failed to connect to all addresses; last error: UNAVAILABLE: ipv4:127.0.0.1:51004: recvmsg:Connection reset by peer", grpc_status:14}"
+>
+[2026-03-16 15:46:56,630][Drone 1][INFO][Init Drone] - Complete cleanup finished
+[2026-03-16 15:46:56,633][Drone 1][INFO][gRPC Metrics] - Metrics client thread started successfully
+[2026-03-16 15:46:56,634][Drone 1][INFO][Init Drone] - All system components initialized successfully
+[2026-03-16 15:46:56,648][Drone 1][INFO][gRPC Commands] - Server running on port 51001
+[2026-03-16 15:46:56,683][Drone 1][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2026-03-16 15:47:06,721][Drone 1][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2026-03-16 15:47:16,758][Drone 1][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2026-03-16 15:47:26,792][Drone 1][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2026-03-16 15:47:28,474][Drone 1][INFO][gRPC Commands] - Command received
+[2026-03-16 15:47:28,474][Drone 1][INFO][COMMANDS] - Processing NAV_TAKEOFF command
+[2026-03-16 15:47:28,474][Drone 1][INFO][NAV_TAKEOFF] - Taking off...
+[2026-03-16 15:47:30,475][Drone 1][INFO][NAV_TAKEOFF] - Takeoff successful
+[2026-03-16 15:47:30,475][Drone 1][INFO][COMMANDS] - Command executed successfully
+[2026-03-16 15:47:30,478][Drone 1][INFO][gRPC Commands] - Feedback sent to ROS2
+[2026-03-16 15:47:31,500][Drone 1][INFO][gRPC Commands] - Command received
+[2026-03-16 15:47:31,501][Drone 1][INFO][COMMANDS] - Processing NAV_WAYPOINT command
+[2026-03-16 15:47:31,501][Drone 1][INFO][NAV_WAYPOINT] - Going to WP...
+[2026-03-16 15:47:33,501][Drone 1][INFO][NAV_WAYPOINT] - Waypoint reached
+[2026-03-16 15:47:33,501][Drone 1][INFO][COMMANDS] - Command executed successfully
+[2026-03-16 15:47:33,504][Drone 1][INFO][gRPC Commands] - Feedback sent to ROS2
+[2026-03-16 15:47:34,525][Drone 1][INFO][gRPC Commands] - Command received
+[2026-03-16 15:47:34,525][Drone 1][INFO][COMMANDS] - Processing NAV_WAYPOINT command
+[2026-03-16 15:47:34,526][Drone 1][INFO][NAV_WAYPOINT] - Going to WP...
+[2026-03-16 15:47:36,526][Drone 1][INFO][NAV_WAYPOINT] - Waypoint reached
+[2026-03-16 15:47:36,526][Drone 1][INFO][COMMANDS] - Command executed successfully
+[2026-03-16 15:47:36,529][Drone 1][INFO][gRPC Commands] - Feedback sent to ROS2
+[2026-03-16 15:47:36,829][Drone 1][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2026-03-16 15:47:37,551][Drone 1][INFO][gRPC Commands] - Command received
+[2026-03-16 15:47:37,551][Drone 1][INFO][COMMANDS] - Processing CAMERA_IMAGE command
+[2026-03-16 15:47:37,552][Drone 1][INFO][CAMERA_IMAGE] - Taking picture...
+[2026-03-16 15:47:38,593][Drone 1][INFO][CAMERA_IMAGE] - Picture taken successfully as 40.209544_-3.465575.jpg
+[2026-03-16 15:47:38,593][Drone 1][INFO][COMMANDS] - Command executed successfully
+[2026-03-16 15:47:38,596][Drone 1][INFO][gRPC Commands] - Feedback sent to ROS2
+[2026-03-16 15:47:39,617][Drone 1][INFO][gRPC Commands] - Command received
+[2026-03-16 15:47:39,617][Drone 1][INFO][COMMANDS] - Processing ANALYZE_IMAGE command
+[2026-03-16 15:47:39,618][Drone 1][INFO][ANALYZE_IMAGE] - Analyzing image...
+[2026-03-16 15:47:39,618][Drone 1][INFO][ANALYZE_IMAGE] - Starting analysis for agricultural image: Images/Camera/40.209544_-3.465575.jpg
+[2026-03-16 15:47:39,618][Drone 1][INFO][ANALYZE_IMAGE] - Executing agricultural model: Images/Models/Grape_Bunch_Hailo8/init_grape_bunch_hailo8.py
+[2026-03-16 15:47:41,267][Drone 1][INFO][ANALYZE_IMAGE] - Model execution completed with output: {'Grape_bunch': 5.95}
+[2026-03-16 15:47:42,268][Drone 1][INFO][ANALYZE_IMAGE] - Analysis completed
+[2026-03-16 15:47:42,270][Drone 1][INFO][PM_MANAGER] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus.py
+[2026-03-16 15:47:42,348][Drone 1][INFO][PM_MANAGER] - PM output [0]: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/isobus_pm.json with treatments: {'Grape_bunch': 5.95} at grid: [1, 6]
+[2026-03-16 15:47:42,352][Drone 1][INFO][COMMANDS] - Command executed successfully
+[2026-03-16 15:47:42,357][Drone 1][INFO][gRPC Commands] - Feedback sent to ROS2
+[2026-03-16 15:47:43,378][Drone 1][INFO][gRPC Commands] - Command received
+[2026-03-16 15:47:43,379][Drone 1][INFO][COMMANDS] - Processing NAV_WAYPOINT command
+[2026-03-16 15:47:43,379][Drone 1][INFO][NAV_WAYPOINT] - Going to WP...
+[2026-03-16 15:47:45,379][Drone 1][INFO][NAV_WAYPOINT] - Waypoint reached
+[2026-03-16 15:47:45,379][Drone 1][INFO][COMMANDS] - Command executed successfully
+[2026-03-16 15:47:45,382][Drone 1][INFO][gRPC Commands] - Feedback sent to ROS2
+[2026-03-16 15:47:46,434][Drone 1][INFO][gRPC Commands] - Command received
+[2026-03-16 15:47:46,434][Drone 1][INFO][COMMANDS] - Processing CAMERA_IMAGE command
+[2026-03-16 15:47:46,435][Drone 1][INFO][CAMERA_IMAGE] - Taking picture...
+[2026-03-16 15:47:46,865][Drone 1][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2026-03-16 15:47:47,474][Drone 1][INFO][CAMERA_IMAGE] - Picture taken successfully as 40.209544_-3.465821.jpg
+[2026-03-16 15:47:47,474][Drone 1][INFO][COMMANDS] - Command executed successfully
+[2026-03-16 15:47:47,478][Drone 1][INFO][gRPC Commands] - Feedback sent to ROS2
+[2026-03-16 15:47:48,497][Drone 1][INFO][gRPC Commands] - Command received
+[2026-03-16 15:47:48,497][Drone 1][INFO][COMMANDS] - Processing ANALYZE_IMAGE command
+[2026-03-16 15:47:48,497][Drone 1][INFO][ANALYZE_IMAGE] - Analyzing image...
+[2026-03-16 15:47:48,497][Drone 1][INFO][ANALYZE_IMAGE] - Starting analysis for agricultural image: Images/Camera/40.209544_-3.465821.jpg
+[2026-03-16 15:47:48,498][Drone 1][INFO][ANALYZE_IMAGE] - Executing agricultural model: Images/Models/Grape_Bunch_Hailo8/init_grape_bunch_hailo8.py
+[2026-03-16 15:47:50,135][Drone 1][INFO][ANALYZE_IMAGE] - Model execution completed with output: {'Grape_bunch': 5.95}
+[2026-03-16 15:47:51,136][Drone 1][INFO][ANALYZE_IMAGE] - Analysis completed
+[2026-03-16 15:47:51,137][Drone 1][INFO][PM_MANAGER] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus.py
+[2026-03-16 15:47:51,196][Drone 1][INFO][PM_MANAGER] - PM output [0]: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/isobus_pm.json with treatments: {'Grape_bunch': 5.95} at grid: [1, 5]
+[2026-03-16 15:47:51,199][Drone 1][INFO][COMMANDS] - Command executed successfully
+[2026-03-16 15:47:51,202][Drone 1][INFO][gRPC Commands] - Feedback sent to ROS2
+[2026-03-16 15:47:52,229][Drone 1][INFO][gRPC Commands] - Command received
+[2026-03-16 15:47:52,229][Drone 1][INFO][COMMANDS] - Processing NAV_WAYPOINT command
+[2026-03-16 15:47:52,229][Drone 1][INFO][NAV_WAYPOINT] - Going to WP...
+[2026-03-16 15:47:54,229][Drone 1][INFO][NAV_WAYPOINT] - Waypoint reached
+[2026-03-16 15:47:54,230][Drone 1][INFO][COMMANDS] - Command executed successfully
+[2026-03-16 15:47:54,233][Drone 1][INFO][gRPC Commands] - Feedback sent to ROS2
+[2026-03-16 15:47:55,255][Drone 1][INFO][gRPC Commands] - Command received
+[2026-03-16 15:47:55,256][Drone 1][INFO][COMMANDS] - Processing CAMERA_IMAGE command
+[2026-03-16 15:47:55,256][Drone 1][INFO][CAMERA_IMAGE] - Taking picture...
+[2026-03-16 15:47:56,295][Drone 1][INFO][CAMERA_IMAGE] - Picture taken successfully as 40.209544_-3.466066.jpg
+[2026-03-16 15:47:56,296][Drone 1][INFO][COMMANDS] - Command executed successfully
+[2026-03-16 15:47:56,298][Drone 1][INFO][gRPC Commands] - Feedback sent to ROS2
+[2026-03-16 15:47:56,899][Drone 1][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2026-03-16 15:47:57,317][Drone 1][INFO][gRPC Commands] - Command received
+[2026-03-16 15:47:57,318][Drone 1][INFO][COMMANDS] - Processing ANALYZE_IMAGE command
+[2026-03-16 15:47:57,318][Drone 1][INFO][ANALYZE_IMAGE] - Analyzing image...
+[2026-03-16 15:47:57,318][Drone 1][INFO][ANALYZE_IMAGE] - Starting analysis for agricultural image: Images/Camera/40.209544_-3.466066.jpg
+[2026-03-16 15:47:57,319][Drone 1][INFO][ANALYZE_IMAGE] - Executing agricultural model: Images/Models/Grape_Bunch_Hailo8/init_grape_bunch_hailo8.py
+[2026-03-16 15:47:58,964][Drone 1][INFO][ANALYZE_IMAGE] - Model execution completed with output: {'Grape_bunch': 5.95}
+[2026-03-16 15:47:59,964][Drone 1][INFO][ANALYZE_IMAGE] - Analysis completed
+[2026-03-16 15:47:59,965][Drone 1][INFO][PM_MANAGER] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus.py
+[2026-03-16 15:48:00,040][Drone 1][INFO][PM_MANAGER] - PM output [0]: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/isobus_pm.json with treatments: {'Grape_bunch': 5.95} at grid: [1, 4]
+[2026-03-16 15:48:00,043][Drone 1][INFO][COMMANDS] - Command executed successfully
+[2026-03-16 15:48:00,046][Drone 1][INFO][gRPC Commands] - Feedback sent to ROS2
+[2026-03-16 15:48:01,084][Drone 1][INFO][gRPC Commands] - Command received
+[2026-03-16 15:48:01,085][Drone 1][INFO][COMMANDS] - Processing NAV_WAYPOINT command
+[2026-03-16 15:48:01,085][Drone 1][INFO][NAV_WAYPOINT] - Going to WP...
+[2026-03-16 15:48:03,085][Drone 1][INFO][NAV_WAYPOINT] - Waypoint reached
+[2026-03-16 15:48:03,086][Drone 1][INFO][COMMANDS] - Command executed successfully
+[2026-03-16 15:48:03,091][Drone 1][INFO][gRPC Commands] - Feedback sent to ROS2
+[2026-03-16 15:48:04,113][Drone 1][INFO][gRPC Commands] - Command received
+[2026-03-16 15:48:04,114][Drone 1][INFO][COMMANDS] - Processing CAMERA_IMAGE command
+[2026-03-16 15:48:04,114][Drone 1][INFO][CAMERA_IMAGE] - Taking picture...
+[2026-03-16 15:48:05,152][Drone 1][INFO][CAMERA_IMAGE] - Picture taken successfully as 40.209544_-3.466312.jpg
+[2026-03-16 15:48:05,153][Drone 1][INFO][COMMANDS] - Command executed successfully
+[2026-03-16 15:48:05,157][Drone 1][INFO][gRPC Commands] - Feedback sent to ROS2
+[2026-03-16 15:48:06,180][Drone 1][INFO][gRPC Commands] - Command received
+[2026-03-16 15:48:06,182][Drone 1][INFO][COMMANDS] - Processing ANALYZE_IMAGE command
+[2026-03-16 15:48:06,182][Drone 1][INFO][ANALYZE_IMAGE] - Analyzing image...
+[2026-03-16 15:48:06,182][Drone 1][INFO][ANALYZE_IMAGE] - Starting analysis for agricultural image: Images/Camera/40.209544_-3.466312.jpg
+[2026-03-16 15:48:06,183][Drone 1][INFO][ANALYZE_IMAGE] - Executing agricultural model: Images/Models/Grape_Bunch_Hailo8/init_grape_bunch_hailo8.py
+[2026-03-16 15:48:06,935][Drone 1][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2026-03-16 15:48:07,853][Drone 1][INFO][ANALYZE_IMAGE] - Model execution completed with output: {'Grape_bunch': 3.95}
+[2026-03-16 15:48:08,853][Drone 1][INFO][ANALYZE_IMAGE] - Analysis completed
+[2026-03-16 15:48:08,854][Drone 1][INFO][PM_MANAGER] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus.py
+[2026-03-16 15:48:08,913][Drone 1][INFO][PM_MANAGER] - PM output [0]: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/isobus_pm.json with treatments: {'Grape_bunch': 3.95} at grid: [1, 3]
+[2026-03-16 15:48:08,916][Drone 1][INFO][COMMANDS] - Command executed successfully
+[2026-03-16 15:48:08,919][Drone 1][INFO][gRPC Commands] - Feedback sent to ROS2
+[2026-03-16 15:48:09,940][Drone 1][INFO][gRPC Commands] - Command received
+[2026-03-16 15:48:09,940][Drone 1][INFO][COMMANDS] - Processing NAV_WAYPOINT command
+[2026-03-16 15:48:09,940][Drone 1][INFO][NAV_WAYPOINT] - Going to WP...
+[2026-03-16 15:48:11,940][Drone 1][INFO][NAV_WAYPOINT] - Waypoint reached
+[2026-03-16 15:48:11,941][Drone 1][INFO][COMMANDS] - Command executed successfully
+[2026-03-16 15:48:11,944][Drone 1][INFO][gRPC Commands] - Feedback sent to ROS2
+[2026-03-16 15:48:12,969][Drone 1][INFO][gRPC Commands] - Command received
+[2026-03-16 15:48:12,969][Drone 1][INFO][COMMANDS] - Processing CAMERA_IMAGE command
+[2026-03-16 15:48:12,969][Drone 1][INFO][CAMERA_IMAGE] - Taking picture...
+[2026-03-16 15:48:14,024][Drone 1][INFO][CAMERA_IMAGE] - Picture taken successfully as 40.209544_-3.466557.jpg
+[2026-03-16 15:48:14,025][Drone 1][INFO][COMMANDS] - Command executed successfully
+[2026-03-16 15:48:14,032][Drone 1][INFO][gRPC Commands] - Feedback sent to ROS2
+[2026-03-16 15:48:15,056][Drone 1][INFO][gRPC Commands] - Command received
+[2026-03-16 15:48:15,056][Drone 1][INFO][COMMANDS] - Processing ANALYZE_IMAGE command
+[2026-03-16 15:48:15,056][Drone 1][INFO][ANALYZE_IMAGE] - Analyzing image...
+[2026-03-16 15:48:15,057][Drone 1][INFO][ANALYZE_IMAGE] - Starting analysis for agricultural image: Images/Camera/40.209544_-3.466557.jpg
+[2026-03-16 15:48:15,057][Drone 1][INFO][ANALYZE_IMAGE] - Executing agricultural model: Images/Models/Grape_Bunch_Hailo8/init_grape_bunch_hailo8.py
+[2026-03-16 15:48:16,726][Drone 1][INFO][ANALYZE_IMAGE] - Model execution completed with output: {'Grape_bunch': 7.95}
+[2026-03-16 15:48:16,973][Drone 1][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2026-03-16 15:48:17,726][Drone 1][INFO][ANALYZE_IMAGE] - Analysis completed
+[2026-03-16 15:48:17,727][Drone 1][INFO][PM_MANAGER] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus.py
+[2026-03-16 15:48:17,784][Drone 1][INFO][PM_MANAGER] - PM output [0]: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/isobus_pm.json with treatments: {'Grape_bunch': 7.95} at grid: [1, 2]
+[2026-03-16 15:48:17,787][Drone 1][INFO][COMMANDS] - Command executed successfully
+[2026-03-16 15:48:17,791][Drone 1][INFO][gRPC Commands] - Feedback sent to ROS2
+[2026-03-16 15:48:18,833][Drone 1][INFO][gRPC Commands] - Command received
+[2026-03-16 15:48:18,834][Drone 1][INFO][COMMANDS] - Processing NAV_WAYPOINT command
+[2026-03-16 15:48:18,834][Drone 1][INFO][NAV_WAYPOINT] - Going to WP...
+[2026-03-16 15:48:20,834][Drone 1][INFO][NAV_WAYPOINT] - Waypoint reached
+[2026-03-16 15:48:20,834][Drone 1][INFO][COMMANDS] - Command executed successfully
+[2026-03-16 15:48:20,838][Drone 1][INFO][gRPC Commands] - Feedback sent to ROS2
+[2026-03-16 15:48:21,864][Drone 1][INFO][gRPC Commands] - Command received
+[2026-03-16 15:48:21,865][Drone 1][INFO][COMMANDS] - Processing CAMERA_IMAGE command
+[2026-03-16 15:48:21,865][Drone 1][INFO][CAMERA_IMAGE] - Taking picture...
+[2026-03-16 15:48:22,930][Drone 1][INFO][CAMERA_IMAGE] - Picture taken successfully as 40.209544_-3.466803.jpg
+[2026-03-16 15:48:22,930][Drone 1][INFO][COMMANDS] - Command executed successfully
+[2026-03-16 15:48:22,933][Drone 1][INFO][gRPC Commands] - Feedback sent to ROS2
+[2026-03-16 15:48:23,954][Drone 1][INFO][gRPC Commands] - Command received
+[2026-03-16 15:48:23,955][Drone 1][INFO][COMMANDS] - Processing ANALYZE_IMAGE command
+[2026-03-16 15:48:23,956][Drone 1][INFO][ANALYZE_IMAGE] - Analyzing image...
+[2026-03-16 15:48:23,956][Drone 1][INFO][ANALYZE_IMAGE] - Starting analysis for agricultural image: Images/Camera/40.209544_-3.466803.jpg
+[2026-03-16 15:48:23,957][Drone 1][INFO][ANALYZE_IMAGE] - Executing agricultural model: Images/Models/Grape_Bunch_Hailo8/init_grape_bunch_hailo8.py
+[2026-03-16 15:48:25,602][Drone 1][INFO][ANALYZE_IMAGE] - Model execution completed with output: {'Grape_bunch': 1.95}
+[2026-03-16 15:48:26,602][Drone 1][INFO][ANALYZE_IMAGE] - Analysis completed
+[2026-03-16 15:48:26,603][Drone 1][INFO][PM_MANAGER] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus.py
+[2026-03-16 15:48:26,661][Drone 1][INFO][PM_MANAGER] - PM output [0]: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/isobus_pm.json with treatments: {'Grape_bunch': 1.95} at grid: [1, 1]
+[2026-03-16 15:48:26,664][Drone 1][INFO][COMMANDS] - Command executed successfully
+[2026-03-16 15:48:26,667][Drone 1][INFO][gRPC Commands] - Feedback sent to ROS2
+[2026-03-16 15:48:27,008][Drone 1][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2026-03-16 15:48:27,687][Drone 1][INFO][gRPC Commands] - Command received
+[2026-03-16 15:48:27,687][Drone 1][INFO][COMMANDS] - Processing NAV_WAYPOINT command
+[2026-03-16 15:48:27,687][Drone 1][INFO][NAV_WAYPOINT] - Going to WP...
+[2026-03-16 15:48:29,688][Drone 1][INFO][NAV_WAYPOINT] - Waypoint reached
+[2026-03-16 15:48:29,688][Drone 1][INFO][COMMANDS] - Command executed successfully
+[2026-03-16 15:48:29,691][Drone 1][INFO][gRPC Commands] - Feedback sent to ROS2
+[2026-03-16 15:48:30,716][Drone 1][INFO][gRPC Commands] - Command received
+[2026-03-16 15:48:30,716][Drone 1][INFO][COMMANDS] - Processing CAMERA_IMAGE command
+[2026-03-16 15:48:30,716][Drone 1][INFO][CAMERA_IMAGE] - Taking picture...
+[2026-03-16 15:48:31,759][Drone 1][INFO][CAMERA_IMAGE] - Picture taken successfully as 40.209544_-3.467048.jpg
+[2026-03-16 15:48:31,759][Drone 1][INFO][COMMANDS] - Command executed successfully
+[2026-03-16 15:48:31,765][Drone 1][INFO][gRPC Commands] - Feedback sent to ROS2
+[2026-03-16 15:48:32,786][Drone 1][INFO][gRPC Commands] - Command received
+[2026-03-16 15:48:32,786][Drone 1][INFO][COMMANDS] - Processing ANALYZE_IMAGE command
+[2026-03-16 15:48:32,787][Drone 1][INFO][ANALYZE_IMAGE] - Analyzing image...
+[2026-03-16 15:48:32,787][Drone 1][INFO][ANALYZE_IMAGE] - Starting analysis for agricultural image: Images/Camera/40.209544_-3.467048.jpg
+[2026-03-16 15:48:32,787][Drone 1][INFO][ANALYZE_IMAGE] - Executing agricultural model: Images/Models/Grape_Bunch_Hailo8/init_grape_bunch_hailo8.py
+[2026-03-16 15:48:34,488][Drone 1][INFO][ANALYZE_IMAGE] - Model execution completed with output: {'Grape_bunch': 5.95}
+[2026-03-16 15:48:35,488][Drone 1][INFO][ANALYZE_IMAGE] - Analysis completed
+[2026-03-16 15:48:35,489][Drone 1][INFO][PM_MANAGER] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus.py
+[2026-03-16 15:48:35,563][Drone 1][INFO][PM_MANAGER] - PM output [0]: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/isobus_pm.json with treatments: {'Grape_bunch': 5.95} at grid: [1, 0]
+[2026-03-16 15:48:35,568][Drone 1][INFO][COMMANDS] - Command executed successfully
+[2026-03-16 15:48:35,571][Drone 1][INFO][gRPC Commands] - Feedback sent to ROS2
+[2026-03-16 15:48:36,626][Drone 1][INFO][gRPC Commands] - Command received
+[2026-03-16 15:48:36,626][Drone 1][INFO][COMMANDS] - Processing NAV_WAYPOINT command
+[2026-03-16 15:48:36,626][Drone 1][INFO][NAV_WAYPOINT] - Going to WP...
+[2026-03-16 15:48:37,041][Drone 1][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2026-03-16 15:48:38,626][Drone 1][INFO][NAV_WAYPOINT] - Waypoint reached
+[2026-03-16 15:48:38,627][Drone 1][INFO][COMMANDS] - Command executed successfully
+[2026-03-16 15:48:38,629][Drone 1][INFO][gRPC Commands] - Feedback sent to ROS2
+[2026-03-16 15:48:39,650][Drone 1][INFO][gRPC Commands] - Command received
+[2026-03-16 15:48:39,650][Drone 1][INFO][COMMANDS] - Processing CAMERA_IMAGE command
+[2026-03-16 15:48:39,650][Drone 1][INFO][CAMERA_IMAGE] - Taking picture...
+[2026-03-16 15:48:40,692][Drone 1][INFO][CAMERA_IMAGE] - Picture taken successfully as 40.20973_-3.467048.jpg
+[2026-03-16 15:48:40,693][Drone 1][INFO][COMMANDS] - Command executed successfully
+[2026-03-16 15:48:40,696][Drone 1][INFO][gRPC Commands] - Feedback sent to ROS2
+[2026-03-16 15:48:41,716][Drone 1][INFO][gRPC Commands] - Command received
+[2026-03-16 15:48:41,717][Drone 1][INFO][COMMANDS] - Processing ANALYZE_IMAGE command
+[2026-03-16 15:48:41,717][Drone 1][INFO][ANALYZE_IMAGE] - Analyzing image...
+[2026-03-16 15:48:41,717][Drone 1][INFO][ANALYZE_IMAGE] - Starting analysis for agricultural image: Images/Camera/40.20973_-3.467048.jpg
+[2026-03-16 15:48:41,717][Drone 1][INFO][ANALYZE_IMAGE] - Executing agricultural model: Images/Models/Grape_Bunch_Hailo8/init_grape_bunch_hailo8.py
+[2026-03-16 15:48:43,516][Drone 1][INFO][ANALYZE_IMAGE] - Model execution completed with output: {'Grape_bunch': 7.95}
+[2026-03-16 15:48:44,517][Drone 1][INFO][ANALYZE_IMAGE] - Analysis completed
+[2026-03-16 15:48:44,518][Drone 1][INFO][PM_MANAGER] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus.py
+[2026-03-16 15:48:44,590][Drone 1][INFO][PM_MANAGER] - PM output [0]: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/isobus_pm.json with treatments: {'Grape_bunch': 7.95} at grid: [0, 0]
+[2026-03-16 15:48:44,595][Drone 1][INFO][COMMANDS] - Command executed successfully
+[2026-03-16 15:48:44,599][Drone 1][INFO][gRPC Commands] - Feedback sent to ROS2
+[2026-03-16 15:48:45,623][Drone 1][INFO][gRPC Commands] - Command received
+[2026-03-16 15:48:45,623][Drone 1][INFO][COMMANDS] - Processing NAV_WAYPOINT command
+[2026-03-16 15:48:45,623][Drone 1][INFO][NAV_WAYPOINT] - Going to WP...
+[2026-03-16 15:48:47,082][Drone 1][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2026-03-16 15:48:47,624][Drone 1][INFO][NAV_WAYPOINT] - Waypoint reached
+[2026-03-16 15:48:47,637][Drone 1][INFO][COMMANDS] - Command executed successfully
+[2026-03-16 15:48:47,640][Drone 1][INFO][gRPC Commands] - Feedback sent to ROS2
+[2026-03-16 15:48:48,667][Drone 1][INFO][gRPC Commands] - Command received
+[2026-03-16 15:48:48,667][Drone 1][INFO][COMMANDS] - Processing CAMERA_IMAGE command
+[2026-03-16 15:48:48,667][Drone 1][INFO][CAMERA_IMAGE] - Taking picture...
+[2026-03-16 15:48:49,711][Drone 1][INFO][CAMERA_IMAGE] - Picture taken successfully as 40.20973_-3.466803.jpg
+[2026-03-16 15:48:49,711][Drone 1][INFO][COMMANDS] - Command executed successfully
+[2026-03-16 15:48:49,714][Drone 1][INFO][gRPC Commands] - Feedback sent to ROS2
+[2026-03-16 15:48:50,738][Drone 1][INFO][gRPC Commands] - Command received
+[2026-03-16 15:48:50,738][Drone 1][INFO][COMMANDS] - Processing ANALYZE_IMAGE command
+[2026-03-16 15:48:50,738][Drone 1][INFO][ANALYZE_IMAGE] - Analyzing image...
+[2026-03-16 15:48:50,738][Drone 1][INFO][ANALYZE_IMAGE] - Starting analysis for agricultural image: Images/Camera/40.20973_-3.466803.jpg
+[2026-03-16 15:48:50,739][Drone 1][INFO][ANALYZE_IMAGE] - Executing agricultural model: Images/Models/Grape_Bunch_Hailo8/init_grape_bunch_hailo8.py
+[2026-03-16 15:48:52,434][Drone 1][INFO][ANALYZE_IMAGE] - Model execution completed with output: {'Grape_bunch': 1.95}
+[2026-03-16 15:48:53,434][Drone 1][INFO][ANALYZE_IMAGE] - Analysis completed
+[2026-03-16 15:48:53,435][Drone 1][INFO][PM_MANAGER] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus.py
+[2026-03-16 15:48:54,690][Drone 1][INFO][PM_MANAGER] - PM output [0]: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/isobus_pm.json with treatments: {'Grape_bunch': 1.95} at grid: [0, 1]
+[2026-03-16 15:48:54,693][Drone 1][INFO][COMMANDS] - Command executed successfully
+[2026-03-16 15:48:54,697][Drone 1][INFO][gRPC Commands] - Feedback sent to ROS2
+[2026-03-16 15:48:55,718][Drone 1][INFO][gRPC Commands] - Command received
+[2026-03-16 15:48:55,719][Drone 1][INFO][COMMANDS] - Processing NAV_WAYPOINT command
+[2026-03-16 15:48:55,719][Drone 1][INFO][NAV_WAYPOINT] - Going to WP...
+[2026-03-16 15:48:57,174][Drone 1][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2026-03-16 15:48:57,720][Drone 1][INFO][NAV_WAYPOINT] - Waypoint reached
+[2026-03-16 15:48:57,720][Drone 1][INFO][COMMANDS] - Command executed successfully
+[2026-03-16 15:48:57,724][Drone 1][INFO][gRPC Commands] - Feedback sent to ROS2
+[2026-03-16 15:48:58,760][Drone 1][INFO][gRPC Commands] - Command received
+[2026-03-16 15:48:58,760][Drone 1][INFO][COMMANDS] - Processing CAMERA_IMAGE command
+[2026-03-16 15:48:58,760][Drone 1][INFO][CAMERA_IMAGE] - Taking picture...
+[2026-03-16 15:48:59,812][Drone 1][INFO][CAMERA_IMAGE] - Picture taken successfully as 40.20973_-3.466557.jpg
+[2026-03-16 15:48:59,812][Drone 1][INFO][COMMANDS] - Command executed successfully
+[2026-03-16 15:48:59,815][Drone 1][INFO][gRPC Commands] - Feedback sent to ROS2
+[2026-03-16 15:49:00,841][Drone 1][INFO][gRPC Commands] - Command received
+[2026-03-16 15:49:00,841][Drone 1][INFO][COMMANDS] - Processing ANALYZE_IMAGE command
+[2026-03-16 15:49:00,841][Drone 1][INFO][ANALYZE_IMAGE] - Analyzing image...
+[2026-03-16 15:49:00,842][Drone 1][INFO][ANALYZE_IMAGE] - Starting analysis for agricultural image: Images/Camera/40.20973_-3.466557.jpg
+[2026-03-16 15:49:00,842][Drone 1][INFO][ANALYZE_IMAGE] - Executing agricultural model: Images/Models/Grape_Bunch_Hailo8/init_grape_bunch_hailo8.py
+[2026-03-16 15:49:02,632][Drone 1][INFO][ANALYZE_IMAGE] - Model execution completed with output: {'Grape_bunch': 3.95}
+[2026-03-16 15:49:03,632][Drone 1][INFO][ANALYZE_IMAGE] - Analysis completed
+[2026-03-16 15:49:03,633][Drone 1][INFO][PM_MANAGER] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus.py
+[2026-03-16 15:49:03,697][Drone 1][INFO][PM_MANAGER] - PM output [0]: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/isobus_pm.json with treatments: {'Grape_bunch': 3.95} at grid: [0, 2]
+[2026-03-16 15:49:03,700][Drone 1][INFO][COMMANDS] - Command executed successfully
+[2026-03-16 15:49:03,704][Drone 1][INFO][gRPC Commands] - Feedback sent to ROS2
+[2026-03-16 15:49:04,742][Drone 1][INFO][gRPC Commands] - Command received
+[2026-03-16 15:49:04,743][Drone 1][INFO][COMMANDS] - Processing NAV_WAYPOINT command
+[2026-03-16 15:49:04,743][Drone 1][INFO][NAV_WAYPOINT] - Going to WP...
+[2026-03-16 15:49:06,743][Drone 1][INFO][NAV_WAYPOINT] - Waypoint reached
+[2026-03-16 15:49:06,744][Drone 1][INFO][COMMANDS] - Command executed successfully
+[2026-03-16 15:49:06,747][Drone 1][INFO][gRPC Commands] - Feedback sent to ROS2
+[2026-03-16 15:49:07,282][Drone 1][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2026-03-16 15:49:07,795][Drone 1][INFO][gRPC Commands] - Command received
+[2026-03-16 15:49:07,796][Drone 1][INFO][COMMANDS] - Processing CAMERA_IMAGE command
+[2026-03-16 15:49:07,796][Drone 1][INFO][CAMERA_IMAGE] - Taking picture...
+[2026-03-16 15:49:08,842][Drone 1][INFO][CAMERA_IMAGE] - Picture taken successfully as 40.20973_-3.466312.jpg
+[2026-03-16 15:49:08,843][Drone 1][INFO][COMMANDS] - Command executed successfully
+[2026-03-16 15:49:08,847][Drone 1][INFO][gRPC Commands] - Feedback sent to ROS2
+[2026-03-16 15:49:09,873][Drone 1][INFO][gRPC Commands] - Command received
+[2026-03-16 15:49:09,873][Drone 1][INFO][COMMANDS] - Processing ANALYZE_IMAGE command
+[2026-03-16 15:49:09,874][Drone 1][INFO][ANALYZE_IMAGE] - Analyzing image...
+[2026-03-16 15:49:09,874][Drone 1][INFO][ANALYZE_IMAGE] - Starting analysis for agricultural image: Images/Camera/40.20973_-3.466312.jpg
+[2026-03-16 15:49:09,874][Drone 1][INFO][ANALYZE_IMAGE] - Executing agricultural model: Images/Models/Grape_Bunch_Hailo8/init_grape_bunch_hailo8.py
+[2026-03-16 15:49:11,759][Drone 1][INFO][ANALYZE_IMAGE] - Model execution completed with output: {'Grape_bunch': 7.95}
+[2026-03-16 15:49:12,760][Drone 1][INFO][ANALYZE_IMAGE] - Analysis completed
+[2026-03-16 15:49:12,760][Drone 1][INFO][PM_MANAGER] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus.py
+[2026-03-16 15:49:12,829][Drone 1][INFO][PM_MANAGER] - PM output [0]: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/isobus_pm.json with treatments: {'Grape_bunch': 7.95} at grid: [0, 3]
+[2026-03-16 15:49:12,833][Drone 1][INFO][COMMANDS] - Command executed successfully
+[2026-03-16 15:49:12,838][Drone 1][INFO][gRPC Commands] - Feedback sent to ROS2
+[2026-03-16 15:49:13,859][Drone 1][INFO][gRPC Commands] - Command received
+[2026-03-16 15:49:13,859][Drone 1][INFO][COMMANDS] - Processing NAV_WAYPOINT command
+[2026-03-16 15:49:13,859][Drone 1][INFO][NAV_WAYPOINT] - Going to WP...
+[2026-03-16 15:49:15,859][Drone 1][INFO][NAV_WAYPOINT] - Waypoint reached
+[2026-03-16 15:49:15,860][Drone 1][INFO][COMMANDS] - Command executed successfully
+[2026-03-16 15:49:15,863][Drone 1][INFO][gRPC Commands] - Feedback sent to ROS2
+[2026-03-16 15:49:16,885][Drone 1][INFO][gRPC Commands] - Command received
+[2026-03-16 15:49:16,886][Drone 1][INFO][COMMANDS] - Processing CAMERA_IMAGE command
+[2026-03-16 15:49:16,887][Drone 1][INFO][CAMERA_IMAGE] - Taking picture...
+[2026-03-16 15:49:17,317][Drone 1][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2026-03-16 15:49:17,927][Drone 1][INFO][CAMERA_IMAGE] - Picture taken successfully as 40.20973_-3.466066.jpg
+[2026-03-16 15:49:17,927][Drone 1][INFO][COMMANDS] - Command executed successfully
+[2026-03-16 15:49:17,931][Drone 1][INFO][gRPC Commands] - Feedback sent to ROS2
+[2026-03-16 15:49:18,954][Drone 1][INFO][gRPC Commands] - Command received
+[2026-03-16 15:49:18,956][Drone 1][INFO][COMMANDS] - Processing ANALYZE_IMAGE command
+[2026-03-16 15:49:18,956][Drone 1][INFO][ANALYZE_IMAGE] - Analyzing image...
+[2026-03-16 15:49:18,957][Drone 1][INFO][ANALYZE_IMAGE] - Starting analysis for agricultural image: Images/Camera/40.20973_-3.466066.jpg
+[2026-03-16 15:49:18,957][Drone 1][INFO][ANALYZE_IMAGE] - Executing agricultural model: Images/Models/Grape_Bunch_Hailo8/init_grape_bunch_hailo8.py
+[2026-03-16 15:49:20,653][Drone 1][INFO][ANALYZE_IMAGE] - Model execution completed with output: {'Grape_bunch': 9.95}
+[2026-03-16 15:49:21,653][Drone 1][INFO][ANALYZE_IMAGE] - Analysis completed
+[2026-03-16 15:49:21,654][Drone 1][INFO][PM_MANAGER] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus.py
+[2026-03-16 15:49:21,730][Drone 1][INFO][PM_MANAGER] - PM output [0]: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/isobus_pm.json with treatments: {'Grape_bunch': 9.95} at grid: [0, 4]
+[2026-03-16 15:49:21,736][Drone 1][INFO][COMMANDS] - Command executed successfully
+[2026-03-16 15:49:21,740][Drone 1][INFO][gRPC Commands] - Feedback sent to ROS2
+[2026-03-16 15:49:22,763][Drone 1][INFO][gRPC Commands] - Command received
+[2026-03-16 15:49:22,763][Drone 1][INFO][COMMANDS] - Processing NAV_WAYPOINT command
+[2026-03-16 15:49:22,763][Drone 1][INFO][NAV_WAYPOINT] - Going to WP...
+[2026-03-16 15:49:24,763][Drone 1][INFO][NAV_WAYPOINT] - Waypoint reached
+[2026-03-16 15:49:24,764][Drone 1][INFO][COMMANDS] - Command executed successfully
+[2026-03-16 15:49:24,769][Drone 1][INFO][gRPC Commands] - Feedback sent to ROS2
+[2026-03-16 15:49:25,789][Drone 1][INFO][gRPC Commands] - Command received
+[2026-03-16 15:49:25,790][Drone 1][INFO][COMMANDS] - Processing CAMERA_IMAGE command
+[2026-03-16 15:49:25,790][Drone 1][INFO][CAMERA_IMAGE] - Taking picture...
+[2026-03-16 15:49:26,835][Drone 1][INFO][CAMERA_IMAGE] - Picture taken successfully as 40.20973_-3.465821.jpg
+[2026-03-16 15:49:26,835][Drone 1][INFO][COMMANDS] - Command executed successfully
+[2026-03-16 15:49:26,839][Drone 1][INFO][gRPC Commands] - Feedback sent to ROS2
+[2026-03-16 15:49:27,356][Drone 1][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2026-03-16 15:49:27,858][Drone 1][INFO][gRPC Commands] - Command received
+[2026-03-16 15:49:27,858][Drone 1][INFO][COMMANDS] - Processing ANALYZE_IMAGE command
+[2026-03-16 15:49:27,858][Drone 1][INFO][ANALYZE_IMAGE] - Analyzing image...
+[2026-03-16 15:49:27,858][Drone 1][INFO][ANALYZE_IMAGE] - Starting analysis for agricultural image: Images/Camera/40.20973_-3.465821.jpg
+[2026-03-16 15:49:27,858][Drone 1][INFO][ANALYZE_IMAGE] - Executing agricultural model: Images/Models/Grape_Bunch_Hailo8/init_grape_bunch_hailo8.py
+[2026-03-16 15:49:29,509][Drone 1][INFO][ANALYZE_IMAGE] - Model execution completed with output: {'Grape_bunch': 3.95}
+[2026-03-16 15:49:30,509][Drone 1][INFO][ANALYZE_IMAGE] - Analysis completed
+[2026-03-16 15:49:30,510][Drone 1][INFO][PM_MANAGER] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus.py
+[2026-03-16 15:49:30,573][Drone 1][INFO][PM_MANAGER] - PM output [0]: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/isobus_pm.json with treatments: {'Grape_bunch': 3.95} at grid: [0, 5]
+[2026-03-16 15:49:30,576][Drone 1][INFO][COMMANDS] - Command executed successfully
+[2026-03-16 15:49:30,579][Drone 1][INFO][gRPC Commands] - Feedback sent to ROS2
+[2026-03-16 15:49:31,601][Drone 1][INFO][gRPC Commands] - Command received
+[2026-03-16 15:49:31,601][Drone 1][INFO][COMMANDS] - Processing NAV_WAYPOINT command
+[2026-03-16 15:49:31,602][Drone 1][INFO][NAV_WAYPOINT] - Going to WP...
+[2026-03-16 15:49:33,602][Drone 1][INFO][NAV_WAYPOINT] - Waypoint reached
+[2026-03-16 15:49:33,607][Drone 1][INFO][COMMANDS] - Command executed successfully
+[2026-03-16 15:49:33,615][Drone 1][INFO][gRPC Commands] - Feedback sent to ROS2
+[2026-03-16 15:49:34,637][Drone 1][INFO][gRPC Commands] - Command received
+[2026-03-16 15:49:34,637][Drone 1][INFO][COMMANDS] - Processing CAMERA_IMAGE command
+[2026-03-16 15:49:34,637][Drone 1][INFO][CAMERA_IMAGE] - Taking picture...
+[2026-03-16 15:49:35,709][Drone 1][INFO][CAMERA_IMAGE] - Picture taken successfully as 40.20973_-3.465575.jpg
+[2026-03-16 15:49:35,709][Drone 1][INFO][COMMANDS] - Command executed successfully
+[2026-03-16 15:49:35,713][Drone 1][INFO][gRPC Commands] - Feedback sent to ROS2
+[2026-03-16 15:49:36,740][Drone 1][INFO][gRPC Commands] - Command received
+[2026-03-16 15:49:36,740][Drone 1][INFO][COMMANDS] - Processing ANALYZE_IMAGE command
+[2026-03-16 15:49:36,740][Drone 1][INFO][ANALYZE_IMAGE] - Analyzing image...
+[2026-03-16 15:49:36,741][Drone 1][INFO][ANALYZE_IMAGE] - Starting analysis for agricultural image: Images/Camera/40.20973_-3.465575.jpg
+[2026-03-16 15:49:36,741][Drone 1][INFO][ANALYZE_IMAGE] - Executing agricultural model: Images/Models/Grape_Bunch_Hailo8/init_grape_bunch_hailo8.py
+[2026-03-16 15:49:37,423][Drone 1][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2026-03-16 15:49:39,277][Drone 1][INFO][ANALYZE_IMAGE] - Model execution completed with output: {'Grape_bunch': 3.95}
+[2026-03-16 15:49:40,277][Drone 1][INFO][ANALYZE_IMAGE] - Analysis completed
+[2026-03-16 15:49:40,278][Drone 1][INFO][PM_MANAGER] - Running PM generator: PrescriptionMap/pm_generation/ISOBUS/pm_isobus.py
+[2026-03-16 15:49:40,346][Drone 1][INFO][PM_MANAGER] - PM output [0]: 
+ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/isobus_pm.json with treatments: {'Grape_bunch': 3.95} at grid: [0, 6]
+[2026-03-16 15:49:40,350][Drone 1][INFO][COMMANDS] - Command executed successfully
+[2026-03-16 15:49:40,354][Drone 1][INFO][gRPC Commands] - Feedback sent to ROS2
+[2026-03-16 15:49:41,380][Drone 1][INFO][gRPC Commands] - Command received
+[2026-03-16 15:49:41,383][Drone 1][INFO][COMMANDS] - Processing NAV_HOME command
+[2026-03-16 15:49:41,383][Drone 1][INFO][NAV_HOME] - Returning home...
+[2026-03-16 15:49:41,384][Drone 1][INFO][gRPC PM] - Sending PM to ROS2
+[2026-03-16 15:49:41,393][Drone 1][INFO][gRPC PM] - ACK received from ROS2
+[2026-03-16 15:49:41,394][Drone 1][INFO][PM Manager] - Moved sent file to Finished: isobus_pm.json -> 20260316_154941_isobus_pm.json
+[2026-03-16 15:49:43,395][Drone 1][INFO][NAV_HOME] - Return home successful
+[2026-03-16 15:49:43,395][Drone 1][INFO][COMMANDS] - Command executed successfully
+[2026-03-16 15:49:43,400][Drone 1][INFO][gRPC Commands] - Feedback sent to ROS2
+[2026-03-16 15:49:44,431][Drone 1][INFO][gRPC Commands] - Command received
+[2026-03-16 15:49:44,431][Drone 1][INFO][COMMANDS] - Processing NAV_LAND command
+[2026-03-16 15:49:44,432][Drone 1][INFO][NAV_LAND] - Landing...

@@ -9383,3 +9383,307 @@ FileNotFoundError: [Errno 2] No such file or directory: 'PrescriptionMap/pm_gene
 [2026-03-12 18:52:30,402][Drone 2][INFO][gRPC Metrics] - System Metrics sent to ROS2
 [2026-03-12 18:52:40,438][Drone 2][INFO][gRPC Metrics] - System Metrics sent to ROS2
 [2026-03-12 18:52:50,475][Drone 2][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2026-03-16 15:32:10,947][Drone 2][INFO][Init Drone] - Complete cleanup finished
+[2026-03-16 15:32:10,948][Drone 2][INFO][gRPC Metrics] - Metrics client thread started successfully
+[2026-03-16 15:32:10,949][Drone 2][INFO][Init Drone] - All system components initialized successfully
+[2026-03-16 15:32:11,008][Drone 2][INFO][gRPC Commands] - Server running on port 52001
+[2026-03-16 15:32:11,051][Drone 2][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2026-03-16 15:32:21,090][Drone 2][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2026-03-16 15:32:31,126][Drone 2][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2026-03-16 15:32:41,163][Drone 2][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2026-03-16 15:32:51,202][Drone 2][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2026-03-16 15:33:01,235][Drone 2][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2026-03-16 15:33:11,273][Drone 2][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2026-03-16 15:33:21,306][Drone 2][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2026-03-16 15:33:31,339][Drone 2][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2026-03-16 15:33:41,375][Drone 2][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2026-03-16 15:33:51,413][Drone 2][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2026-03-16 15:34:01,449][Drone 2][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2026-03-16 15:34:11,489][Drone 2][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2026-03-16 15:34:21,530][Drone 2][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2026-03-16 15:34:31,563][Drone 2][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2026-03-16 15:34:41,596][Drone 2][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2026-03-16 15:34:51,631][Drone 2][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2026-03-16 15:35:01,668][Drone 2][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2026-03-16 15:35:07,528][Drone 2][INFO][gRPC Commands] - Command received
+[2026-03-16 15:35:07,529][Drone 2][INFO][COMMANDS] - Processing NAV_TAKEOFF command
+[2026-03-16 15:35:07,530][Drone 2][INFO][NAV_TAKEOFF] - Taking off...
+[2026-03-16 15:35:09,530][Drone 2][INFO][NAV_TAKEOFF] - Takeoff successful
+[2026-03-16 15:35:09,530][Drone 2][INFO][COMMANDS] - Command executed successfully
+[2026-03-16 15:35:09,533][Drone 2][INFO][gRPC Commands] - Feedback sent to ROS2
+[2026-03-16 15:35:10,552][Drone 2][INFO][gRPC Commands] - Command received
+[2026-03-16 15:35:10,553][Drone 2][INFO][COMMANDS] - Processing NAV_WAYPOINT command
+[2026-03-16 15:35:10,553][Drone 2][INFO][NAV_WAYPOINT] - Going to WP...
+[2026-03-16 15:35:11,706][Drone 2][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2026-03-16 15:35:12,553][Drone 2][INFO][NAV_WAYPOINT] - Waypoint reached
+[2026-03-16 15:35:12,554][Drone 2][INFO][COMMANDS] - Command executed successfully
+[2026-03-16 15:35:12,558][Drone 2][INFO][gRPC Commands] - Feedback sent to ROS2
+[2026-03-16 15:35:13,577][Drone 2][INFO][gRPC Commands] - Command received
+[2026-03-16 15:35:13,578][Drone 2][INFO][COMMANDS] - Processing NAV_WAYPOINT command
+[2026-03-16 15:35:13,578][Drone 2][INFO][NAV_WAYPOINT] - Going to WP...
+[2026-03-16 15:35:15,578][Drone 2][INFO][NAV_WAYPOINT] - Waypoint reached
+[2026-03-16 15:35:15,578][Drone 2][INFO][COMMANDS] - Command executed successfully
+[2026-03-16 15:35:15,581][Drone 2][INFO][gRPC Commands] - Feedback sent to ROS2
+[2026-03-16 15:35:16,600][Drone 2][INFO][gRPC Commands] - Command received
+[2026-03-16 15:35:16,600][Drone 2][INFO][COMMANDS] - Processing SPRAY command
+[2026-03-16 15:35:16,601][Drone 2][INFO][SPRAY] - Spraying...
+[2026-03-16 15:35:18,601][Drone 2][INFO][SPRAY] - Spray operation successful
+[2026-03-16 15:35:18,601][Drone 2][INFO][COMMANDS] - Command executed successfully
+[2026-03-16 15:35:18,605][Drone 2][INFO][gRPC Commands] - Feedback sent to ROS2
+[2026-03-16 15:35:19,626][Drone 2][INFO][gRPC Commands] - Command received
+[2026-03-16 15:35:19,627][Drone 2][INFO][COMMANDS] - Processing NAV_WAYPOINT command
+[2026-03-16 15:35:19,627][Drone 2][INFO][NAV_WAYPOINT] - Going to WP...
+[2026-03-16 15:35:21,627][Drone 2][INFO][NAV_WAYPOINT] - Waypoint reached
+[2026-03-16 15:35:21,628][Drone 2][INFO][COMMANDS] - Command executed successfully
+[2026-03-16 15:35:21,632][Drone 2][INFO][gRPC Commands] - Feedback sent to ROS2
+[2026-03-16 15:35:21,742][Drone 2][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2026-03-16 15:35:22,656][Drone 2][INFO][gRPC Commands] - Command received
+[2026-03-16 15:35:22,656][Drone 2][INFO][COMMANDS] - Processing SPRAY command
+[2026-03-16 15:35:22,656][Drone 2][INFO][SPRAY] - Spraying...
+[2026-03-16 15:35:24,657][Drone 2][INFO][SPRAY] - Spray operation successful
+[2026-03-16 15:35:24,657][Drone 2][INFO][COMMANDS] - Command executed successfully
+[2026-03-16 15:35:24,660][Drone 2][INFO][gRPC Commands] - Feedback sent to ROS2
+[2026-03-16 15:35:25,682][Drone 2][INFO][gRPC Commands] - Command received
+[2026-03-16 15:35:25,683][Drone 2][INFO][COMMANDS] - Processing NAV_WAYPOINT command
+[2026-03-16 15:35:25,683][Drone 2][INFO][NAV_WAYPOINT] - Going to WP...
+[2026-03-16 15:35:27,683][Drone 2][INFO][NAV_WAYPOINT] - Waypoint reached
+[2026-03-16 15:35:27,683][Drone 2][INFO][COMMANDS] - Command executed successfully
+[2026-03-16 15:35:27,687][Drone 2][INFO][gRPC Commands] - Feedback sent to ROS2
+[2026-03-16 15:35:28,712][Drone 2][INFO][gRPC Commands] - Command received
+[2026-03-16 15:35:28,712][Drone 2][INFO][COMMANDS] - Processing SPRAY command
+[2026-03-16 15:35:28,712][Drone 2][INFO][SPRAY] - Spraying...
+[2026-03-16 15:35:30,712][Drone 2][INFO][SPRAY] - Spray operation successful
+[2026-03-16 15:35:30,713][Drone 2][INFO][COMMANDS] - Command executed successfully
+[2026-03-16 15:35:30,716][Drone 2][INFO][gRPC Commands] - Feedback sent to ROS2
+[2026-03-16 15:35:31,756][Drone 2][INFO][gRPC Commands] - Command received
+[2026-03-16 15:35:31,756][Drone 2][INFO][COMMANDS] - Processing NAV_WAYPOINT command
+[2026-03-16 15:35:31,757][Drone 2][INFO][NAV_WAYPOINT] - Going to WP...
+[2026-03-16 15:35:31,778][Drone 2][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2026-03-16 15:35:33,757][Drone 2][INFO][NAV_WAYPOINT] - Waypoint reached
+[2026-03-16 15:35:33,757][Drone 2][INFO][COMMANDS] - Command executed successfully
+[2026-03-16 15:35:33,761][Drone 2][INFO][gRPC Commands] - Feedback sent to ROS2
+[2026-03-16 15:35:34,787][Drone 2][INFO][gRPC Commands] - Command received
+[2026-03-16 15:35:34,787][Drone 2][INFO][COMMANDS] - Processing SPRAY command
+[2026-03-16 15:35:34,788][Drone 2][INFO][SPRAY] - Spraying...
+[2026-03-16 15:35:36,788][Drone 2][INFO][SPRAY] - Spray operation successful
+[2026-03-16 15:35:36,789][Drone 2][INFO][COMMANDS] - Command executed successfully
+[2026-03-16 15:35:36,792][Drone 2][INFO][gRPC Commands] - Feedback sent to ROS2
+[2026-03-16 15:35:37,817][Drone 2][INFO][gRPC Commands] - Command received
+[2026-03-16 15:35:37,817][Drone 2][INFO][COMMANDS] - Processing NAV_WAYPOINT command
+[2026-03-16 15:35:37,818][Drone 2][INFO][NAV_WAYPOINT] - Going to WP...
+[2026-03-16 15:35:39,818][Drone 2][INFO][NAV_WAYPOINT] - Waypoint reached
+[2026-03-16 15:35:39,818][Drone 2][INFO][COMMANDS] - Command executed successfully
+[2026-03-16 15:35:39,822][Drone 2][INFO][gRPC Commands] - Feedback sent to ROS2
+[2026-03-16 15:35:40,845][Drone 2][INFO][gRPC Commands] - Command received
+[2026-03-16 15:35:40,845][Drone 2][INFO][COMMANDS] - Processing SPRAY command
+[2026-03-16 15:35:40,846][Drone 2][INFO][SPRAY] - Spraying...
+[2026-03-16 15:35:41,811][Drone 2][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2026-03-16 15:35:42,846][Drone 2][INFO][SPRAY] - Spray operation successful
+[2026-03-16 15:35:42,846][Drone 2][INFO][COMMANDS] - Command executed successfully
+[2026-03-16 15:35:42,849][Drone 2][INFO][gRPC Commands] - Feedback sent to ROS2
+[2026-03-16 15:35:43,871][Drone 2][INFO][gRPC Commands] - Command received
+[2026-03-16 15:35:43,872][Drone 2][INFO][COMMANDS] - Processing NAV_WAYPOINT command
+[2026-03-16 15:35:43,872][Drone 2][INFO][NAV_WAYPOINT] - Going to WP...
+[2026-03-16 15:35:45,873][Drone 2][INFO][NAV_WAYPOINT] - Waypoint reached
+[2026-03-16 15:35:45,873][Drone 2][INFO][COMMANDS] - Command executed successfully
+[2026-03-16 15:35:45,877][Drone 2][INFO][gRPC Commands] - Feedback sent to ROS2
+[2026-03-16 15:35:46,903][Drone 2][INFO][gRPC Commands] - Command received
+[2026-03-16 15:35:46,904][Drone 2][INFO][COMMANDS] - Processing SPRAY command
+[2026-03-16 15:35:46,904][Drone 2][INFO][SPRAY] - Spraying...
+[2026-03-16 15:35:48,904][Drone 2][INFO][SPRAY] - Spray operation successful
+[2026-03-16 15:35:48,904][Drone 2][INFO][COMMANDS] - Command executed successfully
+[2026-03-16 15:35:48,909][Drone 2][INFO][gRPC Commands] - Feedback sent to ROS2
+[2026-03-16 15:35:49,930][Drone 2][INFO][gRPC Commands] - Command received
+[2026-03-16 15:35:49,930][Drone 2][INFO][COMMANDS] - Processing NAV_WAYPOINT command
+[2026-03-16 15:35:49,931][Drone 2][INFO][NAV_WAYPOINT] - Going to WP...
+[2026-03-16 15:35:51,844][Drone 2][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2026-03-16 15:35:51,931][Drone 2][INFO][NAV_WAYPOINT] - Waypoint reached
+[2026-03-16 15:35:51,931][Drone 2][INFO][COMMANDS] - Command executed successfully
+[2026-03-16 15:35:51,934][Drone 2][INFO][gRPC Commands] - Feedback sent to ROS2
+[2026-03-16 15:35:52,956][Drone 2][INFO][gRPC Commands] - Command received
+[2026-03-16 15:35:52,957][Drone 2][INFO][COMMANDS] - Processing SPRAY command
+[2026-03-16 15:35:52,957][Drone 2][INFO][SPRAY] - Spraying...
+[2026-03-16 15:35:54,957][Drone 2][INFO][SPRAY] - Spray operation successful
+[2026-03-16 15:35:54,958][Drone 2][INFO][COMMANDS] - Command executed successfully
+[2026-03-16 15:35:54,961][Drone 2][INFO][gRPC Commands] - Feedback sent to ROS2
+[2026-03-16 15:35:55,985][Drone 2][INFO][gRPC Commands] - Command received
+[2026-03-16 15:35:55,985][Drone 2][INFO][COMMANDS] - Processing NAV_WAYPOINT command
+[2026-03-16 15:35:55,985][Drone 2][INFO][NAV_WAYPOINT] - Going to WP...
+[2026-03-16 15:35:57,986][Drone 2][INFO][NAV_WAYPOINT] - Waypoint reached
+[2026-03-16 15:35:57,986][Drone 2][INFO][COMMANDS] - Command executed successfully
+[2026-03-16 15:35:57,990][Drone 2][INFO][gRPC Commands] - Feedback sent to ROS2
+[2026-03-16 15:35:59,030][Drone 2][INFO][gRPC Commands] - Command received
+[2026-03-16 15:35:59,030][Drone 2][INFO][COMMANDS] - Processing SPRAY command
+[2026-03-16 15:35:59,031][Drone 2][INFO][SPRAY] - Spraying...
+[2026-03-16 15:36:01,031][Drone 2][INFO][SPRAY] - Spray operation successful
+[2026-03-16 15:36:01,031][Drone 2][INFO][COMMANDS] - Command executed successfully
+[2026-03-16 15:36:01,034][Drone 2][INFO][gRPC Commands] - Feedback sent to ROS2
+[2026-03-16 15:36:01,880][Drone 2][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2026-03-16 15:36:02,055][Drone 2][INFO][gRPC Commands] - Command received
+[2026-03-16 15:36:02,056][Drone 2][INFO][COMMANDS] - Processing NAV_WAYPOINT command
+[2026-03-16 15:36:02,056][Drone 2][INFO][NAV_WAYPOINT] - Going to WP...
+[2026-03-16 15:36:04,056][Drone 2][INFO][NAV_WAYPOINT] - Waypoint reached
+[2026-03-16 15:36:04,056][Drone 2][INFO][COMMANDS] - Command executed successfully
+[2026-03-16 15:36:04,060][Drone 2][INFO][gRPC Commands] - Feedback sent to ROS2
+[2026-03-16 15:36:05,119][Drone 2][INFO][gRPC Commands] - Command received
+[2026-03-16 15:36:05,119][Drone 2][INFO][COMMANDS] - Processing SPRAY command
+[2026-03-16 15:36:05,119][Drone 2][INFO][SPRAY] - Spraying...
+[2026-03-16 15:36:07,120][Drone 2][INFO][SPRAY] - Spray operation successful
+[2026-03-16 15:36:07,120][Drone 2][INFO][COMMANDS] - Command executed successfully
+[2026-03-16 15:36:07,124][Drone 2][INFO][gRPC Commands] - Feedback sent to ROS2
+[2026-03-16 15:36:08,148][Drone 2][INFO][gRPC Commands] - Command received
+[2026-03-16 15:36:08,148][Drone 2][INFO][COMMANDS] - Processing NAV_WAYPOINT command
+[2026-03-16 15:36:08,148][Drone 2][INFO][NAV_WAYPOINT] - Going to WP...
+[2026-03-16 15:36:10,148][Drone 2][INFO][NAV_WAYPOINT] - Waypoint reached
+[2026-03-16 15:36:10,149][Drone 2][INFO][COMMANDS] - Command executed successfully
+[2026-03-16 15:36:10,151][Drone 2][INFO][gRPC Commands] - Feedback sent to ROS2
+[2026-03-16 15:36:11,171][Drone 2][INFO][gRPC Commands] - Command received
+[2026-03-16 15:36:11,171][Drone 2][INFO][COMMANDS] - Processing SPRAY command
+[2026-03-16 15:36:11,172][Drone 2][INFO][SPRAY] - Spraying...
+[2026-03-16 15:36:11,913][Drone 2][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2026-03-16 15:36:13,172][Drone 2][INFO][SPRAY] - Spray operation successful
+[2026-03-16 15:36:13,172][Drone 2][INFO][COMMANDS] - Command executed successfully
+[2026-03-16 15:36:13,175][Drone 2][INFO][gRPC Commands] - Feedback sent to ROS2
+[2026-03-16 15:36:14,200][Drone 2][INFO][gRPC Commands] - Command received
+[2026-03-16 15:36:14,200][Drone 2][INFO][COMMANDS] - Processing NAV_WAYPOINT command
+[2026-03-16 15:36:14,201][Drone 2][INFO][NAV_WAYPOINT] - Going to WP...
+[2026-03-16 15:36:16,201][Drone 2][INFO][NAV_WAYPOINT] - Waypoint reached
+[2026-03-16 15:36:16,201][Drone 2][INFO][COMMANDS] - Command executed successfully
+[2026-03-16 15:36:16,205][Drone 2][INFO][gRPC Commands] - Feedback sent to ROS2
+[2026-03-16 15:36:17,225][Drone 2][INFO][gRPC Commands] - Command received
+[2026-03-16 15:36:17,225][Drone 2][INFO][COMMANDS] - Processing SPRAY command
+[2026-03-16 15:36:17,225][Drone 2][INFO][SPRAY] - Spraying...
+[2026-03-16 15:36:19,225][Drone 2][INFO][SPRAY] - Spray operation successful
+[2026-03-16 15:36:19,226][Drone 2][INFO][COMMANDS] - Command executed successfully
+[2026-03-16 15:36:19,229][Drone 2][INFO][gRPC Commands] - Feedback sent to ROS2
+[2026-03-16 15:36:20,249][Drone 2][INFO][gRPC Commands] - Command received
+[2026-03-16 15:36:20,249][Drone 2][INFO][COMMANDS] - Processing NAV_WAYPOINT command
+[2026-03-16 15:36:20,250][Drone 2][INFO][NAV_WAYPOINT] - Going to WP...
+[2026-03-16 15:36:21,951][Drone 2][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2026-03-16 15:36:22,250][Drone 2][INFO][NAV_WAYPOINT] - Waypoint reached
+[2026-03-16 15:36:22,250][Drone 2][INFO][COMMANDS] - Command executed successfully
+[2026-03-16 15:36:22,254][Drone 2][INFO][gRPC Commands] - Feedback sent to ROS2
+[2026-03-16 15:36:23,273][Drone 2][INFO][gRPC Commands] - Command received
+[2026-03-16 15:36:23,274][Drone 2][INFO][COMMANDS] - Processing SPRAY command
+[2026-03-16 15:36:23,274][Drone 2][INFO][SPRAY] - Spraying...
+[2026-03-16 15:36:25,274][Drone 2][INFO][SPRAY] - Spray operation successful
+[2026-03-16 15:36:25,275][Drone 2][INFO][COMMANDS] - Command executed successfully
+[2026-03-16 15:36:25,278][Drone 2][INFO][gRPC Commands] - Feedback sent to ROS2
+[2026-03-16 15:36:26,317][Drone 2][INFO][gRPC Commands] - Command received
+[2026-03-16 15:36:26,318][Drone 2][INFO][COMMANDS] - Processing NAV_WAYPOINT command
+[2026-03-16 15:36:26,318][Drone 2][INFO][NAV_WAYPOINT] - Going to WP...
+[2026-03-16 15:36:28,318][Drone 2][INFO][NAV_WAYPOINT] - Waypoint reached
+[2026-03-16 15:36:28,319][Drone 2][INFO][COMMANDS] - Command executed successfully
+[2026-03-16 15:36:28,322][Drone 2][INFO][gRPC Commands] - Feedback sent to ROS2
+[2026-03-16 15:36:29,352][Drone 2][INFO][gRPC Commands] - Command received
+[2026-03-16 15:36:29,352][Drone 2][INFO][COMMANDS] - Processing SPRAY command
+[2026-03-16 15:36:29,352][Drone 2][INFO][SPRAY] - Spraying...
+[2026-03-16 15:36:31,352][Drone 2][INFO][SPRAY] - Spray operation successful
+[2026-03-16 15:36:31,353][Drone 2][INFO][COMMANDS] - Command executed successfully
+[2026-03-16 15:36:31,356][Drone 2][INFO][gRPC Commands] - Feedback sent to ROS2
+[2026-03-16 15:36:31,984][Drone 2][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2026-03-16 15:36:32,379][Drone 2][INFO][gRPC Commands] - Command received
+[2026-03-16 15:36:32,380][Drone 2][INFO][COMMANDS] - Processing NAV_WAYPOINT command
+[2026-03-16 15:36:32,380][Drone 2][INFO][NAV_WAYPOINT] - Going to WP...
+[2026-03-16 15:36:34,380][Drone 2][INFO][NAV_WAYPOINT] - Waypoint reached
+[2026-03-16 15:36:34,381][Drone 2][INFO][COMMANDS] - Command executed successfully
+[2026-03-16 15:36:34,384][Drone 2][INFO][gRPC Commands] - Feedback sent to ROS2
+[2026-03-16 15:36:35,412][Drone 2][INFO][gRPC Commands] - Command received
+[2026-03-16 15:36:35,412][Drone 2][INFO][COMMANDS] - Processing SPRAY command
+[2026-03-16 15:36:35,412][Drone 2][INFO][SPRAY] - Spraying...
+[2026-03-16 15:36:37,413][Drone 2][INFO][SPRAY] - Spray operation successful
+[2026-03-16 15:36:37,413][Drone 2][INFO][COMMANDS] - Command executed successfully
+[2026-03-16 15:36:37,416][Drone 2][INFO][gRPC Commands] - Feedback sent to ROS2
+[2026-03-16 15:36:38,435][Drone 2][INFO][gRPC Commands] - Command received
+[2026-03-16 15:36:38,436][Drone 2][INFO][COMMANDS] - Processing NAV_HOME command
+[2026-03-16 15:36:38,436][Drone 2][INFO][NAV_HOME] - Returning home...
+[2026-03-16 15:36:40,436][Drone 2][INFO][NAV_HOME] - Return home successful
+[2026-03-16 15:36:40,436][Drone 2][INFO][COMMANDS] - Command executed successfully
+[2026-03-16 15:36:40,439][Drone 2][INFO][gRPC Commands] - Feedback sent to ROS2
+[2026-03-16 15:36:41,460][Drone 2][INFO][gRPC Commands] - Command received
+[2026-03-16 15:36:41,461][Drone 2][INFO][COMMANDS] - Processing NAV_LAND command
+[2026-03-16 15:36:41,461][Drone 2][INFO][NAV_LAND] - Landing...
+[2026-03-16 15:36:42,016][Drone 2][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2026-03-16 15:36:43,461][Drone 2][INFO][NAV_LAND] - Landing successful
+[2026-03-16 15:36:43,462][Drone 2][INFO][COMMANDS] - Command executed successfully
+[2026-03-16 15:36:43,465][Drone 2][INFO][gRPC Commands] - Feedback sent to ROS2
+[2026-03-16 15:36:52,054][Drone 2][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2026-03-16 15:37:02,090][Drone 2][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2026-03-16 15:37:12,126][Drone 2][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2026-03-16 15:37:22,163][Drone 2][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2026-03-16 15:37:32,202][Drone 2][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2026-03-16 15:37:42,238][Drone 2][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2026-03-16 15:37:52,276][Drone 2][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2026-03-16 15:38:02,309][Drone 2][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2026-03-16 15:38:12,347][Drone 2][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2026-03-16 15:38:22,383][Drone 2][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2026-03-16 15:38:32,420][Drone 2][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2026-03-16 15:38:42,466][Drone 2][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2026-03-16 15:38:52,504][Drone 2][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2026-03-16 15:39:02,545][Drone 2][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2026-03-16 15:39:12,628][Drone 2][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2026-03-16 15:39:22,666][Drone 2][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2026-03-16 15:39:32,702][Drone 2][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2026-03-16 15:39:42,740][Drone 2][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2026-03-16 15:39:52,773][Drone 2][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2026-03-16 15:40:02,894][Drone 2][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2026-03-16 15:40:12,971][Drone 2][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2026-03-16 15:40:23,028][Drone 2][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2026-03-16 15:40:33,061][Drone 2][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2026-03-16 15:40:43,094][Drone 2][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2026-03-16 15:40:53,130][Drone 2][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2026-03-16 15:41:03,167][Drone 2][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2026-03-16 15:41:13,205][Drone 2][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2026-03-16 15:41:23,237][Drone 2][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2026-03-16 15:41:33,273][Drone 2][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2026-03-16 15:41:43,310][Drone 2][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2026-03-16 15:41:53,348][Drone 2][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2026-03-16 15:42:03,387][Drone 2][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2026-03-16 15:42:22,429][Drone 2][INFO][Init Drone] - Complete cleanup finished
+[2026-03-16 15:42:22,429][Drone 2][INFO][gRPC Metrics] - Metrics client thread started successfully
+[2026-03-16 15:42:22,430][Drone 2][INFO][Init Drone] - All system components initialized successfully
+[2026-03-16 15:42:22,454][Drone 2][INFO][gRPC Commands] - Server running on port 52001
+[2026-03-16 15:42:22,503][Drone 2][ERROR][gRPC Metrics] - Connection error: <_InactiveRpcError of RPC that terminated with:
+	status = StatusCode.UNAVAILABLE
+	details = "failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:52004: Failed to connect to remote host: connect: Connection refused (111)"
+	debug_error_string = "UNKNOWN:Error received from peer  {grpc_status:14, grpc_message:"failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:52004: Failed to connect to remote host: connect: Connection refused (111)"}"
+>
+[2026-03-16 15:43:32,470][Drone 2][INFO][Init Drone] - Complete cleanup finished
+[2026-03-16 15:43:32,470][Drone 2][INFO][gRPC Metrics] - Metrics client thread started successfully
+[2026-03-16 15:43:32,472][Drone 2][INFO][Init Drone] - All system components initialized successfully
+[2026-03-16 15:43:32,484][Drone 2][INFO][gRPC Commands] - Server running on port 52001
+[2026-03-16 15:43:32,512][Drone 2][ERROR][gRPC Metrics] - Connection error: <_InactiveRpcError of RPC that terminated with:
+	status = StatusCode.UNAVAILABLE
+	details = "failed to connect to all addresses; last error: UNAVAILABLE: ipv4:127.0.0.1:52004: recvmsg:Connection reset by peer"
+	debug_error_string = "UNKNOWN:Error received from peer  {grpc_status:14, grpc_message:"failed to connect to all addresses; last error: UNAVAILABLE: ipv4:127.0.0.1:52004: recvmsg:Connection reset by peer"}"
+>
+[2026-03-16 15:45:31,861][Drone 2][INFO][Init Drone] - Complete cleanup finished
+[2026-03-16 15:45:31,863][Drone 2][INFO][gRPC Metrics] - Metrics client thread started successfully
+[2026-03-16 15:45:31,868][Drone 2][INFO][Init Drone] - All system components initialized successfully
+[2026-03-16 15:45:31,895][Drone 2][INFO][gRPC Commands] - Server running on port 52001
+[2026-03-16 15:45:31,942][Drone 2][ERROR][gRPC Metrics] - Connection error: <_InactiveRpcError of RPC that terminated with:
+	status = StatusCode.UNAVAILABLE
+	details = "failed to connect to all addresses; last error: UNAVAILABLE: ipv4:127.0.0.1:52004: recvmsg:Connection reset by peer"
+	debug_error_string = "UNKNOWN:Error received from peer  {grpc_message:"failed to connect to all addresses; last error: UNAVAILABLE: ipv4:127.0.0.1:52004: recvmsg:Connection reset by peer", grpc_status:14}"
+>
+[2026-03-16 15:47:00,385][Drone 2][INFO][Init Drone] - Complete cleanup finished
+[2026-03-16 15:47:00,386][Drone 2][INFO][gRPC Metrics] - Metrics client thread started successfully
+[2026-03-16 15:47:00,388][Drone 2][INFO][Init Drone] - All system components initialized successfully
+[2026-03-16 15:47:00,400][Drone 2][INFO][gRPC Commands] - Server running on port 52001
+[2026-03-16 15:47:00,430][Drone 2][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2026-03-16 15:47:10,469][Drone 2][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2026-03-16 15:47:20,506][Drone 2][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2026-03-16 15:47:30,539][Drone 2][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2026-03-16 15:47:40,576][Drone 2][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2026-03-16 15:47:50,609][Drone 2][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2026-03-16 15:48:00,642][Drone 2][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2026-03-16 15:48:10,676][Drone 2][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2026-03-16 15:48:20,712][Drone 2][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2026-03-16 15:48:30,749][Drone 2][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2026-03-16 15:48:40,786][Drone 2][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2026-03-16 15:48:50,822][Drone 2][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2026-03-16 15:49:00,858][Drone 2][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2026-03-16 15:49:10,900][Drone 2][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2026-03-16 15:49:20,938][Drone 2][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2026-03-16 15:49:30,971][Drone 2][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2026-03-16 15:49:41,005][Drone 2][INFO][gRPC Metrics] - System Metrics sent to ROS2

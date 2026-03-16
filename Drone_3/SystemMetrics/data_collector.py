@@ -400,13 +400,9 @@ def get_volts(logger: logging.Logger) -> Dict[str, float]:
         # Return empty dictionary on parsing failure
         return {}
 
-def get_clock_speeds(logger: logging.Logger) -> Dict[str, int]:
+def get_clock_speeds(logger: logging.Logger) -> Dict[str, float]:
     """
-    Retrieve ARM CPU and GPU core clock frequencies from Raspberry Pi hardware.
-
-    This function queries the VideoCore GPU for current clock speeds of both
-    ARM CPU and GPU core, providing essential performance monitoring data
-    for drone computational load analysis and thermal management.
+    Retrieve ARM CPU and GPU core clock frequencies in MHz from Raspberry Pi hardware.
 
     Parameters
     ----------
@@ -415,28 +411,13 @@ def get_clock_speeds(logger: logging.Logger) -> Dict[str, int]:
 
     Returns
     -------
-    Dict[str, int]
-        Dictionary containing clock frequencies in Hz:
+    Dict[str, float]
+        Dictionary containing clock frequencies in MHz:
         {
-            "arm": int,    # ARM CPU frequency in Hz (typically 600MHz-1.8GHz)
-            "core": int    # GPU core frequency in Hz (typically 250MHz-750MHz)
+            "arm": float,  # ARM CPU frequency (e.g., 1500.0)
+            "core": float  # GPU core frequency (e.g., 500.0)
         }
-        Returns 0 for individual clocks on measurement failure.
-
-    Workflow
-    --------
-    1. **Clock Enumeration**: Iterate through ARM and GPU core clocks
-    2. **Command Execution**: Execute "measure_clock {clock}" for each component
-    3. **Response Validation**: Check for valid response format with '=' delimiter
-    4. **Data Parsing**: Extract frequency values from command responses
-    5. **Error Handling**: Set individual clocks to 0 on parse failures
-    6. **Dictionary Assembly**: Combine all clock measurements into unified structure
-
-    Examples
-    --------
-    >>> clocks = get_clock_speeds(logger)
-    >>> print(f"ARM: {clocks['arm']/1e6:.0f}MHz, GPU: {clocks['core']/1e6:.0f}MHz")
-    ARM: 1500MHz, GPU: 500MHz
+        Returns 0.0 for individual clocks on measurement failure.
     """
     # Define clock components to monitor
     clocks = ["arm", "core"]
@@ -448,13 +429,16 @@ def get_clock_speeds(logger: logging.Logger) -> Dict[str, int]:
         if "=" in output:
             try:
                 # Parse frequency from "frequency(1)=1500000000" format
-                values[clock] = int(output.split("=")[1])
+                # Divide by 1,000,000 to convert Hz -> MHz
+                hz_val = int(output.split("=")[1])
+                values[clock] = hz_val / 1_000_000.0
             except (ValueError, IndexError):
-                # Set to 0 on parsing failure
-                values[clock] = 0
+                # Set to 0.0 on parsing failure
+                values[clock] = 0.0
         else:
-            # Set to 0 if response format is invalid
-            values[clock] = 0
+            # Set to 0.0 if response format is invalid
+            values[clock] = 0.0
+            
     return values
 
 def get_mem(component: str, logger: logging.Logger) -> float:

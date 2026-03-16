@@ -1302,3 +1302,250 @@
 [2026-03-12 17:52:55,039][Drone 3][INFO][ROS2][System Metrics Publisher] - System Metrics published
 [2026-03-12 17:52:56,693][Drone 3][INFO][Init ROS2] - Beginning system shutdown and resource cleanup
 [2026-03-12 17:52:56,722][Drone 3][INFO][Init ROS2] - System shutdown completed successfully
+[2026-03-16 14:42:28,964][Drone 3][INFO][Init ROS2] - Initializing ROS2 drone system for drone ID: 3
+[2026-03-16 14:42:28,989][Drone 3][INFO][ROS2][gRPC Commands] - Server running on port 53002
+[2026-03-16 14:42:29,070][Drone 3][INFO][ROS2][Commands Action Server] - Commands action server initialized successfully for drone 3
+[2026-03-16 14:42:29,071][Drone 3][INFO][ROS2][Commands Action Server] - Action service available at: /drone3/commands
+[2026-03-16 14:42:29,080][Drone 3][INFO][ROS2][Prescription Map] - PM publisher initialized for drone 3
+[2026-03-16 14:42:29,080][Drone 3][INFO][ROS2][gRPC PM] - Server running on port 53003
+[2026-03-16 14:42:29,080][Drone 3][INFO][ROS2][Prescription Map] - PM topic service available at: prescription_map/drone_3
+[2026-03-16 14:42:29,088][Drone 3][INFO][ROS2][System Metrics Publisher] - System Metrics publisher initialized for drone 3
+[2026-03-16 14:42:29,088][Drone 3][INFO][ROS2][System Metrics Publisher] - System Metrics topic service available at: system_metrics/drone_3
+[2026-03-16 14:42:29,096][Drone 3][INFO] - State vector publisher started.
+[2026-03-16 14:42:29,096][Drone 3][INFO][ROS2][gRPC Metrics] - Server running on port 53004
+[2026-03-16 14:42:29,097][Drone 3][INFO][Init ROS2] - All system components initialized successfully
+[2026-03-16 14:42:38,421][Drone 3][INFO][ROS2][gRPC Metrics] - Metrics received from drone and forwarded to ROS2 publisher
+[2026-03-16 14:42:39,089][Drone 3][INFO][ROS2][System Metrics Publisher] - System Metrics published
+[2026-03-16 14:42:39,097][Drone 3][INFO][State Vector] - State Vector sent
+[2026-03-16 14:42:48,458][Drone 3][INFO][ROS2][gRPC Metrics] - Metrics received from drone and forwarded to ROS2 publisher
+[2026-03-16 14:42:49,089][Drone 3][INFO][ROS2][System Metrics Publisher] - System Metrics published
+[2026-03-16 14:42:49,097][Drone 3][INFO][State Vector] - State Vector sent
+[2026-03-16 14:42:58,495][Drone 3][INFO][ROS2][gRPC Metrics] - Metrics received from drone and forwarded to ROS2 publisher
+[2026-03-16 14:42:59,089][Drone 3][INFO][ROS2][System Metrics Publisher] - System Metrics published
+[2026-03-16 14:42:59,097][Drone 3][INFO][State Vector] - State Vector sent
+[2026-03-16 14:43:08,528][Drone 3][INFO][ROS2][gRPC Metrics] - Metrics received from drone and forwarded to ROS2 publisher
+[2026-03-16 14:43:09,089][Drone 3][INFO][ROS2][System Metrics Publisher] - System Metrics published
+[2026-03-16 14:43:09,097][Drone 3][INFO][State Vector] - State Vector sent
+[2026-03-16 14:43:18,573][Drone 3][INFO][ROS2][gRPC Metrics] - Metrics received from drone and forwarded to ROS2 publisher
+[2026-03-16 14:43:19,091][Drone 3][INFO][ROS2][System Metrics Publisher] - System Metrics published
+[2026-03-16 14:43:19,097][Drone 3][INFO][State Vector] - State Vector sent
+[2026-03-16 14:43:28,622][Drone 3][INFO][ROS2][gRPC Metrics] - Metrics received from drone and forwarded to ROS2 publisher
+[2026-03-16 14:43:29,089][Drone 3][INFO][ROS2][System Metrics Publisher] - System Metrics published
+[2026-03-16 14:43:29,097][Drone 3][INFO][State Vector] - State Vector sent
+[2026-03-16 14:43:39,097][Drone 3][INFO][State Vector] - State Vector sent
+[2026-03-16 14:43:44,137][Drone 3][INFO][Init ROS2] - Beginning system shutdown and resource cleanup
+[2026-03-16 14:43:44,151][Drone 3][INFO][Init ROS2] - System shutdown completed successfully
+[2026-03-16 14:43:46,183][Drone 3][INFO][Init ROS2] - Initializing ROS2 drone system for drone ID: 3
+[2026-03-16 14:43:46,221][Drone 3][INFO][ROS2][gRPC Commands] - Server running on port 53002
+[2026-03-16 14:43:46,296][Drone 3][INFO][ROS2][Commands Action Server] - Commands action server initialized successfully for drone 3
+[2026-03-16 14:43:46,296][Drone 3][INFO][ROS2][Commands Action Server] - Action service available at: /drone3/commands
+[2026-03-16 14:43:46,311][Drone 3][INFO][ROS2][Prescription Map] - PM publisher initialized for drone 3
+[2026-03-16 14:43:46,311][Drone 3][INFO][ROS2][gRPC PM] - Server running on port 53003
+[2026-03-16 14:43:46,312][Drone 3][INFO][ROS2][Prescription Map] - PM topic service available at: prescription_map/drone_3
+[2026-03-16 14:43:46,328][Drone 3][INFO][ROS2][System Metrics Publisher] - System Metrics publisher initialized for drone 3
+[2026-03-16 14:43:46,329][Drone 3][INFO][ROS2][gRPC Metrics] - Server running on port 53004
+[2026-03-16 14:43:46,330][Drone 3][INFO][ROS2][System Metrics Publisher] - System Metrics topic service available at: system_metrics/drone_3
+[2026-03-16 14:43:46,350][Drone 3][INFO] - State vector publisher started.
+[2026-03-16 14:43:46,351][Drone 3][INFO][Init ROS2] - All system components initialized successfully
+[2026-03-16 14:43:56,351][Drone 3][INFO][State Vector] - State Vector sent
+[2026-03-16 14:44:06,351][Drone 3][INFO][State Vector] - State Vector sent
+[2026-03-16 14:44:16,350][Drone 3][INFO][State Vector] - State Vector sent
+[2026-03-16 14:44:26,351][Drone 3][INFO][State Vector] - State Vector sent
+[2026-03-16 14:44:36,351][Drone 3][INFO][State Vector] - State Vector sent
+[2026-03-16 14:44:46,351][Drone 3][INFO][State Vector] - State Vector sent
+[2026-03-16 14:44:56,353][Drone 3][INFO][State Vector] - State Vector sent
+[2026-03-16 14:45:06,351][Drone 3][INFO][State Vector] - State Vector sent
+[2026-03-16 14:45:16,351][Drone 3][INFO][State Vector] - State Vector sent
+[2026-03-16 14:45:26,351][Drone 3][INFO][State Vector] - State Vector sent
+[2026-03-16 14:45:35,725][Drone 3][INFO][Init ROS2] - Beginning system shutdown and resource cleanup
+[2026-03-16 14:45:35,740][Drone 3][INFO][Init ROS2] - System shutdown completed successfully
+[2026-03-16 14:45:37,631][Drone 3][INFO][Init ROS2] - Initializing ROS2 drone system for drone ID: 3
+[2026-03-16 14:45:37,658][Drone 3][INFO][ROS2][gRPC Commands] - Server running on port 53002
+[2026-03-16 14:45:37,725][Drone 3][INFO][ROS2][Commands Action Server] - Commands action server initialized successfully for drone 3
+[2026-03-16 14:45:37,725][Drone 3][INFO][ROS2][Commands Action Server] - Action service available at: /drone3/commands
+[2026-03-16 14:45:37,731][Drone 3][INFO][ROS2][Prescription Map] - PM publisher initialized for drone 3
+[2026-03-16 14:45:37,732][Drone 3][INFO][ROS2][Prescription Map] - PM topic service available at: prescription_map/drone_3
+[2026-03-16 14:45:37,737][Drone 3][INFO][ROS2][System Metrics Publisher] - System Metrics publisher initialized for drone 3
+[2026-03-16 14:45:37,738][Drone 3][INFO][ROS2][gRPC PM] - Server running on port 53003
+[2026-03-16 14:45:37,738][Drone 3][INFO][ROS2][System Metrics Publisher] - System Metrics topic service available at: system_metrics/drone_3
+[2026-03-16 14:45:37,739][Drone 3][INFO][ROS2][gRPC Metrics] - Server running on port 53004
+[2026-03-16 14:45:37,744][Drone 3][INFO] - State vector publisher started.
+[2026-03-16 14:45:37,745][Drone 3][INFO][Init ROS2] - All system components initialized successfully
+[2026-03-16 14:45:47,745][Drone 3][INFO][State Vector] - State Vector sent
+[2026-03-16 14:45:57,745][Drone 3][INFO][State Vector] - State Vector sent
+[2026-03-16 14:46:07,745][Drone 3][INFO][State Vector] - State Vector sent
+[2026-03-16 14:46:14,010][Drone 3][INFO][Init ROS2] - Beginning system shutdown and resource cleanup
+[2026-03-16 14:46:14,023][Drone 3][INFO][Init ROS2] - System shutdown completed successfully
+[2026-03-16 14:46:15,971][Drone 3][INFO][Init ROS2] - Initializing ROS2 drone system for drone ID: 3
+[2026-03-16 14:46:16,005][Drone 3][INFO][ROS2][gRPC Commands] - Server running on port 53002
+[2026-03-16 14:46:16,081][Drone 3][INFO][ROS2][Commands Action Server] - Commands action server initialized successfully for drone 3
+[2026-03-16 14:46:16,082][Drone 3][INFO][ROS2][Commands Action Server] - Action service available at: /drone3/commands
+[2026-03-16 14:46:16,094][Drone 3][INFO][ROS2][Prescription Map] - PM publisher initialized for drone 3
+[2026-03-16 14:46:16,094][Drone 3][INFO][ROS2][gRPC PM] - Server running on port 53003
+[2026-03-16 14:46:16,094][Drone 3][INFO][ROS2][Prescription Map] - PM topic service available at: prescription_map/drone_3
+[2026-03-16 14:46:16,104][Drone 3][INFO][ROS2][System Metrics Publisher] - System Metrics publisher initialized for drone 3
+[2026-03-16 14:46:16,105][Drone 3][INFO][ROS2][System Metrics Publisher] - System Metrics topic service available at: system_metrics/drone_3
+[2026-03-16 14:46:16,115][Drone 3][INFO] - State vector publisher started.
+[2026-03-16 14:46:16,116][Drone 3][INFO][Init ROS2] - All system components initialized successfully
+[2026-03-16 14:46:16,116][Drone 3][INFO][ROS2][gRPC Metrics] - Server running on port 53004
+[2026-03-16 14:46:26,116][Drone 3][INFO][State Vector] - State Vector sent
+[2026-03-16 14:46:36,115][Drone 3][INFO][State Vector] - State Vector sent
+[2026-03-16 14:46:46,116][Drone 3][INFO][State Vector] - State Vector sent
+[2026-03-16 14:46:56,118][Drone 3][INFO][State Vector] - State Vector sent
+[2026-03-16 14:46:59,191][Drone 3][INFO][Init ROS2] - Beginning system shutdown and resource cleanup
+[2026-03-16 14:46:59,207][Drone 3][INFO][Init ROS2] - System shutdown completed successfully
+[2026-03-16 14:47:01,766][Drone 3][INFO][Init ROS2] - Initializing ROS2 drone system for drone ID: 3
+[2026-03-16 14:47:01,799][Drone 3][INFO][ROS2][gRPC Commands] - Server running on port 53002
+[2026-03-16 14:47:01,875][Drone 3][INFO][ROS2][Commands Action Server] - Commands action server initialized successfully for drone 3
+[2026-03-16 14:47:01,876][Drone 3][INFO][ROS2][Commands Action Server] - Action service available at: /drone3/commands
+[2026-03-16 14:47:01,886][Drone 3][INFO][ROS2][Prescription Map] - PM publisher initialized for drone 3
+[2026-03-16 14:47:01,886][Drone 3][INFO][ROS2][gRPC PM] - Server running on port 53003
+[2026-03-16 14:47:01,886][Drone 3][INFO][ROS2][Prescription Map] - PM topic service available at: prescription_map/drone_3
+[2026-03-16 14:47:01,896][Drone 3][INFO][ROS2][System Metrics Publisher] - System Metrics publisher initialized for drone 3
+[2026-03-16 14:47:01,896][Drone 3][INFO][ROS2][System Metrics Publisher] - System Metrics topic service available at: system_metrics/drone_3
+[2026-03-16 14:47:01,906][Drone 3][INFO] - State vector publisher started.
+[2026-03-16 14:47:01,906][Drone 3][INFO][ROS2][gRPC Metrics] - Server running on port 53004
+[2026-03-16 14:47:01,906][Drone 3][INFO][Init ROS2] - All system components initialized successfully
+[2026-03-16 14:47:02,836][Drone 3][INFO][ROS2][gRPC Metrics] - Metrics received from drone and forwarded to ROS2 publisher
+[2026-03-16 14:47:02,897][Drone 3][INFO][ROS2][System Metrics Publisher] - System Metrics published
+[2026-03-16 14:47:11,907][Drone 3][INFO][State Vector] - State Vector sent
+[2026-03-16 14:47:12,873][Drone 3][INFO][ROS2][gRPC Metrics] - Metrics received from drone and forwarded to ROS2 publisher
+[2026-03-16 14:47:12,897][Drone 3][INFO][ROS2][System Metrics Publisher] - System Metrics published
+[2026-03-16 14:47:21,907][Drone 3][INFO][State Vector] - State Vector sent
+[2026-03-16 14:47:22,910][Drone 3][INFO][ROS2][gRPC Metrics] - Metrics received from drone and forwarded to ROS2 publisher
+[2026-03-16 14:47:23,897][Drone 3][INFO][ROS2][System Metrics Publisher] - System Metrics published
+[2026-03-16 14:47:31,906][Drone 3][INFO][State Vector] - State Vector sent
+[2026-03-16 14:47:32,944][Drone 3][INFO][ROS2][gRPC Metrics] - Metrics received from drone and forwarded to ROS2 publisher
+[2026-03-16 14:47:33,897][Drone 3][INFO][ROS2][System Metrics Publisher] - System Metrics published
+[2026-03-16 14:47:41,906][Drone 3][INFO][State Vector] - State Vector sent
+[2026-03-16 14:47:42,976][Drone 3][INFO][ROS2][gRPC Metrics] - Metrics received from drone and forwarded to ROS2 publisher
+[2026-03-16 14:47:43,897][Drone 3][INFO][ROS2][System Metrics Publisher] - System Metrics published
+[2026-03-16 14:47:51,906][Drone 3][INFO][State Vector] - State Vector sent
+[2026-03-16 14:47:53,011][Drone 3][INFO][ROS2][gRPC Metrics] - Metrics received from drone and forwarded to ROS2 publisher
+[2026-03-16 14:47:53,897][Drone 3][INFO][ROS2][System Metrics Publisher] - System Metrics published
+[2026-03-16 14:48:01,906][Drone 3][INFO][State Vector] - State Vector sent
+[2026-03-16 14:48:03,044][Drone 3][INFO][ROS2][gRPC Metrics] - Metrics received from drone and forwarded to ROS2 publisher
+[2026-03-16 14:48:03,897][Drone 3][INFO][ROS2][System Metrics Publisher] - System Metrics published
+[2026-03-16 14:48:11,907][Drone 3][INFO][State Vector] - State Vector sent
+[2026-03-16 14:48:13,085][Drone 3][INFO][ROS2][gRPC Metrics] - Metrics received from drone and forwarded to ROS2 publisher
+[2026-03-16 14:48:13,897][Drone 3][INFO][ROS2][System Metrics Publisher] - System Metrics published
+[2026-03-16 14:48:21,907][Drone 3][INFO][State Vector] - State Vector sent
+[2026-03-16 14:48:23,121][Drone 3][INFO][ROS2][gRPC Metrics] - Metrics received from drone and forwarded to ROS2 publisher
+[2026-03-16 14:48:23,897][Drone 3][INFO][ROS2][System Metrics Publisher] - System Metrics published
+[2026-03-16 14:48:31,366][Drone 3][INFO][ROS2][Commands Action Server] - Executing command sequence goal with 67 commands
+[2026-03-16 14:48:31,368][Drone 3][INFO][ROS2][Commands Action Server] - Processing command 1/67: {"related_task": {"id": 1001, "mission_id": 2}, "id": 1001, "command_type": "NAV_TAKEOFF", "command_status": "NotStarted", "start_time": 1, "params": [0, 0, 40.20772, -3.466688]}
+[2026-03-16 14:48:31,380][Drone 3][INFO][ROS2][gRPC Commands] - Sending command to commands processor
+[2026-03-16 14:48:31,906][Drone 3][INFO][State Vector] - State Vector sent
+[2026-03-16 14:48:33,157][Drone 3][INFO][ROS2][gRPC Metrics] - Metrics received from drone and forwarded to ROS2 publisher
+[2026-03-16 14:48:33,401][Drone 3][INFO][ROS2][gRPC Commands] - Feedback received from drone and sent to ROS2 server
+[2026-03-16 14:48:33,404][Drone 3][INFO][ROS2][gRPC Commands] - ACK received from commands processor
+[2026-03-16 14:48:33,405][Drone 3][INFO][ROS2][Commands Action Server] - Command feedback published: ['3', '1', '1001', 'Takeoff successful']
+[2026-03-16 14:48:33,897][Drone 3][INFO][ROS2][System Metrics Publisher] - System Metrics published
+[2026-03-16 14:48:34,407][Drone 3][INFO][ROS2][Commands Action Server] - Processing command 2/67: {"related_task": {"id": 1001, "mission_id": 2}, "id": 1002, "command_type": "NAV_WAYPOINT", "command_status": "NotStarted", "start_time": 2, "params": [0, 0, 0, 0, 40.20772, -3.466688, 0]}
+[2026-03-16 14:48:34,407][Drone 3][INFO][ROS2][gRPC Commands] - Sending command to commands processor
+[2026-03-16 14:48:36,437][Drone 3][INFO][ROS2][gRPC Commands] - Feedback received from drone and sent to ROS2 server
+[2026-03-16 14:48:36,439][Drone 3][INFO][ROS2][gRPC Commands] - ACK received from commands processor
+[2026-03-16 14:48:36,439][Drone 3][INFO][ROS2][Commands Action Server] - Command feedback published: ['3', '1', '1002', 'WP reached']
+[2026-03-16 14:48:37,441][Drone 3][INFO][ROS2][Commands Action Server] - Processing command 3/67: {"related_task": {"id": 1002, "mission_id": 2}, "id": 1003, "command_type": "NAV_WAYPOINT", "command_status": "NotStarted", "start_time": 3, "params": [0, 0, 0, 0, 40.207874, -3.467592, 0]}
+[2026-03-16 14:48:37,441][Drone 3][INFO][ROS2][gRPC Commands] - Sending command to commands processor
+[2026-03-16 14:48:39,470][Drone 3][INFO][ROS2][gRPC Commands] - Feedback received from drone and sent to ROS2 server
+[2026-03-16 14:48:39,471][Drone 3][INFO][ROS2][gRPC Commands] - ACK received from commands processor
+[2026-03-16 14:48:39,472][Drone 3][INFO][ROS2][Commands Action Server] - Command feedback published: ['3', '1', '1003', 'WP reached']
+[2026-03-16 14:48:40,473][Drone 3][INFO][ROS2][Commands Action Server] - Processing command 4/67: {"related_task": {"id": 1002, "mission_id": 2}, "id": 1004, "command_type": "CAMERA_IMAGE", "command_status": "NotStarted", "start_time": 4, "params": [0, 0, 0, 0, "Camera_Test_Simulator"]}
+[2026-03-16 14:48:40,473][Drone 3][INFO][ROS2][gRPC Commands] - Sending command to commands processor
+[2026-03-16 14:48:41,561][Drone 3][INFO][ROS2][gRPC Commands] - Feedback received from drone and sent to ROS2 server
+[2026-03-16 14:48:41,564][Drone 3][INFO][ROS2][gRPC Commands] - ACK received from commands processor
+[2026-03-16 14:48:41,564][Drone 3][INFO][ROS2][Commands Action Server] - Command feedback published: ['3', '1', '1004', 'Picture taken']
+[2026-03-16 14:48:41,906][Drone 3][INFO][State Vector] - State Vector sent
+[2026-03-16 14:48:42,565][Drone 3][INFO][ROS2][Commands Action Server] - Processing command 5/67: {"related_task": {"id": 1002, "mission_id": 2}, "id": 1005, "command_type": "ANALYZE_IMAGE", "command_status": "NotStarted", "start_time": 5, "params": [["Grape_Diseases_Hailo8", "Grape_Bunch_Hailo8"], 40.207874, -3.467592, [0, 0], ["ISOBUS", "Drone"]]}
+[2026-03-16 14:48:42,566][Drone 3][INFO][ROS2][gRPC Commands] - Sending command to commands processor
+[2026-03-16 14:48:43,202][Drone 3][INFO][ROS2][gRPC Metrics] - Metrics received from drone and forwarded to ROS2 publisher
+[2026-03-16 14:48:43,897][Drone 3][INFO][ROS2][System Metrics Publisher] - System Metrics published
+[2026-03-16 14:48:49,213][Drone 3][INFO][ROS2][gRPC Commands] - Feedback received from drone and sent to ROS2 server
+[2026-03-16 14:48:49,215][Drone 3][INFO][ROS2][gRPC Commands] - ACK received from commands processor
+[2026-03-16 14:48:49,216][Drone 3][INFO][ROS2][Commands Action Server] - Command feedback published: ['3', '1', '1005', "[['Grape_Diseases_Hailo8', 'Grape_Bunch_Hailo8'], {'Black_measles': 2.2, 'Black_rot': 1.7, 'Isariopsis': 1.8599999999999999, 'Grape_bunch': 1.95}, [0, 0], [40.207874, -3.467592], ['ISOBUS', 'Drone']]"]
+[2026-03-16 14:48:50,217][Drone 3][INFO][ROS2][Commands Action Server] - Processing command 6/67: {"related_task": {"id": 1002, "mission_id": 2}, "id": 1006, "command_type": "NAV_WAYPOINT", "command_status": "NotStarted", "start_time": 6, "params": [0, 0, 0, 0, 40.207868, -3.467482, 0]}
+[2026-03-16 14:48:50,217][Drone 3][INFO][ROS2][gRPC Commands] - Sending command to commands processor
+[2026-03-16 14:48:51,907][Drone 3][INFO][State Vector] - State Vector sent
+[2026-03-16 14:48:52,244][Drone 3][INFO][ROS2][gRPC Commands] - Feedback received from drone and sent to ROS2 server
+[2026-03-16 14:48:52,247][Drone 3][INFO][ROS2][gRPC Commands] - ACK received from commands processor
+[2026-03-16 14:48:52,248][Drone 3][INFO][ROS2][Commands Action Server] - Command feedback published: ['3', '1', '1006', 'WP reached']
+[2026-03-16 14:48:53,239][Drone 3][INFO][ROS2][gRPC Metrics] - Metrics received from drone and forwarded to ROS2 publisher
+[2026-03-16 14:48:53,248][Drone 3][INFO][ROS2][Commands Action Server] - Processing command 7/67: {"related_task": {"id": 1002, "mission_id": 2}, "id": 1007, "command_type": "CAMERA_IMAGE", "command_status": "NotStarted", "start_time": 7, "params": [0, 0, 0, 0, "Camera_Test_Simulator"]}
+[2026-03-16 14:48:53,249][Drone 3][INFO][ROS2][gRPC Commands] - Sending command to commands processor
+[2026-03-16 14:48:53,897][Drone 3][INFO][ROS2][System Metrics Publisher] - System Metrics published
+[2026-03-16 14:48:54,340][Drone 3][INFO][ROS2][gRPC Commands] - Feedback received from drone and sent to ROS2 server
+[2026-03-16 14:48:54,342][Drone 3][INFO][ROS2][gRPC Commands] - ACK received from commands processor
+[2026-03-16 14:48:54,343][Drone 3][INFO][ROS2][Commands Action Server] - Command feedback published: ['3', '1', '1007', 'Picture taken']
+[2026-03-16 14:48:55,344][Drone 3][INFO][ROS2][Commands Action Server] - Processing command 8/67: {"related_task": {"id": 1002, "mission_id": 2}, "id": 1008, "command_type": "ANALYZE_IMAGE", "command_status": "NotStarted", "start_time": 8, "params": [["Grape_Diseases_Hailo8", "Grape_Bunch_Hailo8"], 40.207868, -3.467482, [0, 1], ["ISOBUS", "Drone"]]}
+[2026-03-16 14:48:55,344][Drone 3][INFO][ROS2][gRPC Commands] - Sending command to commands processor
+[2026-03-16 14:49:01,611][Drone 3][INFO][ROS2][gRPC Commands] - Feedback received from drone and sent to ROS2 server
+[2026-03-16 14:49:01,614][Drone 3][INFO][ROS2][gRPC Commands] - ACK received from commands processor
+[2026-03-16 14:49:01,616][Drone 3][INFO][ROS2][Commands Action Server] - Command feedback published: ['3', '1', '1008', "[['Grape_Diseases_Hailo8', 'Grape_Bunch_Hailo8'], {'Black_measles': 2.7, 'Black_rot': 2.2, 'Isariopsis': 3.3600000000000003, 'Grape_bunch': 3.95}, [0, 1], [40.207868, -3.467482], ['ISOBUS', 'Drone']]"]
+[2026-03-16 14:49:01,907][Drone 3][INFO][State Vector] - State Vector sent
+[2026-03-16 14:49:02,616][Drone 3][INFO][ROS2][Commands Action Server] - Processing command 9/67: {"related_task": {"id": 1002, "mission_id": 2}, "id": 1009, "command_type": "NAV_WAYPOINT", "command_status": "NotStarted", "start_time": 9, "params": [0, 0, 0, 0, 40.207862, -3.467372, 0]}
+[2026-03-16 14:49:02,617][Drone 3][INFO][ROS2][gRPC Commands] - Sending command to commands processor
+[2026-03-16 14:49:03,272][Drone 3][INFO][ROS2][gRPC Metrics] - Metrics received from drone and forwarded to ROS2 publisher
+[2026-03-16 14:49:03,897][Drone 3][INFO][ROS2][System Metrics Publisher] - System Metrics published
+[2026-03-16 14:49:04,638][Drone 3][INFO][ROS2][gRPC Commands] - Feedback received from drone and sent to ROS2 server
+[2026-03-16 14:49:04,640][Drone 3][INFO][ROS2][gRPC Commands] - ACK received from commands processor
+[2026-03-16 14:49:04,640][Drone 3][INFO][ROS2][Commands Action Server] - Command feedback published: ['3', '1', '1009', 'WP reached']
+[2026-03-16 14:49:05,641][Drone 3][INFO][ROS2][Commands Action Server] - Processing command 10/67: {"related_task": {"id": 1002, "mission_id": 2}, "id": 1010, "command_type": "CAMERA_IMAGE", "command_status": "NotStarted", "start_time": 10, "params": [0, 0, 0, 0, "Camera_Test_Simulator"]}
+[2026-03-16 14:49:05,642][Drone 3][INFO][ROS2][gRPC Commands] - Sending command to commands processor
+[2026-03-16 14:49:06,729][Drone 3][INFO][ROS2][gRPC Commands] - Feedback received from drone and sent to ROS2 server
+[2026-03-16 14:49:06,731][Drone 3][INFO][ROS2][gRPC Commands] - ACK received from commands processor
+[2026-03-16 14:49:06,732][Drone 3][INFO][ROS2][Commands Action Server] - Command feedback published: ['3', '1', '1010', 'Picture taken']
+[2026-03-16 14:49:07,733][Drone 3][INFO][ROS2][Commands Action Server] - Processing command 11/67: {"related_task": {"id": 1002, "mission_id": 2}, "id": 1011, "command_type": "ANALYZE_IMAGE", "command_status": "NotStarted", "start_time": 11, "params": [["Grape_Diseases_Hailo8", "Grape_Bunch_Hailo8"], 40.207862, -3.467372, [0, 2], ["ISOBUS", "Drone"]]}
+[2026-03-16 14:49:07,733][Drone 3][INFO][ROS2][gRPC Commands] - Sending command to commands processor
+[2026-03-16 14:49:11,907][Drone 3][INFO][State Vector] - State Vector sent
+[2026-03-16 14:49:13,307][Drone 3][INFO][ROS2][gRPC Metrics] - Metrics received from drone and forwarded to ROS2 publisher
+[2026-03-16 14:49:13,897][Drone 3][INFO][ROS2][System Metrics Publisher] - System Metrics published
+[2026-03-16 14:49:14,056][Drone 3][INFO][ROS2][gRPC Commands] - Feedback received from drone and sent to ROS2 server
+[2026-03-16 14:49:14,058][Drone 3][INFO][ROS2][gRPC Commands] - ACK received from commands processor
+[2026-03-16 14:49:14,058][Drone 3][INFO][ROS2][Commands Action Server] - Command feedback published: ['3', '1', '1011', "[['Grape_Diseases_Hailo8', 'Grape_Bunch_Hailo8'], {'Black_measles': 2.2, 'Black_rot': 1.7, 'Isariopsis': 1.8599999999999999, 'Grape_bunch': 1.95}, [0, 2], [40.207862, -3.467372], ['ISOBUS', 'Drone']]"]
+[2026-03-16 14:49:15,059][Drone 3][INFO][ROS2][Commands Action Server] - Processing command 12/67: {"related_task": {"id": 1002, "mission_id": 2}, "id": 1012, "command_type": "NAV_WAYPOINT", "command_status": "NotStarted", "start_time": 12, "params": [0, 0, 0, 0, 40.207855, -3.467262, 0]}
+[2026-03-16 14:49:15,060][Drone 3][INFO][ROS2][gRPC Commands] - Sending command to commands processor
+[2026-03-16 14:49:17,089][Drone 3][INFO][ROS2][gRPC Commands] - Feedback received from drone and sent to ROS2 server
+[2026-03-16 14:49:17,091][Drone 3][INFO][ROS2][gRPC Commands] - ACK received from commands processor
+[2026-03-16 14:49:17,092][Drone 3][INFO][ROS2][Commands Action Server] - Command feedback published: ['3', '1', '1012', 'WP reached']
+[2026-03-16 14:49:18,093][Drone 3][INFO][ROS2][Commands Action Server] - Processing command 13/67: {"related_task": {"id": 1002, "mission_id": 2}, "id": 1013, "command_type": "CAMERA_IMAGE", "command_status": "NotStarted", "start_time": 13, "params": [0, 0, 0, 0, "Camera_Test_Simulator"]}
+[2026-03-16 14:49:18,093][Drone 3][INFO][ROS2][gRPC Commands] - Sending command to commands processor
+[2026-03-16 14:49:19,193][Drone 3][INFO][ROS2][gRPC Commands] - Feedback received from drone and sent to ROS2 server
+[2026-03-16 14:49:19,195][Drone 3][INFO][ROS2][gRPC Commands] - ACK received from commands processor
+[2026-03-16 14:49:19,196][Drone 3][INFO][ROS2][Commands Action Server] - Command feedback published: ['3', '1', '1013', 'Picture taken']
+[2026-03-16 14:49:20,197][Drone 3][INFO][ROS2][Commands Action Server] - Processing command 14/67: {"related_task": {"id": 1002, "mission_id": 2}, "id": 1014, "command_type": "ANALYZE_IMAGE", "command_status": "NotStarted", "start_time": 14, "params": [["Grape_Diseases_Hailo8", "Grape_Bunch_Hailo8"], 40.207855, -3.467262, [0, 3], ["ISOBUS", "Drone"]]}
+[2026-03-16 14:49:20,197][Drone 3][INFO][ROS2][gRPC Commands] - Sending command to commands processor
+[2026-03-16 14:49:21,908][Drone 3][INFO][State Vector] - State Vector sent
+[2026-03-16 14:49:23,342][Drone 3][INFO][ROS2][gRPC Metrics] - Metrics received from drone and forwarded to ROS2 publisher
+[2026-03-16 14:49:23,897][Drone 3][INFO][ROS2][System Metrics Publisher] - System Metrics published
+[2026-03-16 14:49:27,114][Drone 3][INFO][ROS2][gRPC Commands] - Feedback received from drone and sent to ROS2 server
+[2026-03-16 14:49:27,116][Drone 3][INFO][ROS2][gRPC Commands] - ACK received from commands processor
+[2026-03-16 14:49:27,117][Drone 3][INFO][ROS2][Commands Action Server] - Command feedback published: ['3', '1', '1014', "[['Grape_Diseases_Hailo8', 'Grape_Bunch_Hailo8'], {'Black_measles': 2.2, 'Black_rot': 1.7, 'Isariopsis': 2.36, 'Grape_bunch': 5.95}, [0, 3], [40.207855, -3.467262], ['ISOBUS', 'Drone']]"]
+[2026-03-16 14:49:28,118][Drone 3][INFO][ROS2][Commands Action Server] - Processing command 15/67: {"related_task": {"id": 1002, "mission_id": 2}, "id": 1015, "command_type": "NAV_WAYPOINT", "command_status": "NotStarted", "start_time": 15, "params": [0, 0, 0, 0, 40.207848, -3.467152, 0]}
+[2026-03-16 14:49:28,118][Drone 3][INFO][ROS2][gRPC Commands] - Sending command to commands processor
+[2026-03-16 14:49:30,142][Drone 3][INFO][ROS2][gRPC Commands] - Feedback received from drone and sent to ROS2 server
+[2026-03-16 14:49:30,143][Drone 3][INFO][ROS2][gRPC Commands] - ACK received from commands processor
+[2026-03-16 14:49:30,144][Drone 3][INFO][ROS2][Commands Action Server] - Command feedback published: ['3', '1', '1015', 'WP reached']
+[2026-03-16 14:49:31,145][Drone 3][INFO][ROS2][Commands Action Server] - Processing command 16/67: {"related_task": {"id": 1002, "mission_id": 2}, "id": 1016, "command_type": "CAMERA_IMAGE", "command_status": "NotStarted", "start_time": 16, "params": [0, 0, 0, 0, "Camera_Test_Simulator"]}
+[2026-03-16 14:49:31,145][Drone 3][INFO][ROS2][gRPC Commands] - Sending command to commands processor
+[2026-03-16 14:49:31,906][Drone 3][INFO][State Vector] - State Vector sent
+[2026-03-16 14:49:32,225][Drone 3][INFO][ROS2][gRPC Commands] - Feedback received from drone and sent to ROS2 server
+[2026-03-16 14:49:32,227][Drone 3][INFO][ROS2][gRPC Commands] - ACK received from commands processor
+[2026-03-16 14:49:32,227][Drone 3][INFO][ROS2][Commands Action Server] - Command feedback published: ['3', '1', '1016', 'Picture taken']
+[2026-03-16 14:49:33,229][Drone 3][INFO][ROS2][Commands Action Server] - Processing command 17/67: {"related_task": {"id": 1002, "mission_id": 2}, "id": 1017, "command_type": "ANALYZE_IMAGE", "command_status": "NotStarted", "start_time": 17, "params": [["Grape_Diseases_Hailo8", "Grape_Bunch_Hailo8"], 40.207848, -3.467152, [0, 4], ["ISOBUS", "Drone"]]}
+[2026-03-16 14:49:33,229][Drone 3][INFO][ROS2][gRPC Commands] - Sending command to commands processor
+[2026-03-16 14:49:33,384][Drone 3][INFO][ROS2][gRPC Metrics] - Metrics received from drone and forwarded to ROS2 publisher
+[2026-03-16 14:49:33,897][Drone 3][INFO][ROS2][System Metrics Publisher] - System Metrics published
+[2026-03-16 14:49:41,316][Drone 3][INFO][ROS2][gRPC Commands] - Feedback received from drone and sent to ROS2 server
+[2026-03-16 14:49:41,318][Drone 3][INFO][ROS2][gRPC Commands] - ACK received from commands processor
+[2026-03-16 14:49:41,318][Drone 3][INFO][ROS2][Commands Action Server] - Command feedback published: ['3', '1', '1017', "[['Grape_Diseases_Hailo8', 'Grape_Bunch_Hailo8'], {'Black_measles': 2.2, 'Black_rot': 1.7, 'Isariopsis': 1.8599999999999999, 'Grape_bunch': 1.95}, [0, 4], [40.207848, -3.467152], ['ISOBUS', 'Drone']]"]
+[2026-03-16 14:49:41,906][Drone 3][INFO][State Vector] - State Vector sent
+[2026-03-16 14:49:42,319][Drone 3][INFO][ROS2][Commands Action Server] - Processing command 18/67: {"related_task": {"id": 1002, "mission_id": 2}, "id": 1018, "command_type": "NAV_WAYPOINT", "command_status": "NotStarted", "start_time": 18, "params": [0, 0, 0, 0, 40.207842, -3.467042, 0]}
+[2026-03-16 14:49:42,320][Drone 3][INFO][ROS2][gRPC Commands] - Sending command to commands processor
+[2026-03-16 14:49:43,446][Drone 3][INFO][ROS2][gRPC Metrics] - Metrics received from drone and forwarded to ROS2 publisher
+[2026-03-16 14:49:43,901][Drone 3][INFO][ROS2][System Metrics Publisher] - System Metrics published
+[2026-03-16 14:49:44,362][Drone 3][INFO][ROS2][gRPC Commands] - Feedback received from drone and sent to ROS2 server
+[2026-03-16 14:49:44,380][Drone 3][INFO][ROS2][gRPC Commands] - ACK received from commands processor
+[2026-03-16 14:49:44,381][Drone 3][INFO][ROS2][Commands Action Server] - Command feedback published: ['3', '1', '1018', 'WP reached']
+[2026-03-16 14:49:45,384][Drone 3][INFO][ROS2][Commands Action Server] - Processing command 19/67: {"related_task": {"id": 1002, "mission_id": 2}, "id": 1019, "command_type": "CAMERA_IMAGE", "command_status": "NotStarted", "start_time": 19, "params": [0, 0, 0, 0, "Camera_Test_Simulator"]}
+[2026-03-16 14:49:45,385][Drone 3][INFO][ROS2][gRPC Commands] - Sending command to commands processor

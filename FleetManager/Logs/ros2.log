@@ -8887,3 +8887,501 @@
 [2026-03-12 17:50:32,453][ROS2][INFO][ROS2 Manager] - Drone 1: Feedback: ['1', '1', '2', 'WP reached']
 [2026-03-12 17:50:32,454][ROS2][INFO][gRPC ROS2] - Sending drone result to Mission Management
 [2026-03-12 17:50:32,457][ROS2][INFO][gRPC ROS2] - ACK received from Mission Management
+[2026-03-16 14:31:53,015][ROS2][INFO][gRPC ROS2] - Server running on port [::]:50099
+[2026-03-16 14:32:54,160][ROS2][INFO][gRPC ROS2] - Plan received from Mission Management
+[2026-03-16 14:32:54,175][ROS2][INFO][ROS2 Manager] - Sending commands to drone 1
+[2026-03-16 14:32:54,176][ROS2][INFO][gRPC ROS2][Vehicle 1] - Goal sent
+[2026-03-16 14:32:54,183][ROS2][INFO][ROS2 Manager] - Drone 1: Goal accepted.
+[2026-03-16 14:32:54,190][ROS2][INFO][gRPC ROS2] - Sending drone result to Mission Management
+[2026-03-16 14:32:54,196][ROS2][INFO][gRPC ROS2] - ACK received from Mission Management
+[2026-03-16 14:32:56,224][ROS2][INFO][ROS2 Manager] - Drone 1: Feedback: ['1', '1', '1', 'Takeoff successful']
+[2026-03-16 14:32:56,224][ROS2][INFO][gRPC ROS2] - Sending drone result to Mission Management
+[2026-03-16 14:32:56,228][ROS2][INFO][gRPC ROS2] - ACK received from Mission Management
+[2026-03-16 14:32:59,251][ROS2][INFO][ROS2 Manager] - Drone 1: Feedback: ['1', '1', '2', 'WP reached']
+[2026-03-16 14:32:59,252][ROS2][INFO][gRPC ROS2] - Sending drone result to Mission Management
+[2026-03-16 14:32:59,255][ROS2][INFO][gRPC ROS2] - ACK received from Mission Management
+[2026-03-16 14:33:02,274][ROS2][INFO][ROS2 Manager] - Drone 1: Feedback: ['1', '1', '3', 'WP reached']
+[2026-03-16 14:33:02,275][ROS2][INFO][gRPC ROS2] - Sending drone result to Mission Management
+[2026-03-16 14:33:02,277][ROS2][INFO][gRPC ROS2] - ACK received from Mission Management
+[2026-03-16 14:33:04,416][ROS2][INFO][ROS2 Manager] - Drone 1: Feedback: ['1', '1', '4', 'Picture taken']
+[2026-03-16 14:33:04,417][ROS2][INFO][gRPC ROS2] - Sending drone result to Mission Management
+[2026-03-16 14:33:04,420][ROS2][INFO][gRPC ROS2] - ACK received from Mission Management
+[2026-03-16 14:33:10,643][ROS2][INFO][ROS2 Manager] - Drone 1: Feedback: ['1', '1', '5', "[['Grape_Bunch_Hailo8'], {'Grape_bunch': 5.95}, [1, 6], [40.209544, -3.465575], ['ISOBUS']]"]
+[2026-03-16 14:33:10,644][ROS2][INFO][gRPC ROS2] - Sending drone result to Mission Management
+[2026-03-16 14:33:10,647][ROS2][INFO][gRPC ROS2] - ACK received from Mission Management
+[2026-03-16 14:33:13,668][ROS2][INFO][ROS2 Manager] - Drone 1: Feedback: ['1', '1', '6', 'WP reached']
+[2026-03-16 14:33:13,669][ROS2][INFO][gRPC ROS2] - Sending drone result to Mission Management
+[2026-03-16 14:33:13,671][ROS2][INFO][gRPC ROS2] - ACK received from Mission Management
+[2026-03-16 14:33:15,762][ROS2][INFO][ROS2 Manager] - Drone 1: Feedback: ['1', '1', '7', 'Picture taken']
+[2026-03-16 14:33:15,762][ROS2][INFO][gRPC ROS2] - Sending drone result to Mission Management
+[2026-03-16 14:33:15,765][ROS2][INFO][gRPC ROS2] - ACK received from Mission Management
+[2026-03-16 14:33:19,502][ROS2][INFO][ROS2 Manager] - Drone 1: Feedback: ['1', '1', '8', "[['Grape_Bunch_Hailo8'], {'Grape_bunch': 5.95}, [1, 5], [40.209544, -3.465821], ['ISOBUS']]"]
+[2026-03-16 14:33:19,502][ROS2][INFO][gRPC ROS2] - Sending drone result to Mission Management
+[2026-03-16 14:33:19,505][ROS2][INFO][gRPC ROS2] - ACK received from Mission Management
+[2026-03-16 14:33:22,532][ROS2][INFO][ROS2 Manager] - Drone 1: Feedback: ['1', '1', '9', 'WP reached']
+[2026-03-16 14:33:22,533][ROS2][INFO][gRPC ROS2] - Sending drone result to Mission Management
+[2026-03-16 14:33:22,537][ROS2][INFO][gRPC ROS2] - ACK received from Mission Management
+[2026-03-16 14:33:24,627][ROS2][INFO][ROS2 Manager] - Drone 1: Feedback: ['1', '1', '10', 'Picture taken']
+[2026-03-16 14:33:24,628][ROS2][INFO][gRPC ROS2] - Sending drone result to Mission Management
+[2026-03-16 14:33:24,630][ROS2][INFO][gRPC ROS2] - ACK received from Mission Management
+[2026-03-16 14:33:28,404][ROS2][INFO][ROS2 Manager] - Drone 1: Feedback: ['1', '1', '11', "[['Grape_Bunch_Hailo8'], {'Grape_bunch': 5.95}, [1, 4], [40.209544, -3.466066], ['ISOBUS']]"]
+[2026-03-16 14:33:28,405][ROS2][INFO][gRPC ROS2] - Sending drone result to Mission Management
+[2026-03-16 14:33:28,410][ROS2][INFO][gRPC ROS2] - ACK received from Mission Management
+[2026-03-16 14:33:31,426][ROS2][INFO][ROS2 Manager] - Drone 1: Feedback: ['1', '1', '12', 'WP reached']
+[2026-03-16 14:33:31,427][ROS2][INFO][gRPC ROS2] - Sending drone result to Mission Management
+[2026-03-16 14:33:31,429][ROS2][INFO][gRPC ROS2] - ACK received from Mission Management
+[2026-03-16 14:33:33,528][ROS2][INFO][ROS2 Manager] - Drone 1: Feedback: ['1', '1', '13', 'Picture taken']
+[2026-03-16 14:33:33,529][ROS2][INFO][gRPC ROS2] - Sending drone result to Mission Management
+[2026-03-16 14:33:33,533][ROS2][INFO][gRPC ROS2] - ACK received from Mission Management
+[2026-03-16 14:33:37,263][ROS2][INFO][ROS2 Manager] - Drone 1: Feedback: ['1', '1', '14', "[['Grape_Bunch_Hailo8'], {'Grape_bunch': 3.95}, [1, 3], [40.209544, -3.466312], ['ISOBUS']]"]
+[2026-03-16 14:33:37,264][ROS2][INFO][gRPC ROS2] - Sending drone result to Mission Management
+[2026-03-16 14:33:37,266][ROS2][INFO][gRPC ROS2] - ACK received from Mission Management
+[2026-03-16 14:33:40,289][ROS2][INFO][ROS2 Manager] - Drone 1: Feedback: ['1', '1', '15', 'WP reached']
+[2026-03-16 14:33:40,290][ROS2][INFO][gRPC ROS2] - Sending drone result to Mission Management
+[2026-03-16 14:33:40,293][ROS2][INFO][gRPC ROS2] - ACK received from Mission Management
+[2026-03-16 14:33:42,386][ROS2][INFO][ROS2 Manager] - Drone 1: Feedback: ['1', '1', '16', 'Picture taken']
+[2026-03-16 14:33:42,386][ROS2][INFO][gRPC ROS2] - Sending drone result to Mission Management
+[2026-03-16 14:33:42,389][ROS2][INFO][gRPC ROS2] - ACK received from Mission Management
+[2026-03-16 14:33:46,115][ROS2][INFO][ROS2 Manager] - Drone 1: Feedback: ['1', '1', '17', "[['Grape_Bunch_Hailo8'], {'Grape_bunch': 7.95}, [1, 2], [40.209544, -3.466557], ['ISOBUS']]"]
+[2026-03-16 14:33:46,116][ROS2][INFO][gRPC ROS2] - Sending drone result to Mission Management
+[2026-03-16 14:33:46,120][ROS2][INFO][gRPC ROS2] - ACK received from Mission Management
+[2026-03-16 14:33:49,139][ROS2][INFO][ROS2 Manager] - Drone 1: Feedback: ['1', '1', '18', 'WP reached']
+[2026-03-16 14:33:49,140][ROS2][INFO][gRPC ROS2] - Sending drone result to Mission Management
+[2026-03-16 14:33:49,144][ROS2][INFO][gRPC ROS2] - ACK received from Mission Management
+[2026-03-16 14:33:51,223][ROS2][INFO][ROS2 Manager] - Drone 1: Feedback: ['1', '1', '19', 'Picture taken']
+[2026-03-16 14:33:51,224][ROS2][INFO][gRPC ROS2] - Sending drone result to Mission Management
+[2026-03-16 14:33:51,228][ROS2][INFO][gRPC ROS2] - ACK received from Mission Management
+[2026-03-16 14:33:54,935][ROS2][INFO][ROS2 Manager] - Drone 1: Feedback: ['1', '1', '20', "[['Grape_Bunch_Hailo8'], {'Grape_bunch': 1.95}, [1, 1], [40.209544, -3.466803], ['ISOBUS']]"]
+[2026-03-16 14:33:54,936][ROS2][INFO][gRPC ROS2] - Sending drone result to Mission Management
+[2026-03-16 14:33:54,938][ROS2][INFO][gRPC ROS2] - ACK received from Mission Management
+[2026-03-16 14:33:57,961][ROS2][INFO][ROS2 Manager] - Drone 1: Feedback: ['1', '1', '21', 'WP reached']
+[2026-03-16 14:33:57,962][ROS2][INFO][gRPC ROS2] - Sending drone result to Mission Management
+[2026-03-16 14:33:57,967][ROS2][INFO][gRPC ROS2] - ACK received from Mission Management
+[2026-03-16 14:34:00,104][ROS2][INFO][ROS2 Manager] - Drone 1: Feedback: ['1', '1', '22', 'Picture taken']
+[2026-03-16 14:34:00,106][ROS2][INFO][gRPC ROS2] - Sending drone result to Mission Management
+[2026-03-16 14:34:00,109][ROS2][INFO][gRPC ROS2] - ACK received from Mission Management
+[2026-03-16 14:34:03,880][ROS2][INFO][ROS2 Manager] - Drone 1: Feedback: ['1', '1', '23', "[['Grape_Bunch_Hailo8'], {'Grape_bunch': 5.95}, [1, 0], [40.209544, -3.467048], ['ISOBUS']]"]
+[2026-03-16 14:34:03,881][ROS2][INFO][gRPC ROS2] - Sending drone result to Mission Management
+[2026-03-16 14:34:03,884][ROS2][INFO][gRPC ROS2] - ACK received from Mission Management
+[2026-03-16 14:34:06,906][ROS2][INFO][ROS2 Manager] - Drone 1: Feedback: ['1', '1', '24', 'WP reached']
+[2026-03-16 14:34:06,907][ROS2][INFO][gRPC ROS2] - Sending drone result to Mission Management
+[2026-03-16 14:34:06,910][ROS2][INFO][gRPC ROS2] - ACK received from Mission Management
+[2026-03-16 14:34:09,005][ROS2][INFO][ROS2 Manager] - Drone 1: Feedback: ['1', '1', '25', 'Picture taken']
+[2026-03-16 14:34:09,006][ROS2][INFO][gRPC ROS2] - Sending drone result to Mission Management
+[2026-03-16 14:34:09,008][ROS2][INFO][gRPC ROS2] - ACK received from Mission Management
+[2026-03-16 14:34:12,720][ROS2][INFO][ROS2 Manager] - Drone 1: Feedback: ['1', '1', '26', "[['Grape_Bunch_Hailo8'], {'Grape_bunch': 7.95}, [0, 0], [40.20973, -3.467048], ['ISOBUS']]"]
+[2026-03-16 14:34:12,721][ROS2][INFO][gRPC ROS2] - Sending drone result to Mission Management
+[2026-03-16 14:34:12,724][ROS2][INFO][gRPC ROS2] - ACK received from Mission Management
+[2026-03-16 14:34:15,747][ROS2][INFO][ROS2 Manager] - Drone 1: Feedback: ['1', '1', '27', 'WP reached']
+[2026-03-16 14:34:15,748][ROS2][INFO][gRPC ROS2] - Sending drone result to Mission Management
+[2026-03-16 14:34:15,750][ROS2][INFO][gRPC ROS2] - ACK received from Mission Management
+[2026-03-16 14:34:17,833][ROS2][INFO][ROS2 Manager] - Drone 1: Feedback: ['1', '1', '28', 'Picture taken']
+[2026-03-16 14:34:17,835][ROS2][INFO][gRPC ROS2] - Sending drone result to Mission Management
+[2026-03-16 14:34:17,837][ROS2][INFO][gRPC ROS2] - ACK received from Mission Management
+[2026-03-16 14:34:21,586][ROS2][INFO][ROS2 Manager] - Drone 1: Feedback: ['1', '1', '29', "[['Grape_Bunch_Hailo8'], {'Grape_bunch': 1.95}, [0, 1], [40.20973, -3.466803], ['ISOBUS']]"]
+[2026-03-16 14:34:21,587][ROS2][INFO][gRPC ROS2] - Sending drone result to Mission Management
+[2026-03-16 14:34:21,590][ROS2][INFO][gRPC ROS2] - ACK received from Mission Management
+[2026-03-16 14:34:24,611][ROS2][INFO][ROS2 Manager] - Drone 1: Feedback: ['1', '1', '30', 'WP reached']
+[2026-03-16 14:34:24,613][ROS2][INFO][gRPC ROS2] - Sending drone result to Mission Management
+[2026-03-16 14:34:24,617][ROS2][INFO][gRPC ROS2] - ACK received from Mission Management
+[2026-03-16 14:34:26,704][ROS2][INFO][ROS2 Manager] - Drone 1: Feedback: ['1', '1', '31', 'Picture taken']
+[2026-03-16 14:34:26,705][ROS2][INFO][gRPC ROS2] - Sending drone result to Mission Management
+[2026-03-16 14:34:26,708][ROS2][INFO][gRPC ROS2] - ACK received from Mission Management
+[2026-03-16 14:34:30,440][ROS2][INFO][ROS2 Manager] - Drone 1: Feedback: ['1', '1', '32', "[['Grape_Bunch_Hailo8'], {'Grape_bunch': 3.95}, [0, 2], [40.20973, -3.466557], ['ISOBUS']]"]
+[2026-03-16 14:34:30,441][ROS2][INFO][gRPC ROS2] - Sending drone result to Mission Management
+[2026-03-16 14:34:30,445][ROS2][INFO][gRPC ROS2] - ACK received from Mission Management
+[2026-03-16 14:34:33,467][ROS2][INFO][ROS2 Manager] - Drone 1: Feedback: ['1', '1', '33', 'WP reached']
+[2026-03-16 14:34:33,468][ROS2][INFO][gRPC ROS2] - Sending drone result to Mission Management
+[2026-03-16 14:34:33,470][ROS2][INFO][gRPC ROS2] - ACK received from Mission Management
+[2026-03-16 14:34:35,562][ROS2][INFO][ROS2 Manager] - Drone 1: Feedback: ['1', '1', '34', 'Picture taken']
+[2026-03-16 14:34:35,563][ROS2][INFO][gRPC ROS2] - Sending drone result to Mission Management
+[2026-03-16 14:34:35,566][ROS2][INFO][gRPC ROS2] - ACK received from Mission Management
+[2026-03-16 14:34:39,314][ROS2][INFO][ROS2 Manager] - Drone 1: Feedback: ['1', '1', '35', "[['Grape_Bunch_Hailo8'], {'Grape_bunch': 7.95}, [0, 3], [40.20973, -3.466312], ['ISOBUS']]"]
+[2026-03-16 14:34:39,315][ROS2][INFO][gRPC ROS2] - Sending drone result to Mission Management
+[2026-03-16 14:34:39,318][ROS2][INFO][gRPC ROS2] - ACK received from Mission Management
+[2026-03-16 14:34:42,348][ROS2][INFO][ROS2 Manager] - Drone 1: Feedback: ['1', '1', '36', 'WP reached']
+[2026-03-16 14:34:42,349][ROS2][INFO][gRPC ROS2] - Sending drone result to Mission Management
+[2026-03-16 14:34:42,352][ROS2][INFO][gRPC ROS2] - ACK received from Mission Management
+[2026-03-16 14:34:44,454][ROS2][INFO][ROS2 Manager] - Drone 1: Feedback: ['1', '1', '37', 'Picture taken']
+[2026-03-16 14:34:44,455][ROS2][INFO][gRPC ROS2] - Sending drone result to Mission Management
+[2026-03-16 14:34:44,459][ROS2][INFO][gRPC ROS2] - ACK received from Mission Management
+[2026-03-16 14:34:48,185][ROS2][INFO][ROS2 Manager] - Drone 1: Feedback: ['1', '1', '38', "[['Grape_Bunch_Hailo8'], {'Grape_bunch': 9.95}, [0, 4], [40.20973, -3.466066], ['ISOBUS']]"]
+[2026-03-16 14:34:48,186][ROS2][INFO][gRPC ROS2] - Sending drone result to Mission Management
+[2026-03-16 14:34:48,189][ROS2][INFO][gRPC ROS2] - ACK received from Mission Management
+[2026-03-16 14:34:51,213][ROS2][INFO][ROS2 Manager] - Drone 1: Feedback: ['1', '1', '39', 'WP reached']
+[2026-03-16 14:34:51,214][ROS2][INFO][gRPC ROS2] - Sending drone result to Mission Management
+[2026-03-16 14:34:51,219][ROS2][INFO][gRPC ROS2] - ACK received from Mission Management
+[2026-03-16 14:34:53,302][ROS2][INFO][ROS2 Manager] - Drone 1: Feedback: ['1', '1', '40', 'Picture taken']
+[2026-03-16 14:34:53,303][ROS2][INFO][gRPC ROS2] - Sending drone result to Mission Management
+[2026-03-16 14:34:53,306][ROS2][INFO][gRPC ROS2] - ACK received from Mission Management
+[2026-03-16 14:34:58,567][ROS2][INFO][ROS2 Manager] - Drone 1: Feedback: ['1', '1', '41', "[['Grape_Bunch_Hailo8'], {'Grape_bunch': 3.95}, [0, 5], [40.20973, -3.465821], ['ISOBUS']]"]
+[2026-03-16 14:34:58,568][ROS2][INFO][gRPC ROS2] - Sending drone result to Mission Management
+[2026-03-16 14:34:58,570][ROS2][INFO][gRPC ROS2] - ACK received from Mission Management
+[2026-03-16 14:35:01,590][ROS2][INFO][ROS2 Manager] - Drone 1: Feedback: ['1', '1', '42', 'WP reached']
+[2026-03-16 14:35:01,591][ROS2][INFO][gRPC ROS2] - Sending drone result to Mission Management
+[2026-03-16 14:35:01,593][ROS2][INFO][gRPC ROS2] - ACK received from Mission Management
+[2026-03-16 14:35:03,697][ROS2][INFO][ROS2 Manager] - Drone 1: Feedback: ['1', '1', '43', 'Picture taken']
+[2026-03-16 14:35:03,699][ROS2][INFO][gRPC ROS2] - Sending drone result to Mission Management
+[2026-03-16 14:35:03,702][ROS2][INFO][gRPC ROS2] - ACK received from Mission Management
+[2026-03-16 14:35:07,455][ROS2][INFO][ROS2 Manager] - Drone 1: Feedback: ['1', '1', '44', "[['Grape_Bunch_Hailo8'], {'Grape_bunch': 3.95}, [0, 6], [40.20973, -3.465575], ['ISOBUS']]"]
+[2026-03-16 14:35:07,456][ROS2][INFO][gRPC ROS2] - Sending drone result to Mission Management
+[2026-03-16 14:35:07,458][ROS2][INFO][gRPC ROS2] - ACK received from Mission Management
+[2026-03-16 14:35:07,471][ROS2][INFO][gRPC ROS2] - Plan received from Mission Management
+[2026-03-16 14:35:07,478][ROS2][INFO][ROS2 Manager] - Sending commands to drone 2
+[2026-03-16 14:35:07,480][ROS2][INFO][gRPC ROS2][Vehicle 2] - Goal sent
+[2026-03-16 14:35:07,485][ROS2][INFO][ROS2 Manager] - Drone 2: Goal accepted.
+[2026-03-16 14:35:07,488][ROS2][INFO][gRPC ROS2] - Sending drone result to Mission Management
+[2026-03-16 14:35:07,495][ROS2][INFO][gRPC ROS2] - ACK received from Mission Management
+[2026-03-16 14:35:09,537][ROS2][INFO][ROS2 Manager] - Drone 2: Feedback: ['2', '1', '47', 'Takeoff successful']
+[2026-03-16 14:35:09,538][ROS2][INFO][gRPC ROS2] - Sending drone result to Mission Management
+[2026-03-16 14:35:09,540][ROS2][INFO][gRPC ROS2] - ACK received from Mission Management
+[2026-03-16 14:35:10,488][ROS2][INFO][ROS2 Manager] - Drone 1: Feedback: ['1', '1', '45', 'Returned home']
+[2026-03-16 14:35:10,488][ROS2][INFO][gRPC ROS2] - Sending drone result to Mission Management
+[2026-03-16 14:35:10,491][ROS2][INFO][gRPC ROS2] - ACK received from Mission Management
+[2026-03-16 14:35:12,562][ROS2][INFO][ROS2 Manager] - Drone 2: Feedback: ['2', '1', '48', 'WP reached']
+[2026-03-16 14:35:12,563][ROS2][INFO][gRPC ROS2] - Sending drone result to Mission Management
+[2026-03-16 14:35:12,567][ROS2][INFO][gRPC ROS2] - ACK received from Mission Management
+[2026-03-16 14:35:13,511][ROS2][INFO][ROS2 Manager] - Drone 1: Feedback: ['1', '1', '46', 'Landing successful']
+[2026-03-16 14:35:13,512][ROS2][INFO][gRPC ROS2] - Sending drone result to Mission Management
+[2026-03-16 14:35:13,515][ROS2][INFO][gRPC ROS2] - ACK received from Mission Management
+[2026-03-16 14:35:14,514][ROS2][INFO][ROS2 Manager] - Drone 1: Result: ['1', '2']
+[2026-03-16 14:35:14,514][ROS2][INFO][gRPC ROS2] - Sending drone result to Mission Management
+[2026-03-16 14:35:14,517][ROS2][INFO][gRPC ROS2] - ACK received from Mission Management
+[2026-03-16 14:35:15,584][ROS2][INFO][ROS2 Manager] - Drone 2: Feedback: ['2', '1', '49', 'WP reached']
+[2026-03-16 14:35:15,585][ROS2][INFO][gRPC ROS2] - Sending drone result to Mission Management
+[2026-03-16 14:35:15,587][ROS2][INFO][gRPC ROS2] - ACK received from Mission Management
+[2026-03-16 14:35:18,610][ROS2][INFO][ROS2 Manager] - Drone 2: Feedback: ['2', '1', '50', "[['Grape_bunch'], [5.95]]"]
+[2026-03-16 14:35:18,610][ROS2][INFO][gRPC ROS2] - Sending drone result to Mission Management
+[2026-03-16 14:35:18,614][ROS2][INFO][gRPC ROS2] - ACK received from Mission Management
+[2026-03-16 14:35:21,637][ROS2][INFO][ROS2 Manager] - Drone 2: Feedback: ['2', '1', '51', 'WP reached']
+[2026-03-16 14:35:21,638][ROS2][INFO][gRPC ROS2] - Sending drone result to Mission Management
+[2026-03-16 14:35:21,640][ROS2][INFO][gRPC ROS2] - ACK received from Mission Management
+[2026-03-16 14:35:24,663][ROS2][INFO][ROS2 Manager] - Drone 2: Feedback: ['2', '1', '52', "[['Grape_bunch'], [5.95]]"]
+[2026-03-16 14:35:24,664][ROS2][INFO][gRPC ROS2] - Sending drone result to Mission Management
+[2026-03-16 14:35:24,666][ROS2][INFO][gRPC ROS2] - ACK received from Mission Management
+[2026-03-16 14:35:27,691][ROS2][INFO][ROS2 Manager] - Drone 2: Feedback: ['2', '1', '53', 'WP reached']
+[2026-03-16 14:35:27,692][ROS2][INFO][gRPC ROS2] - Sending drone result to Mission Management
+[2026-03-16 14:35:27,694][ROS2][INFO][gRPC ROS2] - ACK received from Mission Management
+[2026-03-16 14:35:30,719][ROS2][INFO][ROS2 Manager] - Drone 2: Feedback: ['2', '1', '54', "[['Grape_bunch'], [5.95]]"]
+[2026-03-16 14:35:30,720][ROS2][INFO][gRPC ROS2] - Sending drone result to Mission Management
+[2026-03-16 14:35:30,723][ROS2][INFO][gRPC ROS2] - ACK received from Mission Management
+[2026-03-16 14:35:33,766][ROS2][INFO][ROS2 Manager] - Drone 2: Feedback: ['2', '1', '55', 'WP reached']
+[2026-03-16 14:35:33,767][ROS2][INFO][gRPC ROS2] - Sending drone result to Mission Management
+[2026-03-16 14:35:33,770][ROS2][INFO][gRPC ROS2] - ACK received from Mission Management
+[2026-03-16 14:35:36,797][ROS2][INFO][ROS2 Manager] - Drone 2: Feedback: ['2', '1', '56', "[['Grape_bunch'], [3.95]]"]
+[2026-03-16 14:35:36,797][ROS2][INFO][gRPC ROS2] - Sending drone result to Mission Management
+[2026-03-16 14:35:36,802][ROS2][INFO][gRPC ROS2] - ACK received from Mission Management
+[2026-03-16 14:35:39,825][ROS2][INFO][ROS2 Manager] - Drone 2: Feedback: ['2', '1', '57', 'WP reached']
+[2026-03-16 14:35:39,827][ROS2][INFO][gRPC ROS2] - Sending drone result to Mission Management
+[2026-03-16 14:35:39,830][ROS2][INFO][gRPC ROS2] - ACK received from Mission Management
+[2026-03-16 14:35:42,852][ROS2][INFO][ROS2 Manager] - Drone 2: Feedback: ['2', '1', '58', "[['Grape_bunch'], [7.95]]"]
+[2026-03-16 14:35:42,853][ROS2][INFO][gRPC ROS2] - Sending drone result to Mission Management
+[2026-03-16 14:35:42,855][ROS2][INFO][gRPC ROS2] - ACK received from Mission Management
+[2026-03-16 14:35:45,881][ROS2][INFO][ROS2 Manager] - Drone 2: Feedback: ['2', '1', '59', 'WP reached']
+[2026-03-16 14:35:45,882][ROS2][INFO][gRPC ROS2] - Sending drone result to Mission Management
+[2026-03-16 14:35:45,884][ROS2][INFO][gRPC ROS2] - ACK received from Mission Management
+[2026-03-16 14:35:48,913][ROS2][INFO][ROS2 Manager] - Drone 2: Feedback: ['2', '1', '60', "[['Grape_bunch'], [1.95]]"]
+[2026-03-16 14:35:48,914][ROS2][INFO][gRPC ROS2] - Sending drone result to Mission Management
+[2026-03-16 14:35:48,917][ROS2][INFO][gRPC ROS2] - ACK received from Mission Management
+[2026-03-16 14:35:51,936][ROS2][INFO][ROS2 Manager] - Drone 2: Feedback: ['2', '1', '61', 'WP reached']
+[2026-03-16 14:35:51,937][ROS2][INFO][gRPC ROS2] - Sending drone result to Mission Management
+[2026-03-16 14:35:51,940][ROS2][INFO][gRPC ROS2] - ACK received from Mission Management
+[2026-03-16 14:35:54,966][ROS2][INFO][ROS2 Manager] - Drone 2: Feedback: ['2', '1', '62', "[['Grape_bunch'], [5.95]]"]
+[2026-03-16 14:35:54,966][ROS2][INFO][gRPC ROS2] - Sending drone result to Mission Management
+[2026-03-16 14:35:54,969][ROS2][INFO][gRPC ROS2] - ACK received from Mission Management
+[2026-03-16 14:35:57,994][ROS2][INFO][ROS2 Manager] - Drone 2: Feedback: ['2', '1', '63', 'WP reached']
+[2026-03-16 14:35:57,995][ROS2][INFO][gRPC ROS2] - Sending drone result to Mission Management
+[2026-03-16 14:35:57,998][ROS2][INFO][gRPC ROS2] - ACK received from Mission Management
+[2026-03-16 14:36:01,036][ROS2][INFO][ROS2 Manager] - Drone 2: Feedback: ['2', '1', '64', "[['Grape_bunch'], [7.95]]"]
+[2026-03-16 14:36:01,037][ROS2][INFO][gRPC ROS2] - Sending drone result to Mission Management
+[2026-03-16 14:36:01,040][ROS2][INFO][gRPC ROS2] - ACK received from Mission Management
+[2026-03-16 14:36:04,064][ROS2][INFO][ROS2 Manager] - Drone 2: Feedback: ['2', '1', '65', 'WP reached']
+[2026-03-16 14:36:04,066][ROS2][INFO][gRPC ROS2] - Sending drone result to Mission Management
+[2026-03-16 14:36:04,069][ROS2][INFO][gRPC ROS2] - ACK received from Mission Management
+[2026-03-16 14:36:07,129][ROS2][INFO][ROS2 Manager] - Drone 2: Feedback: ['2', '1', '66', "[['Grape_bunch'], [1.95]]"]
+[2026-03-16 14:36:07,130][ROS2][INFO][gRPC ROS2] - Sending drone result to Mission Management
+[2026-03-16 14:36:07,133][ROS2][INFO][gRPC ROS2] - ACK received from Mission Management
+[2026-03-16 14:36:10,154][ROS2][INFO][ROS2 Manager] - Drone 2: Feedback: ['2', '1', '67', 'WP reached']
+[2026-03-16 14:36:10,155][ROS2][INFO][gRPC ROS2] - Sending drone result to Mission Management
+[2026-03-16 14:36:10,157][ROS2][INFO][gRPC ROS2] - ACK received from Mission Management
+[2026-03-16 14:36:13,180][ROS2][INFO][ROS2 Manager] - Drone 2: Feedback: ['2', '1', '68', "[['Grape_bunch'], [3.95]]"]
+[2026-03-16 14:36:13,181][ROS2][INFO][gRPC ROS2] - Sending drone result to Mission Management
+[2026-03-16 14:36:13,184][ROS2][INFO][gRPC ROS2] - ACK received from Mission Management
+[2026-03-16 14:36:16,208][ROS2][INFO][ROS2 Manager] - Drone 2: Feedback: ['2', '1', '69', 'WP reached']
+[2026-03-16 14:36:16,210][ROS2][INFO][gRPC ROS2] - Sending drone result to Mission Management
+[2026-03-16 14:36:16,213][ROS2][INFO][gRPC ROS2] - ACK received from Mission Management
+[2026-03-16 14:36:19,232][ROS2][INFO][ROS2 Manager] - Drone 2: Feedback: ['2', '1', '70', "[['Grape_bunch'], [7.95]]"]
+[2026-03-16 14:36:19,233][ROS2][INFO][gRPC ROS2] - Sending drone result to Mission Management
+[2026-03-16 14:36:19,235][ROS2][INFO][gRPC ROS2] - ACK received from Mission Management
+[2026-03-16 14:36:22,257][ROS2][INFO][ROS2 Manager] - Drone 2: Feedback: ['2', '1', '71', 'WP reached']
+[2026-03-16 14:36:22,258][ROS2][INFO][gRPC ROS2] - Sending drone result to Mission Management
+[2026-03-16 14:36:22,260][ROS2][INFO][gRPC ROS2] - ACK received from Mission Management
+[2026-03-16 14:36:25,282][ROS2][INFO][ROS2 Manager] - Drone 2: Feedback: ['2', '1', '72', "[['Grape_bunch'], [9.95]]"]
+[2026-03-16 14:36:25,283][ROS2][INFO][gRPC ROS2] - Sending drone result to Mission Management
+[2026-03-16 14:36:25,286][ROS2][INFO][gRPC ROS2] - ACK received from Mission Management
+[2026-03-16 14:36:28,327][ROS2][INFO][ROS2 Manager] - Drone 2: Feedback: ['2', '1', '73', 'WP reached']
+[2026-03-16 14:36:28,327][ROS2][INFO][gRPC ROS2] - Sending drone result to Mission Management
+[2026-03-16 14:36:28,332][ROS2][INFO][gRPC ROS2] - ACK received from Mission Management
+[2026-03-16 14:36:31,361][ROS2][INFO][ROS2 Manager] - Drone 2: Feedback: ['2', '1', '74', "[['Grape_bunch'], [3.95]]"]
+[2026-03-16 14:36:31,362][ROS2][INFO][gRPC ROS2] - Sending drone result to Mission Management
+[2026-03-16 14:36:31,366][ROS2][INFO][gRPC ROS2] - ACK received from Mission Management
+[2026-03-16 14:36:34,387][ROS2][INFO][ROS2 Manager] - Drone 2: Feedback: ['2', '1', '75', 'WP reached']
+[2026-03-16 14:36:34,388][ROS2][INFO][gRPC ROS2] - Sending drone result to Mission Management
+[2026-03-16 14:36:34,391][ROS2][INFO][gRPC ROS2] - ACK received from Mission Management
+[2026-03-16 14:36:37,420][ROS2][INFO][ROS2 Manager] - Drone 2: Feedback: ['2', '1', '76', "[['Grape_bunch'], [3.95]]"]
+[2026-03-16 14:36:37,421][ROS2][INFO][gRPC ROS2] - Sending drone result to Mission Management
+[2026-03-16 14:36:37,425][ROS2][INFO][gRPC ROS2] - ACK received from Mission Management
+[2026-03-16 14:36:40,442][ROS2][INFO][ROS2 Manager] - Drone 2: Feedback: ['2', '1', '77', 'Returned home']
+[2026-03-16 14:36:40,443][ROS2][INFO][gRPC ROS2] - Sending drone result to Mission Management
+[2026-03-16 14:36:40,445][ROS2][INFO][gRPC ROS2] - ACK received from Mission Management
+[2026-03-16 14:36:43,470][ROS2][INFO][ROS2 Manager] - Drone 2: Feedback: ['2', '1', '78', 'Landing successful']
+[2026-03-16 14:36:43,471][ROS2][INFO][gRPC ROS2] - Sending drone result to Mission Management
+[2026-03-16 14:36:43,474][ROS2][INFO][gRPC ROS2] - ACK received from Mission Management
+[2026-03-16 14:36:44,473][ROS2][INFO][ROS2 Manager] - Drone 2: Result: ['2', '2']
+[2026-03-16 14:36:44,474][ROS2][INFO][gRPC ROS2] - Sending drone result to Mission Management
+[2026-03-16 14:36:44,477][ROS2][INFO][gRPC ROS2] - ACK received from Mission Management
+[2026-03-16 14:43:40,083][ROS2][INFO][gRPC ROS2] - Server running on port [::]:50099
+[2026-03-16 14:43:46,363][ROS2][INFO][gRPC ROS2] - Plan received from Mission Management
+[2026-03-16 14:43:46,379][ROS2][INFO][ROS2 Manager] - Sending commands to drone 1
+[2026-03-16 14:43:46,382][ROS2][INFO][gRPC ROS2][Vehicle 1] - Goal sent
+[2026-03-16 14:43:46,387][ROS2][INFO][ROS2 Manager] - Drone 1: Goal accepted.
+[2026-03-16 14:43:46,391][ROS2][INFO][gRPC ROS2] - Sending drone result to Mission Management
+[2026-03-16 14:43:46,396][ROS2][INFO][gRPC ROS2] - ACK received from Mission Management
+[2026-03-16 14:43:48,429][ROS2][INFO][ROS2 Manager] - Drone 1: Feedback: ['1', '1', '1', 'Takeoff successful']
+[2026-03-16 14:43:48,430][ROS2][INFO][gRPC ROS2] - Sending drone result to Mission Management
+[2026-03-16 14:43:48,434][ROS2][INFO][gRPC ROS2] - ACK received from Mission Management
+[2026-03-16 14:43:51,462][ROS2][INFO][ROS2 Manager] - Drone 1: Feedback: ['1', '1', '2', 'WP reached']
+[2026-03-16 14:43:51,463][ROS2][INFO][gRPC ROS2] - Sending drone result to Mission Management
+[2026-03-16 14:43:51,465][ROS2][INFO][gRPC ROS2] - ACK received from Mission Management
+[2026-03-16 14:43:54,485][ROS2][INFO][ROS2 Manager] - Drone 1: Feedback: ['1', '1', '3', 'WP reached']
+[2026-03-16 14:43:54,486][ROS2][INFO][gRPC ROS2] - Sending drone result to Mission Management
+[2026-03-16 14:43:54,489][ROS2][INFO][gRPC ROS2] - ACK received from Mission Management
+[2026-03-16 14:43:56,566][ROS2][INFO][ROS2 Manager] - Drone 1: Feedback: ['1', '1', '4', 'Picture taken']
+[2026-03-16 14:43:56,567][ROS2][INFO][gRPC ROS2] - Sending drone result to Mission Management
+[2026-03-16 14:43:56,569][ROS2][INFO][gRPC ROS2] - ACK received from Mission Management
+[2026-03-16 14:44:00,377][ROS2][INFO][ROS2 Manager] - Drone 1: Feedback: ['1', '1', '5', "[['Grape_Bunch_Hailo8'], {'Grape_bunch': 5.95}, [1, 6], [40.209544, -3.465575], ['ISOBUS']]"]
+[2026-03-16 14:44:00,378][ROS2][INFO][gRPC ROS2] - Sending drone result to Mission Management
+[2026-03-16 14:44:00,380][ROS2][INFO][gRPC ROS2] - ACK received from Mission Management
+[2026-03-16 14:44:03,421][ROS2][INFO][ROS2 Manager] - Drone 1: Feedback: ['1', '1', '6', 'WP reached']
+[2026-03-16 14:44:03,422][ROS2][INFO][gRPC ROS2] - Sending drone result to Mission Management
+[2026-03-16 14:44:03,424][ROS2][INFO][gRPC ROS2] - ACK received from Mission Management
+[2026-03-16 14:44:05,499][ROS2][INFO][ROS2 Manager] - Drone 1: Feedback: ['1', '1', '7', 'Picture taken']
+[2026-03-16 14:44:05,499][ROS2][INFO][gRPC ROS2] - Sending drone result to Mission Management
+[2026-03-16 14:44:05,501][ROS2][INFO][gRPC ROS2] - ACK received from Mission Management
+[2026-03-16 14:44:10,425][ROS2][INFO][ROS2 Manager] - Drone 1: Feedback: ['1', '1', '8', "[['Grape_Bunch_Hailo8'], {'Grape_bunch': 5.95}, [1, 5], [40.209544, -3.465821], ['ISOBUS']]"]
+[2026-03-16 14:44:10,426][ROS2][INFO][gRPC ROS2] - Sending drone result to Mission Management
+[2026-03-16 14:44:10,429][ROS2][INFO][gRPC ROS2] - ACK received from Mission Management
+[2026-03-16 14:44:13,474][ROS2][INFO][ROS2 Manager] - Drone 1: Feedback: ['1', '1', '9', 'WP reached']
+[2026-03-16 14:44:13,475][ROS2][INFO][gRPC ROS2] - Sending drone result to Mission Management
+[2026-03-16 14:44:13,478][ROS2][INFO][gRPC ROS2] - ACK received from Mission Management
+[2026-03-16 14:44:15,545][ROS2][INFO][ROS2 Manager] - Drone 1: Feedback: ['1', '1', '10', 'Picture taken']
+[2026-03-16 14:44:15,546][ROS2][INFO][gRPC ROS2] - Sending drone result to Mission Management
+[2026-03-16 14:44:15,550][ROS2][INFO][gRPC ROS2] - ACK received from Mission Management
+[2026-03-16 14:44:19,281][ROS2][INFO][ROS2 Manager] - Drone 1: Feedback: ['1', '1', '11', "[['Grape_Bunch_Hailo8'], {'Grape_bunch': 5.95}, [1, 4], [40.209544, -3.466066], ['ISOBUS']]"]
+[2026-03-16 14:44:19,281][ROS2][INFO][gRPC ROS2] - Sending drone result to Mission Management
+[2026-03-16 14:44:19,285][ROS2][INFO][gRPC ROS2] - ACK received from Mission Management
+[2026-03-16 14:44:22,309][ROS2][INFO][ROS2 Manager] - Drone 1: Feedback: ['1', '1', '12', 'WP reached']
+[2026-03-16 14:44:22,309][ROS2][INFO][gRPC ROS2] - Sending drone result to Mission Management
+[2026-03-16 14:44:22,311][ROS2][INFO][gRPC ROS2] - ACK received from Mission Management
+[2026-03-16 14:44:24,373][ROS2][INFO][ROS2 Manager] - Drone 1: Feedback: ['1', '1', '13', 'Picture taken']
+[2026-03-16 14:44:24,373][ROS2][INFO][gRPC ROS2] - Sending drone result to Mission Management
+[2026-03-16 14:44:24,375][ROS2][INFO][gRPC ROS2] - ACK received from Mission Management
+[2026-03-16 14:44:28,103][ROS2][INFO][ROS2 Manager] - Drone 1: Feedback: ['1', '1', '14', "[['Grape_Bunch_Hailo8'], {'Grape_bunch': 3.95}, [1, 3], [40.209544, -3.466312], ['ISOBUS']]"]
+[2026-03-16 14:44:28,104][ROS2][INFO][gRPC ROS2] - Sending drone result to Mission Management
+[2026-03-16 14:44:28,106][ROS2][INFO][gRPC ROS2] - ACK received from Mission Management
+[2026-03-16 14:44:31,294][ROS2][INFO][ROS2 Manager] - Drone 1: Feedback: ['1', '1', '15', 'WP reached']
+[2026-03-16 14:44:31,296][ROS2][INFO][gRPC ROS2] - Sending drone result to Mission Management
+[2026-03-16 14:44:31,298][ROS2][INFO][gRPC ROS2] - ACK received from Mission Management
+[2026-03-16 14:44:33,374][ROS2][INFO][ROS2 Manager] - Drone 1: Feedback: ['1', '1', '16', 'Picture taken']
+[2026-03-16 14:44:33,375][ROS2][INFO][gRPC ROS2] - Sending drone result to Mission Management
+[2026-03-16 14:44:33,377][ROS2][INFO][gRPC ROS2] - ACK received from Mission Management
+[2026-03-16 14:44:37,369][ROS2][INFO][ROS2 Manager] - Drone 1: Feedback: ['1', '1', '17', "[['Grape_Bunch_Hailo8'], {'Grape_bunch': 7.95}, [1, 2], [40.209544, -3.466557], ['ISOBUS']]"]
+[2026-03-16 14:44:37,370][ROS2][INFO][gRPC ROS2] - Sending drone result to Mission Management
+[2026-03-16 14:44:37,371][ROS2][INFO][gRPC ROS2] - ACK received from Mission Management
+[2026-03-16 14:44:59,260][ROS2][INFO][gRPC ROS2] - Server running on port [::]:50099
+[2026-03-16 14:47:28,415][ROS2][INFO][gRPC ROS2] - Plan received from Mission Management
+[2026-03-16 14:47:28,431][ROS2][INFO][ROS2 Manager] - Sending commands to drone 1
+[2026-03-16 14:47:28,432][ROS2][INFO][gRPC ROS2][Vehicle 1] - Goal sent
+[2026-03-16 14:47:28,438][ROS2][INFO][ROS2 Manager] - Drone 1: Goal accepted.
+[2026-03-16 14:47:28,444][ROS2][INFO][gRPC ROS2] - Sending drone result to Mission Management
+[2026-03-16 14:47:28,448][ROS2][INFO][gRPC ROS2] - ACK received from Mission Management
+[2026-03-16 14:47:30,482][ROS2][INFO][ROS2 Manager] - Drone 1: Feedback: ['1', '1', '1', 'Takeoff successful']
+[2026-03-16 14:47:30,483][ROS2][INFO][gRPC ROS2] - Sending drone result to Mission Management
+[2026-03-16 14:47:30,485][ROS2][INFO][gRPC ROS2] - ACK received from Mission Management
+[2026-03-16 14:47:33,507][ROS2][INFO][ROS2 Manager] - Drone 1: Feedback: ['1', '1', '2', 'WP reached']
+[2026-03-16 14:47:33,508][ROS2][INFO][gRPC ROS2] - Sending drone result to Mission Management
+[2026-03-16 14:47:33,510][ROS2][INFO][gRPC ROS2] - ACK received from Mission Management
+[2026-03-16 14:47:36,532][ROS2][INFO][ROS2 Manager] - Drone 1: Feedback: ['1', '1', '3', 'WP reached']
+[2026-03-16 14:47:36,533][ROS2][INFO][gRPC ROS2] - Sending drone result to Mission Management
+[2026-03-16 14:47:36,535][ROS2][INFO][gRPC ROS2] - ACK received from Mission Management
+[2026-03-16 14:47:38,601][ROS2][INFO][ROS2 Manager] - Drone 1: Feedback: ['1', '1', '4', 'Picture taken']
+[2026-03-16 14:47:38,601][ROS2][INFO][gRPC ROS2] - Sending drone result to Mission Management
+[2026-03-16 14:47:38,605][ROS2][INFO][gRPC ROS2] - ACK received from Mission Management
+[2026-03-16 14:47:42,361][ROS2][INFO][ROS2 Manager] - Drone 1: Feedback: ['1', '1', '5', "[['Grape_Bunch_Hailo8'], {'Grape_bunch': 5.95}, [1, 6], [40.209544, -3.465575], ['ISOBUS']]"]
+[2026-03-16 14:47:42,362][ROS2][INFO][gRPC ROS2] - Sending drone result to Mission Management
+[2026-03-16 14:47:42,365][ROS2][INFO][gRPC ROS2] - ACK received from Mission Management
+[2026-03-16 14:47:45,385][ROS2][INFO][ROS2 Manager] - Drone 1: Feedback: ['1', '1', '6', 'WP reached']
+[2026-03-16 14:47:45,387][ROS2][INFO][gRPC ROS2] - Sending drone result to Mission Management
+[2026-03-16 14:47:45,389][ROS2][INFO][gRPC ROS2] - ACK received from Mission Management
+[2026-03-16 14:47:47,482][ROS2][INFO][ROS2 Manager] - Drone 1: Feedback: ['1', '1', '7', 'Picture taken']
+[2026-03-16 14:47:47,484][ROS2][INFO][gRPC ROS2] - Sending drone result to Mission Management
+[2026-03-16 14:47:47,489][ROS2][INFO][gRPC ROS2] - ACK received from Mission Management
+[2026-03-16 14:47:51,206][ROS2][INFO][ROS2 Manager] - Drone 1: Feedback: ['1', '1', '8', "[['Grape_Bunch_Hailo8'], {'Grape_bunch': 5.95}, [1, 5], [40.209544, -3.465821], ['ISOBUS']]"]
+[2026-03-16 14:47:51,207][ROS2][INFO][gRPC ROS2] - Sending drone result to Mission Management
+[2026-03-16 14:47:51,210][ROS2][INFO][gRPC ROS2] - ACK received from Mission Management
+[2026-03-16 14:47:54,236][ROS2][INFO][ROS2 Manager] - Drone 1: Feedback: ['1', '1', '9', 'WP reached']
+[2026-03-16 14:47:54,237][ROS2][INFO][gRPC ROS2] - Sending drone result to Mission Management
+[2026-03-16 14:47:54,239][ROS2][INFO][gRPC ROS2] - ACK received from Mission Management
+[2026-03-16 14:47:56,301][ROS2][INFO][ROS2 Manager] - Drone 1: Feedback: ['1', '1', '10', 'Picture taken']
+[2026-03-16 14:47:56,302][ROS2][INFO][gRPC ROS2] - Sending drone result to Mission Management
+[2026-03-16 14:47:56,304][ROS2][INFO][gRPC ROS2] - ACK received from Mission Management
+[2026-03-16 14:48:00,049][ROS2][INFO][ROS2 Manager] - Drone 1: Feedback: ['1', '1', '11', "[['Grape_Bunch_Hailo8'], {'Grape_bunch': 5.95}, [1, 4], [40.209544, -3.466066], ['ISOBUS']]"]
+[2026-03-16 14:48:00,049][ROS2][INFO][gRPC ROS2] - Sending drone result to Mission Management
+[2026-03-16 14:48:00,052][ROS2][INFO][gRPC ROS2] - ACK received from Mission Management
+[2026-03-16 14:48:03,095][ROS2][INFO][ROS2 Manager] - Drone 1: Feedback: ['1', '1', '12', 'WP reached']
+[2026-03-16 14:48:03,096][ROS2][INFO][gRPC ROS2] - Sending drone result to Mission Management
+[2026-03-16 14:48:03,098][ROS2][INFO][gRPC ROS2] - ACK received from Mission Management
+[2026-03-16 14:48:05,161][ROS2][INFO][ROS2 Manager] - Drone 1: Feedback: ['1', '1', '13', 'Picture taken']
+[2026-03-16 14:48:05,162][ROS2][INFO][gRPC ROS2] - Sending drone result to Mission Management
+[2026-03-16 14:48:05,165][ROS2][INFO][gRPC ROS2] - ACK received from Mission Management
+[2026-03-16 14:48:08,922][ROS2][INFO][ROS2 Manager] - Drone 1: Feedback: ['1', '1', '14', "[['Grape_Bunch_Hailo8'], {'Grape_bunch': 3.95}, [1, 3], [40.209544, -3.466312], ['ISOBUS']]"]
+[2026-03-16 14:48:08,922][ROS2][INFO][gRPC ROS2] - Sending drone result to Mission Management
+[2026-03-16 14:48:08,925][ROS2][INFO][gRPC ROS2] - ACK received from Mission Management
+[2026-03-16 14:48:11,949][ROS2][INFO][ROS2 Manager] - Drone 1: Feedback: ['1', '1', '15', 'WP reached']
+[2026-03-16 14:48:11,950][ROS2][INFO][gRPC ROS2] - Sending drone result to Mission Management
+[2026-03-16 14:48:11,953][ROS2][INFO][gRPC ROS2] - ACK received from Mission Management
+[2026-03-16 14:48:14,036][ROS2][INFO][ROS2 Manager] - Drone 1: Feedback: ['1', '1', '16', 'Picture taken']
+[2026-03-16 14:48:14,037][ROS2][INFO][gRPC ROS2] - Sending drone result to Mission Management
+[2026-03-16 14:48:14,042][ROS2][INFO][gRPC ROS2] - ACK received from Mission Management
+[2026-03-16 14:48:17,794][ROS2][INFO][ROS2 Manager] - Drone 1: Feedback: ['1', '1', '17', "[['Grape_Bunch_Hailo8'], {'Grape_bunch': 7.95}, [1, 2], [40.209544, -3.466557], ['ISOBUS']]"]
+[2026-03-16 14:48:17,795][ROS2][INFO][gRPC ROS2] - Sending drone result to Mission Management
+[2026-03-16 14:48:17,798][ROS2][INFO][gRPC ROS2] - ACK received from Mission Management
+[2026-03-16 14:48:20,842][ROS2][INFO][ROS2 Manager] - Drone 1: Feedback: ['1', '1', '18', 'WP reached']
+[2026-03-16 14:48:20,843][ROS2][INFO][gRPC ROS2] - Sending drone result to Mission Management
+[2026-03-16 14:48:20,846][ROS2][INFO][gRPC ROS2] - ACK received from Mission Management
+[2026-03-16 14:48:22,938][ROS2][INFO][ROS2 Manager] - Drone 1: Feedback: ['1', '1', '19', 'Picture taken']
+[2026-03-16 14:48:22,939][ROS2][INFO][gRPC ROS2] - Sending drone result to Mission Management
+[2026-03-16 14:48:22,941][ROS2][INFO][gRPC ROS2] - ACK received from Mission Management
+[2026-03-16 14:48:26,670][ROS2][INFO][ROS2 Manager] - Drone 1: Feedback: ['1', '1', '20', "[['Grape_Bunch_Hailo8'], {'Grape_bunch': 1.95}, [1, 1], [40.209544, -3.466803], ['ISOBUS']]"]
+[2026-03-16 14:48:26,671][ROS2][INFO][gRPC ROS2] - Sending drone result to Mission Management
+[2026-03-16 14:48:26,673][ROS2][INFO][gRPC ROS2] - ACK received from Mission Management
+[2026-03-16 14:48:29,696][ROS2][INFO][ROS2 Manager] - Drone 1: Feedback: ['1', '1', '21', 'WP reached']
+[2026-03-16 14:48:29,699][ROS2][INFO][gRPC ROS2] - Sending drone result to Mission Management
+[2026-03-16 14:48:29,703][ROS2][INFO][gRPC ROS2] - ACK received from Mission Management
+[2026-03-16 14:48:31,352][ROS2][INFO][gRPC ROS2] - Plan received from Mission Management
+[2026-03-16 14:48:31,360][ROS2][INFO][ROS2 Manager] - Sending commands to drone 3
+[2026-03-16 14:48:31,361][ROS2][INFO][gRPC ROS2][Vehicle 3] - Goal sent
+[2026-03-16 14:48:31,367][ROS2][INFO][ROS2 Manager] - Drone 3: Goal accepted.
+[2026-03-16 14:48:31,370][ROS2][INFO][gRPC ROS2] - Sending drone result to Mission Management
+[2026-03-16 14:48:31,375][ROS2][INFO][gRPC ROS2] - ACK received from Mission Management
+[2026-03-16 14:48:31,768][ROS2][INFO][ROS2 Manager] - Drone 1: Feedback: ['1', '1', '22', 'Picture taken']
+[2026-03-16 14:48:31,769][ROS2][INFO][gRPC ROS2] - Sending drone result to Mission Management
+[2026-03-16 14:48:31,771][ROS2][INFO][gRPC ROS2] - ACK received from Mission Management
+[2026-03-16 14:48:33,407][ROS2][INFO][ROS2 Manager] - Drone 3: Feedback: ['3', '1', '1001', 'Takeoff successful']
+[2026-03-16 14:48:33,408][ROS2][INFO][gRPC ROS2] - Sending drone result to Mission Management
+[2026-03-16 14:48:33,412][ROS2][INFO][gRPC ROS2] - ACK received from Mission Management
+[2026-03-16 14:48:35,576][ROS2][INFO][ROS2 Manager] - Drone 1: Feedback: ['1', '1', '23', "[['Grape_Bunch_Hailo8'], {'Grape_bunch': 5.95}, [1, 0], [40.209544, -3.467048], ['ISOBUS']]"]
+[2026-03-16 14:48:35,576][ROS2][INFO][gRPC ROS2] - Sending drone result to Mission Management
+[2026-03-16 14:48:35,580][ROS2][INFO][gRPC ROS2] - ACK received from Mission Management
+[2026-03-16 14:48:36,442][ROS2][INFO][ROS2 Manager] - Drone 3: Feedback: ['3', '1', '1002', 'WP reached']
+[2026-03-16 14:48:36,442][ROS2][INFO][gRPC ROS2] - Sending drone result to Mission Management
+[2026-03-16 14:48:36,446][ROS2][INFO][gRPC ROS2] - ACK received from Mission Management
+[2026-03-16 14:48:38,632][ROS2][INFO][ROS2 Manager] - Drone 1: Feedback: ['1', '1', '24', 'WP reached']
+[2026-03-16 14:48:38,634][ROS2][INFO][gRPC ROS2] - Sending drone result to Mission Management
+[2026-03-16 14:48:38,637][ROS2][INFO][gRPC ROS2] - ACK received from Mission Management
+[2026-03-16 14:48:39,474][ROS2][INFO][ROS2 Manager] - Drone 3: Feedback: ['3', '1', '1003', 'WP reached']
+[2026-03-16 14:48:39,474][ROS2][INFO][gRPC ROS2] - Sending drone result to Mission Management
+[2026-03-16 14:48:39,477][ROS2][INFO][gRPC ROS2] - ACK received from Mission Management
+[2026-03-16 14:48:40,699][ROS2][INFO][ROS2 Manager] - Drone 1: Feedback: ['1', '1', '25', 'Picture taken']
+[2026-03-16 14:48:40,700][ROS2][INFO][gRPC ROS2] - Sending drone result to Mission Management
+[2026-03-16 14:48:40,705][ROS2][INFO][gRPC ROS2] - ACK received from Mission Management
+[2026-03-16 14:48:41,566][ROS2][INFO][ROS2 Manager] - Drone 3: Feedback: ['3', '1', '1004', 'Picture taken']
+[2026-03-16 14:48:41,567][ROS2][INFO][gRPC ROS2] - Sending drone result to Mission Management
+[2026-03-16 14:48:41,577][ROS2][INFO][gRPC ROS2] - ACK received from Mission Management
+[2026-03-16 14:48:44,603][ROS2][INFO][ROS2 Manager] - Drone 1: Feedback: ['1', '1', '26', "[['Grape_Bunch_Hailo8'], {'Grape_bunch': 7.95}, [0, 0], [40.20973, -3.467048], ['ISOBUS']]"]
+[2026-03-16 14:48:44,604][ROS2][INFO][gRPC ROS2] - Sending drone result to Mission Management
+[2026-03-16 14:48:44,608][ROS2][INFO][gRPC ROS2] - ACK received from Mission Management
+[2026-03-16 14:48:47,642][ROS2][INFO][ROS2 Manager] - Drone 1: Feedback: ['1', '1', '27', 'WP reached']
+[2026-03-16 14:48:47,644][ROS2][INFO][gRPC ROS2] - Sending drone result to Mission Management
+[2026-03-16 14:48:47,647][ROS2][INFO][gRPC ROS2] - ACK received from Mission Management
+[2026-03-16 14:48:49,218][ROS2][INFO][ROS2 Manager] - Drone 3: Feedback: ['3', '1', '1005', "[['Grape_Diseases_Hailo8', 'Grape_Bunch_Hailo8'], {'Black_measles': 2.2, 'Black_rot': 1.7, 'Isariopsis': 1.8599999999999999, 'Grape_bunch': 1.95}, [0, 0], [40.207874, -3.467592], ['ISOBUS', 'Drone']]"]
+[2026-03-16 14:48:49,219][ROS2][INFO][gRPC ROS2] - Sending drone result to Mission Management
+[2026-03-16 14:48:49,222][ROS2][INFO][gRPC ROS2] - ACK received from Mission Management
+[2026-03-16 14:48:49,717][ROS2][INFO][ROS2 Manager] - Drone 1: Feedback: ['1', '1', '28', 'Picture taken']
+[2026-03-16 14:48:49,719][ROS2][INFO][gRPC ROS2] - Sending drone result to Mission Management
+[2026-03-16 14:48:49,721][ROS2][INFO][gRPC ROS2] - ACK received from Mission Management
+[2026-03-16 14:48:52,249][ROS2][INFO][ROS2 Manager] - Drone 3: Feedback: ['3', '1', '1006', 'WP reached']
+[2026-03-16 14:48:52,250][ROS2][INFO][gRPC ROS2] - Sending drone result to Mission Management
+[2026-03-16 14:48:52,253][ROS2][INFO][gRPC ROS2] - ACK received from Mission Management
+[2026-03-16 14:48:54,345][ROS2][INFO][ROS2 Manager] - Drone 3: Feedback: ['3', '1', '1007', 'Picture taken']
+[2026-03-16 14:48:54,345][ROS2][INFO][gRPC ROS2] - Sending drone result to Mission Management
+[2026-03-16 14:48:54,348][ROS2][INFO][gRPC ROS2] - ACK received from Mission Management
+[2026-03-16 14:48:54,700][ROS2][INFO][ROS2 Manager] - Drone 1: Feedback: ['1', '1', '29', "[['Grape_Bunch_Hailo8'], {'Grape_bunch': 1.95}, [0, 1], [40.20973, -3.466803], ['ISOBUS']]"]
+[2026-03-16 14:48:54,701][ROS2][INFO][gRPC ROS2] - Sending drone result to Mission Management
+[2026-03-16 14:48:54,704][ROS2][INFO][gRPC ROS2] - ACK received from Mission Management
+[2026-03-16 14:48:57,728][ROS2][INFO][ROS2 Manager] - Drone 1: Feedback: ['1', '1', '30', 'WP reached']
+[2026-03-16 14:48:57,729][ROS2][INFO][gRPC ROS2] - Sending drone result to Mission Management
+[2026-03-16 14:48:57,732][ROS2][INFO][gRPC ROS2] - ACK received from Mission Management
+[2026-03-16 14:48:59,820][ROS2][INFO][ROS2 Manager] - Drone 1: Feedback: ['1', '1', '31', 'Picture taken']
+[2026-03-16 14:48:59,821][ROS2][INFO][gRPC ROS2] - Sending drone result to Mission Management
+[2026-03-16 14:48:59,828][ROS2][INFO][gRPC ROS2] - ACK received from Mission Management
+[2026-03-16 14:49:01,617][ROS2][INFO][ROS2 Manager] - Drone 3: Feedback: ['3', '1', '1008', "[['Grape_Diseases_Hailo8', 'Grape_Bunch_Hailo8'], {'Black_measles': 2.7, 'Black_rot': 2.2, 'Isariopsis': 3.3600000000000003, 'Grape_bunch': 3.95}, [0, 1], [40.207868, -3.467482], ['ISOBUS', 'Drone']]"]
+[2026-03-16 14:49:01,619][ROS2][INFO][gRPC ROS2] - Sending drone result to Mission Management
+[2026-03-16 14:49:01,623][ROS2][INFO][gRPC ROS2] - ACK received from Mission Management
+[2026-03-16 14:49:03,708][ROS2][INFO][ROS2 Manager] - Drone 1: Feedback: ['1', '1', '32', "[['Grape_Bunch_Hailo8'], {'Grape_bunch': 3.95}, [0, 2], [40.20973, -3.466557], ['ISOBUS']]"]
+[2026-03-16 14:49:03,709][ROS2][INFO][gRPC ROS2] - Sending drone result to Mission Management
+[2026-03-16 14:49:03,712][ROS2][INFO][gRPC ROS2] - ACK received from Mission Management
+[2026-03-16 14:49:04,642][ROS2][INFO][ROS2 Manager] - Drone 3: Feedback: ['3', '1', '1009', 'WP reached']
+[2026-03-16 14:49:04,643][ROS2][INFO][gRPC ROS2] - Sending drone result to Mission Management
+[2026-03-16 14:49:04,646][ROS2][INFO][gRPC ROS2] - ACK received from Mission Management
+[2026-03-16 14:49:06,733][ROS2][INFO][ROS2 Manager] - Drone 3: Feedback: ['3', '1', '1010', 'Picture taken']
+[2026-03-16 14:49:06,735][ROS2][INFO][gRPC ROS2] - Sending drone result to Mission Management
+[2026-03-16 14:49:06,737][ROS2][INFO][gRPC ROS2] - ACK received from Mission Management
+[2026-03-16 14:49:06,751][ROS2][INFO][ROS2 Manager] - Drone 1: Feedback: ['1', '1', '33', 'WP reached']
+[2026-03-16 14:49:06,752][ROS2][INFO][gRPC ROS2] - Sending drone result to Mission Management
+[2026-03-16 14:49:06,755][ROS2][INFO][gRPC ROS2] - ACK received from Mission Management
+[2026-03-16 14:49:08,851][ROS2][INFO][ROS2 Manager] - Drone 1: Feedback: ['1', '1', '34', 'Picture taken']
+[2026-03-16 14:49:08,852][ROS2][INFO][gRPC ROS2] - Sending drone result to Mission Management
+[2026-03-16 14:49:08,856][ROS2][INFO][gRPC ROS2] - ACK received from Mission Management
+[2026-03-16 14:49:12,842][ROS2][INFO][ROS2 Manager] - Drone 1: Feedback: ['1', '1', '35', "[['Grape_Bunch_Hailo8'], {'Grape_bunch': 7.95}, [0, 3], [40.20973, -3.466312], ['ISOBUS']]"]
+[2026-03-16 14:49:12,843][ROS2][INFO][gRPC ROS2] - Sending drone result to Mission Management
+[2026-03-16 14:49:12,846][ROS2][INFO][gRPC ROS2] - ACK received from Mission Management
+[2026-03-16 14:49:14,061][ROS2][INFO][ROS2 Manager] - Drone 3: Feedback: ['3', '1', '1011', "[['Grape_Diseases_Hailo8', 'Grape_Bunch_Hailo8'], {'Black_measles': 2.2, 'Black_rot': 1.7, 'Isariopsis': 1.8599999999999999, 'Grape_bunch': 1.95}, [0, 2], [40.207862, -3.467372], ['ISOBUS', 'Drone']]"]
+[2026-03-16 14:49:14,062][ROS2][INFO][gRPC ROS2] - Sending drone result to Mission Management
+[2026-03-16 14:49:14,066][ROS2][INFO][gRPC ROS2] - ACK received from Mission Management
+[2026-03-16 14:49:15,868][ROS2][INFO][ROS2 Manager] - Drone 1: Feedback: ['1', '1', '36', 'WP reached']
+[2026-03-16 14:49:15,869][ROS2][INFO][gRPC ROS2] - Sending drone result to Mission Management
+[2026-03-16 14:49:15,871][ROS2][INFO][gRPC ROS2] - ACK received from Mission Management
+[2026-03-16 14:49:17,094][ROS2][INFO][ROS2 Manager] - Drone 3: Feedback: ['3', '1', '1012', 'WP reached']
+[2026-03-16 14:49:17,095][ROS2][INFO][gRPC ROS2] - Sending drone result to Mission Management
+[2026-03-16 14:49:17,097][ROS2][INFO][gRPC ROS2] - ACK received from Mission Management
+[2026-03-16 14:49:17,936][ROS2][INFO][ROS2 Manager] - Drone 1: Feedback: ['1', '1', '37', 'Picture taken']
+[2026-03-16 14:49:17,937][ROS2][INFO][gRPC ROS2] - Sending drone result to Mission Management
+[2026-03-16 14:49:17,939][ROS2][INFO][gRPC ROS2] - ACK received from Mission Management
+[2026-03-16 14:49:19,198][ROS2][INFO][ROS2 Manager] - Drone 3: Feedback: ['3', '1', '1013', 'Picture taken']
+[2026-03-16 14:49:19,199][ROS2][INFO][gRPC ROS2] - Sending drone result to Mission Management
+[2026-03-16 14:49:19,203][ROS2][INFO][gRPC ROS2] - ACK received from Mission Management
+[2026-03-16 14:49:21,744][ROS2][INFO][ROS2 Manager] - Drone 1: Feedback: ['1', '1', '38', "[['Grape_Bunch_Hailo8'], {'Grape_bunch': 9.95}, [0, 4], [40.20973, -3.466066], ['ISOBUS']]"]
+[2026-03-16 14:49:21,745][ROS2][INFO][gRPC ROS2] - Sending drone result to Mission Management
+[2026-03-16 14:49:21,748][ROS2][INFO][gRPC ROS2] - ACK received from Mission Management
+[2026-03-16 14:49:24,773][ROS2][INFO][ROS2 Manager] - Drone 1: Feedback: ['1', '1', '39', 'WP reached']
+[2026-03-16 14:49:24,774][ROS2][INFO][gRPC ROS2] - Sending drone result to Mission Management
+[2026-03-16 14:49:24,777][ROS2][INFO][gRPC ROS2] - ACK received from Mission Management
+[2026-03-16 14:49:26,842][ROS2][INFO][ROS2 Manager] - Drone 1: Feedback: ['1', '1', '40', 'Picture taken']
+[2026-03-16 14:49:26,842][ROS2][INFO][gRPC ROS2] - Sending drone result to Mission Management
+[2026-03-16 14:49:26,845][ROS2][INFO][gRPC ROS2] - ACK received from Mission Management
+[2026-03-16 14:49:27,119][ROS2][INFO][ROS2 Manager] - Drone 3: Feedback: ['3', '1', '1014', "[['Grape_Diseases_Hailo8', 'Grape_Bunch_Hailo8'], {'Black_measles': 2.2, 'Black_rot': 1.7, 'Isariopsis': 2.36, 'Grape_bunch': 5.95}, [0, 3], [40.207855, -3.467262], ['ISOBUS', 'Drone']]"]
+[2026-03-16 14:49:27,119][ROS2][INFO][gRPC ROS2] - Sending drone result to Mission Management
+[2026-03-16 14:49:27,122][ROS2][INFO][gRPC ROS2] - ACK received from Mission Management
+[2026-03-16 14:49:30,146][ROS2][INFO][ROS2 Manager] - Drone 3: Feedback: ['3', '1', '1015', 'WP reached']
+[2026-03-16 14:49:30,147][ROS2][INFO][gRPC ROS2] - Sending drone result to Mission Management
+[2026-03-16 14:49:30,149][ROS2][INFO][gRPC ROS2] - ACK received from Mission Management
+[2026-03-16 14:49:30,583][ROS2][INFO][ROS2 Manager] - Drone 1: Feedback: ['1', '1', '41', "[['Grape_Bunch_Hailo8'], {'Grape_bunch': 3.95}, [0, 5], [40.20973, -3.465821], ['ISOBUS']]"]
+[2026-03-16 14:49:30,583][ROS2][INFO][gRPC ROS2] - Sending drone result to Mission Management
+[2026-03-16 14:49:30,587][ROS2][INFO][gRPC ROS2] - ACK received from Mission Management
+[2026-03-16 14:49:32,229][ROS2][INFO][ROS2 Manager] - Drone 3: Feedback: ['3', '1', '1016', 'Picture taken']
+[2026-03-16 14:49:32,230][ROS2][INFO][gRPC ROS2] - Sending drone result to Mission Management
+[2026-03-16 14:49:32,232][ROS2][INFO][gRPC ROS2] - ACK received from Mission Management
+[2026-03-16 14:49:33,618][ROS2][INFO][ROS2 Manager] - Drone 1: Feedback: ['1', '1', '42', 'WP reached']
+[2026-03-16 14:49:33,621][ROS2][INFO][gRPC ROS2] - Sending drone result to Mission Management
+[2026-03-16 14:49:33,624][ROS2][INFO][gRPC ROS2] - ACK received from Mission Management
