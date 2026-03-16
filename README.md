@@ -30,7 +30,7 @@ python server_8090.py
 - UI Access: Open http://<IP_RPI5>:8090 in your web browser.
 - Missions: Upload mission files from Fleet_Manager/Cloud/Missions.
 
-### 2. Launch Fleet Manager (Orchestrator)
+### 2. Launch Fleet Manager
 Bring up the main services using Docker Compose:
 
 ```bash
@@ -38,7 +38,7 @@ cd Fleet_Manager/FleetManager
 sudo docker compose up --build
 ```
 
-### 3. Launch Drones (Batch)
+### 3. Launch Drones
 From the Fleet_Manager root directory, choose the launch method that fits your environment:
 
 | Method | Description | Command |
@@ -47,7 +47,7 @@ From the Fleet_Manager root directory, choose the launch method that fits your e
 | Raspbian | Launch all the drones at the same time | `./launch_drones.sh` |
 | VSCode (Individual) | Launch drones one by one | `./launch_vscode.sh <ID>` |
 
-#### Manual Drone Control (Single Unit)
+#### Manual Drone Control
 If you need to launch a specific drone in separate terminals, follow this order:
 
 Step A: ROS2 Interface (Terminal 1)
