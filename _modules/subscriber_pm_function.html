@@ -1,0 +1,1038 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>subscriber_pm_function &mdash; Fleet Manager 1.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=f2a433a1"></script>
+        <script src="../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+        <script src="../_static/copybutton.js?v=f281be69"></script>
+        <script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script>
+        <script type="module">import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11.12.1/dist/mermaid.esm.min.mjs";
+
+
+
+
+
+const initStyles = () => {
+    const defaultStyle = document.createElement('style');
+    defaultStyle.textContent = `pre.mermaid {
+    /* Same as .mermaid-container > pre */
+    display: block;
+    width: 100%;
+}
+
+pre.mermaid > svg {
+    /* Same as .mermaid-container > pre > svg */
+    height: 500px;
+    width: 100%;
+    max-width: 100% !important;
+}`;
+    document.head.appendChild(defaultStyle);
+
+    const fullscreenStyle = document.createElement('style');
+    fullscreenStyle.textContent = `.mermaid-container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.mermaid-container > pre {
+    display: block;
+    width: 100%;
+}
+
+.mermaid-container > pre > svg {
+    height: 500px;
+    width: 100%;
+    max-width: 100% !important;
+}
+
+.mermaid-fullscreen-btn {
+    width: 28px;
+    height: 28px;
+    background: rgba(255, 255, 255, 0.95);
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    border-radius: 4px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    font-size: 14px;
+    line-height: 1;
+    padding: 0;
+    color: #333;
+}
+
+.mermaid-fullscreen-btn:hover {
+    opacity: 100% !important;
+    background: rgba(255, 255, 255, 1);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+    transform: scale(1.1);
+}
+
+.mermaid-fullscreen-btn.dark-theme {
+    background: rgba(50, 50, 50, 0.95);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: #e0e0e0;
+}
+
+.mermaid-fullscreen-btn.dark-theme:hover {
+    background: rgba(60, 60, 60, 1);
+    box-shadow: 0 3px 10px rgba(255, 255, 255, 0.2);
+}
+
+.mermaid-fullscreen-modal {
+    display: none;
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 95vw;
+    height: 100vh;
+    background: rgba(255, 255, 255, 0.98);
+    z-index: 9999;
+    padding: 20px;
+    overflow: auto;
+}
+
+.mermaid-fullscreen-modal.dark-theme {
+    background: rgba(0, 0, 0, 0.98);
+}
+
+.mermaid-fullscreen-modal.active {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mermaid-container-fullscreen {
+    position: relative;
+    width: 95vw;
+    height: 90vh;
+    max-width: 95vw;
+    max-height: 90vh;
+    background: white;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    overflow: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mermaid-container-fullscreen.dark-theme {
+    background: #1a1a1a;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.8);
+}
+
+.mermaid-container-fullscreen pre.mermaid {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mermaid-container-fullscreen .mermaid svg {
+    height: 100% !important;
+    width: 100% !important;
+    cursor: grab;
+}
+
+.mermaid-fullscreen-close {
+    position: fixed !important;
+    top: 20px !important;
+    right: 20px !important;
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.95);
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    transition: all 0.2s;
+    font-size: 24px;
+    line-height: 1;
+    color: #333;
+}
+
+.mermaid-fullscreen-close:hover {
+    background: white;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+    transform: scale(1.1);
+}
+
+.mermaid-fullscreen-close.dark-theme {
+    background: rgba(50, 50, 50, 0.95);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #e0e0e0;
+}
+
+.mermaid-fullscreen-close.dark-theme:hover {
+    background: rgba(60, 60, 60, 1);
+    box-shadow: 0 6px 16px rgba(255, 255, 255, 0.2);
+}
+
+.mermaid-fullscreen-modal .mermaid-fullscreen-btn {
+    display: none !important;
+}`;
+    document.head.appendChild(fullscreenStyle);
+}
+
+// Detect if page has dark background
+const isDarkTheme = () => {
+    // We use a set of heuristics:
+    // 1. Check for common dark mode classes or attributes
+    // 2. Check computed background color brightness
+    if (document.documentElement.classList.contains('dark') ||
+        document.documentElement.getAttribute('data-theme') === 'dark' ||
+        document.body.classList.contains('dark') ||
+        document.body.getAttribute('data-theme') === 'dark') {
+        // console.log("Dark theme detected via class/attribute");
+        return true;
+    }
+    if (document.documentElement.classList.contains('light') ||
+        document.documentElement.getAttribute('data-theme') === 'light' ||
+        document.body.classList.contains('light') ||
+        document.body.getAttribute('data-theme') === 'light') {
+        // console.log("Light theme detected via class/attribute");
+        return false;
+    }
+    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        // console.log("Dark theme detected via prefers-color-scheme");
+        return true;
+    }
+    const bgColor = window.getComputedStyle(document.body).backgroundColor;
+    const match = bgColor.match(/rgb\((\d+),\s*(\d+),\s*(\d+)/);
+    if (match) {
+        const r = parseInt(match[1]);
+        const g = parseInt(match[2]);
+        const b = parseInt(match[3]);
+        const brightness = (r * 299 + g * 587 + b * 114) / 1000;
+        // console.log("Background color brightness:", brightness);
+        return brightness < 128;
+    }
+    // console.log("No dark or light theme detected, defaulting to light theme");
+    return false;
+};
+
+let darkTheme = isDarkTheme();
+let modal = null;
+let modalContent = null;
+let previousScrollOffset = [window.scrollX, window.scrollY];
+
+const runMermaid = async (rerun) => {
+    console.log("Running mermaid diagrams, rerun =", rerun);
+    // clear all existing mermaid charts
+    let all_mermaids = document.querySelectorAll(".mermaid");
+
+    if (rerun) {
+        all_mermaids.forEach((el) => {
+            if(!el.hasAttribute("data-original-code")) {
+                // store original code
+                // console.log(`Storing original code for first run: `, el.innerHTML);
+                el.setAttribute('data-original-code', el.innerHTML);
+            }
+            if(el.getAttribute("data-processed") === "true") {
+                // remove and restore original
+                el.removeAttribute("data-processed");
+                // console.log(`Restoring original code for re-run: `, el.getAttribute('data-original-code'));
+                el.innerHTML = el.getAttribute('data-original-code');
+            } else {
+                // store original code
+                // console.log(`Storing original code for re-run: `, el.innerHTML);
+                el.setAttribute('data-original-code', el.innerHTML);
+            }
+        });
+        await mermaid.run();
+    }
+
+    all_mermaids = document.querySelectorAll(".mermaid");
+    const mermaids_processed = document.querySelectorAll(".mermaid[data-processed='true']");
+
+    if ("False" === "True") {
+        const mermaids_to_add_zoom = -1 === -1 ? all_mermaids.length : -1;
+        if(mermaids_to_add_zoom > 0) {
+            var svgs = d3.selectAll("");
+            if(all_mermaids.length !== mermaids_processed.length) {
+                setTimeout(() => runMermaid(false), 200);
+                return;
+            } else if(svgs.size() !== mermaids_to_add_zoom) {
+                setTimeout(() => runMermaid(false), 200);
+                return;
+            } else {
+                svgs.each(function() {
+                    var svg = d3.select(this);
+                    svg.html("<g class='wrapper'>" + svg.html() + "</g>");
+                    var inner = svg.select("g");
+                    var zoom = d3.zoom().on("zoom", function(event) {
+                        inner.attr("transform", event.transform);
+                    });
+                    svg.call(zoom);
+                });
+            }
+        }
+    } else if(all_mermaids.length !== mermaids_processed.length) {
+        // Wait for mermaid to process all diagrams
+        setTimeout(() => runMermaid(false), 200);
+        return;
+    }
+
+    // Stop here if not adding fullscreen capability
+    if ("True" !== "True") return;
+
+    if (modal !== null ) {
+        // Destroy existing modal
+        modal.remove();
+        modal = null;
+        modalContent = null;
+    }
+
+    modal = document.createElement('div');
+    modal.className = 'mermaid-fullscreen-modal' + (darkTheme ? ' dark-theme' : '');
+    modal.setAttribute('role', 'dialog');
+    modal.setAttribute('aria-modal', 'true');
+    modal.setAttribute('aria-label', 'Fullscreen diagram viewer');
+    modal.innerHTML = `
+        <button class="mermaid-fullscreen-close${darkTheme ? ' dark-theme' : ''}" aria-label="Close fullscreen">✕</button>
+        <div class="mermaid-container-fullscreen${darkTheme ? ' dark-theme' : ''}"></div>
+    `;
+    document.body.appendChild(modal);
+
+    modalContent = modal.querySelector('.mermaid-container-fullscreen');
+    const closeBtn = modal.querySelector('.mermaid-fullscreen-close');
+
+    const closeModal = () => {
+        modal.classList.remove('active');
+        modalContent.innerHTML = '';
+        document.body.style.overflow = ''
+        window.scrollTo({left: previousScrollOffset[0], top: previousScrollOffset[1], behavior: 'instant'});
+    };
+
+    closeBtn.addEventListener('click', closeModal);
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) closeModal();
+    });
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && modal.classList.contains('active')) {
+            closeModal();
+        }
+    });
+
+    document.querySelectorAll('.mermaid').forEach((mermaidDiv) => {
+        if (mermaidDiv.parentNode.classList.contains('mermaid-container') ||
+            mermaidDiv.closest('.mermaid-fullscreen-modal')) {
+            // Already processed, adjust button class if needed
+            const existingBtn = mermaidDiv.parentNode.querySelector('.mermaid-fullscreen-btn');
+            if (existingBtn) {
+                existingBtn.className = 'mermaid-fullscreen-btn' + (darkTheme ? ' dark-theme' : '');
+            }
+            return;
+        }
+
+        const container = document.createElement('div');
+        container.className = 'mermaid-container';
+        mermaidDiv.parentNode.insertBefore(container, mermaidDiv);
+        container.appendChild(mermaidDiv);
+
+        const fullscreenBtn = document.createElement('button');
+        fullscreenBtn.className = 'mermaid-fullscreen-btn' + (darkTheme ? ' dark-theme' : '');
+        fullscreenBtn.setAttribute('aria-label', 'View diagram in fullscreen');
+        fullscreenBtn.textContent = '⛶';
+        fullscreenBtn.style.opacity = '50%';
+
+        // Calculate dynamic position based on diagram's margin and padding
+        const diagramStyle = window.getComputedStyle(mermaidDiv);
+        const marginTop = parseFloat(diagramStyle.marginTop) || 0;
+        const marginRight = parseFloat(diagramStyle.marginRight) || 0;
+        const paddingTop = parseFloat(diagramStyle.paddingTop) || 0;
+        const paddingRight = parseFloat(diagramStyle.paddingRight) || 0;
+        fullscreenBtn.style.top = `${marginTop + paddingTop + 4}px`;
+        fullscreenBtn.style.right = `${marginRight + paddingRight + 4}px`;
+
+        fullscreenBtn.addEventListener('click', () => {
+            previousScrollOffset = [window.scroll, window.scrollY];
+            const clone = mermaidDiv.cloneNode(true);
+            modalContent.innerHTML = '';
+            modalContent.appendChild(clone);
+
+            const svg = clone.querySelector('svg');
+            if (svg) {
+                svg.removeAttribute('width');
+                svg.removeAttribute('height');
+                svg.style.width = '100%';
+                svg.style.height = 'auto';
+                svg.style.maxWidth = '100%';
+                svg.style.sdisplay = 'block';
+
+                if ("False" === "True") {
+                    setTimeout(() => {
+                        const g = svg.querySelector('g');
+                        if (g) {
+                            var svgD3 = d3.select(svg);
+                            svgD3.html("<g class='wrapper'>" + svgD3.html() + "</g>");
+                            var inner = svgD3.select("g");
+                            var zoom = d3.zoom().on("zoom", function(event) {
+                                inner.attr("transform", event.transform);
+                            });
+                            svgD3.call(zoom);
+                        }
+                    }, 100);
+                }
+            }
+
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+        container.appendChild(fullscreenBtn);
+    });
+};
+
+const load = async () => {
+    initStyles();
+
+    await runMermaid(true);
+
+    const reRunIfThemeChanges = async () => {
+        const newDarkTheme = isDarkTheme();
+        if (newDarkTheme !== darkTheme) {
+            darkTheme = newDarkTheme;
+            console.log("Theme change detected, re-running mermaid with", darkTheme ? "dark" : "default", "theme");
+            await mermaid.initialize(
+                {...JSON.parse(
+                    `{"startOnLoad": false}`
+                ),
+                ...{ darkMode: darkTheme, theme: darkTheme ? 'dark' : 'default' },
+                }
+            );
+            await runMermaid(true);
+        }
+    };
+
+    // Update theme classes when theme changes
+    const themeObserver = new MutationObserver(reRunIfThemeChanges);
+    themeObserver.observe(document.documentElement, {
+        attributes: true,
+        attributeFilter: ['class', 'style', 'data-theme']
+    });
+    themeObserver.observe(document.body, {
+        attributes: true,
+        attributeFilter: ['class', 'style', 'data-theme']
+    });
+};
+
+
+
+
+
+console.log("Initializing mermaid with", darkTheme ? "dark" : "default", "theme");
+mermaid.initialize(
+    {...JSON.parse(
+        `{"startOnLoad": false}`
+    ),
+    ...{ darkMode: darkTheme, theme: darkTheme ? 'dark' : 'default' },
+    }
+);
+
+window.addEventListener("load", load);
+window.runMermaid = runMermaid;</script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="author" title="About these documents" href="../about.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Fleet Manager
+          </a>
+              <div class="version">
+                1.0
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../about.html">About the project</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules.html">Code documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../training.html">Training documentation</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Fleet Manager</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Module code</a></li>
+      <li class="breadcrumb-item active">subscriber_pm_function</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <h1>Source code for subscriber_pm_function</h1><div class="highlight"><pre>
+<span></span><span class="c1"># Copyright 2016 Open Source Robotics Foundation, Inc.</span>
+<span class="c1">#</span>
+<span class="c1"># Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);</span>
+<span class="c1"># you may not use this file except in compliance with the License.</span>
+<span class="c1"># You may obtain a copy of the License at</span>
+<span class="c1">#</span>
+<span class="c1">#     http://www.apache.org/licenses/LICENSE-2.0</span>
+<span class="c1">#</span>
+<span class="c1"># Unless required by applicable law or agreed to in writing, software</span>
+<span class="c1"># distributed under the License is distributed on an &quot;AS IS&quot; BASIS,</span>
+<span class="c1"># WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.</span>
+<span class="c1"># See the License for the specific language governing permissions and</span>
+<span class="c1"># limitations under the License.</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Dynamic Drone Prescription Map Subscriber Module</span>
+<span class="sd">================================================</span>
+
+<span class="sd">This module provides a dynamic ROS2 subscriber for receiving prescription map (PM) </span>
+<span class="sd">data from multiple drone vehicles in the agricultural fleet management system. It</span>
+<span class="sd">automatically discovers new drone topics and creates dedicated subscriptions for</span>
+<span class="sd">real-time prescription map data collection.</span>
+
+<span class="sd">The module implements a scalable subscription system that can handle an arbitrary</span>
+<span class="sd">number of drones joining and leaving the fleet dynamically, without requiring</span>
+<span class="sd">manual configuration or restart of the subscription service.</span>
+
+<span class="sd">Key Features:</span>
+<span class="sd">    - Dynamic discovery of new drone prescription map topics</span>
+<span class="sd">    - Automatic subscription creation for newly detected drones</span>
+<span class="sd">    - Thread-safe integration with prescription map processing pipeline</span>
+<span class="sd">    - Regular expression-based topic pattern matching</span>
+<span class="sd">    - Multi-threaded ROS2 executor for concurrent message processing</span>
+<span class="sd">    - Robust message parsing with fallback mechanisms</span>
+<span class="sd">    - Integration with fleet-wide prescription map management</span>
+
+<span class="sd">Architecture:</span>
+<span class="sd">    The module follows a dynamic subscription pattern where:</span>
+<span class="sd">    - A timer-based scanner discovers new drone topics periodically</span>
+<span class="sd">    - Individual subscriptions are created for each detected drone</span>
+<span class="sd">    - Message callbacks process and forward PM data to the fleet manager</span>
+<span class="sd">    - Thread-safe execution ensures concurrent processing capability</span>
+
+<span class="sd">Topic Pattern:</span>
+<span class="sd">    Drone topics follow the pattern: ``/prescription_map/drone_{ID}``</span>
+<span class="sd">    where {ID} is a numeric identifier for each drone in the fleet.</span>
+
+<span class="sd">Usage Example:</span>
+<span class="sd">    ::</span>
+
+<span class="sd">        import logging</span>
+<span class="sd">        from Logs.create_logger_fleet import create_logger</span>
+<span class="sd">        </span>
+<span class="sd">        # Create configured logger</span>
+<span class="sd">        pm_logger = create_logger(&#39;pm_subscriber&#39;, logging.INFO)</span>
+<span class="sd">        </span>
+<span class="sd">        # Start dynamic PM subscriber (non-blocking)</span>
+<span class="sd">        subscriber = main(pm_logger=pm_logger)</span>
+
+<span class="sd">Author: Fleet Management System</span>
+<span class="sd">Date: 2025</span>
+
+<span class="sd">.. note::</span>
+<span class="sd">    This module requires:</span>
+<span class="sd">    - ROS2 (Robot Operating System 2) environment</span>
+<span class="sd">    - rclpy for Python ROS2 integration</span>
+<span class="sd">    - std_msgs for ROS2 message types</span>
+<span class="sd">    - PrescriptionMap.pm_manager_fleet for data processing</span>
+<span class="sd">    </span>
+<span class="sd">.. warning::</span>
+<span class="sd">    The subscriber runs in daemon threads. Ensure proper application</span>
+<span class="sd">    lifecycle management for graceful shutdowns in production deployments.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">ast</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">json</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">queue</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">threading</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">time</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">rclpy</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">rclpy.node</span><span class="w"> </span><span class="kn">import</span> <span class="n">Node</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">std_msgs.msg</span><span class="w"> </span><span class="kn">import</span> <span class="n">String</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">re</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">logging</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">PrescriptionMap.pm_manager_fleet</span><span class="w"> </span><span class="kn">import</span> <span class="n">handle_received</span>
+
+
+<div class="viewcode-block" id="DynamicPMSubscriber">
+<a class="viewcode-back" href="../Fleet_module/PM/subs_pm_component.html#subscriber_pm_function.DynamicPMSubscriber">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">DynamicPMSubscriber</span><span class="p">(</span><span class="n">Node</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Dynamic ROS2 subscriber for drone prescription map topics.</span>
+<span class="sd">    </span>
+<span class="sd">    This class implements a dynamic subscription system that automatically discovers</span>
+<span class="sd">    and subscribes to prescription map topics from drone vehicles. It maintains</span>
+<span class="sd">    active subscriptions for all detected drones and processes incoming prescription</span>
+<span class="sd">    map data in real-time.</span>
+<span class="sd">    </span>
+<span class="sd">    The subscriber uses a timer-based discovery mechanism to periodically scan for</span>
+<span class="sd">    new drone topics, ensuring that newly deployed drones are automatically</span>
+<span class="sd">    integrated into the subscription system without manual intervention.</span>
+<span class="sd">    </span>
+<span class="sd">    Key Capabilities:</span>
+<span class="sd">    - Automatic topic discovery using regex pattern matching</span>
+<span class="sd">    - Dynamic subscription management for scalable drone fleets</span>
+<span class="sd">    - Message parsing with robust error handling and fallback mechanisms</span>
+<span class="sd">    - Integration with prescription map validation and processing pipeline</span>
+<span class="sd">    - Thread-safe operation for concurrent message processing</span>
+<span class="sd">    </span>
+<span class="sd">    Attributes:</span>
+<span class="sd">        active_subscriptions (dict): Registry of active topic subscriptions</span>
+<span class="sd">                                   mapped by topic name to subscription objects</span>
+<span class="sd">        pm_logger: Configured logger instance for operation tracking and debugging</span>
+<span class="sd">        timer: ROS2 timer for periodic drone topic discovery</span>
+<span class="sd">        </span>
+<span class="sd">    Example:</span>
+<span class="sd">        ::</span>
+<span class="sd">        </span>
+<span class="sd">            # Subscriber is typically created by the main() function</span>
+<span class="sd">            subscriber = DynamicPMSubscriber(pm_logger)</span>
+<span class="sd">            # Discovery and subscription happen automatically</span>
+<span class="sd">            </span>
+<span class="sd">    Note:</span>
+<span class="sd">        The discovery timer runs every 2 seconds to balance responsiveness</span>
+<span class="sd">        with system resource usage. This interval can be adjusted based on</span>
+<span class="sd">        deployment requirements.</span>
+<span class="sd">        </span>
+<span class="sd">    See Also:</span>
+<span class="sd">        :mod:`PrescriptionMap.pm_manager_fleet`: PM data processing backend</span>
+<span class="sd">        :class:`rclpy.node.Node`: Base ROS2 node class</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    
+<div class="viewcode-block" id="DynamicPMSubscriber.__init__">
+<a class="viewcode-back" href="../Fleet_module/PM/subs_pm_component.html#subscriber_pm_function.DynamicPMSubscriber.__init__">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pm_logger</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Initialize the dynamic prescription map subscriber node.</span>
+<span class="sd">        </span>
+<span class="sd">        Sets up the ROS2 node with automatic topic discovery capabilities and</span>
+<span class="sd">        initializes the subscription management system for drone prescription</span>
+<span class="sd">        map topics.</span>
+<span class="sd">        </span>
+<span class="sd">        Args:</span>
+<span class="sd">            pm_logger: Configured logger instance for tracking subscription</span>
+<span class="sd">                      operations, drone discovery, and message processing.</span>
+<span class="sd">                      Should be properly configured with appropriate log levels</span>
+<span class="sd">                      and output handlers.</span>
+<span class="sd">                      </span>
+<span class="sd">        Example:</span>
+<span class="sd">            ::</span>
+<span class="sd">            </span>
+<span class="sd">                import logging</span>
+<span class="sd">                pm_logger = logging.getLogger(&#39;pm_subscriber&#39;)</span>
+<span class="sd">                pm_logger.setLevel(logging.INFO)</span>
+<span class="sd">                subscriber = DynamicPMSubscriber(pm_logger)</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="s1">&#39;dynamic_pm_subscriber&#39;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">active_subscriptions</span> <span class="o">=</span> <span class="p">{}</span>  <span class="c1"># Registry of active topic subscriptions</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">pm_logger</span> <span class="o">=</span> <span class="n">pm_logger</span>
+        
+        <span class="c1"># Set up periodic discovery timer (every 2 seconds)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">timer</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">create_timer</span><span class="p">(</span><span class="mf">2.0</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">scan_for_drones</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">pm_logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;[PM Subscriber] - Started dynamic PM subscriber&quot;</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="DynamicPMSubscriber.scan_for_drones">
+<a class="viewcode-back" href="../Fleet_module/PM/subs_pm_component.html#subscriber_pm_function.DynamicPMSubscriber.scan_for_drones">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">scan_for_drones</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Discover and subscribe to new drone prescription map topics.</span>
+<span class="sd">        </span>
+<span class="sd">        This method performs periodic scanning of available ROS2 topics to discover</span>
+<span class="sd">        new drone prescription map publishers. It uses regex pattern matching to</span>
+<span class="sd">        identify topics that follow the expected drone PM topic naming convention</span>
+<span class="sd">        and creates subscriptions for newly detected drones.</span>
+<span class="sd">        </span>
+<span class="sd">        Discovery Process:</span>
+<span class="sd">        1. Retrieve all available topics from the ROS2 topic list</span>
+<span class="sd">        2. Filter topics using regex pattern for drone PM topics</span>
+<span class="sd">        3. Check against existing subscriptions to identify new drones</span>
+<span class="sd">        4. Create subscriptions for newly discovered drone topics</span>
+<span class="sd">        </span>
+<span class="sd">        Topic Pattern Matching:</span>
+<span class="sd">            Matches topics with pattern: ``/prescription_map/drone_{numeric_id}``</span>
+<span class="sd">            </span>
+<span class="sd">        Example Topics:</span>
+<span class="sd">            - ``/prescription_map/drone_1``</span>
+<span class="sd">            - ``/prescription_map/drone_42``</span>
+<span class="sd">            - ``/prescription_map/drone_101``</span>
+<span class="sd">            </span>
+<span class="sd">        Note:</span>
+<span class="sd">            This method is called automatically by the ROS2 timer every 2 seconds.</span>
+<span class="sd">            The scanning frequency balances discovery responsiveness with system</span>
+<span class="sd">            resource usage.</span>
+<span class="sd">            </span>
+<span class="sd">        Warning:</span>
+<span class="sd">            Topic discovery depends on ROS2 topic publication. Drones must be</span>
+<span class="sd">            actively publishing or have published at least once to be discovered.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># Get all available topics from ROS2 system</span>
+        <span class="n">topic_list</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_topic_names_and_types</span><span class="p">()</span>
+        
+        <span class="c1"># Filter for drone PM topics using regex pattern matching</span>
+        <span class="n">drone_topics</span> <span class="o">=</span> <span class="p">[</span><span class="n">t</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">topic_list</span> <span class="k">if</span> <span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;/prescription_map/drone_\d+&#39;</span><span class="p">,</span> <span class="n">t</span><span class="p">[</span><span class="mi">0</span><span class="p">])]</span>
+        
+        <span class="c1"># Create subscriptions for newly discovered drones</span>
+        <span class="k">for</span> <span class="n">topic</span> <span class="ow">in</span> <span class="n">drone_topics</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">topic</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">active_subscriptions</span><span class="p">:</span>
+                <span class="n">drone_id</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">extract_drone_id</span><span class="p">(</span><span class="n">topic</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">create_drone_subscription</span><span class="p">(</span><span class="n">topic</span><span class="p">,</span> <span class="n">drone_id</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="DynamicPMSubscriber.extract_drone_id">
+<a class="viewcode-back" href="../Fleet_module/PM/subs_pm_component.html#subscriber_pm_function.DynamicPMSubscriber.extract_drone_id">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">extract_drone_id</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">topic</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Extract numeric drone identifier from topic name.</span>
+<span class="sd">        </span>
+<span class="sd">        This method parses the drone topic name using regex to extract the</span>
+<span class="sd">        numeric drone identifier. The identifier is used for message routing</span>
+<span class="sd">        and subscription management throughout the system.</span>
+<span class="sd">        </span>
+<span class="sd">        Args:</span>
+<span class="sd">            topic (str): Full topic name in format &#39;/prescription_map/drone_{id}&#39;</span>
+<span class="sd">            </span>
+<span class="sd">        Returns:</span>
+<span class="sd">            int or None: Numeric drone identifier if successfully extracted,</span>
+<span class="sd">                        None if the topic name doesn&#39;t match the expected pattern</span>
+<span class="sd">                        </span>
+<span class="sd">        Example:</span>
+<span class="sd">            ::</span>
+<span class="sd">            </span>
+<span class="sd">                # Extract ID from valid topic</span>
+<span class="sd">                drone_id = self.extract_drone_id(&#39;/prescription_map/drone_42&#39;)</span>
+<span class="sd">                print(drone_id)  # Output: 42</span>
+<span class="sd">                </span>
+<span class="sd">                # Handle invalid topic</span>
+<span class="sd">                drone_id = self.extract_drone_id(&#39;/invalid/topic&#39;)</span>
+<span class="sd">                print(drone_id)  # Output: None</span>
+<span class="sd">                </span>
+<span class="sd">        Note:</span>
+<span class="sd">            The method uses regex group matching to reliably extract the</span>
+<span class="sd">            numeric portion from the topic name, ensuring robust parsing</span>
+<span class="sd">            even with varied topic naming patterns.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># Use regex to extract drone ID from topic path</span>
+        <span class="n">match</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;drone_(\d+)&#39;</span><span class="p">,</span> <span class="n">topic</span><span class="p">)</span>
+        <span class="k">return</span> <span class="nb">int</span><span class="p">(</span><span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span> <span class="k">if</span> <span class="n">match</span> <span class="k">else</span> <span class="kc">None</span></div>
+
+
+<div class="viewcode-block" id="DynamicPMSubscriber.create_drone_subscription">
+<a class="viewcode-back" href="../Fleet_module/PM/subs_pm_component.html#subscriber_pm_function.DynamicPMSubscriber.create_drone_subscription">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">create_drone_subscription</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">topic</span><span class="p">,</span> <span class="n">drone_id</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Create ROS2 subscription for a newly discovered drone topic.</span>
+<span class="sd">        </span>
+<span class="sd">        This method establishes a new ROS2 subscription for a specific drone&#39;s</span>
+<span class="sd">        prescription map topic. It creates a dedicated callback function for</span>
+<span class="sd">        the drone and registers the subscription in the active subscriptions</span>
+<span class="sd">        registry for management and cleanup.</span>
+<span class="sd">        </span>
+<span class="sd">        Subscription Configuration:</span>
+<span class="sd">        - Message type: std_msgs/String (JSON-encoded prescription map data)</span>
+<span class="sd">        - Queue size: 10 messages (balanced for reliability and memory usage)</span>
+<span class="sd">        - Callback: Dynamically created with drone context</span>
+<span class="sd">        </span>
+<span class="sd">        Args:</span>
+<span class="sd">            topic (str): Full ROS2 topic name for the drone PM data</span>
+<span class="sd">            drone_id (int): Numeric identifier for the drone</span>
+<span class="sd">            </span>
+<span class="sd">        Example:</span>
+<span class="sd">            ::</span>
+<span class="sd">            </span>
+<span class="sd">                # Create subscription for newly discovered drone</span>
+<span class="sd">                self.create_drone_subscription(&#39;/prescription_map/drone_5&#39;, 5)</span>
+<span class="sd">                </span>
+<span class="sd">        Note:</span>
+<span class="sd">            The method only creates subscriptions for valid drone IDs (not None).</span>
+<span class="sd">            Each subscription gets a unique callback function that includes the</span>
+<span class="sd">            drone ID context for proper message routing.</span>
+<span class="sd">            </span>
+<span class="sd">        Warning:</span>
+<span class="sd">            Duplicate subscriptions for the same topic are prevented by checking</span>
+<span class="sd">            the active_subscriptions registry before creation.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># Create subscription only for valid drone IDs</span>
+        <span class="k">if</span> <span class="n">drone_id</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">pm_logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;[PM Subscriber] - Discovered new drone: ID </span><span class="si">{</span><span class="n">drone_id</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+            
+            <span class="c1"># Create ROS2 subscription with drone-specific callback</span>
+            <span class="n">sub</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">create_subscription</span><span class="p">(</span>
+                <span class="n">String</span><span class="p">,</span>                          <span class="c1"># Message type</span>
+                <span class="n">topic</span><span class="p">,</span>                          <span class="c1"># Topic name</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">create_callback</span><span class="p">(</span><span class="n">drone_id</span><span class="p">),</span> <span class="c1"># Drone-specific callback</span>
+                <span class="mi">10</span>                              <span class="c1"># Queue size</span>
+            <span class="p">)</span>
+            
+            <span class="c1"># Register subscription in active subscriptions registry</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">active_subscriptions</span><span class="p">[</span><span class="n">topic</span><span class="p">]</span> <span class="o">=</span> <span class="n">sub</span></div>
+
+
+<div class="viewcode-block" id="DynamicPMSubscriber.create_callback">
+<a class="viewcode-back" href="../Fleet_module/PM/subs_pm_component.html#subscriber_pm_function.DynamicPMSubscriber.create_callback">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">create_callback</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">drone_id</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Generate prescription map callback function with drone context.</span>
+<span class="sd">        </span>
+<span class="sd">        This method creates a closure that captures the drone ID context and</span>
+<span class="sd">        returns a callback function for processing prescription map messages</span>
+<span class="sd">        from that specific drone. The callback handles message parsing,</span>
+<span class="sd">        validation, and forwarding to the prescription map processing pipeline.</span>
+<span class="sd">        </span>
+<span class="sd">        Message Processing Pipeline:</span>
+<span class="sd">        1. Parse incoming JSON/Python data structures</span>
+<span class="sd">        2. Validate message format and content structure</span>
+<span class="sd">        3. Format message for prescription map manager</span>
+<span class="sd">        4. Forward to handle_received for processing</span>
+<span class="sd">        5. Log processing status and errors</span>
+<span class="sd">        </span>
+<span class="sd">        Args:</span>
+<span class="sd">            drone_id (int): Numeric identifier for the drone that will use this callback</span>
+<span class="sd">            </span>
+<span class="sd">        Returns:</span>
+<span class="sd">            function: Callback function configured for the specific drone that</span>
+<span class="sd">                     accepts ROS2 String messages and processes PM data</span>
+<span class="sd">                     </span>
+<span class="sd">        Example:</span>
+<span class="sd">            ::</span>
+<span class="sd">            </span>
+<span class="sd">                # Create callback for drone 5</span>
+<span class="sd">                callback_func = self.create_callback(5)</span>
+<span class="sd">                </span>
+<span class="sd">                # Callback is used internally by ROS2 subscription</span>
+<span class="sd">                # and handles messages automatically</span>
+<span class="sd">                </span>
+<span class="sd">        Note:</span>
+<span class="sd">            The callback uses a fallback parsing mechanism, attempting JSON</span>
+<span class="sd">            parsing first, then falling back to ast.literal_eval for Python</span>
+<span class="sd">            literal structures.</span>
+<span class="sd">            </span>
+<span class="sd">        Warning:</span>
+<span class="sd">            Message parsing failures are logged but do not crash the callback.</span>
+<span class="sd">            Invalid message formats are rejected with appropriate error logging.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        
+        <span class="k">def</span><span class="w"> </span><span class="nf">callback</span><span class="p">(</span><span class="n">msg</span><span class="p">):</span>
+<span class="w">            </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">            Process prescription map message from a specific drone.</span>
+<span class="sd">            </span>
+<span class="sd">            This inner function processes incoming prescription map messages,</span>
+<span class="sd">            handling data parsing, validation, and forwarding to the fleet</span>
+<span class="sd">            management system. It implements robust error handling to ensure</span>
+<span class="sd">            system stability even with malformed messages.</span>
+<span class="sd">            &quot;&quot;&quot;</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">pm_logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;[PM Subscriber] - PM received from Drone </span><span class="si">{</span><span class="n">drone_id</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+                
+                <span class="c1"># Attempt to parse message content with fallback mechanisms</span>
+                <span class="k">try</span><span class="p">:</span>
+                    <span class="c1"># Primary parsing: JSON format</span>
+                    <span class="n">content</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">msg</span><span class="o">.</span><span class="n">data</span><span class="p">)</span>
+                <span class="k">except</span> <span class="n">json</span><span class="o">.</span><span class="n">JSONDecodeError</span><span class="p">:</span>
+                    <span class="k">try</span><span class="p">:</span>
+                        <span class="c1"># Fallback parsing: Python literal evaluation</span>
+                        <span class="n">content</span> <span class="o">=</span> <span class="n">ast</span><span class="o">.</span><span class="n">literal_eval</span><span class="p">(</span><span class="n">msg</span><span class="o">.</span><span class="n">data</span><span class="p">)</span>
+                    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+                        <span class="bp">self</span><span class="o">.</span><span class="n">pm_logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;[PM Subscriber] - Error parsing message: </span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+                        <span class="k">return</span>
+
+                <span class="c1"># Validate that parsed content is a dictionary structure</span>
+                <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">content</span><span class="p">,</span> <span class="nb">dict</span><span class="p">):</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">pm_logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;[PM Subscriber] - Parsed message is not a dict: </span><span class="si">{</span><span class="n">content</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+                    <span class="k">return</span>
+
+                <span class="c1"># Format message for prescription map manager processing</span>
+                <span class="n">parsed_msg</span> <span class="o">=</span> <span class="p">{</span>
+                    <span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="s1">&#39;Received&#39;</span><span class="p">,</span>
+                    <span class="s1">&#39;vehicle_id&#39;</span><span class="p">:</span> <span class="n">drone_id</span><span class="p">,</span>
+                    <span class="s1">&#39;content&#39;</span><span class="p">:</span> <span class="n">content</span><span class="p">,</span>
+                    <span class="s1">&#39;filename&#39;</span><span class="p">:</span> <span class="n">content</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;filename&#39;</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;drone_</span><span class="si">{</span><span class="n">drone_id</span><span class="si">}</span><span class="s2">_pm&quot;</span><span class="p">)</span>
+                <span class="p">}</span>
+
+                <span class="c1"># Forward processed message to prescription map handler</span>
+                <span class="n">handle_received</span><span class="p">(</span><span class="n">parsed_msg</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;vehicle_id&#39;</span><span class="p">),</span> <span class="n">parsed_msg</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">pm_logger</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">pm_logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;[PM Subscriber] - PM data added to queue for Drone </span><span class="si">{</span><span class="n">drone_id</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+                
+            <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">pm_logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;[PM Subscriber] - Error processing message: </span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+            
+        <span class="k">return</span> <span class="n">callback</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="main">
+<a class="viewcode-back" href="../Fleet_module/PM/subs_pm_component.html#subscriber_pm_function.main">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">args</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">pm_logger</span><span class="p">:</span><span class="n">logging</span><span class="o">.</span><span class="n">Logger</span> <span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Initialize and run the dynamic drone prescription map subscriber.</span>
+<span class="sd">    </span>
+<span class="sd">    This function sets up and starts the complete ROS2 subscription system for</span>
+<span class="sd">    receiving prescription map data from multiple drones. It initializes the</span>
+<span class="sd">    ROS2 context, creates the dynamic subscriber node, and configures a</span>
+<span class="sd">    multi-threaded executor for concurrent message processing.</span>
+<span class="sd">    </span>
+<span class="sd">    System Configuration:</span>
+<span class="sd">    - ROS2 context initialization (if not already initialized)</span>
+<span class="sd">    - Dynamic PM subscriber node creation</span>
+<span class="sd">    - Multi-threaded executor setup for concurrent processing</span>
+<span class="sd">    - Daemon thread execution for non-blocking operation</span>
+<span class="sd">    </span>
+<span class="sd">    Threading Model:</span>
+<span class="sd">    - Main thread: Returns immediately after setup</span>
+<span class="sd">    - Daemon thread: Runs ROS2 executor until main process exits</span>
+<span class="sd">    - Multi-threaded executor: Handles concurrent message callbacks</span>
+<span class="sd">    </span>
+<span class="sd">    Args:</span>
+<span class="sd">        args (list, optional): Command-line arguments for ROS2 initialization.</span>
+<span class="sd">                              Defaults to None for standard initialization.</span>
+<span class="sd">        pm_logger (logging.Logger, optional): Configured logger instance for</span>
+<span class="sd">                                            tracking subscription operations.</span>
+<span class="sd">                                            Must be provided for proper logging.</span>
+<span class="sd">                                            </span>
+<span class="sd">    Returns:</span>
+<span class="sd">        DynamicPMSubscriber: The initialized subscriber node instance for</span>
+<span class="sd">                           external reference and management</span>
+<span class="sd">                           </span>
+<span class="sd">    Example:</span>
+<span class="sd">        ::</span>
+<span class="sd">        </span>
+<span class="sd">            import logging</span>
+<span class="sd">            from Logs.create_logger_fleet import create_logger</span>
+<span class="sd">            </span>
+<span class="sd">            # Create configured logger</span>
+<span class="sd">            pm_logger = create_logger(&#39;pm_subscriber&#39;, logging.INFO)</span>
+<span class="sd">            </span>
+<span class="sd">            # Start subscriber (non-blocking)</span>
+<span class="sd">            subscriber = main(pm_logger=pm_logger)</span>
+<span class="sd">            </span>
+<span class="sd">            # Main application continues...</span>
+<span class="sd">            print(&quot;PM subscriber started in background&quot;)</span>
+<span class="sd">            </span>
+<span class="sd">    Note:</span>
+<span class="sd">        The function returns immediately after starting the daemon thread.</span>
+<span class="sd">        The ROS2 subscriber will continue running in the background until</span>
+<span class="sd">        the main process exits.</span>
+<span class="sd">        </span>
+<span class="sd">    Warning:</span>
+<span class="sd">        ROS2 context initialization is handled automatically, but proper</span>
+<span class="sd">        ROS2 environment setup is required. The executor runs in a daemon</span>
+<span class="sd">        thread and will be terminated when the main process exits.</span>
+<span class="sd">        </span>
+<span class="sd">    Raises:</span>
+<span class="sd">        Exception: Critical errors during initialization are logged and re-raised</span>
+<span class="sd">                  to ensure proper error handling by the calling code</span>
+<span class="sd">        SystemExit: May be raised if ROS2 initialization fails</span>
+<span class="sd">        </span>
+<span class="sd">    See Also:</span>
+<span class="sd">        :class:`DynamicPMSubscriber`: The main subscriber node implementation</span>
+<span class="sd">        :func:`rclpy.init`: ROS2 context initialization</span>
+<span class="sd">        :class:`rclpy.executors.MultiThreadedExecutor`: Concurrent message processing</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    
+    <span class="k">try</span><span class="p">:</span>
+        <span class="c1"># Initialize ROS2 context if not already initialized</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">rclpy</span><span class="o">.</span><span class="n">ok</span><span class="p">():</span>
+            <span class="n">rclpy</span><span class="o">.</span><span class="n">init</span><span class="p">(</span><span class="n">args</span><span class="o">=</span><span class="n">args</span><span class="p">)</span>
+            
+        <span class="c1"># Create dynamic PM subscriber node</span>
+        <span class="n">subscriber</span> <span class="o">=</span> <span class="n">DynamicPMSubscriber</span><span class="p">(</span><span class="n">pm_logger</span><span class="p">)</span>
+        
+        <span class="c1"># Create and configure multi-threaded executor for concurrent processing</span>
+        <span class="n">executor</span> <span class="o">=</span> <span class="n">rclpy</span><span class="o">.</span><span class="n">executors</span><span class="o">.</span><span class="n">MultiThreadedExecutor</span><span class="p">()</span>
+        <span class="n">executor</span><span class="o">.</span><span class="n">add_node</span><span class="p">(</span><span class="n">subscriber</span><span class="p">)</span>
+        
+        <span class="c1"># Start ROS2 executor in a separate daemon thread</span>
+        <span class="n">executor_thread</span> <span class="o">=</span> <span class="n">threading</span><span class="o">.</span><span class="n">Thread</span><span class="p">(</span><span class="n">target</span><span class="o">=</span><span class="n">executor</span><span class="o">.</span><span class="n">spin</span><span class="p">,</span> <span class="n">daemon</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="n">executor_thread</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+        
+        <span class="k">return</span> <span class="n">subscriber</span>
+
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="n">pm_logger</span><span class="o">.</span><span class="n">critical</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;[PM Subscriber] - Critical error: </span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">exc_info</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="k">raise</span></div>
+
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">main</span><span class="p">()</span>
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, Estela Mora Barba.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

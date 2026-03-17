@@ -1,0 +1,814 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>grpc_mission_rest &mdash; Fleet Manager 1.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=f2a433a1"></script>
+        <script src="../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+        <script src="../_static/copybutton.js?v=f281be69"></script>
+        <script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script>
+        <script type="module">import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11.12.1/dist/mermaid.esm.min.mjs";
+
+
+
+
+
+const initStyles = () => {
+    const defaultStyle = document.createElement('style');
+    defaultStyle.textContent = `pre.mermaid {
+    /* Same as .mermaid-container > pre */
+    display: block;
+    width: 100%;
+}
+
+pre.mermaid > svg {
+    /* Same as .mermaid-container > pre > svg */
+    height: 500px;
+    width: 100%;
+    max-width: 100% !important;
+}`;
+    document.head.appendChild(defaultStyle);
+
+    const fullscreenStyle = document.createElement('style');
+    fullscreenStyle.textContent = `.mermaid-container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.mermaid-container > pre {
+    display: block;
+    width: 100%;
+}
+
+.mermaid-container > pre > svg {
+    height: 500px;
+    width: 100%;
+    max-width: 100% !important;
+}
+
+.mermaid-fullscreen-btn {
+    width: 28px;
+    height: 28px;
+    background: rgba(255, 255, 255, 0.95);
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    border-radius: 4px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    font-size: 14px;
+    line-height: 1;
+    padding: 0;
+    color: #333;
+}
+
+.mermaid-fullscreen-btn:hover {
+    opacity: 100% !important;
+    background: rgba(255, 255, 255, 1);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+    transform: scale(1.1);
+}
+
+.mermaid-fullscreen-btn.dark-theme {
+    background: rgba(50, 50, 50, 0.95);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: #e0e0e0;
+}
+
+.mermaid-fullscreen-btn.dark-theme:hover {
+    background: rgba(60, 60, 60, 1);
+    box-shadow: 0 3px 10px rgba(255, 255, 255, 0.2);
+}
+
+.mermaid-fullscreen-modal {
+    display: none;
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 95vw;
+    height: 100vh;
+    background: rgba(255, 255, 255, 0.98);
+    z-index: 9999;
+    padding: 20px;
+    overflow: auto;
+}
+
+.mermaid-fullscreen-modal.dark-theme {
+    background: rgba(0, 0, 0, 0.98);
+}
+
+.mermaid-fullscreen-modal.active {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mermaid-container-fullscreen {
+    position: relative;
+    width: 95vw;
+    height: 90vh;
+    max-width: 95vw;
+    max-height: 90vh;
+    background: white;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    overflow: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mermaid-container-fullscreen.dark-theme {
+    background: #1a1a1a;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.8);
+}
+
+.mermaid-container-fullscreen pre.mermaid {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mermaid-container-fullscreen .mermaid svg {
+    height: 100% !important;
+    width: 100% !important;
+    cursor: grab;
+}
+
+.mermaid-fullscreen-close {
+    position: fixed !important;
+    top: 20px !important;
+    right: 20px !important;
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.95);
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    transition: all 0.2s;
+    font-size: 24px;
+    line-height: 1;
+    color: #333;
+}
+
+.mermaid-fullscreen-close:hover {
+    background: white;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+    transform: scale(1.1);
+}
+
+.mermaid-fullscreen-close.dark-theme {
+    background: rgba(50, 50, 50, 0.95);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #e0e0e0;
+}
+
+.mermaid-fullscreen-close.dark-theme:hover {
+    background: rgba(60, 60, 60, 1);
+    box-shadow: 0 6px 16px rgba(255, 255, 255, 0.2);
+}
+
+.mermaid-fullscreen-modal .mermaid-fullscreen-btn {
+    display: none !important;
+}`;
+    document.head.appendChild(fullscreenStyle);
+}
+
+// Detect if page has dark background
+const isDarkTheme = () => {
+    // We use a set of heuristics:
+    // 1. Check for common dark mode classes or attributes
+    // 2. Check computed background color brightness
+    if (document.documentElement.classList.contains('dark') ||
+        document.documentElement.getAttribute('data-theme') === 'dark' ||
+        document.body.classList.contains('dark') ||
+        document.body.getAttribute('data-theme') === 'dark') {
+        // console.log("Dark theme detected via class/attribute");
+        return true;
+    }
+    if (document.documentElement.classList.contains('light') ||
+        document.documentElement.getAttribute('data-theme') === 'light' ||
+        document.body.classList.contains('light') ||
+        document.body.getAttribute('data-theme') === 'light') {
+        // console.log("Light theme detected via class/attribute");
+        return false;
+    }
+    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        // console.log("Dark theme detected via prefers-color-scheme");
+        return true;
+    }
+    const bgColor = window.getComputedStyle(document.body).backgroundColor;
+    const match = bgColor.match(/rgb\((\d+),\s*(\d+),\s*(\d+)/);
+    if (match) {
+        const r = parseInt(match[1]);
+        const g = parseInt(match[2]);
+        const b = parseInt(match[3]);
+        const brightness = (r * 299 + g * 587 + b * 114) / 1000;
+        // console.log("Background color brightness:", brightness);
+        return brightness < 128;
+    }
+    // console.log("No dark or light theme detected, defaulting to light theme");
+    return false;
+};
+
+let darkTheme = isDarkTheme();
+let modal = null;
+let modalContent = null;
+let previousScrollOffset = [window.scrollX, window.scrollY];
+
+const runMermaid = async (rerun) => {
+    console.log("Running mermaid diagrams, rerun =", rerun);
+    // clear all existing mermaid charts
+    let all_mermaids = document.querySelectorAll(".mermaid");
+
+    if (rerun) {
+        all_mermaids.forEach((el) => {
+            if(!el.hasAttribute("data-original-code")) {
+                // store original code
+                // console.log(`Storing original code for first run: `, el.innerHTML);
+                el.setAttribute('data-original-code', el.innerHTML);
+            }
+            if(el.getAttribute("data-processed") === "true") {
+                // remove and restore original
+                el.removeAttribute("data-processed");
+                // console.log(`Restoring original code for re-run: `, el.getAttribute('data-original-code'));
+                el.innerHTML = el.getAttribute('data-original-code');
+            } else {
+                // store original code
+                // console.log(`Storing original code for re-run: `, el.innerHTML);
+                el.setAttribute('data-original-code', el.innerHTML);
+            }
+        });
+        await mermaid.run();
+    }
+
+    all_mermaids = document.querySelectorAll(".mermaid");
+    const mermaids_processed = document.querySelectorAll(".mermaid[data-processed='true']");
+
+    if ("False" === "True") {
+        const mermaids_to_add_zoom = -1 === -1 ? all_mermaids.length : -1;
+        if(mermaids_to_add_zoom > 0) {
+            var svgs = d3.selectAll("");
+            if(all_mermaids.length !== mermaids_processed.length) {
+                setTimeout(() => runMermaid(false), 200);
+                return;
+            } else if(svgs.size() !== mermaids_to_add_zoom) {
+                setTimeout(() => runMermaid(false), 200);
+                return;
+            } else {
+                svgs.each(function() {
+                    var svg = d3.select(this);
+                    svg.html("<g class='wrapper'>" + svg.html() + "</g>");
+                    var inner = svg.select("g");
+                    var zoom = d3.zoom().on("zoom", function(event) {
+                        inner.attr("transform", event.transform);
+                    });
+                    svg.call(zoom);
+                });
+            }
+        }
+    } else if(all_mermaids.length !== mermaids_processed.length) {
+        // Wait for mermaid to process all diagrams
+        setTimeout(() => runMermaid(false), 200);
+        return;
+    }
+
+    // Stop here if not adding fullscreen capability
+    if ("True" !== "True") return;
+
+    if (modal !== null ) {
+        // Destroy existing modal
+        modal.remove();
+        modal = null;
+        modalContent = null;
+    }
+
+    modal = document.createElement('div');
+    modal.className = 'mermaid-fullscreen-modal' + (darkTheme ? ' dark-theme' : '');
+    modal.setAttribute('role', 'dialog');
+    modal.setAttribute('aria-modal', 'true');
+    modal.setAttribute('aria-label', 'Fullscreen diagram viewer');
+    modal.innerHTML = `
+        <button class="mermaid-fullscreen-close${darkTheme ? ' dark-theme' : ''}" aria-label="Close fullscreen">✕</button>
+        <div class="mermaid-container-fullscreen${darkTheme ? ' dark-theme' : ''}"></div>
+    `;
+    document.body.appendChild(modal);
+
+    modalContent = modal.querySelector('.mermaid-container-fullscreen');
+    const closeBtn = modal.querySelector('.mermaid-fullscreen-close');
+
+    const closeModal = () => {
+        modal.classList.remove('active');
+        modalContent.innerHTML = '';
+        document.body.style.overflow = ''
+        window.scrollTo({left: previousScrollOffset[0], top: previousScrollOffset[1], behavior: 'instant'});
+    };
+
+    closeBtn.addEventListener('click', closeModal);
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) closeModal();
+    });
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && modal.classList.contains('active')) {
+            closeModal();
+        }
+    });
+
+    document.querySelectorAll('.mermaid').forEach((mermaidDiv) => {
+        if (mermaidDiv.parentNode.classList.contains('mermaid-container') ||
+            mermaidDiv.closest('.mermaid-fullscreen-modal')) {
+            // Already processed, adjust button class if needed
+            const existingBtn = mermaidDiv.parentNode.querySelector('.mermaid-fullscreen-btn');
+            if (existingBtn) {
+                existingBtn.className = 'mermaid-fullscreen-btn' + (darkTheme ? ' dark-theme' : '');
+            }
+            return;
+        }
+
+        const container = document.createElement('div');
+        container.className = 'mermaid-container';
+        mermaidDiv.parentNode.insertBefore(container, mermaidDiv);
+        container.appendChild(mermaidDiv);
+
+        const fullscreenBtn = document.createElement('button');
+        fullscreenBtn.className = 'mermaid-fullscreen-btn' + (darkTheme ? ' dark-theme' : '');
+        fullscreenBtn.setAttribute('aria-label', 'View diagram in fullscreen');
+        fullscreenBtn.textContent = '⛶';
+        fullscreenBtn.style.opacity = '50%';
+
+        // Calculate dynamic position based on diagram's margin and padding
+        const diagramStyle = window.getComputedStyle(mermaidDiv);
+        const marginTop = parseFloat(diagramStyle.marginTop) || 0;
+        const marginRight = parseFloat(diagramStyle.marginRight) || 0;
+        const paddingTop = parseFloat(diagramStyle.paddingTop) || 0;
+        const paddingRight = parseFloat(diagramStyle.paddingRight) || 0;
+        fullscreenBtn.style.top = `${marginTop + paddingTop + 4}px`;
+        fullscreenBtn.style.right = `${marginRight + paddingRight + 4}px`;
+
+        fullscreenBtn.addEventListener('click', () => {
+            previousScrollOffset = [window.scroll, window.scrollY];
+            const clone = mermaidDiv.cloneNode(true);
+            modalContent.innerHTML = '';
+            modalContent.appendChild(clone);
+
+            const svg = clone.querySelector('svg');
+            if (svg) {
+                svg.removeAttribute('width');
+                svg.removeAttribute('height');
+                svg.style.width = '100%';
+                svg.style.height = 'auto';
+                svg.style.maxWidth = '100%';
+                svg.style.sdisplay = 'block';
+
+                if ("False" === "True") {
+                    setTimeout(() => {
+                        const g = svg.querySelector('g');
+                        if (g) {
+                            var svgD3 = d3.select(svg);
+                            svgD3.html("<g class='wrapper'>" + svgD3.html() + "</g>");
+                            var inner = svgD3.select("g");
+                            var zoom = d3.zoom().on("zoom", function(event) {
+                                inner.attr("transform", event.transform);
+                            });
+                            svgD3.call(zoom);
+                        }
+                    }, 100);
+                }
+            }
+
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+        container.appendChild(fullscreenBtn);
+    });
+};
+
+const load = async () => {
+    initStyles();
+
+    await runMermaid(true);
+
+    const reRunIfThemeChanges = async () => {
+        const newDarkTheme = isDarkTheme();
+        if (newDarkTheme !== darkTheme) {
+            darkTheme = newDarkTheme;
+            console.log("Theme change detected, re-running mermaid with", darkTheme ? "dark" : "default", "theme");
+            await mermaid.initialize(
+                {...JSON.parse(
+                    `{"startOnLoad": false}`
+                ),
+                ...{ darkMode: darkTheme, theme: darkTheme ? 'dark' : 'default' },
+                }
+            );
+            await runMermaid(true);
+        }
+    };
+
+    // Update theme classes when theme changes
+    const themeObserver = new MutationObserver(reRunIfThemeChanges);
+    themeObserver.observe(document.documentElement, {
+        attributes: true,
+        attributeFilter: ['class', 'style', 'data-theme']
+    });
+    themeObserver.observe(document.body, {
+        attributes: true,
+        attributeFilter: ['class', 'style', 'data-theme']
+    });
+};
+
+
+
+
+
+console.log("Initializing mermaid with", darkTheme ? "dark" : "default", "theme");
+mermaid.initialize(
+    {...JSON.parse(
+        `{"startOnLoad": false}`
+    ),
+    ...{ darkMode: darkTheme, theme: darkTheme ? 'dark' : 'default' },
+    }
+);
+
+window.addEventListener("load", load);
+window.runMermaid = runMermaid;</script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="author" title="About these documents" href="../about.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Fleet Manager
+          </a>
+              <div class="version">
+                1.0
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../about.html">About the project</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules.html">Code documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../training.html">Training documentation</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Fleet Manager</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Module code</a></li>
+      <li class="breadcrumb-item active">grpc_mission_rest</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <h1>Source code for grpc_mission_rest</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">gRPC Mission REST Communication Module</span>
+
+<span class="sd">.. module:: grpc_mission_rest</span>
+<span class="sd">    :synopsis: Provides gRPC services for mission management and REST communication</span>
+
+<span class="sd">.. note::</span>
+<span class="sd">    Features:</span>
+<span class="sd">    - gRPC server for mission reception and processing</span>
+<span class="sd">    - gRPC client for status updates</span>
+<span class="sd">    - Queue-based inter-service communication</span>
+<span class="sd">    - Comprehensive logging system</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">concurrent</span><span class="w"> </span><span class="kn">import</span> <span class="n">futures</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">grpc</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">queue</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">time</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">threading</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">logging</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">Optional</span><span class="p">,</span> <span class="n">Any</span><span class="p">,</span> <span class="n">Tuple</span><span class="p">,</span> <span class="n">Dict</span><span class="p">,</span> <span class="n">List</span>
+
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">GRPC.mission_pb2</span><span class="w"> </span><span class="kn">import</span> <span class="n">MissionResponse</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">GRPC.mission_pb2_grpc</span><span class="w"> </span><span class="kn">import</span> <span class="n">MissionCommunicationServicer</span><span class="p">,</span> <span class="n">add_MissionCommunicationServicer_to_server</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">GRPC.rest_pb2</span><span class="w"> </span><span class="kn">import</span> <span class="n">RestRequest</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">GRPC.rest_pb2_grpc</span><span class="w"> </span><span class="kn">import</span> <span class="n">RestCommunicationStub</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">MissionManager.mission_manager</span><span class="w"> </span><span class="kn">import</span> <span class="n">create_mission_manager</span>
+
+
+<div class="viewcode-block" id="MissionCommunicationService">
+<a class="viewcode-back" href="../Fleet_module/Mission/grpc_mission_rest_component.html#grpc_mission_rest.MissionCommunicationService">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">MissionCommunicationService</span><span class="p">(</span><span class="n">MissionCommunicationServicer</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;gRPC service handler for mission operations.</span>
+
+<span class="sd">    :param send_ros2_queue: Queue for ROS2-bound messages</span>
+<span class="sd">    :param receive_ros2_queue: Queue for ROS2-originated messages</span>
+<span class="sd">    :param send_db_queue: Queue for database operations</span>
+<span class="sd">    :param receive_db_queue: Queue for database responses</span>
+<span class="sd">    :param send_mqtt_queue: Queue for MQTT messages</span>
+<span class="sd">    :param send_rest_queue: Queue for REST updates</span>
+<span class="sd">    :param mission_logger: Configured logger instance</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="MissionCommunicationService.__init__">
+<a class="viewcode-back" href="../Fleet_module/Mission/grpc_mission_rest_component.html#grpc_mission_rest.MissionCommunicationService.__init__">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">send_ros2_queue</span><span class="p">:</span> <span class="n">queue</span><span class="o">.</span><span class="n">Queue</span><span class="p">,</span>
+        <span class="n">receive_ros2_queue</span><span class="p">:</span> <span class="n">queue</span><span class="o">.</span><span class="n">Queue</span><span class="p">,</span>
+        <span class="n">send_mqtt_queue</span><span class="p">:</span> <span class="n">queue</span><span class="o">.</span><span class="n">Queue</span><span class="p">,</span>
+        <span class="n">send_rest_queue</span><span class="p">:</span> <span class="n">queue</span><span class="o">.</span><span class="n">Queue</span><span class="p">,</span>
+        <span class="n">send_pm_queue</span><span class="p">:</span> <span class="n">queue</span><span class="o">.</span><span class="n">Queue</span><span class="p">,</span>
+        <span class="n">mission_logger</span><span class="p">:</span> <span class="n">logging</span><span class="o">.</span><span class="n">Logger</span>
+    <span class="p">):</span>
+        <span class="c1"># Initialize parent gRPC servicer class</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+        
+        <span class="c1"># Store communication queues for inter-service messaging</span>
+        <span class="c1"># These queues enable asynchronous communication with other system components</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">send_ros2_queue</span> <span class="o">=</span> <span class="n">send_ros2_queue</span>          <span class="c1"># Outbound ROS2 vehicle commands</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">receive_ros2_queue</span> <span class="o">=</span> <span class="n">receive_ros2_queue</span>    <span class="c1"># Inbound ROS2 vehicle responses</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">send_mqtt_queue</span> <span class="o">=</span> <span class="n">send_mqtt_queue</span>          <span class="c1"># Outbound MQTT telemetry data</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">send_rest_queue</span> <span class="o">=</span> <span class="n">send_rest_queue</span>          <span class="c1"># Outbound REST API status updates</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">send_pm_queue</span> <span class="o">=</span> <span class="n">send_pm_queue</span>              <span class="c1"># Outbound Prescription Map data</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">mission_logger</span> <span class="o">=</span> <span class="n">mission_logger</span>            <span class="c1"># Centralized logging instance</span></div>
+
+
+<div class="viewcode-block" id="MissionCommunicationService.SendMission">
+<a class="viewcode-back" href="../Fleet_module/Mission/grpc_mission_rest_component.html#grpc_mission_rest.MissionCommunicationService.SendMission">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">SendMission</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">request</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span> <span class="n">context</span><span class="p">:</span> <span class="n">grpc</span><span class="o">.</span><span class="n">ServicerContext</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">MissionResponse</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Process incoming mission requests.</span>
+
+<span class="sd">        :param request: gRPC request containing mission data</span>
+<span class="sd">        :param context: gRPC connection context</span>
+<span class="sd">        :return: Mission response with confirmation ID</span>
+<span class="sd">        :raises: grpc.RpcError for critical processing failures</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="c1"># Extract mission data from gRPC request payload</span>
+            <span class="c1"># Convert protobuf repeated field to Python list for processing</span>
+            <span class="n">mission_data</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">request</span><span class="o">.</span><span class="n">mission_json</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">mission_logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;[gRPC REST] - Mission request received&quot;</span><span class="p">)</span>
+            
+            <span class="c1"># Delegate mission processing to mission manager</span>
+            <span class="c1"># Pass all communication queues for distributed system coordination</span>
+            <span class="n">mission_id</span> <span class="o">=</span> <span class="n">create_mission_manager</span><span class="p">(</span>
+                <span class="n">mission_data</span><span class="p">,</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">send_ros2_queue</span><span class="p">,</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">receive_ros2_queue</span><span class="p">,</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">send_mqtt_queue</span><span class="p">,</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">send_rest_queue</span><span class="p">,</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">send_pm_queue</span><span class="p">,</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">mission_logger</span>
+            <span class="p">)</span>
+            <span class="c1"># Return successful response with generated mission ID</span>
+            <span class="k">return</span> <span class="n">MissionResponse</span><span class="p">(</span><span class="n">confirmation</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">mission_id</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        
+        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="c1"># Handle critical mission processing failures</span>
+            <span class="c1"># Set appropriate gRPC error status and provide detailed error information</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">mission_logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Mission processing failed: </span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="n">context</span><span class="o">.</span><span class="n">set_code</span><span class="p">(</span><span class="n">grpc</span><span class="o">.</span><span class="n">StatusCode</span><span class="o">.</span><span class="n">INTERNAL</span><span class="p">)</span>
+            <span class="n">context</span><span class="o">.</span><span class="n">set_details</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Processing error: </span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="c1"># Return failure confirmation with standardized error ID</span>
+            <span class="k">return</span> <span class="n">MissionResponse</span><span class="p">(</span><span class="n">confirmation</span><span class="o">=</span><span class="s2">&quot;-1&quot;</span><span class="p">)</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="run_client">
+<a class="viewcode-back" href="../Fleet_module/Mission/grpc_mission_rest_component.html#grpc_mission_rest.run_client">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">run_client</span><span class="p">(</span><span class="n">send_rest_queue</span><span class="p">:</span> <span class="n">queue</span><span class="o">.</span><span class="n">Queue</span><span class="p">,</span> <span class="n">mission_logger</span><span class="p">:</span> <span class="n">logging</span><span class="o">.</span><span class="n">Logger</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Continuous client for sending REST status updates.</span>
+
+<span class="sd">    :param send_rest_queue: Queue containing status updates</span>
+<span class="sd">    :param mission_logger: Configured logger instance</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># Establish insecure gRPC channel to REST API service</span>
+    <span class="c1"># Port 50052 is the dedicated REST communication endpoint</span>
+    <span class="n">channel</span> <span class="o">=</span> <span class="n">grpc</span><span class="o">.</span><span class="n">insecure_channel</span><span class="p">(</span><span class="s1">&#39;localhost:50052&#39;</span><span class="p">)</span>
+    <span class="n">stub</span> <span class="o">=</span> <span class="n">RestCommunicationStub</span><span class="p">(</span><span class="n">channel</span><span class="p">)</span>
+
+    <span class="c1"># Infinite loop for continuous REST status update processing</span>
+    <span class="c1"># Ensures persistent communication with external REST API systems</span>
+    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="c1"># Attempt to retrieve status update from queue with timeout</span>
+            <span class="c1"># Short timeout prevents blocking while allowing responsive status handling</span>
+            <span class="n">status_data</span> <span class="o">=</span> <span class="n">send_rest_queue</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">timeout</span><span class="o">=</span><span class="mf">0.1</span><span class="p">)</span>
+            <span class="n">mission_logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;[gRPC REST] - Sending mission status update&quot;</span><span class="p">)</span>
+            
+            <span class="c1"># Send status update via gRPC call to REST API service</span>
+            <span class="n">response</span> <span class="o">=</span> <span class="n">stub</span><span class="o">.</span><span class="n">SendRest</span><span class="p">(</span><span class="n">RestRequest</span><span class="p">(</span><span class="n">mission_status</span><span class="o">=</span><span class="n">status_data</span><span class="p">))</span>
+            <span class="n">mission_logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;[gRPC REST] - Status update confirmed&quot;</span><span class="p">)</span>
+            
+        <span class="k">except</span> <span class="n">queue</span><span class="o">.</span><span class="n">Empty</span><span class="p">:</span>
+            <span class="c1"># No status updates available in queue - brief sleep to prevent CPU spinning</span>
+            <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.1</span><span class="p">)</span>
+        <span class="k">except</span> <span class="n">grpc</span><span class="o">.</span><span class="n">RpcError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="c1"># Handle gRPC communication errors with automatic retry logic</span>
+            <span class="c1"># Logs specific error details for debugging and monitoring</span>
+            <span class="n">mission_logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s2">&quot;[gRPC REST] - Connection error (</span><span class="si">{</span><span class="n">e</span><span class="o">.</span><span class="n">code</span><span class="p">()</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">): </span><span class="si">{</span><span class="n">e</span><span class="o">.</span><span class="n">details</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span>
+            <span class="p">)</span>
+            <span class="c1"># Wait before retry to prevent rapid failure loops</span>
+            <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="run_server">
+<a class="viewcode-back" href="../Fleet_module/Mission/grpc_mission_rest_component.html#grpc_mission_rest.run_server">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">run_server</span><span class="p">(</span>
+    <span class="n">send_vehicle_queue</span><span class="p">:</span> <span class="n">queue</span><span class="o">.</span><span class="n">Queue</span><span class="p">,</span>
+    <span class="n">receive_vehicle_queue</span><span class="p">:</span> <span class="n">queue</span><span class="o">.</span><span class="n">Queue</span><span class="p">,</span>
+    <span class="n">send_mqtt_queue</span><span class="p">:</span> <span class="n">queue</span><span class="o">.</span><span class="n">Queue</span><span class="p">,</span>
+    <span class="n">send_rest_queue</span><span class="p">:</span> <span class="n">queue</span><span class="o">.</span><span class="n">Queue</span><span class="p">,</span>
+    <span class="n">send_pm_queue</span><span class="p">:</span> <span class="n">queue</span><span class="o">.</span><span class="n">Queue</span><span class="p">,</span>
+    <span class="n">mission_logger</span><span class="p">:</span> <span class="n">logging</span><span class="o">.</span><span class="n">Logger</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;gRPC server instance manager.</span>
+
+<span class="sd">    :param send_vehicle_queue: Vehicle command queue</span>
+<span class="sd">    :param receive_vehicle_queue: Vehicle status queue</span>
+<span class="sd">    :param send_db_queue: Database operation queue</span>
+<span class="sd">    :param receive_db_queue: Database response queue</span>
+<span class="sd">    :param send_mqtt_queue: MQTT message queue</span>
+<span class="sd">    :param send_rest_queue: REST update queue</span>
+<span class="sd">    :param mission_logger: Configured logger instance</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># Create gRPC server with thread pool for concurrent request handling</span>
+    <span class="c1"># ThreadPoolExecutor allows up to 10 simultaneous mission requests</span>
+    <span class="n">server</span> <span class="o">=</span> <span class="n">grpc</span><span class="o">.</span><span class="n">server</span><span class="p">(</span><span class="n">futures</span><span class="o">.</span><span class="n">ThreadPoolExecutor</span><span class="p">(</span><span class="n">max_workers</span><span class="o">=</span><span class="mi">10</span><span class="p">))</span>
+    
+    <span class="c1"># Instantiate mission communication service with all required queues</span>
+    <span class="c1"># Service handles incoming mission requests and coordinates system responses</span>
+    <span class="n">service</span> <span class="o">=</span> <span class="n">MissionCommunicationService</span><span class="p">(</span>
+        <span class="n">send_vehicle_queue</span><span class="p">,</span>
+        <span class="n">receive_vehicle_queue</span><span class="p">,</span>
+        <span class="n">send_mqtt_queue</span><span class="p">,</span>
+        <span class="n">send_rest_queue</span><span class="p">,</span>
+        <span class="n">send_pm_queue</span><span class="p">,</span>
+        <span class="n">mission_logger</span>
+    <span class="p">)</span>
+    
+    <span class="c1"># Register service with gRPC server infrastructure</span>
+    <span class="n">add_MissionCommunicationServicer_to_server</span><span class="p">(</span><span class="n">service</span><span class="p">,</span> <span class="n">server</span><span class="p">)</span>
+    
+    <span class="c1"># Bind server to port 50092 for incoming mission requests</span>
+    <span class="c1"># Uses IPv6 wildcard address for maximum compatibility</span>
+    <span class="n">server</span><span class="o">.</span><span class="n">add_insecure_port</span><span class="p">(</span><span class="s1">&#39;[::]:50092&#39;</span><span class="p">)</span>
+    <span class="n">server</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+    <span class="n">mission_logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;[gRPC REST] - Server running on port 50092&quot;</span><span class="p">)</span>
+
+    <span class="k">try</span><span class="p">:</span>
+        <span class="c1"># Keep server running indefinitely with daily wake-up cycles</span>
+        <span class="c1"># Long sleep interval reduces CPU usage while maintaining availability</span>
+        <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+            <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">86400</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">KeyboardInterrupt</span><span class="p">:</span>
+        <span class="c1"># Graceful shutdown sequence on user interruption</span>
+        <span class="n">mission_logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;[gRPC REST] - Initiating graceful shutdown...&quot;</span><span class="p">)</span>
+        <span class="c1"># Allow 5 seconds for ongoing requests to complete before force shutdown</span>
+        <span class="n">server</span><span class="o">.</span><span class="n">stop</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+        <span class="n">mission_logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;[gRPC REST] - Server shutdown complete&quot;</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="start_grpc_mission_rest">
+<a class="viewcode-back" href="../Fleet_module/Mission/grpc_mission_rest_component.html#grpc_mission_rest.start_grpc_mission_rest">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">start_grpc_mission_rest</span><span class="p">(</span>
+    <span class="n">send_vehicle_queue</span><span class="p">:</span> <span class="n">queue</span><span class="o">.</span><span class="n">Queue</span><span class="p">,</span>
+    <span class="n">receive_vehicle_queue</span><span class="p">:</span> <span class="n">queue</span><span class="o">.</span><span class="n">Queue</span><span class="p">,</span>
+    <span class="n">send_mqtt_queue</span><span class="p">:</span> <span class="n">queue</span><span class="o">.</span><span class="n">Queue</span><span class="p">,</span>
+    <span class="n">send_rest_queue</span><span class="p">:</span> <span class="n">queue</span><span class="o">.</span><span class="n">Queue</span><span class="p">,</span>
+    <span class="n">send_pm_queue</span><span class="p">:</span> <span class="n">queue</span><span class="o">.</span><span class="n">Queue</span><span class="p">,</span>
+    <span class="n">mission_logger</span><span class="p">:</span> <span class="n">logging</span><span class="o">.</span><span class="n">Logger</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">queue</span><span class="o">.</span><span class="n">Queue</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Initialize and start gRPC communication components.</span>
+
+<span class="sd">    :param send_vehicle_queue: Vehicle command queue</span>
+<span class="sd">    :param receive_vehicle_queue: Vehicle status queue</span>
+<span class="sd">    :param send_db_queue: Database operation queue</span>
+<span class="sd">    :param receive_db_queue: Database response queue</span>
+<span class="sd">    :param send_mqtt_queue: MQTT message queue</span>
+<span class="sd">    :param send_rest_queue: REST update queue</span>
+<span class="sd">    :param mission_logger: Configured logger instance</span>
+<span class="sd">    :return: Mission result queue</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># Create result queue for mission completion notifications</span>
+    <span class="c1"># This queue can be used by calling code to track mission outcomes</span>
+    <span class="n">result_queue</span> <span class="o">=</span> <span class="n">queue</span><span class="o">.</span><span class="n">Queue</span><span class="p">()</span>
+
+    <span class="c1"># Create dedicated daemon thread for REST client operations</span>
+    <span class="c1"># Handles outbound status updates to external REST API systems</span>
+    <span class="n">client_thread</span> <span class="o">=</span> <span class="n">threading</span><span class="o">.</span><span class="n">Thread</span><span class="p">(</span>
+        <span class="n">target</span><span class="o">=</span><span class="n">run_client</span><span class="p">,</span>
+        <span class="n">args</span><span class="o">=</span><span class="p">(</span><span class="n">send_rest_queue</span><span class="p">,</span> <span class="n">mission_logger</span><span class="p">),</span>
+        <span class="n">name</span><span class="o">=</span><span class="s2">&quot;RESTClientThread&quot;</span><span class="p">,</span>
+        <span class="n">daemon</span><span class="o">=</span><span class="kc">True</span>
+    <span class="p">)</span>
+    
+    <span class="c1"># Create dedicated daemon thread for gRPC server operations</span>
+    <span class="c1"># Handles inbound mission requests from external systems</span>
+    <span class="n">server_thread</span> <span class="o">=</span> <span class="n">threading</span><span class="o">.</span><span class="n">Thread</span><span class="p">(</span>
+        <span class="n">target</span><span class="o">=</span><span class="n">run_server</span><span class="p">,</span>
+        <span class="n">args</span><span class="o">=</span><span class="p">(</span>
+            <span class="n">send_vehicle_queue</span><span class="p">,</span>
+            <span class="n">receive_vehicle_queue</span><span class="p">,</span>
+            <span class="n">send_mqtt_queue</span><span class="p">,</span>
+            <span class="n">send_rest_queue</span><span class="p">,</span>
+            <span class="n">send_pm_queue</span><span class="p">,</span>
+            <span class="n">mission_logger</span>
+        <span class="p">),</span>
+        <span class="n">name</span><span class="o">=</span><span class="s2">&quot;RESTServerThread&quot;</span><span class="p">,</span>
+        <span class="n">daemon</span><span class="o">=</span><span class="kc">True</span>
+    <span class="p">)</span>
+
+    <span class="c1"># Start both communication threads for bidirectional REST communication</span>
+    <span class="c1"># Daemon threads ensure automatic cleanup when main process terminates</span>
+    <span class="n">client_thread</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+    <span class="n">mission_logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;[gRPC REST] - Client communication thread started&quot;</span><span class="p">)</span>
+    <span class="n">server_thread</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+    
+    <span class="k">return</span> <span class="n">result_queue</span></div>
+
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, Estela Mora Barba.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,879 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>field_device &mdash; Fleet Manager 1.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=f2a433a1"></script>
+        <script src="../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+        <script src="../_static/copybutton.js?v=f281be69"></script>
+        <script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script>
+        <script type="module">import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11.12.1/dist/mermaid.esm.min.mjs";
+
+
+
+
+
+const initStyles = () => {
+    const defaultStyle = document.createElement('style');
+    defaultStyle.textContent = `pre.mermaid {
+    /* Same as .mermaid-container > pre */
+    display: block;
+    width: 100%;
+}
+
+pre.mermaid > svg {
+    /* Same as .mermaid-container > pre > svg */
+    height: 500px;
+    width: 100%;
+    max-width: 100% !important;
+}`;
+    document.head.appendChild(defaultStyle);
+
+    const fullscreenStyle = document.createElement('style');
+    fullscreenStyle.textContent = `.mermaid-container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.mermaid-container > pre {
+    display: block;
+    width: 100%;
+}
+
+.mermaid-container > pre > svg {
+    height: 500px;
+    width: 100%;
+    max-width: 100% !important;
+}
+
+.mermaid-fullscreen-btn {
+    width: 28px;
+    height: 28px;
+    background: rgba(255, 255, 255, 0.95);
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    border-radius: 4px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    font-size: 14px;
+    line-height: 1;
+    padding: 0;
+    color: #333;
+}
+
+.mermaid-fullscreen-btn:hover {
+    opacity: 100% !important;
+    background: rgba(255, 255, 255, 1);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+    transform: scale(1.1);
+}
+
+.mermaid-fullscreen-btn.dark-theme {
+    background: rgba(50, 50, 50, 0.95);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: #e0e0e0;
+}
+
+.mermaid-fullscreen-btn.dark-theme:hover {
+    background: rgba(60, 60, 60, 1);
+    box-shadow: 0 3px 10px rgba(255, 255, 255, 0.2);
+}
+
+.mermaid-fullscreen-modal {
+    display: none;
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 95vw;
+    height: 100vh;
+    background: rgba(255, 255, 255, 0.98);
+    z-index: 9999;
+    padding: 20px;
+    overflow: auto;
+}
+
+.mermaid-fullscreen-modal.dark-theme {
+    background: rgba(0, 0, 0, 0.98);
+}
+
+.mermaid-fullscreen-modal.active {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mermaid-container-fullscreen {
+    position: relative;
+    width: 95vw;
+    height: 90vh;
+    max-width: 95vw;
+    max-height: 90vh;
+    background: white;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    overflow: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mermaid-container-fullscreen.dark-theme {
+    background: #1a1a1a;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.8);
+}
+
+.mermaid-container-fullscreen pre.mermaid {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mermaid-container-fullscreen .mermaid svg {
+    height: 100% !important;
+    width: 100% !important;
+    cursor: grab;
+}
+
+.mermaid-fullscreen-close {
+    position: fixed !important;
+    top: 20px !important;
+    right: 20px !important;
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.95);
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    transition: all 0.2s;
+    font-size: 24px;
+    line-height: 1;
+    color: #333;
+}
+
+.mermaid-fullscreen-close:hover {
+    background: white;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+    transform: scale(1.1);
+}
+
+.mermaid-fullscreen-close.dark-theme {
+    background: rgba(50, 50, 50, 0.95);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #e0e0e0;
+}
+
+.mermaid-fullscreen-close.dark-theme:hover {
+    background: rgba(60, 60, 60, 1);
+    box-shadow: 0 6px 16px rgba(255, 255, 255, 0.2);
+}
+
+.mermaid-fullscreen-modal .mermaid-fullscreen-btn {
+    display: none !important;
+}`;
+    document.head.appendChild(fullscreenStyle);
+}
+
+// Detect if page has dark background
+const isDarkTheme = () => {
+    // We use a set of heuristics:
+    // 1. Check for common dark mode classes or attributes
+    // 2. Check computed background color brightness
+    if (document.documentElement.classList.contains('dark') ||
+        document.documentElement.getAttribute('data-theme') === 'dark' ||
+        document.body.classList.contains('dark') ||
+        document.body.getAttribute('data-theme') === 'dark') {
+        // console.log("Dark theme detected via class/attribute");
+        return true;
+    }
+    if (document.documentElement.classList.contains('light') ||
+        document.documentElement.getAttribute('data-theme') === 'light' ||
+        document.body.classList.contains('light') ||
+        document.body.getAttribute('data-theme') === 'light') {
+        // console.log("Light theme detected via class/attribute");
+        return false;
+    }
+    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        // console.log("Dark theme detected via prefers-color-scheme");
+        return true;
+    }
+    const bgColor = window.getComputedStyle(document.body).backgroundColor;
+    const match = bgColor.match(/rgb\((\d+),\s*(\d+),\s*(\d+)/);
+    if (match) {
+        const r = parseInt(match[1]);
+        const g = parseInt(match[2]);
+        const b = parseInt(match[3]);
+        const brightness = (r * 299 + g * 587 + b * 114) / 1000;
+        // console.log("Background color brightness:", brightness);
+        return brightness < 128;
+    }
+    // console.log("No dark or light theme detected, defaulting to light theme");
+    return false;
+};
+
+let darkTheme = isDarkTheme();
+let modal = null;
+let modalContent = null;
+let previousScrollOffset = [window.scrollX, window.scrollY];
+
+const runMermaid = async (rerun) => {
+    console.log("Running mermaid diagrams, rerun =", rerun);
+    // clear all existing mermaid charts
+    let all_mermaids = document.querySelectorAll(".mermaid");
+
+    if (rerun) {
+        all_mermaids.forEach((el) => {
+            if(!el.hasAttribute("data-original-code")) {
+                // store original code
+                // console.log(`Storing original code for first run: `, el.innerHTML);
+                el.setAttribute('data-original-code', el.innerHTML);
+            }
+            if(el.getAttribute("data-processed") === "true") {
+                // remove and restore original
+                el.removeAttribute("data-processed");
+                // console.log(`Restoring original code for re-run: `, el.getAttribute('data-original-code'));
+                el.innerHTML = el.getAttribute('data-original-code');
+            } else {
+                // store original code
+                // console.log(`Storing original code for re-run: `, el.innerHTML);
+                el.setAttribute('data-original-code', el.innerHTML);
+            }
+        });
+        await mermaid.run();
+    }
+
+    all_mermaids = document.querySelectorAll(".mermaid");
+    const mermaids_processed = document.querySelectorAll(".mermaid[data-processed='true']");
+
+    if ("False" === "True") {
+        const mermaids_to_add_zoom = -1 === -1 ? all_mermaids.length : -1;
+        if(mermaids_to_add_zoom > 0) {
+            var svgs = d3.selectAll("");
+            if(all_mermaids.length !== mermaids_processed.length) {
+                setTimeout(() => runMermaid(false), 200);
+                return;
+            } else if(svgs.size() !== mermaids_to_add_zoom) {
+                setTimeout(() => runMermaid(false), 200);
+                return;
+            } else {
+                svgs.each(function() {
+                    var svg = d3.select(this);
+                    svg.html("<g class='wrapper'>" + svg.html() + "</g>");
+                    var inner = svg.select("g");
+                    var zoom = d3.zoom().on("zoom", function(event) {
+                        inner.attr("transform", event.transform);
+                    });
+                    svg.call(zoom);
+                });
+            }
+        }
+    } else if(all_mermaids.length !== mermaids_processed.length) {
+        // Wait for mermaid to process all diagrams
+        setTimeout(() => runMermaid(false), 200);
+        return;
+    }
+
+    // Stop here if not adding fullscreen capability
+    if ("True" !== "True") return;
+
+    if (modal !== null ) {
+        // Destroy existing modal
+        modal.remove();
+        modal = null;
+        modalContent = null;
+    }
+
+    modal = document.createElement('div');
+    modal.className = 'mermaid-fullscreen-modal' + (darkTheme ? ' dark-theme' : '');
+    modal.setAttribute('role', 'dialog');
+    modal.setAttribute('aria-modal', 'true');
+    modal.setAttribute('aria-label', 'Fullscreen diagram viewer');
+    modal.innerHTML = `
+        <button class="mermaid-fullscreen-close${darkTheme ? ' dark-theme' : ''}" aria-label="Close fullscreen">✕</button>
+        <div class="mermaid-container-fullscreen${darkTheme ? ' dark-theme' : ''}"></div>
+    `;
+    document.body.appendChild(modal);
+
+    modalContent = modal.querySelector('.mermaid-container-fullscreen');
+    const closeBtn = modal.querySelector('.mermaid-fullscreen-close');
+
+    const closeModal = () => {
+        modal.classList.remove('active');
+        modalContent.innerHTML = '';
+        document.body.style.overflow = ''
+        window.scrollTo({left: previousScrollOffset[0], top: previousScrollOffset[1], behavior: 'instant'});
+    };
+
+    closeBtn.addEventListener('click', closeModal);
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) closeModal();
+    });
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && modal.classList.contains('active')) {
+            closeModal();
+        }
+    });
+
+    document.querySelectorAll('.mermaid').forEach((mermaidDiv) => {
+        if (mermaidDiv.parentNode.classList.contains('mermaid-container') ||
+            mermaidDiv.closest('.mermaid-fullscreen-modal')) {
+            // Already processed, adjust button class if needed
+            const existingBtn = mermaidDiv.parentNode.querySelector('.mermaid-fullscreen-btn');
+            if (existingBtn) {
+                existingBtn.className = 'mermaid-fullscreen-btn' + (darkTheme ? ' dark-theme' : '');
+            }
+            return;
+        }
+
+        const container = document.createElement('div');
+        container.className = 'mermaid-container';
+        mermaidDiv.parentNode.insertBefore(container, mermaidDiv);
+        container.appendChild(mermaidDiv);
+
+        const fullscreenBtn = document.createElement('button');
+        fullscreenBtn.className = 'mermaid-fullscreen-btn' + (darkTheme ? ' dark-theme' : '');
+        fullscreenBtn.setAttribute('aria-label', 'View diagram in fullscreen');
+        fullscreenBtn.textContent = '⛶';
+        fullscreenBtn.style.opacity = '50%';
+
+        // Calculate dynamic position based on diagram's margin and padding
+        const diagramStyle = window.getComputedStyle(mermaidDiv);
+        const marginTop = parseFloat(diagramStyle.marginTop) || 0;
+        const marginRight = parseFloat(diagramStyle.marginRight) || 0;
+        const paddingTop = parseFloat(diagramStyle.paddingTop) || 0;
+        const paddingRight = parseFloat(diagramStyle.paddingRight) || 0;
+        fullscreenBtn.style.top = `${marginTop + paddingTop + 4}px`;
+        fullscreenBtn.style.right = `${marginRight + paddingRight + 4}px`;
+
+        fullscreenBtn.addEventListener('click', () => {
+            previousScrollOffset = [window.scroll, window.scrollY];
+            const clone = mermaidDiv.cloneNode(true);
+            modalContent.innerHTML = '';
+            modalContent.appendChild(clone);
+
+            const svg = clone.querySelector('svg');
+            if (svg) {
+                svg.removeAttribute('width');
+                svg.removeAttribute('height');
+                svg.style.width = '100%';
+                svg.style.height = 'auto';
+                svg.style.maxWidth = '100%';
+                svg.style.sdisplay = 'block';
+
+                if ("False" === "True") {
+                    setTimeout(() => {
+                        const g = svg.querySelector('g');
+                        if (g) {
+                            var svgD3 = d3.select(svg);
+                            svgD3.html("<g class='wrapper'>" + svgD3.html() + "</g>");
+                            var inner = svgD3.select("g");
+                            var zoom = d3.zoom().on("zoom", function(event) {
+                                inner.attr("transform", event.transform);
+                            });
+                            svgD3.call(zoom);
+                        }
+                    }, 100);
+                }
+            }
+
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+        container.appendChild(fullscreenBtn);
+    });
+};
+
+const load = async () => {
+    initStyles();
+
+    await runMermaid(true);
+
+    const reRunIfThemeChanges = async () => {
+        const newDarkTheme = isDarkTheme();
+        if (newDarkTheme !== darkTheme) {
+            darkTheme = newDarkTheme;
+            console.log("Theme change detected, re-running mermaid with", darkTheme ? "dark" : "default", "theme");
+            await mermaid.initialize(
+                {...JSON.parse(
+                    `{"startOnLoad": false}`
+                ),
+                ...{ darkMode: darkTheme, theme: darkTheme ? 'dark' : 'default' },
+                }
+            );
+            await runMermaid(true);
+        }
+    };
+
+    // Update theme classes when theme changes
+    const themeObserver = new MutationObserver(reRunIfThemeChanges);
+    themeObserver.observe(document.documentElement, {
+        attributes: true,
+        attributeFilter: ['class', 'style', 'data-theme']
+    });
+    themeObserver.observe(document.body, {
+        attributes: true,
+        attributeFilter: ['class', 'style', 'data-theme']
+    });
+};
+
+
+
+
+
+console.log("Initializing mermaid with", darkTheme ? "dark" : "default", "theme");
+mermaid.initialize(
+    {...JSON.parse(
+        `{"startOnLoad": false}`
+    ),
+    ...{ darkMode: darkTheme, theme: darkTheme ? 'dark' : 'default' },
+    }
+);
+
+window.addEventListener("load", load);
+window.runMermaid = runMermaid;</script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="author" title="About these documents" href="../about.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Fleet Manager
+          </a>
+              <div class="version">
+                1.0
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../about.html">About the project</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules.html">Code documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../training.html">Training documentation</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Fleet Manager</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Module code</a></li>
+      <li class="breadcrumb-item active">field_device</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <h1>Source code for field_device</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Field Device Management Module</span>
+
+<span class="sd">.. module:: field_device</span>
+<span class="sd">    :synopsis: Specialized device handler for agricultural field monitoring and management</span>
+<span class="sd">    :platform: Linux, Windows, macOS</span>
+<span class="sd">    :author: Fleet Management System Team</span>
+
+<span class="sd">This module implements the FieldDevice class, which manages field monitoring devices</span>
+<span class="sd">within the fleet management system. It handles the creation, management, and cleanup</span>
+<span class="sd">of field devices that monitor agricultural areas, collect environmental data, and</span>
+<span class="sd">track field-specific operations during missions.</span>
+
+<span class="sd">The field device system provides comprehensive monitoring capabilities for agricultural</span>
+<span class="sd">fields, including soil conditions, crop status, environmental parameters, and</span>
+<span class="sd">operational metrics during mission execution.</span>
+
+<span class="sd">.. note::</span>
+<span class="sd">    Key Features:</span>
+<span class="sd">    - Dynamic field device creation per mission</span>
+<span class="sd">    - Sequential field numbering and organization</span>
+<span class="sd">    - Real-time field telemetry collection and transmission</span>
+<span class="sd">    - Mission-field relationship management</span>
+<span class="sd">    - Multi-field support per mission</span>
+<span class="sd">    - Comprehensive cleanup and resource management</span>
+
+<span class="sd">.. versionadded:: 1.0.0</span>
+<span class="sd">    Initial implementation of field device management</span>
+
+<span class="sd">.. seealso::</span>
+<span class="sd">    - :mod:`MQTT.ThingsBoard.devices.base_device` for base device functionality</span>
+<span class="sd">    - :mod:`MQTT.ThingsBoard.devices.mission_device` for mission coordination</span>
+
+<span class="sd">Example:</span>
+<span class="sd">    Basic usage of field device management::</span>
+
+<span class="sd">        from MQTT.ThingsBoard.devices.field_device import FieldDevice</span>
+<span class="sd">        from MQTT.ThingsBoard.rest_api import ThingsBoardAPI</span>
+<span class="sd">        </span>
+<span class="sd">        # Initialize ThingsBoard API</span>
+<span class="sd">        tb_api = ThingsBoardAPI(&quot;https://thingsboard.company.com&quot;)</span>
+<span class="sd">        tb_api.login(&quot;username&quot;, &quot;password&quot;)</span>
+<span class="sd">        </span>
+<span class="sd">        # Create field device handler</span>
+<span class="sd">        field_device = FieldDevice(</span>
+<span class="sd">            tb_api=tb_api,</span>
+<span class="sd">            mqtt_logger=logger,</span>
+<span class="sd">            tb_host=&quot;thingsboard.company.com&quot;,</span>
+<span class="sd">            port=8883,</span>
+<span class="sd">            telemetry_topic=&quot;v1/devices/me/telemetry&quot;</span>
+<span class="sd">        )</span>
+<span class="sd">        </span>
+<span class="sd">        # Process mission with multiple fields</span>
+<span class="sd">        mission_msg = {</span>
+<span class="sd">            &quot;fields&quot;: [</span>
+<span class="sd">                {&quot;area&quot;: 100, &quot;crop_type&quot;: &quot;wheat&quot;, &quot;soil_ph&quot;: 6.5},</span>
+<span class="sd">                {&quot;area&quot;: 150, &quot;crop_type&quot;: &quot;corn&quot;, &quot;soil_ph&quot;: 6.8}</span>
+<span class="sd">            ]</span>
+<span class="sd">        }</span>
+<span class="sd">        field_device.handle_message(mission_msg, &quot;M001&quot;, &quot;mission_device_id&quot;)</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">MQTT.ThingsBoard.devices.base_device</span><span class="w"> </span><span class="kn">import</span> <span class="n">BaseDevice</span>
+
+
+<div class="viewcode-block" id="FieldDevice">
+<a class="viewcode-back" href="../Fleet_module/MQTT/ThingsBoard/Devices/field_device_component.html#field_device.FieldDevice">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">FieldDevice</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Specialized device handler for managing agricultural field monitoring devices.</span>
+<span class="sd">    </span>
+<span class="sd">    This class manages the creation and lifecycle of field devices that monitor</span>
+<span class="sd">    agricultural areas during mission execution. It provides sequential field</span>
+<span class="sd">    numbering, relationship management with missions, and comprehensive telemetry</span>
+<span class="sd">    collection for field-specific data.</span>
+<span class="sd">    </span>
+<span class="sd">    The field system supports multiple fields per mission, allowing for comprehensive</span>
+<span class="sd">    monitoring of complex agricultural operations across various field zones.</span>
+<span class="sd">    </span>
+<span class="sd">    :param tb_api: Authenticated ThingsBoard REST API client</span>
+<span class="sd">    :type tb_api: ThingsBoardAPI</span>
+<span class="sd">    :param mqtt_logger: Logger instance for MQTT operations and debugging</span>
+<span class="sd">    :type mqtt_logger: logging.Logger</span>
+<span class="sd">    :param tb_host: ThingsBoard server hostname for MQTT connections</span>
+<span class="sd">    :type tb_host: str</span>
+<span class="sd">    :param port: MQTT port for secure connections (typically 8883 for TLS)</span>
+<span class="sd">    :type port: int</span>
+<span class="sd">    :param telemetry_topic: MQTT topic for publishing device telemetry data</span>
+<span class="sd">    :type telemetry_topic: str</span>
+<span class="sd">    </span>
+<span class="sd">    .. note::</span>
+<span class="sd">        Field devices are automatically numbered sequentially within each mission</span>
+<span class="sd">        (e.g., &quot;Field M001.1&quot;, &quot;Field M001.2&quot;) for easy identification and tracking</span>
+<span class="sd">        of different field zones.</span>
+<span class="sd">        </span>
+<span class="sd">    .. warning::</span>
+<span class="sd">        Field devices must be properly cleaned up when missions complete to</span>
+<span class="sd">        prevent resource leaks and maintain optimal system performance.</span>
+<span class="sd">        </span>
+<span class="sd">    .. versionadded:: 1.0.0</span>
+<span class="sd">        Initial implementation of field device management</span>
+<span class="sd">        </span>
+<span class="sd">    Attributes:</span>
+<span class="sd">        base (BaseDevice): Base device functionality for ThingsBoard operations</span>
+<span class="sd">        fields (dict): Dictionary mapping mission IDs to lists of field device data</span>
+<span class="sd">        mqtt_logger (logging.Logger): Logger for operation tracking and debugging</span>
+<span class="sd">        </span>
+<span class="sd">    Example:</span>
+<span class="sd">        Initialize and use field device handler::</span>
+<span class="sd">        </span>
+<span class="sd">            field_handler = FieldDevice(tb_api, logger, &quot;thingsboard.com&quot;, 8883, &quot;v1/devices/me/telemetry&quot;)</span>
+<span class="sd">            </span>
+<span class="sd">            # Process mission with field data</span>
+<span class="sd">            mission_data = {</span>
+<span class="sd">                &quot;fields&quot;: [</span>
+<span class="sd">                    {&quot;area&quot;: 100, &quot;crop&quot;: &quot;wheat&quot;, &quot;temperature&quot;: 22.5},</span>
+<span class="sd">                    {&quot;area&quot;: 75, &quot;crop&quot;: &quot;corn&quot;, &quot;temperature&quot;: 24.1}</span>
+<span class="sd">                ]</span>
+<span class="sd">            }</span>
+<span class="sd">            field_handler.handle_message(mission_data, &quot;M001&quot;, &quot;mission_device_id&quot;)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    
+<div class="viewcode-block" id="FieldDevice.__init__">
+<a class="viewcode-back" href="../Fleet_module/MQTT/ThingsBoard/Devices/field_device_component.html#field_device.FieldDevice.__init__">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">tb_api</span><span class="p">,</span> <span class="n">mqtt_logger</span><span class="p">,</span> <span class="n">tb_host</span><span class="p">,</span> <span class="n">port</span><span class="p">,</span> <span class="n">telemetry_topic</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Initialize the field device handler with ThingsBoard integration.</span>
+<span class="sd">        </span>
+<span class="sd">        Sets up the field device management system with base device functionality</span>
+<span class="sd">        and initializes the storage for mission-specific field devices.</span>
+<span class="sd">        </span>
+<span class="sd">        :param tb_api: Authenticated ThingsBoard API client</span>
+<span class="sd">        :type tb_api: ThingsBoardAPI</span>
+<span class="sd">        :param mqtt_logger: Logger for MQTT operations</span>
+<span class="sd">        :type mqtt_logger: logging.Logger</span>
+<span class="sd">        :param tb_host: ThingsBoard server hostname</span>
+<span class="sd">        :type tb_host: str</span>
+<span class="sd">        :param port: MQTT connection port</span>
+<span class="sd">        :type port: int</span>
+<span class="sd">        :param telemetry_topic: MQTT topic for telemetry</span>
+<span class="sd">        :type telemetry_topic: str</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">base</span> <span class="o">=</span> <span class="n">BaseDevice</span><span class="p">(</span><span class="n">tb_api</span><span class="p">,</span> <span class="n">mqtt_logger</span><span class="p">,</span> <span class="n">tb_host</span><span class="p">,</span> <span class="n">port</span><span class="p">,</span> <span class="n">telemetry_topic</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">fields</span> <span class="o">=</span> <span class="p">{}</span>  <span class="c1"># mission_id -&gt; list of field device info</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">mqtt_logger</span> <span class="o">=</span> <span class="n">mqtt_logger</span></div>
+
+    
+<div class="viewcode-block" id="FieldDevice.handle_message">
+<a class="viewcode-back" href="../Fleet_module/MQTT/ThingsBoard/Devices/field_device_component.html#field_device.FieldDevice.handle_message">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">handle_message</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">message</span><span class="p">,</span> <span class="n">mission_id</span><span class="p">,</span> <span class="n">mission_device_id</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Process mission messages and create corresponding field monitoring devices.</span>
+<span class="sd">        </span>
+<span class="sd">        Creates field devices for each field specified in the mission message,</span>
+<span class="sd">        establishes relationships with the mission device, and transmits initial</span>
+<span class="sd">        field telemetry data. Each field is automatically numbered for tracking.</span>
+<span class="sd">        </span>
+<span class="sd">        The method handles multiple fields per mission, creating individual</span>
+<span class="sd">        ThingsBoard devices for each field zone to enable independent monitoring</span>
+<span class="sd">        and data collection.</span>
+<span class="sd">        </span>
+<span class="sd">        :param message: Mission message containing field data array</span>
+<span class="sd">        :type message: dict</span>
+<span class="sd">        :param mission_id: Unique identifier of the associated mission</span>
+<span class="sd">        :type mission_id: str</span>
+<span class="sd">        :param mission_device_id: ThingsBoard device ID of the mission</span>
+<span class="sd">        :type mission_device_id: str</span>
+<span class="sd">        :return: None</span>
+<span class="sd">        :rtype: None</span>
+<span class="sd">        </span>
+<span class="sd">        .. note::</span>
+<span class="sd">            Field Processing Steps:</span>
+<span class="sd">            1. Initialize mission field list if first processing</span>
+<span class="sd">            2. Iterate through each field in the message</span>
+<span class="sd">            3. Expand field list if new fields detected</span>
+<span class="sd">            4. Create sequential field devices with unique names</span>
+<span class="sd">            5. Store device credentials and establish MQTT connections</span>
+<span class="sd">            6. Transmit initial field telemetry data</span>
+<span class="sd">            7. Create relationships with mission device</span>
+<span class="sd">            </span>
+<span class="sd">        .. warning::</span>
+<span class="sd">            The message must contain a &#39;fields&#39; array with field data objects.</span>
+<span class="sd">            Each field object should contain relevant monitoring parameters.</span>
+<span class="sd">            </span>
+<span class="sd">        .. tip:</span>
+<span class="sd">            Field devices are numbered sequentially (Field M001.1, Field M001.2)</span>
+<span class="sd">            making it easy to identify and correlate field data with specific zones.</span>
+<span class="sd">            </span>
+<span class="sd">        Message Structure:</span>
+<span class="sd">            Expected message format::</span>
+<span class="sd">            </span>
+<span class="sd">                {</span>
+<span class="sd">                    &quot;fields&quot;: [</span>
+<span class="sd">                        {</span>
+<span class="sd">                            &quot;area&quot;: 100,</span>
+<span class="sd">                            &quot;crop_type&quot;: &quot;wheat&quot;,</span>
+<span class="sd">                            &quot;soil_ph&quot;: 6.5,</span>
+<span class="sd">                            &quot;moisture&quot;: 45.2,</span>
+<span class="sd">                            &quot;temperature&quot;: 22.5</span>
+<span class="sd">                        },</span>
+<span class="sd">                        {</span>
+<span class="sd">                            &quot;area&quot;: 150,</span>
+<span class="sd">                            &quot;crop_type&quot;: &quot;corn&quot;,</span>
+<span class="sd">                            &quot;soil_ph&quot;: 6.8,</span>
+<span class="sd">                            &quot;moisture&quot;: 42.1,</span>
+<span class="sd">                            &quot;temperature&quot;: 24.1</span>
+<span class="sd">                        }</span>
+<span class="sd">                    ]</span>
+<span class="sd">                }</span>
+<span class="sd">        </span>
+<span class="sd">        Example:</span>
+<span class="sd">            Process mission with multiple agricultural fields::</span>
+<span class="sd">            </span>
+<span class="sd">                mission_msg = {</span>
+<span class="sd">                    &quot;fields&quot;: [</span>
+<span class="sd">                        {</span>
+<span class="sd">                            &quot;field_id&quot;: &quot;F001&quot;,</span>
+<span class="sd">                            &quot;area&quot;: 100,</span>
+<span class="sd">                            &quot;crop_type&quot;: &quot;wheat&quot;,</span>
+<span class="sd">                            &quot;soil_conditions&quot;: {</span>
+<span class="sd">                                &quot;ph&quot;: 6.5,</span>
+<span class="sd">                                &quot;moisture&quot;: 45.2,</span>
+<span class="sd">                                &quot;nitrogen&quot;: 120</span>
+<span class="sd">                            },</span>
+<span class="sd">                            &quot;environmental&quot;: {</span>
+<span class="sd">                                &quot;temperature&quot;: 22.5,</span>
+<span class="sd">                                &quot;humidity&quot;: 65.0</span>
+<span class="sd">                            }</span>
+<span class="sd">                        },</span>
+<span class="sd">                        {</span>
+<span class="sd">                            &quot;field_id&quot;: &quot;F002&quot;,</span>
+<span class="sd">                            &quot;area&quot;: 75,</span>
+<span class="sd">                            &quot;crop_type&quot;: &quot;corn&quot;,</span>
+<span class="sd">                            &quot;soil_conditions&quot;: {</span>
+<span class="sd">                                &quot;ph&quot;: 6.8,</span>
+<span class="sd">                                &quot;moisture&quot;: 42.1,</span>
+<span class="sd">                                &quot;nitrogen&quot;: 110</span>
+<span class="sd">                            },</span>
+<span class="sd">                            &quot;environmental&quot;: {</span>
+<span class="sd">                                &quot;temperature&quot;: 24.1,</span>
+<span class="sd">                                &quot;humidity&quot;: 62.5</span>
+<span class="sd">                            }</span>
+<span class="sd">                        }</span>
+<span class="sd">                    ]</span>
+<span class="sd">                }</span>
+<span class="sd">                </span>
+<span class="sd">                field_device.handle_message(</span>
+<span class="sd">                    message=mission_msg,</span>
+<span class="sd">                    mission_id=&quot;M001&quot;,</span>
+<span class="sd">                    mission_device_id=&quot;mission_device_uuid&quot;</span>
+<span class="sd">                )</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># Initialize field list for mission if not exists</span>
+        <span class="k">if</span> <span class="n">mission_id</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">fields</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">fields</span><span class="p">[</span><span class="n">mission_id</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+
+        <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">field</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">message</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;fields&#39;</span><span class="p">,</span> <span class="p">[])):</span>
+            <span class="k">if</span> <span class="n">i</span> <span class="o">&gt;=</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">fields</span><span class="p">[</span><span class="n">mission_id</span><span class="p">]):</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">fields</span><span class="p">[</span><span class="n">mission_id</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">({})</span>
+
+            <span class="n">field_name</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;Field </span><span class="si">{</span><span class="n">mission_id</span><span class="si">}</span><span class="s2">.</span><span class="si">{</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="si">}</span><span class="s2">&quot;</span>
+            <span class="n">device_id</span><span class="p">,</span> <span class="n">access_token</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">base</span><span class="o">.</span><span class="n">create_device</span><span class="p">(</span><span class="n">field_name</span><span class="p">,</span> <span class="s2">&quot;Field&quot;</span><span class="p">)</span>
+
+            <span class="bp">self</span><span class="o">.</span><span class="n">fields</span><span class="p">[</span><span class="n">mission_id</span><span class="p">][</span><span class="n">i</span><span class="p">][</span><span class="s1">&#39;device_id&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">device_id</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">fields</span><span class="p">[</span><span class="n">mission_id</span><span class="p">][</span><span class="n">i</span><span class="p">][</span><span class="s1">&#39;access_token&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">access_token</span>
+
+            <span class="n">client</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">base</span><span class="o">.</span><span class="n">create_client</span><span class="p">(</span><span class="n">access_token</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">base</span><span class="o">.</span><span class="n">send_telemetry</span><span class="p">(</span><span class="n">client</span><span class="p">,</span> <span class="n">field</span><span class="p">)</span>
+
+            <span class="k">if</span> <span class="n">mission_device_id</span> <span class="ow">and</span> <span class="n">device_id</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">base</span><span class="o">.</span><span class="n">tb</span><span class="o">.</span><span class="n">create_relation</span><span class="p">(</span><span class="n">mission_device_id</span><span class="p">,</span> <span class="n">device_id</span><span class="p">,</span> <span class="s2">&quot;FIELD&quot;</span><span class="p">)</span>
+
+            <span class="bp">self</span><span class="o">.</span><span class="n">mqtt_logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;[FieldDevice] Sent telemetry for </span><span class="si">{</span><span class="n">field_name</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span></div>
+
+            
+<div class="viewcode-block" id="FieldDevice.cleanup">
+<a class="viewcode-back" href="../Fleet_module/MQTT/ThingsBoard/Devices/field_device_component.html#field_device.FieldDevice.cleanup">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">cleanup</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mission_id</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Clean up all field devices associated with a completed mission.</span>
+<span class="sd">        </span>
+<span class="sd">        Performs comprehensive cleanup of all field devices created for the</span>
+<span class="sd">        specified mission, including device deletion from ThingsBoard and</span>
+<span class="sd">        removal from local storage. This ensures proper resource management</span>
+<span class="sd">        and prevents accumulation of unused devices.</span>
+<span class="sd">        </span>
+<span class="sd">        :param mission_id: Unique identifier of the mission to clean up</span>
+<span class="sd">        :type mission_id: str</span>
+<span class="sd">        :return: None</span>
+<span class="sd">        :rtype: None</span>
+<span class="sd">        </span>
+<span class="sd">        .. note::</span>
+<span class="sd">            Cleanup Operations:</span>
+<span class="sd">            1. Iterate through all field devices for the mission</span>
+<span class="sd">            2. Delete each field device from ThingsBoard using retry mechanism</span>
+<span class="sd">            3. Remove mission field data from local storage</span>
+<span class="sd">            </span>
+<span class="sd">        .. warning::</span>
+<span class="sd">            This operation is irreversible and will permanently delete all</span>
+<span class="sd">            field devices and their associated telemetry data from ThingsBoard.</span>
+<span class="sd">            </span>
+<span class="sd">        .. tip:</span>
+<span class="sd">            Always call this method when missions complete to maintain</span>
+<span class="sd">            system performance and prevent resource accumulation across</span>
+<span class="sd">            multiple mission cycles.</span>
+<span class="sd">            </span>
+<span class="sd">        Example:</span>
+<span class="sd">            Clean up field devices after mission completion::</span>
+<span class="sd">            </span>
+<span class="sd">                # Mission completed successfully</span>
+<span class="sd">                mission_id = &quot;M001&quot;</span>
+<span class="sd">                </span>
+<span class="sd">                # Clean up all associated field devices</span>
+<span class="sd">                field_device.cleanup(mission_id)</span>
+<span class="sd">                </span>
+<span class="sd">                print(f&quot;All field devices for mission {mission_id} cleaned up&quot;)</span>
+<span class="sd">                </span>
+<span class="sd">        Cleanup Process:</span>
+<span class="sd">            The method uses the retry mechanism from base device functionality</span>
+<span class="sd">            to ensure reliable device deletion even under network stress or</span>
+<span class="sd">            ThingsBoard server load conditions.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># Check if mission has field devices to clean up</span>
+        <span class="k">if</span> <span class="n">mission_id</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">fields</span><span class="p">:</span>
+            <span class="k">return</span>
+
+        <span class="k">for</span> <span class="n">field</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">fields</span><span class="p">[</span><span class="n">mission_id</span><span class="p">]:</span>
+            <span class="k">if</span> <span class="s1">&#39;device_id&#39;</span> <span class="ow">in</span> <span class="n">field</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">base</span><span class="o">.</span><span class="n">delete_device_with_retry</span><span class="p">(</span><span class="n">field</span><span class="p">[</span><span class="s1">&#39;device_id&#39;</span><span class="p">])</span>
+
+        <span class="k">del</span> <span class="bp">self</span><span class="o">.</span><span class="n">fields</span><span class="p">[</span><span class="n">mission_id</span><span class="p">]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">mqtt_logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;[FieldDevice] Cleaned up all field devices for mission </span><span class="si">{</span><span class="n">mission_id</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span></div>
+</div>
+
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, Estela Mora Barba.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

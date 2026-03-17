@@ -1,0 +1,906 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>grpc_metrics_fleet &mdash; Fleet Manager 1.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=f2a433a1"></script>
+        <script src="../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+        <script src="../_static/copybutton.js?v=f281be69"></script>
+        <script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script>
+        <script type="module">import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11.12.1/dist/mermaid.esm.min.mjs";
+
+
+
+
+
+const initStyles = () => {
+    const defaultStyle = document.createElement('style');
+    defaultStyle.textContent = `pre.mermaid {
+    /* Same as .mermaid-container > pre */
+    display: block;
+    width: 100%;
+}
+
+pre.mermaid > svg {
+    /* Same as .mermaid-container > pre > svg */
+    height: 500px;
+    width: 100%;
+    max-width: 100% !important;
+}`;
+    document.head.appendChild(defaultStyle);
+
+    const fullscreenStyle = document.createElement('style');
+    fullscreenStyle.textContent = `.mermaid-container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.mermaid-container > pre {
+    display: block;
+    width: 100%;
+}
+
+.mermaid-container > pre > svg {
+    height: 500px;
+    width: 100%;
+    max-width: 100% !important;
+}
+
+.mermaid-fullscreen-btn {
+    width: 28px;
+    height: 28px;
+    background: rgba(255, 255, 255, 0.95);
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    border-radius: 4px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    font-size: 14px;
+    line-height: 1;
+    padding: 0;
+    color: #333;
+}
+
+.mermaid-fullscreen-btn:hover {
+    opacity: 100% !important;
+    background: rgba(255, 255, 255, 1);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+    transform: scale(1.1);
+}
+
+.mermaid-fullscreen-btn.dark-theme {
+    background: rgba(50, 50, 50, 0.95);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: #e0e0e0;
+}
+
+.mermaid-fullscreen-btn.dark-theme:hover {
+    background: rgba(60, 60, 60, 1);
+    box-shadow: 0 3px 10px rgba(255, 255, 255, 0.2);
+}
+
+.mermaid-fullscreen-modal {
+    display: none;
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 95vw;
+    height: 100vh;
+    background: rgba(255, 255, 255, 0.98);
+    z-index: 9999;
+    padding: 20px;
+    overflow: auto;
+}
+
+.mermaid-fullscreen-modal.dark-theme {
+    background: rgba(0, 0, 0, 0.98);
+}
+
+.mermaid-fullscreen-modal.active {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mermaid-container-fullscreen {
+    position: relative;
+    width: 95vw;
+    height: 90vh;
+    max-width: 95vw;
+    max-height: 90vh;
+    background: white;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    overflow: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mermaid-container-fullscreen.dark-theme {
+    background: #1a1a1a;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.8);
+}
+
+.mermaid-container-fullscreen pre.mermaid {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mermaid-container-fullscreen .mermaid svg {
+    height: 100% !important;
+    width: 100% !important;
+    cursor: grab;
+}
+
+.mermaid-fullscreen-close {
+    position: fixed !important;
+    top: 20px !important;
+    right: 20px !important;
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.95);
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    transition: all 0.2s;
+    font-size: 24px;
+    line-height: 1;
+    color: #333;
+}
+
+.mermaid-fullscreen-close:hover {
+    background: white;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+    transform: scale(1.1);
+}
+
+.mermaid-fullscreen-close.dark-theme {
+    background: rgba(50, 50, 50, 0.95);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #e0e0e0;
+}
+
+.mermaid-fullscreen-close.dark-theme:hover {
+    background: rgba(60, 60, 60, 1);
+    box-shadow: 0 6px 16px rgba(255, 255, 255, 0.2);
+}
+
+.mermaid-fullscreen-modal .mermaid-fullscreen-btn {
+    display: none !important;
+}`;
+    document.head.appendChild(fullscreenStyle);
+}
+
+// Detect if page has dark background
+const isDarkTheme = () => {
+    // We use a set of heuristics:
+    // 1. Check for common dark mode classes or attributes
+    // 2. Check computed background color brightness
+    if (document.documentElement.classList.contains('dark') ||
+        document.documentElement.getAttribute('data-theme') === 'dark' ||
+        document.body.classList.contains('dark') ||
+        document.body.getAttribute('data-theme') === 'dark') {
+        // console.log("Dark theme detected via class/attribute");
+        return true;
+    }
+    if (document.documentElement.classList.contains('light') ||
+        document.documentElement.getAttribute('data-theme') === 'light' ||
+        document.body.classList.contains('light') ||
+        document.body.getAttribute('data-theme') === 'light') {
+        // console.log("Light theme detected via class/attribute");
+        return false;
+    }
+    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        // console.log("Dark theme detected via prefers-color-scheme");
+        return true;
+    }
+    const bgColor = window.getComputedStyle(document.body).backgroundColor;
+    const match = bgColor.match(/rgb\((\d+),\s*(\d+),\s*(\d+)/);
+    if (match) {
+        const r = parseInt(match[1]);
+        const g = parseInt(match[2]);
+        const b = parseInt(match[3]);
+        const brightness = (r * 299 + g * 587 + b * 114) / 1000;
+        // console.log("Background color brightness:", brightness);
+        return brightness < 128;
+    }
+    // console.log("No dark or light theme detected, defaulting to light theme");
+    return false;
+};
+
+let darkTheme = isDarkTheme();
+let modal = null;
+let modalContent = null;
+let previousScrollOffset = [window.scrollX, window.scrollY];
+
+const runMermaid = async (rerun) => {
+    console.log("Running mermaid diagrams, rerun =", rerun);
+    // clear all existing mermaid charts
+    let all_mermaids = document.querySelectorAll(".mermaid");
+
+    if (rerun) {
+        all_mermaids.forEach((el) => {
+            if(!el.hasAttribute("data-original-code")) {
+                // store original code
+                // console.log(`Storing original code for first run: `, el.innerHTML);
+                el.setAttribute('data-original-code', el.innerHTML);
+            }
+            if(el.getAttribute("data-processed") === "true") {
+                // remove and restore original
+                el.removeAttribute("data-processed");
+                // console.log(`Restoring original code for re-run: `, el.getAttribute('data-original-code'));
+                el.innerHTML = el.getAttribute('data-original-code');
+            } else {
+                // store original code
+                // console.log(`Storing original code for re-run: `, el.innerHTML);
+                el.setAttribute('data-original-code', el.innerHTML);
+            }
+        });
+        await mermaid.run();
+    }
+
+    all_mermaids = document.querySelectorAll(".mermaid");
+    const mermaids_processed = document.querySelectorAll(".mermaid[data-processed='true']");
+
+    if ("False" === "True") {
+        const mermaids_to_add_zoom = -1 === -1 ? all_mermaids.length : -1;
+        if(mermaids_to_add_zoom > 0) {
+            var svgs = d3.selectAll("");
+            if(all_mermaids.length !== mermaids_processed.length) {
+                setTimeout(() => runMermaid(false), 200);
+                return;
+            } else if(svgs.size() !== mermaids_to_add_zoom) {
+                setTimeout(() => runMermaid(false), 200);
+                return;
+            } else {
+                svgs.each(function() {
+                    var svg = d3.select(this);
+                    svg.html("<g class='wrapper'>" + svg.html() + "</g>");
+                    var inner = svg.select("g");
+                    var zoom = d3.zoom().on("zoom", function(event) {
+                        inner.attr("transform", event.transform);
+                    });
+                    svg.call(zoom);
+                });
+            }
+        }
+    } else if(all_mermaids.length !== mermaids_processed.length) {
+        // Wait for mermaid to process all diagrams
+        setTimeout(() => runMermaid(false), 200);
+        return;
+    }
+
+    // Stop here if not adding fullscreen capability
+    if ("True" !== "True") return;
+
+    if (modal !== null ) {
+        // Destroy existing modal
+        modal.remove();
+        modal = null;
+        modalContent = null;
+    }
+
+    modal = document.createElement('div');
+    modal.className = 'mermaid-fullscreen-modal' + (darkTheme ? ' dark-theme' : '');
+    modal.setAttribute('role', 'dialog');
+    modal.setAttribute('aria-modal', 'true');
+    modal.setAttribute('aria-label', 'Fullscreen diagram viewer');
+    modal.innerHTML = `
+        <button class="mermaid-fullscreen-close${darkTheme ? ' dark-theme' : ''}" aria-label="Close fullscreen">✕</button>
+        <div class="mermaid-container-fullscreen${darkTheme ? ' dark-theme' : ''}"></div>
+    `;
+    document.body.appendChild(modal);
+
+    modalContent = modal.querySelector('.mermaid-container-fullscreen');
+    const closeBtn = modal.querySelector('.mermaid-fullscreen-close');
+
+    const closeModal = () => {
+        modal.classList.remove('active');
+        modalContent.innerHTML = '';
+        document.body.style.overflow = ''
+        window.scrollTo({left: previousScrollOffset[0], top: previousScrollOffset[1], behavior: 'instant'});
+    };
+
+    closeBtn.addEventListener('click', closeModal);
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) closeModal();
+    });
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && modal.classList.contains('active')) {
+            closeModal();
+        }
+    });
+
+    document.querySelectorAll('.mermaid').forEach((mermaidDiv) => {
+        if (mermaidDiv.parentNode.classList.contains('mermaid-container') ||
+            mermaidDiv.closest('.mermaid-fullscreen-modal')) {
+            // Already processed, adjust button class if needed
+            const existingBtn = mermaidDiv.parentNode.querySelector('.mermaid-fullscreen-btn');
+            if (existingBtn) {
+                existingBtn.className = 'mermaid-fullscreen-btn' + (darkTheme ? ' dark-theme' : '');
+            }
+            return;
+        }
+
+        const container = document.createElement('div');
+        container.className = 'mermaid-container';
+        mermaidDiv.parentNode.insertBefore(container, mermaidDiv);
+        container.appendChild(mermaidDiv);
+
+        const fullscreenBtn = document.createElement('button');
+        fullscreenBtn.className = 'mermaid-fullscreen-btn' + (darkTheme ? ' dark-theme' : '');
+        fullscreenBtn.setAttribute('aria-label', 'View diagram in fullscreen');
+        fullscreenBtn.textContent = '⛶';
+        fullscreenBtn.style.opacity = '50%';
+
+        // Calculate dynamic position based on diagram's margin and padding
+        const diagramStyle = window.getComputedStyle(mermaidDiv);
+        const marginTop = parseFloat(diagramStyle.marginTop) || 0;
+        const marginRight = parseFloat(diagramStyle.marginRight) || 0;
+        const paddingTop = parseFloat(diagramStyle.paddingTop) || 0;
+        const paddingRight = parseFloat(diagramStyle.paddingRight) || 0;
+        fullscreenBtn.style.top = `${marginTop + paddingTop + 4}px`;
+        fullscreenBtn.style.right = `${marginRight + paddingRight + 4}px`;
+
+        fullscreenBtn.addEventListener('click', () => {
+            previousScrollOffset = [window.scroll, window.scrollY];
+            const clone = mermaidDiv.cloneNode(true);
+            modalContent.innerHTML = '';
+            modalContent.appendChild(clone);
+
+            const svg = clone.querySelector('svg');
+            if (svg) {
+                svg.removeAttribute('width');
+                svg.removeAttribute('height');
+                svg.style.width = '100%';
+                svg.style.height = 'auto';
+                svg.style.maxWidth = '100%';
+                svg.style.sdisplay = 'block';
+
+                if ("False" === "True") {
+                    setTimeout(() => {
+                        const g = svg.querySelector('g');
+                        if (g) {
+                            var svgD3 = d3.select(svg);
+                            svgD3.html("<g class='wrapper'>" + svgD3.html() + "</g>");
+                            var inner = svgD3.select("g");
+                            var zoom = d3.zoom().on("zoom", function(event) {
+                                inner.attr("transform", event.transform);
+                            });
+                            svgD3.call(zoom);
+                        }
+                    }, 100);
+                }
+            }
+
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+        container.appendChild(fullscreenBtn);
+    });
+};
+
+const load = async () => {
+    initStyles();
+
+    await runMermaid(true);
+
+    const reRunIfThemeChanges = async () => {
+        const newDarkTheme = isDarkTheme();
+        if (newDarkTheme !== darkTheme) {
+            darkTheme = newDarkTheme;
+            console.log("Theme change detected, re-running mermaid with", darkTheme ? "dark" : "default", "theme");
+            await mermaid.initialize(
+                {...JSON.parse(
+                    `{"startOnLoad": false}`
+                ),
+                ...{ darkMode: darkTheme, theme: darkTheme ? 'dark' : 'default' },
+                }
+            );
+            await runMermaid(true);
+        }
+    };
+
+    // Update theme classes when theme changes
+    const themeObserver = new MutationObserver(reRunIfThemeChanges);
+    themeObserver.observe(document.documentElement, {
+        attributes: true,
+        attributeFilter: ['class', 'style', 'data-theme']
+    });
+    themeObserver.observe(document.body, {
+        attributes: true,
+        attributeFilter: ['class', 'style', 'data-theme']
+    });
+};
+
+
+
+
+
+console.log("Initializing mermaid with", darkTheme ? "dark" : "default", "theme");
+mermaid.initialize(
+    {...JSON.parse(
+        `{"startOnLoad": false}`
+    ),
+    ...{ darkMode: darkTheme, theme: darkTheme ? 'dark' : 'default' },
+    }
+);
+
+window.addEventListener("load", load);
+window.runMermaid = runMermaid;</script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="author" title="About these documents" href="../about.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Fleet Manager
+          </a>
+              <div class="version">
+                1.0
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../about.html">About the project</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules.html">Code documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../training.html">Training documentation</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Fleet Manager</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Module code</a></li>
+      <li class="breadcrumb-item active">grpc_metrics_fleet</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <h1>Source code for grpc_metrics_fleet</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">gRPC System Metrics Communication Module for Fleet Management</span>
+
+<span class="sd">.. module:: grpc_metrics_fleet</span>
+<span class="sd">    :synopsis: Secure gRPC client for transmitting drone system metrics to MQTT infrastructure</span>
+
+<span class="sd">.. moduleauthor:: Fleet Management System Team</span>
+
+<span class="sd">.. versionadded:: 1.0</span>
+
+<span class="sd">This module implements a robust gRPC client system for transmitting drone system metrics</span>
+<span class="sd">to the MQTT infrastructure within the Fleet Management System. It provides secure</span>
+<span class="sd">communication channels, comprehensive error handling, and reliable message delivery</span>
+<span class="sd">for real-time fleet monitoring and analytics.</span>
+
+<span class="sd">Architecture Overview:</span>
+<span class="sd">    The module serves as a communication bridge between the System Metrics collection</span>
+<span class="sd">    system and the MQTT infrastructure:</span>
+<span class="sd">    </span>
+<span class="sd">    1. **Metrics Collection**: Receives processed system metrics from metrics manager</span>
+<span class="sd">    2. **gRPC Transmission**: Securely transmits metrics via gRPC protocol</span>
+<span class="sd">    3. **MQTT Integration**: Forwards metrics to MQTT bridge for distribution</span>
+<span class="sd">    4. **Error Recovery**: Handles communication failures with appropriate logging</span>
+<span class="sd">    5. **Connection Management**: Manages gRPC channel lifecycle and cleanup</span>
+
+<span class="sd">System Integration Flow:</span>
+<span class="sd">    .. mermaid::</span>
+<span class="sd">    </span>
+<span class="sd">        graph LR</span>
+<span class="sd">            A[Drone Metrics] --&gt; B[Metrics Manager]</span>
+<span class="sd">            B --&gt; C[gRPC Metrics Client]</span>
+<span class="sd">            C --&gt; D[MQTT Bridge]</span>
+<span class="sd">            D --&gt; E[MQTT Broker]</span>
+<span class="sd">            E --&gt; F[ThingsBoard]</span>
+<span class="sd">            E --&gt; G[Fleet Analytics]</span>
+
+<span class="sd">Communication Protocol:</span>
+<span class="sd">    **Transport**: gRPC over HTTP/2 for efficient binary protocol communication</span>
+<span class="sd">    **Security**: Configurable secure/insecure channels based on deployment requirements</span>
+<span class="sd">    **Message Format**: Protocol Buffer messages containing serialized metric data</span>
+<span class="sd">    **Service Interface**: MQTTCommunication service for metrics transmission</span>
+
+<span class="sd">Key Features:</span>
+<span class="sd">    - **Secure Communication**: Configurable channel security for different environments</span>
+<span class="sd">    - **Timeout Management**: Connection timeout handling for reliable operation</span>
+<span class="sd">    - **Message Validation**: Input validation before transmission</span>
+<span class="sd">    - **Comprehensive Logging**: Detailed operation tracking and error reporting</span>
+<span class="sd">    - **Resource Management**: Proper channel cleanup and resource management</span>
+<span class="sd">    - **Error Recovery**: Graceful handling of network and service failures</span>
+
+<span class="sd">Message Processing Pipeline:</span>
+<span class="sd">    1. **Input Validation**: Verify message format and content validity</span>
+<span class="sd">    2. **Channel Creation**: Establish gRPC connection with timeout configuration</span>
+<span class="sd">    3. **Service Binding**: Create client stub for MQTT communication service</span>
+<span class="sd">    4. **Message Transmission**: Send metrics via gRPC protocol</span>
+<span class="sd">    5. **Response Handling**: Process acknowledgments and confirm delivery</span>
+<span class="sd">    6. **Resource Cleanup**: Ensure proper channel closure and resource release</span>
+
+<span class="sd">Error Handling Strategy:</span>
+<span class="sd">    **gRPC Errors**: Network communication failures, service unavailability</span>
+<span class="sd">    **Validation Errors**: Invalid message format or content validation failures</span>
+<span class="sd">    **Timeout Errors**: Connection timeout and response timeout handling</span>
+<span class="sd">    **Resource Errors**: Channel creation failures and resource allocation issues</span>
+
+<span class="sd">Network Configuration:</span>
+<span class="sd">    - **Target Address**: localhost:50057 (MQTT bridge service)</span>
+<span class="sd">    - **Connection Timeout**: 10 seconds for initial connection establishment</span>
+<span class="sd">    - **Channel Options**: Configurable gRPC channel parameters</span>
+<span class="sd">    - **Protocol**: HTTP/2 with Protocol Buffer serialization</span>
+
+<span class="sd">Data Format:</span>
+<span class="sd">    **Input**: Serialized JSON strings containing system metrics</span>
+<span class="sd">    **Protocol Buffer**: MQTTRequest messages for gRPC transmission</span>
+<span class="sd">    **Content**: System performance metrics, hardware status, diagnostic data</span>
+
+<span class="sd">Functions:</span>
+<span class="sd">    .. autofunction:: run_metrics_mqtt_client</span>
+
+<span class="sd">Usage Examples:</span>
+<span class="sd">    **Basic Metrics Transmission**::</span>
+<span class="sd">    </span>
+<span class="sd">        import json</span>
+<span class="sd">        import logging</span>
+<span class="sd">        </span>
+<span class="sd">        # Prepare metrics data</span>
+<span class="sd">        metrics_data = {</span>
+<span class="sd">            &quot;drone_id&quot;: 42,</span>
+<span class="sd">            &quot;timestamp&quot;: &quot;2025-06-29T10:30:00Z&quot;,</span>
+<span class="sd">            &quot;cpu_usage&quot;: 65.2,</span>
+<span class="sd">            &quot;memory_usage&quot;: 78.1,</span>
+<span class="sd">            &quot;battery_level&quot;: 89.5,</span>
+<span class="sd">            &quot;position&quot;: {&quot;x&quot;: 100.5, &quot;y&quot;: 200.3, &quot;z&quot;: 15.0}</span>
+<span class="sd">        }</span>
+<span class="sd">        </span>
+<span class="sd">        # Serialize and transmit</span>
+<span class="sd">        metrics_json = json.dumps(metrics_data)</span>
+<span class="sd">        logger = logging.getLogger(&#39;MetricsClient&#39;)</span>
+<span class="sd">        </span>
+<span class="sd">        success = run_metrics_mqtt_client(metrics_json, logger)</span>
+<span class="sd">        if success:</span>
+<span class="sd">            print(&quot;Metrics transmitted successfully&quot;)</span>
+<span class="sd">            </span>
+<span class="sd">    **Integration with Metrics Manager**::</span>
+<span class="sd">    </span>
+<span class="sd">        # Continuous metrics transmission</span>
+<span class="sd">        for metrics_batch in metrics_collector:</span>
+<span class="sd">            serialized_metrics = json.dumps(metrics_batch)</span>
+<span class="sd">            result = run_metrics_mqtt_client(serialized_metrics, system_logger)</span>
+<span class="sd">            </span>
+<span class="sd">            if result:</span>
+<span class="sd">                metrics_sent_count += 1</span>
+<span class="sd">            else:</span>
+<span class="sd">                handle_transmission_failure(metrics_batch)</span>
+
+<span class="sd">Configuration:</span>
+<span class="sd">    **Server Address**: Configurable via _MQTT_SERVER_ADDRESS constant</span>
+<span class="sd">    **Timeout Settings**: Adjustable via _CHANNEL_TIMEOUT constant</span>
+<span class="sd">    **Channel Options**: Extensible gRPC channel configuration</span>
+<span class="sd">    **Security Mode**: Configurable secure/insecure channel selection</span>
+
+<span class="sd">.. note::</span>
+<span class="sd">    This module uses insecure gRPC channels by default, suitable for internal</span>
+<span class="sd">    Fleet Management System communication. Configure secure channels for</span>
+<span class="sd">    external or production deployments.</span>
+
+<span class="sd">.. warning::</span>
+<span class="sd">    Ensure MQTT bridge service is available on the configured address before</span>
+<span class="sd">    attempting metrics transmission. Failed transmissions will be logged but</span>
+<span class="sd">    not automatically retried.</span>
+
+<span class="sd">.. seealso::</span>
+<span class="sd">    - :mod:`SystemMetrics.metrics_manager`: Main metrics collection and processing</span>
+<span class="sd">    - :mod:`MQTT.grpc_mqtt`: MQTT bridge service implementation</span>
+<span class="sd">    - :mod:`GRPC.mqtt_pb2`: Protocol Buffer definitions for MQTT messages</span>
+<span class="sd">    - :doc:`gRPC Python Tutorial &lt;https://grpc.io/docs/languages/python/&gt;`</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">grpc</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">Optional</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">logging</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">GRPC.mqtt_pb2</span><span class="w"> </span><span class="kn">import</span> <span class="n">MQTTRequest</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">GRPC.mqtt_pb2_grpc</span><span class="w"> </span><span class="kn">import</span> <span class="n">MQTTCommunicationStub</span>
+
+<span class="c1"># Network and service configuration constants</span>
+<span class="n">_MQTT_SERVER_ADDRESS</span> <span class="o">=</span> <span class="s1">&#39;localhost:50057&#39;</span>  <span class="c1"># MQTT bridge service endpoint</span>
+<span class="n">_CHANNEL_TIMEOUT</span> <span class="o">=</span> <span class="mi">10</span>  <span class="c1"># Connection timeout in seconds for reliable operation</span>
+
+<div class="viewcode-block" id="run_metrics_mqtt_client">
+<a class="viewcode-back" href="../Fleet_module/Metrics/grpc_metrics_component.html#grpc_metrics_fleet.run_metrics_mqtt_client">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">run_metrics_mqtt_client</span><span class="p">(</span><span class="n">mqtt_message</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">metrics_logger</span><span class="p">:</span> <span class="n">logging</span><span class="o">.</span><span class="n">Logger</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">bool</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Transmit drone system metrics to MQTT infrastructure via secure gRPC communication.</span>
+
+<span class="sd">    This function implements a robust gRPC client for transmitting processed system metrics</span>
+<span class="sd">    from individual drones to the MQTT bridge service. It handles secure communication,</span>
+<span class="sd">    comprehensive error recovery, and proper resource management for reliable metrics</span>
+<span class="sd">    delivery within the Fleet Management System.</span>
+
+<span class="sd">    Communication Architecture:</span>
+<span class="sd">        The function establishes a complete gRPC communication pipeline:</span>
+<span class="sd">        </span>
+<span class="sd">        1. **Channel Creation**: Secure gRPC channel with timeout configuration</span>
+<span class="sd">        2. **Service Binding**: Client stub creation for MQTT communication service</span>
+<span class="sd">        3. **Message Validation**: Input validation and format verification</span>
+<span class="sd">        4. **Transmission**: Reliable message delivery via Protocol Buffers</span>
+<span class="sd">        5. **Response Handling**: Confirmation processing and status tracking</span>
+<span class="sd">        6. **Resource Cleanup**: Proper channel closure and memory management</span>
+
+<span class="sd">    Message Processing Workflow:</span>
+<span class="sd">        **Input Validation**: Verify message is properly serialized string format</span>
+<span class="sd">        **Channel Establishment**: Create gRPC channel with timeout and security settings</span>
+<span class="sd">        **Service Communication**: Transmit metrics using MQTTCommunication service</span>
+<span class="sd">        **Acknowledgment Handling**: Process service response and confirm delivery</span>
+<span class="sd">        **Error Management**: Handle various failure modes with appropriate logging</span>
+<span class="sd">        **Resource Cleanup**: Ensure proper channel closure regardless of outcome</span>
+
+<span class="sd">    Error Handling Categories:</span>
+<span class="sd">        **gRPC Communication Errors**:</span>
+<span class="sd">        - Network connectivity issues</span>
+<span class="sd">        - Service unavailability or timeouts</span>
+<span class="sd">        - Protocol-level communication failures</span>
+<span class="sd">        - Server-side processing errors</span>
+<span class="sd">        </span>
+<span class="sd">        **Validation Errors**:</span>
+<span class="sd">        - Invalid message format (non-string input)</span>
+<span class="sd">        - Malformed JSON content</span>
+<span class="sd">        - Missing required metric fields</span>
+<span class="sd">        </span>
+<span class="sd">        **System Errors**:</span>
+<span class="sd">        - Resource allocation failures</span>
+<span class="sd">        - Memory or connection limits</span>
+<span class="sd">        - Unexpected runtime exceptions</span>
+
+<span class="sd">    Security and Reliability:</span>
+<span class="sd">        - **Connection Timeout**: 10-second timeout for connection establishment</span>
+<span class="sd">        - **Resource Management**: Guaranteed channel cleanup via finally block</span>
+<span class="sd">        - **Error Isolation**: Comprehensive exception handling prevents system crashes</span>
+<span class="sd">        - **Status Tracking**: Boolean return values for reliable status reporting</span>
+
+<span class="sd">    Integration with MQTT Infrastructure:</span>
+<span class="sd">        The transmitted metrics are forwarded through the Fleet Management MQTT pipeline:</span>
+<span class="sd">        - **MQTT Bridge**: Receives gRPC metrics and forwards to MQTT broker</span>
+<span class="sd">        - **ThingsBoard Integration**: Metrics available for dashboard visualization</span>
+<span class="sd">        - **Analytics Processing**: Real-time fleet analytics and monitoring</span>
+<span class="sd">        - **Alert Generation**: Automatic alerts based on metric thresholds</span>
+
+<span class="sd">    :param mqtt_message: Serialized JSON string containing comprehensive system metrics</span>
+<span class="sd">    :type mqtt_message: str</span>
+<span class="sd">    :param metrics_logger: Pre-configured logger instance for operation tracking and debugging</span>
+<span class="sd">    :type metrics_logger: logging.Logger</span>
+
+<span class="sd">    :return: True if metrics transmission successful, None if transmission failed</span>
+<span class="sd">    :rtype: Optional[bool]</span>
+
+<span class="sd">    :raises grpc.RpcError: For gRPC communication failures (caught and logged)</span>
+<span class="sd">    :raises ValueError: For invalid message format validation (caught and logged)</span>
+<span class="sd">    :raises Exception: For any other unexpected transmission failures (caught and logged)</span>
+
+<span class="sd">    Message Format Requirements:</span>
+<span class="sd">        **Input Format**: JSON string containing system metrics</span>
+<span class="sd">        **Required Fields**: Flexible schema supporting various metric types</span>
+<span class="sd">        **Example Structure**::</span>
+<span class="sd">        </span>
+<span class="sd">            {</span>
+<span class="sd">                &quot;drone_id&quot;: 42,</span>
+<span class="sd">                &quot;timestamp&quot;: &quot;2025-06-29T10:30:00Z&quot;,</span>
+<span class="sd">                &quot;system_metrics&quot;: {</span>
+<span class="sd">                    &quot;cpu_usage&quot;: 65.2,</span>
+<span class="sd">                    &quot;memory_usage&quot;: 78.1,</span>
+<span class="sd">                    &quot;disk_usage&quot;: 45.8,</span>
+<span class="sd">                    &quot;network_stats&quot;: {...}</span>
+<span class="sd">                },</span>
+<span class="sd">                &quot;hardware_status&quot;: {</span>
+<span class="sd">                    &quot;battery_level&quot;: 89.5,</span>
+<span class="sd">                    &quot;temperature&quot;: 35.2,</span>
+<span class="sd">                    &quot;sensors&quot;: {...}</span>
+<span class="sd">                },</span>
+<span class="sd">                &quot;flight_data&quot;: {</span>
+<span class="sd">                    &quot;position&quot;: {&quot;x&quot;: 100.5, &quot;y&quot;: 200.3, &quot;z&quot;: 15.0},</span>
+<span class="sd">                    &quot;velocity&quot;: {&quot;vx&quot;: 2.1, &quot;vy&quot;: 1.8, &quot;vz&quot;: 0.0},</span>
+<span class="sd">                    &quot;orientation&quot;: {&quot;roll&quot;: 0.1, &quot;pitch&quot;: 0.05, &quot;yaw&quot;: 1.57}</span>
+<span class="sd">                }</span>
+<span class="sd">            }</span>
+
+<span class="sd">    Usage Examples:</span>
+<span class="sd">        **Basic Metrics Transmission**::</span>
+<span class="sd">        </span>
+<span class="sd">            import json</span>
+<span class="sd">            import logging</span>
+<span class="sd">            </span>
+<span class="sd">            # Prepare system metrics</span>
+<span class="sd">            metrics = {</span>
+<span class="sd">                &quot;drone_id&quot;: 1,</span>
+<span class="sd">                &quot;cpu_usage&quot;: 45.2,</span>
+<span class="sd">                &quot;memory_usage&quot;: 67.8,</span>
+<span class="sd">                &quot;battery_level&quot;: 92.1</span>
+<span class="sd">            }</span>
+<span class="sd">            </span>
+<span class="sd">            # Transmit metrics</span>
+<span class="sd">            logger = logging.getLogger(&#39;SystemMetrics&#39;)</span>
+<span class="sd">            success = run_metrics_mqtt_client(json.dumps(metrics), logger)</span>
+<span class="sd">            </span>
+<span class="sd">            if success:</span>
+<span class="sd">                print(&quot;Metrics transmitted successfully&quot;)</span>
+<span class="sd">            else:</span>
+<span class="sd">                print(&quot;Transmission failed - check logs&quot;)</span>
+<span class="sd">                </span>
+<span class="sd">        **Batch Processing**::</span>
+<span class="sd">        </span>
+<span class="sd">            # Process multiple drone metrics</span>
+<span class="sd">            for drone_id, metrics_data in drone_metrics.items():</span>
+<span class="sd">                serialized_metrics = json.dumps(metrics_data)</span>
+<span class="sd">                result = run_metrics_mqtt_client(serialized_metrics, logger)</span>
+<span class="sd">                </span>
+<span class="sd">                if not result:</span>
+<span class="sd">                    failed_transmissions.append(drone_id)</span>
+<span class="sd">                    </span>
+<span class="sd">        **Error Handling Integration**::</span>
+<span class="sd">        </span>
+<span class="sd">            def transmit_with_retry(metrics, logger, max_retries=3):</span>
+<span class="sd">                for attempt in range(max_retries):</span>
+<span class="sd">                    if run_metrics_mqtt_client(metrics, logger):</span>
+<span class="sd">                        return True</span>
+<span class="sd">                    time.sleep(2 ** attempt)  # Exponential backoff</span>
+<span class="sd">                return False</span>
+
+<span class="sd">    Performance Considerations:</span>
+<span class="sd">        - **Connection Reuse**: Consider connection pooling for high-frequency transmissions</span>
+<span class="sd">        - **Batch Processing**: Group multiple metrics for efficient transmission</span>
+<span class="sd">        - **Timeout Tuning**: Adjust timeout values based on network conditions</span>
+<span class="sd">        - **Resource Monitoring**: Monitor channel creation and cleanup performance</span>
+
+<span class="sd">    .. note::</span>
+<span class="sd">        This function uses insecure gRPC channels suitable for internal Fleet</span>
+<span class="sd">        Management System communication. Ensure MQTT bridge service availability.</span>
+
+<span class="sd">    .. warning::</span>
+<span class="sd">        Failed transmissions return None and are logged but not automatically</span>
+<span class="sd">        retried. Implement retry logic in calling code if required.</span>
+
+<span class="sd">    .. seealso::</span>
+<span class="sd">        - :mod:`MQTT.grpc_mqtt`: MQTT bridge service receiving transmitted metrics</span>
+<span class="sd">        - :class:`GRPC.mqtt_pb2.MQTTRequest`: Protocol Buffer message format</span>
+<span class="sd">        - :func:`SystemMetrics.metrics_manager.process_metrics`: Metrics preparation</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># Initialize channel variable for proper cleanup in finally block</span>
+    <span class="n">channel</span> <span class="o">=</span> <span class="kc">None</span>
+    
+    <span class="k">try</span><span class="p">:</span>
+        <span class="c1"># Create insecure gRPC channel with connection timeout configuration</span>
+        <span class="c1"># Uses HTTP/2 protocol for efficient binary communication</span>
+        <span class="n">channel</span> <span class="o">=</span> <span class="n">grpc</span><span class="o">.</span><span class="n">insecure_channel</span><span class="p">(</span>
+            <span class="n">_MQTT_SERVER_ADDRESS</span><span class="p">,</span>                                    <span class="c1"># MQTT bridge service endpoint</span>
+            <span class="n">options</span><span class="o">=</span><span class="p">((</span><span class="s1">&#39;grpc.connect_timeout_ms&#39;</span><span class="p">,</span> <span class="n">_CHANNEL_TIMEOUT</span> <span class="o">*</span> <span class="mi">1000</span><span class="p">),)</span>  <span class="c1"># Timeout in milliseconds</span>
+        <span class="p">)</span>
+        
+        <span class="c1"># Create gRPC client stub for MQTT communication service</span>
+        <span class="c1"># Provides interface to MQTTCommunication service methods</span>
+        <span class="n">stub</span> <span class="o">=</span> <span class="n">MQTTCommunicationStub</span><span class="p">(</span><span class="n">channel</span><span class="p">)</span>
+
+        <span class="c1"># Validate message format before transmission to prevent protocol errors</span>
+        <span class="c1"># Ensures input is properly serialized string for Protocol Buffer processing</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">mqtt_message</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Message must be serialized string&quot;</span><span class="p">)</span>
+
+        <span class="c1"># Transmit metrics to MQTT bridge via gRPC service call</span>
+        <span class="c1"># Uses Protocol Buffer serialization for efficient data transmission</span>
+        <span class="n">response</span> <span class="o">=</span> <span class="n">stub</span><span class="o">.</span><span class="n">SendMQTT</span><span class="p">(</span><span class="n">MQTTRequest</span><span class="p">(</span><span class="n">mqtt_message</span><span class="o">=</span><span class="n">mqtt_message</span><span class="p">))</span>
+        
+        <span class="c1"># Log successful transmission for monitoring and audit purposes</span>
+        <span class="n">metrics_logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;[gRPC Metrics] - System Metrics sent to MQTT Management&quot;</span><span class="p">)</span>
+        
+        <span class="c1"># Return success indicator for calling code status tracking</span>
+        <span class="k">return</span> <span class="kc">True</span>
+
+    <span class="k">except</span> <span class="n">grpc</span><span class="o">.</span><span class="n">RpcError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="c1"># Handle gRPC-specific communication errors with detailed error information</span>
+        <span class="c1"># Includes error code and details for comprehensive debugging</span>
+        <span class="n">metrics_logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;[gRPC Metrics] - gRPC communication error (</span><span class="si">{</span><span class="n">e</span><span class="o">.</span><span class="n">code</span><span class="p">()</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">): </span><span class="si">{</span><span class="n">e</span><span class="o">.</span><span class="n">details</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="kc">None</span>
+        
+    <span class="k">except</span> <span class="ne">ValueError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="c1"># Handle input validation errors for message format issues</span>
+        <span class="c1"># Logs validation failures for debugging and monitoring</span>
+        <span class="n">metrics_logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;[gRPC Metrics] - Validation error: </span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="kc">None</span>
+        
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="c1"># Handle any other unexpected errors with full stack trace</span>
+        <span class="c1"># Provides comprehensive error information for debugging</span>
+        <span class="n">metrics_logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;[gRPC Metrics] - Unexpected error: </span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">exc_info</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="k">return</span> <span class="kc">None</span>
+        
+    <span class="k">finally</span><span class="p">:</span>
+        <span class="c1"># Ensure proper channel cleanup regardless of execution outcome</span>
+        <span class="c1"># Prevents resource leaks and connection accumulation</span>
+        <span class="k">if</span> <span class="n">channel</span><span class="p">:</span>
+            <span class="n">channel</span><span class="o">.</span><span class="n">close</span><span class="p">()</span></div>
+
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, Estela Mora Barba.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

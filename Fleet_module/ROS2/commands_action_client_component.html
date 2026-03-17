@@ -1,0 +1,1624 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Commands Action Client &mdash; Fleet Manager 1.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../_static/documentation_options.js?v=f2a433a1"></script>
+        <script src="../../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+        <script src="../../_static/copybutton.js?v=f281be69"></script>
+        <script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script>
+        <script type="module">import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11.12.1/dist/mermaid.esm.min.mjs";
+
+
+
+
+
+const initStyles = () => {
+    const defaultStyle = document.createElement('style');
+    defaultStyle.textContent = `pre.mermaid {
+    /* Same as .mermaid-container > pre */
+    display: block;
+    width: 100%;
+}
+
+pre.mermaid > svg {
+    /* Same as .mermaid-container > pre > svg */
+    height: 500px;
+    width: 100%;
+    max-width: 100% !important;
+}`;
+    document.head.appendChild(defaultStyle);
+
+    const fullscreenStyle = document.createElement('style');
+    fullscreenStyle.textContent = `.mermaid-container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.mermaid-container > pre {
+    display: block;
+    width: 100%;
+}
+
+.mermaid-container > pre > svg {
+    height: 500px;
+    width: 100%;
+    max-width: 100% !important;
+}
+
+.mermaid-fullscreen-btn {
+    width: 28px;
+    height: 28px;
+    background: rgba(255, 255, 255, 0.95);
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    border-radius: 4px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    font-size: 14px;
+    line-height: 1;
+    padding: 0;
+    color: #333;
+}
+
+.mermaid-fullscreen-btn:hover {
+    opacity: 100% !important;
+    background: rgba(255, 255, 255, 1);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+    transform: scale(1.1);
+}
+
+.mermaid-fullscreen-btn.dark-theme {
+    background: rgba(50, 50, 50, 0.95);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: #e0e0e0;
+}
+
+.mermaid-fullscreen-btn.dark-theme:hover {
+    background: rgba(60, 60, 60, 1);
+    box-shadow: 0 3px 10px rgba(255, 255, 255, 0.2);
+}
+
+.mermaid-fullscreen-modal {
+    display: none;
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 95vw;
+    height: 100vh;
+    background: rgba(255, 255, 255, 0.98);
+    z-index: 9999;
+    padding: 20px;
+    overflow: auto;
+}
+
+.mermaid-fullscreen-modal.dark-theme {
+    background: rgba(0, 0, 0, 0.98);
+}
+
+.mermaid-fullscreen-modal.active {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mermaid-container-fullscreen {
+    position: relative;
+    width: 95vw;
+    height: 90vh;
+    max-width: 95vw;
+    max-height: 90vh;
+    background: white;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    overflow: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mermaid-container-fullscreen.dark-theme {
+    background: #1a1a1a;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.8);
+}
+
+.mermaid-container-fullscreen pre.mermaid {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mermaid-container-fullscreen .mermaid svg {
+    height: 100% !important;
+    width: 100% !important;
+    cursor: grab;
+}
+
+.mermaid-fullscreen-close {
+    position: fixed !important;
+    top: 20px !important;
+    right: 20px !important;
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.95);
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    transition: all 0.2s;
+    font-size: 24px;
+    line-height: 1;
+    color: #333;
+}
+
+.mermaid-fullscreen-close:hover {
+    background: white;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+    transform: scale(1.1);
+}
+
+.mermaid-fullscreen-close.dark-theme {
+    background: rgba(50, 50, 50, 0.95);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #e0e0e0;
+}
+
+.mermaid-fullscreen-close.dark-theme:hover {
+    background: rgba(60, 60, 60, 1);
+    box-shadow: 0 6px 16px rgba(255, 255, 255, 0.2);
+}
+
+.mermaid-fullscreen-modal .mermaid-fullscreen-btn {
+    display: none !important;
+}`;
+    document.head.appendChild(fullscreenStyle);
+}
+
+// Detect if page has dark background
+const isDarkTheme = () => {
+    // We use a set of heuristics:
+    // 1. Check for common dark mode classes or attributes
+    // 2. Check computed background color brightness
+    if (document.documentElement.classList.contains('dark') ||
+        document.documentElement.getAttribute('data-theme') === 'dark' ||
+        document.body.classList.contains('dark') ||
+        document.body.getAttribute('data-theme') === 'dark') {
+        // console.log("Dark theme detected via class/attribute");
+        return true;
+    }
+    if (document.documentElement.classList.contains('light') ||
+        document.documentElement.getAttribute('data-theme') === 'light' ||
+        document.body.classList.contains('light') ||
+        document.body.getAttribute('data-theme') === 'light') {
+        // console.log("Light theme detected via class/attribute");
+        return false;
+    }
+    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        // console.log("Dark theme detected via prefers-color-scheme");
+        return true;
+    }
+    const bgColor = window.getComputedStyle(document.body).backgroundColor;
+    const match = bgColor.match(/rgb\((\d+),\s*(\d+),\s*(\d+)/);
+    if (match) {
+        const r = parseInt(match[1]);
+        const g = parseInt(match[2]);
+        const b = parseInt(match[3]);
+        const brightness = (r * 299 + g * 587 + b * 114) / 1000;
+        // console.log("Background color brightness:", brightness);
+        return brightness < 128;
+    }
+    // console.log("No dark or light theme detected, defaulting to light theme");
+    return false;
+};
+
+let darkTheme = isDarkTheme();
+let modal = null;
+let modalContent = null;
+let previousScrollOffset = [window.scrollX, window.scrollY];
+
+const runMermaid = async (rerun) => {
+    console.log("Running mermaid diagrams, rerun =", rerun);
+    // clear all existing mermaid charts
+    let all_mermaids = document.querySelectorAll(".mermaid");
+
+    if (rerun) {
+        all_mermaids.forEach((el) => {
+            if(!el.hasAttribute("data-original-code")) {
+                // store original code
+                // console.log(`Storing original code for first run: `, el.innerHTML);
+                el.setAttribute('data-original-code', el.innerHTML);
+            }
+            if(el.getAttribute("data-processed") === "true") {
+                // remove and restore original
+                el.removeAttribute("data-processed");
+                // console.log(`Restoring original code for re-run: `, el.getAttribute('data-original-code'));
+                el.innerHTML = el.getAttribute('data-original-code');
+            } else {
+                // store original code
+                // console.log(`Storing original code for re-run: `, el.innerHTML);
+                el.setAttribute('data-original-code', el.innerHTML);
+            }
+        });
+        await mermaid.run();
+    }
+
+    all_mermaids = document.querySelectorAll(".mermaid");
+    const mermaids_processed = document.querySelectorAll(".mermaid[data-processed='true']");
+
+    if ("False" === "True") {
+        const mermaids_to_add_zoom = -1 === -1 ? all_mermaids.length : -1;
+        if(mermaids_to_add_zoom > 0) {
+            var svgs = d3.selectAll("");
+            if(all_mermaids.length !== mermaids_processed.length) {
+                setTimeout(() => runMermaid(false), 200);
+                return;
+            } else if(svgs.size() !== mermaids_to_add_zoom) {
+                setTimeout(() => runMermaid(false), 200);
+                return;
+            } else {
+                svgs.each(function() {
+                    var svg = d3.select(this);
+                    svg.html("<g class='wrapper'>" + svg.html() + "</g>");
+                    var inner = svg.select("g");
+                    var zoom = d3.zoom().on("zoom", function(event) {
+                        inner.attr("transform", event.transform);
+                    });
+                    svg.call(zoom);
+                });
+            }
+        }
+    } else if(all_mermaids.length !== mermaids_processed.length) {
+        // Wait for mermaid to process all diagrams
+        setTimeout(() => runMermaid(false), 200);
+        return;
+    }
+
+    // Stop here if not adding fullscreen capability
+    if ("True" !== "True") return;
+
+    if (modal !== null ) {
+        // Destroy existing modal
+        modal.remove();
+        modal = null;
+        modalContent = null;
+    }
+
+    modal = document.createElement('div');
+    modal.className = 'mermaid-fullscreen-modal' + (darkTheme ? ' dark-theme' : '');
+    modal.setAttribute('role', 'dialog');
+    modal.setAttribute('aria-modal', 'true');
+    modal.setAttribute('aria-label', 'Fullscreen diagram viewer');
+    modal.innerHTML = `
+        <button class="mermaid-fullscreen-close${darkTheme ? ' dark-theme' : ''}" aria-label="Close fullscreen">✕</button>
+        <div class="mermaid-container-fullscreen${darkTheme ? ' dark-theme' : ''}"></div>
+    `;
+    document.body.appendChild(modal);
+
+    modalContent = modal.querySelector('.mermaid-container-fullscreen');
+    const closeBtn = modal.querySelector('.mermaid-fullscreen-close');
+
+    const closeModal = () => {
+        modal.classList.remove('active');
+        modalContent.innerHTML = '';
+        document.body.style.overflow = ''
+        window.scrollTo({left: previousScrollOffset[0], top: previousScrollOffset[1], behavior: 'instant'});
+    };
+
+    closeBtn.addEventListener('click', closeModal);
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) closeModal();
+    });
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && modal.classList.contains('active')) {
+            closeModal();
+        }
+    });
+
+    document.querySelectorAll('.mermaid').forEach((mermaidDiv) => {
+        if (mermaidDiv.parentNode.classList.contains('mermaid-container') ||
+            mermaidDiv.closest('.mermaid-fullscreen-modal')) {
+            // Already processed, adjust button class if needed
+            const existingBtn = mermaidDiv.parentNode.querySelector('.mermaid-fullscreen-btn');
+            if (existingBtn) {
+                existingBtn.className = 'mermaid-fullscreen-btn' + (darkTheme ? ' dark-theme' : '');
+            }
+            return;
+        }
+
+        const container = document.createElement('div');
+        container.className = 'mermaid-container';
+        mermaidDiv.parentNode.insertBefore(container, mermaidDiv);
+        container.appendChild(mermaidDiv);
+
+        const fullscreenBtn = document.createElement('button');
+        fullscreenBtn.className = 'mermaid-fullscreen-btn' + (darkTheme ? ' dark-theme' : '');
+        fullscreenBtn.setAttribute('aria-label', 'View diagram in fullscreen');
+        fullscreenBtn.textContent = '⛶';
+        fullscreenBtn.style.opacity = '50%';
+
+        // Calculate dynamic position based on diagram's margin and padding
+        const diagramStyle = window.getComputedStyle(mermaidDiv);
+        const marginTop = parseFloat(diagramStyle.marginTop) || 0;
+        const marginRight = parseFloat(diagramStyle.marginRight) || 0;
+        const paddingTop = parseFloat(diagramStyle.paddingTop) || 0;
+        const paddingRight = parseFloat(diagramStyle.paddingRight) || 0;
+        fullscreenBtn.style.top = `${marginTop + paddingTop + 4}px`;
+        fullscreenBtn.style.right = `${marginRight + paddingRight + 4}px`;
+
+        fullscreenBtn.addEventListener('click', () => {
+            previousScrollOffset = [window.scroll, window.scrollY];
+            const clone = mermaidDiv.cloneNode(true);
+            modalContent.innerHTML = '';
+            modalContent.appendChild(clone);
+
+            const svg = clone.querySelector('svg');
+            if (svg) {
+                svg.removeAttribute('width');
+                svg.removeAttribute('height');
+                svg.style.width = '100%';
+                svg.style.height = 'auto';
+                svg.style.maxWidth = '100%';
+                svg.style.sdisplay = 'block';
+
+                if ("False" === "True") {
+                    setTimeout(() => {
+                        const g = svg.querySelector('g');
+                        if (g) {
+                            var svgD3 = d3.select(svg);
+                            svgD3.html("<g class='wrapper'>" + svgD3.html() + "</g>");
+                            var inner = svgD3.select("g");
+                            var zoom = d3.zoom().on("zoom", function(event) {
+                                inner.attr("transform", event.transform);
+                            });
+                            svgD3.call(zoom);
+                        }
+                    }, 100);
+                }
+            }
+
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+        container.appendChild(fullscreenBtn);
+    });
+};
+
+const load = async () => {
+    initStyles();
+
+    await runMermaid(true);
+
+    const reRunIfThemeChanges = async () => {
+        const newDarkTheme = isDarkTheme();
+        if (newDarkTheme !== darkTheme) {
+            darkTheme = newDarkTheme;
+            console.log("Theme change detected, re-running mermaid with", darkTheme ? "dark" : "default", "theme");
+            await mermaid.initialize(
+                {...JSON.parse(
+                    `{"startOnLoad": false}`
+                ),
+                ...{ darkMode: darkTheme, theme: darkTheme ? 'dark' : 'default' },
+                }
+            );
+            await runMermaid(true);
+        }
+    };
+
+    // Update theme classes when theme changes
+    const themeObserver = new MutationObserver(reRunIfThemeChanges);
+    themeObserver.observe(document.documentElement, {
+        attributes: true,
+        attributeFilter: ['class', 'style', 'data-theme']
+    });
+    themeObserver.observe(document.body, {
+        attributes: true,
+        attributeFilter: ['class', 'style', 'data-theme']
+    });
+};
+
+
+
+
+
+console.log("Initializing mermaid with", darkTheme ? "dark" : "default", "theme");
+mermaid.initialize(
+    {...JSON.parse(
+        `{"startOnLoad": false}`
+    ),
+    ...{ darkMode: darkTheme, theme: darkTheme ? 'dark' : 'default' },
+    }
+);
+
+window.addEventListener("load", load);
+window.runMermaid = runMermaid;</script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="author" title="About these documents" href="../../about.html" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="gRPC ROS2" href="grpc_ros2_component.html" />
+    <link rel="prev" title="ROS2 Management" href="../ros2_components.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            Fleet Manager
+          </a>
+              <div class="version">
+                1.0
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../about.html">About the project</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../getting_started.html">Getting Started</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../modules.html">Code documentation</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../Drone_module/index.html">Drone</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">Fleet Manager</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../init_fleet_component.html">Init Fleet Manager</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../mission_components.html">Mission Management</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../ros2_components.html">ROS2 Management</a><ul class="current">
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Commands Action Client</a></li>
+<li class="toctree-l4"><a class="reference internal" href="grpc_ros2_component.html">gRPC ROS2</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../rest_components.html">REST Management</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../mqtt_components.html">MQTT Management</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../pm_components.html">Prescription Map Management</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../metrics_components.html">System Metrics Component</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../clear_fleet_component.html">Clear Fleet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../create_logger_fleet_component.html">Create Logger</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../training.html">Training documentation</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Fleet Manager</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../modules.html">Code documentation</a></li>
+          <li class="breadcrumb-item"><a href="../index.html">Fleet Manager</a></li>
+          <li class="breadcrumb-item"><a href="../ros2_components.html">ROS2 Management</a></li>
+      <li class="breadcrumb-item active">Commands Action Client</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/Fleet_module/ROS2/commands_action_client_component.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="module-0">
+<span id="commands-action-client"></span><h1>Commands Action Client<a class="headerlink" href="#module-0" title="Link to this heading"></a></h1>
+<p>ROS 2 Action Client Module for Drone Command Management</p>
+<div class="versionadded" id="module-commands_action_client">
+<p><span class="versionmodified added">Added in version 1.0.</span></p>
+</div>
+<p>This module implements a comprehensive ROS 2 Action Client system for managing drone
+command execution in the Fleet Management System. It provides asynchronous command
+submission, real-time feedback processing, and result collection for multiple drones
+operating concurrently.</p>
+<dl>
+<dt>Architecture Overview:</dt><dd><p>The module follows the ROS 2 action pattern for long-running, preemptible tasks:</p>
+<ol class="arabic simple">
+<li><p><strong>Action Client Node</strong>: Central ROS 2 node managing all drone communications</p></li>
+<li><p><strong>Multi-drone Support</strong>: Dynamic action client creation for each drone</p></li>
+<li><p><strong>Asynchronous Processing</strong>: Non-blocking goal submission and result handling</p></li>
+<li><p><strong>Feedback Integration</strong>: Real-time status updates during command execution</p></li>
+<li><p><strong>Queue-based Communication</strong>: Thread-safe result passing to Fleet Management</p></li>
+</ol>
+</dd>
+<dt>ROS 2 Action Pattern:</dt><dd><pre  class="mermaid">
+        graph LR
+    A[Action Client] --&gt; B[Goal Submission]
+    B --&gt; C[Action Server]
+    C --&gt; D[Feedback Updates]
+    D --&gt; A
+    C --&gt; E[Final Result]
+    E --&gt; A
+
+    A --&gt; F[Status Queue]
+    F --&gt; G[Fleet Management]
+    </pre></dd>
+<dt>Key Features:</dt><dd><ul class="simple">
+<li><p><strong>Multi-drone Management</strong>: Concurrent command execution across multiple vehicles</p></li>
+<li><p><strong>Dynamic Client Creation</strong>: Automatic action client creation for new drones</p></li>
+<li><p><strong>Asynchronous Callbacks</strong>: Non-blocking feedback and result processing</p></li>
+<li><p><strong>Thread-safe Operations</strong>: Queue-based communication with external systems</p></li>
+<li><p><strong>Connection Management</strong>: Automatic server availability checking</p></li>
+<li><p><strong>Error Recovery</strong>: Comprehensive error handling and timeout management</p></li>
+</ul>
+</dd>
+<dt>Command Execution Workflow:</dt><dd><ol class="arabic simple">
+<li><p><strong>Goal Submission</strong>: Commands sent as action goals to drone-specific topics</p></li>
+<li><p><strong>Server Availability</strong>: Check for active drone action servers</p></li>
+<li><p><strong>Goal Acceptance</strong>: Await confirmation from drone action servers</p></li>
+<li><p><strong>Feedback Processing</strong>: Handle intermediate status updates during execution</p></li>
+<li><p><strong>Result Collection</strong>: Process final execution results and status codes</p></li>
+<li><p><strong>Status Reporting</strong>: Queue results for transmission to Fleet Management</p></li>
+</ol>
+</dd>
+<dt>ROS 2 Integration:</dt><dd><p><strong>Action Definition</strong>: Uses Commands action from commands_action_interface</p>
+<p><strong>Topic Structure</strong>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">drone</span><span class="p">{</span><span class="nb">id</span><span class="p">}</span><span class="o">/</span><span class="n">commands</span>  <span class="c1"># Action server endpoint for each drone</span>
+</pre></div>
+</div>
+<p><strong>Message Types</strong>:
+- <strong>Goal</strong>: commands_list (list of JSON command strings)
+- <strong>Feedback</strong>: command_status (intermediate execution status)
+- <strong>Result</strong>: plan_result (final execution results and status)</p>
+</dd>
+<dt>Multi-threaded Design:</dt><dd><ul class="simple">
+<li><p><strong>Main Thread</strong>: Goal submission and callback registration</p></li>
+<li><p><strong>Executor Thread</strong>: ROS 2 node spinning and callback execution</p></li>
+<li><p><strong>Queue Thread</strong>: Asynchronous result transmission to Fleet Management</p></li>
+<li><p><strong>Action Threads</strong>: Individual action goal execution (managed by ROS 2)</p></li>
+</ul>
+</dd>
+<dt>Status Code Integration:</dt><dd><p><strong>Goal Response Codes</strong>:
+- 0: Goal accepted and processing
+- 1: Goal rejected by action server</p>
+<p><strong>Result Formats</strong>:
+- Feedback: JSON command status updates
+- Results: Complete execution results with success/failure indicators</p>
+</dd>
+<dt>Thread Safety:</dt><dd><p>All queue operations are thread-safe, enabling concurrent access from:
+- ROS 2 callback functions
+- Action client management functions
+- External Fleet Management components</p>
+</dd>
+<dt>Classes:</dt><dd><dl class="py class">
+<dt class="sig sig-object py" id="commands_action_client.CommandsActionClient">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">commands_action_client.</span></span><span class="sig-name descname"><span class="pre">CommandsActionClient</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/commands_action_client.html#CommandsActionClient"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#commands_action_client.CommandsActionClient" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Node</span></code></p>
+<p>ROS 2 Action Client node for comprehensive drone command management and execution.</p>
+<p>This class extends the ROS 2 Node to provide specialized action client functionality
+for managing multiple drone command executions simultaneously. It handles dynamic
+action client creation, asynchronous goal management, and comprehensive status
+reporting through queue-based communication.</p>
+<dl class="simple">
+<dt>Node Architecture:</dt><dd><ul class="simple">
+<li><p><strong>Node Name</strong>: ‘commands_action_client’</p></li>
+<li><p><strong>Action Type</strong>: Commands (from commands_action_interface)</p></li>
+<li><p><strong>Topic Pattern</strong>: ‘/drone{id}/commands’ for each managed drone</p></li>
+<li><p><strong>Executor</strong>: MultiThreadedExecutor for concurrent callback processing</p></li>
+</ul>
+</dd>
+<dt>Multi-drone Management:</dt><dd><p>The client maintains a dictionary mapping drone IDs to action clients,
+enabling concurrent command execution across multiple vehicles:</p>
+<ul class="simple">
+<li><p><strong>Dynamic Creation</strong>: New action clients created on first drone contact</p></li>
+<li><p><strong>Persistent Connections</strong>: Action clients reused for subsequent commands</p></li>
+<li><p><strong>Independent Processing</strong>: Each drone’s commands execute independently</p></li>
+<li><p><strong>Concurrent Feedback</strong>: Multiple drones provide feedback simultaneously</p></li>
+</ul>
+</dd>
+<dt>Command Processing Pipeline:</dt><dd><ol class="arabic simple">
+<li><p><strong>Goal Preparation</strong>: Convert command list to Commands.Goal message</p></li>
+<li><p><strong>Server Validation</strong>: Check action server availability with timeout</p></li>
+<li><p><strong>Goal Submission</strong>: Submit goal with feedback callback registration</p></li>
+<li><p><strong>Response Handling</strong>: Process goal acceptance/rejection notifications</p></li>
+<li><p><strong>Feedback Processing</strong>: Handle intermediate status updates during execution</p></li>
+<li><p><strong>Result Collection</strong>: Process final execution results and completion status</p></li>
+</ol>
+</dd>
+<dt>Callback Management:</dt><dd><p>The class implements three primary callback types:</p>
+<ul class="simple">
+<li><p><strong>Feedback Callbacks</strong>: Real-time command execution status updates</p></li>
+<li><p><strong>Goal Response Callbacks</strong>: Goal acceptance/rejection notifications</p></li>
+<li><p><strong>Result Callbacks</strong>: Final command execution results and completion status</p></li>
+</ul>
+</dd>
+<dt>Queue Integration:</dt><dd><p>All status updates are published to a thread-safe queue for external consumption:</p>
+<ul class="simple">
+<li><p><strong>Goal Status</strong>: Acceptance (0) or rejection (1) codes</p></li>
+<li><p><strong>Feedback Updates</strong>: Intermediate command execution status</p></li>
+<li><p><strong>Final Results</strong>: Complete execution results with success/failure details</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ros2_action_queue</strong> (<em>queue.Queue</em>) – Thread-safe queue for publishing action status updates</p></li>
+<li><p><strong>ros2_logger</strong> (<em>logging.Logger</em>) – Pre-configured logger instance for ROS 2 operation tracking</p></li>
+</ul>
+</dd>
+<dt class="field-even">Variables<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>_action_clients</strong> (<em>Dict</em><em>[</em><em>int</em><em>, </em><em>ActionClient</em><em>]</em>) – Active drone action client mapping (drone_id → ActionClient)</p></li>
+<li><p><strong>ros2_action_queue</strong> (<em>queue.Queue</em>) – Queue for publishing status updates to external systems</p></li>
+<li><p><strong>ros2_logger</strong> (<em>logging.Logger</em>) – Logger instance for operation tracking and debugging</p></li>
+</ul>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<p><strong>Node Initialization</strong>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">queue</span> <span class="o">=</span> <span class="n">queue</span><span class="o">.</span><span class="n">Queue</span><span class="p">()</span>
+<span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="s1">&#39;ROS2&#39;</span><span class="p">)</span>
+<span class="n">client</span> <span class="o">=</span> <span class="n">CommandsActionClient</span><span class="p">(</span><span class="n">queue</span><span class="p">,</span> <span class="n">logger</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Multi-drone Command Execution</strong>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Commands for drone 1</span>
+<span class="n">client</span><span class="o">.</span><span class="n">send_goal</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;{&quot;cmd&quot;: &quot;takeoff&quot;}&#39;</span><span class="p">,</span> <span class="s1">&#39;{&quot;cmd&quot;: &quot;patrol&quot;}&#39;</span><span class="p">])</span>
+
+<span class="c1"># Commands for drone 2 (executed concurrently)</span>
+<span class="n">client</span><span class="o">.</span><span class="n">send_goal</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;{&quot;cmd&quot;: &quot;survey&quot;}&#39;</span><span class="p">,</span> <span class="s1">&#39;{&quot;cmd&quot;: &quot;return&quot;}&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The node automatically manages action client lifecycle, creating new clients
+for previously unseen drone IDs and reusing existing clients for efficiency.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Action server availability is checked with a 2-second timeout. Commands
+will be rejected if target drone action servers are not responding.</p>
+</div>
+<dl class="py method">
+<dt class="sig sig-object py" id="commands_action_client.CommandsActionClient.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ros2_action_queue</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ros2_logger</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/commands_action_client.html#CommandsActionClient.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#commands_action_client.CommandsActionClient.__init__" title="Link to this definition"></a></dt>
+<dd><p>Initialize ROS 2 action client node with communication infrastructure.</p>
+<p>Sets up the node with necessary components for multi-drone action management,
+including action client storage, queue communication, and logging infrastructure.</p>
+<dl class="simple">
+<dt>Initialization Process:</dt><dd><ol class="arabic simple">
+<li><p><strong>Node Creation</strong>: Initialize ROS 2 node with unique name</p></li>
+<li><p><strong>Storage Setup</strong>: Initialize action client dictionary for drone mapping</p></li>
+<li><p><strong>Queue Configuration</strong>: Store reference to thread-safe status queue</p></li>
+<li><p><strong>Logging Setup</strong>: Configure logger for operation tracking</p></li>
+</ol>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ros2_action_queue</strong> (<em>queue.Queue</em>) – Queue for publishing action status updates to external systems</p></li>
+<li><p><strong>ros2_logger</strong> (<em>logging.Logger</em>) – Pre-configured logger for ROS 2 operation tracking</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="commands_action_client.CommandsActionClient.send_goal">
+<span class="sig-name descname"><span class="pre">send_goal</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">drone_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">commands_list</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/commands_action_client.html#CommandsActionClient.send_goal"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#commands_action_client.CommandsActionClient.send_goal" title="Link to this definition"></a></dt>
+<dd><p>Submit command sequence to target drone action server with comprehensive error handling.</p>
+<p>This method manages the complete goal submission workflow including action client
+creation, server availability validation, goal preparation, and asynchronous
+callback registration for feedback and result processing.</p>
+<dl class="simple">
+<dt>Goal Submission Workflow:</dt><dd><ol class="arabic simple">
+<li><p><strong>Client Management</strong>: Create or retrieve action client for target drone</p></li>
+<li><p><strong>Server Validation</strong>: Verify action server availability with timeout</p></li>
+<li><p><strong>Goal Preparation</strong>: Package commands into Commands.Goal message</p></li>
+<li><p><strong>Callback Registration</strong>: Set up feedback and result callbacks</p></li>
+<li><p><strong>Goal Submission</strong>: Submit goal asynchronously to action server</p></li>
+</ol>
+</dd>
+<dt>Action Client Management:</dt><dd><ul class="simple">
+<li><p><strong>Dynamic Creation</strong>: New ActionClient instances created for unseen drone IDs</p></li>
+<li><p><strong>Client Reuse</strong>: Existing clients reused for efficiency and connection persistence</p></li>
+<li><p><strong>Topic Naming</strong>: Action topics follow ‘/drone{id}/commands’ convention</p></li>
+<li><p><strong>Client Storage</strong>: Clients stored in internal dictionary for lifecycle management</p></li>
+</ul>
+</dd>
+<dt>Server Availability Checking:</dt><dd><ul class="simple">
+<li><p><strong>Timeout</strong>: 2-second timeout for server response validation</p></li>
+<li><p><strong>Error Handling</strong>: Graceful failure handling for unavailable servers</p></li>
+<li><p><strong>Logging</strong>: Detailed error messages for troubleshooting connectivity issues</p></li>
+</ul>
+</dd>
+<dt>Callback Chain Setup:</dt><dd><p>The method establishes a complete callback chain for goal lifecycle management:</p>
+<ul class="simple">
+<li><p><strong>Feedback Callback</strong>: Receives intermediate command execution status</p></li>
+<li><p><strong>Goal Response Callback</strong>: Handles goal acceptance/rejection notifications</p></li>
+<li><p><strong>Result Callback</strong>: Processes final execution results (set up in response callback)</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>drone_id</strong> (<em>int</em>) – Unique identifier for target drone (must be positive integer)</p></li>
+<li><p><strong>commands_list</strong> (<em>List</em><em>[</em><em>str</em><em>]</em>) – Ordered sequence of JSON command strings for execution</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>RuntimeError</strong> – If action server is unavailable after timeout period</p></li>
+<li><p><strong>ValueError</strong> – If drone_id is invalid or commands_list is malformed</p></li>
+</ul>
+</dd>
+</dl>
+<dl>
+<dt>Command Format:</dt><dd><p>Each command in commands_list should be a valid JSON string:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span>
+    <span class="s1">&#39;{&quot;command&quot;: &quot;takeoff&quot;, &quot;altitude&quot;: 10}&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;{&quot;command&quot;: &quot;move_to&quot;, &quot;x&quot;: 100, &quot;y&quot;: 200, &quot;z&quot;: 15}&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;{&quot;command&quot;: &quot;land&quot;, &quot;precision&quot;: &quot;high&quot;}&#39;</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<p><strong>Single Drone Command Submission</strong>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">commands</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;{&quot;cmd&quot;: &quot;takeoff&quot;}&#39;</span><span class="p">,</span> <span class="s1">&#39;{&quot;cmd&quot;: &quot;patrol_area&quot;}&#39;</span><span class="p">]</span>
+<span class="n">client</span><span class="o">.</span><span class="n">send_goal</span><span class="p">(</span><span class="n">drone_id</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">commands_list</span><span class="o">=</span><span class="n">commands</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Multi-step Mission</strong>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mission_commands</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s1">&#39;{&quot;command&quot;: &quot;preflight_check&quot;}&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;{&quot;command&quot;: &quot;takeoff&quot;, &quot;altitude&quot;: 20}&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;{&quot;command&quot;: &quot;navigate_waypoints&quot;, &quot;waypoints&quot;: [...]}&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;{&quot;command&quot;: &quot;return_to_base&quot;}&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;{&quot;command&quot;: &quot;land&quot;}&#39;</span>
+<span class="p">]</span>
+<span class="n">client</span><span class="o">.</span><span class="n">send_goal</span><span class="p">(</span><span class="n">drone_id</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">commands_list</span><span class="o">=</span><span class="n">mission_commands</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Action clients are created with a 2-second server availability timeout.
+Ensure target drone action servers are running before goal submission.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Goals submitted to unavailable servers will be logged as errors and
+not queued for retry. Ensure proper server availability before submission.</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="commands_action_client.CommandsActionClient.goal_response_callback">
+<span class="sig-name descname"><span class="pre">goal_response_callback</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">future</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">drone_id</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/commands_action_client.html#CommandsActionClient.goal_response_callback"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#commands_action_client.CommandsActionClient.goal_response_callback" title="Link to this definition"></a></dt>
+<dd><p>Handle action server goal acceptance/rejection responses with status reporting.</p>
+<p>This callback processes the initial response from drone action servers regarding
+goal acceptance or rejection. It manages the continuation of the action lifecycle
+by setting up result callbacks for accepted goals and reporting status through
+the communication queue.</p>
+<dl class="simple">
+<dt>Response Processing Workflow:</dt><dd><ol class="arabic simple">
+<li><p><strong>Future Resolution</strong>: Extract goal handle from completed future</p></li>
+<li><p><strong>Acceptance Check</strong>: Determine if goal was accepted by action server</p></li>
+<li><p><strong>Status Reporting</strong>: Queue appropriate status code for Fleet Management</p></li>
+<li><p><strong>Result Setup</strong>: Register result callback for accepted goals</p></li>
+<li><p><strong>Error Handling</strong>: Process rejection cases with appropriate logging</p></li>
+</ol>
+</dd>
+<dt>Status Code Reporting:</dt><dd><p>The method reports goal status through the action queue:
+- <strong>Code 0</strong>: Goal accepted and processing initiated
+- <strong>Code 1</strong>: Goal rejected by action server</p>
+</dd>
+<dt>Result Callback Chain:</dt><dd><p>For accepted goals, this method establishes the final link in the callback
+chain by registering a result callback that will handle command execution
+completion and final status reporting.</p>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>future</strong> (<em>rclpy.task.Future</em><em>[</em><em>GoalHandle</em><em>]</em>) – Completed future containing goal handle from action server</p></li>
+<li><p><strong>drone_id</strong> (<em>int</em>) – Identifier of target drone for status correlation</p></li>
+</ul>
+</dd>
+</dl>
+<dl>
+<dt>Queue Message Format:</dt><dd><p>Status messages are JSON-encoded arrays: [drone_id, status_code]</p>
+<p><strong>Acceptance</strong>: [123, 0] - Drone 123 goal accepted
+<strong>Rejection</strong>: [456, 1] - Drone 456 goal rejected</p>
+</dd>
+<dt>Example Flow:</dt><dd><p><strong>Successful Goal Acceptance</strong>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Goal submitted to drone 1</span>
+<span class="c1"># Server accepts goal</span>
+<span class="c1"># Callback logs acceptance and queues [1, 0]</span>
+<span class="c1"># Result callback registered for completion handling</span>
+</pre></div>
+</div>
+<p><strong>Goal Rejection</strong>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Goal submitted to drone 2</span>
+<span class="c1"># Server rejects goal (busy, invalid commands, etc.)</span>
+<span class="c1"># Callback logs rejection and queues [2, 1]</span>
+<span class="c1"># No result callback needed (goal lifecycle complete)</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This callback is automatically invoked by ROS 2 action infrastructure
+when the action server responds to goal submission requests.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Rejected goals will not have result callbacks registered. The Fleet
+Management System should handle rejection status appropriately.</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="commands_action_client.CommandsActionClient.get_result_callback">
+<span class="sig-name descname"><span class="pre">get_result_callback</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">future</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">drone_id</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/commands_action_client.html#CommandsActionClient.get_result_callback"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#commands_action_client.CommandsActionClient.get_result_callback" title="Link to this definition"></a></dt>
+<dd><p>Process final command execution results and completion status.</p>
+<p>This callback handles the culmination of the action lifecycle, processing
+the final results from completed command execution. It extracts execution
+results, logs completion status, and reports final outcomes to the Fleet
+Management System through the communication queue.</p>
+<dl class="simple">
+<dt>Result Processing Workflow:</dt><dd><ol class="arabic simple">
+<li><p><strong>Future Resolution</strong>: Extract action result from completed future</p></li>
+<li><p><strong>Result Extraction</strong>: Parse plan_result from action response</p></li>
+<li><p><strong>Status Logging</strong>: Log completion with result details</p></li>
+<li><p><strong>Queue Reporting</strong>: Send final results to Fleet Management System</p></li>
+</ol>
+</dd>
+<dt>Result Data Structure:</dt><dd><p>The action result contains a plan_result field with execution details:</p>
+<ul class="simple">
+<li><p><strong>Success Indicators</strong>: Command completion status for each step</p></li>
+<li><p><strong>Execution Data</strong>: Detailed results from each command execution</p></li>
+<li><p><strong>Error Information</strong>: Failure details if commands encountered issues</p></li>
+<li><p><strong>Performance Metrics</strong>: Timing and resource usage data (if available)</p></li>
+</ul>
+</dd>
+<dt>Queue Communication:</dt><dd><p>Final results are serialized as JSON and queued for transmission:
+- <strong>Format</strong>: JSON string containing complete plan_result data
+- <strong>Content</strong>: Execution status, results, and any error information
+- <strong>Processing</strong>: Consumed by Fleet Management for mission status updates</p>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>future</strong> (<em>rclpy.task.Future</em><em>[</em><em>ActionResult</em><em>]</em>) – Completed future containing final action execution results</p></li>
+<li><p><strong>drone_id</strong> (<em>int</em>) – Identifier of drone that completed command execution</p></li>
+</ul>
+</dd>
+</dl>
+<dl>
+<dt>Result Content Examples:</dt><dd><p><strong>Successful Execution</strong>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="s2">&quot;commands_completed&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+    <span class="s2">&quot;execution_time&quot;</span><span class="p">:</span> <span class="mf">45.2</span><span class="p">,</span>
+    <span class="s2">&quot;status&quot;</span><span class="p">:</span> <span class="s2">&quot;SUCCESS&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;results&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span><span class="s2">&quot;command&quot;</span><span class="p">:</span> <span class="s2">&quot;takeoff&quot;</span><span class="p">,</span> <span class="s2">&quot;status&quot;</span><span class="p">:</span> <span class="s2">&quot;completed&quot;</span><span class="p">,</span> <span class="s2">&quot;altitude&quot;</span><span class="p">:</span> <span class="mi">10</span><span class="p">},</span>
+        <span class="p">{</span><span class="s2">&quot;command&quot;</span><span class="p">:</span> <span class="s2">&quot;move_to&quot;</span><span class="p">,</span> <span class="s2">&quot;status&quot;</span><span class="p">:</span> <span class="s2">&quot;completed&quot;</span><span class="p">,</span> <span class="s2">&quot;position&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">100</span><span class="p">,</span> <span class="mi">200</span><span class="p">]},</span>
+        <span class="p">{</span><span class="s2">&quot;command&quot;</span><span class="p">:</span> <span class="s2">&quot;land&quot;</span><span class="p">,</span> <span class="s2">&quot;status&quot;</span><span class="p">:</span> <span class="s2">&quot;completed&quot;</span><span class="p">,</span> <span class="s2">&quot;precision&quot;</span><span class="p">:</span> <span class="s2">&quot;high&quot;</span><span class="p">}</span>
+    <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>Partial Failure</strong>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="s2">&quot;commands_completed&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+    <span class="s2">&quot;execution_time&quot;</span><span class="p">:</span> <span class="mf">23.1</span><span class="p">,</span>
+    <span class="s2">&quot;status&quot;</span><span class="p">:</span> <span class="s2">&quot;PARTIAL_FAILURE&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;error&quot;</span><span class="p">:</span> <span class="s2">&quot;Navigation sensor malfunction during move_to&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;results&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span><span class="s2">&quot;command&quot;</span><span class="p">:</span> <span class="s2">&quot;takeoff&quot;</span><span class="p">,</span> <span class="s2">&quot;status&quot;</span><span class="p">:</span> <span class="s2">&quot;completed&quot;</span><span class="p">},</span>
+        <span class="p">{</span><span class="s2">&quot;command&quot;</span><span class="p">:</span> <span class="s2">&quot;move_to&quot;</span><span class="p">,</span> <span class="s2">&quot;status&quot;</span><span class="p">:</span> <span class="s2">&quot;failed&quot;</span><span class="p">,</span> <span class="s2">&quot;error&quot;</span><span class="p">:</span> <span class="s2">&quot;sensor_error&quot;</span><span class="p">}</span>
+    <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This callback represents the final stage of the action lifecycle.
+After this callback completes, the action is considered finished.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Result data format depends on drone action server implementation.
+Ensure Fleet Management can handle various result formats appropriately.</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="commands_action_client.CommandsActionClient.feedback_callback">
+<span class="sig-name descname"><span class="pre">feedback_callback</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">feedback_msg</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">drone_id</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/commands_action_client.html#CommandsActionClient.feedback_callback"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#commands_action_client.CommandsActionClient.feedback_callback" title="Link to this definition"></a></dt>
+<dd><p>Handle intermediate command execution updates and status reporting.</p>
+<p>This callback processes real-time feedback from drone action servers during
+command execution. It provides continuous status updates to the Fleet Management
+System, enabling real-time monitoring of command progress and execution status.</p>
+<dl class="simple">
+<dt>Feedback Processing Workflow:</dt><dd><ol class="arabic simple">
+<li><p><strong>Message Extraction</strong>: Extract feedback data from ROS 2 message</p></li>
+<li><p><strong>Status Parsing</strong>: Parse command_status from feedback payload</p></li>
+<li><p><strong>Progress Logging</strong>: Log intermediate execution status for monitoring</p></li>
+<li><p><strong>Queue Reporting</strong>: Send status updates to Fleet Management System</p></li>
+</ol>
+</dd>
+<dt>Feedback Frequency:</dt><dd><p>Feedback frequency depends on drone action server implementation:
+- <strong>Per-command Updates</strong>: Status after each command completion
+- <strong>Progress Updates</strong>: Intermediate progress during long-running commands
+- <strong>Error Notifications</strong>: Immediate updates when issues are encountered
+- <strong>Heartbeat Messages</strong>: Periodic status to confirm connection health</p>
+</dd>
+<dt>Status Information Types:</dt><dd><p>Feedback typically includes various types of execution status:</p>
+<ul class="simple">
+<li><p><strong>Command Progress</strong>: Current command execution state</p></li>
+<li><p><strong>Position Updates</strong>: Real-time drone position and orientation</p></li>
+<li><p><strong>Sensor Data</strong>: Environmental and system sensor readings</p></li>
+<li><p><strong>Error Conditions</strong>: Warnings and error states during execution</p></li>
+<li><p><strong>Performance Metrics</strong>: Resource usage and execution timing</p></li>
+</ul>
+</dd>
+<dt>Real-time Monitoring:</dt><dd><p>This callback enables the Fleet Management System to:
+- Track mission progress in real-time
+- Detect and respond to execution issues promptly
+- Provide live status updates to operators
+- Make dynamic mission adjustments based on feedback</p>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>feedback_msg</strong> (<em>Commands.FeedbackMessage</em>) – ROS 2 feedback message from drone action server</p></li>
+<li><p><strong>drone_id</strong> (<em>int</em>) – Identifier of drone providing feedback for status correlation</p></li>
+</ul>
+</dd>
+</dl>
+<dl>
+<dt>Feedback Content Examples:</dt><dd><p><strong>Command Progress</strong>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="s2">&quot;current_command&quot;</span><span class="p">:</span> <span class="s2">&quot;move_to&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;progress_percent&quot;</span><span class="p">:</span> <span class="mi">65</span><span class="p">,</span>
+    <span class="s2">&quot;estimated_time_remaining&quot;</span><span class="p">:</span> <span class="mf">12.3</span><span class="p">,</span>
+    <span class="s2">&quot;position&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">85</span><span class="p">,</span> <span class="mi">150</span><span class="p">,</span> <span class="mi">15</span><span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>Command Completion</strong>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="s2">&quot;command_completed&quot;</span><span class="p">:</span> <span class="s2">&quot;takeoff&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;execution_time&quot;</span><span class="p">:</span> <span class="mf">8.2</span><span class="p">,</span>
+    <span class="s2">&quot;final_altitude&quot;</span><span class="p">:</span> <span class="mf">10.1</span><span class="p">,</span>
+    <span class="s2">&quot;status&quot;</span><span class="p">:</span> <span class="s2">&quot;SUCCESS&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>Error Condition</strong>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="s2">&quot;current_command&quot;</span><span class="p">:</span> <span class="s2">&quot;land&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;status&quot;</span><span class="p">:</span> <span class="s2">&quot;WARNING&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;issue&quot;</span><span class="p">:</span> <span class="s2">&quot;High wind conditions detected&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;recommended_action&quot;</span><span class="p">:</span> <span class="s2">&quot;delay_landing&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Feedback frequency and content depend on drone action server
+implementation. Some servers may provide more detailed feedback than others.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>High-frequency feedback can impact network performance. Consider
+feedback filtering if network bandwidth is constrained.</p>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+</dd>
+<dt>Functions:</dt><dd><dl class="py function">
+<dt class="sig sig-object py" id="commands_action_client.create_ros2_action_client">
+<span class="sig-prename descclassname"><span class="pre">commands_action_client.</span></span><span class="sig-name descname"><span class="pre">create_ros2_action_client</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ros2_action_queue</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ros2_logger</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/commands_action_client.html#create_ros2_action_client"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#commands_action_client.create_ros2_action_client" title="Link to this definition"></a></dt>
+<dd><p>Initialize and configure ROS 2 action client infrastructure.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ros2_action_queue</strong> (<em>queue.Queue</em>) – Shared queue for action status updates</p></li>
+<li><p><strong>ros2_logger</strong> (<em>logging.Logger</em>) – Configured logger instance</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Initialized action client node</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#id0" title="commands_action_client.CommandsActionClient">CommandsActionClient</a></p>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Starts independent executor thread for ROS 2 node
+Sets up MultiThreadedExecutor for concurrent callbacks</p>
+</div>
+</dd></dl>
+
+</dd>
+<dt>Usage Examples:</dt><dd><p><strong>Basic Client Creation</strong>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ros2_queue</span> <span class="o">=</span> <span class="n">queue</span><span class="o">.</span><span class="n">Queue</span><span class="p">()</span>
+<span class="n">logger</span> <span class="o">=</span> <span class="n">create_logger</span><span class="p">(</span><span class="s1">&#39;ROS2&#39;</span><span class="p">,</span> <span class="s1">&#39;ros2.log&#39;</span><span class="p">)</span>
+<span class="n">client</span> <span class="o">=</span> <span class="n">create_ros2_action_client</span><span class="p">(</span><span class="n">ros2_queue</span><span class="p">,</span> <span class="n">logger</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Command Submission</strong>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">commands</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s1">&#39;{&quot;command&quot;: &quot;takeoff&quot;, &quot;altitude&quot;: 10}&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;{&quot;command&quot;: &quot;move_to&quot;, &quot;x&quot;: 100, &quot;y&quot;: 200}&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;{&quot;command&quot;: &quot;land&quot;}&#39;</span>
+<span class="p">]</span>
+<span class="n">client</span><span class="o">.</span><span class="n">send_goal</span><span class="p">(</span><span class="n">drone_id</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">commands_list</span><span class="o">=</span><span class="n">commands</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This module requires a properly configured ROS 2 environment with the
+commands_action_interface package installed and sourced.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Action servers must be running on target drones before goal submission.
+Goals will be rejected if corresponding action servers are unavailable.</p>
+</div>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<ul class="simple">
+<li><p><code class="xref py py-mod docutils literal notranslate"><span class="pre">ROS2.grpc_ros2</span></code>: gRPC integration for Fleet Management communication</p></li>
+<li><p><code class="xref py py-mod docutils literal notranslate"><span class="pre">commands_action_interface</span></code>: Action interface definitions</p></li>
+<li><p><span class="xref std std-doc">ROS 2 Actions Tutorial</span></p></li>
+</ul>
+</div>
+<dl class="py class">
+<dt class="sig sig-object py" id="id0">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">commands_action_client.</span></span><span class="sig-name descname"><span class="pre">CommandsActionClient</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/commands_action_client.html#CommandsActionClient"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id0" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Node</span></code></p>
+<p>ROS 2 Action Client node for comprehensive drone command management and execution.</p>
+<p>This class extends the ROS 2 Node to provide specialized action client functionality
+for managing multiple drone command executions simultaneously. It handles dynamic
+action client creation, asynchronous goal management, and comprehensive status
+reporting through queue-based communication.</p>
+<dl class="simple">
+<dt>Node Architecture:</dt><dd><ul class="simple">
+<li><p><strong>Node Name</strong>: ‘commands_action_client’</p></li>
+<li><p><strong>Action Type</strong>: Commands (from commands_action_interface)</p></li>
+<li><p><strong>Topic Pattern</strong>: ‘/drone{id}/commands’ for each managed drone</p></li>
+<li><p><strong>Executor</strong>: MultiThreadedExecutor for concurrent callback processing</p></li>
+</ul>
+</dd>
+<dt>Multi-drone Management:</dt><dd><p>The client maintains a dictionary mapping drone IDs to action clients,
+enabling concurrent command execution across multiple vehicles:</p>
+<ul class="simple">
+<li><p><strong>Dynamic Creation</strong>: New action clients created on first drone contact</p></li>
+<li><p><strong>Persistent Connections</strong>: Action clients reused for subsequent commands</p></li>
+<li><p><strong>Independent Processing</strong>: Each drone’s commands execute independently</p></li>
+<li><p><strong>Concurrent Feedback</strong>: Multiple drones provide feedback simultaneously</p></li>
+</ul>
+</dd>
+<dt>Command Processing Pipeline:</dt><dd><ol class="arabic simple">
+<li><p><strong>Goal Preparation</strong>: Convert command list to Commands.Goal message</p></li>
+<li><p><strong>Server Validation</strong>: Check action server availability with timeout</p></li>
+<li><p><strong>Goal Submission</strong>: Submit goal with feedback callback registration</p></li>
+<li><p><strong>Response Handling</strong>: Process goal acceptance/rejection notifications</p></li>
+<li><p><strong>Feedback Processing</strong>: Handle intermediate status updates during execution</p></li>
+<li><p><strong>Result Collection</strong>: Process final execution results and completion status</p></li>
+</ol>
+</dd>
+<dt>Callback Management:</dt><dd><p>The class implements three primary callback types:</p>
+<ul class="simple">
+<li><p><strong>Feedback Callbacks</strong>: Real-time command execution status updates</p></li>
+<li><p><strong>Goal Response Callbacks</strong>: Goal acceptance/rejection notifications</p></li>
+<li><p><strong>Result Callbacks</strong>: Final command execution results and completion status</p></li>
+</ul>
+</dd>
+<dt>Queue Integration:</dt><dd><p>All status updates are published to a thread-safe queue for external consumption:</p>
+<ul class="simple">
+<li><p><strong>Goal Status</strong>: Acceptance (0) or rejection (1) codes</p></li>
+<li><p><strong>Feedback Updates</strong>: Intermediate command execution status</p></li>
+<li><p><strong>Final Results</strong>: Complete execution results with success/failure details</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ros2_action_queue</strong> (<em>queue.Queue</em>) – Thread-safe queue for publishing action status updates</p></li>
+<li><p><strong>ros2_logger</strong> (<em>logging.Logger</em>) – Pre-configured logger instance for ROS 2 operation tracking</p></li>
+</ul>
+</dd>
+<dt class="field-even">Variables<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>_action_clients</strong> (<em>Dict</em><em>[</em><em>int</em><em>, </em><em>ActionClient</em><em>]</em>) – Active drone action client mapping (drone_id → ActionClient)</p></li>
+<li><p><strong>ros2_action_queue</strong> (<em>queue.Queue</em>) – Queue for publishing status updates to external systems</p></li>
+<li><p><strong>ros2_logger</strong> (<em>logging.Logger</em>) – Logger instance for operation tracking and debugging</p></li>
+</ul>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<p><strong>Node Initialization</strong>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">queue</span> <span class="o">=</span> <span class="n">queue</span><span class="o">.</span><span class="n">Queue</span><span class="p">()</span>
+<span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="s1">&#39;ROS2&#39;</span><span class="p">)</span>
+<span class="n">client</span> <span class="o">=</span> <span class="n">CommandsActionClient</span><span class="p">(</span><span class="n">queue</span><span class="p">,</span> <span class="n">logger</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Multi-drone Command Execution</strong>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Commands for drone 1</span>
+<span class="n">client</span><span class="o">.</span><span class="n">send_goal</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;{&quot;cmd&quot;: &quot;takeoff&quot;}&#39;</span><span class="p">,</span> <span class="s1">&#39;{&quot;cmd&quot;: &quot;patrol&quot;}&#39;</span><span class="p">])</span>
+
+<span class="c1"># Commands for drone 2 (executed concurrently)</span>
+<span class="n">client</span><span class="o">.</span><span class="n">send_goal</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;{&quot;cmd&quot;: &quot;survey&quot;}&#39;</span><span class="p">,</span> <span class="s1">&#39;{&quot;cmd&quot;: &quot;return&quot;}&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The node automatically manages action client lifecycle, creating new clients
+for previously unseen drone IDs and reusing existing clients for efficiency.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Action server availability is checked with a 2-second timeout. Commands
+will be rejected if target drone action servers are not responding.</p>
+</div>
+<dl class="py method">
+<dt class="sig sig-object py" id="id1">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ros2_action_queue</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ros2_logger</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/commands_action_client.html#CommandsActionClient.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id1" title="Link to this definition"></a></dt>
+<dd><p>Initialize ROS 2 action client node with communication infrastructure.</p>
+<p>Sets up the node with necessary components for multi-drone action management,
+including action client storage, queue communication, and logging infrastructure.</p>
+<dl class="simple">
+<dt>Initialization Process:</dt><dd><ol class="arabic simple">
+<li><p><strong>Node Creation</strong>: Initialize ROS 2 node with unique name</p></li>
+<li><p><strong>Storage Setup</strong>: Initialize action client dictionary for drone mapping</p></li>
+<li><p><strong>Queue Configuration</strong>: Store reference to thread-safe status queue</p></li>
+<li><p><strong>Logging Setup</strong>: Configure logger for operation tracking</p></li>
+</ol>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ros2_action_queue</strong> (<em>queue.Queue</em>) – Queue for publishing action status updates to external systems</p></li>
+<li><p><strong>ros2_logger</strong> (<em>logging.Logger</em>) – Pre-configured logger for ROS 2 operation tracking</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="id2">
+<span class="sig-name descname"><span class="pre">send_goal</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">drone_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">commands_list</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/commands_action_client.html#CommandsActionClient.send_goal"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id2" title="Link to this definition"></a></dt>
+<dd><p>Submit command sequence to target drone action server with comprehensive error handling.</p>
+<p>This method manages the complete goal submission workflow including action client
+creation, server availability validation, goal preparation, and asynchronous
+callback registration for feedback and result processing.</p>
+<dl class="simple">
+<dt>Goal Submission Workflow:</dt><dd><ol class="arabic simple">
+<li><p><strong>Client Management</strong>: Create or retrieve action client for target drone</p></li>
+<li><p><strong>Server Validation</strong>: Verify action server availability with timeout</p></li>
+<li><p><strong>Goal Preparation</strong>: Package commands into Commands.Goal message</p></li>
+<li><p><strong>Callback Registration</strong>: Set up feedback and result callbacks</p></li>
+<li><p><strong>Goal Submission</strong>: Submit goal asynchronously to action server</p></li>
+</ol>
+</dd>
+<dt>Action Client Management:</dt><dd><ul class="simple">
+<li><p><strong>Dynamic Creation</strong>: New ActionClient instances created for unseen drone IDs</p></li>
+<li><p><strong>Client Reuse</strong>: Existing clients reused for efficiency and connection persistence</p></li>
+<li><p><strong>Topic Naming</strong>: Action topics follow ‘/drone{id}/commands’ convention</p></li>
+<li><p><strong>Client Storage</strong>: Clients stored in internal dictionary for lifecycle management</p></li>
+</ul>
+</dd>
+<dt>Server Availability Checking:</dt><dd><ul class="simple">
+<li><p><strong>Timeout</strong>: 2-second timeout for server response validation</p></li>
+<li><p><strong>Error Handling</strong>: Graceful failure handling for unavailable servers</p></li>
+<li><p><strong>Logging</strong>: Detailed error messages for troubleshooting connectivity issues</p></li>
+</ul>
+</dd>
+<dt>Callback Chain Setup:</dt><dd><p>The method establishes a complete callback chain for goal lifecycle management:</p>
+<ul class="simple">
+<li><p><strong>Feedback Callback</strong>: Receives intermediate command execution status</p></li>
+<li><p><strong>Goal Response Callback</strong>: Handles goal acceptance/rejection notifications</p></li>
+<li><p><strong>Result Callback</strong>: Processes final execution results (set up in response callback)</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>drone_id</strong> (<em>int</em>) – Unique identifier for target drone (must be positive integer)</p></li>
+<li><p><strong>commands_list</strong> (<em>List</em><em>[</em><em>str</em><em>]</em>) – Ordered sequence of JSON command strings for execution</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>RuntimeError</strong> – If action server is unavailable after timeout period</p></li>
+<li><p><strong>ValueError</strong> – If drone_id is invalid or commands_list is malformed</p></li>
+</ul>
+</dd>
+</dl>
+<dl>
+<dt>Command Format:</dt><dd><p>Each command in commands_list should be a valid JSON string:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span>
+    <span class="s1">&#39;{&quot;command&quot;: &quot;takeoff&quot;, &quot;altitude&quot;: 10}&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;{&quot;command&quot;: &quot;move_to&quot;, &quot;x&quot;: 100, &quot;y&quot;: 200, &quot;z&quot;: 15}&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;{&quot;command&quot;: &quot;land&quot;, &quot;precision&quot;: &quot;high&quot;}&#39;</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<p><strong>Single Drone Command Submission</strong>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">commands</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;{&quot;cmd&quot;: &quot;takeoff&quot;}&#39;</span><span class="p">,</span> <span class="s1">&#39;{&quot;cmd&quot;: &quot;patrol_area&quot;}&#39;</span><span class="p">]</span>
+<span class="n">client</span><span class="o">.</span><span class="n">send_goal</span><span class="p">(</span><span class="n">drone_id</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">commands_list</span><span class="o">=</span><span class="n">commands</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Multi-step Mission</strong>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mission_commands</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s1">&#39;{&quot;command&quot;: &quot;preflight_check&quot;}&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;{&quot;command&quot;: &quot;takeoff&quot;, &quot;altitude&quot;: 20}&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;{&quot;command&quot;: &quot;navigate_waypoints&quot;, &quot;waypoints&quot;: [...]}&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;{&quot;command&quot;: &quot;return_to_base&quot;}&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;{&quot;command&quot;: &quot;land&quot;}&#39;</span>
+<span class="p">]</span>
+<span class="n">client</span><span class="o">.</span><span class="n">send_goal</span><span class="p">(</span><span class="n">drone_id</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">commands_list</span><span class="o">=</span><span class="n">mission_commands</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Action clients are created with a 2-second server availability timeout.
+Ensure target drone action servers are running before goal submission.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Goals submitted to unavailable servers will be logged as errors and
+not queued for retry. Ensure proper server availability before submission.</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="id3">
+<span class="sig-name descname"><span class="pre">goal_response_callback</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">future</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">drone_id</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/commands_action_client.html#CommandsActionClient.goal_response_callback"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id3" title="Link to this definition"></a></dt>
+<dd><p>Handle action server goal acceptance/rejection responses with status reporting.</p>
+<p>This callback processes the initial response from drone action servers regarding
+goal acceptance or rejection. It manages the continuation of the action lifecycle
+by setting up result callbacks for accepted goals and reporting status through
+the communication queue.</p>
+<dl class="simple">
+<dt>Response Processing Workflow:</dt><dd><ol class="arabic simple">
+<li><p><strong>Future Resolution</strong>: Extract goal handle from completed future</p></li>
+<li><p><strong>Acceptance Check</strong>: Determine if goal was accepted by action server</p></li>
+<li><p><strong>Status Reporting</strong>: Queue appropriate status code for Fleet Management</p></li>
+<li><p><strong>Result Setup</strong>: Register result callback for accepted goals</p></li>
+<li><p><strong>Error Handling</strong>: Process rejection cases with appropriate logging</p></li>
+</ol>
+</dd>
+<dt>Status Code Reporting:</dt><dd><p>The method reports goal status through the action queue:
+- <strong>Code 0</strong>: Goal accepted and processing initiated
+- <strong>Code 1</strong>: Goal rejected by action server</p>
+</dd>
+<dt>Result Callback Chain:</dt><dd><p>For accepted goals, this method establishes the final link in the callback
+chain by registering a result callback that will handle command execution
+completion and final status reporting.</p>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>future</strong> (<em>rclpy.task.Future</em><em>[</em><em>GoalHandle</em><em>]</em>) – Completed future containing goal handle from action server</p></li>
+<li><p><strong>drone_id</strong> (<em>int</em>) – Identifier of target drone for status correlation</p></li>
+</ul>
+</dd>
+</dl>
+<dl>
+<dt>Queue Message Format:</dt><dd><p>Status messages are JSON-encoded arrays: [drone_id, status_code]</p>
+<p><strong>Acceptance</strong>: [123, 0] - Drone 123 goal accepted
+<strong>Rejection</strong>: [456, 1] - Drone 456 goal rejected</p>
+</dd>
+<dt>Example Flow:</dt><dd><p><strong>Successful Goal Acceptance</strong>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Goal submitted to drone 1</span>
+<span class="c1"># Server accepts goal</span>
+<span class="c1"># Callback logs acceptance and queues [1, 0]</span>
+<span class="c1"># Result callback registered for completion handling</span>
+</pre></div>
+</div>
+<p><strong>Goal Rejection</strong>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Goal submitted to drone 2</span>
+<span class="c1"># Server rejects goal (busy, invalid commands, etc.)</span>
+<span class="c1"># Callback logs rejection and queues [2, 1]</span>
+<span class="c1"># No result callback needed (goal lifecycle complete)</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This callback is automatically invoked by ROS 2 action infrastructure
+when the action server responds to goal submission requests.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Rejected goals will not have result callbacks registered. The Fleet
+Management System should handle rejection status appropriately.</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="id4">
+<span class="sig-name descname"><span class="pre">get_result_callback</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">future</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">drone_id</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/commands_action_client.html#CommandsActionClient.get_result_callback"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id4" title="Link to this definition"></a></dt>
+<dd><p>Process final command execution results and completion status.</p>
+<p>This callback handles the culmination of the action lifecycle, processing
+the final results from completed command execution. It extracts execution
+results, logs completion status, and reports final outcomes to the Fleet
+Management System through the communication queue.</p>
+<dl class="simple">
+<dt>Result Processing Workflow:</dt><dd><ol class="arabic simple">
+<li><p><strong>Future Resolution</strong>: Extract action result from completed future</p></li>
+<li><p><strong>Result Extraction</strong>: Parse plan_result from action response</p></li>
+<li><p><strong>Status Logging</strong>: Log completion with result details</p></li>
+<li><p><strong>Queue Reporting</strong>: Send final results to Fleet Management System</p></li>
+</ol>
+</dd>
+<dt>Result Data Structure:</dt><dd><p>The action result contains a plan_result field with execution details:</p>
+<ul class="simple">
+<li><p><strong>Success Indicators</strong>: Command completion status for each step</p></li>
+<li><p><strong>Execution Data</strong>: Detailed results from each command execution</p></li>
+<li><p><strong>Error Information</strong>: Failure details if commands encountered issues</p></li>
+<li><p><strong>Performance Metrics</strong>: Timing and resource usage data (if available)</p></li>
+</ul>
+</dd>
+<dt>Queue Communication:</dt><dd><p>Final results are serialized as JSON and queued for transmission:
+- <strong>Format</strong>: JSON string containing complete plan_result data
+- <strong>Content</strong>: Execution status, results, and any error information
+- <strong>Processing</strong>: Consumed by Fleet Management for mission status updates</p>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>future</strong> (<em>rclpy.task.Future</em><em>[</em><em>ActionResult</em><em>]</em>) – Completed future containing final action execution results</p></li>
+<li><p><strong>drone_id</strong> (<em>int</em>) – Identifier of drone that completed command execution</p></li>
+</ul>
+</dd>
+</dl>
+<dl>
+<dt>Result Content Examples:</dt><dd><p><strong>Successful Execution</strong>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="s2">&quot;commands_completed&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+    <span class="s2">&quot;execution_time&quot;</span><span class="p">:</span> <span class="mf">45.2</span><span class="p">,</span>
+    <span class="s2">&quot;status&quot;</span><span class="p">:</span> <span class="s2">&quot;SUCCESS&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;results&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span><span class="s2">&quot;command&quot;</span><span class="p">:</span> <span class="s2">&quot;takeoff&quot;</span><span class="p">,</span> <span class="s2">&quot;status&quot;</span><span class="p">:</span> <span class="s2">&quot;completed&quot;</span><span class="p">,</span> <span class="s2">&quot;altitude&quot;</span><span class="p">:</span> <span class="mi">10</span><span class="p">},</span>
+        <span class="p">{</span><span class="s2">&quot;command&quot;</span><span class="p">:</span> <span class="s2">&quot;move_to&quot;</span><span class="p">,</span> <span class="s2">&quot;status&quot;</span><span class="p">:</span> <span class="s2">&quot;completed&quot;</span><span class="p">,</span> <span class="s2">&quot;position&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">100</span><span class="p">,</span> <span class="mi">200</span><span class="p">]},</span>
+        <span class="p">{</span><span class="s2">&quot;command&quot;</span><span class="p">:</span> <span class="s2">&quot;land&quot;</span><span class="p">,</span> <span class="s2">&quot;status&quot;</span><span class="p">:</span> <span class="s2">&quot;completed&quot;</span><span class="p">,</span> <span class="s2">&quot;precision&quot;</span><span class="p">:</span> <span class="s2">&quot;high&quot;</span><span class="p">}</span>
+    <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>Partial Failure</strong>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="s2">&quot;commands_completed&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+    <span class="s2">&quot;execution_time&quot;</span><span class="p">:</span> <span class="mf">23.1</span><span class="p">,</span>
+    <span class="s2">&quot;status&quot;</span><span class="p">:</span> <span class="s2">&quot;PARTIAL_FAILURE&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;error&quot;</span><span class="p">:</span> <span class="s2">&quot;Navigation sensor malfunction during move_to&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;results&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span><span class="s2">&quot;command&quot;</span><span class="p">:</span> <span class="s2">&quot;takeoff&quot;</span><span class="p">,</span> <span class="s2">&quot;status&quot;</span><span class="p">:</span> <span class="s2">&quot;completed&quot;</span><span class="p">},</span>
+        <span class="p">{</span><span class="s2">&quot;command&quot;</span><span class="p">:</span> <span class="s2">&quot;move_to&quot;</span><span class="p">,</span> <span class="s2">&quot;status&quot;</span><span class="p">:</span> <span class="s2">&quot;failed&quot;</span><span class="p">,</span> <span class="s2">&quot;error&quot;</span><span class="p">:</span> <span class="s2">&quot;sensor_error&quot;</span><span class="p">}</span>
+    <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This callback represents the final stage of the action lifecycle.
+After this callback completes, the action is considered finished.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Result data format depends on drone action server implementation.
+Ensure Fleet Management can handle various result formats appropriately.</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="id5">
+<span class="sig-name descname"><span class="pre">feedback_callback</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">feedback_msg</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">drone_id</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/commands_action_client.html#CommandsActionClient.feedback_callback"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id5" title="Link to this definition"></a></dt>
+<dd><p>Handle intermediate command execution updates and status reporting.</p>
+<p>This callback processes real-time feedback from drone action servers during
+command execution. It provides continuous status updates to the Fleet Management
+System, enabling real-time monitoring of command progress and execution status.</p>
+<dl class="simple">
+<dt>Feedback Processing Workflow:</dt><dd><ol class="arabic simple">
+<li><p><strong>Message Extraction</strong>: Extract feedback data from ROS 2 message</p></li>
+<li><p><strong>Status Parsing</strong>: Parse command_status from feedback payload</p></li>
+<li><p><strong>Progress Logging</strong>: Log intermediate execution status for monitoring</p></li>
+<li><p><strong>Queue Reporting</strong>: Send status updates to Fleet Management System</p></li>
+</ol>
+</dd>
+<dt>Feedback Frequency:</dt><dd><p>Feedback frequency depends on drone action server implementation:
+- <strong>Per-command Updates</strong>: Status after each command completion
+- <strong>Progress Updates</strong>: Intermediate progress during long-running commands
+- <strong>Error Notifications</strong>: Immediate updates when issues are encountered
+- <strong>Heartbeat Messages</strong>: Periodic status to confirm connection health</p>
+</dd>
+<dt>Status Information Types:</dt><dd><p>Feedback typically includes various types of execution status:</p>
+<ul class="simple">
+<li><p><strong>Command Progress</strong>: Current command execution state</p></li>
+<li><p><strong>Position Updates</strong>: Real-time drone position and orientation</p></li>
+<li><p><strong>Sensor Data</strong>: Environmental and system sensor readings</p></li>
+<li><p><strong>Error Conditions</strong>: Warnings and error states during execution</p></li>
+<li><p><strong>Performance Metrics</strong>: Resource usage and execution timing</p></li>
+</ul>
+</dd>
+<dt>Real-time Monitoring:</dt><dd><p>This callback enables the Fleet Management System to:
+- Track mission progress in real-time
+- Detect and respond to execution issues promptly
+- Provide live status updates to operators
+- Make dynamic mission adjustments based on feedback</p>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>feedback_msg</strong> (<em>Commands.FeedbackMessage</em>) – ROS 2 feedback message from drone action server</p></li>
+<li><p><strong>drone_id</strong> (<em>int</em>) – Identifier of drone providing feedback for status correlation</p></li>
+</ul>
+</dd>
+</dl>
+<dl>
+<dt>Feedback Content Examples:</dt><dd><p><strong>Command Progress</strong>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="s2">&quot;current_command&quot;</span><span class="p">:</span> <span class="s2">&quot;move_to&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;progress_percent&quot;</span><span class="p">:</span> <span class="mi">65</span><span class="p">,</span>
+    <span class="s2">&quot;estimated_time_remaining&quot;</span><span class="p">:</span> <span class="mf">12.3</span><span class="p">,</span>
+    <span class="s2">&quot;position&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">85</span><span class="p">,</span> <span class="mi">150</span><span class="p">,</span> <span class="mi">15</span><span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>Command Completion</strong>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="s2">&quot;command_completed&quot;</span><span class="p">:</span> <span class="s2">&quot;takeoff&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;execution_time&quot;</span><span class="p">:</span> <span class="mf">8.2</span><span class="p">,</span>
+    <span class="s2">&quot;final_altitude&quot;</span><span class="p">:</span> <span class="mf">10.1</span><span class="p">,</span>
+    <span class="s2">&quot;status&quot;</span><span class="p">:</span> <span class="s2">&quot;SUCCESS&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>Error Condition</strong>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="s2">&quot;current_command&quot;</span><span class="p">:</span> <span class="s2">&quot;land&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;status&quot;</span><span class="p">:</span> <span class="s2">&quot;WARNING&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;issue&quot;</span><span class="p">:</span> <span class="s2">&quot;High wind conditions detected&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;recommended_action&quot;</span><span class="p">:</span> <span class="s2">&quot;delay_landing&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Feedback frequency and content depend on drone action server
+implementation. Some servers may provide more detailed feedback than others.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>High-frequency feedback can impact network performance. Consider
+feedback filtering if network bandwidth is constrained.</p>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="id6">
+<span class="sig-prename descclassname"><span class="pre">commands_action_client.</span></span><span class="sig-name descname"><span class="pre">create_ros2_action_client</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ros2_action_queue</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ros2_logger</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/commands_action_client.html#create_ros2_action_client"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id6" title="Link to this definition"></a></dt>
+<dd><p>Initialize and configure ROS 2 action client infrastructure.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ros2_action_queue</strong> (<em>queue.Queue</em>) – Shared queue for action status updates</p></li>
+<li><p><strong>ros2_logger</strong> (<em>logging.Logger</em>) – Configured logger instance</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Initialized action client node</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#id0" title="commands_action_client.CommandsActionClient">CommandsActionClient</a></p>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Starts independent executor thread for ROS 2 node
+Sets up MultiThreadedExecutor for concurrent callbacks</p>
+</div>
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../ros2_components.html" class="btn btn-neutral float-left" title="ROS2 Management" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="grpc_ros2_component.html" class="btn btn-neutral float-right" title="gRPC ROS2" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, Estela Mora Barba.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

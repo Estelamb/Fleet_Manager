@@ -1,0 +1,806 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>diseases_labels_dir &mdash; Fleet Manager 1.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=f2a433a1"></script>
+        <script src="../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+        <script src="../_static/copybutton.js?v=f281be69"></script>
+        <script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script>
+        <script type="module">import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11.12.1/dist/mermaid.esm.min.mjs";
+
+
+
+
+
+const initStyles = () => {
+    const defaultStyle = document.createElement('style');
+    defaultStyle.textContent = `pre.mermaid {
+    /* Same as .mermaid-container > pre */
+    display: block;
+    width: 100%;
+}
+
+pre.mermaid > svg {
+    /* Same as .mermaid-container > pre > svg */
+    height: 500px;
+    width: 100%;
+    max-width: 100% !important;
+}`;
+    document.head.appendChild(defaultStyle);
+
+    const fullscreenStyle = document.createElement('style');
+    fullscreenStyle.textContent = `.mermaid-container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.mermaid-container > pre {
+    display: block;
+    width: 100%;
+}
+
+.mermaid-container > pre > svg {
+    height: 500px;
+    width: 100%;
+    max-width: 100% !important;
+}
+
+.mermaid-fullscreen-btn {
+    width: 28px;
+    height: 28px;
+    background: rgba(255, 255, 255, 0.95);
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    border-radius: 4px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    font-size: 14px;
+    line-height: 1;
+    padding: 0;
+    color: #333;
+}
+
+.mermaid-fullscreen-btn:hover {
+    opacity: 100% !important;
+    background: rgba(255, 255, 255, 1);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+    transform: scale(1.1);
+}
+
+.mermaid-fullscreen-btn.dark-theme {
+    background: rgba(50, 50, 50, 0.95);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: #e0e0e0;
+}
+
+.mermaid-fullscreen-btn.dark-theme:hover {
+    background: rgba(60, 60, 60, 1);
+    box-shadow: 0 3px 10px rgba(255, 255, 255, 0.2);
+}
+
+.mermaid-fullscreen-modal {
+    display: none;
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 95vw;
+    height: 100vh;
+    background: rgba(255, 255, 255, 0.98);
+    z-index: 9999;
+    padding: 20px;
+    overflow: auto;
+}
+
+.mermaid-fullscreen-modal.dark-theme {
+    background: rgba(0, 0, 0, 0.98);
+}
+
+.mermaid-fullscreen-modal.active {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mermaid-container-fullscreen {
+    position: relative;
+    width: 95vw;
+    height: 90vh;
+    max-width: 95vw;
+    max-height: 90vh;
+    background: white;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    overflow: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mermaid-container-fullscreen.dark-theme {
+    background: #1a1a1a;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.8);
+}
+
+.mermaid-container-fullscreen pre.mermaid {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mermaid-container-fullscreen .mermaid svg {
+    height: 100% !important;
+    width: 100% !important;
+    cursor: grab;
+}
+
+.mermaid-fullscreen-close {
+    position: fixed !important;
+    top: 20px !important;
+    right: 20px !important;
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.95);
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    transition: all 0.2s;
+    font-size: 24px;
+    line-height: 1;
+    color: #333;
+}
+
+.mermaid-fullscreen-close:hover {
+    background: white;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+    transform: scale(1.1);
+}
+
+.mermaid-fullscreen-close.dark-theme {
+    background: rgba(50, 50, 50, 0.95);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #e0e0e0;
+}
+
+.mermaid-fullscreen-close.dark-theme:hover {
+    background: rgba(60, 60, 60, 1);
+    box-shadow: 0 6px 16px rgba(255, 255, 255, 0.2);
+}
+
+.mermaid-fullscreen-modal .mermaid-fullscreen-btn {
+    display: none !important;
+}`;
+    document.head.appendChild(fullscreenStyle);
+}
+
+// Detect if page has dark background
+const isDarkTheme = () => {
+    // We use a set of heuristics:
+    // 1. Check for common dark mode classes or attributes
+    // 2. Check computed background color brightness
+    if (document.documentElement.classList.contains('dark') ||
+        document.documentElement.getAttribute('data-theme') === 'dark' ||
+        document.body.classList.contains('dark') ||
+        document.body.getAttribute('data-theme') === 'dark') {
+        // console.log("Dark theme detected via class/attribute");
+        return true;
+    }
+    if (document.documentElement.classList.contains('light') ||
+        document.documentElement.getAttribute('data-theme') === 'light' ||
+        document.body.classList.contains('light') ||
+        document.body.getAttribute('data-theme') === 'light') {
+        // console.log("Light theme detected via class/attribute");
+        return false;
+    }
+    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        // console.log("Dark theme detected via prefers-color-scheme");
+        return true;
+    }
+    const bgColor = window.getComputedStyle(document.body).backgroundColor;
+    const match = bgColor.match(/rgb\((\d+),\s*(\d+),\s*(\d+)/);
+    if (match) {
+        const r = parseInt(match[1]);
+        const g = parseInt(match[2]);
+        const b = parseInt(match[3]);
+        const brightness = (r * 299 + g * 587 + b * 114) / 1000;
+        // console.log("Background color brightness:", brightness);
+        return brightness < 128;
+    }
+    // console.log("No dark or light theme detected, defaulting to light theme");
+    return false;
+};
+
+let darkTheme = isDarkTheme();
+let modal = null;
+let modalContent = null;
+let previousScrollOffset = [window.scrollX, window.scrollY];
+
+const runMermaid = async (rerun) => {
+    console.log("Running mermaid diagrams, rerun =", rerun);
+    // clear all existing mermaid charts
+    let all_mermaids = document.querySelectorAll(".mermaid");
+
+    if (rerun) {
+        all_mermaids.forEach((el) => {
+            if(!el.hasAttribute("data-original-code")) {
+                // store original code
+                // console.log(`Storing original code for first run: `, el.innerHTML);
+                el.setAttribute('data-original-code', el.innerHTML);
+            }
+            if(el.getAttribute("data-processed") === "true") {
+                // remove and restore original
+                el.removeAttribute("data-processed");
+                // console.log(`Restoring original code for re-run: `, el.getAttribute('data-original-code'));
+                el.innerHTML = el.getAttribute('data-original-code');
+            } else {
+                // store original code
+                // console.log(`Storing original code for re-run: `, el.innerHTML);
+                el.setAttribute('data-original-code', el.innerHTML);
+            }
+        });
+        await mermaid.run();
+    }
+
+    all_mermaids = document.querySelectorAll(".mermaid");
+    const mermaids_processed = document.querySelectorAll(".mermaid[data-processed='true']");
+
+    if ("False" === "True") {
+        const mermaids_to_add_zoom = -1 === -1 ? all_mermaids.length : -1;
+        if(mermaids_to_add_zoom > 0) {
+            var svgs = d3.selectAll("");
+            if(all_mermaids.length !== mermaids_processed.length) {
+                setTimeout(() => runMermaid(false), 200);
+                return;
+            } else if(svgs.size() !== mermaids_to_add_zoom) {
+                setTimeout(() => runMermaid(false), 200);
+                return;
+            } else {
+                svgs.each(function() {
+                    var svg = d3.select(this);
+                    svg.html("<g class='wrapper'>" + svg.html() + "</g>");
+                    var inner = svg.select("g");
+                    var zoom = d3.zoom().on("zoom", function(event) {
+                        inner.attr("transform", event.transform);
+                    });
+                    svg.call(zoom);
+                });
+            }
+        }
+    } else if(all_mermaids.length !== mermaids_processed.length) {
+        // Wait for mermaid to process all diagrams
+        setTimeout(() => runMermaid(false), 200);
+        return;
+    }
+
+    // Stop here if not adding fullscreen capability
+    if ("True" !== "True") return;
+
+    if (modal !== null ) {
+        // Destroy existing modal
+        modal.remove();
+        modal = null;
+        modalContent = null;
+    }
+
+    modal = document.createElement('div');
+    modal.className = 'mermaid-fullscreen-modal' + (darkTheme ? ' dark-theme' : '');
+    modal.setAttribute('role', 'dialog');
+    modal.setAttribute('aria-modal', 'true');
+    modal.setAttribute('aria-label', 'Fullscreen diagram viewer');
+    modal.innerHTML = `
+        <button class="mermaid-fullscreen-close${darkTheme ? ' dark-theme' : ''}" aria-label="Close fullscreen">✕</button>
+        <div class="mermaid-container-fullscreen${darkTheme ? ' dark-theme' : ''}"></div>
+    `;
+    document.body.appendChild(modal);
+
+    modalContent = modal.querySelector('.mermaid-container-fullscreen');
+    const closeBtn = modal.querySelector('.mermaid-fullscreen-close');
+
+    const closeModal = () => {
+        modal.classList.remove('active');
+        modalContent.innerHTML = '';
+        document.body.style.overflow = ''
+        window.scrollTo({left: previousScrollOffset[0], top: previousScrollOffset[1], behavior: 'instant'});
+    };
+
+    closeBtn.addEventListener('click', closeModal);
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) closeModal();
+    });
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && modal.classList.contains('active')) {
+            closeModal();
+        }
+    });
+
+    document.querySelectorAll('.mermaid').forEach((mermaidDiv) => {
+        if (mermaidDiv.parentNode.classList.contains('mermaid-container') ||
+            mermaidDiv.closest('.mermaid-fullscreen-modal')) {
+            // Already processed, adjust button class if needed
+            const existingBtn = mermaidDiv.parentNode.querySelector('.mermaid-fullscreen-btn');
+            if (existingBtn) {
+                existingBtn.className = 'mermaid-fullscreen-btn' + (darkTheme ? ' dark-theme' : '');
+            }
+            return;
+        }
+
+        const container = document.createElement('div');
+        container.className = 'mermaid-container';
+        mermaidDiv.parentNode.insertBefore(container, mermaidDiv);
+        container.appendChild(mermaidDiv);
+
+        const fullscreenBtn = document.createElement('button');
+        fullscreenBtn.className = 'mermaid-fullscreen-btn' + (darkTheme ? ' dark-theme' : '');
+        fullscreenBtn.setAttribute('aria-label', 'View diagram in fullscreen');
+        fullscreenBtn.textContent = '⛶';
+        fullscreenBtn.style.opacity = '50%';
+
+        // Calculate dynamic position based on diagram's margin and padding
+        const diagramStyle = window.getComputedStyle(mermaidDiv);
+        const marginTop = parseFloat(diagramStyle.marginTop) || 0;
+        const marginRight = parseFloat(diagramStyle.marginRight) || 0;
+        const paddingTop = parseFloat(diagramStyle.paddingTop) || 0;
+        const paddingRight = parseFloat(diagramStyle.paddingRight) || 0;
+        fullscreenBtn.style.top = `${marginTop + paddingTop + 4}px`;
+        fullscreenBtn.style.right = `${marginRight + paddingRight + 4}px`;
+
+        fullscreenBtn.addEventListener('click', () => {
+            previousScrollOffset = [window.scroll, window.scrollY];
+            const clone = mermaidDiv.cloneNode(true);
+            modalContent.innerHTML = '';
+            modalContent.appendChild(clone);
+
+            const svg = clone.querySelector('svg');
+            if (svg) {
+                svg.removeAttribute('width');
+                svg.removeAttribute('height');
+                svg.style.width = '100%';
+                svg.style.height = 'auto';
+                svg.style.maxWidth = '100%';
+                svg.style.sdisplay = 'block';
+
+                if ("False" === "True") {
+                    setTimeout(() => {
+                        const g = svg.querySelector('g');
+                        if (g) {
+                            var svgD3 = d3.select(svg);
+                            svgD3.html("<g class='wrapper'>" + svgD3.html() + "</g>");
+                            var inner = svgD3.select("g");
+                            var zoom = d3.zoom().on("zoom", function(event) {
+                                inner.attr("transform", event.transform);
+                            });
+                            svgD3.call(zoom);
+                        }
+                    }, 100);
+                }
+            }
+
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+        container.appendChild(fullscreenBtn);
+    });
+};
+
+const load = async () => {
+    initStyles();
+
+    await runMermaid(true);
+
+    const reRunIfThemeChanges = async () => {
+        const newDarkTheme = isDarkTheme();
+        if (newDarkTheme !== darkTheme) {
+            darkTheme = newDarkTheme;
+            console.log("Theme change detected, re-running mermaid with", darkTheme ? "dark" : "default", "theme");
+            await mermaid.initialize(
+                {...JSON.parse(
+                    `{"startOnLoad": false}`
+                ),
+                ...{ darkMode: darkTheme, theme: darkTheme ? 'dark' : 'default' },
+                }
+            );
+            await runMermaid(true);
+        }
+    };
+
+    // Update theme classes when theme changes
+    const themeObserver = new MutationObserver(reRunIfThemeChanges);
+    themeObserver.observe(document.documentElement, {
+        attributes: true,
+        attributeFilter: ['class', 'style', 'data-theme']
+    });
+    themeObserver.observe(document.body, {
+        attributes: true,
+        attributeFilter: ['class', 'style', 'data-theme']
+    });
+};
+
+
+
+
+
+console.log("Initializing mermaid with", darkTheme ? "dark" : "default", "theme");
+mermaid.initialize(
+    {...JSON.parse(
+        `{"startOnLoad": false}`
+    ),
+    ...{ darkMode: darkTheme, theme: darkTheme ? 'dark' : 'default' },
+    }
+);
+
+window.addEventListener("load", load);
+window.runMermaid = runMermaid;</script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="author" title="About these documents" href="../about.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Fleet Manager
+          </a>
+              <div class="version">
+                1.0
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../about.html">About the project</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules.html">Code documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../training.html">Training documentation</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Fleet Manager</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Module code</a></li>
+      <li class="breadcrumb-item active">diseases_labels_dir</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <h1>Source code for diseases_labels_dir</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">YOLO Dataset Label Generator for Classification Tasks</span>
+<span class="sd">===================================================</span>
+
+<span class="sd">This module creates YOLO-format labels and dataset structure for image classification</span>
+<span class="sd">tasks, specifically designed for grape disease classification. It processes class-based</span>
+<span class="sd">directory structures and converts them to YOLO object detection format with full-image</span>
+<span class="sd">bounding boxes.</span>
+
+<span class="sd">The script performs the following operations:</span>
+<span class="sd">    1. Creates standardized dataset directory structure</span>
+<span class="sd">    2. Processes class-based image directories</span>
+<span class="sd">    3. Generates YOLO-format label files with full-image annotations</span>
+<span class="sd">    4. Creates train/validation/test dataset splits</span>
+<span class="sd">    5. Validates generated labels for completeness</span>
+
+<span class="sd">Dataset Structure Created:</span>
+
+<span class="sd">.. code-block:: text</span>
+
+<span class="sd">    data_directory/</span>
+<span class="sd">    ├── images/</span>
+<span class="sd">    │   ├── image1.jpg</span>
+<span class="sd">    │   ├── image2.jpg</span>
+<span class="sd">    │   └── ...</span>
+<span class="sd">    ├── labels/</span>
+<span class="sd">    │   ├── Healthy/</span>
+<span class="sd">    │   ├── Black_measles/</span>
+<span class="sd">    │   ├── Black_rot/</span>
+<span class="sd">    │   └── Isariopsis/</span>
+<span class="sd">    ├── train.txt</span>
+<span class="sd">    ├── val.txt</span>
+<span class="sd">    └── test.txt</span>
+
+<span class="sd">Input Structure Expected:</span>
+
+<span class="sd">.. code-block:: text</span>
+
+<span class="sd">    data_directory/images/</span>
+<span class="sd">    ├── Healthy/</span>
+<span class="sd">    │   ├── img1.jpg</span>
+<span class="sd">    │   └── ...</span>
+<span class="sd">    ├── Black_measles/</span>
+<span class="sd">    │   ├── img2.jpg</span>
+<span class="sd">    │   └── ...</span>
+<span class="sd">    └── ...</span>
+
+<span class="sd">Features:</span>
+<span class="sd">    - Automatic YOLO label generation for classification tasks</span>
+<span class="sd">    - Full-image bounding box annotations (0.5 0.5 1.0 1.0)</span>
+<span class="sd">    - Configurable class mapping with disease categories</span>
+<span class="sd">    - Automatic dataset splitting (70% train, 20% val, 10% test)</span>
+<span class="sd">    - Label validation and error reporting</span>
+<span class="sd">    - Cross-platform path handling using pathlib</span>
+
+<span class="sd">Note:</span>
+<span class="sd">    This script treats classification as object detection by creating</span>
+<span class="sd">    full-image bounding boxes. Each image gets a single annotation</span>
+<span class="sd">    covering the entire image area with the appropriate class ID.</span>
+
+<span class="sd">Example:</span>
+<span class="sd">    Basic usage (run in directory containing class subdirectories)::</span>
+<span class="sd">    </span>
+<span class="sd">        $ python create_labels_dir.py</span>
+
+<span class="sd">Author: PFG Electronics Training Team</span>
+<span class="sd">Date: June 2025</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">random</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">shutil</span>
+
+<span class="c1"># ==================== Configuration Section ====================</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Dataset and class configuration for grape disease classification.</span>
+
+<span class="sd">This section defines the core parameters for the dataset generation process,</span>
+<span class="sd">including the output directory structure and class-to-ID mapping for the</span>
+<span class="sd">grape disease detection task.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="c1"># Base directory for the generated YOLO dataset structure</span>
+<span class="n">base_dir</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s2">&quot;data_directory&quot;</span><span class="p">)</span>
+
+<span class="c1"># Class mapping dictionary for grape disease classification</span>
+<span class="c1"># Maps human-readable class names to YOLO class IDs (integers)</span>
+<span class="c1"># Class IDs must be sequential starting from 0 for YOLO compatibility</span>
+<span class="n">class_mapping</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;Healthy&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>           <span class="c1"># Healthy grape leaves/plants</span>
+    <span class="s2">&quot;Black_measles&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>     <span class="c1"># Black measles disease symptoms</span>
+    <span class="s2">&quot;Black_rot&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>         <span class="c1"># Black rot disease symptoms  </span>
+    <span class="s2">&quot;Isariopsis&quot;</span><span class="p">:</span> <span class="mi">3</span>         <span class="c1"># Isariopsis leaf spot disease symptoms</span>
+<span class="p">}</span>
+
+<span class="c1"># ==================== Directory Structure Creation ====================</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Create the standard YOLO dataset directory structure.</span>
+
+<span class="sd">This section sets up the required directories for YOLO training:</span>
+<span class="sd">- images/: Contains all training images in a flat structure</span>
+<span class="sd">- labels/: Contains corresponding YOLO-format annotation files</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="c1"># Create main directories for YOLO dataset structure</span>
+<span class="n">images_dir</span> <span class="o">=</span> <span class="n">base_dir</span> <span class="o">/</span> <span class="s2">&quot;images&quot;</span>  <span class="c1"># Directory for all training images</span>
+<span class="n">labels_dir</span> <span class="o">=</span> <span class="n">base_dir</span> <span class="o">/</span> <span class="s2">&quot;labels&quot;</span>  <span class="c1"># Directory for YOLO label files</span>
+
+<span class="c1"># Create directories with parent creation and existence checking</span>
+<span class="n">images_dir</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">parents</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">labels_dir</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">parents</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># ==================== Image Processing and Label Generation ====================</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Process each class directory and generate YOLO-format labels.</span>
+
+<span class="sd">This section iterates through each disease class, processes images in their</span>
+<span class="sd">respective directories, and creates corresponding YOLO annotation files.</span>
+<span class="sd">Each image receives a full-image bounding box annotation with its class ID.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="c1"># Process each class defined in the mapping dictionary</span>
+<span class="k">for</span> <span class="n">class_name</span><span class="p">,</span> <span class="n">class_id</span> <span class="ow">in</span> <span class="n">class_mapping</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="c1"># Construct path to class-specific image directory</span>
+    <span class="n">class_image_dir</span> <span class="o">=</span> <span class="n">images_dir</span> <span class="o">/</span> <span class="n">class_name</span>
+    
+    <span class="c1"># Check if the class directory exists before processing</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">class_image_dir</span><span class="o">.</span><span class="n">exists</span><span class="p">():</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Warning: Class directory not found - </span><span class="si">{</span><span class="n">class_image_dir</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="k">continue</span>
+        
+    <span class="c1"># Process each image file in the current class directory</span>
+    <span class="k">for</span> <span class="n">img_file</span> <span class="ow">in</span> <span class="n">class_image_dir</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s2">&quot;*.*&quot;</span><span class="p">):</span>
+        <span class="c1"># Filter for common image file extensions</span>
+        <span class="k">if</span> <span class="n">img_file</span><span class="o">.</span><span class="n">suffix</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;.jpg&quot;</span><span class="p">,</span> <span class="s2">&quot;.jpeg&quot;</span><span class="p">,</span> <span class="s2">&quot;.png&quot;</span><span class="p">]:</span>
+            <span class="c1"># Define destination paths for image and label files</span>
+            <span class="n">img_dest</span> <span class="o">=</span> <span class="n">images_dir</span> <span class="o">/</span> <span class="n">img_file</span><span class="o">.</span><span class="n">name</span>  <span class="c1"># Flat image structure</span>
+            <span class="n">label_dest</span> <span class="o">=</span> <span class="n">labels_dir</span> <span class="o">/</span> <span class="n">class_name</span> <span class="o">/</span> <span class="n">img_file</span><span class="o">.</span><span class="n">with_suffix</span><span class="p">(</span><span class="s2">&quot;.txt&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">name</span>
+
+            <span class="c1"># Copy image to the main images directory (flatten structure)</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">img_dest</span><span class="o">.</span><span class="n">exists</span><span class="p">():</span>
+                <span class="n">shutil</span><span class="o">.</span><span class="n">copy2</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">img_file</span><span class="p">),</span> <span class="nb">str</span><span class="p">(</span><span class="n">img_dest</span><span class="p">))</span>
+            
+            <span class="c1"># Create YOLO-format label file with full-image annotation</span>
+            <span class="c1"># Format: class_id center_x center_y width height (normalized 0-1)</span>
+            <span class="c1"># Full image annotation: center at (0.5, 0.5) with full width/height (1.0, 1.0)</span>
+            <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">label_dest</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+                <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">class_id</span><span class="si">}</span><span class="s2"> 0.5 0.5 1.0 1.0</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Created label for </span><span class="si">{</span><span class="n">img_file</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">: class </span><span class="si">{</span><span class="n">class_id</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># ==================== Label Validation Section ====================</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Verify the integrity of generated label files.</span>
+
+<span class="sd">This section performs quality assurance by checking all generated label files</span>
+<span class="sd">for completeness and identifying any empty or corrupted files that could</span>
+<span class="sd">cause issues during YOLO training.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Verifying label files...&quot;</span><span class="p">)</span>
+<span class="n">empty_labels</span> <span class="o">=</span> <span class="mi">0</span>    <span class="c1"># Counter for empty label files</span>
+<span class="n">total_labels</span> <span class="o">=</span> <span class="mi">0</span>    <span class="c1"># Counter for total label files processed</span>
+
+<span class="c1"># Check each label file for content</span>
+<span class="k">for</span> <span class="n">label_file</span> <span class="ow">in</span> <span class="n">labels_dir</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s2">&quot;*.txt&quot;</span><span class="p">):</span>
+    <span class="n">total_labels</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="c1"># Check if label file is empty (size = 0 bytes)</span>
+    <span class="k">if</span> <span class="n">label_file</span><span class="o">.</span><span class="n">stat</span><span class="p">()</span><span class="o">.</span><span class="n">st_size</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;ERROR: Empty label file - </span><span class="si">{</span><span class="n">label_file</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">empty_labels</span> <span class="o">+=</span> <span class="mi">1</span>
+
+<span class="c1"># Report validation results</span>
+<span class="k">if</span> <span class="n">empty_labels</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Success! Created </span><span class="si">{</span><span class="n">total_labels</span><span class="si">}</span><span class="s2"> valid label files.&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Warning: Found </span><span class="si">{</span><span class="n">empty_labels</span><span class="si">}</span><span class="s2"> empty label files out of </span><span class="si">{</span><span class="n">total_labels</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># ==================== Dataset Splitting Section ====================</span>
+<div class="viewcode-block" id="create_split_files">
+<a class="viewcode-back" href="../Training/Diseases/diseases.html#diseases_labels_dir.create_split_files">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">create_split_files</span><span class="p">():</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Create train/validation/test splits for the YOLO dataset.</span>
+<span class="sd">    </span>
+<span class="sd">    This function randomly divides the processed images into three sets</span>
+<span class="sd">    according to standard machine learning practices:</span>
+<span class="sd">    - Training set: 70% of images for model training</span>
+<span class="sd">    - Validation set: 20% of images for hyperparameter tuning</span>
+<span class="sd">    - Test set: 10% of images for final model evaluation</span>
+<span class="sd">    </span>
+<span class="sd">    The function generates three text files containing relative paths to</span>
+<span class="sd">    images in each split, formatted for YOLO training compatibility.</span>
+<span class="sd">    </span>
+<span class="sd">    Split Files Created:</span>
+<span class="sd">        - train.txt: Training image paths</span>
+<span class="sd">        - val.txt: Validation image paths  </span>
+<span class="sd">        - test.txt: Test image paths</span>
+<span class="sd">        </span>
+<span class="sd">    Path Format:</span>
+<span class="sd">        Each line contains a relative path like: ./images/filename.jpg</span>
+<span class="sd">        </span>
+<span class="sd">    Note:</span>
+<span class="sd">        The random shuffle ensures unbiased distribution across splits,</span>
+<span class="sd">        preventing class imbalance in any particular set.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># Collect all image files from the images directory</span>
+    <span class="n">all_images</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">images_dir</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s2">&quot;*.*&quot;</span><span class="p">))</span>
+    
+    <span class="c1"># Randomize image order to ensure unbiased splits</span>
+    <span class="n">random</span><span class="o">.</span><span class="n">shuffle</span><span class="p">(</span><span class="n">all_images</span><span class="p">)</span>
+    
+    <span class="c1"># Calculate split sizes based on total image count</span>
+    <span class="n">total</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">all_images</span><span class="p">)</span>
+    <span class="n">train_count</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="mf">0.7</span> <span class="o">*</span> <span class="n">total</span><span class="p">)</span>  <span class="c1"># 70% for training</span>
+    <span class="n">val_count</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="mf">0.2</span> <span class="o">*</span> <span class="n">total</span><span class="p">)</span>    <span class="c1"># 20% for validation</span>
+    <span class="c1"># Remaining 10% automatically goes to test set</span>
+    
+    <span class="c1"># Create split arrays by slicing the shuffled image list</span>
+    <span class="n">train_files</span> <span class="o">=</span> <span class="n">all_images</span><span class="p">[:</span><span class="n">train_count</span><span class="p">]</span>
+    <span class="n">val_files</span> <span class="o">=</span> <span class="n">all_images</span><span class="p">[</span><span class="n">train_count</span><span class="p">:</span><span class="n">train_count</span><span class="o">+</span><span class="n">val_count</span><span class="p">]</span>
+    <span class="n">test_files</span> <span class="o">=</span> <span class="n">all_images</span><span class="p">[</span><span class="n">train_count</span><span class="o">+</span><span class="n">val_count</span><span class="p">:]</span>
+    
+    <span class="c1"># Write training split file with relative paths for YOLO compatibility</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">base_dir</span> <span class="o">/</span> <span class="s2">&quot;train.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">path</span> <span class="ow">in</span> <span class="n">train_files</span><span class="p">:</span>
+            <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;./images/</span><span class="si">{</span><span class="n">path</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+    
+    <span class="c1"># Write validation split file with relative paths</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">base_dir</span> <span class="o">/</span> <span class="s2">&quot;val.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">path</span> <span class="ow">in</span> <span class="n">val_files</span><span class="p">:</span>
+            <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;./images/</span><span class="si">{</span><span class="n">path</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+    
+    <span class="c1"># Write test split file with relative paths</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">base_dir</span> <span class="o">/</span> <span class="s2">&quot;test.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">path</span> <span class="ow">in</span> <span class="n">test_files</span><span class="p">:</span>
+            <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;./images/</span><span class="si">{</span><span class="n">path</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span></div>
+
+
+<span class="c1"># Execute the dataset splitting function</span>
+<span class="n">create_split_files</span><span class="p">()</span>
+
+<span class="c1"># ==================== Final Summary and Statistics ====================</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Display completion summary with dataset statistics.</span>
+
+<span class="sd">This section provides a comprehensive overview of the dataset generation</span>
+<span class="sd">process results, including counts of processed files and class distribution</span>
+<span class="sd">information for verification purposes.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Dataset preparation complete!&quot;</span><span class="p">)</span>
+<span class="c1"># Report total number of images processed and copied to the images directory</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Created </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">images_dir</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s1">&#39;*.*&#39;</span><span class="p">)))</span><span class="si">}</span><span class="s2"> images&quot;</span><span class="p">)</span>
+<span class="c1"># Report total number of label files generated in the labels directory</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Created </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">labels_dir</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s1">&#39;*.txt&#39;</span><span class="p">)))</span><span class="si">}</span><span class="s2"> labels&quot;</span><span class="p">)</span>
+<span class="c1"># Display the class mapping for reference and verification</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Class distribution: </span><span class="si">{</span><span class="n">class_mapping</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, Estela Mora Barba.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Field Device - ThingsBoard &mdash; Fleet Manager 1.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../../../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../../../../_static/copybutton.css?v=76b2166b" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../../../_static/documentation_options.js?v=f2a433a1"></script>
+        <script src="../../../../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../../../../_static/clipboard.min.js?v=a7894cd8"></script>
+        <script src="../../../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../../../_static/js/theme.js"></script>
+    <link rel="author" title="About these documents" href="../../../../about.html" />
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+    <link rel="next" title="Feedback Device - ThingsBoard" href="feedback_device_component.html" />
+    <link rel="prev" title="Mission Device - ThingsBoard" href="mission_device_component.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../../../index.html" class="icon icon-home">
+            Fleet Manager
+          </a>
+              <div class="version">
+                1.0
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../../about.html">About the project</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../getting_started.html">Getting Started</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../../../modules.html">Code documentation</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../../../Drone_module/index.html">Drone</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../../index.html">Fleet Manager</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../../../init_fleet_component.html">Init Fleet Manager</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../mission_components.html">Mission Management</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../ros2_components.html">ROS2 Management</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../rest_components.html">REST Management</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../../../mqtt_components.html">MQTT Management</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="../../grpc_mqtt_component.html">gRPC MQTT</a></li>
+<li class="toctree-l4 current"><a class="reference internal" href="../../thingsboard.html">ThingsBoard</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../pm_components.html">Prescription Map Management</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../metrics_components.html">System Metrics Component</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../clear_fleet_component.html">Clear Fleet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../create_logger_fleet_component.html">Create Logger</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../training.html">Training documentation</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../index.html">Fleet Manager</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../../../modules.html">Code documentation</a></li>
+          <li class="breadcrumb-item"><a href="../../../index.html">Fleet Manager</a></li>
+          <li class="breadcrumb-item"><a href="../../../mqtt_components.html">MQTT Management</a></li>
+          <li class="breadcrumb-item"><a href="../../thingsboard.html">ThingsBoard</a></li>
+          <li class="breadcrumb-item"><a href="../devices.html">ThingsBoard Devices</a></li>
+      <li class="breadcrumb-item active">Field Device - ThingsBoard</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../../_sources/Fleet_module/MQTT/ThingsBoard/Devices/field_device_component.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="module-field_device">
+<span id="field-device-thingsboard"></span><h1>Field Device - ThingsBoard<a class="headerlink" href="#module-field_device" title="Link to this heading"></a></h1>
+<p>Field Device Management Module</p>
+<p>This module implements the FieldDevice class, which manages field monitoring devices
+within the fleet management system. It handles the creation, management, and cleanup
+of field devices that monitor agricultural areas, collect environmental data, and
+track field-specific operations during missions.</p>
+<p>The field device system provides comprehensive monitoring capabilities for agricultural
+fields, including soil conditions, crop status, environmental parameters, and
+operational metrics during mission execution.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Key Features:
+- Dynamic field device creation per mission
+- Sequential field numbering and organization
+- Real-time field telemetry collection and transmission
+- Mission-field relationship management
+- Multi-field support per mission
+- Comprehensive cleanup and resource management</p>
+</div>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 1.0.0: </span>Initial implementation of field device management</p>
+</div>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<ul class="simple">
+<li><p><code class="xref py py-mod docutils literal notranslate"><span class="pre">MQTT.ThingsBoard.devices.base_device</span></code> for base device functionality</p></li>
+<li><p><code class="xref py py-mod docutils literal notranslate"><span class="pre">MQTT.ThingsBoard.devices.mission_device</span></code> for mission coordination</p></li>
+</ul>
+</div>
+<p class="rubric">Example</p>
+<p>Basic usage of field device management:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">MQTT.ThingsBoard.devices.field_device</span><span class="w"> </span><span class="kn">import</span> <span class="n">FieldDevice</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">MQTT.ThingsBoard.rest_api</span><span class="w"> </span><span class="kn">import</span> <span class="n">ThingsBoardAPI</span>
+
+<span class="c1"># Initialize ThingsBoard API</span>
+<span class="n">tb_api</span> <span class="o">=</span> <span class="n">ThingsBoardAPI</span><span class="p">(</span><span class="s2">&quot;https://thingsboard.company.com&quot;</span><span class="p">)</span>
+<span class="n">tb_api</span><span class="o">.</span><span class="n">login</span><span class="p">(</span><span class="s2">&quot;username&quot;</span><span class="p">,</span> <span class="s2">&quot;password&quot;</span><span class="p">)</span>
+
+<span class="c1"># Create field device handler</span>
+<span class="n">field_device</span> <span class="o">=</span> <span class="n">FieldDevice</span><span class="p">(</span>
+    <span class="n">tb_api</span><span class="o">=</span><span class="n">tb_api</span><span class="p">,</span>
+    <span class="n">mqtt_logger</span><span class="o">=</span><span class="n">logger</span><span class="p">,</span>
+    <span class="n">tb_host</span><span class="o">=</span><span class="s2">&quot;thingsboard.company.com&quot;</span><span class="p">,</span>
+    <span class="n">port</span><span class="o">=</span><span class="mi">8883</span><span class="p">,</span>
+    <span class="n">telemetry_topic</span><span class="o">=</span><span class="s2">&quot;v1/devices/me/telemetry&quot;</span>
+<span class="p">)</span>
+
+<span class="c1"># Process mission with multiple fields</span>
+<span class="n">mission_msg</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;fields&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span><span class="s2">&quot;area&quot;</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span> <span class="s2">&quot;crop_type&quot;</span><span class="p">:</span> <span class="s2">&quot;wheat&quot;</span><span class="p">,</span> <span class="s2">&quot;soil_ph&quot;</span><span class="p">:</span> <span class="mf">6.5</span><span class="p">},</span>
+        <span class="p">{</span><span class="s2">&quot;area&quot;</span><span class="p">:</span> <span class="mi">150</span><span class="p">,</span> <span class="s2">&quot;crop_type&quot;</span><span class="p">:</span> <span class="s2">&quot;corn&quot;</span><span class="p">,</span> <span class="s2">&quot;soil_ph&quot;</span><span class="p">:</span> <span class="mf">6.8</span><span class="p">}</span>
+    <span class="p">]</span>
+<span class="p">}</span>
+<span class="n">field_device</span><span class="o">.</span><span class="n">handle_message</span><span class="p">(</span><span class="n">mission_msg</span><span class="p">,</span> <span class="s2">&quot;M001&quot;</span><span class="p">,</span> <span class="s2">&quot;mission_device_id&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<dl class="py class">
+<dt class="sig sig-object py" id="field_device.FieldDevice">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">field_device.</span></span><span class="sig-name descname"><span class="pre">FieldDevice</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tb_api</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mqtt_logger</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tb_host</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">telemetry_topic</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/field_device.html#FieldDevice"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#field_device.FieldDevice" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Specialized device handler for managing agricultural field monitoring devices.</p>
+<p>This class manages the creation and lifecycle of field devices that monitor
+agricultural areas during mission execution. It provides sequential field
+numbering, relationship management with missions, and comprehensive telemetry
+collection for field-specific data.</p>
+<p>The field system supports multiple fields per mission, allowing for comprehensive
+monitoring of complex agricultural operations across various field zones.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>tb_api</strong> (<a class="reference internal" href="../rest_api_component.html#rest_api.ThingsBoardAPI" title="rest_api.ThingsBoardAPI"><em>ThingsBoardAPI</em></a>) – Authenticated ThingsBoard REST API client</p></li>
+<li><p><strong>mqtt_logger</strong> (<em>logging.Logger</em>) – Logger instance for MQTT operations and debugging</p></li>
+<li><p><strong>tb_host</strong> (<em>str</em>) – ThingsBoard server hostname for MQTT connections</p></li>
+<li><p><strong>port</strong> (<em>int</em>) – MQTT port for secure connections (typically 8883 for TLS)</p></li>
+<li><p><strong>telemetry_topic</strong> (<em>str</em>) – MQTT topic for publishing device telemetry data</p></li>
+</ul>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Field devices are automatically numbered sequentially within each mission
+(e.g., “Field M001.1”, “Field M001.2”) for easy identification and tracking
+of different field zones.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Field devices must be properly cleaned up when missions complete to
+prevent resource leaks and maintain optimal system performance.</p>
+</div>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 1.0.0: </span>Initial implementation of field device management</p>
+</div>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="field_device.FieldDevice.base">
+<span class="sig-name descname"><span class="pre">base</span></span><a class="headerlink" href="#field_device.FieldDevice.base" title="Link to this definition"></a></dt>
+<dd><p>Base device functionality for ThingsBoard operations</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="base_device_component.html#base_device.BaseDevice" title="base_device.BaseDevice">BaseDevice</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="field_device.FieldDevice.fields">
+<span class="sig-name descname"><span class="pre">fields</span></span><a class="headerlink" href="#field_device.FieldDevice.fields" title="Link to this definition"></a></dt>
+<dd><p>Dictionary mapping mission IDs to lists of field device data</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="field_device.FieldDevice.mqtt_logger">
+<span class="sig-name descname"><span class="pre">mqtt_logger</span></span><a class="headerlink" href="#field_device.FieldDevice.mqtt_logger" title="Link to this definition"></a></dt>
+<dd><p>Logger for operation tracking and debugging</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>logging.Logger</p>
+</dd>
+</dl>
+</dd></dl>
+
+<p class="rubric">Example</p>
+<p>Initialize and use field device handler:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">field_handler</span> <span class="o">=</span> <span class="n">FieldDevice</span><span class="p">(</span><span class="n">tb_api</span><span class="p">,</span> <span class="n">logger</span><span class="p">,</span> <span class="s2">&quot;thingsboard.com&quot;</span><span class="p">,</span> <span class="mi">8883</span><span class="p">,</span> <span class="s2">&quot;v1/devices/me/telemetry&quot;</span><span class="p">)</span>
+
+<span class="c1"># Process mission with field data</span>
+<span class="n">mission_data</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;fields&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span><span class="s2">&quot;area&quot;</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span> <span class="s2">&quot;crop&quot;</span><span class="p">:</span> <span class="s2">&quot;wheat&quot;</span><span class="p">,</span> <span class="s2">&quot;temperature&quot;</span><span class="p">:</span> <span class="mf">22.5</span><span class="p">},</span>
+        <span class="p">{</span><span class="s2">&quot;area&quot;</span><span class="p">:</span> <span class="mi">75</span><span class="p">,</span> <span class="s2">&quot;crop&quot;</span><span class="p">:</span> <span class="s2">&quot;corn&quot;</span><span class="p">,</span> <span class="s2">&quot;temperature&quot;</span><span class="p">:</span> <span class="mf">24.1</span><span class="p">}</span>
+    <span class="p">]</span>
+<span class="p">}</span>
+<span class="n">field_handler</span><span class="o">.</span><span class="n">handle_message</span><span class="p">(</span><span class="n">mission_data</span><span class="p">,</span> <span class="s2">&quot;M001&quot;</span><span class="p">,</span> <span class="s2">&quot;mission_device_id&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<dl class="py method">
+<dt class="sig sig-object py" id="field_device.FieldDevice.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tb_api</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mqtt_logger</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tb_host</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">telemetry_topic</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/field_device.html#FieldDevice.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#field_device.FieldDevice.__init__" title="Link to this definition"></a></dt>
+<dd><p>Initialize the field device handler with ThingsBoard integration.</p>
+<p>Sets up the field device management system with base device functionality
+and initializes the storage for mission-specific field devices.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>tb_api</strong> (<a class="reference internal" href="../rest_api_component.html#rest_api.ThingsBoardAPI" title="rest_api.ThingsBoardAPI"><em>ThingsBoardAPI</em></a>) – Authenticated ThingsBoard API client</p></li>
+<li><p><strong>mqtt_logger</strong> (<em>logging.Logger</em>) – Logger for MQTT operations</p></li>
+<li><p><strong>tb_host</strong> (<em>str</em>) – ThingsBoard server hostname</p></li>
+<li><p><strong>port</strong> (<em>int</em>) – MQTT connection port</p></li>
+<li><p><strong>telemetry_topic</strong> (<em>str</em>) – MQTT topic for telemetry</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="field_device.FieldDevice.handle_message">
+<span class="sig-name descname"><span class="pre">handle_message</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">message</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mission_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mission_device_id</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/field_device.html#FieldDevice.handle_message"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#field_device.FieldDevice.handle_message" title="Link to this definition"></a></dt>
+<dd><p>Process mission messages and create corresponding field monitoring devices.</p>
+<p>Creates field devices for each field specified in the mission message,
+establishes relationships with the mission device, and transmits initial
+field telemetry data. Each field is automatically numbered for tracking.</p>
+<p>The method handles multiple fields per mission, creating individual
+ThingsBoard devices for each field zone to enable independent monitoring
+and data collection.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>message</strong> (<em>dict</em>) – Mission message containing field data array</p></li>
+<li><p><strong>mission_id</strong> (<em>str</em>) – Unique identifier of the associated mission</p></li>
+<li><p><strong>mission_device_id</strong> (<em>str</em>) – ThingsBoard device ID of the mission</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Field Processing Steps:
+1. Initialize mission field list if first processing
+2. Iterate through each field in the message
+3. Expand field list if new fields detected
+4. Create sequential field devices with unique names
+5. Store device credentials and establish MQTT connections
+6. Transmit initial field telemetry data
+7. Create relationships with mission device</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The message must contain a ‘fields’ array with field data objects.
+Each field object should contain relevant monitoring parameters.</p>
+</div>
+<dl>
+<dt>Message Structure:</dt><dd><p>Expected message format:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="s2">&quot;fields&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="s2">&quot;area&quot;</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span>
+            <span class="s2">&quot;crop_type&quot;</span><span class="p">:</span> <span class="s2">&quot;wheat&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;soil_ph&quot;</span><span class="p">:</span> <span class="mf">6.5</span><span class="p">,</span>
+            <span class="s2">&quot;moisture&quot;</span><span class="p">:</span> <span class="mf">45.2</span><span class="p">,</span>
+            <span class="s2">&quot;temperature&quot;</span><span class="p">:</span> <span class="mf">22.5</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="s2">&quot;area&quot;</span><span class="p">:</span> <span class="mi">150</span><span class="p">,</span>
+            <span class="s2">&quot;crop_type&quot;</span><span class="p">:</span> <span class="s2">&quot;corn&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;soil_ph&quot;</span><span class="p">:</span> <span class="mf">6.8</span><span class="p">,</span>
+            <span class="s2">&quot;moisture&quot;</span><span class="p">:</span> <span class="mf">42.1</span><span class="p">,</span>
+            <span class="s2">&quot;temperature&quot;</span><span class="p">:</span> <span class="mf">24.1</span>
+        <span class="p">}</span>
+    <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<p>Process mission with multiple agricultural fields:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mission_msg</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;fields&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="s2">&quot;field_id&quot;</span><span class="p">:</span> <span class="s2">&quot;F001&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;area&quot;</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span>
+            <span class="s2">&quot;crop_type&quot;</span><span class="p">:</span> <span class="s2">&quot;wheat&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;soil_conditions&quot;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="s2">&quot;ph&quot;</span><span class="p">:</span> <span class="mf">6.5</span><span class="p">,</span>
+                <span class="s2">&quot;moisture&quot;</span><span class="p">:</span> <span class="mf">45.2</span><span class="p">,</span>
+                <span class="s2">&quot;nitrogen&quot;</span><span class="p">:</span> <span class="mi">120</span>
+            <span class="p">},</span>
+            <span class="s2">&quot;environmental&quot;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="s2">&quot;temperature&quot;</span><span class="p">:</span> <span class="mf">22.5</span><span class="p">,</span>
+                <span class="s2">&quot;humidity&quot;</span><span class="p">:</span> <span class="mf">65.0</span>
+            <span class="p">}</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="s2">&quot;field_id&quot;</span><span class="p">:</span> <span class="s2">&quot;F002&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;area&quot;</span><span class="p">:</span> <span class="mi">75</span><span class="p">,</span>
+            <span class="s2">&quot;crop_type&quot;</span><span class="p">:</span> <span class="s2">&quot;corn&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;soil_conditions&quot;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="s2">&quot;ph&quot;</span><span class="p">:</span> <span class="mf">6.8</span><span class="p">,</span>
+                <span class="s2">&quot;moisture&quot;</span><span class="p">:</span> <span class="mf">42.1</span><span class="p">,</span>
+                <span class="s2">&quot;nitrogen&quot;</span><span class="p">:</span> <span class="mi">110</span>
+            <span class="p">},</span>
+            <span class="s2">&quot;environmental&quot;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="s2">&quot;temperature&quot;</span><span class="p">:</span> <span class="mf">24.1</span><span class="p">,</span>
+                <span class="s2">&quot;humidity&quot;</span><span class="p">:</span> <span class="mf">62.5</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">]</span>
+<span class="p">}</span>
+
+<span class="n">field_device</span><span class="o">.</span><span class="n">handle_message</span><span class="p">(</span>
+    <span class="n">message</span><span class="o">=</span><span class="n">mission_msg</span><span class="p">,</span>
+    <span class="n">mission_id</span><span class="o">=</span><span class="s2">&quot;M001&quot;</span><span class="p">,</span>
+    <span class="n">mission_device_id</span><span class="o">=</span><span class="s2">&quot;mission_device_uuid&quot;</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="field_device.FieldDevice.cleanup">
+<span class="sig-name descname"><span class="pre">cleanup</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mission_id</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/field_device.html#FieldDevice.cleanup"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#field_device.FieldDevice.cleanup" title="Link to this definition"></a></dt>
+<dd><p>Clean up all field devices associated with a completed mission.</p>
+<p>Performs comprehensive cleanup of all field devices created for the
+specified mission, including device deletion from ThingsBoard and
+removal from local storage. This ensures proper resource management
+and prevents accumulation of unused devices.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>mission_id</strong> (<em>str</em>) – Unique identifier of the mission to clean up</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Cleanup Operations:
+1. Iterate through all field devices for the mission
+2. Delete each field device from ThingsBoard using retry mechanism
+3. Remove mission field data from local storage</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This operation is irreversible and will permanently delete all
+field devices and their associated telemetry data from ThingsBoard.</p>
+</div>
+<p class="rubric">Example</p>
+<p>Clean up field devices after mission completion:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Mission completed successfully</span>
+<span class="n">mission_id</span> <span class="o">=</span> <span class="s2">&quot;M001&quot;</span>
+
+<span class="c1"># Clean up all associated field devices</span>
+<span class="n">field_device</span><span class="o">.</span><span class="n">cleanup</span><span class="p">(</span><span class="n">mission_id</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;All field devices for mission </span><span class="si">{</span><span class="n">mission_id</span><span class="si">}</span><span class="s2"> cleaned up&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<dl class="simple">
+<dt>Cleanup Process:</dt><dd><p>The method uses the retry mechanism from base device functionality
+to ensure reliable device deletion even under network stress or
+ThingsBoard server load conditions.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="mission_device_component.html" class="btn btn-neutral float-left" title="Mission Device - ThingsBoard" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="feedback_device_component.html" class="btn btn-neutral float-right" title="Feedback Device - ThingsBoard" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, Estela Mora Barba.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

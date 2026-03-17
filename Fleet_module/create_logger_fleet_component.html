@@ -1,0 +1,863 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Create Logger &mdash; Fleet Manager 1.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=f2a433a1"></script>
+        <script src="../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+        <script src="../_static/copybutton.js?v=f281be69"></script>
+        <script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script>
+        <script type="module">import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11.12.1/dist/mermaid.esm.min.mjs";
+
+
+
+
+
+const initStyles = () => {
+    const defaultStyle = document.createElement('style');
+    defaultStyle.textContent = `pre.mermaid {
+    /* Same as .mermaid-container > pre */
+    display: block;
+    width: 100%;
+}
+
+pre.mermaid > svg {
+    /* Same as .mermaid-container > pre > svg */
+    height: 500px;
+    width: 100%;
+    max-width: 100% !important;
+}`;
+    document.head.appendChild(defaultStyle);
+
+    const fullscreenStyle = document.createElement('style');
+    fullscreenStyle.textContent = `.mermaid-container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.mermaid-container > pre {
+    display: block;
+    width: 100%;
+}
+
+.mermaid-container > pre > svg {
+    height: 500px;
+    width: 100%;
+    max-width: 100% !important;
+}
+
+.mermaid-fullscreen-btn {
+    width: 28px;
+    height: 28px;
+    background: rgba(255, 255, 255, 0.95);
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    border-radius: 4px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    font-size: 14px;
+    line-height: 1;
+    padding: 0;
+    color: #333;
+}
+
+.mermaid-fullscreen-btn:hover {
+    opacity: 100% !important;
+    background: rgba(255, 255, 255, 1);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+    transform: scale(1.1);
+}
+
+.mermaid-fullscreen-btn.dark-theme {
+    background: rgba(50, 50, 50, 0.95);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: #e0e0e0;
+}
+
+.mermaid-fullscreen-btn.dark-theme:hover {
+    background: rgba(60, 60, 60, 1);
+    box-shadow: 0 3px 10px rgba(255, 255, 255, 0.2);
+}
+
+.mermaid-fullscreen-modal {
+    display: none;
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 95vw;
+    height: 100vh;
+    background: rgba(255, 255, 255, 0.98);
+    z-index: 9999;
+    padding: 20px;
+    overflow: auto;
+}
+
+.mermaid-fullscreen-modal.dark-theme {
+    background: rgba(0, 0, 0, 0.98);
+}
+
+.mermaid-fullscreen-modal.active {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mermaid-container-fullscreen {
+    position: relative;
+    width: 95vw;
+    height: 90vh;
+    max-width: 95vw;
+    max-height: 90vh;
+    background: white;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    overflow: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mermaid-container-fullscreen.dark-theme {
+    background: #1a1a1a;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.8);
+}
+
+.mermaid-container-fullscreen pre.mermaid {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mermaid-container-fullscreen .mermaid svg {
+    height: 100% !important;
+    width: 100% !important;
+    cursor: grab;
+}
+
+.mermaid-fullscreen-close {
+    position: fixed !important;
+    top: 20px !important;
+    right: 20px !important;
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.95);
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    transition: all 0.2s;
+    font-size: 24px;
+    line-height: 1;
+    color: #333;
+}
+
+.mermaid-fullscreen-close:hover {
+    background: white;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+    transform: scale(1.1);
+}
+
+.mermaid-fullscreen-close.dark-theme {
+    background: rgba(50, 50, 50, 0.95);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #e0e0e0;
+}
+
+.mermaid-fullscreen-close.dark-theme:hover {
+    background: rgba(60, 60, 60, 1);
+    box-shadow: 0 6px 16px rgba(255, 255, 255, 0.2);
+}
+
+.mermaid-fullscreen-modal .mermaid-fullscreen-btn {
+    display: none !important;
+}`;
+    document.head.appendChild(fullscreenStyle);
+}
+
+// Detect if page has dark background
+const isDarkTheme = () => {
+    // We use a set of heuristics:
+    // 1. Check for common dark mode classes or attributes
+    // 2. Check computed background color brightness
+    if (document.documentElement.classList.contains('dark') ||
+        document.documentElement.getAttribute('data-theme') === 'dark' ||
+        document.body.classList.contains('dark') ||
+        document.body.getAttribute('data-theme') === 'dark') {
+        // console.log("Dark theme detected via class/attribute");
+        return true;
+    }
+    if (document.documentElement.classList.contains('light') ||
+        document.documentElement.getAttribute('data-theme') === 'light' ||
+        document.body.classList.contains('light') ||
+        document.body.getAttribute('data-theme') === 'light') {
+        // console.log("Light theme detected via class/attribute");
+        return false;
+    }
+    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        // console.log("Dark theme detected via prefers-color-scheme");
+        return true;
+    }
+    const bgColor = window.getComputedStyle(document.body).backgroundColor;
+    const match = bgColor.match(/rgb\((\d+),\s*(\d+),\s*(\d+)/);
+    if (match) {
+        const r = parseInt(match[1]);
+        const g = parseInt(match[2]);
+        const b = parseInt(match[3]);
+        const brightness = (r * 299 + g * 587 + b * 114) / 1000;
+        // console.log("Background color brightness:", brightness);
+        return brightness < 128;
+    }
+    // console.log("No dark or light theme detected, defaulting to light theme");
+    return false;
+};
+
+let darkTheme = isDarkTheme();
+let modal = null;
+let modalContent = null;
+let previousScrollOffset = [window.scrollX, window.scrollY];
+
+const runMermaid = async (rerun) => {
+    console.log("Running mermaid diagrams, rerun =", rerun);
+    // clear all existing mermaid charts
+    let all_mermaids = document.querySelectorAll(".mermaid");
+
+    if (rerun) {
+        all_mermaids.forEach((el) => {
+            if(!el.hasAttribute("data-original-code")) {
+                // store original code
+                // console.log(`Storing original code for first run: `, el.innerHTML);
+                el.setAttribute('data-original-code', el.innerHTML);
+            }
+            if(el.getAttribute("data-processed") === "true") {
+                // remove and restore original
+                el.removeAttribute("data-processed");
+                // console.log(`Restoring original code for re-run: `, el.getAttribute('data-original-code'));
+                el.innerHTML = el.getAttribute('data-original-code');
+            } else {
+                // store original code
+                // console.log(`Storing original code for re-run: `, el.innerHTML);
+                el.setAttribute('data-original-code', el.innerHTML);
+            }
+        });
+        await mermaid.run();
+    }
+
+    all_mermaids = document.querySelectorAll(".mermaid");
+    const mermaids_processed = document.querySelectorAll(".mermaid[data-processed='true']");
+
+    if ("False" === "True") {
+        const mermaids_to_add_zoom = -1 === -1 ? all_mermaids.length : -1;
+        if(mermaids_to_add_zoom > 0) {
+            var svgs = d3.selectAll("");
+            if(all_mermaids.length !== mermaids_processed.length) {
+                setTimeout(() => runMermaid(false), 200);
+                return;
+            } else if(svgs.size() !== mermaids_to_add_zoom) {
+                setTimeout(() => runMermaid(false), 200);
+                return;
+            } else {
+                svgs.each(function() {
+                    var svg = d3.select(this);
+                    svg.html("<g class='wrapper'>" + svg.html() + "</g>");
+                    var inner = svg.select("g");
+                    var zoom = d3.zoom().on("zoom", function(event) {
+                        inner.attr("transform", event.transform);
+                    });
+                    svg.call(zoom);
+                });
+            }
+        }
+    } else if(all_mermaids.length !== mermaids_processed.length) {
+        // Wait for mermaid to process all diagrams
+        setTimeout(() => runMermaid(false), 200);
+        return;
+    }
+
+    // Stop here if not adding fullscreen capability
+    if ("True" !== "True") return;
+
+    if (modal !== null ) {
+        // Destroy existing modal
+        modal.remove();
+        modal = null;
+        modalContent = null;
+    }
+
+    modal = document.createElement('div');
+    modal.className = 'mermaid-fullscreen-modal' + (darkTheme ? ' dark-theme' : '');
+    modal.setAttribute('role', 'dialog');
+    modal.setAttribute('aria-modal', 'true');
+    modal.setAttribute('aria-label', 'Fullscreen diagram viewer');
+    modal.innerHTML = `
+        <button class="mermaid-fullscreen-close${darkTheme ? ' dark-theme' : ''}" aria-label="Close fullscreen">✕</button>
+        <div class="mermaid-container-fullscreen${darkTheme ? ' dark-theme' : ''}"></div>
+    `;
+    document.body.appendChild(modal);
+
+    modalContent = modal.querySelector('.mermaid-container-fullscreen');
+    const closeBtn = modal.querySelector('.mermaid-fullscreen-close');
+
+    const closeModal = () => {
+        modal.classList.remove('active');
+        modalContent.innerHTML = '';
+        document.body.style.overflow = ''
+        window.scrollTo({left: previousScrollOffset[0], top: previousScrollOffset[1], behavior: 'instant'});
+    };
+
+    closeBtn.addEventListener('click', closeModal);
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) closeModal();
+    });
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && modal.classList.contains('active')) {
+            closeModal();
+        }
+    });
+
+    document.querySelectorAll('.mermaid').forEach((mermaidDiv) => {
+        if (mermaidDiv.parentNode.classList.contains('mermaid-container') ||
+            mermaidDiv.closest('.mermaid-fullscreen-modal')) {
+            // Already processed, adjust button class if needed
+            const existingBtn = mermaidDiv.parentNode.querySelector('.mermaid-fullscreen-btn');
+            if (existingBtn) {
+                existingBtn.className = 'mermaid-fullscreen-btn' + (darkTheme ? ' dark-theme' : '');
+            }
+            return;
+        }
+
+        const container = document.createElement('div');
+        container.className = 'mermaid-container';
+        mermaidDiv.parentNode.insertBefore(container, mermaidDiv);
+        container.appendChild(mermaidDiv);
+
+        const fullscreenBtn = document.createElement('button');
+        fullscreenBtn.className = 'mermaid-fullscreen-btn' + (darkTheme ? ' dark-theme' : '');
+        fullscreenBtn.setAttribute('aria-label', 'View diagram in fullscreen');
+        fullscreenBtn.textContent = '⛶';
+        fullscreenBtn.style.opacity = '50%';
+
+        // Calculate dynamic position based on diagram's margin and padding
+        const diagramStyle = window.getComputedStyle(mermaidDiv);
+        const marginTop = parseFloat(diagramStyle.marginTop) || 0;
+        const marginRight = parseFloat(diagramStyle.marginRight) || 0;
+        const paddingTop = parseFloat(diagramStyle.paddingTop) || 0;
+        const paddingRight = parseFloat(diagramStyle.paddingRight) || 0;
+        fullscreenBtn.style.top = `${marginTop + paddingTop + 4}px`;
+        fullscreenBtn.style.right = `${marginRight + paddingRight + 4}px`;
+
+        fullscreenBtn.addEventListener('click', () => {
+            previousScrollOffset = [window.scroll, window.scrollY];
+            const clone = mermaidDiv.cloneNode(true);
+            modalContent.innerHTML = '';
+            modalContent.appendChild(clone);
+
+            const svg = clone.querySelector('svg');
+            if (svg) {
+                svg.removeAttribute('width');
+                svg.removeAttribute('height');
+                svg.style.width = '100%';
+                svg.style.height = 'auto';
+                svg.style.maxWidth = '100%';
+                svg.style.sdisplay = 'block';
+
+                if ("False" === "True") {
+                    setTimeout(() => {
+                        const g = svg.querySelector('g');
+                        if (g) {
+                            var svgD3 = d3.select(svg);
+                            svgD3.html("<g class='wrapper'>" + svgD3.html() + "</g>");
+                            var inner = svgD3.select("g");
+                            var zoom = d3.zoom().on("zoom", function(event) {
+                                inner.attr("transform", event.transform);
+                            });
+                            svgD3.call(zoom);
+                        }
+                    }, 100);
+                }
+            }
+
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+        container.appendChild(fullscreenBtn);
+    });
+};
+
+const load = async () => {
+    initStyles();
+
+    await runMermaid(true);
+
+    const reRunIfThemeChanges = async () => {
+        const newDarkTheme = isDarkTheme();
+        if (newDarkTheme !== darkTheme) {
+            darkTheme = newDarkTheme;
+            console.log("Theme change detected, re-running mermaid with", darkTheme ? "dark" : "default", "theme");
+            await mermaid.initialize(
+                {...JSON.parse(
+                    `{"startOnLoad": false}`
+                ),
+                ...{ darkMode: darkTheme, theme: darkTheme ? 'dark' : 'default' },
+                }
+            );
+            await runMermaid(true);
+        }
+    };
+
+    // Update theme classes when theme changes
+    const themeObserver = new MutationObserver(reRunIfThemeChanges);
+    themeObserver.observe(document.documentElement, {
+        attributes: true,
+        attributeFilter: ['class', 'style', 'data-theme']
+    });
+    themeObserver.observe(document.body, {
+        attributes: true,
+        attributeFilter: ['class', 'style', 'data-theme']
+    });
+};
+
+
+
+
+
+console.log("Initializing mermaid with", darkTheme ? "dark" : "default", "theme");
+mermaid.initialize(
+    {...JSON.parse(
+        `{"startOnLoad": false}`
+    ),
+    ...{ darkMode: darkTheme, theme: darkTheme ? 'dark' : 'default' },
+    }
+);
+
+window.addEventListener("load", load);
+window.runMermaid = runMermaid;</script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="author" title="About these documents" href="../about.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Training documentation" href="../training.html" />
+    <link rel="prev" title="Clear Fleet" href="clear_fleet_component.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Fleet Manager
+          </a>
+              <div class="version">
+                1.0
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../about.html">About the project</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started.html">Getting Started</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../modules.html">Code documentation</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../Drone_module/index.html">Drone</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">Fleet Manager</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="init_fleet_component.html">Init Fleet Manager</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mission_components.html">Mission Management</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ros2_components.html">ROS2 Management</a></li>
+<li class="toctree-l3"><a class="reference internal" href="rest_components.html">REST Management</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mqtt_components.html">MQTT Management</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pm_components.html">Prescription Map Management</a></li>
+<li class="toctree-l3"><a class="reference internal" href="metrics_components.html">System Metrics Component</a></li>
+<li class="toctree-l3"><a class="reference internal" href="clear_fleet_component.html">Clear Fleet</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Create Logger</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#create_logger_fleet.create_logger"><code class="docutils literal notranslate"><span class="pre">create_logger()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#create_logger_fleet.IOError"><code class="docutils literal notranslate"><span class="pre">IOError</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#create_logger_fleet.Exception"><code class="docutils literal notranslate"><span class="pre">Exception</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id0"><code class="docutils literal notranslate"><span class="pre">create_logger()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../training.html">Training documentation</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Fleet Manager</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../modules.html">Code documentation</a></li>
+          <li class="breadcrumb-item"><a href="index.html">Fleet Manager</a></li>
+      <li class="breadcrumb-item active">Create Logger</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/Fleet_module/create_logger_fleet_component.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="module-0">
+<span id="create-logger"></span><h1>Create Logger<a class="headerlink" href="#module-0" title="Link to this heading"></a></h1>
+<p>Fleet Management System - Concurrent Logger Configuration Module</p>
+<div class="versionadded" id="module-create_logger_fleet">
+<p><span class="versionmodified added">Added in version 1.0.</span></p>
+</div>
+<p>This module provides essential logging infrastructure for the Fleet Management System,
+enabling thread-safe, concurrent logging across multiple system components. It implements
+rotating file handlers to manage log file sizes and provides unified formatting for
+both console and file output.</p>
+<dl>
+<dt>Key Features:</dt><dd><ul class="simple">
+<li><p><strong>Concurrent Safety</strong>: Thread-safe logging using ConcurrentRotatingFileHandler</p></li>
+<li><p><strong>Automatic Rotation</strong>: Prevents log files from growing indefinitely</p></li>
+<li><p><strong>Dual Output</strong>: Simultaneous console and file logging</p></li>
+<li><p><strong>Standardized Formatting</strong>: Consistent timestamp and message formatting</p></li>
+<li><p><strong>Error Resilience</strong>: Graceful handling of logging configuration failures</p></li>
+</ul>
+</dd>
+<dt>Architecture Overview:</dt><dd><p>The logging system follows a distributed architecture where each major component
+(REST API, Mission Manager, ROS2 Interface, MQTT, etc.) has its own dedicated
+logger instance with component-specific log files.</p>
+</dd>
+<dt>Logging Workflow:</dt><dd><pre  class="mermaid">
+        graph TD
+    A[Logger Request] --&gt; B[Create Logger Instance]
+    B --&gt; C[Configure File Handler]
+    C --&gt; D[Configure Console Handler]
+    D --&gt; E[Set Formatter]
+    E --&gt; F[Attach Handlers]
+    F --&gt; G[Return Configured Logger]
+
+    C --&gt; C1[Set Rotation Policy]
+    C1 --&gt; C2[Enable Concurrent Access]
+
+    E --&gt; E1[Timestamp Format]
+    E1 --&gt; E2[Component Name]
+    E2 --&gt; E3[Log Level]
+    E3 --&gt; E4[Message Content]
+    </pre></dd>
+<dt>Log File Management:</dt><dd><ul class="simple">
+<li><p><strong>Size Limit</strong>: 1MB per log file before rotation</p></li>
+<li><p><strong>Backup Count</strong>: 5 backup files maintained (total ~5MB per component)</p></li>
+<li><p><strong>Naming Convention</strong>: <code class="docutils literal notranslate"><span class="pre">component.log</span></code>, <code class="docutils literal notranslate"><span class="pre">component.log.1</span></code>, etc.</p></li>
+<li><p><strong>Concurrent Access</strong>: Multiple processes can write safely to the same log file</p></li>
+</ul>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This module is designed specifically for the Fleet Management System’s
+distributed architecture where multiple processes need to log simultaneously.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Logging configuration should be done early in the application lifecycle
+to ensure all log messages are captured properly.</p>
+</div>
+<dl>
+<dt>Functions:</dt><dd><dl class="py function">
+<dt class="sig sig-object py" id="create_logger_fleet.create_logger">
+<span class="sig-prename descclassname"><span class="pre">create_logger_fleet.</span></span><span class="sig-name descname"><span class="pre">create_logger</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">logger_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log_file</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Logger</span></span></span><a class="reference internal" href="../_modules/create_logger_fleet.html#create_logger"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#create_logger_fleet.create_logger" title="Link to this definition"></a></dt>
+<dd><p>Configure a thread-safe logger with rotating file handler for Fleet Management System components.</p>
+<p>This function creates a comprehensive logging solution that supports concurrent access
+from multiple processes and threads, essential for the distributed Fleet Management System
+architecture. It implements automatic log rotation to prevent disk space issues and
+provides unified formatting across all system components.</p>
+<dl>
+<dt>Logger Configuration Workflow:</dt><dd><ol class="arabic simple">
+<li><p><strong>Logger Creation</strong>: Initialize named logger instance with INFO level</p></li>
+<li><p><strong>File Handler Setup</strong>: Configure concurrent rotating file handler
+- Maximum file size: 1MB before rotation
+- Backup count: 5 files (total ~5MB per component)
+- Thread-safe concurrent access enabled</p></li>
+<li><p><strong>Console Handler Setup</strong>: Configure stdout handler for real-time monitoring</p></li>
+<li><p><strong>Formatter Application</strong>: Apply standardized format to both handlers</p></li>
+<li><p><strong>Handler Attachment</strong>: Link handlers to logger instance</p></li>
+<li><p><strong>Validation</strong>: Return configured logger or raise exception on failure</p></li>
+</ol>
+</dd>
+<dt>File Rotation Strategy:</dt><dd><ul class="simple">
+<li><p><strong>Primary File</strong>: <code class="docutils literal notranslate"><span class="pre">component.log</span></code> (active logging)</p></li>
+<li><p><strong>Backup Files</strong>: <code class="docutils literal notranslate"><span class="pre">component.log.1</span></code> through <code class="docutils literal notranslate"><span class="pre">component.log.5</span></code></p></li>
+<li><p><strong>Rotation Trigger</strong>: When active file exceeds 1MB</p></li>
+<li><p><strong>Cleanup</strong>: Oldest backup automatically deleted when limit reached</p></li>
+</ul>
+</dd>
+<dt>Log Message Format:</dt><dd><p><code class="docutils literal notranslate"><span class="pre">[TIMESTAMP][COMPONENT][LEVEL]MESSAGE</span></code></p>
+<p>Example: <code class="docutils literal notranslate"><span class="pre">[2025-06-28</span> <span class="pre">10:30:45][MISSION][INFO]</span> <span class="pre">Mission</span> <span class="pre">system</span> <span class="pre">initialized</span> <span class="pre">successfully</span></code></p>
+</dd>
+<dt>Thread Safety Features:</dt><dd><ul class="simple">
+<li><p><strong>Concurrent File Access</strong>: Multiple processes can write simultaneously</p></li>
+<li><p><strong>Atomic Operations</strong>: File rotation operations are atomic</p></li>
+<li><p><strong>Lock Management</strong>: Automatic file locking prevents corruption</p></li>
+<li><p><strong>Cross-Platform</strong>: Works on Windows, Linux, and macOS</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>logger_name</strong> (<em>str</em>) – Unique identifier for the logger instance, typically the component name
+(e.g., ‘MISSION’, ‘REST’, ‘MQTT’, ‘ROS2’, ‘PM’, ‘METRICS’)</p></li>
+<li><p><strong>log_file</strong> (<em>str</em>) – Absolute or relative path to the log file where messages will be stored
+(e.g., ‘Logs/mission_manager.log’, ‘Logs/rest.log’)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Fully configured logger instance ready for use by system components</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>logging.Logger</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><a class="reference internal" href="#create_logger_fleet.IOError" title="create_logger_fleet.IOError"><strong>IOError</strong></a> – When log file cannot be created due to permission issues,
+disk space constraints, or invalid path</p></li>
+<li><p><a class="reference internal" href="#create_logger_fleet.Exception" title="create_logger_fleet.Exception"><strong>Exception</strong></a> – For any other unexpected configuration errors such as
+handler creation failures or formatter issues</p></li>
+</ul>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The logger level is set to INFO by default, which captures INFO, WARNING,
+ERROR, and CRITICAL messages while filtering out DEBUG messages.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Ensure the log file directory exists and has appropriate write permissions
+before calling this function. The function will not create parent directories.</p>
+</div>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<ul class="simple">
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">concurrent_log_handler.ConcurrentRotatingFileHandler</span></code>: Thread-safe file handler</p></li>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">logging.StreamHandler</span></code>: Console output handler</p></li>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">logging.Formatter</span></code>: Message formatting configuration</p></li>
+</ul>
+</div>
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">logger</span> <span class="o">=</span> <span class="n">create_logger</span><span class="p">(</span><span class="s1">&#39;MISSION&#39;</span><span class="p">,</span> <span class="s1">&#39;Logs/mission_manager.log&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s1">&#39;Mission system starting up&#39;</span><span class="p">)</span>
+<span class="go">[2025-06-28 10:30:45][MISSION][INFO] Mission system starting up</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="c1"># Error handling example</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">try</span><span class="p">:</span>
+<span class="gp">... </span>    <span class="n">logger</span> <span class="o">=</span> <span class="n">create_logger</span><span class="p">(</span><span class="s1">&#39;TEST&#39;</span><span class="p">,</span> <span class="s1">&#39;/invalid/path/test.log&#39;</span><span class="p">)</span>
+<span class="gp">... </span><span class="k">except</span> <span class="ne">IOError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+<span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Failed to create logger: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<dl class="simple">
+<dt>Performance Considerations:</dt><dd><ul class="simple">
+<li><p><strong>Memory Usage</strong>: Each logger instance uses minimal memory (~1KB)</p></li>
+<li><p><strong>File I/O</strong>: Buffered writes reduce disk I/O overhead</p></li>
+<li><p><strong>Rotation Impact</strong>: File rotation is fast (&lt;100ms) and non-blocking</p></li>
+<li><p><strong>Concurrent Performance</strong>: Scales well with multiple processes</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd>
+<dt>Exceptions:</dt><dd><dl class="py exception">
+<dt class="sig sig-object py" id="create_logger_fleet.IOError">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">create_logger_fleet.</span></span><span class="sig-name descname"><span class="pre">IOError</span></span><a class="headerlink" href="#create_logger_fleet.IOError" title="Link to this definition"></a></dt>
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">Raised</span> <span class="pre">when</span> <span class="pre">log</span> <span class="pre">file</span> <span class="pre">initialization</span> <span class="pre">fails</span> <span class="pre">due</span> <span class="pre">to</span> <span class="pre">permissions</span> <span class="pre">or</span> <span class="pre">disk</span> <span class="pre">space</span> <span class="pre">issues.</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="create_logger_fleet.Exception">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">create_logger_fleet.</span></span><span class="sig-name descname"><span class="pre">Exception</span></span><a class="headerlink" href="#create_logger_fleet.Exception" title="Link to this definition"></a></dt>
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">Generic</span> <span class="pre">exception</span> <span class="pre">handling</span> <span class="pre">for</span> <span class="pre">unexpected</span> <span class="pre">logging</span> <span class="pre">configuration</span> <span class="pre">errors.</span></span></dt>
+<dd></dd></dl>
+
+</dd>
+</dl>
+<dl class="py function">
+<dt class="sig sig-object py" id="id0">
+<span class="sig-prename descclassname"><span class="pre">create_logger_fleet.</span></span><span class="sig-name descname"><span class="pre">create_logger</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">logger_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log_file</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Logger</span></span></span><a class="reference internal" href="../_modules/create_logger_fleet.html#create_logger"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id0" title="Link to this definition"></a></dt>
+<dd><p>Configure a thread-safe logger with rotating file handler for Fleet Management System components.</p>
+<p>This function creates a comprehensive logging solution that supports concurrent access
+from multiple processes and threads, essential for the distributed Fleet Management System
+architecture. It implements automatic log rotation to prevent disk space issues and
+provides unified formatting across all system components.</p>
+<dl>
+<dt>Logger Configuration Workflow:</dt><dd><ol class="arabic simple">
+<li><p><strong>Logger Creation</strong>: Initialize named logger instance with INFO level</p></li>
+<li><p><strong>File Handler Setup</strong>: Configure concurrent rotating file handler
+- Maximum file size: 1MB before rotation
+- Backup count: 5 files (total ~5MB per component)
+- Thread-safe concurrent access enabled</p></li>
+<li><p><strong>Console Handler Setup</strong>: Configure stdout handler for real-time monitoring</p></li>
+<li><p><strong>Formatter Application</strong>: Apply standardized format to both handlers</p></li>
+<li><p><strong>Handler Attachment</strong>: Link handlers to logger instance</p></li>
+<li><p><strong>Validation</strong>: Return configured logger or raise exception on failure</p></li>
+</ol>
+</dd>
+<dt>File Rotation Strategy:</dt><dd><ul class="simple">
+<li><p><strong>Primary File</strong>: <code class="docutils literal notranslate"><span class="pre">component.log</span></code> (active logging)</p></li>
+<li><p><strong>Backup Files</strong>: <code class="docutils literal notranslate"><span class="pre">component.log.1</span></code> through <code class="docutils literal notranslate"><span class="pre">component.log.5</span></code></p></li>
+<li><p><strong>Rotation Trigger</strong>: When active file exceeds 1MB</p></li>
+<li><p><strong>Cleanup</strong>: Oldest backup automatically deleted when limit reached</p></li>
+</ul>
+</dd>
+<dt>Log Message Format:</dt><dd><p><code class="docutils literal notranslate"><span class="pre">[TIMESTAMP][COMPONENT][LEVEL]MESSAGE</span></code></p>
+<p>Example: <code class="docutils literal notranslate"><span class="pre">[2025-06-28</span> <span class="pre">10:30:45][MISSION][INFO]</span> <span class="pre">Mission</span> <span class="pre">system</span> <span class="pre">initialized</span> <span class="pre">successfully</span></code></p>
+</dd>
+<dt>Thread Safety Features:</dt><dd><ul class="simple">
+<li><p><strong>Concurrent File Access</strong>: Multiple processes can write simultaneously</p></li>
+<li><p><strong>Atomic Operations</strong>: File rotation operations are atomic</p></li>
+<li><p><strong>Lock Management</strong>: Automatic file locking prevents corruption</p></li>
+<li><p><strong>Cross-Platform</strong>: Works on Windows, Linux, and macOS</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>logger_name</strong> (<em>str</em>) – Unique identifier for the logger instance, typically the component name
+(e.g., ‘MISSION’, ‘REST’, ‘MQTT’, ‘ROS2’, ‘PM’, ‘METRICS’)</p></li>
+<li><p><strong>log_file</strong> (<em>str</em>) – Absolute or relative path to the log file where messages will be stored
+(e.g., ‘Logs/mission_manager.log’, ‘Logs/rest.log’)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Fully configured logger instance ready for use by system components</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>logging.Logger</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><a class="reference internal" href="#create_logger_fleet.IOError" title="create_logger_fleet.IOError"><strong>IOError</strong></a> – When log file cannot be created due to permission issues,
+disk space constraints, or invalid path</p></li>
+<li><p><a class="reference internal" href="#create_logger_fleet.Exception" title="create_logger_fleet.Exception"><strong>Exception</strong></a> – For any other unexpected configuration errors such as
+handler creation failures or formatter issues</p></li>
+</ul>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The logger level is set to INFO by default, which captures INFO, WARNING,
+ERROR, and CRITICAL messages while filtering out DEBUG messages.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Ensure the log file directory exists and has appropriate write permissions
+before calling this function. The function will not create parent directories.</p>
+</div>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<ul class="simple">
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">concurrent_log_handler.ConcurrentRotatingFileHandler</span></code>: Thread-safe file handler</p></li>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">logging.StreamHandler</span></code>: Console output handler</p></li>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">logging.Formatter</span></code>: Message formatting configuration</p></li>
+</ul>
+</div>
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">logger</span> <span class="o">=</span> <span class="n">create_logger</span><span class="p">(</span><span class="s1">&#39;MISSION&#39;</span><span class="p">,</span> <span class="s1">&#39;Logs/mission_manager.log&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s1">&#39;Mission system starting up&#39;</span><span class="p">)</span>
+<span class="go">[2025-06-28 10:30:45][MISSION][INFO] Mission system starting up</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="c1"># Error handling example</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">try</span><span class="p">:</span>
+<span class="gp">... </span>    <span class="n">logger</span> <span class="o">=</span> <span class="n">create_logger</span><span class="p">(</span><span class="s1">&#39;TEST&#39;</span><span class="p">,</span> <span class="s1">&#39;/invalid/path/test.log&#39;</span><span class="p">)</span>
+<span class="gp">... </span><span class="k">except</span> <span class="ne">IOError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+<span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Failed to create logger: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<dl class="simple">
+<dt>Performance Considerations:</dt><dd><ul class="simple">
+<li><p><strong>Memory Usage</strong>: Each logger instance uses minimal memory (~1KB)</p></li>
+<li><p><strong>File I/O</strong>: Buffered writes reduce disk I/O overhead</p></li>
+<li><p><strong>Rotation Impact</strong>: File rotation is fast (&lt;100ms) and non-blocking</p></li>
+<li><p><strong>Concurrent Performance</strong>: Scales well with multiple processes</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="clear_fleet_component.html" class="btn btn-neutral float-left" title="Clear Fleet" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../training.html" class="btn btn-neutral float-right" title="Training documentation" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, Estela Mora Barba.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

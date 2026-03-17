@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>gRPC Prescription Map &mdash; Fleet Manager 1.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../_static/documentation_options.js?v=f2a433a1"></script>
+        <script src="../../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+        <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="author" title="About these documents" href="../../about.html" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="System Metrics Component" href="../metrics_components.html" />
+    <link rel="prev" title="Subscriber Prescription Map Function" href="subs_pm_component.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            Fleet Manager
+          </a>
+              <div class="version">
+                1.0
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../about.html">About the project</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../getting_started.html">Getting Started</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../modules.html">Code documentation</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../Drone_module/index.html">Drone</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">Fleet Manager</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../init_fleet_component.html">Init Fleet Manager</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../mission_components.html">Mission Management</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ros2_components.html">ROS2 Management</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../rest_components.html">REST Management</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../mqtt_components.html">MQTT Management</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../pm_components.html">Prescription Map Management</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="pm_manager_component.html">Prescription Map Manager</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pm_isobus_component.html">Prescription Map - ISOBUS Format</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pm_drone_component.html">Prescription Map - Drone Format</a></li>
+<li class="toctree-l4"><a class="reference internal" href="subs_pm_component.html">Subscriber Prescription Map Function</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">gRPC Prescription Map</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../metrics_components.html">System Metrics Component</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../clear_fleet_component.html">Clear Fleet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../create_logger_fleet_component.html">Create Logger</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../training.html">Training documentation</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Fleet Manager</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../modules.html">Code documentation</a></li>
+          <li class="breadcrumb-item"><a href="../index.html">Fleet Manager</a></li>
+          <li class="breadcrumb-item"><a href="../pm_components.html">Prescription Map Management</a></li>
+      <li class="breadcrumb-item active">gRPC Prescription Map</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/Fleet_module/PM/grpc_pm_component.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="module-grpc_pm_fleet">
+<span id="grpc-prescription-map"></span><h1>gRPC Prescription Map<a class="headerlink" href="#module-grpc_pm_fleet" title="Link to this heading"></a></h1>
+<section id="grpc-prescription-map-fleet-communication-module">
+<h2>gRPC Prescription Map Fleet Communication Module<a class="headerlink" href="#grpc-prescription-map-fleet-communication-module" title="Link to this heading"></a></h2>
+<p>This module provides gRPC communication services for prescription map (PM)
+management in the agricultural fleet management system. It handles bidirectional
+communication between the fleet manager and ROS2-based vehicle systems for
+prescription map distribution and execution feedback.</p>
+<p>The module implements a gRPC server that receives prescription map requests
+and mission completion signals from the mission management system, delegating
+the actual processing to the prescription map manager fleet module.</p>
+<dl>
+<dt>Key Features:</dt><dd><ul class="simple">
+<li><p>gRPC server for prescription map communication</p></li>
+<li><p>Bidirectional communication with ROS2 systems</p></li>
+<li><p>Thread-safe queue-based message handling</p></li>
+<li><p>Graceful connection management and error handling</p></li>
+<li><p>Comprehensive logging system for debugging and monitoring</p></li>
+<li><p>Integration with prescription map generation and validation workflows</p></li>
+</ul>
+</dd>
+<dt>Architecture:</dt><dd><p>The module follows a service-oriented architecture where:
+- PMCommunicationService handles incoming gRPC requests
+- Message routing based on type (‘Generate’, ‘Finish’)
+- Delegation to pm_manager_fleet for actual processing
+- Thread-based server management for concurrent operations</p>
+</dd>
+<dt>Usage Example:</dt><dd><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Initialize and start the gRPC PM communication service</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">logging</span>
+<span class="n">pm_logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="s1">&#39;pm_fleet&#39;</span><span class="p">)</span>
+<span class="n">start_grpc_pm</span><span class="p">(</span><span class="n">pm_logger</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+<p>Author: Fleet Management System
+Date: 2025</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This module requires the following dependencies:
+- grpc and grpcio-tools for gRPC communication
+- GRPC.pm_pb2 and GRPC.pm_pb2_grpc (generated from .proto files)
+- PrescriptionMap.pm_manager_fleet for business logic</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The gRPC server runs on port 50087. Ensure this port is available
+and properly configured in firewall settings for production deployments.</p>
+</div>
+</section>
+<dl class="py class">
+<dt class="sig sig-object py" id="grpc_pm_fleet.PMCommunicationService">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">grpc_pm_fleet.</span></span><span class="sig-name descname"><span class="pre">PMCommunicationService</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/grpc_pm_fleet.html#PMCommunicationService"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#grpc_pm_fleet.PMCommunicationService" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">PMCommunicationServicer</span></code></p>
+<p>gRPC service handler for prescription map communication from ROS2 systems.</p>
+<p>This class implements the gRPC service interface for receiving prescription map
+requests and mission completion signals from ROS2-based vehicle systems. It
+serves as the communication bridge between the fleet management system and
+individual vehicle controllers.</p>
+<p>The service processes two main types of messages:
+- ‘Generate’: Requests for prescription map generation
+- ‘Finish’: Signals indicating mission completion</p>
+<p>All incoming messages are delegated to the appropriate handlers in the
+pm_manager_fleet module for processing, maintaining separation of concerns
+between communication and business logic.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="grpc_pm_fleet.PMCommunicationService.pm_logger">
+<span class="sig-name descname"><span class="pre">pm_logger</span></span><a class="headerlink" href="#grpc_pm_fleet.PMCommunicationService.pm_logger" title="Link to this definition"></a></dt>
+<dd><p>Configured logger instance for operation tracking and debugging</p>
+</dd></dl>
+
+<p class="rubric">Example</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Service is typically instantiated by the gRPC server</span>
+<span class="n">service</span> <span class="o">=</span> <span class="n">PMCommunicationService</span><span class="p">(</span><span class="n">pm_logger</span><span class="p">)</span>
+<span class="c1"># Messages are handled automatically by gRPC infrastructure</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This class inherits from PMCommunicationServicer which is automatically
+generated from the .proto file definitions.</p>
+</div>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><code class="xref py py-mod docutils literal notranslate"><span class="pre">PrescriptionMap.pm_manager_fleet</span></code>: Business logic for PM processing
+<code class="xref py py-mod docutils literal notranslate"><span class="pre">GRPC.pm_pb2_grpc</span></code>: Generated gRPC service definitions</p>
+</div>
+<dl class="py method">
+<dt class="sig sig-object py" id="grpc_pm_fleet.PMCommunicationService.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pm_logger</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/grpc_pm_fleet.html#PMCommunicationService.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#grpc_pm_fleet.PMCommunicationService.__init__" title="Link to this definition"></a></dt>
+<dd><p>Initialize the PM communication service.</p>
+<p>Sets up the gRPC service handler with the provided logger for
+comprehensive operation tracking and debugging.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>pm_logger</strong> – Configured logger instance for tracking PM operations,
+should be properly configured with appropriate log levels
+and output handlers</p>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">logging</span>
+<span class="n">pm_logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="s1">&#39;pm_fleet&#39;</span><span class="p">)</span>
+<span class="n">pm_logger</span><span class="o">.</span><span class="n">setLevel</span><span class="p">(</span><span class="n">logging</span><span class="o">.</span><span class="n">INFO</span><span class="p">)</span>
+<span class="n">service</span> <span class="o">=</span> <span class="n">PMCommunicationService</span><span class="p">(</span><span class="n">pm_logger</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="grpc_pm_fleet.PMCommunicationService.SendPM">
+<span class="sig-name descname"><span class="pre">SendPM</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">context</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/grpc_pm_fleet.html#PMCommunicationService.SendPM"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#grpc_pm_fleet.PMCommunicationService.SendPM" title="Link to this definition"></a></dt>
+<dd><p>Process incoming prescription map requests from ROS2 systems.</p>
+<p>This method handles gRPC requests containing prescription map messages
+from ROS2-based vehicle systems. It parses the incoming message, determines
+the message type, and delegates processing to the appropriate handler
+in the pm_manager_fleet module.</p>
+<p>The method supports two main message types:
+- ‘Generate’: Triggers prescription map generation for a vehicle
+- ‘Finish’: Signals mission completion and triggers validation</p>
+<p>Message Processing Flow:
+1. Extract message data from gRPC request
+2. Parse JSON message content
+3. Determine message type and extract vehicle ID
+4. Delegate to appropriate handler function
+5. Return confirmation response</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>request</strong> – gRPC request object containing prescription map message data.
+The request should have a ‘pm_message’ field containing
+JSON-encoded message data as a list of characters.</p></li>
+<li><p><strong>context</strong> – gRPC connection context providing request metadata and
+connection management capabilities</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><dl class="simple">
+<dt>gRPC response object with confirmation message indicating</dt><dd><p>successful message receipt and processing initiation</p>
+</dd>
+</dl>
+</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>PMResponse</p>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># This method is called automatically by gRPC infrastructure</span>
+<span class="c1"># when a client sends a PM message</span>
+
+<span class="c1"># Example message structure:</span>
+<span class="p">{</span>
+    <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;Generate&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;vehicle_id&quot;</span><span class="p">:</span> <span class="s2">&quot;VEHICLE_001&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;data&quot;</span><span class="p">:</span> <span class="p">[</span><span class="n">treatments</span><span class="p">,</span> <span class="n">amounts</span><span class="p">,</span> <span class="n">grid</span><span class="p">,</span> <span class="n">coords</span><span class="p">,</span> <span class="n">pm_types</span><span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The method expects the pm_message to be a list of characters that
+forms a valid JSON string when joined together. This is a common
+pattern in gRPC for transmitting complex data structures.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Invalid JSON in the pm_message will cause JSON parsing errors.
+Missing required fields (type, vehicle_id) may cause downstream
+processing failures that are handled by the delegate functions.</p>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="grpc_pm_fleet.run_server_pm">
+<span class="sig-prename descclassname"><span class="pre">grpc_pm_fleet.</span></span><span class="sig-name descname"><span class="pre">run_server_pm</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pm_logger</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/grpc_pm_fleet.html#run_server_pm"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#grpc_pm_fleet.run_server_pm" title="Link to this definition"></a></dt>
+<dd><p>Initialize and run the gRPC server for prescription map communication.</p>
+<p>This function creates and starts a gRPC server that listens for prescription map
+requests from ROS2 systems. The server uses a thread pool executor for handling
+concurrent requests and runs continuously until interrupted.</p>
+<p>Server Configuration:
+- Port: 50087 (insecure connection)
+- Max workers: 10 concurrent threads
+- Service: PMCommunicationService for handling PM requests
+- Graceful shutdown on KeyboardInterrupt</p>
+<p>The server runs in an infinite loop, sleeping for 24 hours between iterations
+to maintain the connection while being responsive to shutdown signals.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>pm_logger</strong> – Configured logger instance for server operation tracking.
+Should be properly configured with appropriate log levels
+and output handlers for production deployments.</p>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">logging</span>
+<span class="n">pm_logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="s1">&#39;pm_server&#39;</span><span class="p">)</span>
+<span class="n">pm_logger</span><span class="o">.</span><span class="n">setLevel</span><span class="p">(</span><span class="n">logging</span><span class="o">.</span><span class="n">INFO</span><span class="p">)</span>
+
+<span class="c1"># This will block until KeyboardInterrupt</span>
+<span class="n">run_server_pm</span><span class="p">(</span><span class="n">pm_logger</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The server uses insecure connections (no SSL/TLS). For production
+deployments, consider implementing secure connections with proper
+certificate management.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This function runs indefinitely until interrupted. It should typically
+be run in a separate thread or process to avoid blocking the main
+application thread.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>KeyboardInterrupt</strong> – Gracefully handled to stop the server</p></li>
+<li><p><a class="reference internal" href="../create_logger_fleet_component.html#create_logger_fleet.Exception" title="create_logger_fleet.Exception"><strong>Exception</strong></a> – Any other exceptions during server startup or operation
+    should be handled by the calling code</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="grpc_pm_fleet.start_grpc_pm">
+<span class="sig-prename descclassname"><span class="pre">grpc_pm_fleet.</span></span><span class="sig-name descname"><span class="pre">start_grpc_pm</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pm_logger</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/grpc_pm_fleet.html#start_grpc_pm"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#grpc_pm_fleet.start_grpc_pm" title="Link to this definition"></a></dt>
+<dd><p>Initialize and start gRPC communication components for prescription map management.</p>
+<p>This function sets up and starts the complete gRPC communication infrastructure
+for prescription map management. It creates a daemon thread to run the gRPC
+server, allowing the main application to continue running while the server
+handles incoming PM requests in the background.</p>
+<p>The function configures:
+- A daemon thread for running the gRPC server
+- Automatic thread cleanup when the main process exits
+- Non-blocking startup for integration with larger applications</p>
+<p>Thread Management:
+- Server runs in a daemon thread (automatically terminated on main exit)
+- Non-blocking startup allows immediate return to caller
+- Thread-safe operation with concurrent request handling</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>pm_logger</strong> – Configured logger instance for tracking PM communication
+operations. Should be properly configured with appropriate
+log levels and output handlers for production use.</p>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">logging</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">Logs.create_logger_fleet</span><span class="w"> </span><span class="kn">import</span> <span class="n">create_logger</span>
+
+<span class="c1"># Create configured logger</span>
+<span class="n">pm_logger</span> <span class="o">=</span> <span class="n">create_logger</span><span class="p">(</span><span class="s1">&#39;pm_fleet&#39;</span><span class="p">,</span> <span class="n">logging</span><span class="o">.</span><span class="n">INFO</span><span class="p">)</span>
+
+<span class="c1"># Start PM communication service (non-blocking)</span>
+<span class="n">start_grpc_pm</span><span class="p">(</span><span class="n">pm_logger</span><span class="p">)</span>
+
+<span class="c1"># Main application continues...</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;PM communication service started in background&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This function returns immediately after starting the daemon thread.
+The gRPC server will continue running in the background until the
+main process exits or is terminated.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Since the server thread is a daemon thread, it will be forcefully
+terminated when the main process exits. Ensure proper application
+lifecycle management for graceful shutdowns if needed.</p>
+</div>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="#grpc_pm_fleet.run_server_pm" title="grpc_pm_fleet.run_server_pm"><code class="xref py py-func docutils literal notranslate"><span class="pre">run_server_pm()</span></code></a>: The server function executed in the daemon thread
+<a class="reference internal" href="#grpc_pm_fleet.PMCommunicationService" title="grpc_pm_fleet.PMCommunicationService"><code class="xref py py-class docutils literal notranslate"><span class="pre">PMCommunicationService</span></code></a>: The gRPC service implementation</p>
+</div>
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="subs_pm_component.html" class="btn btn-neutral float-left" title="Subscriber Prescription Map Function" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../metrics_components.html" class="btn btn-neutral float-right" title="System Metrics Component" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, Estela Mora Barba.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

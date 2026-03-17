@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Create Leaf Detection labels dir &mdash; Fleet Manager 1.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../_static/documentation_options.js?v=f2a433a1"></script>
+        <script src="../../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+        <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="author" title="About these documents" href="../../about.html" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Grape Diseases" href="../grape_diseases.html" />
+    <link rel="prev" title="Leaf Detection" href="../leaf_detection.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            Fleet Manager
+          </a>
+              <div class="version">
+                1.0
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../about.html">About the project</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../getting_started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules.html">Code documentation</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../training.html">Training documentation</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../training.html#training-and-compilation-for-hailo8-8l">Training and Compilation for Hailo8/8L</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../training.html#code-documentation">Code documentation</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../common_py_modules.html">Common Python Modules</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../leaf_detection.html">Leaf Detection</a><ul class="current">
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Create Leaf Detection labels dir</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../grape_diseases.html">Grape Diseases</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Fleet Manager</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../training.html">Training documentation</a></li>
+          <li class="breadcrumb-item"><a href="../leaf_detection.html">Leaf Detection</a></li>
+      <li class="breadcrumb-item active">Create Leaf Detection labels dir</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/Training/Leaf/leaf.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="module-leaf_labels_dir">
+<span id="create-leaf-detection-labels-dir"></span><h1>Create Leaf Detection labels dir<a class="headerlink" href="#module-leaf_labels_dir" title="Link to this heading"></a></h1>
+<section id="csv-to-yolo-label-converter-for-leaf-detection">
+<h2>CSV to YOLO Label Converter for Leaf Detection<a class="headerlink" href="#csv-to-yolo-label-converter-for-leaf-detection" title="Link to this heading"></a></h2>
+<p>This module converts bounding box annotations from CSV format to YOLO format
+for leaf detection tasks. It processes a CSV file containing image IDs and
+bounding box coordinates, then generates corresponding YOLO-format label files
+for object detection training.</p>
+<p>The script handles the conversion from absolute pixel coordinates to normalized
+YOLO format coordinates and creates the proper directory structure for YOLO
+training workflows.</p>
+<dl>
+<dt>CSV Format Expected:</dt><dd><p>The CSV file should contain the following columns:
+- image_id: Filename of the image (e.g., “image001.jpg”)
+- bbox: Bounding box coordinates as string “[x, y, w, h]”</p>
+<p>Where:
+- x, y: Top-left corner coordinates in pixels
+- w, h: Width and height in pixels</p>
+</dd>
+<dt>YOLO Format Generated:</dt><dd><p>Each label file contains one line per object:
+class_id x_center y_center width height</p>
+<p>Where all coordinates are normalized (0.0 to 1.0):
+- x_center, y_center: Center of bounding box relative to image size
+- width, height: Bounding box dimensions relative to image size</p>
+</dd>
+</dl>
+<p>Directory Structure:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>base_directory/
+├── train.csv             # Input CSV with annotations
+├── images/Leaf/          # Source images directory
+└── labels/Leaf/          # Generated YOLO labels (created)
+</pre></div>
+</div>
+<dl class="simple">
+<dt>Features:</dt><dd><ul class="simple">
+<li><p>Automatic YOLO format conversion from CSV annotations</p></li>
+<li><p>Normalized coordinate calculation for scale independence</p></li>
+<li><p>Image dimension extraction for accurate normalization</p></li>
+<li><p>Missing annotation detection and warning system</p></li>
+<li><p>Automatic directory creation for output labels</p></li>
+</ul>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<dl class="simple">
+<dt>CSV Input:</dt><dd><p>image_id,bbox
+leaf001.jpg,”[100, 50, 200, 150]”</p>
+</dd>
+<dt>YOLO Output (leaf001.txt):</dt><dd><p>0 0.312500 0.250000 0.312500 0.375000</p>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>All detected objects are assigned class_id = 0 (single class detection).
+Modify the class assignment logic for multi-class scenarios.</p>
+</div>
+<dl class="simple">
+<dt>Requirements:</dt><dd><ul class="simple">
+<li><p>pandas: CSV file processing</p></li>
+<li><p>PIL (Pillow): Image dimension extraction</p></li>
+<li><p>ast: Safe evaluation of bbox string literals</p></li>
+</ul>
+</dd>
+</dl>
+<p>Author: PFG Electronics Training Team
+Date: June 2025</p>
+</section>
+<dl class="py data">
+<dt class="sig sig-object py" id="leaf_labels_dir.grouped">
+<span class="sig-prename descclassname"><span class="pre">leaf_labels_dir.</span></span><span class="sig-name descname"><span class="pre">grouped</span></span><a class="headerlink" href="#leaf_labels_dir.grouped" title="Link to this definition"></a></dt>
+<dd><p>Convert CSV bounding box data to YOLO format label files.</p>
+<p>This section processes each image in the dataset, extracts its dimensions,
+converts bounding box coordinates from absolute pixels to normalized YOLO format,
+and generates corresponding label files for YOLO training.</p>
+<dl class="simple">
+<dt>YOLO Format Conversion:</dt><dd><p>CSV format: [x, y, w, h] (absolute pixels, top-left corner)
+YOLO format: class_id x_center y_center width height (normalized 0-1)</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../leaf_detection.html" class="btn btn-neutral float-left" title="Leaf Detection" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../grape_diseases.html" class="btn btn-neutral float-right" title="Grape Diseases" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, Estela Mora Barba.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

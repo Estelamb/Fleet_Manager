@@ -1,0 +1,882 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>tb_manager &mdash; Fleet Manager 1.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=f2a433a1"></script>
+        <script src="../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+        <script src="../_static/copybutton.js?v=f281be69"></script>
+        <script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script>
+        <script type="module">import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11.12.1/dist/mermaid.esm.min.mjs";
+
+
+
+
+
+const initStyles = () => {
+    const defaultStyle = document.createElement('style');
+    defaultStyle.textContent = `pre.mermaid {
+    /* Same as .mermaid-container > pre */
+    display: block;
+    width: 100%;
+}
+
+pre.mermaid > svg {
+    /* Same as .mermaid-container > pre > svg */
+    height: 500px;
+    width: 100%;
+    max-width: 100% !important;
+}`;
+    document.head.appendChild(defaultStyle);
+
+    const fullscreenStyle = document.createElement('style');
+    fullscreenStyle.textContent = `.mermaid-container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.mermaid-container > pre {
+    display: block;
+    width: 100%;
+}
+
+.mermaid-container > pre > svg {
+    height: 500px;
+    width: 100%;
+    max-width: 100% !important;
+}
+
+.mermaid-fullscreen-btn {
+    width: 28px;
+    height: 28px;
+    background: rgba(255, 255, 255, 0.95);
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    border-radius: 4px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    font-size: 14px;
+    line-height: 1;
+    padding: 0;
+    color: #333;
+}
+
+.mermaid-fullscreen-btn:hover {
+    opacity: 100% !important;
+    background: rgba(255, 255, 255, 1);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+    transform: scale(1.1);
+}
+
+.mermaid-fullscreen-btn.dark-theme {
+    background: rgba(50, 50, 50, 0.95);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: #e0e0e0;
+}
+
+.mermaid-fullscreen-btn.dark-theme:hover {
+    background: rgba(60, 60, 60, 1);
+    box-shadow: 0 3px 10px rgba(255, 255, 255, 0.2);
+}
+
+.mermaid-fullscreen-modal {
+    display: none;
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 95vw;
+    height: 100vh;
+    background: rgba(255, 255, 255, 0.98);
+    z-index: 9999;
+    padding: 20px;
+    overflow: auto;
+}
+
+.mermaid-fullscreen-modal.dark-theme {
+    background: rgba(0, 0, 0, 0.98);
+}
+
+.mermaid-fullscreen-modal.active {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mermaid-container-fullscreen {
+    position: relative;
+    width: 95vw;
+    height: 90vh;
+    max-width: 95vw;
+    max-height: 90vh;
+    background: white;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    overflow: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mermaid-container-fullscreen.dark-theme {
+    background: #1a1a1a;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.8);
+}
+
+.mermaid-container-fullscreen pre.mermaid {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mermaid-container-fullscreen .mermaid svg {
+    height: 100% !important;
+    width: 100% !important;
+    cursor: grab;
+}
+
+.mermaid-fullscreen-close {
+    position: fixed !important;
+    top: 20px !important;
+    right: 20px !important;
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.95);
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    transition: all 0.2s;
+    font-size: 24px;
+    line-height: 1;
+    color: #333;
+}
+
+.mermaid-fullscreen-close:hover {
+    background: white;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+    transform: scale(1.1);
+}
+
+.mermaid-fullscreen-close.dark-theme {
+    background: rgba(50, 50, 50, 0.95);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #e0e0e0;
+}
+
+.mermaid-fullscreen-close.dark-theme:hover {
+    background: rgba(60, 60, 60, 1);
+    box-shadow: 0 6px 16px rgba(255, 255, 255, 0.2);
+}
+
+.mermaid-fullscreen-modal .mermaid-fullscreen-btn {
+    display: none !important;
+}`;
+    document.head.appendChild(fullscreenStyle);
+}
+
+// Detect if page has dark background
+const isDarkTheme = () => {
+    // We use a set of heuristics:
+    // 1. Check for common dark mode classes or attributes
+    // 2. Check computed background color brightness
+    if (document.documentElement.classList.contains('dark') ||
+        document.documentElement.getAttribute('data-theme') === 'dark' ||
+        document.body.classList.contains('dark') ||
+        document.body.getAttribute('data-theme') === 'dark') {
+        // console.log("Dark theme detected via class/attribute");
+        return true;
+    }
+    if (document.documentElement.classList.contains('light') ||
+        document.documentElement.getAttribute('data-theme') === 'light' ||
+        document.body.classList.contains('light') ||
+        document.body.getAttribute('data-theme') === 'light') {
+        // console.log("Light theme detected via class/attribute");
+        return false;
+    }
+    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        // console.log("Dark theme detected via prefers-color-scheme");
+        return true;
+    }
+    const bgColor = window.getComputedStyle(document.body).backgroundColor;
+    const match = bgColor.match(/rgb\((\d+),\s*(\d+),\s*(\d+)/);
+    if (match) {
+        const r = parseInt(match[1]);
+        const g = parseInt(match[2]);
+        const b = parseInt(match[3]);
+        const brightness = (r * 299 + g * 587 + b * 114) / 1000;
+        // console.log("Background color brightness:", brightness);
+        return brightness < 128;
+    }
+    // console.log("No dark or light theme detected, defaulting to light theme");
+    return false;
+};
+
+let darkTheme = isDarkTheme();
+let modal = null;
+let modalContent = null;
+let previousScrollOffset = [window.scrollX, window.scrollY];
+
+const runMermaid = async (rerun) => {
+    console.log("Running mermaid diagrams, rerun =", rerun);
+    // clear all existing mermaid charts
+    let all_mermaids = document.querySelectorAll(".mermaid");
+
+    if (rerun) {
+        all_mermaids.forEach((el) => {
+            if(!el.hasAttribute("data-original-code")) {
+                // store original code
+                // console.log(`Storing original code for first run: `, el.innerHTML);
+                el.setAttribute('data-original-code', el.innerHTML);
+            }
+            if(el.getAttribute("data-processed") === "true") {
+                // remove and restore original
+                el.removeAttribute("data-processed");
+                // console.log(`Restoring original code for re-run: `, el.getAttribute('data-original-code'));
+                el.innerHTML = el.getAttribute('data-original-code');
+            } else {
+                // store original code
+                // console.log(`Storing original code for re-run: `, el.innerHTML);
+                el.setAttribute('data-original-code', el.innerHTML);
+            }
+        });
+        await mermaid.run();
+    }
+
+    all_mermaids = document.querySelectorAll(".mermaid");
+    const mermaids_processed = document.querySelectorAll(".mermaid[data-processed='true']");
+
+    if ("False" === "True") {
+        const mermaids_to_add_zoom = -1 === -1 ? all_mermaids.length : -1;
+        if(mermaids_to_add_zoom > 0) {
+            var svgs = d3.selectAll("");
+            if(all_mermaids.length !== mermaids_processed.length) {
+                setTimeout(() => runMermaid(false), 200);
+                return;
+            } else if(svgs.size() !== mermaids_to_add_zoom) {
+                setTimeout(() => runMermaid(false), 200);
+                return;
+            } else {
+                svgs.each(function() {
+                    var svg = d3.select(this);
+                    svg.html("<g class='wrapper'>" + svg.html() + "</g>");
+                    var inner = svg.select("g");
+                    var zoom = d3.zoom().on("zoom", function(event) {
+                        inner.attr("transform", event.transform);
+                    });
+                    svg.call(zoom);
+                });
+            }
+        }
+    } else if(all_mermaids.length !== mermaids_processed.length) {
+        // Wait for mermaid to process all diagrams
+        setTimeout(() => runMermaid(false), 200);
+        return;
+    }
+
+    // Stop here if not adding fullscreen capability
+    if ("True" !== "True") return;
+
+    if (modal !== null ) {
+        // Destroy existing modal
+        modal.remove();
+        modal = null;
+        modalContent = null;
+    }
+
+    modal = document.createElement('div');
+    modal.className = 'mermaid-fullscreen-modal' + (darkTheme ? ' dark-theme' : '');
+    modal.setAttribute('role', 'dialog');
+    modal.setAttribute('aria-modal', 'true');
+    modal.setAttribute('aria-label', 'Fullscreen diagram viewer');
+    modal.innerHTML = `
+        <button class="mermaid-fullscreen-close${darkTheme ? ' dark-theme' : ''}" aria-label="Close fullscreen">✕</button>
+        <div class="mermaid-container-fullscreen${darkTheme ? ' dark-theme' : ''}"></div>
+    `;
+    document.body.appendChild(modal);
+
+    modalContent = modal.querySelector('.mermaid-container-fullscreen');
+    const closeBtn = modal.querySelector('.mermaid-fullscreen-close');
+
+    const closeModal = () => {
+        modal.classList.remove('active');
+        modalContent.innerHTML = '';
+        document.body.style.overflow = ''
+        window.scrollTo({left: previousScrollOffset[0], top: previousScrollOffset[1], behavior: 'instant'});
+    };
+
+    closeBtn.addEventListener('click', closeModal);
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) closeModal();
+    });
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && modal.classList.contains('active')) {
+            closeModal();
+        }
+    });
+
+    document.querySelectorAll('.mermaid').forEach((mermaidDiv) => {
+        if (mermaidDiv.parentNode.classList.contains('mermaid-container') ||
+            mermaidDiv.closest('.mermaid-fullscreen-modal')) {
+            // Already processed, adjust button class if needed
+            const existingBtn = mermaidDiv.parentNode.querySelector('.mermaid-fullscreen-btn');
+            if (existingBtn) {
+                existingBtn.className = 'mermaid-fullscreen-btn' + (darkTheme ? ' dark-theme' : '');
+            }
+            return;
+        }
+
+        const container = document.createElement('div');
+        container.className = 'mermaid-container';
+        mermaidDiv.parentNode.insertBefore(container, mermaidDiv);
+        container.appendChild(mermaidDiv);
+
+        const fullscreenBtn = document.createElement('button');
+        fullscreenBtn.className = 'mermaid-fullscreen-btn' + (darkTheme ? ' dark-theme' : '');
+        fullscreenBtn.setAttribute('aria-label', 'View diagram in fullscreen');
+        fullscreenBtn.textContent = '⛶';
+        fullscreenBtn.style.opacity = '50%';
+
+        // Calculate dynamic position based on diagram's margin and padding
+        const diagramStyle = window.getComputedStyle(mermaidDiv);
+        const marginTop = parseFloat(diagramStyle.marginTop) || 0;
+        const marginRight = parseFloat(diagramStyle.marginRight) || 0;
+        const paddingTop = parseFloat(diagramStyle.paddingTop) || 0;
+        const paddingRight = parseFloat(diagramStyle.paddingRight) || 0;
+        fullscreenBtn.style.top = `${marginTop + paddingTop + 4}px`;
+        fullscreenBtn.style.right = `${marginRight + paddingRight + 4}px`;
+
+        fullscreenBtn.addEventListener('click', () => {
+            previousScrollOffset = [window.scroll, window.scrollY];
+            const clone = mermaidDiv.cloneNode(true);
+            modalContent.innerHTML = '';
+            modalContent.appendChild(clone);
+
+            const svg = clone.querySelector('svg');
+            if (svg) {
+                svg.removeAttribute('width');
+                svg.removeAttribute('height');
+                svg.style.width = '100%';
+                svg.style.height = 'auto';
+                svg.style.maxWidth = '100%';
+                svg.style.sdisplay = 'block';
+
+                if ("False" === "True") {
+                    setTimeout(() => {
+                        const g = svg.querySelector('g');
+                        if (g) {
+                            var svgD3 = d3.select(svg);
+                            svgD3.html("<g class='wrapper'>" + svgD3.html() + "</g>");
+                            var inner = svgD3.select("g");
+                            var zoom = d3.zoom().on("zoom", function(event) {
+                                inner.attr("transform", event.transform);
+                            });
+                            svgD3.call(zoom);
+                        }
+                    }, 100);
+                }
+            }
+
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+        container.appendChild(fullscreenBtn);
+    });
+};
+
+const load = async () => {
+    initStyles();
+
+    await runMermaid(true);
+
+    const reRunIfThemeChanges = async () => {
+        const newDarkTheme = isDarkTheme();
+        if (newDarkTheme !== darkTheme) {
+            darkTheme = newDarkTheme;
+            console.log("Theme change detected, re-running mermaid with", darkTheme ? "dark" : "default", "theme");
+            await mermaid.initialize(
+                {...JSON.parse(
+                    `{"startOnLoad": false}`
+                ),
+                ...{ darkMode: darkTheme, theme: darkTheme ? 'dark' : 'default' },
+                }
+            );
+            await runMermaid(true);
+        }
+    };
+
+    // Update theme classes when theme changes
+    const themeObserver = new MutationObserver(reRunIfThemeChanges);
+    themeObserver.observe(document.documentElement, {
+        attributes: true,
+        attributeFilter: ['class', 'style', 'data-theme']
+    });
+    themeObserver.observe(document.body, {
+        attributes: true,
+        attributeFilter: ['class', 'style', 'data-theme']
+    });
+};
+
+
+
+
+
+console.log("Initializing mermaid with", darkTheme ? "dark" : "default", "theme");
+mermaid.initialize(
+    {...JSON.parse(
+        `{"startOnLoad": false}`
+    ),
+    ...{ darkMode: darkTheme, theme: darkTheme ? 'dark' : 'default' },
+    }
+);
+
+window.addEventListener("load", load);
+window.runMermaid = runMermaid;</script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="author" title="About these documents" href="../about.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Fleet Manager
+          </a>
+              <div class="version">
+                1.0
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../about.html">About the project</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules.html">Code documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../training.html">Training documentation</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Fleet Manager</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Module code</a></li>
+      <li class="breadcrumb-item active">tb_manager</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <h1>Source code for tb_manager</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">ThingsBoard Manager Module</span>
+
+<span class="sd">.. module:: tb_manager</span>
+<span class="sd">    :synopsis: High-level ThingsBoard integration and device management for fleet operations</span>
+<span class="sd">    :platform: Linux, Windows, macOS</span>
+<span class="sd">    :author: Fleet Management System Team</span>
+
+<span class="sd">This module provides a comprehensive ThingsBoard management system that handles device</span>
+<span class="sd">lifecycle, telemetry processing, and MQTT message routing for the fleet management platform.</span>
+<span class="sd">It implements a multi-threaded architecture for efficient real-time data processing.</span>
+
+<span class="sd">The module integrates with the ThingsBoard IoT platform to manage various device types</span>
+<span class="sd">including drones, missions, fields, and treatment systems. It provides automatic device</span>
+<span class="sd">cleanup, message processing, and telemetry forwarding capabilities.</span>
+
+<span class="sd">.. note::</span>
+<span class="sd">    Key Features:</span>
+<span class="sd">    - Multi-threaded message processing for high throughput</span>
+<span class="sd">    - Automatic device type management and cleanup</span>
+<span class="sd">    - Robust message parsing and error handling</span>
+<span class="sd">    - Real-time telemetry forwarding to ThingsBoard</span>
+<span class="sd">    - Support for multiple message formats (JSON, string, list)</span>
+<span class="sd">    - Comprehensive logging and monitoring integration</span>
+
+<span class="sd">.. versionadded:: 1.0.0</span>
+<span class="sd">    Initial implementation of ThingsBoard management system</span>
+
+<span class="sd">.. seealso::</span>
+<span class="sd">    - :mod:`MQTT.ThingsBoard.rest_api` for ThingsBoard REST API operations</span>
+<span class="sd">    - :mod:`MQTT.ThingsBoard.devices.devices_manager` for device-specific management</span>
+
+<span class="sd">Example:</span>
+<span class="sd">    Basic usage of the ThingsBoard manager::</span>
+
+<span class="sd">        import queue</span>
+<span class="sd">        import logging</span>
+<span class="sd">        from MQTT.ThingsBoard.tb_manager import start_tb_manager</span>
+
+<span class="sd">        # Initialize message queue and logger</span>
+<span class="sd">        tb_queue = queue.Queue()</span>
+<span class="sd">        mqtt_logger = logging.getLogger(&#39;MQTT&#39;)</span>
+<span class="sd">        </span>
+<span class="sd">        # Start ThingsBoard manager</span>
+<span class="sd">        tb_thread = start_tb_manager(tb_queue, mqtt_logger)</span>
+<span class="sd">        </span>
+<span class="sd">        # Manager is now running and processing messages</span>
+<span class="sd">        print(&quot;ThingsBoard manager started successfully&quot;)</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">json</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">logging</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">queue</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">threading</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">MQTT.ThingsBoard.rest_api</span><span class="w"> </span><span class="kn">import</span> <span class="n">ThingsBoardAPI</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">MQTT.ThingsBoard.devices.devices_manager</span><span class="w"> </span><span class="kn">import</span> <span class="n">DevicesManager</span>
+
+<span class="c1"># ========================================</span>
+<span class="c1"># ThingsBoard Configuration Constants</span>
+<span class="c1"># ========================================</span>
+
+<span class="c1">#: str: ThingsBoard server host URL for REST API operations</span>
+<span class="n">TB_HOST</span> <span class="o">=</span> <span class="s2">&quot;https://srv-iot.diatel.upm.es&quot;</span>
+
+<span class="c1">#: str: Username for ThingsBoard authentication</span>
+<span class="n">USERNAME</span> <span class="o">=</span> <span class="s2">&quot;estela.mora.barba@alumnos.upm.es&quot;</span>
+
+<span class="c1">#: str: Password for ThingsBoard authentication (consider using environment variables in production)</span>
+<span class="n">PASSWORD</span> <span class="o">=</span> <span class="s2">&quot;fleet_manager&quot;</span>
+
+<span class="c1">#: str: ThingsBoard host for MQTT telemetry connections</span>
+<span class="n">THINGSBOARD_HOST</span> <span class="o">=</span> <span class="s2">&quot;srv-iot.diatel.upm.es&quot;</span>
+
+<span class="c1">#: int: MQTT port for secure telemetry transmission (8883 for TLS)</span>
+<span class="n">PORT</span> <span class="o">=</span> <span class="mi">8883</span>
+
+<span class="c1">#: str: MQTT topic for device telemetry data transmission</span>
+<span class="n">TELEMETRY_TOPIC</span> <span class="o">=</span> <span class="s2">&quot;v1/devices/me/telemetry&quot;</span>
+
+<div class="viewcode-block" id="ThingsboardThread">
+<a class="viewcode-back" href="../Fleet_module/MQTT/ThingsBoard/tb_manager_component.html#tb_manager.ThingsboardThread">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">ThingsboardThread</span><span class="p">(</span><span class="n">threading</span><span class="o">.</span><span class="n">Thread</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Dedicated thread for processing ThingsBoard messages and managing device operations.</span>
+<span class="sd">    </span>
+<span class="sd">    This class implements a worker thread that continuously processes MQTT messages</span>
+<span class="sd">    from a queue and forwards them to the appropriate device managers in ThingsBoard.</span>
+<span class="sd">    It handles various message formats and provides robust error handling for</span>
+<span class="sd">    production environments.</span>
+<span class="sd">    </span>
+<span class="sd">    The thread operates independently and processes messages asynchronously, allowing</span>
+<span class="sd">    the main application to continue operating while telemetry data is being processed</span>
+<span class="sd">    and forwarded to ThingsBoard in real-time.</span>
+<span class="sd">    </span>
+<span class="sd">    :param tb: Authenticated ThingsBoard API client instance</span>
+<span class="sd">    :type tb: ThingsBoardAPI</span>
+<span class="sd">    :param tb_queue: Thread-safe queue containing messages to process</span>
+<span class="sd">    :type tb_queue: queue.Queue</span>
+<span class="sd">    :param mqtt_logger: Logger instance for operation tracking and debugging</span>
+<span class="sd">    :type mqtt_logger: logging.Logger</span>
+<span class="sd">    :param tb_host: ThingsBoard host for MQTT connections</span>
+<span class="sd">    :type tb_host: str</span>
+<span class="sd">    :param port: MQTT port for telemetry transmission</span>
+<span class="sd">    :type port: int</span>
+<span class="sd">    :param telemetry_topic: MQTT topic for device telemetry</span>
+<span class="sd">    :type telemetry_topic: str</span>
+<span class="sd">    </span>
+<span class="sd">    .. note::</span>
+<span class="sd">        This thread runs indefinitely until the parent process terminates.</span>
+<span class="sd">        All exceptions are caught and logged to ensure continuous operation.</span>
+<span class="sd">        </span>
+<span class="sd">    .. versionadded:: 1.0.0</span>
+<span class="sd">        Initial implementation of ThingsBoard message processing thread</span>
+<span class="sd">        </span>
+<span class="sd">    Attributes:</span>
+<span class="sd">        tb_queue (queue.Queue): Message queue for processing</span>
+<span class="sd">        devices_manager (DevicesManager): Manager for device-specific operations</span>
+<span class="sd">        mqtt_logger (logging.Logger): Logger for operation tracking</span>
+<span class="sd">        </span>
+<span class="sd">    Example:</span>
+<span class="sd">        Create and start a ThingsBoard processing thread::</span>
+<span class="sd">        </span>
+<span class="sd">            tb_api = ThingsBoardAPI(&quot;https://thingsboard.company.com&quot;)</span>
+<span class="sd">            tb_api.login(&quot;username&quot;, &quot;password&quot;)</span>
+<span class="sd">            </span>
+<span class="sd">            tb_thread = ThingsboardThread(</span>
+<span class="sd">                tb=tb_api,</span>
+<span class="sd">                tb_queue=message_queue,</span>
+<span class="sd">                mqtt_logger=logger,</span>
+<span class="sd">                tb_host=&quot;thingsboard.company.com&quot;,</span>
+<span class="sd">                port=8883,</span>
+<span class="sd">                telemetry_topic=&quot;v1/devices/me/telemetry&quot;</span>
+<span class="sd">            )</span>
+<span class="sd">            tb_thread.start()</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    
+<div class="viewcode-block" id="ThingsboardThread.__init__">
+<a class="viewcode-back" href="../Fleet_module/MQTT/ThingsBoard/tb_manager_component.html#tb_manager.ThingsboardThread.__init__">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">tb</span><span class="p">,</span> <span class="n">tb_queue</span><span class="p">,</span> <span class="n">mqtt_logger</span><span class="p">,</span> <span class="n">tb_host</span><span class="p">,</span> <span class="n">port</span><span class="p">,</span> <span class="n">telemetry_topic</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Initialize the ThingsBoard processing thread.</span>
+<span class="sd">        </span>
+<span class="sd">        Sets up the thread with all necessary components for message processing</span>
+<span class="sd">        including the devices manager, queue, and logging infrastructure.</span>
+<span class="sd">        </span>
+<span class="sd">        :param tb: Authenticated ThingsBoard API client</span>
+<span class="sd">        :type tb: ThingsBoardAPI</span>
+<span class="sd">        :param tb_queue: Queue for incoming messages</span>
+<span class="sd">        :type tb_queue: queue.Queue</span>
+<span class="sd">        :param mqtt_logger: Logger for operations</span>
+<span class="sd">        :type mqtt_logger: logging.Logger</span>
+<span class="sd">        :param tb_host: ThingsBoard host address</span>
+<span class="sd">        :type tb_host: str</span>
+<span class="sd">        :param port: MQTT connection port</span>
+<span class="sd">        :type port: int</span>
+<span class="sd">        :param telemetry_topic: MQTT topic for telemetry</span>
+<span class="sd">        :type telemetry_topic: str</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">tb_queue</span> <span class="o">=</span> <span class="n">tb_queue</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">devices_manager</span> <span class="o">=</span> <span class="n">DevicesManager</span><span class="p">(</span>
+            <span class="n">tb</span><span class="p">,</span> <span class="n">mqtt_logger</span><span class="p">,</span> <span class="n">tb_host</span><span class="p">,</span> <span class="n">port</span><span class="p">,</span> <span class="n">telemetry_topic</span>
+        <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">mqtt_logger</span> <span class="o">=</span> <span class="n">mqtt_logger</span></div>
+
+
+<div class="viewcode-block" id="ThingsboardThread.run">
+<a class="viewcode-back" href="../Fleet_module/MQTT/ThingsBoard/tb_manager_component.html#tb_manager.ThingsboardThread.run">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Main thread execution loop for processing ThingsBoard messages.</span>
+<span class="sd">        </span>
+<span class="sd">        Continuously processes messages from the queue, handling various message</span>
+<span class="sd">        formats and routing them to the appropriate device managers. The method</span>
+<span class="sd">        implements robust error handling to ensure the thread continues operating</span>
+<span class="sd">        even when individual messages fail processing.</span>
+<span class="sd">        </span>
+<span class="sd">        The processing loop handles three message formats:</span>
+<span class="sd">        1. Dictionary objects (direct JSON)</span>
+<span class="sd">        2. String objects (JSON strings to parse)</span>
+<span class="sd">        3. List objects (joined and parsed as JSON)</span>
+<span class="sd">        </span>
+<span class="sd">        :return: None (runs indefinitely until thread termination)</span>
+<span class="sd">        :rtype: None</span>
+<span class="sd">        </span>
+<span class="sd">        .. note::</span>
+<span class="sd">            This method runs in an infinite loop and only terminates when the</span>
+<span class="sd">            thread is stopped externally or the parent process ends.</span>
+<span class="sd">            </span>
+<span class="sd">        .. warning::</span>
+<span class="sd">            All exceptions are caught and logged to prevent thread termination.</span>
+<span class="sd">            Monitor logs for processing errors that may indicate data issues.</span>
+<span class="sd">            </span>
+<span class="sd">        Message Processing Flow:</span>
+<span class="sd">            1. Retrieve message from queue (blocking operation)</span>
+<span class="sd">            2. Determine message format and parse accordingly</span>
+<span class="sd">            3. Forward parsed message to devices manager</span>
+<span class="sd">            4. Log any processing errors and continue</span>
+<span class="sd">            </span>
+<span class="sd">        Example:</span>
+<span class="sd">            The run method is called automatically when the thread starts::</span>
+<span class="sd">            </span>
+<span class="sd">                tb_thread = ThingsboardThread(...)</span>
+<span class="sd">                tb_thread.start()  # This calls run() in a separate thread</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+            <span class="c1"># Retrieve next message from the queue (blocks until message available)</span>
+            <span class="n">mqtt_message</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">tb_queue</span><span class="o">.</span><span class="n">get</span><span class="p">()</span>
+            
+            <span class="k">try</span><span class="p">:</span>
+                <span class="c1"># Handle different message format types</span>
+                <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">mqtt_message</span><span class="p">,</span> <span class="nb">dict</span><span class="p">):</span>
+                    <span class="c1"># Message is already a dictionary (parsed JSON)</span>
+                    <span class="n">message</span> <span class="o">=</span> <span class="n">mqtt_message</span>
+                <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">mqtt_message</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+                    <span class="c1"># Message is a JSON string, parse it</span>
+                    <span class="n">message</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">mqtt_message</span><span class="p">)</span>
+                <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">mqtt_message</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>
+                    <span class="c1"># Message is a list of strings, join and parse</span>
+                    <span class="n">message_str</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">mqtt_message</span><span class="p">)</span>
+                    <span class="n">message</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">message_str</span><span class="p">)</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="c1"># Unsupported message type, log error and continue</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">mqtt_logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;[MQTT][ThingsBoard] - Unsupported message type: </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">mqtt_message</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+                    <span class="k">continue</span>
+                    
+                <span class="c1"># Forward parsed message to devices manager for processing</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">devices_manager</span><span class="o">.</span><span class="n">handle_message</span><span class="p">(</span><span class="n">message</span><span class="p">)</span>
+                
+            <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+                <span class="c1"># Log processing errors but continue operation</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">mqtt_logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;[MQTT][ThingsBoard] - Error processing message: </span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span></div>
+</div>
+
+
+<div class="viewcode-block" id="start_tb_manager">
+<a class="viewcode-back" href="../Fleet_module/MQTT/ThingsBoard/tb_manager_component.html#tb_manager.start_tb_manager">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">start_tb_manager</span><span class="p">(</span><span class="n">tb_queue</span><span class="p">:</span> <span class="n">queue</span><span class="o">.</span><span class="n">Queue</span><span class="p">,</span> <span class="n">mqtt_logger</span><span class="p">:</span> <span class="n">logging</span><span class="o">.</span><span class="n">Logger</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Initialize and start the ThingsBoard management system.</span>
+<span class="sd">    </span>
+<span class="sd">    This function sets up the complete ThingsBoard integration system, including</span>
+<span class="sd">    authentication, device cleanup, and message processing thread initialization.</span>
+<span class="sd">    It performs a fresh start by cleaning up existing devices and then starts</span>
+<span class="sd">    continuous processing of telemetry messages.</span>
+<span class="sd">    </span>
+<span class="sd">    The function performs the following initialization steps:</span>
+<span class="sd">    1. Creates and authenticates ThingsBoard API client</span>
+<span class="sd">    2. Performs cleanup of existing device types for fresh start</span>
+<span class="sd">    3. Initializes and starts the message processing thread</span>
+<span class="sd">    4. Returns the running thread for monitoring purposes</span>
+<span class="sd">    </span>
+<span class="sd">    :param tb_queue: Thread-safe queue for incoming MQTT messages</span>
+<span class="sd">    :type tb_queue: queue.Queue</span>
+<span class="sd">    :param mqtt_logger: Logger instance for operation tracking and debugging</span>
+<span class="sd">    :type mqtt_logger: logging.Logger</span>
+<span class="sd">    :return: Running ThingsBoard processing thread instance</span>
+<span class="sd">    :rtype: ThingsboardThread</span>
+<span class="sd">    </span>
+<span class="sd">    .. note::</span>
+<span class="sd">        Device Cleanup Types:</span>
+<span class="sd">        The function automatically removes all existing devices of these types:</span>
+<span class="sd">        - Drone: Unmanned aerial vehicle devices</span>
+<span class="sd">        - Mission: Mission management and tracking devices</span>
+<span class="sd">        - Field: Agricultural field monitoring devices</span>
+<span class="sd">        - Feedback: User feedback and response devices</span>
+<span class="sd">        - Treatment: Agricultural treatment application devices</span>
+<span class="sd">        - Field_PM: Field prescription map devices</span>
+<span class="sd">        - RPI5: Raspberry Pi 5 controller devices</span>
+<span class="sd">        </span>
+<span class="sd">    .. warning::</span>
+<span class="sd">        This function performs bulk device deletion on startup. Ensure this</span>
+<span class="sd">        behavior is appropriate for your production environment.</span>
+<span class="sd">        </span>
+<span class="sd">    .. tip::</span>
+<span class="sd">        Consider implementing selective cleanup or backup procedures before</span>
+<span class="sd">        using this function in production environments with valuable device data.</span>
+<span class="sd">        </span>
+<span class="sd">    .. versionadded:: 1.0.0</span>
+<span class="sd">        Initial implementation of ThingsBoard manager startup</span>
+<span class="sd">        </span>
+<span class="sd">    Example:</span>
+<span class="sd">        Start ThingsBoard manager in a fleet management application::</span>
+<span class="sd">        </span>
+<span class="sd">            import queue</span>
+<span class="sd">            import logging</span>
+<span class="sd">            from MQTT.ThingsBoard.tb_manager import start_tb_manager</span>
+<span class="sd">            </span>
+<span class="sd">            # Setup logging</span>
+<span class="sd">            logging.basicConfig(level=logging.INFO)</span>
+<span class="sd">            mqtt_logger = logging.getLogger(&#39;MQTT&#39;)</span>
+<span class="sd">            </span>
+<span class="sd">            # Create message queue</span>
+<span class="sd">            tb_queue = queue.Queue()</span>
+<span class="sd">            </span>
+<span class="sd">            # Start ThingsBoard manager</span>
+<span class="sd">            tb_thread = start_tb_manager(tb_queue, mqtt_logger)</span>
+<span class="sd">            </span>
+<span class="sd">            # Manager is now running and ready to process messages</span>
+<span class="sd">            print(&quot;ThingsBoard manager started successfully&quot;)</span>
+<span class="sd">            </span>
+<span class="sd">            # Add messages to queue for processing</span>
+<span class="sd">            tb_queue.put({&quot;device_id&quot;: &quot;sensor_01&quot;, &quot;temperature&quot;: 25.5})</span>
+<span class="sd">            </span>
+<span class="sd">    Raises:</span>
+<span class="sd">        Exception: If ThingsBoard authentication fails or thread startup encounters errors</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># Initialize ThingsBoard API client with configured host</span>
+    <span class="n">tb</span> <span class="o">=</span> <span class="n">ThingsBoardAPI</span><span class="p">(</span><span class="n">TB_HOST</span><span class="p">)</span>
+    
+    <span class="c1"># Authenticate with ThingsBoard using configured credentials</span>
+    <span class="k">if</span> <span class="n">tb</span><span class="o">.</span><span class="n">login</span><span class="p">(</span><span class="n">USERNAME</span><span class="p">,</span> <span class="n">PASSWORD</span><span class="p">):</span>
+        <span class="c1"># Perform device cleanup for fresh start - remove all existing device types</span>
+        <span class="n">tb</span><span class="o">.</span><span class="n">delete_all_devices_by_type</span><span class="p">(</span><span class="s2">&quot;Drone&quot;</span><span class="p">)</span>        <span class="c1"># Unmanned aerial vehicles</span>
+        <span class="n">tb</span><span class="o">.</span><span class="n">delete_all_devices_by_type</span><span class="p">(</span><span class="s2">&quot;Mission&quot;</span><span class="p">)</span>      <span class="c1"># Mission management devices</span>
+        <span class="n">tb</span><span class="o">.</span><span class="n">delete_all_devices_by_type</span><span class="p">(</span><span class="s2">&quot;Field&quot;</span><span class="p">)</span>        <span class="c1"># Field monitoring devices</span>
+        <span class="n">tb</span><span class="o">.</span><span class="n">delete_all_devices_by_type</span><span class="p">(</span><span class="s2">&quot;Feedback&quot;</span><span class="p">)</span>     <span class="c1"># Feedback collection devices</span>
+        <span class="n">tb</span><span class="o">.</span><span class="n">delete_all_devices_by_type</span><span class="p">(</span><span class="s2">&quot;Treatment&quot;</span><span class="p">)</span>    <span class="c1"># Treatment application devices</span>
+        <span class="n">tb</span><span class="o">.</span><span class="n">delete_all_devices_by_type</span><span class="p">(</span><span class="s2">&quot;Field_PM&quot;</span><span class="p">)</span>     <span class="c1"># Prescription map devices</span>
+        <span class="n">tb</span><span class="o">.</span><span class="n">delete_all_devices_by_type</span><span class="p">(</span><span class="s2">&quot;RPI5&quot;</span><span class="p">)</span>         <span class="c1"># Raspberry Pi controllers</span>
+    
+    <span class="c1"># Create and configure the ThingsBoard processing thread</span>
+    <span class="n">tb_thread</span> <span class="o">=</span> <span class="n">ThingsboardThread</span><span class="p">(</span>
+        <span class="n">tb</span><span class="o">=</span><span class="n">tb</span><span class="p">,</span>                              <span class="c1"># Authenticated API client</span>
+        <span class="n">tb_queue</span><span class="o">=</span><span class="n">tb_queue</span><span class="p">,</span>                  <span class="c1"># Message processing queue</span>
+        <span class="n">mqtt_logger</span><span class="o">=</span><span class="n">mqtt_logger</span><span class="p">,</span>            <span class="c1"># Logger for operations</span>
+        <span class="n">tb_host</span><span class="o">=</span><span class="n">THINGSBOARD_HOST</span><span class="p">,</span>           <span class="c1"># MQTT host for telemetry</span>
+        <span class="n">port</span><span class="o">=</span><span class="n">PORT</span><span class="p">,</span>                          <span class="c1"># MQTT port for connections</span>
+        <span class="n">telemetry_topic</span><span class="o">=</span><span class="n">TELEMETRY_TOPIC</span>     <span class="c1"># Topic for telemetry data</span>
+    <span class="p">)</span>
+    
+    <span class="c1"># Start the processing thread (non-blocking)</span>
+    <span class="n">tb_thread</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+    
+    <span class="c1"># Return the running thread for monitoring and management</span>
+    <span class="k">return</span> <span class="n">tb_thread</span></div>
+
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, Estela Mora Barba.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

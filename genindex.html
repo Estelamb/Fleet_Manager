@@ -1,0 +1,1721 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Index &mdash; Fleet Manager 1.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=f2a433a1"></script>
+        <script src="_static/doctools.js?v=9a2dae69"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+        <script src="_static/copybutton.js?v=f281be69"></script>
+        <script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script>
+        <script type="module">import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11.12.1/dist/mermaid.esm.min.mjs";
+
+
+
+
+
+const initStyles = () => {
+    const defaultStyle = document.createElement('style');
+    defaultStyle.textContent = `pre.mermaid {
+    /* Same as .mermaid-container > pre */
+    display: block;
+    width: 100%;
+}
+
+pre.mermaid > svg {
+    /* Same as .mermaid-container > pre > svg */
+    height: 500px;
+    width: 100%;
+    max-width: 100% !important;
+}`;
+    document.head.appendChild(defaultStyle);
+
+    const fullscreenStyle = document.createElement('style');
+    fullscreenStyle.textContent = `.mermaid-container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.mermaid-container > pre {
+    display: block;
+    width: 100%;
+}
+
+.mermaid-container > pre > svg {
+    height: 500px;
+    width: 100%;
+    max-width: 100% !important;
+}
+
+.mermaid-fullscreen-btn {
+    width: 28px;
+    height: 28px;
+    background: rgba(255, 255, 255, 0.95);
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    border-radius: 4px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    font-size: 14px;
+    line-height: 1;
+    padding: 0;
+    color: #333;
+}
+
+.mermaid-fullscreen-btn:hover {
+    opacity: 100% !important;
+    background: rgba(255, 255, 255, 1);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+    transform: scale(1.1);
+}
+
+.mermaid-fullscreen-btn.dark-theme {
+    background: rgba(50, 50, 50, 0.95);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: #e0e0e0;
+}
+
+.mermaid-fullscreen-btn.dark-theme:hover {
+    background: rgba(60, 60, 60, 1);
+    box-shadow: 0 3px 10px rgba(255, 255, 255, 0.2);
+}
+
+.mermaid-fullscreen-modal {
+    display: none;
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 95vw;
+    height: 100vh;
+    background: rgba(255, 255, 255, 0.98);
+    z-index: 9999;
+    padding: 20px;
+    overflow: auto;
+}
+
+.mermaid-fullscreen-modal.dark-theme {
+    background: rgba(0, 0, 0, 0.98);
+}
+
+.mermaid-fullscreen-modal.active {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mermaid-container-fullscreen {
+    position: relative;
+    width: 95vw;
+    height: 90vh;
+    max-width: 95vw;
+    max-height: 90vh;
+    background: white;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    overflow: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mermaid-container-fullscreen.dark-theme {
+    background: #1a1a1a;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.8);
+}
+
+.mermaid-container-fullscreen pre.mermaid {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mermaid-container-fullscreen .mermaid svg {
+    height: 100% !important;
+    width: 100% !important;
+    cursor: grab;
+}
+
+.mermaid-fullscreen-close {
+    position: fixed !important;
+    top: 20px !important;
+    right: 20px !important;
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.95);
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    transition: all 0.2s;
+    font-size: 24px;
+    line-height: 1;
+    color: #333;
+}
+
+.mermaid-fullscreen-close:hover {
+    background: white;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+    transform: scale(1.1);
+}
+
+.mermaid-fullscreen-close.dark-theme {
+    background: rgba(50, 50, 50, 0.95);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #e0e0e0;
+}
+
+.mermaid-fullscreen-close.dark-theme:hover {
+    background: rgba(60, 60, 60, 1);
+    box-shadow: 0 6px 16px rgba(255, 255, 255, 0.2);
+}
+
+.mermaid-fullscreen-modal .mermaid-fullscreen-btn {
+    display: none !important;
+}`;
+    document.head.appendChild(fullscreenStyle);
+}
+
+// Detect if page has dark background
+const isDarkTheme = () => {
+    // We use a set of heuristics:
+    // 1. Check for common dark mode classes or attributes
+    // 2. Check computed background color brightness
+    if (document.documentElement.classList.contains('dark') ||
+        document.documentElement.getAttribute('data-theme') === 'dark' ||
+        document.body.classList.contains('dark') ||
+        document.body.getAttribute('data-theme') === 'dark') {
+        // console.log("Dark theme detected via class/attribute");
+        return true;
+    }
+    if (document.documentElement.classList.contains('light') ||
+        document.documentElement.getAttribute('data-theme') === 'light' ||
+        document.body.classList.contains('light') ||
+        document.body.getAttribute('data-theme') === 'light') {
+        // console.log("Light theme detected via class/attribute");
+        return false;
+    }
+    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        // console.log("Dark theme detected via prefers-color-scheme");
+        return true;
+    }
+    const bgColor = window.getComputedStyle(document.body).backgroundColor;
+    const match = bgColor.match(/rgb\((\d+),\s*(\d+),\s*(\d+)/);
+    if (match) {
+        const r = parseInt(match[1]);
+        const g = parseInt(match[2]);
+        const b = parseInt(match[3]);
+        const brightness = (r * 299 + g * 587 + b * 114) / 1000;
+        // console.log("Background color brightness:", brightness);
+        return brightness < 128;
+    }
+    // console.log("No dark or light theme detected, defaulting to light theme");
+    return false;
+};
+
+let darkTheme = isDarkTheme();
+let modal = null;
+let modalContent = null;
+let previousScrollOffset = [window.scrollX, window.scrollY];
+
+const runMermaid = async (rerun) => {
+    console.log("Running mermaid diagrams, rerun =", rerun);
+    // clear all existing mermaid charts
+    let all_mermaids = document.querySelectorAll(".mermaid");
+
+    if (rerun) {
+        all_mermaids.forEach((el) => {
+            if(!el.hasAttribute("data-original-code")) {
+                // store original code
+                // console.log(`Storing original code for first run: `, el.innerHTML);
+                el.setAttribute('data-original-code', el.innerHTML);
+            }
+            if(el.getAttribute("data-processed") === "true") {
+                // remove and restore original
+                el.removeAttribute("data-processed");
+                // console.log(`Restoring original code for re-run: `, el.getAttribute('data-original-code'));
+                el.innerHTML = el.getAttribute('data-original-code');
+            } else {
+                // store original code
+                // console.log(`Storing original code for re-run: `, el.innerHTML);
+                el.setAttribute('data-original-code', el.innerHTML);
+            }
+        });
+        await mermaid.run();
+    }
+
+    all_mermaids = document.querySelectorAll(".mermaid");
+    const mermaids_processed = document.querySelectorAll(".mermaid[data-processed='true']");
+
+    if ("False" === "True") {
+        const mermaids_to_add_zoom = -1 === -1 ? all_mermaids.length : -1;
+        if(mermaids_to_add_zoom > 0) {
+            var svgs = d3.selectAll("");
+            if(all_mermaids.length !== mermaids_processed.length) {
+                setTimeout(() => runMermaid(false), 200);
+                return;
+            } else if(svgs.size() !== mermaids_to_add_zoom) {
+                setTimeout(() => runMermaid(false), 200);
+                return;
+            } else {
+                svgs.each(function() {
+                    var svg = d3.select(this);
+                    svg.html("<g class='wrapper'>" + svg.html() + "</g>");
+                    var inner = svg.select("g");
+                    var zoom = d3.zoom().on("zoom", function(event) {
+                        inner.attr("transform", event.transform);
+                    });
+                    svg.call(zoom);
+                });
+            }
+        }
+    } else if(all_mermaids.length !== mermaids_processed.length) {
+        // Wait for mermaid to process all diagrams
+        setTimeout(() => runMermaid(false), 200);
+        return;
+    }
+
+    // Stop here if not adding fullscreen capability
+    if ("True" !== "True") return;
+
+    if (modal !== null ) {
+        // Destroy existing modal
+        modal.remove();
+        modal = null;
+        modalContent = null;
+    }
+
+    modal = document.createElement('div');
+    modal.className = 'mermaid-fullscreen-modal' + (darkTheme ? ' dark-theme' : '');
+    modal.setAttribute('role', 'dialog');
+    modal.setAttribute('aria-modal', 'true');
+    modal.setAttribute('aria-label', 'Fullscreen diagram viewer');
+    modal.innerHTML = `
+        <button class="mermaid-fullscreen-close${darkTheme ? ' dark-theme' : ''}" aria-label="Close fullscreen">✕</button>
+        <div class="mermaid-container-fullscreen${darkTheme ? ' dark-theme' : ''}"></div>
+    `;
+    document.body.appendChild(modal);
+
+    modalContent = modal.querySelector('.mermaid-container-fullscreen');
+    const closeBtn = modal.querySelector('.mermaid-fullscreen-close');
+
+    const closeModal = () => {
+        modal.classList.remove('active');
+        modalContent.innerHTML = '';
+        document.body.style.overflow = ''
+        window.scrollTo({left: previousScrollOffset[0], top: previousScrollOffset[1], behavior: 'instant'});
+    };
+
+    closeBtn.addEventListener('click', closeModal);
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) closeModal();
+    });
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && modal.classList.contains('active')) {
+            closeModal();
+        }
+    });
+
+    document.querySelectorAll('.mermaid').forEach((mermaidDiv) => {
+        if (mermaidDiv.parentNode.classList.contains('mermaid-container') ||
+            mermaidDiv.closest('.mermaid-fullscreen-modal')) {
+            // Already processed, adjust button class if needed
+            const existingBtn = mermaidDiv.parentNode.querySelector('.mermaid-fullscreen-btn');
+            if (existingBtn) {
+                existingBtn.className = 'mermaid-fullscreen-btn' + (darkTheme ? ' dark-theme' : '');
+            }
+            return;
+        }
+
+        const container = document.createElement('div');
+        container.className = 'mermaid-container';
+        mermaidDiv.parentNode.insertBefore(container, mermaidDiv);
+        container.appendChild(mermaidDiv);
+
+        const fullscreenBtn = document.createElement('button');
+        fullscreenBtn.className = 'mermaid-fullscreen-btn' + (darkTheme ? ' dark-theme' : '');
+        fullscreenBtn.setAttribute('aria-label', 'View diagram in fullscreen');
+        fullscreenBtn.textContent = '⛶';
+        fullscreenBtn.style.opacity = '50%';
+
+        // Calculate dynamic position based on diagram's margin and padding
+        const diagramStyle = window.getComputedStyle(mermaidDiv);
+        const marginTop = parseFloat(diagramStyle.marginTop) || 0;
+        const marginRight = parseFloat(diagramStyle.marginRight) || 0;
+        const paddingTop = parseFloat(diagramStyle.paddingTop) || 0;
+        const paddingRight = parseFloat(diagramStyle.paddingRight) || 0;
+        fullscreenBtn.style.top = `${marginTop + paddingTop + 4}px`;
+        fullscreenBtn.style.right = `${marginRight + paddingRight + 4}px`;
+
+        fullscreenBtn.addEventListener('click', () => {
+            previousScrollOffset = [window.scroll, window.scrollY];
+            const clone = mermaidDiv.cloneNode(true);
+            modalContent.innerHTML = '';
+            modalContent.appendChild(clone);
+
+            const svg = clone.querySelector('svg');
+            if (svg) {
+                svg.removeAttribute('width');
+                svg.removeAttribute('height');
+                svg.style.width = '100%';
+                svg.style.height = 'auto';
+                svg.style.maxWidth = '100%';
+                svg.style.sdisplay = 'block';
+
+                if ("False" === "True") {
+                    setTimeout(() => {
+                        const g = svg.querySelector('g');
+                        if (g) {
+                            var svgD3 = d3.select(svg);
+                            svgD3.html("<g class='wrapper'>" + svgD3.html() + "</g>");
+                            var inner = svgD3.select("g");
+                            var zoom = d3.zoom().on("zoom", function(event) {
+                                inner.attr("transform", event.transform);
+                            });
+                            svgD3.call(zoom);
+                        }
+                    }, 100);
+                }
+            }
+
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+        container.appendChild(fullscreenBtn);
+    });
+};
+
+const load = async () => {
+    initStyles();
+
+    await runMermaid(true);
+
+    const reRunIfThemeChanges = async () => {
+        const newDarkTheme = isDarkTheme();
+        if (newDarkTheme !== darkTheme) {
+            darkTheme = newDarkTheme;
+            console.log("Theme change detected, re-running mermaid with", darkTheme ? "dark" : "default", "theme");
+            await mermaid.initialize(
+                {...JSON.parse(
+                    `{"startOnLoad": false}`
+                ),
+                ...{ darkMode: darkTheme, theme: darkTheme ? 'dark' : 'default' },
+                }
+            );
+            await runMermaid(true);
+        }
+    };
+
+    // Update theme classes when theme changes
+    const themeObserver = new MutationObserver(reRunIfThemeChanges);
+    themeObserver.observe(document.documentElement, {
+        attributes: true,
+        attributeFilter: ['class', 'style', 'data-theme']
+    });
+    themeObserver.observe(document.body, {
+        attributes: true,
+        attributeFilter: ['class', 'style', 'data-theme']
+    });
+};
+
+
+
+
+
+console.log("Initializing mermaid with", darkTheme ? "dark" : "default", "theme");
+mermaid.initialize(
+    {...JSON.parse(
+        `{"startOnLoad": false}`
+    ),
+    ...{ darkMode: darkTheme, theme: darkTheme ? 'dark' : 'default' },
+    }
+);
+
+window.addEventListener("load", load);
+window.runMermaid = runMermaid;</script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="author" title="About these documents" href="about.html" />
+    <link rel="index" title="Index" href="#" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            Fleet Manager
+          </a>
+              <div class="version">
+                1.0
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="about.html">About the project</a></li>
+<li class="toctree-l1"><a class="reference internal" href="getting_started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modules.html">Code documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="training.html">Training documentation</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Fleet Manager</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Index</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+
+<h1 id="index">Index</h1>
+
+<div class="genindex-jumpbox">
+ <a href="#_"><strong>_</strong></a>
+ | <a href="#A"><strong>A</strong></a>
+ | <a href="#B"><strong>B</strong></a>
+ | <a href="#C"><strong>C</strong></a>
+ | <a href="#D"><strong>D</strong></a>
+ | <a href="#E"><strong>E</strong></a>
+ | <a href="#F"><strong>F</strong></a>
+ | <a href="#G"><strong>G</strong></a>
+ | <a href="#H"><strong>H</strong></a>
+ | <a href="#I"><strong>I</strong></a>
+ | <a href="#J"><strong>J</strong></a>
+ | <a href="#L"><strong>L</strong></a>
+ | <a href="#M"><strong>M</strong></a>
+ | <a href="#O"><strong>O</strong></a>
+ | <a href="#P"><strong>P</strong></a>
+ | <a href="#R"><strong>R</strong></a>
+ | <a href="#S"><strong>S</strong></a>
+ | <a href="#T"><strong>T</strong></a>
+ | <a href="#U"><strong>U</strong></a>
+ | <a href="#V"><strong>V</strong></a>
+ | <a href="#Y"><strong>Y</strong></a>
+ 
+</div>
+<h2 id="_">_</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="Fleet_module/MQTT/ThingsBoard/Devices/base_device_component.html#base_device.BaseDevice.__init__">__init__() (base_device.BaseDevice method)</a>
+
+      <ul>
+        <li><a href="Fleet_module/ROS2/commands_action_client_component.html#commands_action_client.CommandsActionClient.__init__">(commands_action_client.CommandsActionClient method)</a>, <a href="Fleet_module/ROS2/commands_action_client_component.html#id1">[1]</a>
+</li>
+        <li><a href="Fleet_module/MQTT/ThingsBoard/Devices/devices_manager_component.html#devices_manager.DevicesManager.__init__">(devices_manager.DevicesManager method)</a>
+</li>
+        <li><a href="Fleet_module/MQTT/ThingsBoard/Devices/feedback_device_component.html#feedback_device.FeedbackDevice.__init__">(feedback_device.FeedbackDevice method)</a>
+</li>
+        <li><a href="Fleet_module/MQTT/ThingsBoard/Devices/field_device_component.html#field_device.FieldDevice.__init__">(field_device.FieldDevice method)</a>
+</li>
+        <li><a href="Fleet_module/MQTT/ThingsBoard/Devices/field_pm_device_component.html#field_pm_device.FieldPMDevice.__init__">(field_pm_device.FieldPMDevice method)</a>
+</li>
+        <li><a href="Fleet_module/Mission/grpc_mission_rest_component.html#grpc_mission_rest.MissionCommunicationService.__init__">(grpc_mission_rest.MissionCommunicationService method)</a>
+</li>
+        <li><a href="Fleet_module/Mission/grpc_mission_vehicle_component.html#grpc_mission_vehicle.ResultCommunicationService.__init__">(grpc_mission_vehicle.ResultCommunicationService method)</a>
+</li>
+        <li><a href="Fleet_module/MQTT/grpc_mqtt_component.html#grpc_mqtt.MQTTCommunicationService.__init__">(grpc_mqtt.MQTTCommunicationService method)</a>
+</li>
+        <li><a href="Fleet_module/PM/grpc_pm_component.html#grpc_pm_fleet.PMCommunicationService.__init__">(grpc_pm_fleet.PMCommunicationService method)</a>
+</li>
+        <li><a href="Fleet_module/REST/grpc_rest_component.html#grpc_rest.RestCommunicationService.__init__">(grpc_rest.RestCommunicationService method)</a>, <a href="Fleet_module/REST/grpc_rest_component.html#id1">[1]</a>
+</li>
+        <li><a href="Fleet_module/ROS2/grpc_ros2_component.html#grpc_ros2.PlanCommunicationService.__init__">(grpc_ros2.PlanCommunicationService method)</a>, <a href="Fleet_module/ROS2/grpc_ros2_component.html#id1">[1]</a>
+</li>
+        <li><a href="Fleet_module/MQTT/ThingsBoard/Devices/metric_device_component.html#metric_device.MetricDevice.__init__">(metric_device.MetricDevice method)</a>
+</li>
+        <li><a href="Fleet_module/Metrics/metrics_manager_component.html#id1">(metrics_manager.SystemMetricsManagerThread method)</a>, <a href="Fleet_module/Metrics/metrics_manager_component.html#metrics_manager.SystemMetricsManagerThread.__init__">[1]</a>
+</li>
+        <li><a href="Fleet_module/MQTT/ThingsBoard/Devices/mission_device_component.html#mission_device.MissionDevice.__init__">(mission_device.MissionDevice method)</a>
+</li>
+        <li><a href="Fleet_module/Mission/mission_manager_component.html#id1">(mission_manager.MissionManagerThread method)</a>, <a href="Fleet_module/Mission/mission_manager_component.html#mission_manager.MissionManagerThread.__init__">[1]</a>
+</li>
+        <li><a href="Fleet_module/MQTT/ThingsBoard/rest_api_component.html#rest_api.ThingsBoardAPI.__init__">(rest_api.ThingsBoardAPI method)</a>
+</li>
+        <li><a href="Fleet_module/Metrics/subs_metrics_component.html#id1">(subscriber_metrics_function.DynamicMetricsSubscriber method)</a>, <a href="Fleet_module/Metrics/subs_metrics_component.html#subscriber_metrics_function.DynamicMetricsSubscriber.__init__">[1]</a>
+</li>
+        <li><a href="Fleet_module/PM/subs_pm_component.html#subscriber_pm_function.DynamicPMSubscriber.__init__">(subscriber_pm_function.DynamicPMSubscriber method)</a>
+</li>
+        <li><a href="Fleet_module/MQTT/ThingsBoard/tb_manager_component.html#tb_manager.ThingsboardThread.__init__">(tb_manager.ThingsboardThread method)</a>
+</li>
+        <li><a href="Fleet_module/MQTT/ThingsBoard/Devices/treatment_device_component.html#treatment_device.TreatmentDevice.__init__">(treatment_device.TreatmentDevice method)</a>
+</li>
+        <li><a href="Fleet_module/MQTT/ThingsBoard/Devices/vehicle_device_component.html#vehicle_device.VehicleDevice.__init__">(vehicle_device.VehicleDevice method)</a>
+</li>
+      </ul></li>
+  </ul></td>
+</tr></table>
+
+<h2 id="A">A</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="Fleet_module/PM/subs_pm_component.html#subscriber_pm_function.DynamicPMSubscriber.active_subscriptions">active_subscriptions (subscriber_pm_function.DynamicPMSubscriber attribute)</a>
+</li>
+      <li><a href="Fleet_module/MQTT/ThingsBoard/Devices/treatment_device_component.html#treatment_device.TreatmentDevice.add_field_pm">add_field_pm() (treatment_device.TreatmentDevice method)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="Fleet_module/Mission/dependency_component.html#dependency.all_dependencies_resolved">all_dependencies_resolved() (in module dependency)</a>
+</li>
+      <li><a href="Fleet_module/Mission/dependency_component.html#dependency.apply_dependency">apply_dependency() (in module dependency)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="B">B</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="Fleet_module/MQTT/ThingsBoard/Devices/feedback_device_component.html#feedback_device.FeedbackDevice.base">base (feedback_device.FeedbackDevice attribute)</a>
+
+      <ul>
+        <li><a href="Fleet_module/MQTT/ThingsBoard/Devices/field_device_component.html#field_device.FieldDevice.base">(field_device.FieldDevice attribute)</a>
+</li>
+        <li><a href="Fleet_module/MQTT/ThingsBoard/Devices/field_pm_device_component.html#field_pm_device.FieldPMDevice.base">(field_pm_device.FieldPMDevice attribute)</a>
+</li>
+        <li><a href="Fleet_module/MQTT/ThingsBoard/Devices/metric_device_component.html#metric_device.MetricDevice.base">(metric_device.MetricDevice attribute)</a>
+</li>
+        <li><a href="Fleet_module/MQTT/ThingsBoard/Devices/mission_device_component.html#mission_device.MissionDevice.base">(mission_device.MissionDevice attribute)</a>
+</li>
+        <li><a href="Fleet_module/MQTT/ThingsBoard/Devices/treatment_device_component.html#treatment_device.TreatmentDevice.base">(treatment_device.TreatmentDevice attribute)</a>
+</li>
+      </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li>
+    base_device
+
+      <ul>
+        <li><a href="Fleet_module/MQTT/ThingsBoard/Devices/base_device_component.html#module-base_device">module</a>
+</li>
+      </ul></li>
+      <li><a href="Fleet_module/MQTT/ThingsBoard/Devices/base_device_component.html#base_device.BaseDevice">BaseDevice (class in base_device)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="C">C</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="Fleet_module/Mission/mission_manager_component.html#id8">calculate_centroid() (mission_manager.MissionManagerThread method)</a>, <a href="Fleet_module/Mission/mission_manager_component.html#mission_manager.MissionManagerThread.calculate_centroid">[1]</a>
+</li>
+      <li><a href="Fleet_module/Mission/dependency_component.html#dependency.check_dependencies">check_dependencies() (in module dependency)</a>
+</li>
+      <li><a href="Training/Diseases/diseases.html#diseases_labels_dir.class_mapping">class_mapping (in module diseases_labels_dir)</a>
+</li>
+      <li><a href="Fleet_module/init_fleet_component.html#init_fleet.clean">clean() (in module init_fleet)</a>
+</li>
+      <li><a href="Fleet_module/clear_fleet_component.html#clear_fleet.clean_directory">clean_directory() (in module clear_fleet)</a>
+</li>
+      <li><a href="Fleet_module/clear_fleet_component.html#clear_fleet.clean_pms_subfolders">clean_pms_subfolders() (in module clear_fleet)</a>
+</li>
+      <li><a href="Fleet_module/MQTT/ThingsBoard/Devices/feedback_device_component.html#feedback_device.FeedbackDevice.cleanup">cleanup() (feedback_device.FeedbackDevice method)</a>
+
+      <ul>
+        <li><a href="Fleet_module/MQTT/ThingsBoard/Devices/field_device_component.html#field_device.FieldDevice.cleanup">(field_device.FieldDevice method)</a>
+</li>
+        <li><a href="Fleet_module/MQTT/ThingsBoard/Devices/field_pm_device_component.html#field_pm_device.FieldPMDevice.cleanup">(field_pm_device.FieldPMDevice method)</a>
+</li>
+        <li><a href="Fleet_module/MQTT/ThingsBoard/Devices/metric_device_component.html#metric_device.MetricDevice.cleanup">(metric_device.MetricDevice method)</a>
+</li>
+        <li><a href="Fleet_module/MQTT/ThingsBoard/Devices/mission_device_component.html#mission_device.MissionDevice.cleanup">(mission_device.MissionDevice method)</a>
+</li>
+        <li><a href="Fleet_module/MQTT/ThingsBoard/Devices/treatment_device_component.html#treatment_device.TreatmentDevice.cleanup">(treatment_device.TreatmentDevice method)</a>
+</li>
+      </ul></li>
+      <li><a href="Fleet_module/MQTT/ThingsBoard/Devices/field_pm_device_component.html#field_pm_device.FieldPMDevice.cleanup_by_mission">cleanup_by_mission() (field_pm_device.FieldPMDevice method)</a>
+
+      <ul>
+        <li><a href="Fleet_module/MQTT/ThingsBoard/Devices/treatment_device_component.html#treatment_device.TreatmentDevice.cleanup_by_mission">(treatment_device.TreatmentDevice method)</a>
+</li>
+      </ul></li>
+      <li>
+    clear_fleet
+
+      <ul>
+        <li><a href="Fleet_module/clear_fleet_component.html#module-0">module</a>, <a href="Fleet_module/clear_fleet_component.html#module-clear_fleet">[1]</a>
+</li>
+      </ul></li>
+      <li><a href="Fleet_module/MQTT/ThingsBoard/Devices/base_device_component.html#base_device.BaseDevice.clients">clients (base_device.BaseDevice attribute)</a>
+</li>
+      <li>
+    commands_action_client
+
+      <ul>
+        <li><a href="Fleet_module/ROS2/commands_action_client_component.html#module-0">module</a>, <a href="Fleet_module/ROS2/commands_action_client_component.html#module-commands_action_client">[1]</a>
+</li>
+      </ul></li>
+      <li><a href="Fleet_module/Mission/data_parser_component.html#data_parser.commands_to_list">commands_to_list() (in module data_parser)</a>
+</li>
+      <li><a href="Fleet_module/ROS2/commands_action_client_component.html#commands_action_client.CommandsActionClient">CommandsActionClient (class in commands_action_client)</a>, <a href="Fleet_module/ROS2/commands_action_client_component.html#id0">[1]</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="Fleet_module/PM/pm_manager_component.html#pm_manager_fleet.comparation">comparation() (in module pm_manager_fleet)</a>
+</li>
+      <li><a href="Fleet_module/Metrics/subs_metrics_component.html#id5">create_callback() (subscriber_metrics_function.DynamicMetricsSubscriber method)</a>, <a href="Fleet_module/Metrics/subs_metrics_component.html#subscriber_metrics_function.DynamicMetricsSubscriber.create_callback">[1]</a>
+
+      <ul>
+        <li><a href="Fleet_module/PM/subs_pm_component.html#subscriber_pm_function.DynamicPMSubscriber.create_callback">(subscriber_pm_function.DynamicPMSubscriber method)</a>
+</li>
+      </ul></li>
+      <li><a href="Fleet_module/MQTT/ThingsBoard/Devices/base_device_component.html#base_device.BaseDevice.create_client">create_client() (base_device.BaseDevice method)</a>
+</li>
+      <li>
+    create_data_splits
+
+      <ul>
+        <li><a href="Training/Common/split.html#module-create_data_splits">module</a>
+</li>
+      </ul></li>
+      <li><a href="Fleet_module/MQTT/ThingsBoard/Devices/base_device_component.html#base_device.BaseDevice.create_device">create_device() (base_device.BaseDevice method)</a>
+
+      <ul>
+        <li><a href="Fleet_module/MQTT/ThingsBoard/rest_api_component.html#rest_api.ThingsBoardAPI.create_device">(rest_api.ThingsBoardAPI method)</a>
+</li>
+      </ul></li>
+      <li><a href="Fleet_module/Metrics/subs_metrics_component.html#id4">create_drone_subscription() (subscriber_metrics_function.DynamicMetricsSubscriber method)</a>, <a href="Fleet_module/Metrics/subs_metrics_component.html#subscriber_metrics_function.DynamicMetricsSubscriber.create_drone_subscription">[1]</a>
+
+      <ul>
+        <li><a href="Fleet_module/PM/subs_pm_component.html#subscriber_pm_function.DynamicPMSubscriber.create_drone_subscription">(subscriber_pm_function.DynamicPMSubscriber method)</a>
+</li>
+      </ul></li>
+      <li><a href="Fleet_module/create_logger_fleet_component.html#create_logger_fleet.create_logger">create_logger() (in module create_logger_fleet)</a>, <a href="Fleet_module/create_logger_fleet_component.html#id0">[1]</a>
+
+      <ul>
+        <li><a href="Fleet_module/Mission/grpc_mission_vehicle_component.html#grpc_mission_vehicle.create_logger">(in module grpc_mission_vehicle)</a>
+</li>
+      </ul></li>
+      <li>
+    create_logger_fleet
+
+      <ul>
+        <li><a href="Fleet_module/create_logger_fleet_component.html#module-0">module</a>, <a href="Fleet_module/create_logger_fleet_component.html#module-create_logger_fleet">[1]</a>
+</li>
+      </ul></li>
+      <li><a href="Fleet_module/Mission/mission_manager_component.html#id22">create_mission_manager() (in module mission_manager)</a>, <a href="Fleet_module/Mission/mission_manager_component.html#mission_manager.create_mission_manager">[1]</a>
+</li>
+      <li><a href="Fleet_module/PM/pm_isobus_component.html#pm_isobus_fleet.create_new_pm">create_new_pm() (in module pm_isobus_fleet)</a>
+</li>
+      <li><a href="Fleet_module/Mission/mission_manager_component.html#id23">create_queues() (in module mission_manager)</a>, <a href="Fleet_module/Mission/mission_manager_component.html#mission_manager.create_queues">[1]</a>
+</li>
+      <li><a href="Fleet_module/MQTT/ThingsBoard/Devices/base_device_component.html#base_device.BaseDevice.create_relation">create_relation() (base_device.BaseDevice method)</a>
+
+      <ul>
+        <li><a href="Fleet_module/MQTT/ThingsBoard/rest_api_component.html#rest_api.ThingsBoardAPI.create_relation">(rest_api.ThingsBoardAPI method)</a>
+</li>
+      </ul></li>
+      <li><a href="Fleet_module/REST/default_controller_component.html#default_controller.create_rest_logger">create_rest_logger() (in module default_controller)</a>
+</li>
+      <li><a href="Fleet_module/ROS2/commands_action_client_component.html#commands_action_client.create_ros2_action_client">create_ros2_action_client() (in module commands_action_client)</a>, <a href="Fleet_module/ROS2/commands_action_client_component.html#id6">[1]</a>
+</li>
+      <li><a href="Training/Diseases/diseases.html#diseases_labels_dir.create_split_files">create_split_files() (in module diseases_labels_dir)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="D">D</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li>
+    data_parser
+
+      <ul>
+        <li><a href="Fleet_module/Mission/data_parser_component.html#module-data_parser">module</a>
+</li>
+      </ul></li>
+      <li><a href="Fleet_module/REST/rest_server_component.html#id2">default() (rest_server.JSONEncoder method)</a>, <a href="Fleet_module/REST/rest_server_component.html#rest_server.JSONEncoder.default">[1]</a>
+</li>
+      <li>
+    default_controller
+
+      <ul>
+        <li><a href="Fleet_module/REST/default_controller_component.html#module-default_controller">module</a>
+</li>
+      </ul></li>
+      <li><a href="Fleet_module/MQTT/ThingsBoard/rest_api_component.html#rest_api.ThingsBoardAPI.delete_all_devices_by_type">delete_all_devices_by_type() (rest_api.ThingsBoardAPI method)</a>
+</li>
+      <li><a href="Fleet_module/MQTT/ThingsBoard/Devices/base_device_component.html#base_device.BaseDevice.delete_client">delete_client() (base_device.BaseDevice method)</a>
+</li>
+      <li><a href="Fleet_module/MQTT/ThingsBoard/rest_api_component.html#rest_api.ThingsBoardAPI.delete_device">delete_device() (rest_api.ThingsBoardAPI method)</a>
+</li>
+      <li><a href="Fleet_module/MQTT/ThingsBoard/Devices/base_device_component.html#base_device.BaseDevice.delete_device_with_retry">delete_device_with_retry() (base_device.BaseDevice method)</a>
+</li>
+      <li><a href="Fleet_module/MQTT/ThingsBoard/rest_api_component.html#rest_api.ThingsBoardAPI.delete_relation">delete_relation() (rest_api.ThingsBoardAPI method)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li>
+    dependency
+
+      <ul>
+        <li><a href="Fleet_module/Mission/dependency_component.html#module-dependency">module</a>
+</li>
+      </ul></li>
+      <li>
+    devices_manager
+
+      <ul>
+        <li><a href="Fleet_module/MQTT/ThingsBoard/Devices/devices_manager_component.html#module-devices_manager">module</a>
+</li>
+      </ul></li>
+      <li><a href="Fleet_module/MQTT/ThingsBoard/tb_manager_component.html#tb_manager.ThingsboardThread.devices_manager">devices_manager (tb_manager.ThingsboardThread attribute)</a>
+</li>
+      <li><a href="Fleet_module/MQTT/ThingsBoard/Devices/devices_manager_component.html#devices_manager.DevicesManager">DevicesManager (class in devices_manager)</a>
+</li>
+      <li>
+    diseases_labels_dir
+
+      <ul>
+        <li><a href="Training/Diseases/diseases.html#module-diseases_labels_dir">module</a>
+</li>
+      </ul></li>
+      <li><a href="Fleet_module/Metrics/metrics_manager_component.html#id5">distribute_data() (metrics_manager.SystemMetricsManagerThread method)</a>, <a href="Fleet_module/Metrics/metrics_manager_component.html#metrics_manager.SystemMetricsManagerThread.distribute_data">[1]</a>
+</li>
+      <li><a href="Fleet_module/Metrics/subs_metrics_component.html#id0">DynamicMetricsSubscriber (class in subscriber_metrics_function)</a>, <a href="Fleet_module/Metrics/subs_metrics_component.html#subscriber_metrics_function.DynamicMetricsSubscriber">[1]</a>
+</li>
+      <li><a href="Fleet_module/PM/subs_pm_component.html#subscriber_pm_function.DynamicPMSubscriber">DynamicPMSubscriber (class in subscriber_pm_function)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="E">E</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="Fleet_module/MQTT/ThingsBoard/rest_api_component.html#rest_api.ThingsBoardAPI.ensure_auth">ensure_auth() (rest_api.ThingsBoardAPI method)</a>
+</li>
+      <li><a href="Fleet_module/PM/pm_isobus_component.html#pm_isobus_fleet.ensure_task_exists">ensure_task_exists() (in module pm_isobus_fleet)</a>
+</li>
+      <li>
+    error_handler
+
+      <ul>
+        <li><a href="Fleet_module/Mission/error_handler_component.html#module-error_handler">module</a>
+</li>
+      </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="Fleet_module/create_logger_fleet_component.html#create_logger_fleet.Exception">Exception</a>
+</li>
+      <li>
+    export_to_onnx
+
+      <ul>
+        <li><a href="Training/Common/export.html#module-export_to_onnx">module</a>
+</li>
+      </ul></li>
+      <li><a href="Fleet_module/Metrics/subs_metrics_component.html#id3">extract_drone_id() (subscriber_metrics_function.DynamicMetricsSubscriber method)</a>, <a href="Fleet_module/Metrics/subs_metrics_component.html#subscriber_metrics_function.DynamicMetricsSubscriber.extract_drone_id">[1]</a>
+
+      <ul>
+        <li><a href="Fleet_module/PM/subs_pm_component.html#subscriber_pm_function.DynamicPMSubscriber.extract_drone_id">(subscriber_pm_function.DynamicPMSubscriber method)</a>
+</li>
+      </ul></li>
+  </ul></td>
+</tr></table>
+
+<h2 id="F">F</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="Fleet_module/ROS2/commands_action_client_component.html#commands_action_client.CommandsActionClient.feedback_callback">feedback_callback() (commands_action_client.CommandsActionClient method)</a>, <a href="Fleet_module/ROS2/commands_action_client_component.html#id5">[1]</a>
+</li>
+      <li>
+    feedback_device
+
+      <ul>
+        <li><a href="Fleet_module/MQTT/ThingsBoard/Devices/feedback_device_component.html#module-feedback_device">module</a>
+</li>
+      </ul></li>
+      <li><a href="Fleet_module/MQTT/ThingsBoard/Devices/devices_manager_component.html#devices_manager.DevicesManager.feedback_device">feedback_device (devices_manager.DevicesManager attribute)</a>
+</li>
+      <li><a href="Fleet_module/Mission/mission_manager_component.html#id12">feedback_telemetry() (mission_manager.MissionManagerThread method)</a>, <a href="Fleet_module/Mission/mission_manager_component.html#mission_manager.MissionManagerThread.feedback_telemetry">[1]</a>
+</li>
+      <li><a href="Fleet_module/MQTT/ThingsBoard/Devices/feedback_device_component.html#feedback_device.FeedbackDevice">FeedbackDevice (class in feedback_device)</a>
+</li>
+      <li><a href="Fleet_module/MQTT/ThingsBoard/Devices/feedback_device_component.html#feedback_device.FeedbackDevice.feedbacks">feedbacks (feedback_device.FeedbackDevice attribute)</a>
+</li>
+      <li>
+    field_device
+
+      <ul>
+        <li><a href="Fleet_module/MQTT/ThingsBoard/Devices/field_device_component.html#module-field_device">module</a>
+</li>
+      </ul></li>
+      <li><a href="Fleet_module/MQTT/ThingsBoard/Devices/devices_manager_component.html#devices_manager.DevicesManager.field_device">field_device (devices_manager.DevicesManager attribute)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li>
+    field_pm_device
+
+      <ul>
+        <li><a href="Fleet_module/MQTT/ThingsBoard/Devices/field_pm_device_component.html#module-field_pm_device">module</a>
+</li>
+      </ul></li>
+      <li><a href="Fleet_module/MQTT/ThingsBoard/Devices/devices_manager_component.html#devices_manager.DevicesManager.field_pm_device">field_pm_device (devices_manager.DevicesManager attribute)</a>
+</li>
+      <li><a href="Fleet_module/MQTT/ThingsBoard/Devices/field_device_component.html#field_device.FieldDevice">FieldDevice (class in field_device)</a>
+</li>
+      <li><a href="Fleet_module/MQTT/ThingsBoard/Devices/field_pm_device_component.html#field_pm_device.FieldPMDevice">FieldPMDevice (class in field_pm_device)</a>
+</li>
+      <li><a href="Fleet_module/MQTT/ThingsBoard/Devices/field_device_component.html#field_device.FieldDevice.fields">fields (field_device.FieldDevice attribute)</a>
+</li>
+      <li><a href="Fleet_module/MQTT/ThingsBoard/Devices/field_pm_device_component.html#field_pm_device.FieldPMDevice.fields_pm">fields_pm (field_pm_device.FieldPMDevice attribute)</a>
+</li>
+      <li><a href="Fleet_module/Mission/mission_manager_component.html#id9">find_closest_field() (mission_manager.MissionManagerThread method)</a>, <a href="Fleet_module/Mission/mission_manager_component.html#mission_manager.MissionManagerThread.find_closest_field">[1]</a>
+</li>
+      <li><a href="Training/Common/hailo.html#hailo_calibration_data.find_image_files">find_image_files() (in module hailo_calibration_data)</a>
+</li>
+      <li><a href="Fleet_module/Mission/dependency_component.html#dependency.find_task_by_command">find_task_by_command() (in module dependency)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="G">G</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="Fleet_module/Mission/mission_manager_component.html#id7">generate_field_pm_for_current_grid() (mission_manager.MissionManagerThread method)</a>, <a href="Fleet_module/Mission/mission_manager_component.html#mission_manager.MissionManagerThread.generate_field_pm_for_current_grid">[1]</a>
+</li>
+      <li><a href="Fleet_module/PM/pm_drone_component.html#pm_drone_fleet.generate_pm">generate_pm() (in module pm_drone_fleet)</a>
+
+      <ul>
+        <li><a href="Fleet_module/PM/pm_isobus_component.html#pm_isobus_fleet.generate_pm">(in module pm_isobus_fleet)</a>
+</li>
+        <li><a href="Fleet_module/PM/pm_manager_component.html#pm_manager_fleet.generate_pm">(in module pm_manager_fleet)</a>
+</li>
+      </ul></li>
+      <li><a href="Fleet_module/MQTT/ThingsBoard/rest_api_component.html#rest_api.ThingsBoardAPI.get_device_access_token">get_device_access_token() (rest_api.ThingsBoardAPI method)</a>
+</li>
+      <li><a href="Fleet_module/MQTT/ThingsBoard/rest_api_component.html#rest_api.ThingsBoardAPI.get_device_by_name">get_device_by_name() (rest_api.ThingsBoardAPI method)</a>
+</li>
+      <li><a href="Fleet_module/MQTT/ThingsBoard/rest_api_component.html#rest_api.ThingsBoardAPI.get_devices_by_type">get_devices_by_type() (rest_api.ThingsBoardAPI method)</a>
+</li>
+      <li><a href="Fleet_module/ROS2/commands_action_client_component.html#commands_action_client.CommandsActionClient.get_result_callback">get_result_callback() (commands_action_client.CommandsActionClient method)</a>, <a href="Fleet_module/ROS2/commands_action_client_component.html#id4">[1]</a>
+</li>
+      <li><a href="Fleet_module/ROS2/commands_action_client_component.html#commands_action_client.CommandsActionClient.goal_response_callback">goal_response_callback() (commands_action_client.CommandsActionClient method)</a>, <a href="Fleet_module/ROS2/commands_action_client_component.html#id3">[1]</a>
+</li>
+      <li><a href="Training/Leaf/leaf.html#leaf_labels_dir.grouped">grouped (in module leaf_labels_dir)</a>
+</li>
+      <li>
+    grpc_metrics_fleet
+
+      <ul>
+        <li><a href="Fleet_module/Metrics/grpc_metrics_component.html#module-0">module</a>, <a href="Fleet_module/Metrics/grpc_metrics_component.html#module-grpc_metrics_fleet">[1]</a>
+</li>
+      </ul></li>
+      <li>
+    grpc_mission_mqtt
+
+      <ul>
+        <li><a href="Fleet_module/Mission/grpc_mission_mqtt_component.html#module-grpc_mission_mqtt">module</a>
+</li>
+      </ul></li>
+      <li>
+    grpc_mission_pm
+
+      <ul>
+        <li><a href="Fleet_module/Mission/grpc_mission_pm_component.html#module-grpc_mission_pm">module</a>
+</li>
+      </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li>
+    grpc_mission_rest
+
+      <ul>
+        <li><a href="Fleet_module/Mission/grpc_mission_rest_component.html#module-0">module</a>, <a href="Fleet_module/Mission/grpc_mission_rest_component.html#module-grpc_mission_rest">[1]</a>
+</li>
+      </ul></li>
+      <li>
+    grpc_mission_vehicle
+
+      <ul>
+        <li><a href="Fleet_module/Mission/grpc_mission_vehicle_component.html#module-0">module</a>, <a href="Fleet_module/Mission/grpc_mission_vehicle_component.html#module-grpc_mission_vehicle">[1]</a>
+</li>
+      </ul></li>
+      <li>
+    grpc_mqtt
+
+      <ul>
+        <li><a href="Fleet_module/MQTT/grpc_mqtt_component.html#module-grpc_mqtt">module</a>
+</li>
+      </ul></li>
+      <li>
+    grpc_mqtt_client
+
+      <ul>
+        <li><a href="Fleet_module/Mission/grpc_mission_mqtt_component.html#module-grpc_mqtt_client">module</a>
+</li>
+      </ul></li>
+      <li>
+    grpc_pm_client
+
+      <ul>
+        <li><a href="Fleet_module/Mission/grpc_mission_pm_component.html#module-grpc_pm_client">module</a>
+</li>
+      </ul></li>
+      <li>
+    grpc_pm_fleet
+
+      <ul>
+        <li><a href="Fleet_module/PM/grpc_pm_component.html#module-grpc_pm_fleet">module</a>
+</li>
+      </ul></li>
+      <li>
+    grpc_rest
+
+      <ul>
+        <li><a href="Fleet_module/REST/grpc_rest_component.html#module-0">module</a>, <a href="Fleet_module/REST/grpc_rest_component.html#module-grpc_rest">[1]</a>
+</li>
+      </ul></li>
+      <li>
+    grpc_ros2
+
+      <ul>
+        <li><a href="Fleet_module/ROS2/grpc_ros2_component.html#module-0">module</a>, <a href="Fleet_module/ROS2/grpc_ros2_component.html#module-grpc_ros2">[1]</a>
+</li>
+      </ul></li>
+  </ul></td>
+</tr></table>
+
+<h2 id="H">H</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li>
+    hailo_calibration_data
+
+      <ul>
+        <li><a href="Training/Common/hailo.html#module-hailo_calibration_data">module</a>
+</li>
+      </ul></li>
+      <li><a href="Fleet_module/Mission/mission_manager_component.html#id6">handle_command_feedback() (mission_manager.MissionManagerThread method)</a>, <a href="Fleet_module/Mission/mission_manager_component.html#mission_manager.MissionManagerThread.handle_command_feedback">[1]</a>
+</li>
+      <li><a href="Fleet_module/PM/pm_manager_component.html#pm_manager_fleet.handle_comparison_result">handle_comparison_result() (in module pm_manager_fleet)</a>
+</li>
+      <li><a href="Fleet_module/PM/pm_manager_component.html#pm_manager_fleet.handle_finish">handle_finish() (in module pm_manager_fleet)</a>
+</li>
+      <li><a href="Fleet_module/PM/pm_manager_component.html#pm_manager_fleet.handle_generate">handle_generate() (in module pm_manager_fleet)</a>
+</li>
+      <li><a href="Fleet_module/MQTT/ThingsBoard/Devices/devices_manager_component.html#devices_manager.DevicesManager.handle_message">handle_message() (devices_manager.DevicesManager method)</a>
+
+      <ul>
+        <li><a href="Fleet_module/MQTT/ThingsBoard/Devices/feedback_device_component.html#feedback_device.FeedbackDevice.handle_message">(feedback_device.FeedbackDevice method)</a>
+</li>
+        <li><a href="Fleet_module/MQTT/ThingsBoard/Devices/field_device_component.html#field_device.FieldDevice.handle_message">(field_device.FieldDevice method)</a>
+</li>
+        <li><a href="Fleet_module/MQTT/ThingsBoard/Devices/field_pm_device_component.html#field_pm_device.FieldPMDevice.handle_message">(field_pm_device.FieldPMDevice method)</a>
+</li>
+        <li><a href="Fleet_module/MQTT/ThingsBoard/Devices/metric_device_component.html#metric_device.MetricDevice.handle_message">(metric_device.MetricDevice method)</a>
+</li>
+        <li><a href="Fleet_module/MQTT/ThingsBoard/Devices/mission_device_component.html#mission_device.MissionDevice.handle_message">(mission_device.MissionDevice method)</a>
+</li>
+        <li><a href="Fleet_module/MQTT/ThingsBoard/Devices/treatment_device_component.html#treatment_device.TreatmentDevice.handle_message">(treatment_device.TreatmentDevice method)</a>
+</li>
+        <li><a href="Fleet_module/MQTT/ThingsBoard/Devices/vehicle_device_component.html#vehicle_device.VehicleDevice.handle_message">(vehicle_device.VehicleDevice method)</a>
+</li>
+      </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="Fleet_module/Mission/mission_manager_component.html#id5">handle_plan_started() (mission_manager.MissionManagerThread method)</a>, <a href="Fleet_module/Mission/mission_manager_component.html#mission_manager.MissionManagerThread.handle_plan_started">[1]</a>
+</li>
+      <li><a href="Fleet_module/PM/pm_manager_component.html#pm_manager_fleet.handle_received">handle_received() (in module pm_manager_fleet)</a>
+</li>
+      <li><a href="Fleet_module/MQTT/ThingsBoard/rest_api_component.html#rest_api.ThingsBoardAPI.host">host (rest_api.ThingsBoardAPI attribute)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="I">I</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="Fleet_module/REST/rest_server_component.html#id1">include_nulls (rest_server.JSONEncoder attribute)</a>, <a href="Fleet_module/REST/rest_server_component.html#rest_server.JSONEncoder.include_nulls">[1]</a>
+</li>
+      <li>
+    init_fleet
+
+      <ul>
+        <li><a href="Fleet_module/init_fleet_component.html#module-0">module</a>, <a href="Fleet_module/init_fleet_component.html#module-init_fleet">[1]</a>
+</li>
+      </ul></li>
+      <li><a href="Fleet_module/Mission/mission_manager_component.html#id15">initialize_all_field_pms() (mission_manager.MissionManagerThread method)</a>, <a href="Fleet_module/Mission/mission_manager_component.html#mission_manager.MissionManagerThread.initialize_all_field_pms">[1]</a>
+</li>
+      <li><a href="Fleet_module/init_fleet_component.html#init_fleet.initialize_loggers">initialize_loggers() (in module init_fleet)</a>
+</li>
+      <li><a href="Fleet_module/init_fleet_component.html#init_fleet.initialize_metrics_system">initialize_metrics_system() (in module init_fleet)</a>
+</li>
+      <li><a href="Fleet_module/init_fleet_component.html#init_fleet.initialize_mission_system">initialize_mission_system() (in module init_fleet)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="Fleet_module/init_fleet_component.html#init_fleet.initialize_mqtt_system">initialize_mqtt_system() (in module init_fleet)</a>
+</li>
+      <li><a href="Fleet_module/init_fleet_component.html#init_fleet.initialize_pm_system">initialize_pm_system() (in module init_fleet)</a>
+</li>
+      <li><a href="Fleet_module/init_fleet_component.html#init_fleet.initialize_rest_system">initialize_rest_system() (in module init_fleet)</a>
+</li>
+      <li><a href="Fleet_module/init_fleet_component.html#init_fleet.initialize_ros2_system">initialize_ros2_system() (in module init_fleet)</a>
+</li>
+      <li><a href="Fleet_module/init_fleet_component.html#init_fleet.initialize_state_vector_system">initialize_state_vector_system() (in module init_fleet)</a>
+</li>
+      <li><a href="Fleet_module/create_logger_fleet_component.html#create_logger_fleet.IOError">IOError</a>
+</li>
+      <li><a href="Fleet_module/Mission/dependency_component.html#dependency.is_dependency_satisfied">is_dependency_satisfied() (in module dependency)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="J">J</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="Fleet_module/REST/rest_server_component.html#id0">JSONEncoder (class in rest_server)</a>, <a href="Fleet_module/REST/rest_server_component.html#rest_server.JSONEncoder">[1]</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="L">L</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li>
+    leaf_labels_dir
+
+      <ul>
+        <li><a href="Training/Leaf/leaf.html#module-leaf_labels_dir">module</a>
+</li>
+      </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="Fleet_module/MQTT/ThingsBoard/rest_api_component.html#rest_api.ThingsBoardAPI.login">login() (rest_api.ThingsBoardAPI method)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="M">M</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="Training/Common/split.html#create_data_splits.main">main() (in module create_data_splits)</a>
+
+      <ul>
+        <li><a href="Training/Common/hailo.html#hailo_calibration_data.main">(in module hailo_calibration_data)</a>
+</li>
+        <li><a href="Fleet_module/init_fleet_component.html#init_fleet.main">(in module init_fleet)</a>
+</li>
+        <li><a href="Fleet_module/REST/rest_server_component.html#id3">(in module rest_server)</a>, <a href="Fleet_module/REST/rest_server_component.html#rest_server.main">[1]</a>
+</li>
+        <li><a href="Fleet_module/Metrics/subs_metrics_component.html#id6">(in module subscriber_metrics_function)</a>, <a href="Fleet_module/Metrics/subs_metrics_component.html#subscriber_metrics_function.main">[1]</a>
+</li>
+        <li><a href="Fleet_module/PM/subs_pm_component.html#subscriber_pm_function.main">(in module subscriber_pm_function)</a>
+</li>
+        <li><a href="Training/Common/train.html#yolo_train.main">(in module yolo_train)</a>
+</li>
+      </ul></li>
+      <li>
+    metric_device
+
+      <ul>
+        <li><a href="Fleet_module/MQTT/ThingsBoard/Devices/metric_device_component.html#module-metric_device">module</a>
+</li>
+      </ul></li>
+      <li><a href="Fleet_module/MQTT/ThingsBoard/Devices/devices_manager_component.html#devices_manager.DevicesManager.metric_device">metric_device (devices_manager.DevicesManager attribute)</a>
+</li>
+      <li><a href="Fleet_module/MQTT/ThingsBoard/Devices/metric_device_component.html#metric_device.MetricDevice">MetricDevice (class in metric_device)</a>
+</li>
+      <li><a href="Fleet_module/MQTT/ThingsBoard/Devices/metric_device_component.html#metric_device.MetricDevice.metrics">metrics (metric_device.MetricDevice attribute)</a>
+</li>
+      <li>
+    metrics_manager
+
+      <ul>
+        <li><a href="Fleet_module/Metrics/metrics_manager_component.html#module-0">module</a>, <a href="Fleet_module/Metrics/metrics_manager_component.html#module-metrics_manager">[1]</a>
+</li>
+      </ul></li>
+      <li>
+    mission_device
+
+      <ul>
+        <li><a href="Fleet_module/MQTT/ThingsBoard/Devices/mission_device_component.html#module-mission_device">module</a>
+</li>
+      </ul></li>
+      <li><a href="Fleet_module/MQTT/ThingsBoard/Devices/devices_manager_component.html#devices_manager.DevicesManager.mission_device">mission_device (devices_manager.DevicesManager attribute)</a>
+</li>
+      <li>
+    mission_manager
+
+      <ul>
+        <li><a href="Fleet_module/Mission/mission_manager_component.html#module-0">module</a>, <a href="Fleet_module/Mission/mission_manager_component.html#module-mission_manager">[1]</a>
+</li>
+      </ul></li>
+      <li><a href="Fleet_module/REST/default_controller_component.html#default_controller.mission_post">mission_post() (in module default_controller)</a>
+</li>
+      <li><a href="Fleet_module/Mission/mission_manager_component.html#id11">mission_telemetry() (mission_manager.MissionManagerThread method)</a>, <a href="Fleet_module/Mission/mission_manager_component.html#mission_manager.MissionManagerThread.mission_telemetry">[1]</a>
+</li>
+      <li><a href="Fleet_module/Mission/grpc_mission_rest_component.html#grpc_mission_rest.MissionCommunicationService">MissionCommunicationService (class in grpc_mission_rest)</a>
+</li>
+      <li><a href="Fleet_module/MQTT/ThingsBoard/Devices/mission_device_component.html#mission_device.MissionDevice">MissionDevice (class in mission_device)</a>
+</li>
+      <li><a href="Fleet_module/Mission/mission_manager_component.html#id0">MissionManagerThread (class in mission_manager)</a>, <a href="Fleet_module/Mission/mission_manager_component.html#mission_manager.MissionManagerThread">[1]</a>
+</li>
+      <li><a href="Fleet_module/MQTT/ThingsBoard/Devices/mission_device_component.html#mission_device.MissionDevice.missions">missions (mission_device.MissionDevice attribute)</a>
+</li>
+      <li>
+    module
+
+      <ul>
+        <li><a href="Fleet_module/MQTT/ThingsBoard/Devices/base_device_component.html#module-base_device">base_device</a>
+</li>
+        <li><a href="Fleet_module/clear_fleet_component.html#module-0">clear_fleet</a>, <a href="Fleet_module/clear_fleet_component.html#module-clear_fleet">[1]</a>
+</li>
+        <li><a href="Fleet_module/ROS2/commands_action_client_component.html#module-0">commands_action_client</a>, <a href="Fleet_module/ROS2/commands_action_client_component.html#module-commands_action_client">[1]</a>
+</li>
+        <li><a href="Training/Common/split.html#module-create_data_splits">create_data_splits</a>
+</li>
+        <li><a href="Fleet_module/create_logger_fleet_component.html#module-0">create_logger_fleet</a>, <a href="Fleet_module/create_logger_fleet_component.html#module-create_logger_fleet">[1]</a>
+</li>
+        <li><a href="Fleet_module/Mission/data_parser_component.html#module-data_parser">data_parser</a>
+</li>
+        <li><a href="Fleet_module/REST/default_controller_component.html#module-default_controller">default_controller</a>
+</li>
+        <li><a href="Fleet_module/Mission/dependency_component.html#module-dependency">dependency</a>
+</li>
+        <li><a href="Fleet_module/MQTT/ThingsBoard/Devices/devices_manager_component.html#module-devices_manager">devices_manager</a>
+</li>
+        <li><a href="Training/Diseases/diseases.html#module-diseases_labels_dir">diseases_labels_dir</a>
+</li>
+        <li><a href="Fleet_module/Mission/error_handler_component.html#module-error_handler">error_handler</a>
+</li>
+        <li><a href="Training/Common/export.html#module-export_to_onnx">export_to_onnx</a>
+</li>
+        <li><a href="Fleet_module/MQTT/ThingsBoard/Devices/feedback_device_component.html#module-feedback_device">feedback_device</a>
+</li>
+        <li><a href="Fleet_module/MQTT/ThingsBoard/Devices/field_device_component.html#module-field_device">field_device</a>
+</li>
+        <li><a href="Fleet_module/MQTT/ThingsBoard/Devices/field_pm_device_component.html#module-field_pm_device">field_pm_device</a>
+</li>
+        <li><a href="Fleet_module/Metrics/grpc_metrics_component.html#module-0">grpc_metrics_fleet</a>, <a href="Fleet_module/Metrics/grpc_metrics_component.html#module-grpc_metrics_fleet">[1]</a>
+</li>
+        <li><a href="Fleet_module/Mission/grpc_mission_mqtt_component.html#module-grpc_mission_mqtt">grpc_mission_mqtt</a>
+</li>
+        <li><a href="Fleet_module/Mission/grpc_mission_pm_component.html#module-grpc_mission_pm">grpc_mission_pm</a>
+</li>
+        <li><a href="Fleet_module/Mission/grpc_mission_rest_component.html#module-0">grpc_mission_rest</a>, <a href="Fleet_module/Mission/grpc_mission_rest_component.html#module-grpc_mission_rest">[1]</a>
+</li>
+        <li><a href="Fleet_module/Mission/grpc_mission_vehicle_component.html#module-0">grpc_mission_vehicle</a>, <a href="Fleet_module/Mission/grpc_mission_vehicle_component.html#module-grpc_mission_vehicle">[1]</a>
+</li>
+        <li><a href="Fleet_module/MQTT/grpc_mqtt_component.html#module-grpc_mqtt">grpc_mqtt</a>
+</li>
+        <li><a href="Fleet_module/Mission/grpc_mission_mqtt_component.html#module-grpc_mqtt_client">grpc_mqtt_client</a>
+</li>
+        <li><a href="Fleet_module/Mission/grpc_mission_pm_component.html#module-grpc_pm_client">grpc_pm_client</a>
+</li>
+        <li><a href="Fleet_module/PM/grpc_pm_component.html#module-grpc_pm_fleet">grpc_pm_fleet</a>
+</li>
+        <li><a href="Fleet_module/REST/grpc_rest_component.html#module-0">grpc_rest</a>, <a href="Fleet_module/REST/grpc_rest_component.html#module-grpc_rest">[1]</a>
+</li>
+        <li><a href="Fleet_module/ROS2/grpc_ros2_component.html#module-0">grpc_ros2</a>, <a href="Fleet_module/ROS2/grpc_ros2_component.html#module-grpc_ros2">[1]</a>
+</li>
+        <li><a href="Training/Common/hailo.html#module-hailo_calibration_data">hailo_calibration_data</a>
+</li>
+        <li><a href="Fleet_module/init_fleet_component.html#module-0">init_fleet</a>, <a href="Fleet_module/init_fleet_component.html#module-init_fleet">[1]</a>
+</li>
+        <li><a href="Training/Leaf/leaf.html#module-leaf_labels_dir">leaf_labels_dir</a>
+</li>
+        <li><a href="Fleet_module/MQTT/ThingsBoard/Devices/metric_device_component.html#module-metric_device">metric_device</a>
+</li>
+        <li><a href="Fleet_module/Metrics/metrics_manager_component.html#module-0">metrics_manager</a>, <a href="Fleet_module/Metrics/metrics_manager_component.html#module-metrics_manager">[1]</a>
+</li>
+        <li><a href="Fleet_module/MQTT/ThingsBoard/Devices/mission_device_component.html#module-mission_device">mission_device</a>
+</li>
+        <li><a href="Fleet_module/Mission/mission_manager_component.html#module-0">mission_manager</a>, <a href="Fleet_module/Mission/mission_manager_component.html#module-mission_manager">[1]</a>
+</li>
+        <li><a href="Fleet_module/PM/pm_drone_component.html#module-pm_drone_fleet">pm_drone_fleet</a>
+</li>
+        <li><a href="Fleet_module/PM/pm_isobus_component.html#module-pm_isobus_fleet">pm_isobus_fleet</a>
+</li>
+        <li><a href="Fleet_module/PM/pm_manager_component.html#module-pm_manager_fleet">pm_manager_fleet</a>
+</li>
+        <li><a href="Fleet_module/MQTT/ThingsBoard/rest_api_component.html#module-rest_api">rest_api</a>
+</li>
+        <li><a href="Fleet_module/REST/rest_server_component.html#module-0">rest_server</a>, <a href="Fleet_module/REST/rest_server_component.html#module-rest_server">[1]</a>
+</li>
+        <li><a href="Fleet_module/Metrics/subs_metrics_component.html#module-0">subscriber_metrics_function</a>, <a href="Fleet_module/Metrics/subs_metrics_component.html#module-subscriber_metrics_function">[1]</a>
+</li>
+        <li><a href="Fleet_module/PM/subs_pm_component.html#module-subscriber_pm_function">subscriber_pm_function</a>
+</li>
+        <li><a href="Fleet_module/MQTT/ThingsBoard/tb_manager_component.html#module-tb_manager">tb_manager</a>
+</li>
+        <li><a href="Fleet_module/MQTT/ThingsBoard/Devices/treatment_device_component.html#module-treatment_device">treatment_device</a>
+</li>
+        <li><a href="Fleet_module/Mission/validator_component.html#module-0">validator</a>, <a href="Fleet_module/Mission/validator_component.html#module-validator">[1]</a>
+</li>
+        <li><a href="Fleet_module/MQTT/ThingsBoard/Devices/vehicle_device_component.html#module-vehicle_device">vehicle_device</a>
+</li>
+        <li><a href="Training/Common/train.html#module-yolo_train">yolo_train</a>
+</li>
+      </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="Fleet_module/MQTT/ThingsBoard/Devices/base_device_component.html#base_device.BaseDevice.mqtt_logger">mqtt_logger (base_device.BaseDevice attribute)</a>
+
+      <ul>
+        <li><a href="Fleet_module/MQTT/ThingsBoard/Devices/devices_manager_component.html#devices_manager.DevicesManager.mqtt_logger">(devices_manager.DevicesManager attribute)</a>
+</li>
+        <li><a href="Fleet_module/MQTT/ThingsBoard/Devices/feedback_device_component.html#feedback_device.FeedbackDevice.mqtt_logger">(feedback_device.FeedbackDevice attribute)</a>
+</li>
+        <li><a href="Fleet_module/MQTT/ThingsBoard/Devices/field_device_component.html#field_device.FieldDevice.mqtt_logger">(field_device.FieldDevice attribute)</a>
+</li>
+        <li><a href="Fleet_module/MQTT/ThingsBoard/Devices/field_pm_device_component.html#field_pm_device.FieldPMDevice.mqtt_logger">(field_pm_device.FieldPMDevice attribute)</a>
+</li>
+        <li><a href="Fleet_module/MQTT/grpc_mqtt_component.html#grpc_mqtt.MQTTCommunicationService.mqtt_logger">(grpc_mqtt.MQTTCommunicationService attribute)</a>
+</li>
+        <li><a href="Fleet_module/MQTT/ThingsBoard/Devices/metric_device_component.html#metric_device.MetricDevice.mqtt_logger">(metric_device.MetricDevice attribute)</a>
+</li>
+        <li><a href="Fleet_module/MQTT/ThingsBoard/Devices/mission_device_component.html#mission_device.MissionDevice.mqtt_logger">(mission_device.MissionDevice attribute)</a>
+</li>
+        <li><a href="Fleet_module/MQTT/ThingsBoard/tb_manager_component.html#tb_manager.ThingsboardThread.mqtt_logger">(tb_manager.ThingsboardThread attribute)</a>
+</li>
+        <li><a href="Fleet_module/MQTT/ThingsBoard/Devices/treatment_device_component.html#treatment_device.TreatmentDevice.mqtt_logger">(treatment_device.TreatmentDevice attribute)</a>
+</li>
+      </ul></li>
+      <li><a href="Fleet_module/MQTT/grpc_mqtt_component.html#grpc_mqtt.MQTTCommunicationService">MQTTCommunicationService (class in grpc_mqtt)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="O">O</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="Fleet_module/Mission/data_parser_component.html#data_parser.obtain_commands_per_vehicle">obtain_commands_per_vehicle() (in module data_parser)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="Fleet_module/Mission/data_parser_component.html#data_parser.obtain_type_of_vehicle">obtain_type_of_vehicle() (in module data_parser)</a>
+</li>
+      <li><a href="Fleet_module/MQTT/ThingsBoard/Devices/base_device_component.html#base_device.BaseDevice.on_connect">on_connect() (base_device.BaseDevice method)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="P">P</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="Training/Common/hailo.html#hailo_calibration_data.parse_arguments">parse_arguments() (in module hailo_calibration_data)</a>
+
+      <ul>
+        <li><a href="Training/Common/train.html#yolo_train.parse_arguments">(in module yolo_train)</a>
+</li>
+      </ul></li>
+      <li><a href="Fleet_module/Mission/data_parser_component.html#data_parser.parse_feedback_data">parse_feedback_data() (in module data_parser)</a>
+</li>
+      <li><a href="Fleet_module/Mission/data_parser_component.html#data_parser.parse_mission">parse_mission() (in module data_parser)</a>
+</li>
+      <li><a href="Fleet_module/MQTT/ThingsBoard/tb_manager_component.html#tb_manager.PASSWORD">PASSWORD (in module tb_manager)</a>
+</li>
+      <li><a href="Fleet_module/MQTT/ThingsBoard/rest_api_component.html#rest_api.ThingsBoardAPI.password">password (rest_api.ThingsBoardAPI attribute)</a>
+</li>
+      <li><a href="Fleet_module/ROS2/grpc_ros2_component.html#grpc_ros2.PlanCommunicationService">PlanCommunicationService (class in grpc_ros2)</a>, <a href="Fleet_module/ROS2/grpc_ros2_component.html#id0">[1]</a>
+</li>
+      <li>
+    pm_drone_fleet
+
+      <ul>
+        <li><a href="Fleet_module/PM/pm_drone_component.html#module-pm_drone_fleet">module</a>
+</li>
+      </ul></li>
+      <li>
+    pm_isobus_fleet
+
+      <ul>
+        <li><a href="Fleet_module/PM/pm_isobus_component.html#module-pm_isobus_fleet">module</a>
+</li>
+      </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="Fleet_module/PM/grpc_pm_component.html#grpc_pm_fleet.PMCommunicationService.pm_logger">pm_logger (grpc_pm_fleet.PMCommunicationService attribute)</a>
+
+      <ul>
+        <li><a href="Fleet_module/PM/subs_pm_component.html#subscriber_pm_function.DynamicPMSubscriber.pm_logger">(subscriber_pm_function.DynamicPMSubscriber attribute)</a>
+</li>
+      </ul></li>
+      <li>
+    pm_manager_fleet
+
+      <ul>
+        <li><a href="Fleet_module/PM/pm_manager_component.html#module-pm_manager_fleet">module</a>
+</li>
+      </ul></li>
+      <li><a href="Fleet_module/PM/grpc_pm_component.html#grpc_pm_fleet.PMCommunicationService">PMCommunicationService (class in grpc_pm_fleet)</a>
+</li>
+      <li><a href="Fleet_module/MQTT/ThingsBoard/Devices/base_device_component.html#base_device.BaseDevice.port">port (base_device.BaseDevice attribute)</a>
+</li>
+      <li><a href="Fleet_module/MQTT/ThingsBoard/tb_manager_component.html#tb_manager.PORT">PORT (in module tb_manager)</a>
+</li>
+      <li><a href="Fleet_module/Mission/mission_manager_component.html#id3">proccess_plans() (mission_manager.MissionManagerThread method)</a>, <a href="Fleet_module/Mission/mission_manager_component.html#mission_manager.MissionManagerThread.proccess_plans">[1]</a>
+</li>
+      <li><a href="Fleet_module/Metrics/metrics_manager_component.html#id4">process_data() (metrics_manager.SystemMetricsManagerThread method)</a>, <a href="Fleet_module/Metrics/metrics_manager_component.html#metrics_manager.SystemMetricsManagerThread.process_data">[1]</a>
+</li>
+      <li><a href="Fleet_module/Metrics/metrics_manager_component.html#id3">process_queue() (metrics_manager.SystemMetricsManagerThread method)</a>, <a href="Fleet_module/Metrics/metrics_manager_component.html#metrics_manager.SystemMetricsManagerThread.process_queue">[1]</a>
+</li>
+      <li><a href="Fleet_module/Mission/mission_manager_component.html#id4">process_vehicle_feedback() (mission_manager.MissionManagerThread method)</a>, <a href="Fleet_module/Mission/mission_manager_component.html#mission_manager.MissionManagerThread.process_vehicle_feedback">[1]</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="R">R</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="Fleet_module/Mission/mission_manager_component.html#id20">receive_queue() (mission_manager.MissionManagerThread method)</a>, <a href="Fleet_module/Mission/mission_manager_component.html#mission_manager.MissionManagerThread.receive_queue">[1]</a>
+</li>
+      <li><a href="Fleet_module/MQTT/ThingsBoard/Devices/field_pm_device_component.html#field_pm_device.RELATION_TYPE">RELATION_TYPE (in module field_pm_device)</a>
+</li>
+      <li><a href="Training/Common/hailo.html#hailo_calibration_data.resize_and_crop">resize_and_crop() (in module hailo_calibration_data)</a>
+</li>
+      <li>
+    rest_api
+
+      <ul>
+        <li><a href="Fleet_module/MQTT/ThingsBoard/rest_api_component.html#module-rest_api">module</a>
+</li>
+      </ul></li>
+      <li>
+    rest_server
+
+      <ul>
+        <li><a href="Fleet_module/REST/rest_server_component.html#module-0">module</a>, <a href="Fleet_module/REST/rest_server_component.html#module-rest_server">[1]</a>
+</li>
+      </ul></li>
+      <li><a href="Fleet_module/REST/grpc_rest_component.html#grpc_rest.RestCommunicationService">RestCommunicationService (class in grpc_rest)</a>, <a href="Fleet_module/REST/grpc_rest_component.html#id0">[1]</a>
+</li>
+      <li><a href="Fleet_module/Mission/grpc_mission_vehicle_component.html#grpc_mission_vehicle.ResultCommunicationService">ResultCommunicationService (class in grpc_mission_vehicle)</a>
+</li>
+      <li><a href="Fleet_module/Metrics/metrics_manager_component.html#id2">run() (metrics_manager.SystemMetricsManagerThread method)</a>, <a href="Fleet_module/Metrics/metrics_manager_component.html#metrics_manager.SystemMetricsManagerThread.run">[1]</a>
+
+      <ul>
+        <li><a href="Fleet_module/Mission/mission_manager_component.html#id2">(mission_manager.MissionManagerThread method)</a>, <a href="Fleet_module/Mission/mission_manager_component.html#mission_manager.MissionManagerThread.run">[1]</a>
+</li>
+        <li><a href="Fleet_module/MQTT/ThingsBoard/tb_manager_component.html#tb_manager.ThingsboardThread.run">(tb_manager.ThingsboardThread method)</a>
+</li>
+      </ul></li>
+      <li><a href="Fleet_module/Mission/grpc_mission_mqtt_component.html#grpc_mission_mqtt.run_client">run_client() (in module grpc_mission_mqtt)</a>
+
+      <ul>
+        <li><a href="Fleet_module/Mission/grpc_mission_pm_component.html#grpc_mission_pm.run_client">(in module grpc_mission_pm)</a>
+</li>
+        <li><a href="Fleet_module/Mission/grpc_mission_rest_component.html#grpc_mission_rest.run_client">(in module grpc_mission_rest)</a>
+</li>
+        <li><a href="Fleet_module/Mission/grpc_mission_vehicle_component.html#grpc_mission_vehicle.run_client">(in module grpc_mission_vehicle)</a>
+</li>
+      </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="Fleet_module/MQTT/grpc_mqtt_component.html#grpc_mqtt.run_grpc_mqtt_server">run_grpc_mqtt_server() (in module grpc_mqtt)</a>
+</li>
+      <li><a href="Fleet_module/Metrics/grpc_metrics_component.html#grpc_metrics_fleet.run_metrics_mqtt_client">run_metrics_mqtt_client() (in module grpc_metrics_fleet)</a>, <a href="Fleet_module/Metrics/grpc_metrics_component.html#id0">[1]</a>
+</li>
+      <li><a href="Fleet_module/REST/grpc_rest_component.html#grpc_rest.run_rest_client">run_rest_client() (in module grpc_rest)</a>, <a href="Fleet_module/REST/grpc_rest_component.html#id4">[1]</a>
+</li>
+      <li><a href="Fleet_module/REST/grpc_rest_component.html#grpc_rest.run_rest_server">run_rest_server() (in module grpc_rest)</a>, <a href="Fleet_module/REST/grpc_rest_component.html#id3">[1]</a>
+</li>
+      <li><a href="Fleet_module/ROS2/grpc_ros2_component.html#grpc_ros2.run_ros2_client">run_ros2_client() (in module grpc_ros2)</a>, <a href="Fleet_module/ROS2/grpc_ros2_component.html#id4">[1]</a>
+</li>
+      <li><a href="Fleet_module/ROS2/grpc_ros2_component.html#grpc_ros2.run_ros2_server">run_ros2_server() (in module grpc_ros2)</a>, <a href="Fleet_module/ROS2/grpc_ros2_component.html#id3">[1]</a>
+</li>
+      <li><a href="Fleet_module/PM/pm_manager_component.html#pm_manager_fleet.run_script">run_script() (in module pm_manager_fleet)</a>
+</li>
+      <li><a href="Fleet_module/Mission/grpc_mission_rest_component.html#grpc_mission_rest.run_server">run_server() (in module grpc_mission_rest)</a>
+
+      <ul>
+        <li><a href="Fleet_module/Mission/grpc_mission_vehicle_component.html#grpc_mission_vehicle.run_server">(in module grpc_mission_vehicle)</a>
+</li>
+      </ul></li>
+      <li><a href="Fleet_module/PM/grpc_pm_component.html#grpc_pm_fleet.run_server_pm">run_server_pm() (in module grpc_pm_fleet)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="S">S</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="Fleet_module/Mission/mission_manager_component.html#id21">save_to_file() (mission_manager.MissionManagerThread method)</a>, <a href="Fleet_module/Mission/mission_manager_component.html#mission_manager.MissionManagerThread.save_to_file">[1]</a>
+</li>
+      <li><a href="Fleet_module/Metrics/subs_metrics_component.html#id2">scan_for_drones() (subscriber_metrics_function.DynamicMetricsSubscriber method)</a>, <a href="Fleet_module/Metrics/subs_metrics_component.html#subscriber_metrics_function.DynamicMetricsSubscriber.scan_for_drones">[1]</a>
+
+      <ul>
+        <li><a href="Fleet_module/PM/subs_pm_component.html#subscriber_pm_function.DynamicPMSubscriber.scan_for_drones">(subscriber_pm_function.DynamicPMSubscriber method)</a>
+</li>
+      </ul></li>
+      <li><a href="Fleet_module/Mission/mission_manager_component.html#id16">send_field_pm() (mission_manager.MissionManagerThread method)</a>, <a href="Fleet_module/Mission/mission_manager_component.html#mission_manager.MissionManagerThread.send_field_pm">[1]</a>
+</li>
+      <li><a href="Fleet_module/ROS2/commands_action_client_component.html#commands_action_client.CommandsActionClient.send_goal">send_goal() (commands_action_client.CommandsActionClient method)</a>, <a href="Fleet_module/ROS2/commands_action_client_component.html#id2">[1]</a>
+</li>
+      <li><a href="Fleet_module/Mission/mission_manager_component.html#id17">send_plan() (mission_manager.MissionManagerThread method)</a>, <a href="Fleet_module/Mission/mission_manager_component.html#mission_manager.MissionManagerThread.send_plan">[1]</a>
+</li>
+      <li><a href="Fleet_module/Mission/mission_manager_component.html#id19">send_queue() (mission_manager.MissionManagerThread method)</a>, <a href="Fleet_module/Mission/mission_manager_component.html#mission_manager.MissionManagerThread.send_queue">[1]</a>
+</li>
+      <li><a href="Fleet_module/MQTT/ThingsBoard/Devices/base_device_component.html#base_device.BaseDevice.send_telemetry">send_telemetry() (base_device.BaseDevice method)</a>
+</li>
+      <li><a href="Fleet_module/Metrics/metrics_manager_component.html#id6">send_to_service() (metrics_manager.SystemMetricsManagerThread method)</a>, <a href="Fleet_module/Metrics/metrics_manager_component.html#metrics_manager.SystemMetricsManagerThread.send_to_service">[1]</a>
+</li>
+      <li><a href="Fleet_module/Mission/mission_manager_component.html#id18">send_treatment_messages() (mission_manager.MissionManagerThread method)</a>, <a href="Fleet_module/Mission/mission_manager_component.html#mission_manager.MissionManagerThread.send_treatment_messages">[1]</a>
+</li>
+      <li><a href="Fleet_module/Mission/grpc_mission_rest_component.html#grpc_mission_rest.MissionCommunicationService.SendMission">SendMission() (grpc_mission_rest.MissionCommunicationService method)</a>
+</li>
+      <li><a href="Fleet_module/MQTT/grpc_mqtt_component.html#grpc_mqtt.MQTTCommunicationService.SendMQTT">SendMQTT() (grpc_mqtt.MQTTCommunicationService method)</a>
+</li>
+      <li><a href="Fleet_module/ROS2/grpc_ros2_component.html#grpc_ros2.PlanCommunicationService.SendPlan">SendPlan() (grpc_ros2.PlanCommunicationService method)</a>, <a href="Fleet_module/ROS2/grpc_ros2_component.html#id2">[1]</a>
+</li>
+      <li><a href="Fleet_module/PM/grpc_pm_component.html#grpc_pm_fleet.PMCommunicationService.SendPM">SendPM() (grpc_pm_fleet.PMCommunicationService method)</a>
+</li>
+      <li><a href="Fleet_module/REST/grpc_rest_component.html#grpc_rest.RestCommunicationService.SendRest">SendRest() (grpc_rest.RestCommunicationService method)</a>, <a href="Fleet_module/REST/grpc_rest_component.html#id2">[1]</a>
+</li>
+      <li><a href="Fleet_module/Mission/grpc_mission_vehicle_component.html#grpc_mission_vehicle.ResultCommunicationService.SendResult">SendResult() (grpc_mission_vehicle.ResultCommunicationService method)</a>
+</li>
+      <li><a href="Fleet_module/MQTT/ThingsBoard/rest_api_component.html#rest_api.ThingsBoardAPI.session">session (rest_api.ThingsBoardAPI attribute)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="Fleet_module/Mission/mission_manager_component.html#id13">set_fields() (mission_manager.MissionManagerThread method)</a>, <a href="Fleet_module/Mission/mission_manager_component.html#mission_manager.MissionManagerThread.set_fields">[1]</a>
+</li>
+      <li><a href="Fleet_module/MQTT/ThingsBoard/rest_api_component.html#rest_api.ThingsBoardAPI.set_server_attribute">set_server_attribute() (rest_api.ThingsBoardAPI method)</a>
+</li>
+      <li><a href="Fleet_module/MQTT/ThingsBoard/Devices/field_pm_device_component.html#field_pm_device.FieldPMDevice.setup_device_relations">setup_device_relations() (field_pm_device.FieldPMDevice method)</a>
+</li>
+      <li><a href="Fleet_module/Mission/grpc_mission_mqtt_component.html#grpc_mission_mqtt.start_grpc_mission_mqtt">start_grpc_mission_mqtt() (in module grpc_mission_mqtt)</a>
+</li>
+      <li><a href="Fleet_module/Mission/grpc_mission_pm_component.html#grpc_mission_pm.start_grpc_mission_pm">start_grpc_mission_pm() (in module grpc_mission_pm)</a>
+</li>
+      <li><a href="Fleet_module/Mission/grpc_mission_rest_component.html#grpc_mission_rest.start_grpc_mission_rest">start_grpc_mission_rest() (in module grpc_mission_rest)</a>
+</li>
+      <li><a href="Fleet_module/Mission/grpc_mission_vehicle_component.html#grpc_mission_vehicle.start_grpc_mission_vehicle">start_grpc_mission_vehicle() (in module grpc_mission_vehicle)</a>
+</li>
+      <li><a href="Fleet_module/MQTT/grpc_mqtt_component.html#grpc_mqtt.start_grpc_mqtt">start_grpc_mqtt() (in module grpc_mqtt)</a>
+</li>
+      <li><a href="Fleet_module/PM/grpc_pm_component.html#grpc_pm_fleet.start_grpc_pm">start_grpc_pm() (in module grpc_pm_fleet)</a>
+</li>
+      <li><a href="Fleet_module/REST/grpc_rest_component.html#grpc_rest.start_grpc_rest">start_grpc_rest() (in module grpc_rest)</a>, <a href="Fleet_module/REST/grpc_rest_component.html#id5">[1]</a>
+</li>
+      <li><a href="Fleet_module/ROS2/grpc_ros2_component.html#grpc_ros2.start_grpc_ros2">start_grpc_ros2() (in module grpc_ros2)</a>, <a href="Fleet_module/ROS2/grpc_ros2_component.html#id5">[1]</a>
+</li>
+      <li><a href="Fleet_module/Metrics/metrics_manager_component.html#id7">start_metrics_manager() (in module metrics_manager)</a>, <a href="Fleet_module/Metrics/metrics_manager_component.html#metrics_manager.start_metrics_manager">[1]</a>
+</li>
+      <li><a href="Fleet_module/MQTT/ThingsBoard/tb_manager_component.html#tb_manager.start_tb_manager">start_tb_manager() (in module tb_manager)</a>
+</li>
+      <li>
+    subscriber_metrics_function
+
+      <ul>
+        <li><a href="Fleet_module/Metrics/subs_metrics_component.html#module-0">module</a>, <a href="Fleet_module/Metrics/subs_metrics_component.html#module-subscriber_metrics_function">[1]</a>
+</li>
+      </ul></li>
+      <li>
+    subscriber_pm_function
+
+      <ul>
+        <li><a href="Fleet_module/PM/subs_pm_component.html#module-subscriber_pm_function">module</a>
+</li>
+      </ul></li>
+      <li><a href="Fleet_module/Metrics/metrics_manager_component.html#id0">SystemMetricsManagerThread (class in metrics_manager)</a>, <a href="Fleet_module/Metrics/metrics_manager_component.html#metrics_manager.SystemMetricsManagerThread">[1]</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="T">T</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="Fleet_module/MQTT/ThingsBoard/Devices/base_device_component.html#base_device.BaseDevice.tb">tb (base_device.BaseDevice attribute)</a>
+</li>
+      <li><a href="Fleet_module/MQTT/ThingsBoard/Devices/base_device_component.html#base_device.BaseDevice.tb_host">tb_host (base_device.BaseDevice attribute)</a>
+</li>
+      <li><a href="Fleet_module/MQTT/ThingsBoard/tb_manager_component.html#tb_manager.TB_HOST">TB_HOST (in module tb_manager)</a>
+</li>
+      <li>
+    tb_manager
+
+      <ul>
+        <li><a href="Fleet_module/MQTT/ThingsBoard/tb_manager_component.html#module-tb_manager">module</a>
+</li>
+      </ul></li>
+      <li><a href="Fleet_module/MQTT/grpc_mqtt_component.html#grpc_mqtt.MQTTCommunicationService.tb_queue">tb_queue (grpc_mqtt.MQTTCommunicationService attribute)</a>
+
+      <ul>
+        <li><a href="Fleet_module/MQTT/ThingsBoard/tb_manager_component.html#tb_manager.ThingsboardThread.tb_queue">(tb_manager.ThingsboardThread attribute)</a>
+</li>
+      </ul></li>
+      <li><a href="Fleet_module/MQTT/ThingsBoard/Devices/base_device_component.html#base_device.BaseDevice.telemetry_topic">telemetry_topic (base_device.BaseDevice attribute)</a>
+</li>
+      <li><a href="Fleet_module/MQTT/ThingsBoard/tb_manager_component.html#tb_manager.TELEMETRY_TOPIC">TELEMETRY_TOPIC (in module tb_manager)</a>
+</li>
+      <li><a href="Fleet_module/MQTT/ThingsBoard/tb_manager_component.html#tb_manager.THINGSBOARD_HOST">THINGSBOARD_HOST (in module tb_manager)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="Fleet_module/MQTT/ThingsBoard/rest_api_component.html#rest_api.ThingsBoardAPI">ThingsBoardAPI (class in rest_api)</a>
+</li>
+      <li><a href="Fleet_module/MQTT/ThingsBoard/tb_manager_component.html#tb_manager.ThingsboardThread">ThingsboardThread (class in tb_manager)</a>
+</li>
+      <li><a href="Fleet_module/PM/subs_pm_component.html#subscriber_pm_function.DynamicPMSubscriber.timer">timer (subscriber_pm_function.DynamicPMSubscriber attribute)</a>
+</li>
+      <li><a href="Fleet_module/MQTT/ThingsBoard/rest_api_component.html#rest_api.ThingsBoardAPI.token">token (rest_api.ThingsBoardAPI attribute)</a>
+</li>
+      <li><a href="Fleet_module/Mission/dependency_component.html#dependency.treatment">treatment() (in module dependency)</a>
+</li>
+      <li>
+    treatment_device
+
+      <ul>
+        <li><a href="Fleet_module/MQTT/ThingsBoard/Devices/treatment_device_component.html#module-treatment_device">module</a>
+</li>
+      </ul></li>
+      <li><a href="Fleet_module/MQTT/ThingsBoard/Devices/devices_manager_component.html#devices_manager.DevicesManager.treatment_device">treatment_device (devices_manager.DevicesManager attribute)</a>
+
+      <ul>
+        <li><a href="Fleet_module/MQTT/ThingsBoard/Devices/field_pm_device_component.html#field_pm_device.FieldPMDevice.treatment_device">(field_pm_device.FieldPMDevice attribute)</a>
+</li>
+      </ul></li>
+      <li><a href="Fleet_module/MQTT/ThingsBoard/Devices/treatment_device_component.html#treatment_device.TreatmentDevice">TreatmentDevice (class in treatment_device)</a>
+</li>
+      <li><a href="Fleet_module/MQTT/ThingsBoard/Devices/treatment_device_component.html#treatment_device.TreatmentDevice.treatments">treatments (treatment_device.TreatmentDevice attribute)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="U">U</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="Fleet_module/Mission/mission_manager_component.html#id14">update_field() (mission_manager.MissionManagerThread method)</a>, <a href="Fleet_module/Mission/mission_manager_component.html#mission_manager.MissionManagerThread.update_field">[1]</a>
+</li>
+      <li><a href="Fleet_module/PM/pm_isobus_component.html#pm_isobus_fleet.update_grid_cells">update_grid_cells() (in module pm_isobus_fleet)</a>
+</li>
+      <li><a href="Fleet_module/PM/pm_isobus_component.html#pm_isobus_fleet.update_grid_max_row_column">update_grid_max_row_column() (in module pm_isobus_fleet)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="Fleet_module/PM/pm_isobus_component.html#pm_isobus_fleet.update_grid_min_position">update_grid_min_position() (in module pm_isobus_fleet)</a>
+</li>
+      <li><a href="Fleet_module/Mission/mission_manager_component.html#id10">update_status() (mission_manager.MissionManagerThread method)</a>, <a href="Fleet_module/Mission/mission_manager_component.html#mission_manager.MissionManagerThread.update_status">[1]</a>
+</li>
+      <li><a href="Fleet_module/MQTT/ThingsBoard/tb_manager_component.html#tb_manager.USERNAME">USERNAME (in module tb_manager)</a>
+</li>
+      <li><a href="Fleet_module/MQTT/ThingsBoard/rest_api_component.html#rest_api.ThingsBoardAPI.username">username (rest_api.ThingsBoardAPI attribute)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="V">V</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="Training/Common/hailo.html#hailo_calibration_data.validate_images">validate_images() (in module hailo_calibration_data)</a>
+</li>
+      <li><a href="Fleet_module/Mission/validator_component.html#validator.validate_mission">validate_mission() (in module validator)</a>
+</li>
+      <li><a href="Fleet_module/Mission/validator_component.html#validator.validate_plan">validate_plan() (in module validator)</a>
+</li>
+      <li>
+    validator
+
+      <ul>
+        <li><a href="Fleet_module/Mission/validator_component.html#module-0">module</a>, <a href="Fleet_module/Mission/validator_component.html#module-validator">[1]</a>
+</li>
+      </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li>
+    vehicle_device
+
+      <ul>
+        <li><a href="Fleet_module/MQTT/ThingsBoard/Devices/vehicle_device_component.html#module-vehicle_device">module</a>
+</li>
+      </ul></li>
+      <li><a href="Fleet_module/MQTT/ThingsBoard/Devices/devices_manager_component.html#devices_manager.DevicesManager.vehicle_device">vehicle_device (devices_manager.DevicesManager attribute)</a>
+</li>
+      <li><a href="Fleet_module/MQTT/ThingsBoard/Devices/vehicle_device_component.html#vehicle_device.VehicleDevice">VehicleDevice (class in vehicle_device)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="Y">Y</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li>
+    yolo_train
+
+      <ul>
+        <li><a href="Training/Common/train.html#module-yolo_train">module</a>
+</li>
+      </ul></li>
+  </ul></td>
+</tr></table>
+
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, Estela Mora Barba.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

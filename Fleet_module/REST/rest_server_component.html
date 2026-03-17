@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>REST Server &mdash; Fleet Manager 1.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../_static/documentation_options.js?v=f2a433a1"></script>
+        <script src="../../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+        <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="author" title="About these documents" href="../../about.html" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Default Controller" href="default_controller_component.html" />
+    <link rel="prev" title="REST Management" href="../rest_components.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            Fleet Manager
+          </a>
+              <div class="version">
+                1.0
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../about.html">About the project</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../getting_started.html">Getting Started</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../modules.html">Code documentation</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../Drone_module/index.html">Drone</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">Fleet Manager</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../init_fleet_component.html">Init Fleet Manager</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../mission_components.html">Mission Management</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ros2_components.html">ROS2 Management</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../rest_components.html">REST Management</a><ul class="current">
+<li class="toctree-l4 current"><a class="current reference internal" href="#">REST Server</a></li>
+<li class="toctree-l4"><a class="reference internal" href="default_controller_component.html">Default Controller</a></li>
+<li class="toctree-l4"><a class="reference internal" href="grpc_rest_component.html">gRPC REST</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../mqtt_components.html">MQTT Management</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../pm_components.html">Prescription Map Management</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../metrics_components.html">System Metrics Component</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../clear_fleet_component.html">Clear Fleet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../create_logger_fleet_component.html">Create Logger</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../training.html">Training documentation</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Fleet Manager</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../modules.html">Code documentation</a></li>
+          <li class="breadcrumb-item"><a href="../index.html">Fleet Manager</a></li>
+          <li class="breadcrumb-item"><a href="../rest_components.html">REST Management</a></li>
+      <li class="breadcrumb-item active">REST Server</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/Fleet_module/REST/rest_server_component.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="module-0">
+<span id="rest-server"></span><h1>REST Server<a class="headerlink" href="#module-0" title="Link to this heading"></a></h1>
+<p>Connexion REST API Server Configuration and Startup Module</p>
+<div class="versionadded" id="module-rest_server">
+<p><span class="versionmodified added">Added in version 1.0.</span></p>
+</div>
+<p>This module provides the core configuration and startup functionality for the Fleet Management
+System’s REST API server. It implements a Connexion-based Flask application with OpenAPI/Swagger
+specification support, custom JSON serialization, and comprehensive API routing.</p>
+<dl>
+<dt>Architecture Overview:</dt><dd><p>The module follows the OpenAPI-first design pattern where:</p>
+<ol class="arabic simple">
+<li><p><strong>API Specification</strong>: swagger.yaml defines the complete API contract</p></li>
+<li><p><strong>Automatic Routing</strong>: Connexion maps API endpoints to controller functions</p></li>
+<li><p><strong>Data Validation</strong>: OpenAPI schema validation for requests and responses</p></li>
+<li><p><strong>Custom Serialization</strong>: JSONEncoder handles model object serialization</p></li>
+<li><p><strong>Development Server</strong>: Built-in Flask development server for testing</p></li>
+</ol>
+</dd>
+<dt>Key Features:</dt><dd><ul class="simple">
+<li><p><strong>OpenAPI Integration</strong>: Full swagger.yaml specification support</p></li>
+<li><p><strong>Model Serialization</strong>: Custom JSON encoding for application models</p></li>
+<li><p><strong>Parameter Conversion</strong>: Automatic snake_case to camelCase conversion</p></li>
+<li><p><strong>Schema Validation</strong>: Request/response validation against OpenAPI spec</p></li>
+<li><p><strong>Development Ready</strong>: Integrated development server with hot reload</p></li>
+</ul>
+</dd>
+<dt>Connexion Framework Benefits:</dt><dd><ul class="simple">
+<li><p><strong>Code Generation</strong>: Automatic endpoint routing from OpenAPI spec</p></li>
+<li><p><strong>Validation</strong>: Built-in request/response validation</p></li>
+<li><p><strong>Documentation</strong>: Interactive Swagger UI for API exploration</p></li>
+<li><p><strong>Type Safety</strong>: Parameter and response type checking</p></li>
+<li><p><strong>Standards Compliance</strong>: Full OpenAPI 3.0 specification support</p></li>
+</ul>
+</dd>
+<dt>Server Configuration:</dt><dd><ul class="simple">
+<li><p><strong>Framework</strong>: Connexion with Flask backend</p></li>
+<li><p><strong>Port</strong>: 8082 (configurable development server)</p></li>
+<li><p><strong>Protocol</strong>: HTTP/1.1 with JSON content type</p></li>
+<li><p><strong>Validation</strong>: OpenAPI schema validation enabled</p></li>
+<li><p><strong>Documentation</strong>: Swagger UI available at /ui endpoint</p></li>
+</ul>
+</dd>
+<dt>API Specification Integration:</dt><dd><p>The server loads its complete API specification from swagger.yaml including:
+- Endpoint definitions and HTTP methods
+- Request/response schemas and validation rules
+- Parameter specifications and type constraints
+- Security requirements and authentication schemes
+- Model definitions for data structures</p>
+</dd>
+<dt>Custom Serialization:</dt><dd><p>JSONEncoder provides specialized handling for:
+- Model objects with swagger_types definitions
+- Null value filtering based on include_nulls setting
+- Attribute mapping from internal names to API field names
+- Fallback to standard Flask JSON encoding for other types</p>
+</dd>
+<dt>Development Workflow:</dt><dd><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Start development server</span>
+$<span class="w"> </span>python<span class="w"> </span>rest_server.py
+
+<span class="c1"># Server starts on http://localhost:8082</span>
+<span class="c1"># Swagger UI available at http://localhost:8082/ui</span>
+<span class="c1"># API endpoints as defined in swagger.yaml</span>
+</pre></div>
+</div>
+</dd>
+<dt>Production Deployment:</dt><dd><p>For production use, replace the development server with:
+- WSGI server (Gunicorn, uWSGI)
+- Reverse proxy (Nginx, Apache)
+- Container orchestration (Docker, Kubernetes)
+- Load balancing and SSL termination</p>
+</dd>
+<dt>Classes:</dt><dd><dl class="py class">
+<dt class="sig sig-object py" id="rest_server.JSONEncoder">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">rest_server.</span></span><span class="sig-name descname"><span class="pre">JSONEncoder</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/rest_server.html#JSONEncoder"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#rest_server.JSONEncoder" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">FlaskJSONEncoder</span></code></p>
+<p>Custom JSON encoder extending Flask’s default encoder with specialized model handling.</p>
+<p>This encoder provides intelligent serialization for Fleet Management System model objects
+while maintaining full compatibility with Flask’s standard JSON encoding for all other
+data types. It handles OpenAPI-generated model classes with proper attribute mapping
+and configurable null value filtering.</p>
+<dl class="simple">
+<dt>Serialization Features:</dt><dd><ul class="simple">
+<li><p><strong>Model Detection</strong>: Automatic identification of Model subclass instances</p></li>
+<li><p><strong>Attribute Mapping</strong>: Conversion from internal names to API field names</p></li>
+<li><p><strong>Null Filtering</strong>: Configurable inclusion/exclusion of null values</p></li>
+<li><p><strong>Type Preservation</strong>: Maintains data types during serialization</p></li>
+<li><p><strong>Fallback Handling</strong>: Standard Flask encoding for non-model objects</p></li>
+</ul>
+</dd>
+<dt>Model Serialization Process:</dt><dd><ol class="arabic simple">
+<li><p><strong>Type Check</strong>: Identify if object is a Model subclass instance</p></li>
+<li><p><strong>Schema Iteration</strong>: Process each attribute defined in swagger_types</p></li>
+<li><p><strong>Value Extraction</strong>: Retrieve attribute values using getattr()</p></li>
+<li><p><strong>Null Filtering</strong>: Apply include_nulls setting to null values</p></li>
+<li><p><strong>Attribute Mapping</strong>: Convert internal attribute names to API field names</p></li>
+<li><p><strong>Dictionary Assembly</strong>: Build final dictionary representation</p></li>
+</ol>
+</dd>
+<dt>Null Value Handling:</dt><dd><p>The encoder respects the include_nulls class attribute:
+- <strong>include_nulls = False</strong>: Null values are omitted from output (default)
+- <strong>include_nulls = True</strong>: Null values are included as explicit null</p>
+</dd>
+<dt>OpenAPI Integration:</dt><dd><p>Works with auto-generated model classes that provide:
+- <strong>swagger_types</strong>: Dictionary mapping attributes to their types
+- <strong>attribute_map</strong>: Dictionary mapping internal names to API field names
+- <strong>Model base class</strong>: Common interface for all generated models</p>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Variables<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>include_nulls</strong> (<em>bool</em>) – Control null value inclusion in serialized JSON output</p>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<p><strong>Basic Usage</strong>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">encoder</span> <span class="o">=</span> <span class="n">JSONEncoder</span><span class="p">()</span>
+<span class="n">encoder</span><span class="o">.</span><span class="n">include_nulls</span> <span class="o">=</span> <span class="kc">True</span>  <span class="c1"># Include null values in output</span>
+</pre></div>
+</div>
+<p><strong>Model Serialization</strong>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mission</span> <span class="o">=</span> <span class="n">Mission</span><span class="p">(</span><span class="n">mission_id</span><span class="o">=</span><span class="mi">123</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;Test&quot;</span><span class="p">,</span> <span class="n">description</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+<span class="c1"># With include_nulls=False: {&quot;mission_id&quot;: 123, &quot;name&quot;: &quot;Test&quot;}</span>
+<span class="c1"># With include_nulls=True:  {&quot;mission_id&quot;: 123, &quot;name&quot;: &quot;Test&quot;, &quot;description&quot;: null}</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This encoder is specifically designed for OpenAPI-generated model classes.
+Standard Python objects use Flask’s default JSON encoding behavior.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The encoder assumes model objects follow the OpenAPI generation pattern
+with swagger_types and attribute_map attributes. Non-conforming objects
+may cause serialization errors.</p>
+</div>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="rest_server.JSONEncoder.include_nulls">
+<span class="sig-name descname"><span class="pre">include_nulls</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">False</span></em><a class="headerlink" href="#rest_server.JSONEncoder.include_nulls" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="rest_server.JSONEncoder.default">
+<span class="sig-name descname"><span class="pre">default</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">o</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/rest_server.html#JSONEncoder.default"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#rest_server.JSONEncoder.default" title="Link to this definition"></a></dt>
+<dd><p>Serialize objects to JSON-compatible formats with intelligent model handling.</p>
+<p>This method implements the core serialization logic for the custom JSON encoder.
+It provides specialized handling for Fleet Management System model objects while
+maintaining compatibility with Flask’s standard JSON encoding for all other types.</p>
+<dl class="simple">
+<dt>Serialization Strategy:</dt><dd><ol class="arabic simple">
+<li><p><strong>Model Detection</strong>: Check if object is instance of Model base class</p></li>
+<li><p><strong>Model Processing</strong>: Apply custom model serialization logic</p></li>
+<li><p><strong>Standard Fallback</strong>: Use Flask’s default encoding for non-model objects</p></li>
+<li><p><strong>Error Propagation</strong>: Let Flask handle unsupported object types</p></li>
+</ol>
+</dd>
+<dt>Model Serialization Workflow:</dt><dd><ul class="simple">
+<li><p><strong>Schema Iteration</strong>: Process each attribute from swagger_types definition</p></li>
+<li><p><strong>Value Retrieval</strong>: Extract current attribute value from object instance</p></li>
+<li><p><strong>Null Filtering</strong>: Apply include_nulls policy to None values</p></li>
+<li><p><strong>Name Mapping</strong>: Convert internal attribute names to API field names</p></li>
+<li><p><strong>Dictionary Construction</strong>: Build JSON-serializable dictionary</p></li>
+</ul>
+</dd>
+<dt>Attribute Mapping Process:</dt><dd><p>Internal model attributes (snake_case) are mapped to API field names
+(typically camelCase) using the model’s attribute_map dictionary:</p>
+<ul class="simple">
+<li><p>Internal: mission_id, start_time, vehicle_count</p></li>
+<li><p>API Fields: missionId, startTime, vehicleCount</p></li>
+</ul>
+</dd>
+<dt>Null Value Policy:</dt><dd><p>Behavior depends on the include_nulls class attribute:
+- <strong>False (default)</strong>: Null values are omitted from output
+- <strong>True</strong>: Null values appear as explicit null in JSON</p>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>o</strong> (<em>object</em>) – Object to serialize to JSON-compatible format</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Dictionary representation for Model objects, delegated result for others</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Union[dict, object]</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>TypeError</strong> – For non-serializable objects that Flask’s encoder cannot handle</p></li>
+<li><p><strong>AttributeError</strong> – If model object lacks required swagger_types or attribute_map</p></li>
+</ul>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<p><strong>Model Object Serialization</strong>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mission</span> <span class="o">=</span> <span class="n">Mission</span><span class="p">(</span>
+    <span class="n">mission_id</span><span class="o">=</span><span class="mi">123</span><span class="p">,</span>
+    <span class="n">name</span><span class="o">=</span><span class="s2">&quot;Agricultural Survey&quot;</span><span class="p">,</span>
+    <span class="n">description</span><span class="o">=</span><span class="kc">None</span>
+<span class="p">)</span>
+
+<span class="c1"># Result with include_nulls=False:</span>
+<span class="c1"># {&quot;missionId&quot;: 123, &quot;name&quot;: &quot;Agricultural Survey&quot;}</span>
+
+<span class="c1"># Result with include_nulls=True:</span>
+<span class="c1"># {&quot;missionId&quot;: 123, &quot;name&quot;: &quot;Agricultural Survey&quot;, &quot;description&quot;: null}</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The method preserves the order of attributes as defined in the model’s
+swagger_types dictionary for consistent JSON output.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Model objects must have valid swagger_types and attribute_map attributes.
+Missing or malformed metadata will cause serialization failures.</p>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+</dd>
+<dt>Functions:</dt><dd><dl class="py function">
+<dt class="sig sig-object py" id="rest_server.main">
+<span class="sig-prename descclassname"><span class="pre">rest_server.</span></span><span class="sig-name descname"><span class="pre">main</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/rest_server.html#main"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#rest_server.main" title="Link to this definition"></a></dt>
+<dd><p>Configure and start the Connexion REST API server for Fleet Management System.</p>
+<p>This function provides complete server initialization and startup for the Fleet
+Management System’s REST API. It configures Connexion with OpenAPI specification
+loading, custom JSON serialization, and parameter conversion for seamless
+API operation.</p>
+<dl class="simple">
+<dt>Initialization Workflow:</dt><dd><ol class="arabic simple">
+<li><p><strong>Application Creation</strong>: Initialize Connexion application instance</p></li>
+<li><p><strong>Encoder Configuration</strong>: Set up custom JSON encoder for model serialization</p></li>
+<li><p><strong>API Specification Loading</strong>: Load and validate swagger.yaml specification</p></li>
+<li><p><strong>Server Startup</strong>: Start development server with specified configuration</p></li>
+</ol>
+</dd>
+<dt>Connexion Configuration:</dt><dd><ul class="simple">
+<li><p><strong>Application Type</strong>: Connexion wrapper around Flask application</p></li>
+<li><p><strong>JSON Encoder</strong>: Custom JSONEncoder for model object serialization</p></li>
+<li><p><strong>API Specification</strong>: Loaded from swagger.yaml in current directory</p></li>
+<li><p><strong>Parameter Handling</strong>: Pythonic snake_case to camelCase conversion</p></li>
+</ul>
+</dd>
+<dt>Server Features:</dt><dd><ul class="simple">
+<li><p><strong>Port</strong>: 8082 (dedicated Fleet Management API port)</p></li>
+<li><p><strong>Protocol</strong>: HTTP/1.1 with JSON content negotiation</p></li>
+<li><p><strong>Validation</strong>: Automatic request/response validation against OpenAPI spec</p></li>
+<li><p><strong>Documentation</strong>: Interactive Swagger UI available at /ui endpoint</p></li>
+<li><p><strong>Hot Reload</strong>: Development server supports automatic code reloading</p></li>
+</ul>
+</dd>
+<dt>OpenAPI Integration Benefits:</dt><dd><ul class="simple">
+<li><p><strong>Automatic Routing</strong>: Endpoints mapped directly from specification</p></li>
+<li><p><strong>Schema Validation</strong>: Request/response validation against defined schemas</p></li>
+<li><p><strong>Type Conversion</strong>: Automatic parameter type conversion and validation</p></li>
+<li><p><strong>Documentation Generation</strong>: Live API documentation from specification</p></li>
+<li><p><strong>Client Generation</strong>: OpenAPI spec enables automatic client generation</p></li>
+</ul>
+</dd>
+<dt>Development Server Configuration:</dt><dd><ul class="simple">
+<li><p><strong>Debug Mode</strong>: Enabled for development with detailed error messages</p></li>
+<li><p><strong>Auto Reload</strong>: Server restarts automatically on code changes</p></li>
+<li><p><strong>Threading</strong>: Single-threaded for development simplicity</p></li>
+<li><p><strong>Host</strong>: localhost (127.0.0.1) for local development access</p></li>
+</ul>
+</dd>
+<dt>API Title Configuration:</dt><dd><p>The API is registered with the title “Mission Data API” which appears in:
+- Swagger UI interface header
+- OpenAPI specification metadata
+- Generated client libraries
+- API documentation and descriptions</p>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>FileNotFoundError</strong> – If swagger.yaml specification file is not found</p></li>
+<li><p><strong>connexion.exceptions.InvalidSpecification</strong> – If OpenAPI spec is malformed</p></li>
+<li><p><strong>OSError</strong> – If port 8082 is already in use or unavailable</p></li>
+</ul>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<p><strong>Direct Execution</strong>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ python rest_server.py
+# Server starts at http://localhost:8082
+# Swagger UI at http://localhost:8082/ui
+</pre></div>
+</div>
+<p><strong>Programmatic Usage</strong>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">rest_server</span><span class="w"> </span><span class="kn">import</span> <span class="n">main</span>
+<span class="n">main</span><span class="p">()</span>  <span class="c1"># Starts server (blocking call)</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This function starts a development server which blocks execution.
+For production deployment, use proper WSGI servers like Gunicorn.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The development server is not suitable for production use due to
+performance and security limitations. Use appropriate WSGI deployment.</p>
+</div>
+</dd></dl>
+
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This module uses the development server which is not suitable for
+production deployment. Use proper WSGI servers for production environments.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The development server runs in debug mode with automatic reloading.
+Ensure proper security configuration for production deployments.</p>
+</div>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<ul class="simple">
+<li><p><code class="xref py py-mod docutils literal notranslate"><span class="pre">REST.default_controller</span></code>: API endpoint implementations</p></li>
+<li><p><code class="xref py py-mod docutils literal notranslate"><span class="pre">REST.models</span></code>: Auto-generated model classes</p></li>
+<li><p><code class="file docutils literal notranslate"><span class="pre">swagger.yaml</span></code>: OpenAPI specification file</p></li>
+</ul>
+</div>
+<dl class="py class">
+<dt class="sig sig-object py" id="id0">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">rest_server.</span></span><span class="sig-name descname"><span class="pre">JSONEncoder</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/rest_server.html#JSONEncoder"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id0" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">FlaskJSONEncoder</span></code></p>
+<p>Custom JSON encoder extending Flask’s default encoder with specialized model handling.</p>
+<p>This encoder provides intelligent serialization for Fleet Management System model objects
+while maintaining full compatibility with Flask’s standard JSON encoding for all other
+data types. It handles OpenAPI-generated model classes with proper attribute mapping
+and configurable null value filtering.</p>
+<dl class="simple">
+<dt>Serialization Features:</dt><dd><ul class="simple">
+<li><p><strong>Model Detection</strong>: Automatic identification of Model subclass instances</p></li>
+<li><p><strong>Attribute Mapping</strong>: Conversion from internal names to API field names</p></li>
+<li><p><strong>Null Filtering</strong>: Configurable inclusion/exclusion of null values</p></li>
+<li><p><strong>Type Preservation</strong>: Maintains data types during serialization</p></li>
+<li><p><strong>Fallback Handling</strong>: Standard Flask encoding for non-model objects</p></li>
+</ul>
+</dd>
+<dt>Model Serialization Process:</dt><dd><ol class="arabic simple">
+<li><p><strong>Type Check</strong>: Identify if object is a Model subclass instance</p></li>
+<li><p><strong>Schema Iteration</strong>: Process each attribute defined in swagger_types</p></li>
+<li><p><strong>Value Extraction</strong>: Retrieve attribute values using getattr()</p></li>
+<li><p><strong>Null Filtering</strong>: Apply include_nulls setting to null values</p></li>
+<li><p><strong>Attribute Mapping</strong>: Convert internal attribute names to API field names</p></li>
+<li><p><strong>Dictionary Assembly</strong>: Build final dictionary representation</p></li>
+</ol>
+</dd>
+<dt>Null Value Handling:</dt><dd><p>The encoder respects the include_nulls class attribute:
+- <strong>include_nulls = False</strong>: Null values are omitted from output (default)
+- <strong>include_nulls = True</strong>: Null values are included as explicit null</p>
+</dd>
+<dt>OpenAPI Integration:</dt><dd><p>Works with auto-generated model classes that provide:
+- <strong>swagger_types</strong>: Dictionary mapping attributes to their types
+- <strong>attribute_map</strong>: Dictionary mapping internal names to API field names
+- <strong>Model base class</strong>: Common interface for all generated models</p>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Variables<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>include_nulls</strong> (<em>bool</em>) – Control null value inclusion in serialized JSON output</p>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<p><strong>Basic Usage</strong>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">encoder</span> <span class="o">=</span> <span class="n">JSONEncoder</span><span class="p">()</span>
+<span class="n">encoder</span><span class="o">.</span><span class="n">include_nulls</span> <span class="o">=</span> <span class="kc">True</span>  <span class="c1"># Include null values in output</span>
+</pre></div>
+</div>
+<p><strong>Model Serialization</strong>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mission</span> <span class="o">=</span> <span class="n">Mission</span><span class="p">(</span><span class="n">mission_id</span><span class="o">=</span><span class="mi">123</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;Test&quot;</span><span class="p">,</span> <span class="n">description</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+<span class="c1"># With include_nulls=False: {&quot;mission_id&quot;: 123, &quot;name&quot;: &quot;Test&quot;}</span>
+<span class="c1"># With include_nulls=True:  {&quot;mission_id&quot;: 123, &quot;name&quot;: &quot;Test&quot;, &quot;description&quot;: null}</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This encoder is specifically designed for OpenAPI-generated model classes.
+Standard Python objects use Flask’s default JSON encoding behavior.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The encoder assumes model objects follow the OpenAPI generation pattern
+with swagger_types and attribute_map attributes. Non-conforming objects
+may cause serialization errors.</p>
+</div>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id1">
+<span class="sig-name descname"><span class="pre">include_nulls</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">False</span></em><a class="headerlink" href="#id1" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="id2">
+<span class="sig-name descname"><span class="pre">default</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">o</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/rest_server.html#JSONEncoder.default"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id2" title="Link to this definition"></a></dt>
+<dd><p>Serialize objects to JSON-compatible formats with intelligent model handling.</p>
+<p>This method implements the core serialization logic for the custom JSON encoder.
+It provides specialized handling for Fleet Management System model objects while
+maintaining compatibility with Flask’s standard JSON encoding for all other types.</p>
+<dl class="simple">
+<dt>Serialization Strategy:</dt><dd><ol class="arabic simple">
+<li><p><strong>Model Detection</strong>: Check if object is instance of Model base class</p></li>
+<li><p><strong>Model Processing</strong>: Apply custom model serialization logic</p></li>
+<li><p><strong>Standard Fallback</strong>: Use Flask’s default encoding for non-model objects</p></li>
+<li><p><strong>Error Propagation</strong>: Let Flask handle unsupported object types</p></li>
+</ol>
+</dd>
+<dt>Model Serialization Workflow:</dt><dd><ul class="simple">
+<li><p><strong>Schema Iteration</strong>: Process each attribute from swagger_types definition</p></li>
+<li><p><strong>Value Retrieval</strong>: Extract current attribute value from object instance</p></li>
+<li><p><strong>Null Filtering</strong>: Apply include_nulls policy to None values</p></li>
+<li><p><strong>Name Mapping</strong>: Convert internal attribute names to API field names</p></li>
+<li><p><strong>Dictionary Construction</strong>: Build JSON-serializable dictionary</p></li>
+</ul>
+</dd>
+<dt>Attribute Mapping Process:</dt><dd><p>Internal model attributes (snake_case) are mapped to API field names
+(typically camelCase) using the model’s attribute_map dictionary:</p>
+<ul class="simple">
+<li><p>Internal: mission_id, start_time, vehicle_count</p></li>
+<li><p>API Fields: missionId, startTime, vehicleCount</p></li>
+</ul>
+</dd>
+<dt>Null Value Policy:</dt><dd><p>Behavior depends on the include_nulls class attribute:
+- <strong>False (default)</strong>: Null values are omitted from output
+- <strong>True</strong>: Null values appear as explicit null in JSON</p>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>o</strong> (<em>object</em>) – Object to serialize to JSON-compatible format</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Dictionary representation for Model objects, delegated result for others</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Union[dict, object]</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>TypeError</strong> – For non-serializable objects that Flask’s encoder cannot handle</p></li>
+<li><p><strong>AttributeError</strong> – If model object lacks required swagger_types or attribute_map</p></li>
+</ul>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<p><strong>Model Object Serialization</strong>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mission</span> <span class="o">=</span> <span class="n">Mission</span><span class="p">(</span>
+    <span class="n">mission_id</span><span class="o">=</span><span class="mi">123</span><span class="p">,</span>
+    <span class="n">name</span><span class="o">=</span><span class="s2">&quot;Agricultural Survey&quot;</span><span class="p">,</span>
+    <span class="n">description</span><span class="o">=</span><span class="kc">None</span>
+<span class="p">)</span>
+
+<span class="c1"># Result with include_nulls=False:</span>
+<span class="c1"># {&quot;missionId&quot;: 123, &quot;name&quot;: &quot;Agricultural Survey&quot;}</span>
+
+<span class="c1"># Result with include_nulls=True:</span>
+<span class="c1"># {&quot;missionId&quot;: 123, &quot;name&quot;: &quot;Agricultural Survey&quot;, &quot;description&quot;: null}</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The method preserves the order of attributes as defined in the model’s
+swagger_types dictionary for consistent JSON output.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Model objects must have valid swagger_types and attribute_map attributes.
+Missing or malformed metadata will cause serialization failures.</p>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="id3">
+<span class="sig-prename descclassname"><span class="pre">rest_server.</span></span><span class="sig-name descname"><span class="pre">main</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/rest_server.html#main"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id3" title="Link to this definition"></a></dt>
+<dd><p>Configure and start the Connexion REST API server for Fleet Management System.</p>
+<p>This function provides complete server initialization and startup for the Fleet
+Management System’s REST API. It configures Connexion with OpenAPI specification
+loading, custom JSON serialization, and parameter conversion for seamless
+API operation.</p>
+<dl class="simple">
+<dt>Initialization Workflow:</dt><dd><ol class="arabic simple">
+<li><p><strong>Application Creation</strong>: Initialize Connexion application instance</p></li>
+<li><p><strong>Encoder Configuration</strong>: Set up custom JSON encoder for model serialization</p></li>
+<li><p><strong>API Specification Loading</strong>: Load and validate swagger.yaml specification</p></li>
+<li><p><strong>Server Startup</strong>: Start development server with specified configuration</p></li>
+</ol>
+</dd>
+<dt>Connexion Configuration:</dt><dd><ul class="simple">
+<li><p><strong>Application Type</strong>: Connexion wrapper around Flask application</p></li>
+<li><p><strong>JSON Encoder</strong>: Custom JSONEncoder for model object serialization</p></li>
+<li><p><strong>API Specification</strong>: Loaded from swagger.yaml in current directory</p></li>
+<li><p><strong>Parameter Handling</strong>: Pythonic snake_case to camelCase conversion</p></li>
+</ul>
+</dd>
+<dt>Server Features:</dt><dd><ul class="simple">
+<li><p><strong>Port</strong>: 8082 (dedicated Fleet Management API port)</p></li>
+<li><p><strong>Protocol</strong>: HTTP/1.1 with JSON content negotiation</p></li>
+<li><p><strong>Validation</strong>: Automatic request/response validation against OpenAPI spec</p></li>
+<li><p><strong>Documentation</strong>: Interactive Swagger UI available at /ui endpoint</p></li>
+<li><p><strong>Hot Reload</strong>: Development server supports automatic code reloading</p></li>
+</ul>
+</dd>
+<dt>OpenAPI Integration Benefits:</dt><dd><ul class="simple">
+<li><p><strong>Automatic Routing</strong>: Endpoints mapped directly from specification</p></li>
+<li><p><strong>Schema Validation</strong>: Request/response validation against defined schemas</p></li>
+<li><p><strong>Type Conversion</strong>: Automatic parameter type conversion and validation</p></li>
+<li><p><strong>Documentation Generation</strong>: Live API documentation from specification</p></li>
+<li><p><strong>Client Generation</strong>: OpenAPI spec enables automatic client generation</p></li>
+</ul>
+</dd>
+<dt>Development Server Configuration:</dt><dd><ul class="simple">
+<li><p><strong>Debug Mode</strong>: Enabled for development with detailed error messages</p></li>
+<li><p><strong>Auto Reload</strong>: Server restarts automatically on code changes</p></li>
+<li><p><strong>Threading</strong>: Single-threaded for development simplicity</p></li>
+<li><p><strong>Host</strong>: localhost (127.0.0.1) for local development access</p></li>
+</ul>
+</dd>
+<dt>API Title Configuration:</dt><dd><p>The API is registered with the title “Mission Data API” which appears in:
+- Swagger UI interface header
+- OpenAPI specification metadata
+- Generated client libraries
+- API documentation and descriptions</p>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>FileNotFoundError</strong> – If swagger.yaml specification file is not found</p></li>
+<li><p><strong>connexion.exceptions.InvalidSpecification</strong> – If OpenAPI spec is malformed</p></li>
+<li><p><strong>OSError</strong> – If port 8082 is already in use or unavailable</p></li>
+</ul>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<p><strong>Direct Execution</strong>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ python rest_server.py
+# Server starts at http://localhost:8082
+# Swagger UI at http://localhost:8082/ui
+</pre></div>
+</div>
+<p><strong>Programmatic Usage</strong>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">rest_server</span><span class="w"> </span><span class="kn">import</span> <span class="n">main</span>
+<span class="n">main</span><span class="p">()</span>  <span class="c1"># Starts server (blocking call)</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This function starts a development server which blocks execution.
+For production deployment, use proper WSGI servers like Gunicorn.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The development server is not suitable for production use due to
+performance and security limitations. Use appropriate WSGI deployment.</p>
+</div>
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../rest_components.html" class="btn btn-neutral float-left" title="REST Management" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="default_controller_component.html" class="btn btn-neutral float-right" title="Default Controller" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, Estela Mora Barba.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

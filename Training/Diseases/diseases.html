@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Create Grape Diseases labels dir &mdash; Fleet Manager 1.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../_static/documentation_options.js?v=f2a433a1"></script>
+        <script src="../../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+        <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="author" title="About these documents" href="../../about.html" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="prev" title="Grape Diseases" href="../grape_diseases.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            Fleet Manager
+          </a>
+              <div class="version">
+                1.0
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../about.html">About the project</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../getting_started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules.html">Code documentation</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../training.html">Training documentation</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../training.html#training-and-compilation-for-hailo8-8l">Training and Compilation for Hailo8/8L</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../training.html#code-documentation">Code documentation</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../common_py_modules.html">Common Python Modules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../leaf_detection.html">Leaf Detection</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../grape_diseases.html">Grape Diseases</a><ul class="current">
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Create Grape Diseases labels dir</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Fleet Manager</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../training.html">Training documentation</a></li>
+          <li class="breadcrumb-item"><a href="../grape_diseases.html">Grape Diseases</a></li>
+      <li class="breadcrumb-item active">Create Grape Diseases labels dir</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/Training/Diseases/diseases.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="module-diseases_labels_dir">
+<span id="create-grape-diseases-labels-dir"></span><h1>Create Grape Diseases labels dir<a class="headerlink" href="#module-diseases_labels_dir" title="Link to this heading"></a></h1>
+<section id="yolo-dataset-label-generator-for-classification-tasks">
+<h2>YOLO Dataset Label Generator for Classification Tasks<a class="headerlink" href="#yolo-dataset-label-generator-for-classification-tasks" title="Link to this heading"></a></h2>
+<p>This module creates YOLO-format labels and dataset structure for image classification
+tasks, specifically designed for grape disease classification. It processes class-based
+directory structures and converts them to YOLO object detection format with full-image
+bounding boxes.</p>
+<dl class="simple">
+<dt>The script performs the following operations:</dt><dd><ol class="arabic simple">
+<li><p>Creates standardized dataset directory structure</p></li>
+<li><p>Processes class-based image directories</p></li>
+<li><p>Generates YOLO-format label files with full-image annotations</p></li>
+<li><p>Creates train/validation/test dataset splits</p></li>
+<li><p>Validates generated labels for completeness</p></li>
+</ol>
+</dd>
+</dl>
+<p>Dataset Structure Created:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>data_directory/
+├── images/
+│   ├── image1.jpg
+│   ├── image2.jpg
+│   └── ...
+├── labels/
+│   ├── Healthy/
+│   ├── Black_measles/
+│   ├── Black_rot/
+│   └── Isariopsis/
+├── train.txt
+├── val.txt
+└── test.txt
+</pre></div>
+</div>
+<p>Input Structure Expected:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>data_directory/images/
+├── Healthy/
+│   ├── img1.jpg
+│   └── ...
+├── Black_measles/
+│   ├── img2.jpg
+│   └── ...
+└── ...
+</pre></div>
+</div>
+<dl class="simple">
+<dt>Features:</dt><dd><ul class="simple">
+<li><p>Automatic YOLO label generation for classification tasks</p></li>
+<li><p>Full-image bounding box annotations (0.5 0.5 1.0 1.0)</p></li>
+<li><p>Configurable class mapping with disease categories</p></li>
+<li><p>Automatic dataset splitting (70% train, 20% val, 10% test)</p></li>
+<li><p>Label validation and error reporting</p></li>
+<li><p>Cross-platform path handling using pathlib</p></li>
+</ul>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This script treats classification as object detection by creating
+full-image bounding boxes. Each image gets a single annotation
+covering the entire image area with the appropriate class ID.</p>
+</div>
+<p class="rubric">Example</p>
+<p>Basic usage (run in directory containing class subdirectories):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ python create_labels_dir.py
+</pre></div>
+</div>
+<p>Author: PFG Electronics Training Team
+Date: June 2025</p>
+</section>
+<dl class="py data">
+<dt class="sig sig-object py" id="diseases_labels_dir.class_mapping">
+<span class="sig-prename descclassname"><span class="pre">diseases_labels_dir.</span></span><span class="sig-name descname"><span class="pre">class_mapping</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{'Black_measles':</span> <span class="pre">1,</span> <span class="pre">'Black_rot':</span> <span class="pre">2,</span> <span class="pre">'Healthy':</span> <span class="pre">0,</span> <span class="pre">'Isariopsis':</span> <span class="pre">3}</span></em><a class="headerlink" href="#diseases_labels_dir.class_mapping" title="Link to this definition"></a></dt>
+<dd><p>Create the standard YOLO dataset directory structure.</p>
+<p>This section sets up the required directories for YOLO training:
+- images/: Contains all training images in a flat structure
+- labels/: Contains corresponding YOLO-format annotation files</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="diseases_labels_dir.create_split_files">
+<span class="sig-prename descclassname"><span class="pre">diseases_labels_dir.</span></span><span class="sig-name descname"><span class="pre">create_split_files</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/diseases_labels_dir.html#create_split_files"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#diseases_labels_dir.create_split_files" title="Link to this definition"></a></dt>
+<dd><p>Create train/validation/test splits for the YOLO dataset.</p>
+<p>This function randomly divides the processed images into three sets
+according to standard machine learning practices:
+- Training set: 70% of images for model training
+- Validation set: 20% of images for hyperparameter tuning
+- Test set: 10% of images for final model evaluation</p>
+<p>The function generates three text files containing relative paths to
+images in each split, formatted for YOLO training compatibility.</p>
+<dl class="simple">
+<dt>Split Files Created:</dt><dd><ul class="simple">
+<li><p>train.txt: Training image paths</p></li>
+<li><p>val.txt: Validation image paths</p></li>
+<li><p>test.txt: Test image paths</p></li>
+</ul>
+</dd>
+<dt>Path Format:</dt><dd><p>Each line contains a relative path like: ./images/filename.jpg</p>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The random shuffle ensures unbiased distribution across splits,
+preventing class imbalance in any particular set.</p>
+</div>
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../grape_diseases.html" class="btn btn-neutral float-left" title="Grape Diseases" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, Estela Mora Barba.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

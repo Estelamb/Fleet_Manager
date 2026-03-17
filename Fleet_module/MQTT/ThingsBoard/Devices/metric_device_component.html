@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>System Metrics Device - ThingsBoard &mdash; Fleet Manager 1.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../../../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../../../../_static/copybutton.css?v=76b2166b" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../../../_static/documentation_options.js?v=f2a433a1"></script>
+        <script src="../../../../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../../../../_static/clipboard.min.js?v=a7894cd8"></script>
+        <script src="../../../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../../../_static/js/theme.js"></script>
+    <link rel="author" title="About these documents" href="../../../../about.html" />
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+    <link rel="next" title="Prescription Map Management" href="../../../pm_components.html" />
+    <link rel="prev" title="Field PM Device - ThingsBoard" href="field_pm_device_component.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../../../index.html" class="icon icon-home">
+            Fleet Manager
+          </a>
+              <div class="version">
+                1.0
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../../about.html">About the project</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../getting_started.html">Getting Started</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../../../modules.html">Code documentation</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../../../Drone_module/index.html">Drone</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../../index.html">Fleet Manager</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../../../init_fleet_component.html">Init Fleet Manager</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../mission_components.html">Mission Management</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../ros2_components.html">ROS2 Management</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../rest_components.html">REST Management</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../../../mqtt_components.html">MQTT Management</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="../../grpc_mqtt_component.html">gRPC MQTT</a></li>
+<li class="toctree-l4 current"><a class="reference internal" href="../../thingsboard.html">ThingsBoard</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../pm_components.html">Prescription Map Management</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../metrics_components.html">System Metrics Component</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../clear_fleet_component.html">Clear Fleet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../create_logger_fleet_component.html">Create Logger</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../training.html">Training documentation</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../index.html">Fleet Manager</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../../../modules.html">Code documentation</a></li>
+          <li class="breadcrumb-item"><a href="../../../index.html">Fleet Manager</a></li>
+          <li class="breadcrumb-item"><a href="../../../mqtt_components.html">MQTT Management</a></li>
+          <li class="breadcrumb-item"><a href="../../thingsboard.html">ThingsBoard</a></li>
+          <li class="breadcrumb-item"><a href="../devices.html">ThingsBoard Devices</a></li>
+      <li class="breadcrumb-item active">System Metrics Device - ThingsBoard</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../../_sources/Fleet_module/MQTT/ThingsBoard/Devices/metric_device_component.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="module-metric_device">
+<span id="system-metrics-device-thingsboard"></span><h1>System Metrics Device - ThingsBoard<a class="headerlink" href="#module-metric_device" title="Link to this heading"></a></h1>
+<p>Metric Device Management Module</p>
+<p>This module implements the MetricDevice class, which manages system metric collection
+devices for vehicle fleet monitoring. It handles the creation, management, and cleanup
+of metric devices that track vehicle performance, system health, and operational
+parameters during fleet operations.</p>
+<p>The metric system provides comprehensive monitoring capabilities for vehicle-mounted
+systems (typically Raspberry Pi 5 devices), including CPU usage, memory consumption,
+network statistics, and custom operational metrics for fleet management.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Key Features:
+- Dynamic metric device creation per vehicle
+- Real-time system performance monitoring
+- Vehicle-specific metric collection and transmission
+- Comprehensive telemetry data handling for system health
+- Efficient resource management and cleanup
+- Support for Raspberry Pi 5 and similar embedded systems</p>
+</div>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 1.0.0: </span>Initial implementation of metric device management</p>
+</div>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<ul class="simple">
+<li><p><code class="xref py py-mod docutils literal notranslate"><span class="pre">MQTT.ThingsBoard.devices.base_device</span></code> for base device functionality</p></li>
+<li><p><code class="xref py py-mod docutils literal notranslate"><span class="pre">MQTT.ThingsBoard.devices.vehicle_device</span></code> for vehicle coordination</p></li>
+</ul>
+</div>
+<p class="rubric">Example</p>
+<p>Basic usage of metric device management:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">MQTT.ThingsBoard.devices.metric_device</span><span class="w"> </span><span class="kn">import</span> <span class="n">MetricDevice</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">MQTT.ThingsBoard.rest_api</span><span class="w"> </span><span class="kn">import</span> <span class="n">ThingsBoardAPI</span>
+
+<span class="c1"># Initialize ThingsBoard API</span>
+<span class="n">tb_api</span> <span class="o">=</span> <span class="n">ThingsBoardAPI</span><span class="p">(</span><span class="s2">&quot;https://thingsboard.company.com&quot;</span><span class="p">)</span>
+<span class="n">tb_api</span><span class="o">.</span><span class="n">login</span><span class="p">(</span><span class="s2">&quot;username&quot;</span><span class="p">,</span> <span class="s2">&quot;password&quot;</span><span class="p">)</span>
+
+<span class="c1"># Create metric device handler</span>
+<span class="n">metric_device</span> <span class="o">=</span> <span class="n">MetricDevice</span><span class="p">(</span>
+    <span class="n">tb_api</span><span class="o">=</span><span class="n">tb_api</span><span class="p">,</span>
+    <span class="n">mqtt_logger</span><span class="o">=</span><span class="n">logger</span><span class="p">,</span>
+    <span class="n">tb_host</span><span class="o">=</span><span class="s2">&quot;thingsboard.company.com&quot;</span><span class="p">,</span>
+    <span class="n">port</span><span class="o">=</span><span class="mi">8883</span><span class="p">,</span>
+    <span class="n">telemetry_topic</span><span class="o">=</span><span class="s2">&quot;v1/devices/me/telemetry&quot;</span>
+<span class="p">)</span>
+
+<span class="c1"># Process vehicle system metrics</span>
+<span class="n">metric_msg</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;vehicle_id&quot;</span><span class="p">:</span> <span class="s2">&quot;V001&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;telemetry&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;cpu_usage&quot;</span><span class="p">:</span> <span class="mf">45.2</span><span class="p">,</span>
+        <span class="s2">&quot;memory_usage&quot;</span><span class="p">:</span> <span class="mf">78.5</span><span class="p">,</span>
+        <span class="s2">&quot;temperature&quot;</span><span class="p">:</span> <span class="mf">62.1</span><span class="p">,</span>
+        <span class="s2">&quot;disk_usage&quot;</span><span class="p">:</span> <span class="mf">34.7</span><span class="p">,</span>
+        <span class="s2">&quot;network_rx&quot;</span><span class="p">:</span> <span class="mi">1024768</span><span class="p">,</span>
+        <span class="s2">&quot;network_tx&quot;</span><span class="p">:</span> <span class="mi">892345</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="n">metric_device</span><span class="o">.</span><span class="n">handle_message</span><span class="p">(</span><span class="n">metric_msg</span><span class="p">)</span>
+</pre></div>
+</div>
+<dl class="py class">
+<dt class="sig sig-object py" id="metric_device.MetricDevice">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">metric_device.</span></span><span class="sig-name descname"><span class="pre">MetricDevice</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tb_api</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mqtt_logger</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tb_host</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">telemetry_topic</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/metric_device.html#MetricDevice"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metric_device.MetricDevice" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Specialized device handler for managing vehicle system metrics and performance monitoring.</p>
+<p>This class manages the creation and lifecycle of metric devices that monitor
+system performance and operational parameters of vehicle-mounted computing systems.
+It provides real-time telemetry collection for fleet health monitoring and
+performance optimization.</p>
+<p>The metric system is designed to work with embedded systems like Raspberry Pi 5
+devices mounted on vehicles, collecting system health data, performance metrics,
+and operational statistics for comprehensive fleet monitoring.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>tb_api</strong> (<a class="reference internal" href="../rest_api_component.html#rest_api.ThingsBoardAPI" title="rest_api.ThingsBoardAPI"><em>ThingsBoardAPI</em></a>) – Authenticated ThingsBoard REST API client</p></li>
+<li><p><strong>mqtt_logger</strong> (<em>logging.Logger</em>) – Logger instance for MQTT operations and debugging</p></li>
+<li><p><strong>tb_host</strong> (<em>str</em>) – ThingsBoard server hostname for MQTT connections</p></li>
+<li><p><strong>port</strong> (<em>int</em>) – MQTT port for secure connections (typically 8883 for TLS)</p></li>
+<li><p><strong>telemetry_topic</strong> (<em>str</em>) – MQTT topic for publishing device telemetry data</p></li>
+</ul>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Device Type Classification:
+Metric devices are created with type “RPI5” to indicate Raspberry Pi 5
+systems, but can be adapted for other embedded computing platforms.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Metric devices must be properly cleaned up when vehicles are decommissioned
+to prevent resource accumulation and maintain system performance.</p>
+</div>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 1.0.0: </span>Initial implementation of metric device management</p>
+</div>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="metric_device.MetricDevice.base">
+<span class="sig-name descname"><span class="pre">base</span></span><a class="headerlink" href="#metric_device.MetricDevice.base" title="Link to this definition"></a></dt>
+<dd><p>Base device functionality for ThingsBoard operations</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="base_device_component.html#base_device.BaseDevice" title="base_device.BaseDevice">BaseDevice</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="metric_device.MetricDevice.metrics">
+<span class="sig-name descname"><span class="pre">metrics</span></span><a class="headerlink" href="#metric_device.MetricDevice.metrics" title="Link to this definition"></a></dt>
+<dd><p>Dictionary mapping vehicle IDs to metric device data</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="metric_device.MetricDevice.mqtt_logger">
+<span class="sig-name descname"><span class="pre">mqtt_logger</span></span><a class="headerlink" href="#metric_device.MetricDevice.mqtt_logger" title="Link to this definition"></a></dt>
+<dd><p>Logger for operation tracking and debugging</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>logging.Logger</p>
+</dd>
+</dl>
+</dd></dl>
+
+<p class="rubric">Example</p>
+<p>Initialize and use metric device handler:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">metric_handler</span> <span class="o">=</span> <span class="n">MetricDevice</span><span class="p">(</span><span class="n">tb_api</span><span class="p">,</span> <span class="n">logger</span><span class="p">,</span> <span class="s2">&quot;thingsboard.com&quot;</span><span class="p">,</span> <span class="mi">8883</span><span class="p">,</span> <span class="s2">&quot;v1/devices/me/telemetry&quot;</span><span class="p">)</span>
+
+<span class="c1"># Process vehicle system metrics</span>
+<span class="n">system_metrics</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;vehicle_id&quot;</span><span class="p">:</span> <span class="s2">&quot;TRUCK_001&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;telemetry&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;cpu_usage&quot;</span><span class="p">:</span> <span class="mf">42.5</span><span class="p">,</span>
+        <span class="s2">&quot;memory_usage&quot;</span><span class="p">:</span> <span class="mf">67.8</span><span class="p">,</span>
+        <span class="s2">&quot;disk_usage&quot;</span><span class="p">:</span> <span class="mf">28.3</span><span class="p">,</span>
+        <span class="s2">&quot;temperature&quot;</span><span class="p">:</span> <span class="mf">58.9</span><span class="p">,</span>
+        <span class="s2">&quot;uptime&quot;</span><span class="p">:</span> <span class="mi">86400</span><span class="p">,</span>
+        <span class="s2">&quot;load_average&quot;</span><span class="p">:</span> <span class="mf">0.75</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="n">metric_handler</span><span class="o">.</span><span class="n">handle_message</span><span class="p">(</span><span class="n">system_metrics</span><span class="p">)</span>
+</pre></div>
+</div>
+<dl class="py method">
+<dt class="sig sig-object py" id="metric_device.MetricDevice.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tb_api</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mqtt_logger</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tb_host</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">telemetry_topic</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/metric_device.html#MetricDevice.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metric_device.MetricDevice.__init__" title="Link to this definition"></a></dt>
+<dd><p>Initialize the metric device handler with ThingsBoard integration.</p>
+<p>Sets up the metric device management system with base device functionality
+and initializes storage for vehicle-specific metric devices.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>tb_api</strong> (<a class="reference internal" href="../rest_api_component.html#rest_api.ThingsBoardAPI" title="rest_api.ThingsBoardAPI"><em>ThingsBoardAPI</em></a>) – Authenticated ThingsBoard API client</p></li>
+<li><p><strong>mqtt_logger</strong> (<em>logging.Logger</em>) – Logger for MQTT operations</p></li>
+<li><p><strong>tb_host</strong> (<em>str</em>) – ThingsBoard server hostname</p></li>
+<li><p><strong>port</strong> (<em>int</em>) – MQTT connection port</p></li>
+<li><p><strong>telemetry_topic</strong> (<em>str</em>) – MQTT topic for telemetry</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="metric_device.MetricDevice.handle_message">
+<span class="sig-name descname"><span class="pre">handle_message</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">message</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/metric_device.html#MetricDevice.handle_message"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metric_device.MetricDevice.handle_message" title="Link to this definition"></a></dt>
+<dd><p>Process metric messages and create corresponding vehicle system monitoring devices.</p>
+<p>Creates metric devices for vehicle system monitoring, establishes MQTT connections,
+and transmits system performance telemetry data. Each vehicle gets a dedicated
+metric device for comprehensive system health tracking.</p>
+<p>The method handles the complete metric collection workflow including device
+creation for new vehicles and real-time telemetry transmission for system
+performance monitoring.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>message</strong> (<em>dict</em>) – Metric message containing vehicle ID and telemetry data</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Message Processing Steps:
+1. Extract vehicle ID from the message
+2. Create metric device if not exists for the vehicle
+3. Establish MQTT client connection for telemetry transmission
+4. Store device information for future metric transmissions
+5. Transmit system metric telemetry data to ThingsBoard</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The message must contain a ‘vehicle_id’ field for device identification
+and a ‘telemetry’ object with metric data. Missing fields will prevent
+proper metric collection.</p>
+</div>
+<dl>
+<dt>Message Structure:</dt><dd><p>Expected message format:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="s2">&quot;vehicle_id&quot;</span><span class="p">:</span> <span class="s2">&quot;vehicle_identifier&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;telemetry&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;cpu_usage&quot;</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>          <span class="c1"># CPU utilization percentage</span>
+        <span class="s2">&quot;memory_usage&quot;</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>       <span class="c1"># Memory utilization percentage</span>
+        <span class="s2">&quot;disk_usage&quot;</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>         <span class="c1"># Disk utilization percentage</span>
+        <span class="s2">&quot;temperature&quot;</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>        <span class="c1"># System temperature in Celsius</span>
+        <span class="s2">&quot;uptime&quot;</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>              <span class="c1"># System uptime in seconds</span>
+        <span class="s2">&quot;load_average&quot;</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>       <span class="c1"># System load average</span>
+        <span class="s2">&quot;network_rx&quot;</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>          <span class="c1"># Network bytes received</span>
+        <span class="s2">&quot;network_tx&quot;</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>          <span class="c1"># Network bytes transmitted</span>
+        <span class="s2">&quot;battery_level&quot;</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>      <span class="c1"># Battery level percentage (if applicable)</span>
+        <span class="s2">&quot;gps_quality&quot;</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>         <span class="c1"># GPS signal quality (if applicable)</span>
+        <span class="s2">&quot;custom_metrics&quot;</span><span class="p">:</span> <span class="p">{}</span>        <span class="c1"># Additional vehicle-specific metrics</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<p>Process various types of vehicle system metrics:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Standard system metrics</span>
+<span class="n">system_msg</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;vehicle_id&quot;</span><span class="p">:</span> <span class="s2">&quot;TRACTOR_001&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;telemetry&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;cpu_usage&quot;</span><span class="p">:</span> <span class="mf">35.7</span><span class="p">,</span>
+        <span class="s2">&quot;memory_usage&quot;</span><span class="p">:</span> <span class="mf">62.3</span><span class="p">,</span>
+        <span class="s2">&quot;disk_usage&quot;</span><span class="p">:</span> <span class="mf">18.9</span><span class="p">,</span>
+        <span class="s2">&quot;temperature&quot;</span><span class="p">:</span> <span class="mf">55.4</span><span class="p">,</span>
+        <span class="s2">&quot;uptime&quot;</span><span class="p">:</span> <span class="mi">172800</span><span class="p">,</span>           <span class="c1"># 48 hours</span>
+        <span class="s2">&quot;load_average&quot;</span><span class="p">:</span> <span class="mf">0.65</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="n">metric_device</span><span class="o">.</span><span class="n">handle_message</span><span class="p">(</span><span class="n">system_msg</span><span class="p">)</span>
+
+<span class="c1"># Extended metrics with networking and GPS</span>
+<span class="n">extended_msg</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;vehicle_id&quot;</span><span class="p">:</span> <span class="s2">&quot;DRONE_005&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;telemetry&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;cpu_usage&quot;</span><span class="p">:</span> <span class="mf">78.2</span><span class="p">,</span>
+        <span class="s2">&quot;memory_usage&quot;</span><span class="p">:</span> <span class="mf">84.1</span><span class="p">,</span>
+        <span class="s2">&quot;temperature&quot;</span><span class="p">:</span> <span class="mf">71.5</span><span class="p">,</span>
+        <span class="s2">&quot;battery_level&quot;</span><span class="p">:</span> <span class="mf">67.8</span><span class="p">,</span>
+        <span class="s2">&quot;gps_quality&quot;</span><span class="p">:</span> <span class="mi">8</span><span class="p">,</span>           <span class="c1"># GPS satellites</span>
+        <span class="s2">&quot;network_rx&quot;</span><span class="p">:</span> <span class="mi">2048576</span><span class="p">,</span>
+        <span class="s2">&quot;network_tx&quot;</span><span class="p">:</span> <span class="mi">1536789</span><span class="p">,</span>
+        <span class="s2">&quot;flight_time&quot;</span><span class="p">:</span> <span class="mi">1847</span><span class="p">,</span>        <span class="c1"># Custom metric</span>
+        <span class="s2">&quot;altitude&quot;</span><span class="p">:</span> <span class="mf">120.5</span>           <span class="c1"># Custom metric</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="n">metric_device</span><span class="o">.</span><span class="n">handle_message</span><span class="p">(</span><span class="n">extended_msg</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="metric_device.MetricDevice.cleanup">
+<span class="sig-name descname"><span class="pre">cleanup</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">vehicle_id</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/metric_device.html#MetricDevice.cleanup"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metric_device.MetricDevice.cleanup" title="Link to this definition"></a></dt>
+<dd><p>Clean up metric device associated with a specific vehicle.</p>
+<p>Performs comprehensive cleanup of the metric device created for the
+specified vehicle, including MQTT client disconnection, device deletion
+from ThingsBoard, and removal from local storage. This ensures proper
+resource management when vehicles are decommissioned or removed from service.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>vehicle_id</strong> (<em>str</em>) – Unique identifier of the vehicle to clean up</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Cleanup Operations:
+1. Disconnect MQTT client for the vehicle’s metric device
+2. Delete metric device from ThingsBoard using retry mechanism
+3. Remove vehicle metric data from local storage</p>
+</div>
+<p class="rubric">Example</p>
+<p>Clean up metric device for decommissioned vehicle:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Vehicle being removed from fleet</span>
+<span class="n">vehicle_id</span> <span class="o">=</span> <span class="s2">&quot;TRACTOR_001&quot;</span>
+
+<span class="c1"># Clean up associated metric device</span>
+<span class="n">metric_device</span><span class="o">.</span><span class="n">cleanup</span><span class="p">(</span><span class="n">vehicle_id</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Metric device for vehicle </span><span class="si">{</span><span class="n">vehicle_id</span><span class="si">}</span><span class="s2"> cleaned up&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<dl class="simple">
+<dt>Cleanup Process:</dt><dd><p>The method uses the retry mechanism from base device functionality
+to ensure reliable device deletion even under network stress or
+ThingsBoard server load conditions, maintaining system reliability.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="field_pm_device_component.html" class="btn btn-neutral float-left" title="Field PM Device - ThingsBoard" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../../../pm_components.html" class="btn btn-neutral float-right" title="Prescription Map Management" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, Estela Mora Barba.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,1443 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>gRPC REST &mdash; Fleet Manager 1.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../_static/documentation_options.js?v=f2a433a1"></script>
+        <script src="../../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+        <script src="../../_static/copybutton.js?v=f281be69"></script>
+        <script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script>
+        <script type="module">import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11.12.1/dist/mermaid.esm.min.mjs";
+
+
+
+
+
+const initStyles = () => {
+    const defaultStyle = document.createElement('style');
+    defaultStyle.textContent = `pre.mermaid {
+    /* Same as .mermaid-container > pre */
+    display: block;
+    width: 100%;
+}
+
+pre.mermaid > svg {
+    /* Same as .mermaid-container > pre > svg */
+    height: 500px;
+    width: 100%;
+    max-width: 100% !important;
+}`;
+    document.head.appendChild(defaultStyle);
+
+    const fullscreenStyle = document.createElement('style');
+    fullscreenStyle.textContent = `.mermaid-container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.mermaid-container > pre {
+    display: block;
+    width: 100%;
+}
+
+.mermaid-container > pre > svg {
+    height: 500px;
+    width: 100%;
+    max-width: 100% !important;
+}
+
+.mermaid-fullscreen-btn {
+    width: 28px;
+    height: 28px;
+    background: rgba(255, 255, 255, 0.95);
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    border-radius: 4px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    font-size: 14px;
+    line-height: 1;
+    padding: 0;
+    color: #333;
+}
+
+.mermaid-fullscreen-btn:hover {
+    opacity: 100% !important;
+    background: rgba(255, 255, 255, 1);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+    transform: scale(1.1);
+}
+
+.mermaid-fullscreen-btn.dark-theme {
+    background: rgba(50, 50, 50, 0.95);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: #e0e0e0;
+}
+
+.mermaid-fullscreen-btn.dark-theme:hover {
+    background: rgba(60, 60, 60, 1);
+    box-shadow: 0 3px 10px rgba(255, 255, 255, 0.2);
+}
+
+.mermaid-fullscreen-modal {
+    display: none;
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 95vw;
+    height: 100vh;
+    background: rgba(255, 255, 255, 0.98);
+    z-index: 9999;
+    padding: 20px;
+    overflow: auto;
+}
+
+.mermaid-fullscreen-modal.dark-theme {
+    background: rgba(0, 0, 0, 0.98);
+}
+
+.mermaid-fullscreen-modal.active {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mermaid-container-fullscreen {
+    position: relative;
+    width: 95vw;
+    height: 90vh;
+    max-width: 95vw;
+    max-height: 90vh;
+    background: white;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    overflow: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mermaid-container-fullscreen.dark-theme {
+    background: #1a1a1a;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.8);
+}
+
+.mermaid-container-fullscreen pre.mermaid {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mermaid-container-fullscreen .mermaid svg {
+    height: 100% !important;
+    width: 100% !important;
+    cursor: grab;
+}
+
+.mermaid-fullscreen-close {
+    position: fixed !important;
+    top: 20px !important;
+    right: 20px !important;
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.95);
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    transition: all 0.2s;
+    font-size: 24px;
+    line-height: 1;
+    color: #333;
+}
+
+.mermaid-fullscreen-close:hover {
+    background: white;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+    transform: scale(1.1);
+}
+
+.mermaid-fullscreen-close.dark-theme {
+    background: rgba(50, 50, 50, 0.95);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #e0e0e0;
+}
+
+.mermaid-fullscreen-close.dark-theme:hover {
+    background: rgba(60, 60, 60, 1);
+    box-shadow: 0 6px 16px rgba(255, 255, 255, 0.2);
+}
+
+.mermaid-fullscreen-modal .mermaid-fullscreen-btn {
+    display: none !important;
+}`;
+    document.head.appendChild(fullscreenStyle);
+}
+
+// Detect if page has dark background
+const isDarkTheme = () => {
+    // We use a set of heuristics:
+    // 1. Check for common dark mode classes or attributes
+    // 2. Check computed background color brightness
+    if (document.documentElement.classList.contains('dark') ||
+        document.documentElement.getAttribute('data-theme') === 'dark' ||
+        document.body.classList.contains('dark') ||
+        document.body.getAttribute('data-theme') === 'dark') {
+        // console.log("Dark theme detected via class/attribute");
+        return true;
+    }
+    if (document.documentElement.classList.contains('light') ||
+        document.documentElement.getAttribute('data-theme') === 'light' ||
+        document.body.classList.contains('light') ||
+        document.body.getAttribute('data-theme') === 'light') {
+        // console.log("Light theme detected via class/attribute");
+        return false;
+    }
+    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        // console.log("Dark theme detected via prefers-color-scheme");
+        return true;
+    }
+    const bgColor = window.getComputedStyle(document.body).backgroundColor;
+    const match = bgColor.match(/rgb\((\d+),\s*(\d+),\s*(\d+)/);
+    if (match) {
+        const r = parseInt(match[1]);
+        const g = parseInt(match[2]);
+        const b = parseInt(match[3]);
+        const brightness = (r * 299 + g * 587 + b * 114) / 1000;
+        // console.log("Background color brightness:", brightness);
+        return brightness < 128;
+    }
+    // console.log("No dark or light theme detected, defaulting to light theme");
+    return false;
+};
+
+let darkTheme = isDarkTheme();
+let modal = null;
+let modalContent = null;
+let previousScrollOffset = [window.scrollX, window.scrollY];
+
+const runMermaid = async (rerun) => {
+    console.log("Running mermaid diagrams, rerun =", rerun);
+    // clear all existing mermaid charts
+    let all_mermaids = document.querySelectorAll(".mermaid");
+
+    if (rerun) {
+        all_mermaids.forEach((el) => {
+            if(!el.hasAttribute("data-original-code")) {
+                // store original code
+                // console.log(`Storing original code for first run: `, el.innerHTML);
+                el.setAttribute('data-original-code', el.innerHTML);
+            }
+            if(el.getAttribute("data-processed") === "true") {
+                // remove and restore original
+                el.removeAttribute("data-processed");
+                // console.log(`Restoring original code for re-run: `, el.getAttribute('data-original-code'));
+                el.innerHTML = el.getAttribute('data-original-code');
+            } else {
+                // store original code
+                // console.log(`Storing original code for re-run: `, el.innerHTML);
+                el.setAttribute('data-original-code', el.innerHTML);
+            }
+        });
+        await mermaid.run();
+    }
+
+    all_mermaids = document.querySelectorAll(".mermaid");
+    const mermaids_processed = document.querySelectorAll(".mermaid[data-processed='true']");
+
+    if ("False" === "True") {
+        const mermaids_to_add_zoom = -1 === -1 ? all_mermaids.length : -1;
+        if(mermaids_to_add_zoom > 0) {
+            var svgs = d3.selectAll("");
+            if(all_mermaids.length !== mermaids_processed.length) {
+                setTimeout(() => runMermaid(false), 200);
+                return;
+            } else if(svgs.size() !== mermaids_to_add_zoom) {
+                setTimeout(() => runMermaid(false), 200);
+                return;
+            } else {
+                svgs.each(function() {
+                    var svg = d3.select(this);
+                    svg.html("<g class='wrapper'>" + svg.html() + "</g>");
+                    var inner = svg.select("g");
+                    var zoom = d3.zoom().on("zoom", function(event) {
+                        inner.attr("transform", event.transform);
+                    });
+                    svg.call(zoom);
+                });
+            }
+        }
+    } else if(all_mermaids.length !== mermaids_processed.length) {
+        // Wait for mermaid to process all diagrams
+        setTimeout(() => runMermaid(false), 200);
+        return;
+    }
+
+    // Stop here if not adding fullscreen capability
+    if ("True" !== "True") return;
+
+    if (modal !== null ) {
+        // Destroy existing modal
+        modal.remove();
+        modal = null;
+        modalContent = null;
+    }
+
+    modal = document.createElement('div');
+    modal.className = 'mermaid-fullscreen-modal' + (darkTheme ? ' dark-theme' : '');
+    modal.setAttribute('role', 'dialog');
+    modal.setAttribute('aria-modal', 'true');
+    modal.setAttribute('aria-label', 'Fullscreen diagram viewer');
+    modal.innerHTML = `
+        <button class="mermaid-fullscreen-close${darkTheme ? ' dark-theme' : ''}" aria-label="Close fullscreen">✕</button>
+        <div class="mermaid-container-fullscreen${darkTheme ? ' dark-theme' : ''}"></div>
+    `;
+    document.body.appendChild(modal);
+
+    modalContent = modal.querySelector('.mermaid-container-fullscreen');
+    const closeBtn = modal.querySelector('.mermaid-fullscreen-close');
+
+    const closeModal = () => {
+        modal.classList.remove('active');
+        modalContent.innerHTML = '';
+        document.body.style.overflow = ''
+        window.scrollTo({left: previousScrollOffset[0], top: previousScrollOffset[1], behavior: 'instant'});
+    };
+
+    closeBtn.addEventListener('click', closeModal);
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) closeModal();
+    });
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && modal.classList.contains('active')) {
+            closeModal();
+        }
+    });
+
+    document.querySelectorAll('.mermaid').forEach((mermaidDiv) => {
+        if (mermaidDiv.parentNode.classList.contains('mermaid-container') ||
+            mermaidDiv.closest('.mermaid-fullscreen-modal')) {
+            // Already processed, adjust button class if needed
+            const existingBtn = mermaidDiv.parentNode.querySelector('.mermaid-fullscreen-btn');
+            if (existingBtn) {
+                existingBtn.className = 'mermaid-fullscreen-btn' + (darkTheme ? ' dark-theme' : '');
+            }
+            return;
+        }
+
+        const container = document.createElement('div');
+        container.className = 'mermaid-container';
+        mermaidDiv.parentNode.insertBefore(container, mermaidDiv);
+        container.appendChild(mermaidDiv);
+
+        const fullscreenBtn = document.createElement('button');
+        fullscreenBtn.className = 'mermaid-fullscreen-btn' + (darkTheme ? ' dark-theme' : '');
+        fullscreenBtn.setAttribute('aria-label', 'View diagram in fullscreen');
+        fullscreenBtn.textContent = '⛶';
+        fullscreenBtn.style.opacity = '50%';
+
+        // Calculate dynamic position based on diagram's margin and padding
+        const diagramStyle = window.getComputedStyle(mermaidDiv);
+        const marginTop = parseFloat(diagramStyle.marginTop) || 0;
+        const marginRight = parseFloat(diagramStyle.marginRight) || 0;
+        const paddingTop = parseFloat(diagramStyle.paddingTop) || 0;
+        const paddingRight = parseFloat(diagramStyle.paddingRight) || 0;
+        fullscreenBtn.style.top = `${marginTop + paddingTop + 4}px`;
+        fullscreenBtn.style.right = `${marginRight + paddingRight + 4}px`;
+
+        fullscreenBtn.addEventListener('click', () => {
+            previousScrollOffset = [window.scroll, window.scrollY];
+            const clone = mermaidDiv.cloneNode(true);
+            modalContent.innerHTML = '';
+            modalContent.appendChild(clone);
+
+            const svg = clone.querySelector('svg');
+            if (svg) {
+                svg.removeAttribute('width');
+                svg.removeAttribute('height');
+                svg.style.width = '100%';
+                svg.style.height = 'auto';
+                svg.style.maxWidth = '100%';
+                svg.style.sdisplay = 'block';
+
+                if ("False" === "True") {
+                    setTimeout(() => {
+                        const g = svg.querySelector('g');
+                        if (g) {
+                            var svgD3 = d3.select(svg);
+                            svgD3.html("<g class='wrapper'>" + svgD3.html() + "</g>");
+                            var inner = svgD3.select("g");
+                            var zoom = d3.zoom().on("zoom", function(event) {
+                                inner.attr("transform", event.transform);
+                            });
+                            svgD3.call(zoom);
+                        }
+                    }, 100);
+                }
+            }
+
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+        container.appendChild(fullscreenBtn);
+    });
+};
+
+const load = async () => {
+    initStyles();
+
+    await runMermaid(true);
+
+    const reRunIfThemeChanges = async () => {
+        const newDarkTheme = isDarkTheme();
+        if (newDarkTheme !== darkTheme) {
+            darkTheme = newDarkTheme;
+            console.log("Theme change detected, re-running mermaid with", darkTheme ? "dark" : "default", "theme");
+            await mermaid.initialize(
+                {...JSON.parse(
+                    `{"startOnLoad": false}`
+                ),
+                ...{ darkMode: darkTheme, theme: darkTheme ? 'dark' : 'default' },
+                }
+            );
+            await runMermaid(true);
+        }
+    };
+
+    // Update theme classes when theme changes
+    const themeObserver = new MutationObserver(reRunIfThemeChanges);
+    themeObserver.observe(document.documentElement, {
+        attributes: true,
+        attributeFilter: ['class', 'style', 'data-theme']
+    });
+    themeObserver.observe(document.body, {
+        attributes: true,
+        attributeFilter: ['class', 'style', 'data-theme']
+    });
+};
+
+
+
+
+
+console.log("Initializing mermaid with", darkTheme ? "dark" : "default", "theme");
+mermaid.initialize(
+    {...JSON.parse(
+        `{"startOnLoad": false}`
+    ),
+    ...{ darkMode: darkTheme, theme: darkTheme ? 'dark' : 'default' },
+    }
+);
+
+window.addEventListener("load", load);
+window.runMermaid = runMermaid;</script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="author" title="About these documents" href="../../about.html" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="MQTT Management" href="../mqtt_components.html" />
+    <link rel="prev" title="Default Controller" href="default_controller_component.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            Fleet Manager
+          </a>
+              <div class="version">
+                1.0
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../about.html">About the project</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../getting_started.html">Getting Started</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../modules.html">Code documentation</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../Drone_module/index.html">Drone</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">Fleet Manager</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../init_fleet_component.html">Init Fleet Manager</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../mission_components.html">Mission Management</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ros2_components.html">ROS2 Management</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../rest_components.html">REST Management</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="rest_server_component.html">REST Server</a></li>
+<li class="toctree-l4"><a class="reference internal" href="default_controller_component.html">Default Controller</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">gRPC REST</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../mqtt_components.html">MQTT Management</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../pm_components.html">Prescription Map Management</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../metrics_components.html">System Metrics Component</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../clear_fleet_component.html">Clear Fleet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../create_logger_fleet_component.html">Create Logger</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../training.html">Training documentation</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Fleet Manager</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../modules.html">Code documentation</a></li>
+          <li class="breadcrumb-item"><a href="../index.html">Fleet Manager</a></li>
+          <li class="breadcrumb-item"><a href="../rest_components.html">REST Management</a></li>
+      <li class="breadcrumb-item active">gRPC REST</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/Fleet_module/REST/grpc_rest_component.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="module-0">
+<span id="grpc-rest"></span><h1>gRPC REST<a class="headerlink" href="#module-0" title="Link to this heading"></a></h1>
+<p>gRPC REST Communication Module for Fleet Management System</p>
+<div class="versionadded" id="module-grpc_rest">
+<p><span class="versionmodified added">Added in version 1.0.</span></p>
+</div>
+<p>This module implements the core gRPC communication layer between REST API components
+and the Fleet Management System. It provides both server and client capabilities
+for handling mission submissions, status updates, and real-time communication
+between distributed system components.</p>
+<dl>
+<dt>Architecture Overview:</dt><dd><p>The module follows a bidirectional communication pattern where:</p>
+<ol class="arabic simple">
+<li><p><strong>Server Component</strong>: Receives mission status updates from Fleet Management</p></li>
+<li><p><strong>Client Component</strong>: Sends mission data to Fleet Management for processing</p></li>
+<li><p><strong>Thread Management</strong>: Handles concurrent server operations in background threads</p></li>
+<li><p><strong>Error Recovery</strong>: Provides robust error handling and connection management</p></li>
+</ol>
+</dd>
+<dt>Communication Flow:</dt><dd><pre  class="mermaid">
+        graph LR
+    A[REST API] --&gt; B[gRPC Client]
+    B --&gt; C[Fleet Management]
+    C --&gt; D[gRPC Server]
+    D --&gt; E[Status Updates]
+
+    B --&gt; B1[Mission Submission]
+    D --&gt; D1[Status Reception]
+    </pre></dd>
+<dt>Components:</dt><dd><dl class="py class">
+<dt class="sig sig-object py" id="grpc_rest.RestCommunicationService">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">grpc_rest.</span></span><span class="sig-name descname"><span class="pre">RestCommunicationService</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/grpc_rest.html#RestCommunicationService"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#grpc_rest.RestCommunicationService" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">RestCommunicationServicer</span></code></p>
+<p>gRPC service implementation for handling mission status updates from Fleet Management.</p>
+<p>This class extends the auto-generated RestCommunicationServicer to provide concrete
+implementation of the gRPC service methods. It handles incoming status updates
+from the Fleet Management System and processes them according to system requirements.</p>
+<dl class="simple">
+<dt>Service Responsibilities:</dt><dd><ul class="simple">
+<li><p><strong>Status Reception</strong>: Receive mission status updates from Fleet Management</p></li>
+<li><p><strong>Data Processing</strong>: Parse and validate incoming status information</p></li>
+<li><p><strong>Response Generation</strong>: Provide acknowledgment responses to clients</p></li>
+<li><p><strong>Error Handling</strong>: Manage connection and processing errors gracefully</p></li>
+<li><p><strong>Logging Integration</strong>: Record all service operations for monitoring</p></li>
+</ul>
+</dd>
+<dt>gRPC Service Interface:</dt><dd><p>Implements the RestCommunication service as defined in rest.proto:</p>
+<ul class="simple">
+<li><p>SendRest(RestRequest) returns (RestResponse)</p></li>
+</ul>
+</dd>
+<dt>Status Processing Workflow:</dt><dd><ol class="arabic simple">
+<li><p><strong>Request Reception</strong>: Receive gRPC request with status data</p></li>
+<li><p><strong>Data Extraction</strong>: Parse mission status list from request</p></li>
+<li><p><strong>Validation</strong>: Ensure status data meets expected format</p></li>
+<li><p><strong>Logging</strong>: Record status reception for audit trail</p></li>
+<li><p><strong>Response</strong>: Return confirmation message to client</p></li>
+</ol>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>rest_logger</strong> (<em>logging.Logger</em>) – Configured logger instance for service operations</p>
+</dd>
+<dt class="field-even">Variables<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>rest_logger</strong> (<em>logging.Logger</em>) – Logger instance for recording service operations and errors</p>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Service instantiation (typically done by gRPC server)</span>
+<span class="n">service</span> <span class="o">=</span> <span class="n">RestCommunicationService</span><span class="p">(</span><span class="n">logger</span><span class="p">)</span>
+
+<span class="c1"># Service is registered with gRPC server</span>
+<span class="n">add_RestCommunicationServicer_to_server</span><span class="p">(</span><span class="n">service</span><span class="p">,</span> <span class="n">server</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This service is designed to be instantiated by the gRPC server framework.
+Direct instantiation is typically not required in normal usage.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The service currently includes a TODO for POST handling implementation.
+Full status processing functionality may require additional development.</p>
+</div>
+<dl class="py method">
+<dt class="sig sig-object py" id="grpc_rest.RestCommunicationService.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rest_logger</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/grpc_rest.html#RestCommunicationService.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#grpc_rest.RestCommunicationService.__init__" title="Link to this definition"></a></dt>
+<dd><p>Initialize gRPC service with configured logger instance.</p>
+<p>Sets up the service with the necessary logging infrastructure for
+operation tracking and error reporting. Calls parent class constructor
+to ensure proper gRPC service initialization.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>rest_logger</strong> (<em>logging.Logger</em>) – Pre-configured logger for service operations</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="grpc_rest.RestCommunicationService.SendRest">
+<span class="sig-name descname"><span class="pre">SendRest</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">context</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/grpc_rest.html#RestCommunicationService.SendRest"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#grpc_rest.RestCommunicationService.SendRest" title="Link to this definition"></a></dt>
+<dd><p>Handle incoming mission status updates from Fleet Management System.</p>
+<p>This method implements the core gRPC service interface for receiving
+mission status updates. It processes incoming requests, extracts status
+information, and provides appropriate response confirmations.</p>
+<dl class="simple">
+<dt>Processing Workflow:</dt><dd><ol class="arabic simple">
+<li><p><strong>Request Reception</strong>: Receive gRPC request with mission status array</p></li>
+<li><p><strong>Data Extraction</strong>: Convert repeated field to Python list</p></li>
+<li><p><strong>Logging</strong>: Record status reception with timestamp</p></li>
+<li><p><strong>Future Processing</strong>: Placeholder for POST handling implementation</p></li>
+<li><p><strong>Response Generation</strong>: Create confirmation message with status echo</p></li>
+</ol>
+</dd>
+<dt>Status Types:</dt><dd><p>Common mission status values include:
+- “PENDING”: Mission queued for execution
+- “IN_PROGRESS”: Mission currently executing
+- “COMPLETED”: Mission finished successfully
+- “FAILED”: Mission encountered errors
+- “CANCELLED”: Mission terminated by user request</p>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>request</strong> (<em>rest_pb2.RestRequest</em>) – Incoming gRPC request containing mission status data</p></li>
+<li><p><strong>context</strong> (<em>grpc.ServicerContext</em>) – gRPC connection context with metadata and error handling</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Response confirmation with status receipt acknowledgment</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>rest_pb2.RestResponse</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>grpc.RpcError</strong> – If connection issues occur during processing</p></li>
+<li><p><strong>ValueError</strong> – If status data format is invalid or unexpected</p></li>
+</ul>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<p>Typical status update request:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">request</span><span class="o">.</span><span class="n">mission_status</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;COMPLETED&quot;</span><span class="p">,</span> <span class="s2">&quot;IN_PROGRESS&quot;</span><span class="p">,</span> <span class="s2">&quot;FAILED&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Corresponding response:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">RestResponse</span><span class="p">(</span>
+    <span class="n">confirmation</span><span class="o">=</span><span class="s2">&quot;Server received mission status: [&#39;COMPLETED&#39;, &#39;IN_PROGRESS&#39;, &#39;FAILED&#39;]&quot;</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The method currently includes a TODO for implementing POST handling
+to forward status updates to external systems or databases.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Status validation is minimal in the current implementation.
+Production deployments should include comprehensive status validation.</p>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+</dd>
+<dt>Functions:</dt><dd><dl class="py function">
+<dt class="sig sig-object py" id="grpc_rest.run_rest_server">
+<span class="sig-prename descclassname"><span class="pre">grpc_rest.</span></span><span class="sig-name descname"><span class="pre">run_rest_server</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rest_logger</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/grpc_rest.html#run_rest_server"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#grpc_rest.run_rest_server" title="Link to this definition"></a></dt>
+<dd><p>Start and maintain the gRPC server for REST status communication.</p>
+<p>This function initializes, configures, and runs a gRPC server to handle
+incoming mission status updates from the Fleet Management System. It provides
+a robust server implementation with proper error handling and graceful shutdown.</p>
+<dl class="simple">
+<dt>Server Configuration:</dt><dd><ul class="simple">
+<li><p><strong>Thread Pool</strong>: ThreadPoolExecutor with 10 worker threads for concurrent processing</p></li>
+<li><p><strong>Network Binding</strong>: Listens on all interfaces (::) port 50052</p></li>
+<li><p><strong>Service Registration</strong>: Hosts RestCommunicationService for status handling</p></li>
+<li><p><strong>Execution Model</strong>: Blocking operation with keyboard interrupt handling</p></li>
+</ul>
+</dd>
+<dt>Operational Workflow:</dt><dd><ol class="arabic simple">
+<li><p><strong>Server Creation</strong>: Initialize gRPC server with thread pool</p></li>
+<li><p><strong>Service Registration</strong>: Add RestCommunicationService to server</p></li>
+<li><p><strong>Port Binding</strong>: Bind to port 50052 for incoming connections</p></li>
+<li><p><strong>Server Start</strong>: Begin accepting gRPC requests</p></li>
+<li><p><strong>Maintenance Loop</strong>: Keep server alive with 24-hour sleep intervals</p></li>
+<li><p><strong>Graceful Shutdown</strong>: Handle KeyboardInterrupt for clean termination</p></li>
+</ol>
+</dd>
+<dt>Thread Pool Configuration:</dt><dd><ul class="simple">
+<li><p><strong>Worker Threads</strong>: 10 concurrent workers for request processing</p></li>
+<li><p><strong>Request Handling</strong>: Each worker can process one gRPC request simultaneously</p></li>
+<li><p><strong>Resource Management</strong>: Automatic cleanup of worker threads on shutdown</p></li>
+<li><p><strong>Load Balancing</strong>: gRPC framework distributes requests across workers</p></li>
+</ul>
+</dd>
+<dt>Network Configuration:</dt><dd><ul class="simple">
+<li><p><strong>Interface</strong>: [::] (all IPv4 and IPv6 interfaces)</p></li>
+<li><p><strong>Port</strong>: 50052 (dedicated REST communication port)</p></li>
+<li><p><strong>Protocol</strong>: HTTP/2 with gRPC framing</p></li>
+<li><p><strong>Security</strong>: Insecure channels (internal communication)</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>rest_logger</strong> (<em>logging.Logger</em>) – Configured logger instance for server operations</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>KeyboardInterrupt</strong> – Handled for graceful server shutdown</p></li>
+<li><p><strong>grpc.RpcError</strong> – If server binding or startup fails</p></li>
+<li><p><strong>OSError</strong> – If port 50052 is already in use</p></li>
+</ul>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Start server in main thread (blocking)</span>
+<span class="n">run_rest_server</span><span class="p">(</span><span class="n">logger</span><span class="p">)</span>
+
+<span class="c1"># Server will run until Ctrl+C is pressed</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This function blocks execution while running. For background operation,
+use start_grpc_rest() which runs the server in a daemon thread.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The server runs with insecure channels suitable for internal communication.
+External deployment should implement proper authentication and encryption.</p>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="grpc_rest.run_rest_client">
+<span class="sig-prename descclassname"><span class="pre">grpc_rest.</span></span><span class="sig-name descname"><span class="pre">run_rest_client</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mission_json</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rest_logger</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/grpc_rest.html#run_rest_client"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#grpc_rest.run_rest_client" title="Link to this definition"></a></dt>
+<dd><p>Send mission data to Fleet Management system via gRPC client connection.</p>
+<p>This function establishes a gRPC client connection to the Fleet Management
+System and transmits mission data for processing. It provides comprehensive
+error handling and response validation for reliable mission submission.</p>
+<dl class="simple">
+<dt>Client Operation Workflow:</dt><dd><ol class="arabic simple">
+<li><p><strong>Channel Creation</strong>: Establish insecure gRPC channel to Fleet Management</p></li>
+<li><p><strong>Stub Initialization</strong>: Create MissionCommunicationStub for service calls</p></li>
+<li><p><strong>Request Preparation</strong>: Package mission JSON into gRPC request message</p></li>
+<li><p><strong>Transmission</strong>: Send mission data via SendMission RPC call</p></li>
+<li><p><strong>Response Processing</strong>: Extract confirmation message from response</p></li>
+<li><p><strong>Error Handling</strong>: Manage connection failures and timeouts gracefully</p></li>
+</ol>
+</dd>
+<dt>Network Configuration:</dt><dd><ul class="simple">
+<li><p><strong>Target Address</strong>: localhost:50092 (Fleet Management gRPC server)</p></li>
+<li><p><strong>Channel Type</strong>: Insecure (suitable for internal communication)</p></li>
+<li><p><strong>Protocol</strong>: HTTP/2 with gRPC framing</p></li>
+<li><p><strong>Timeout</strong>: Default gRPC timeout settings</p></li>
+</ul>
+</dd>
+<dt>Mission Data Format:</dt><dd><p>The mission_json parameter should contain a valid JSON string representing
+a complete mission specification including:
+- Mission identification and metadata
+- Task definitions and sequences
+- Vehicle assignments and capabilities
+- Navigation areas and constraints</p>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>mission_json</strong> (<em>str</em>) – Complete mission specification in JSON string format</p></li>
+<li><p><strong>rest_logger</strong> (<em>logging.Logger</em>) – Configured logger instance for client operations</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Confirmation message from Fleet Management server, or None on failure</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Union[str, None]</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>grpc.RpcError</strong> – If connection to Fleet Management server fails</p></li>
+<li><p><strong>json.JSONDecodeError</strong> – If mission_json contains invalid JSON syntax</p></li>
+<li><p><strong>ValueError</strong> – If mission data doesn’t meet required format</p></li>
+</ul>
+</dd>
+</dl>
+<dl>
+<dt>Response Format:</dt><dd><p>Successful responses typically follow the pattern:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;Mission received by Fleet Management: </span><span class="si">{mission_id}</span><span class="s2">&quot;</span>
+</pre></div>
+</div>
+<p>Where mission_id is extracted from the submitted mission data.</p>
+</dd>
+<dt>Error Handling:</dt><dd><ul class="simple">
+<li><p><strong>Connection Failures</strong>: Logged and return None for graceful degradation</p></li>
+<li><p><strong>Timeout Errors</strong>: Handled by gRPC default timeout mechanisms</p></li>
+<li><p><strong>Server Errors</strong>: Propagated as gRPC exceptions with error details</p></li>
+<li><p><strong>Network Issues</strong>: Automatic retry logic (if configured in gRPC channel)</p></li>
+</ul>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Prepare mission data</span>
+<span class="n">mission_data</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;mission_id&quot;</span><span class="p">:</span> <span class="mi">12345</span><span class="p">,</span>
+    <span class="s2">&quot;tasks&quot;</span><span class="p">:</span> <span class="p">[</span><span class="o">...</span><span class="p">],</span>
+    <span class="s2">&quot;vehicles&quot;</span><span class="p">:</span> <span class="p">[</span><span class="o">...</span><span class="p">],</span>
+    <span class="s2">&quot;navigation_areas&quot;</span><span class="p">:</span> <span class="p">[</span><span class="o">...</span><span class="p">]</span>
+<span class="p">}</span>
+
+<span class="c1"># Convert to JSON and send</span>
+<span class="n">mission_json</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">mission_data</span><span class="p">)</span>
+<span class="n">confirmation</span> <span class="o">=</span> <span class="n">run_rest_client</span><span class="p">(</span><span class="n">mission_json</span><span class="p">,</span> <span class="n">logger</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="n">confirmation</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Mission submitted successfully: </span><span class="si">{</span><span class="n">confirmation</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Mission submission failed&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The client uses insecure channels suitable for internal system communication.
+External deployments should implement proper authentication and encryption.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Failed submissions return None rather than raising exceptions.
+Calling code should check return values for proper error handling.</p>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="grpc_rest.start_grpc_rest">
+<span class="sig-prename descclassname"><span class="pre">grpc_rest.</span></span><span class="sig-name descname"><span class="pre">start_grpc_rest</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rest_logger</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/grpc_rest.html#start_grpc_rest"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#grpc_rest.start_grpc_rest" title="Link to this definition"></a></dt>
+<dd><p>Initialize and start gRPC server in background daemon thread.</p>
+<p>This function provides a convenient way to start the gRPC REST server in
+a background thread, allowing the main application to continue execution
+while the server handles incoming requests concurrently.</p>
+<dl class="simple">
+<dt>Thread Configuration:</dt><dd><ul class="simple">
+<li><p><strong>Thread Type</strong>: Daemon thread (terminates with main process)</p></li>
+<li><p><strong>Thread Name</strong>: “gRPC-REST-Server” for identification and debugging</p></li>
+<li><p><strong>Target Function</strong>: run_rest_server for server execution</p></li>
+<li><p><strong>Startup</strong>: Immediate thread start after creation</p></li>
+</ul>
+</dd>
+<dt>Daemon Thread Behavior:</dt><dd><ul class="simple">
+<li><p><strong>Lifecycle</strong>: Thread terminates automatically when main process exits</p></li>
+<li><p><strong>Resource Management</strong>: No explicit cleanup required</p></li>
+<li><p><strong>Error Isolation</strong>: Thread exceptions don’t affect main process</p></li>
+<li><p><strong>Background Operation</strong>: Non-blocking server initialization</p></li>
+</ul>
+</dd>
+<dt>Operational Advantages:</dt><dd><ul class="simple">
+<li><p><strong>Non-blocking</strong>: Main thread continues execution immediately</p></li>
+<li><p><strong>Concurrent Processing</strong>: Server handles requests while main app runs</p></li>
+<li><p><strong>Resource Efficiency</strong>: Automatic cleanup on process termination</p></li>
+<li><p><strong>Development Friendly</strong>: Easy integration with existing applications</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>rest_logger</strong> (<em>logging.Logger</em>) – Configured logger instance for server operations</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>ThreadError</strong> – If thread creation or startup fails</p></li>
+<li><p><strong>RuntimeError</strong> – If system resources are insufficient for thread creation</p></li>
+</ul>
+</dd>
+</dl>
+<dl>
+<dt>Usage Patterns:</dt><dd><p><strong>Application Integration</strong>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Start gRPC server in background</span>
+<span class="n">start_grpc_rest</span><span class="p">(</span><span class="n">logger</span><span class="p">)</span>
+
+<span class="c1"># Continue with main application logic</span>
+<span class="n">main_application_loop</span><span class="p">()</span>
+</pre></div>
+</div>
+<p><strong>Service Initialization</strong>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Initialize all services</span>
+<span class="n">start_database_service</span><span class="p">()</span>
+<span class="n">start_grpc_rest</span><span class="p">(</span><span class="n">logger</span><span class="p">)</span>  <span class="c1"># Non-blocking</span>
+<span class="n">start_mqtt_service</span><span class="p">()</span>
+
+<span class="c1"># All services now running concurrently</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The server thread runs as a daemon and will terminate automatically
+when the main process exits. No explicit shutdown is required.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Since the thread is marked as daemon, it will terminate immediately
+when the main process exits, potentially interrupting active requests.
+For production deployments, consider proper shutdown procedures.</p>
+</div>
+</dd></dl>
+
+</dd>
+<dt>Protocol Buffers Integration:</dt><dd><p>Uses auto-generated code from Protocol Buffer definitions:</p>
+<ul class="simple">
+<li><p><strong>rest_pb2(_grpc)</strong>: REST status communication messages and services</p></li>
+<li><p><strong>mission_pb2(_grpc)</strong>: Mission data transmission messages and services</p></li>
+</ul>
+</dd>
+<dt>Network Configuration:</dt><dd><ul class="simple">
+<li><p><strong>Server Port</strong>: 50052 (REST status reception)</p></li>
+<li><p><strong>Client Target</strong>: localhost:50092 (Fleet Management)</p></li>
+<li><p><strong>Thread Pool</strong>: 10 worker threads for concurrent request handling</p></li>
+<li><p><strong>Connection Type</strong>: Insecure channels for internal communication</p></li>
+</ul>
+</dd>
+<dt>Error Handling Strategy:</dt><dd><ul class="simple">
+<li><p><strong>Connection Failures</strong>: Graceful degradation with error logging</p></li>
+<li><p><strong>Timeout Management</strong>: Configurable timeouts for network operations</p></li>
+<li><p><strong>Resource Cleanup</strong>: Proper channel and server resource management</p></li>
+<li><p><strong>Thread Safety</strong>: Daemon threads for background server operations</p></li>
+</ul>
+</dd>
+<dt>Usage Examples:</dt><dd><p><strong>Standalone Server Operation</strong>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span># Start as standalone service
+$ python grpc_rest.py
+</pre></div>
+</div>
+<p><strong>Client Integration</strong>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">grpc_rest</span><span class="w"> </span><span class="kn">import</span> <span class="n">run_rest_client</span>
+
+<span class="c1"># Send mission to Fleet Management</span>
+<span class="n">confirmation</span> <span class="o">=</span> <span class="n">run_rest_client</span><span class="p">(</span><span class="s1">&#39;{&quot;mission_id&quot;: 123}&#39;</span><span class="p">,</span> <span class="n">logger</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">confirmation</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Mission confirmed: </span><span class="si">{</span><span class="n">confirmation</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Server Integration</strong>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">grpc_rest</span><span class="w"> </span><span class="kn">import</span> <span class="n">start_grpc_rest</span>
+
+<span class="c1"># Start server in background</span>
+<span class="n">start_grpc_rest</span><span class="p">(</span><span class="n">logger</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd>
+<dt>Performance Considerations:</dt><dd><ul class="simple">
+<li><p><strong>Concurrent Processing</strong>: ThreadPoolExecutor enables parallel request handling</p></li>
+<li><p><strong>Resource Management</strong>: Automatic cleanup of gRPC channels and servers</p></li>
+<li><p><strong>Memory Efficiency</strong>: Daemon threads prevent resource leaks on shutdown</p></li>
+<li><p><strong>Network Optimization</strong>: Local communication minimizes latency</p></li>
+</ul>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This module is designed for internal system communication and uses
+insecure gRPC channels. For external communication, implement proper
+authentication and encryption mechanisms.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Server components run as daemon threads and will terminate with the
+main process. Ensure proper shutdown procedures for production deployments.</p>
+</div>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<ul class="simple">
+<li><p><code class="xref py py-mod docutils literal notranslate"><span class="pre">REST.default_controller</span></code>: REST API endpoints that use this client</p></li>
+<li><p><code class="xref py py-mod docutils literal notranslate"><span class="pre">MissionManager.grpc_mission_rest</span></code>: Fleet Management server counterpart</p></li>
+<li><p><code class="xref py py-mod docutils literal notranslate"><span class="pre">GRPC</span></code>: Protocol Buffer definitions and generated code</p></li>
+</ul>
+</div>
+<dl class="py class">
+<dt class="sig sig-object py" id="id0">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">grpc_rest.</span></span><span class="sig-name descname"><span class="pre">RestCommunicationService</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/grpc_rest.html#RestCommunicationService"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id0" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">RestCommunicationServicer</span></code></p>
+<p>gRPC service implementation for handling mission status updates from Fleet Management.</p>
+<p>This class extends the auto-generated RestCommunicationServicer to provide concrete
+implementation of the gRPC service methods. It handles incoming status updates
+from the Fleet Management System and processes them according to system requirements.</p>
+<dl class="simple">
+<dt>Service Responsibilities:</dt><dd><ul class="simple">
+<li><p><strong>Status Reception</strong>: Receive mission status updates from Fleet Management</p></li>
+<li><p><strong>Data Processing</strong>: Parse and validate incoming status information</p></li>
+<li><p><strong>Response Generation</strong>: Provide acknowledgment responses to clients</p></li>
+<li><p><strong>Error Handling</strong>: Manage connection and processing errors gracefully</p></li>
+<li><p><strong>Logging Integration</strong>: Record all service operations for monitoring</p></li>
+</ul>
+</dd>
+<dt>gRPC Service Interface:</dt><dd><p>Implements the RestCommunication service as defined in rest.proto:</p>
+<ul class="simple">
+<li><p>SendRest(RestRequest) returns (RestResponse)</p></li>
+</ul>
+</dd>
+<dt>Status Processing Workflow:</dt><dd><ol class="arabic simple">
+<li><p><strong>Request Reception</strong>: Receive gRPC request with status data</p></li>
+<li><p><strong>Data Extraction</strong>: Parse mission status list from request</p></li>
+<li><p><strong>Validation</strong>: Ensure status data meets expected format</p></li>
+<li><p><strong>Logging</strong>: Record status reception for audit trail</p></li>
+<li><p><strong>Response</strong>: Return confirmation message to client</p></li>
+</ol>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>rest_logger</strong> (<em>logging.Logger</em>) – Configured logger instance for service operations</p>
+</dd>
+<dt class="field-even">Variables<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>rest_logger</strong> (<em>logging.Logger</em>) – Logger instance for recording service operations and errors</p>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Service instantiation (typically done by gRPC server)</span>
+<span class="n">service</span> <span class="o">=</span> <span class="n">RestCommunicationService</span><span class="p">(</span><span class="n">logger</span><span class="p">)</span>
+
+<span class="c1"># Service is registered with gRPC server</span>
+<span class="n">add_RestCommunicationServicer_to_server</span><span class="p">(</span><span class="n">service</span><span class="p">,</span> <span class="n">server</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This service is designed to be instantiated by the gRPC server framework.
+Direct instantiation is typically not required in normal usage.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The service currently includes a TODO for POST handling implementation.
+Full status processing functionality may require additional development.</p>
+</div>
+<dl class="py method">
+<dt class="sig sig-object py" id="id1">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rest_logger</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/grpc_rest.html#RestCommunicationService.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id1" title="Link to this definition"></a></dt>
+<dd><p>Initialize gRPC service with configured logger instance.</p>
+<p>Sets up the service with the necessary logging infrastructure for
+operation tracking and error reporting. Calls parent class constructor
+to ensure proper gRPC service initialization.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>rest_logger</strong> (<em>logging.Logger</em>) – Pre-configured logger for service operations</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="id2">
+<span class="sig-name descname"><span class="pre">SendRest</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">context</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/grpc_rest.html#RestCommunicationService.SendRest"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id2" title="Link to this definition"></a></dt>
+<dd><p>Handle incoming mission status updates from Fleet Management System.</p>
+<p>This method implements the core gRPC service interface for receiving
+mission status updates. It processes incoming requests, extracts status
+information, and provides appropriate response confirmations.</p>
+<dl class="simple">
+<dt>Processing Workflow:</dt><dd><ol class="arabic simple">
+<li><p><strong>Request Reception</strong>: Receive gRPC request with mission status array</p></li>
+<li><p><strong>Data Extraction</strong>: Convert repeated field to Python list</p></li>
+<li><p><strong>Logging</strong>: Record status reception with timestamp</p></li>
+<li><p><strong>Future Processing</strong>: Placeholder for POST handling implementation</p></li>
+<li><p><strong>Response Generation</strong>: Create confirmation message with status echo</p></li>
+</ol>
+</dd>
+<dt>Status Types:</dt><dd><p>Common mission status values include:
+- “PENDING”: Mission queued for execution
+- “IN_PROGRESS”: Mission currently executing
+- “COMPLETED”: Mission finished successfully
+- “FAILED”: Mission encountered errors
+- “CANCELLED”: Mission terminated by user request</p>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>request</strong> (<em>rest_pb2.RestRequest</em>) – Incoming gRPC request containing mission status data</p></li>
+<li><p><strong>context</strong> (<em>grpc.ServicerContext</em>) – gRPC connection context with metadata and error handling</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Response confirmation with status receipt acknowledgment</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>rest_pb2.RestResponse</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>grpc.RpcError</strong> – If connection issues occur during processing</p></li>
+<li><p><strong>ValueError</strong> – If status data format is invalid or unexpected</p></li>
+</ul>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<p>Typical status update request:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">request</span><span class="o">.</span><span class="n">mission_status</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;COMPLETED&quot;</span><span class="p">,</span> <span class="s2">&quot;IN_PROGRESS&quot;</span><span class="p">,</span> <span class="s2">&quot;FAILED&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Corresponding response:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">RestResponse</span><span class="p">(</span>
+    <span class="n">confirmation</span><span class="o">=</span><span class="s2">&quot;Server received mission status: [&#39;COMPLETED&#39;, &#39;IN_PROGRESS&#39;, &#39;FAILED&#39;]&quot;</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The method currently includes a TODO for implementing POST handling
+to forward status updates to external systems or databases.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Status validation is minimal in the current implementation.
+Production deployments should include comprehensive status validation.</p>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="id3">
+<span class="sig-prename descclassname"><span class="pre">grpc_rest.</span></span><span class="sig-name descname"><span class="pre">run_rest_server</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rest_logger</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/grpc_rest.html#run_rest_server"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id3" title="Link to this definition"></a></dt>
+<dd><p>Start and maintain the gRPC server for REST status communication.</p>
+<p>This function initializes, configures, and runs a gRPC server to handle
+incoming mission status updates from the Fleet Management System. It provides
+a robust server implementation with proper error handling and graceful shutdown.</p>
+<dl class="simple">
+<dt>Server Configuration:</dt><dd><ul class="simple">
+<li><p><strong>Thread Pool</strong>: ThreadPoolExecutor with 10 worker threads for concurrent processing</p></li>
+<li><p><strong>Network Binding</strong>: Listens on all interfaces (::) port 50052</p></li>
+<li><p><strong>Service Registration</strong>: Hosts RestCommunicationService for status handling</p></li>
+<li><p><strong>Execution Model</strong>: Blocking operation with keyboard interrupt handling</p></li>
+</ul>
+</dd>
+<dt>Operational Workflow:</dt><dd><ol class="arabic simple">
+<li><p><strong>Server Creation</strong>: Initialize gRPC server with thread pool</p></li>
+<li><p><strong>Service Registration</strong>: Add RestCommunicationService to server</p></li>
+<li><p><strong>Port Binding</strong>: Bind to port 50052 for incoming connections</p></li>
+<li><p><strong>Server Start</strong>: Begin accepting gRPC requests</p></li>
+<li><p><strong>Maintenance Loop</strong>: Keep server alive with 24-hour sleep intervals</p></li>
+<li><p><strong>Graceful Shutdown</strong>: Handle KeyboardInterrupt for clean termination</p></li>
+</ol>
+</dd>
+<dt>Thread Pool Configuration:</dt><dd><ul class="simple">
+<li><p><strong>Worker Threads</strong>: 10 concurrent workers for request processing</p></li>
+<li><p><strong>Request Handling</strong>: Each worker can process one gRPC request simultaneously</p></li>
+<li><p><strong>Resource Management</strong>: Automatic cleanup of worker threads on shutdown</p></li>
+<li><p><strong>Load Balancing</strong>: gRPC framework distributes requests across workers</p></li>
+</ul>
+</dd>
+<dt>Network Configuration:</dt><dd><ul class="simple">
+<li><p><strong>Interface</strong>: [::] (all IPv4 and IPv6 interfaces)</p></li>
+<li><p><strong>Port</strong>: 50052 (dedicated REST communication port)</p></li>
+<li><p><strong>Protocol</strong>: HTTP/2 with gRPC framing</p></li>
+<li><p><strong>Security</strong>: Insecure channels (internal communication)</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>rest_logger</strong> (<em>logging.Logger</em>) – Configured logger instance for server operations</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>KeyboardInterrupt</strong> – Handled for graceful server shutdown</p></li>
+<li><p><strong>grpc.RpcError</strong> – If server binding or startup fails</p></li>
+<li><p><strong>OSError</strong> – If port 50052 is already in use</p></li>
+</ul>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Start server in main thread (blocking)</span>
+<span class="n">run_rest_server</span><span class="p">(</span><span class="n">logger</span><span class="p">)</span>
+
+<span class="c1"># Server will run until Ctrl+C is pressed</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This function blocks execution while running. For background operation,
+use start_grpc_rest() which runs the server in a daemon thread.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The server runs with insecure channels suitable for internal communication.
+External deployment should implement proper authentication and encryption.</p>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="id4">
+<span class="sig-prename descclassname"><span class="pre">grpc_rest.</span></span><span class="sig-name descname"><span class="pre">run_rest_client</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mission_json</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rest_logger</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/grpc_rest.html#run_rest_client"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id4" title="Link to this definition"></a></dt>
+<dd><p>Send mission data to Fleet Management system via gRPC client connection.</p>
+<p>This function establishes a gRPC client connection to the Fleet Management
+System and transmits mission data for processing. It provides comprehensive
+error handling and response validation for reliable mission submission.</p>
+<dl class="simple">
+<dt>Client Operation Workflow:</dt><dd><ol class="arabic simple">
+<li><p><strong>Channel Creation</strong>: Establish insecure gRPC channel to Fleet Management</p></li>
+<li><p><strong>Stub Initialization</strong>: Create MissionCommunicationStub for service calls</p></li>
+<li><p><strong>Request Preparation</strong>: Package mission JSON into gRPC request message</p></li>
+<li><p><strong>Transmission</strong>: Send mission data via SendMission RPC call</p></li>
+<li><p><strong>Response Processing</strong>: Extract confirmation message from response</p></li>
+<li><p><strong>Error Handling</strong>: Manage connection failures and timeouts gracefully</p></li>
+</ol>
+</dd>
+<dt>Network Configuration:</dt><dd><ul class="simple">
+<li><p><strong>Target Address</strong>: localhost:50092 (Fleet Management gRPC server)</p></li>
+<li><p><strong>Channel Type</strong>: Insecure (suitable for internal communication)</p></li>
+<li><p><strong>Protocol</strong>: HTTP/2 with gRPC framing</p></li>
+<li><p><strong>Timeout</strong>: Default gRPC timeout settings</p></li>
+</ul>
+</dd>
+<dt>Mission Data Format:</dt><dd><p>The mission_json parameter should contain a valid JSON string representing
+a complete mission specification including:
+- Mission identification and metadata
+- Task definitions and sequences
+- Vehicle assignments and capabilities
+- Navigation areas and constraints</p>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>mission_json</strong> (<em>str</em>) – Complete mission specification in JSON string format</p></li>
+<li><p><strong>rest_logger</strong> (<em>logging.Logger</em>) – Configured logger instance for client operations</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Confirmation message from Fleet Management server, or None on failure</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Union[str, None]</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>grpc.RpcError</strong> – If connection to Fleet Management server fails</p></li>
+<li><p><strong>json.JSONDecodeError</strong> – If mission_json contains invalid JSON syntax</p></li>
+<li><p><strong>ValueError</strong> – If mission data doesn’t meet required format</p></li>
+</ul>
+</dd>
+</dl>
+<dl>
+<dt>Response Format:</dt><dd><p>Successful responses typically follow the pattern:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;Mission received by Fleet Management: </span><span class="si">{mission_id}</span><span class="s2">&quot;</span>
+</pre></div>
+</div>
+<p>Where mission_id is extracted from the submitted mission data.</p>
+</dd>
+<dt>Error Handling:</dt><dd><ul class="simple">
+<li><p><strong>Connection Failures</strong>: Logged and return None for graceful degradation</p></li>
+<li><p><strong>Timeout Errors</strong>: Handled by gRPC default timeout mechanisms</p></li>
+<li><p><strong>Server Errors</strong>: Propagated as gRPC exceptions with error details</p></li>
+<li><p><strong>Network Issues</strong>: Automatic retry logic (if configured in gRPC channel)</p></li>
+</ul>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Prepare mission data</span>
+<span class="n">mission_data</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;mission_id&quot;</span><span class="p">:</span> <span class="mi">12345</span><span class="p">,</span>
+    <span class="s2">&quot;tasks&quot;</span><span class="p">:</span> <span class="p">[</span><span class="o">...</span><span class="p">],</span>
+    <span class="s2">&quot;vehicles&quot;</span><span class="p">:</span> <span class="p">[</span><span class="o">...</span><span class="p">],</span>
+    <span class="s2">&quot;navigation_areas&quot;</span><span class="p">:</span> <span class="p">[</span><span class="o">...</span><span class="p">]</span>
+<span class="p">}</span>
+
+<span class="c1"># Convert to JSON and send</span>
+<span class="n">mission_json</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">mission_data</span><span class="p">)</span>
+<span class="n">confirmation</span> <span class="o">=</span> <span class="n">run_rest_client</span><span class="p">(</span><span class="n">mission_json</span><span class="p">,</span> <span class="n">logger</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="n">confirmation</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Mission submitted successfully: </span><span class="si">{</span><span class="n">confirmation</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Mission submission failed&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The client uses insecure channels suitable for internal system communication.
+External deployments should implement proper authentication and encryption.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Failed submissions return None rather than raising exceptions.
+Calling code should check return values for proper error handling.</p>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="id5">
+<span class="sig-prename descclassname"><span class="pre">grpc_rest.</span></span><span class="sig-name descname"><span class="pre">start_grpc_rest</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rest_logger</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/grpc_rest.html#start_grpc_rest"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id5" title="Link to this definition"></a></dt>
+<dd><p>Initialize and start gRPC server in background daemon thread.</p>
+<p>This function provides a convenient way to start the gRPC REST server in
+a background thread, allowing the main application to continue execution
+while the server handles incoming requests concurrently.</p>
+<dl class="simple">
+<dt>Thread Configuration:</dt><dd><ul class="simple">
+<li><p><strong>Thread Type</strong>: Daemon thread (terminates with main process)</p></li>
+<li><p><strong>Thread Name</strong>: “gRPC-REST-Server” for identification and debugging</p></li>
+<li><p><strong>Target Function</strong>: run_rest_server for server execution</p></li>
+<li><p><strong>Startup</strong>: Immediate thread start after creation</p></li>
+</ul>
+</dd>
+<dt>Daemon Thread Behavior:</dt><dd><ul class="simple">
+<li><p><strong>Lifecycle</strong>: Thread terminates automatically when main process exits</p></li>
+<li><p><strong>Resource Management</strong>: No explicit cleanup required</p></li>
+<li><p><strong>Error Isolation</strong>: Thread exceptions don’t affect main process</p></li>
+<li><p><strong>Background Operation</strong>: Non-blocking server initialization</p></li>
+</ul>
+</dd>
+<dt>Operational Advantages:</dt><dd><ul class="simple">
+<li><p><strong>Non-blocking</strong>: Main thread continues execution immediately</p></li>
+<li><p><strong>Concurrent Processing</strong>: Server handles requests while main app runs</p></li>
+<li><p><strong>Resource Efficiency</strong>: Automatic cleanup on process termination</p></li>
+<li><p><strong>Development Friendly</strong>: Easy integration with existing applications</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>rest_logger</strong> (<em>logging.Logger</em>) – Configured logger instance for server operations</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>ThreadError</strong> – If thread creation or startup fails</p></li>
+<li><p><strong>RuntimeError</strong> – If system resources are insufficient for thread creation</p></li>
+</ul>
+</dd>
+</dl>
+<dl>
+<dt>Usage Patterns:</dt><dd><p><strong>Application Integration</strong>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Start gRPC server in background</span>
+<span class="n">start_grpc_rest</span><span class="p">(</span><span class="n">logger</span><span class="p">)</span>
+
+<span class="c1"># Continue with main application logic</span>
+<span class="n">main_application_loop</span><span class="p">()</span>
+</pre></div>
+</div>
+<p><strong>Service Initialization</strong>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Initialize all services</span>
+<span class="n">start_database_service</span><span class="p">()</span>
+<span class="n">start_grpc_rest</span><span class="p">(</span><span class="n">logger</span><span class="p">)</span>  <span class="c1"># Non-blocking</span>
+<span class="n">start_mqtt_service</span><span class="p">()</span>
+
+<span class="c1"># All services now running concurrently</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The server thread runs as a daemon and will terminate automatically
+when the main process exits. No explicit shutdown is required.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Since the thread is marked as daemon, it will terminate immediately
+when the main process exits, potentially interrupting active requests.
+For production deployments, consider proper shutdown procedures.</p>
+</div>
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="default_controller_component.html" class="btn btn-neutral float-left" title="Default Controller" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../mqtt_components.html" class="btn btn-neutral float-right" title="MQTT Management" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, Estela Mora Barba.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

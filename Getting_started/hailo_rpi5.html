@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Getting Started with RPI5 and Hailo8-8L &mdash; Fleet Manager 1.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=f2a433a1"></script>
+        <script src="../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+        <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="author" title="About these documents" href="../about.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Docker Engine on the RPI5" href="docker.html" />
+    <link rel="prev" title="AI HAT+ with Hailo8-8L and Pi Camera Module Installation" href="ai_hat.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Fleet Manager
+          </a>
+              <div class="version">
+                1.0
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../about.html">About the project</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../getting_started.html">Getting Started</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="how_to_run.html">Drone Fleet Manager Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ai_hat.html">AI HAT+ with Hailo8-8L and Pi Camera Module Installation</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Getting Started with RPI5 and Hailo8-8L</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#verify-installation">Verify Installation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#hailo-rpi5-basic-pipelines">Hailo RPi5 Basic Pipelines</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#running-the-examples">Running the examples</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#detection-example">Detection Example</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pose-estimation-example">Pose Estimation Example</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#instance-segmentation-example">Instance Segmentation Example</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#depth-estimation-example">Depth Estimation Example</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#references">References</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="docker.html">Docker Engine on the RPI5</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../modules.html">Code documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../training.html">Training documentation</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Fleet Manager</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../getting_started.html">Getting Started</a></li>
+      <li class="breadcrumb-item active">Getting Started with RPI5 and Hailo8-8L</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/Getting_started/hailo_rpi5.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="getting-started-with-rpi5-and-hailo8-8l">
+<h1>Getting Started with RPI5 and Hailo8-8L<a class="headerlink" href="#getting-started-with-rpi5-and-hailo8-8l" title="Link to this heading"></a></h1>
+<section id="verify-installation">
+<h2>Verify Installation<a class="headerlink" href="#verify-installation" title="Link to this heading"></a></h2>
+<p>After <a class="reference internal" href="ai_hat.html"><span class="doc">AI HAT+ with Hailo8-8L and Pi Camera Module Installation</span></a>, check if the Hailo chip is recognized by the system:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>hailortcli<span class="w"> </span>fw-control<span class="w"> </span>identify
+</pre></div>
+</div>
+<p>If everything is OK, it should output something like this:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Executing on device: 0000:01:00.0
+Identifying board
+Control Protocol Version: 2
+Firmware Version: 4.17.0 (release,app,extended context switch buffer)
+Logger Version: 0
+Board Name: Hailo-8
+Device Architecture: HAILO8L
+Serial Number: N/A
+Part Number: N/A
+Product Name: N/A
+</pre></div>
+</div>
+<p>Getting <code class="docutils literal notranslate"><span class="pre">N/A</span></code> for Serial Number, Part Number, and Product Name is normal for the AI HAT.</p>
+<p>Test TAPPAS Core installation by running the following commands:</p>
+<p><strong>Hailotools</strong> (TAPPAS GStreamer elements):</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gst-inspect-1.0<span class="w"> </span>hailotools
+</pre></div>
+</div>
+<p>Expected result:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Plugin Details:
+  Name                     hailotools
+  Description              hailo tools plugin
+  Filename                 /lib/aarch64-linux-gnu/gstreamer-1.0/libgsthailotools.so
+  Version                  3.28.2
+  License                  unknown
+  Source module            gst-hailo-tools
+  Binary package           gst-hailo-tools
+  Origin URL               https://hailo.ai/
+
+  hailoaggregator: hailoaggregator - Cascading
+  hailocounter: hailocounter - postprocessing element
+  hailocropper: hailocropper
+  hailoexportfile: hailoexportfile - export element
+  hailoexportzmq: hailoexportzmq - export element
+  hailofilter: hailofilter - postprocessing element
+  hailogallery: Hailo gallery element
+  hailograytonv12: hailograytonv12 - postprocessing element
+  hailoimportzmq: hailoimportzmq - import element
+  hailomuxer: Muxer pipeline merging
+  hailonv12togray: hailonv12togray - postprocessing element
+  hailonvalve: HailoNValve element
+</pre></div>
+</div>
+<p><strong>Hailonet</strong> (HailoRT inference GStreamer element):</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gst-inspect-1.0<span class="w"> </span>hailo
+</pre></div>
+</div>
+<p>Expected result:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Plugin Details:
+  Name                     hailo
+  Description              hailo gstreamer plugin
+  Filename                 /lib/aarch64-linux-gnu/gstreamer-1.0/libgsthailo.so
+  Version                  1.0
+  License                  unknown
+  Source module            hailo
+  Binary package           GStreamer
+  Origin URL               http://gstreamer.net/
+
+  hailodevicestats: hailodevicestats element
+  hailonet: hailonet element
+  synchailonet: sync hailonet element
+
+  3 features:
+  +-- 3 elements
+</pre></div>
+</div>
+<p>If <code class="docutils literal notranslate"><span class="pre">hailo</span></code> or <code class="docutils literal notranslate"><span class="pre">hailotools</span></code> are not found, try deleting the GStreamer registry:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>rm<span class="w"> </span>~/.cache/gstreamer-1.0/registry.aarch64.bin
+</pre></div>
+</div>
+</section>
+<section id="hailo-rpi5-basic-pipelines">
+<h2>Hailo RPi5 Basic Pipelines<a class="headerlink" href="#hailo-rpi5-basic-pipelines" title="Link to this heading"></a></h2>
+<p>Clone the Repository:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/hailo-ai/hailo-rpi5-examples.git
+</pre></div>
+</div>
+<p>Navigate to the repository directory:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>hailo-rpi5-examples
+</pre></div>
+</div>
+<p>Run the following script to automate the installation process:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./install.sh
+</pre></div>
+</div>
+</section>
+<section id="running-the-examples">
+<h2>Running the examples<a class="headerlink" href="#running-the-examples" title="Link to this heading"></a></h2>
+<p>When opening a new terminal session, ensure you have sourced the environment setup script:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">source</span><span class="w"> </span>setup_env.sh
+</pre></div>
+</div>
+<section id="detection-example">
+<h3>Detection Example<a class="headerlink" href="#detection-example" title="Link to this heading"></a></h3>
+<p>Run the <strong>simple detection</strong> example:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>basic_pipelines/detection_simple.py
+</pre></div>
+</div>
+<p>To close the application, press <code class="docutils literal notranslate"><span class="pre">Ctrl+C</span></code>.</p>
+<p>Run the <strong>full detection</strong> example:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>basic_pipelines/detection.py
+</pre></div>
+</div>
+<p>To close the application, press <code class="docutils literal notranslate"><span class="pre">Ctrl+C</span></code>.</p>
+<p>Running with Raspberry <strong>Pi Camera input</strong>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>basic_pipelines/detection.py<span class="w"> </span>--input<span class="w"> </span>rpi
+</pre></div>
+</div>
+</section>
+<section id="pose-estimation-example">
+<h3>Pose Estimation Example<a class="headerlink" href="#pose-estimation-example" title="Link to this heading"></a></h3>
+<p>Run the pose estimation example:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>basic_pipelines/pose_estimation.py
+</pre></div>
+</div>
+<p>To close the application, press <code class="docutils literal notranslate"><span class="pre">Ctrl+C</span></code>. See Detection Example above for additional input options examples.</p>
+</section>
+<section id="instance-segmentation-example">
+<h3>Instance Segmentation Example<a class="headerlink" href="#instance-segmentation-example" title="Link to this heading"></a></h3>
+<p>Run the instance segmentation example:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>basic_pipelines/instance_segmentation.py
+</pre></div>
+</div>
+<p>To close the application, press <code class="docutils literal notranslate"><span class="pre">Ctrl+C</span></code>. See Detection Example above for additional input options examples.</p>
+</section>
+<section id="depth-estimation-example">
+<h3>Depth Estimation Example<a class="headerlink" href="#depth-estimation-example" title="Link to this heading"></a></h3>
+<p>Run the depth estimation example:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>basic_pipelines/depth.py
+</pre></div>
+</div>
+<p>To close the application, press <code class="docutils literal notranslate"><span class="pre">Ctrl+C</span></code>. See Detection Example above for additional input options examples.</p>
+</section>
+</section>
+<section id="references">
+<h2>References<a class="headerlink" href="#references" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>Hailo Documentation - Getting started with RPI5-Hailo8L: <a class="reference external" href="https://community.hailo.ai/t/getting-started-with-rpi5-hailo8l/740">https://community.hailo.ai/t/getting-started-with-rpi5-hailo8l/740</a></p></li>
+<li><p>Hailo Documentation - Hailo RPi5 Examples Repository: <a class="reference external" href="https://github.com/hailo-ai/hailo-rpi5-examples?tab=readme-ov-file">https://github.com/hailo-ai/hailo-rpi5-examples?tab=readme-ov-file</a></p></li>
+</ul>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="ai_hat.html" class="btn btn-neutral float-left" title="AI HAT+ with Hailo8-8L and Pi Camera Module Installation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="docker.html" class="btn btn-neutral float-right" title="Docker Engine on the RPI5" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, Estela Mora Barba.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

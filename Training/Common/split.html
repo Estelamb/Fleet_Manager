@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Create data splits &mdash; Fleet Manager 1.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../_static/documentation_options.js?v=f2a433a1"></script>
+        <script src="../../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+        <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="author" title="About these documents" href="../../about.html" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Yolov8n Training" href="train.html" />
+    <link rel="prev" title="Common Python Modules" href="../common_py_modules.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            Fleet Manager
+          </a>
+              <div class="version">
+                1.0
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../about.html">About the project</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../getting_started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules.html">Code documentation</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../training.html">Training documentation</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../training.html#training-and-compilation-for-hailo8-8l">Training and Compilation for Hailo8/8L</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../training.html#code-documentation">Code documentation</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="../common_py_modules.html">Common Python Modules</a><ul class="current">
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Create data splits</a></li>
+<li class="toctree-l4"><a class="reference internal" href="train.html">Yolov8n Training</a></li>
+<li class="toctree-l4"><a class="reference internal" href="hailo.html">Hailo calibration data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="export.html">Export to ONNX</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../leaf_detection.html">Leaf Detection</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../grape_diseases.html">Grape Diseases</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Fleet Manager</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../training.html">Training documentation</a></li>
+          <li class="breadcrumb-item"><a href="../common_py_modules.html">Common Python Modules</a></li>
+      <li class="breadcrumb-item active">Create data splits</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/Training/Common/split.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="module-create_data_splits">
+<span id="create-data-splits"></span><h1>Create data splits<a class="headerlink" href="#module-create_data_splits" title="Link to this heading"></a></h1>
+<section id="dataset-split-generator-for-yolo-training">
+<h2>Dataset Split Generator for YOLO Training<a class="headerlink" href="#dataset-split-generator-for-yolo-training" title="Link to this heading"></a></h2>
+<p>This module creates train/validation/test splits for YOLO object detection datasets.
+It processes image directories, generates split files, and creates YAML configuration
+files required for YOLO training workflows.</p>
+<p>The script automatically discovers images in a dataset directory structure,
+randomly splits them into training, validation, and test sets, and generates
+the necessary configuration files for both regular training and ONNX export.</p>
+<p>Dataset Structure Expected:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>dataset/
+├── images/
+│   ├── image1.jpg
+│   ├── image2.jpg
+│   └── ...
+├── labels/
+│   ├── image1.txt
+│   ├── image2.txt
+│   └── ...
+└── classes.json
+</pre></div>
+</div>
+<dl class="simple">
+<dt>Features:</dt><dd><ul class="simple">
+<li><p>Configurable train/validation/test split ratios</p></li>
+<li><p>Support for ONNX export configuration (reduced dataset size)</p></li>
+<li><p>Automatic YAML configuration file generation</p></li>
+<li><p>Class information extraction from JSON metadata</p></li>
+<li><p>Relative path handling for cross-platform compatibility</p></li>
+</ul>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<p>Basic usage for dataset splitting:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ python create_data_splits.py --data_dir /path/to/dataset
+</pre></div>
+</div>
+<p>Custom split ratios:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ python create_data_splits.py --data_dir /path/to/dataset \
+    --test_split 0.15 --val_split 0.15
+</pre></div>
+</div>
+<p>Generate ONNX export configuration:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ python create_data_splits.py --data_dir /path/to/dataset --onnx_config
+</pre></div>
+</div>
+<dl class="simple">
+<dt>Output Files:</dt><dd><ul class="simple">
+<li><p>train.txt / train_onnx.txt: Training image paths</p></li>
+<li><p>val.txt / val_onnx.txt: Validation image paths</p></li>
+<li><p>test.txt / test_onnx.txt: Test image paths</p></li>
+<li><p>configs/dataset_config.yaml: YOLO configuration file</p></li>
+</ul>
+</dd>
+<dt>Requirements:</dt><dd><ul class="simple">
+<li><p>classes.json file in the dataset directory</p></li>
+<li><p>Standard library modules (argparse, os, random, json)</p></li>
+</ul>
+</dd>
+</dl>
+<p>Author: PFG Electronics Training Team
+Date: June 2025</p>
+</section>
+<dl class="py function">
+<dt class="sig sig-object py" id="create_data_splits.main">
+<span class="sig-prename descclassname"><span class="pre">create_data_splits.</span></span><span class="sig-name descname"><span class="pre">main</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../../_modules/create_data_splits.html#main"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#create_data_splits.main" title="Link to this definition"></a></dt>
+<dd><p>Main execution function for dataset splitting and configuration generation.</p>
+<p>This function orchestrates the complete dataset preparation workflow for YOLO training:</p>
+<p><strong>Workflow:</strong></p>
+<ol class="arabic simple">
+<li><p><strong>Argument Parsing</strong>: Parse command line arguments for dataset configuration</p></li>
+<li><p><strong>Image Discovery</strong>: Recursively find all images in the dataset/images directory</p></li>
+<li><p><strong>Random Shuffling</strong>: Randomize image order to ensure unbiased data splits</p></li>
+<li><p><strong>Dataset Splitting</strong>: Split images into train/validation/test sets based on ratios</p></li>
+<li><p><strong>ONNX Optimization</strong>: Optionally reduce dataset size for ONNX export/calibration</p></li>
+<li><p><strong>Split File Generation</strong>: Write image paths to separate .txt files for each split</p></li>
+<li><p><strong>YAML Configuration</strong>: Generate YOLO-compatible configuration files with class info</p></li>
+</ol>
+<p><strong>Supported Modes:</strong></p>
+<ul class="simple">
+<li><p><strong>Regular mode</strong>: Full dataset splits for standard training workflows</p></li>
+<li><p><strong>ONNX mode</strong>: Reduced dataset splits optimized for model export and calibration</p></li>
+</ul>
+<dl class="field-list simple">
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>FileNotFoundError</strong> – If the required classes.json file is not found in dataset directory</p></li>
+<li><p><strong>ValueError</strong> – If invalid split ratios are provided (ratios must sum to &lt;= 1.0)</p></li>
+<li><p><strong>OSError</strong> – If unable to write output files due to permission or disk space issues</p></li>
+</ul>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The function expects a specific dataset structure with ‘images/’ and ‘labels/’
+subdirectories, plus a ‘classes.json’ file containing class definitions.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The ONNX mode significantly reduces dataset size (max 300 samples per split)
+which may not be suitable for training but optimizes export performance.</p>
+</div>
+<p><strong>Example Usage:</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Basic dataset splitting with default ratios (80% train, 10% val, 20% test)</span>
+python<span class="w"> </span>create_data_splits.py<span class="w"> </span>--data_dir<span class="w"> </span>my_dataset
+
+<span class="c1"># Custom split ratios</span>
+python<span class="w"> </span>create_data_splits.py<span class="w"> </span>--data_dir<span class="w"> </span>my_dataset<span class="w"> </span>--test_split<span class="w"> </span><span class="m">0</span>.15<span class="w"> </span>--val_split<span class="w"> </span><span class="m">0</span>.15
+
+<span class="c1"># Generate ONNX-optimized configuration</span>
+python<span class="w"> </span>create_data_splits.py<span class="w"> </span>--data_dir<span class="w"> </span>my_dataset<span class="w"> </span>--onnx_config
+</pre></div>
+</div>
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../common_py_modules.html" class="btn btn-neutral float-left" title="Common Python Modules" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="train.html" class="btn btn-neutral float-right" title="Yolov8n Training" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, Estela Mora Barba.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

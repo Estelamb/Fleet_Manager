@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Prescription Map - ISOBUS Format &mdash; Fleet Manager 1.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../_static/documentation_options.js?v=f2a433a1"></script>
+        <script src="../../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+        <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="author" title="About these documents" href="../../about.html" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Prescription Map - Drone Format" href="pm_drone_component.html" />
+    <link rel="prev" title="Prescription Map Manager" href="pm_manager_component.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            Fleet Manager
+          </a>
+              <div class="version">
+                1.0
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../about.html">About the project</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../getting_started.html">Getting Started</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../modules.html">Code documentation</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../Drone_module/index.html">Drone</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">Fleet Manager</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../init_fleet_component.html">Init Fleet Manager</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../mission_components.html">Mission Management</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ros2_components.html">ROS2 Management</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../rest_components.html">REST Management</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../mqtt_components.html">MQTT Management</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../pm_components.html">Prescription Map Management</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="pm_manager_component.html">Prescription Map Manager</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Prescription Map - ISOBUS Format</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pm_drone_component.html">Prescription Map - Drone Format</a></li>
+<li class="toctree-l4"><a class="reference internal" href="subs_pm_component.html">Subscriber Prescription Map Function</a></li>
+<li class="toctree-l4"><a class="reference internal" href="grpc_pm_component.html">gRPC Prescription Map</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../metrics_components.html">System Metrics Component</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../clear_fleet_component.html">Clear Fleet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../create_logger_fleet_component.html">Create Logger</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../training.html">Training documentation</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Fleet Manager</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../modules.html">Code documentation</a></li>
+          <li class="breadcrumb-item"><a href="../index.html">Fleet Manager</a></li>
+          <li class="breadcrumb-item"><a href="../pm_components.html">Prescription Map Management</a></li>
+      <li class="breadcrumb-item active">Prescription Map - ISOBUS Format</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/Fleet_module/PM/pm_isobus_component.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="module-pm_isobus_fleet">
+<span id="prescription-map-isobus-format"></span><h1>Prescription Map - ISOBUS Format<a class="headerlink" href="#module-pm_isobus_fleet" title="Link to this heading"></a></h1>
+<section id="isobus-prescription-map-generator-module">
+<h2>ISOBUS Prescription Map Generator Module<a class="headerlink" href="#isobus-prescription-map-generator-module" title="Link to this heading"></a></h2>
+<p>This module provides prescription map generation functionality specifically for
+ISOBUS-compatible agricultural vehicles in the fleet management system. It creates
+ISOBUS-compliant prescription maps based on treatment specifications, field grids,
+and geographic coordinates.</p>
+<p>The module generates ISO 11783 compliant prescription maps that can be directly
+used by ISOBUS-enabled agricultural machinery for precise application of treatments
+such as fertilizers, pesticides, and other agricultural inputs.</p>
+<dl>
+<dt>Key Features:</dt><dd><ul class="simple">
+<li><p>ISOBUS ISO 11783 standard compliance</p></li>
+<li><p>Grid-based prescription map generation</p></li>
+<li><p>Multiple treatment support (fertilizer, pesticide, etc.)</p></li>
+<li><p>Dynamic task creation and management</p></li>
+<li><p>Coordinate-based field positioning</p></li>
+<li><p>JSON-based configuration and output</p></li>
+<li><p>Command-line interface for external integration</p></li>
+</ul>
+</dd>
+<dt>ISOBUS Compliance:</dt><dd><p>The generated prescription maps follow the ISO 11783 standard for agricultural
+data exchange, ensuring compatibility with ISOBUS-enabled farm equipment from
+various manufacturers.</p>
+</dd>
+<dt>File Structure:</dt><dd><ul class="simple">
+<li><p>Header template: Contains ISOBUS header information</p></li>
+<li><p>Task template: Defines treatment task structure</p></li>
+<li><p>Output directory: Stores generated prescription maps</p></li>
+</ul>
+</dd>
+<dt>Usage Example:</dt><dd><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Command line usage</span>
+<span class="n">python</span> <span class="n">pm_isobus_fleet</span><span class="o">.</span><span class="n">py</span> <span class="o">--</span><span class="n">vehicle_id</span> <span class="n">TRACTOR_001</span>
+                          <span class="o">--</span><span class="n">amount</span> <span class="s1">&#39;{&quot;nitrogen&quot;: 120, &quot;phosphorus&quot;: 80}&#39;</span>
+                          <span class="o">--</span><span class="n">grid</span> <span class="s1">&#39;[10, 15]&#39;</span>
+                          <span class="o">--</span><span class="n">long</span> <span class="o">-</span><span class="mf">3.7038</span>
+                          <span class="o">--</span><span class="n">lat</span> <span class="mf">40.4168</span>
+
+<span class="c1"># Programmatic usage</span>
+<span class="n">generate_pm</span><span class="p">(</span><span class="s2">&quot;TRACTOR_001&quot;</span><span class="p">,</span> <span class="p">{</span><span class="s2">&quot;nitrogen&quot;</span><span class="p">:</span> <span class="mi">120</span><span class="p">},</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">15</span><span class="p">],</span> <span class="o">-</span><span class="mf">3.7038</span><span class="p">,</span> <span class="mf">40.4168</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+<p>Author: Fleet Management System
+Date: 2025</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This module requires:
+- ISOBUS header and task template files
+- Write permissions to the output directory
+- Valid JSON template configurations</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Generated prescription maps must be validated with target ISOBUS equipment
+before field deployment to ensure compatibility and safety.</p>
+</div>
+</section>
+<dl class="py function">
+<dt class="sig sig-object py" id="pm_isobus_fleet.generate_pm">
+<span class="sig-prename descclassname"><span class="pre">pm_isobus_fleet.</span></span><span class="sig-name descname"><span class="pre">generate_pm</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">vehicle_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">amount</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">grid</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">long</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lat</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../../_modules/pm_isobus_fleet.html#generate_pm"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pm_isobus_fleet.generate_pm" title="Link to this definition"></a></dt>
+<dd><p>Generate ISOBUS-compliant prescription map for a specific vehicle.</p>
+<p>This function creates or updates an ISOBUS prescription map file for the
+specified vehicle, incorporating treatment amounts, field grid positions,
+and geographic coordinates. The generated map follows ISO 11783 standards
+for compatibility with ISOBUS agricultural equipment.</p>
+<p>Processing Workflow:
+1. Load or create prescription map data structure
+2. Ensure tasks exist for all specified treatments
+3. Update grid positioning based on coordinates
+4. Configure grid dimensions based on field layout
+5. Populate grid cells with treatment amounts
+6. Save ISOBUS-compliant JSON file</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>vehicle_id</strong> (<em>str</em>) – Unique identifier for the target vehicle/implement</p></li>
+<li><p><strong>amount</strong> (<em>dict</em>) – Treatment amounts mapped by treatment type, e.g.,
+{“nitrogen”: 120, “phosphorus”: 80}</p></li>
+<li><p><strong>grid</strong> (<em>list</em>) – Grid position as [row, column] coordinates for the
+prescription map cell location</p></li>
+<li><p><strong>long</strong> (<em>float</em>) – Longitude coordinate for field positioning</p></li>
+<li><p><strong>lat</strong> (<em>float</em>) – Latitude coordinate for field positioning</p></li>
+</ul>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Generate PM for nitrogen application</span>
+<span class="n">generate_pm</span><span class="p">(</span>
+    <span class="n">vehicle_id</span><span class="o">=</span><span class="s2">&quot;TRACTOR_001&quot;</span><span class="p">,</span>
+    <span class="n">amount</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;nitrogen&quot;</span><span class="p">:</span> <span class="mi">120</span><span class="p">,</span> <span class="s2">&quot;phosphorus&quot;</span><span class="p">:</span> <span class="mi">80</span><span class="p">},</span>
+    <span class="n">grid</span><span class="o">=</span><span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">15</span><span class="p">],</span>
+    <span class="n">long</span><span class="o">=-</span><span class="mf">3.7038</span><span class="p">,</span>
+    <span class="n">lat</span><span class="o">=</span><span class="mf">40.4168</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The function automatically creates the output directory if it doesn’t
+exist and handles file corruption by creating new prescription maps
+when necessary.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Template files (header and task) must be valid JSON and contain the
+required ISOBUS structure. Missing or corrupted templates will cause
+generation to fail.</p>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pm_isobus_fleet.create_new_pm">
+<span class="sig-prename descclassname"><span class="pre">pm_isobus_fleet.</span></span><span class="sig-name descname"><span class="pre">create_new_pm</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pm_isobus_fleet.html#create_new_pm"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pm_isobus_fleet.create_new_pm" title="Link to this definition"></a></dt>
+<dd><p>Create a new ISOBUS prescription map data structure.</p>
+<p>This function initializes a new prescription map by loading the ISOBUS
+header template and setting up the basic data structure required for
+ISO 11783 compliance. It ensures that the Task list is properly
+initialized for subsequent treatment additions.</p>
+<p>The function handles missing or corrupted header files gracefully by
+creating a minimal valid structure that can be extended with treatments
+and grid information.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><dl class="simple">
+<dt>Initialized prescription map data structure with header</dt><dd><p>information and empty task list, or None if critical
+errors prevent initialization</p>
+</dd>
+</dl>
+</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>dict or None</p>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create new prescription map structure</span>
+<span class="n">pm_data</span> <span class="o">=</span> <span class="n">create_new_pm</span><span class="p">()</span>
+<span class="k">if</span> <span class="n">pm_data</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Prescription map initialized successfully&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Failed to initialize prescription map&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The function automatically creates an empty Task list if the header
+template doesn’t contain one or if it’s not in the correct format.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Header template corruption or missing files will result in a minimal
+data structure that may lack important ISOBUS metadata.</p>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pm_isobus_fleet.ensure_task_exists">
+<span class="sig-prename descclassname"><span class="pre">pm_isobus_fleet.</span></span><span class="sig-name descname"><span class="pre">ensure_task_exists</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">treatment</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">task_template</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pm_isobus_fleet.html#ensure_task_exists"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pm_isobus_fleet.ensure_task_exists" title="Link to this definition"></a></dt>
+<dd><p>Ensure that a task exists for the specified treatment in the prescription map.</p>
+<p>This function checks if a task for the given treatment already exists in the
+prescription map data. If not found, it creates a new task based on the
+provided template, configuring it with treatment-specific identifiers and
+references according to ISOBUS standards.</p>
+<p>Task Creation Process:
+1. Check for existing task with matching treatment reference
+2. If not found, create new task from template
+3. Configure task ID with sequential numbering
+4. Set treatment-specific cultural practice reference
+5. Configure product allocation reference
+6. Add task to prescription map data structure</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>treatment</strong> (<em>str</em>) – Treatment identifier (e.g., “nitrogen”, “phosphorus”)</p></li>
+<li><p><strong>data</strong> (<em>dict</em>) – Current prescription map data structure</p></li>
+<li><p><strong>task_template</strong> (<em>dict</em>) – ISOBUS task template with required structure</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Updated prescription map data with task ensured for treatment</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ensure nitrogen treatment task exists</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">ensure_task_exists</span><span class="p">(</span><span class="s2">&quot;nitrogen&quot;</span><span class="p">,</span> <span class="n">pm_data</span><span class="p">,</span> <span class="n">task_template</span><span class="p">)</span>
+
+<span class="c1"># Multiple treatments</span>
+<span class="k">for</span> <span class="n">treatment</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;nitrogen&quot;</span><span class="p">,</span> <span class="s2">&quot;phosphorus&quot;</span><span class="p">,</span> <span class="s2">&quot;potassium&quot;</span><span class="p">]:</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">ensure_task_exists</span><span class="p">(</span><span class="n">treatment</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">task_template</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Tasks are assigned sequential IDs (TSK1, TSK2, etc.) based on the
+current number of tasks in the prescription map.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Template structure must contain valid ISOBUS task format. Missing
+required keys will result in error messages and partial task creation.</p>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pm_isobus_fleet.update_grid_min_position">
+<span class="sig-prename descclassname"><span class="pre">pm_isobus_fleet.</span></span><span class="sig-name descname"><span class="pre">update_grid_min_position</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">long</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lat</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pm_isobus_fleet.html#update_grid_min_position"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pm_isobus_fleet.update_grid_min_position" title="Link to this definition"></a></dt>
+<dd><p>Update grid minimum position coordinates for all tasks in the prescription map.</p>
+<p>This function updates the minimum east (longitude) and north (latitude)
+positions for the prescription map grid. It ensures that the grid boundaries
+are correctly set to encompass all field areas where treatments will be applied.</p>
+<p>The function processes all tasks in the prescription map and updates their
+grid minimum positions if the provided coordinates represent new minimum
+values (further west for longitude, further south for latitude).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data</strong> (<em>dict</em>) – Prescription map data structure containing tasks</p></li>
+<li><p><strong>long</strong> (<em>float</em>) – Longitude coordinate (east position)</p></li>
+<li><p><strong>lat</strong> (<em>float</em>) – Latitude coordinate (north position)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Updated prescription map data with corrected grid minimum positions</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Update grid boundaries for new field area</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">update_grid_min_position</span><span class="p">(</span><span class="n">pm_data</span><span class="p">,</span> <span class="o">-</span><span class="mf">3.7038</span><span class="p">,</span> <span class="mf">40.4168</span><span class="p">)</span>
+</pre></div>
+</div>
+<dl class="simple">
+<dt>Note:</dt><dd><p>The function only updates minimum positions if the new coordinates
+represent actual minimums (westernmost longitude, southernmost latitude).</p>
+</dd>
+<dt>Warning:</dt><dd><p>Coordinate system must be consistent throughout the prescription map.
+Mixed coordinate systems will result in incorrect grid positioning.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pm_isobus_fleet.update_grid_max_row_column">
+<span class="sig-prename descclassname"><span class="pre">pm_isobus_fleet.</span></span><span class="sig-name descname"><span class="pre">update_grid_max_row_column</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">grid</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pm_isobus_fleet.html#update_grid_max_row_column"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pm_isobus_fleet.update_grid_max_row_column" title="Link to this definition"></a></dt>
+<dd><p>Update maximum row and column values for the prescription map grid.</p>
+<p>This function updates the grid dimensions by setting maximum row and column
+values based on the provided grid coordinates. It ensures that the grid
+boundaries are sufficient to contain all specified positions.</p>
+<p>The function processes all tasks and updates their grid maximum dimensions
+if the provided coordinates exceed the current maximum values. Grid
+indexing is adjusted to be 1-based as required by ISOBUS standards.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data</strong> (<em>dict</em>) – Prescription map data structure containing tasks</p></li>
+<li><p><strong>grid</strong> (<em>list</em>) – Grid coordinates as [row, column] (0-based indexing)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Updated prescription map data with corrected grid maximum dimensions</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Update grid dimensions for position [10, 15]</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">update_grid_max_row_column</span><span class="p">(</span><span class="n">pm_data</span><span class="p">,</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">15</span><span class="p">])</span>
+<span class="c1"># Results in GridMaximumRow = 11, GridMaximumColumn = 16</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The function adds 1 to grid coordinates to convert from 0-based to
+1-based indexing as required by ISOBUS specification.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Grid coordinates must be non-negative integers. Invalid coordinates
+may result in incorrect grid dimensions.</p>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pm_isobus_fleet.update_grid_cells">
+<span class="sig-prename descclassname"><span class="pre">pm_isobus_fleet.</span></span><span class="sig-name descname"><span class="pre">update_grid_cells</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">amount</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">grid</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pm_isobus_fleet.html#update_grid_cells"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pm_isobus_fleet.update_grid_cells" title="Link to this definition"></a></dt>
+<dd><p>Update grid cell values with treatment amounts for the prescription map.</p>
+<p>This function populates the prescription map grid cells with the specified
+treatment amounts at the given grid coordinates. It handles grid cell
+initialization, extension, and value assignment for each treatment type.</p>
+<p>Cell Management Process:
+1. Calculate total grid size based on maximum row/column dimensions
+2. Initialize or extend grid cell arrays as needed
+3. Calculate linear index from row/column coordinates
+4. Update cell values with treatment amounts
+5. Handle boundary conditions and error cases</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data</strong> (<em>dict</em>) – Prescription map data structure containing tasks</p></li>
+<li><p><strong>amount</strong> (<em>dict</em>) – Treatment amounts by treatment type</p></li>
+<li><p><strong>grid</strong> (<em>list</em>) – Grid coordinates as [row, column] for cell positioning</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Updated prescription map data with populated grid cell values</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Update grid cell at position [10, 15] with treatment amounts</span>
+<span class="n">amounts</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;nitrogen&quot;</span><span class="p">:</span> <span class="mi">120</span><span class="p">,</span> <span class="s2">&quot;phosphorus&quot;</span><span class="p">:</span> <span class="mi">80</span><span class="p">}</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">update_grid_cells</span><span class="p">(</span><span class="n">pm_data</span><span class="p">,</span> <span class="n">amounts</span><span class="p">,</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">15</span><span class="p">])</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Grid cells use row-major ordering for linear indexing. The function
+automatically extends grid cell arrays if they’re too small for the
+current grid dimensions.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Grid coordinates must be within the maximum row/column boundaries.
+Out-of-bounds coordinates will result in error messages and skipped
+cell updates.</p>
+</div>
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="pm_manager_component.html" class="btn btn-neutral float-left" title="Prescription Map Manager" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="pm_drone_component.html" class="btn btn-neutral float-right" title="Prescription Map - Drone Format" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, Estela Mora Barba.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

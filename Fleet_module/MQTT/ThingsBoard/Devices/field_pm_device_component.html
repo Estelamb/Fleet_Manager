@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Field PM Device - ThingsBoard &mdash; Fleet Manager 1.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../../../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../../../../_static/copybutton.css?v=76b2166b" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../../../_static/documentation_options.js?v=f2a433a1"></script>
+        <script src="../../../../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../../../../_static/clipboard.min.js?v=a7894cd8"></script>
+        <script src="../../../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../../../_static/js/theme.js"></script>
+    <link rel="author" title="About these documents" href="../../../../about.html" />
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+    <link rel="next" title="System Metrics Device - ThingsBoard" href="metric_device_component.html" />
+    <link rel="prev" title="Treatment Device - ThingsBoard" href="treatment_device_component.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../../../index.html" class="icon icon-home">
+            Fleet Manager
+          </a>
+              <div class="version">
+                1.0
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../../about.html">About the project</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../getting_started.html">Getting Started</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../../../modules.html">Code documentation</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../../../Drone_module/index.html">Drone</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../../index.html">Fleet Manager</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../../../init_fleet_component.html">Init Fleet Manager</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../mission_components.html">Mission Management</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../ros2_components.html">ROS2 Management</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../rest_components.html">REST Management</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../../../mqtt_components.html">MQTT Management</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="../../grpc_mqtt_component.html">gRPC MQTT</a></li>
+<li class="toctree-l4 current"><a class="reference internal" href="../../thingsboard.html">ThingsBoard</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../pm_components.html">Prescription Map Management</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../metrics_components.html">System Metrics Component</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../clear_fleet_component.html">Clear Fleet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../create_logger_fleet_component.html">Create Logger</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../training.html">Training documentation</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../index.html">Fleet Manager</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../../../modules.html">Code documentation</a></li>
+          <li class="breadcrumb-item"><a href="../../../index.html">Fleet Manager</a></li>
+          <li class="breadcrumb-item"><a href="../../../mqtt_components.html">MQTT Management</a></li>
+          <li class="breadcrumb-item"><a href="../../thingsboard.html">ThingsBoard</a></li>
+          <li class="breadcrumb-item"><a href="../devices.html">ThingsBoard Devices</a></li>
+      <li class="breadcrumb-item active">Field PM Device - ThingsBoard</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../../_sources/Fleet_module/MQTT/ThingsBoard/Devices/field_pm_device_component.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="module-field_pm_device">
+<span id="field-pm-device-thingsboard"></span><h1>Field PM Device - ThingsBoard<a class="headerlink" href="#module-field_pm_device" title="Link to this heading"></a></h1>
+<p>Field Prescription Map Device Management Module</p>
+<p>This module implements the FieldPMDevice class, which manages prescription map (PM) devices
+for agricultural field operations. It handles the creation, management, and cleanup of
+field prescription map devices that track treatment applications, coordinate-based operations,
+and grid-specific agricultural activities during precision farming missions.</p>
+<p>The prescription map system provides precise agricultural treatment tracking with grid-based
+positioning, allowing for accurate monitoring of fertilizer application, pesticide treatment,
+and other precision farming operations across field zones.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Key Features:
+- Grid-based prescription map device creation and management
+- Coordinate-precise treatment tracking and monitoring
+- Integration with treatment device systems for workflow coordination
+- Real-time telemetry with timestamp and state tracking
+- Mission and vehicle association for operational context
+- Comprehensive relationship management with treatment devices
+- Multi-cleanup strategies (by treatment or mission)</p>
+</div>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 1.0.0: </span>Initial implementation of prescription map device management</p>
+</div>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<ul class="simple">
+<li><p><code class="xref py py-mod docutils literal notranslate"><span class="pre">MQTT.ThingsBoard.devices.base_device</span></code> for base device functionality</p></li>
+<li><p><code class="xref py py-mod docutils literal notranslate"><span class="pre">MQTT.ThingsBoard.devices.treatment_device</span></code> for treatment coordination</p></li>
+</ul>
+</div>
+<p class="rubric">Example</p>
+<p>Basic usage of field prescription map device management:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">MQTT.ThingsBoard.devices.field_pm_device</span><span class="w"> </span><span class="kn">import</span> <span class="n">FieldPMDevice</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">MQTT.ThingsBoard.devices.treatment_device</span><span class="w"> </span><span class="kn">import</span> <span class="n">TreatmentDevice</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">MQTT.ThingsBoard.rest_api</span><span class="w"> </span><span class="kn">import</span> <span class="n">ThingsBoardAPI</span>
+
+<span class="c1"># Initialize ThingsBoard API and treatment device</span>
+<span class="n">tb_api</span> <span class="o">=</span> <span class="n">ThingsBoardAPI</span><span class="p">(</span><span class="s2">&quot;https://thingsboard.company.com&quot;</span><span class="p">)</span>
+<span class="n">tb_api</span><span class="o">.</span><span class="n">login</span><span class="p">(</span><span class="s2">&quot;username&quot;</span><span class="p">,</span> <span class="s2">&quot;password&quot;</span><span class="p">)</span>
+<span class="n">treatment_device</span> <span class="o">=</span> <span class="n">TreatmentDevice</span><span class="p">(</span><span class="n">tb_api</span><span class="p">,</span> <span class="n">logger</span><span class="p">,</span> <span class="s2">&quot;thingsboard.com&quot;</span><span class="p">,</span> <span class="mi">8883</span><span class="p">,</span> <span class="s2">&quot;v1/devices/me/telemetry&quot;</span><span class="p">)</span>
+
+<span class="c1"># Create field PM device handler with treatment integration</span>
+<span class="n">field_pm_device</span> <span class="o">=</span> <span class="n">FieldPMDevice</span><span class="p">(</span>
+    <span class="n">tb_api</span><span class="o">=</span><span class="n">tb_api</span><span class="p">,</span>
+    <span class="n">mqtt_logger</span><span class="o">=</span><span class="n">logger</span><span class="p">,</span>
+    <span class="n">tb_host</span><span class="o">=</span><span class="s2">&quot;thingsboard.company.com&quot;</span><span class="p">,</span>
+    <span class="n">port</span><span class="o">=</span><span class="mi">8883</span><span class="p">,</span>
+    <span class="n">telemetry_topic</span><span class="o">=</span><span class="s2">&quot;v1/devices/me/telemetry&quot;</span><span class="p">,</span>
+    <span class="n">treatment_device</span><span class="o">=</span><span class="n">treatment_device</span>
+<span class="p">)</span>
+
+<span class="c1"># Process prescription map message</span>
+<span class="n">pm_msg</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;telemetry&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;coordinates&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mf">40.7128</span><span class="p">,</span> <span class="o">-</span><span class="mf">74.0060</span><span class="p">],</span>
+        <span class="s2">&quot;amount&quot;</span><span class="p">:</span> <span class="mf">2.5</span><span class="p">,</span>
+        <span class="s2">&quot;grid&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">15</span><span class="p">],</span>
+        <span class="s2">&quot;point&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mf">10.5</span><span class="p">,</span> <span class="mf">15.2</span><span class="p">],</span>
+        <span class="s2">&quot;vehicle_id&quot;</span><span class="p">:</span> <span class="s2">&quot;V001&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;state&quot;</span><span class="p">:</span> <span class="s2">&quot;applied&quot;</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;mission_id&quot;</span><span class="p">:</span> <span class="s2">&quot;M001&quot;</span>
+<span class="p">}</span>
+<span class="n">field_pm_device</span><span class="o">.</span><span class="n">handle_message</span><span class="p">(</span><span class="n">pm_msg</span><span class="p">,</span> <span class="s2">&quot;fertilizer_N&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<dl class="py data">
+<dt class="sig sig-object py" id="field_pm_device.RELATION_TYPE">
+<span class="sig-prename descclassname"><span class="pre">field_pm_device.</span></span><span class="sig-name descname"><span class="pre">RELATION_TYPE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'CONTAINS'</span></em><a class="headerlink" href="#field_pm_device.RELATION_TYPE" title="Link to this definition"></a></dt>
+<dd><p>Standard relationship type for prescription map to treatment device connections</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="field_pm_device.FieldPMDevice">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">field_pm_device.</span></span><span class="sig-name descname"><span class="pre">FieldPMDevice</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tb_api</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mqtt_logger</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tb_host</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">telemetry_topic</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">treatment_device</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/field_pm_device.html#FieldPMDevice"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#field_pm_device.FieldPMDevice" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Specialized device handler for managing agricultural prescription map devices.</p>
+<p>This class manages the creation and lifecycle of prescription map devices that track
+precise agricultural treatments applied to specific field coordinates. It provides
+grid-based device organization, treatment integration, and comprehensive telemetry
+collection for precision farming operations.</p>
+<p>The prescription map system coordinates with treatment devices to provide complete
+tracking of agricultural applications across field grids, enabling precise monitoring
+of fertilizer, pesticide, and other treatment applications.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>tb_api</strong> (<a class="reference internal" href="../rest_api_component.html#rest_api.ThingsBoardAPI" title="rest_api.ThingsBoardAPI"><em>ThingsBoardAPI</em></a>) – Authenticated ThingsBoard REST API client</p></li>
+<li><p><strong>mqtt_logger</strong> (<em>logging.Logger</em>) – Logger instance for MQTT operations and debugging</p></li>
+<li><p><strong>tb_host</strong> (<em>str</em>) – ThingsBoard server hostname for MQTT connections</p></li>
+<li><p><strong>port</strong> (<em>int</em>) – MQTT port for secure connections (typically 8883 for TLS)</p></li>
+<li><p><strong>telemetry_topic</strong> (<em>str</em>) – MQTT topic for publishing device telemetry data</p></li>
+<li><p><strong>treatment_device</strong> (<a class="reference internal" href="treatment_device_component.html#treatment_device.TreatmentDevice" title="treatment_device.TreatmentDevice"><em>TreatmentDevice</em></a><em> or </em><em>None</em>) – Reference to treatment device for coordination (optional)</p></li>
+</ul>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Grid-Based Naming Convention:
+Prescription map devices are named using the format “{treatment} [{lat}, {long}]”
+where lat and long are 1-indexed grid coordinates for human-readable identification.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Treatment device integration is optional but recommended for complete workflow
+tracking. Without it, treatment relationships will not be established.</p>
+</div>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 1.0.0: </span>Initial implementation of prescription map device management</p>
+</div>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="field_pm_device.FieldPMDevice.base">
+<span class="sig-name descname"><span class="pre">base</span></span><a class="headerlink" href="#field_pm_device.FieldPMDevice.base" title="Link to this definition"></a></dt>
+<dd><p>Base device functionality for ThingsBoard operations</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="base_device_component.html#base_device.BaseDevice" title="base_device.BaseDevice">BaseDevice</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="field_pm_device.FieldPMDevice.fields_pm">
+<span class="sig-name descname"><span class="pre">fields_pm</span></span><a class="headerlink" href="#field_pm_device.FieldPMDevice.fields_pm" title="Link to this definition"></a></dt>
+<dd><p>Dictionary mapping field IDs to prescription map device data</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="field_pm_device.FieldPMDevice.mqtt_logger">
+<span class="sig-name descname"><span class="pre">mqtt_logger</span></span><a class="headerlink" href="#field_pm_device.FieldPMDevice.mqtt_logger" title="Link to this definition"></a></dt>
+<dd><p>Logger for operation tracking and debugging</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>logging.Logger</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="field_pm_device.FieldPMDevice.treatment_device">
+<span class="sig-name descname"><span class="pre">treatment_device</span></span><a class="headerlink" href="#field_pm_device.FieldPMDevice.treatment_device" title="Link to this definition"></a></dt>
+<dd><p>Reference to treatment device for coordination</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="treatment_device_component.html#treatment_device.TreatmentDevice" title="treatment_device.TreatmentDevice">TreatmentDevice</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<p class="rubric">Example</p>
+<p>Initialize and use prescription map device handler:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">field_pm_handler</span> <span class="o">=</span> <span class="n">FieldPMDevice</span><span class="p">(</span>
+    <span class="n">tb_api</span><span class="p">,</span> <span class="n">logger</span><span class="p">,</span> <span class="s2">&quot;thingsboard.com&quot;</span><span class="p">,</span> <span class="mi">8883</span><span class="p">,</span> <span class="s2">&quot;v1/devices/me/telemetry&quot;</span><span class="p">,</span>
+    <span class="n">treatment_device</span><span class="o">=</span><span class="n">treatment_handler</span>
+<span class="p">)</span>
+
+<span class="c1"># Process prescription map application</span>
+<span class="n">pm_data</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;telemetry&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;coordinates&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mf">40.7128</span><span class="p">,</span> <span class="o">-</span><span class="mf">74.0060</span><span class="p">],</span>
+        <span class="s2">&quot;amount&quot;</span><span class="p">:</span> <span class="mf">3.2</span><span class="p">,</span>
+        <span class="s2">&quot;grid&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">8</span><span class="p">],</span>
+        <span class="s2">&quot;vehicle_id&quot;</span><span class="p">:</span> <span class="s2">&quot;V001&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;state&quot;</span><span class="p">:</span> <span class="s2">&quot;applied&quot;</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;mission_id&quot;</span><span class="p">:</span> <span class="s2">&quot;M001&quot;</span>
+<span class="p">}</span>
+<span class="n">field_pm_handler</span><span class="o">.</span><span class="n">handle_message</span><span class="p">(</span><span class="n">pm_data</span><span class="p">,</span> <span class="s2">&quot;fertilizer_NPK&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<dl class="py method">
+<dt class="sig sig-object py" id="field_pm_device.FieldPMDevice.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tb_api</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mqtt_logger</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tb_host</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">telemetry_topic</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">treatment_device</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/field_pm_device.html#FieldPMDevice.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#field_pm_device.FieldPMDevice.__init__" title="Link to this definition"></a></dt>
+<dd><p>Initialize the field prescription map device handler with optional treatment integration.</p>
+<p>Sets up the prescription map device management system with base device functionality
+and initializes storage for grid-based prescription map devices with optional
+treatment device coordination.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>tb_api</strong> (<a class="reference internal" href="../rest_api_component.html#rest_api.ThingsBoardAPI" title="rest_api.ThingsBoardAPI"><em>ThingsBoardAPI</em></a>) – Authenticated ThingsBoard API client</p></li>
+<li><p><strong>mqtt_logger</strong> (<em>logging.Logger</em>) – Logger for MQTT operations</p></li>
+<li><p><strong>tb_host</strong> (<em>str</em>) – ThingsBoard server hostname</p></li>
+<li><p><strong>port</strong> (<em>int</em>) – MQTT connection port</p></li>
+<li><p><strong>telemetry_topic</strong> (<em>str</em>) – MQTT topic for telemetry</p></li>
+<li><p><strong>treatment_device</strong> (<a class="reference internal" href="treatment_device_component.html#treatment_device.TreatmentDevice" title="treatment_device.TreatmentDevice"><em>TreatmentDevice</em></a><em> or </em><em>None</em>) – Treatment device reference for coordination</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="field_pm_device.FieldPMDevice.handle_message">
+<span class="sig-name descname"><span class="pre">handle_message</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">message</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">treatment</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/field_pm_device.html#FieldPMDevice.handle_message"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#field_pm_device.FieldPMDevice.handle_message" title="Link to this definition"></a></dt>
+<dd><p>Process prescription map messages and create corresponding ThingsBoard devices.</p>
+<p>Processes incoming prescription map messages containing treatment application data,
+creates grid-specific devices for tracking, and establishes relationships with
+treatment devices. Each grid location gets a unique device for precise monitoring.</p>
+<p>The method handles the complete prescription map workflow including coordinate
+validation, grid-based device creation, treatment integration, and comprehensive
+telemetry transmission with timestamps.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>message</strong> (<em>dict</em>) – Prescription map message containing telemetry and coordinates</p></li>
+<li><p><strong>treatment</strong> (<em>str</em>) – Treatment type being applied (e.g., “fertilizer_N”, “pesticide_A”)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Message Processing Steps:
+1. Extract and validate telemetry data (coordinates, grid, amount, etc.)
+2. Generate unique field ID based on treatment and grid coordinates
+3. Create prescription map device if not exists (with 1-indexed naming)
+4. Establish MQTT client connection for telemetry transmission
+5. Set up device relationships with treatment devices
+6. Configure device attributes (treatment, mission, vehicle associations)
+7. Transmit comprehensive telemetry with timestamp</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The message must contain a ‘telemetry’ object with required fields:
+coordinates, grid, amount, point, vehicle_id, and state. Missing
+fields may cause processing errors.</p>
+</div>
+<dl>
+<dt>Message Structure:</dt><dd><p>Expected message format:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="s2">&quot;telemetry&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;coordinates&quot;</span><span class="p">:</span> <span class="p">[</span><span class="n">latitude</span><span class="p">,</span> <span class="n">longitude</span><span class="p">],</span>    <span class="c1"># GPS coordinates</span>
+        <span class="s2">&quot;amount&quot;</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>                         <span class="c1"># Treatment amount applied</span>
+        <span class="s2">&quot;grid&quot;</span><span class="p">:</span> <span class="p">[</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">],</span>                         <span class="c1"># 0-indexed grid position</span>
+        <span class="s2">&quot;point&quot;</span><span class="p">:</span> <span class="p">[</span><span class="n">x_precise</span><span class="p">,</span> <span class="n">y_precise</span><span class="p">],</span>        <span class="c1"># Precise point within grid</span>
+        <span class="s2">&quot;vehicle_id&quot;</span><span class="p">:</span> <span class="s2">&quot;vehicle_identifier&quot;</span><span class="p">,</span>     <span class="c1"># Applying vehicle ID</span>
+        <span class="s2">&quot;state&quot;</span><span class="p">:</span> <span class="s2">&quot;applied|planned|failed&quot;</span>       <span class="c1"># Application state</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;mission_id&quot;</span><span class="p">:</span> <span class="s2">&quot;mission_identifier&quot;</span>          <span class="c1"># Associated mission</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<p>Process fertilizer application prescription map:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pm_msg</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;telemetry&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;coordinates&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mf">40.7128</span><span class="p">,</span> <span class="o">-</span><span class="mf">74.0060</span><span class="p">],</span>     <span class="c1"># GPS location</span>
+        <span class="s2">&quot;amount&quot;</span><span class="p">:</span> <span class="mf">2.5</span><span class="p">,</span>                          <span class="c1"># 2.5 kg/hectare</span>
+        <span class="s2">&quot;grid&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">15</span><span class="p">],</span>                       <span class="c1"># Grid position (0-indexed)</span>
+        <span class="s2">&quot;point&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mf">10.3</span><span class="p">,</span> <span class="mf">15.7</span><span class="p">],</span>                 <span class="c1"># Precise application point</span>
+        <span class="s2">&quot;vehicle_id&quot;</span><span class="p">:</span> <span class="s2">&quot;TRACTOR_001&quot;</span><span class="p">,</span>            <span class="c1"># Applying vehicle</span>
+        <span class="s2">&quot;state&quot;</span><span class="p">:</span> <span class="s2">&quot;applied&quot;</span>                      <span class="c1"># Successfully applied</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;mission_id&quot;</span><span class="p">:</span> <span class="s2">&quot;FERTILIZE_2024_001&quot;</span>
+<span class="p">}</span>
+
+<span class="n">field_pm_device</span><span class="o">.</span><span class="n">handle_message</span><span class="p">(</span><span class="n">pm_msg</span><span class="p">,</span> <span class="s2">&quot;fertilizer_NPK&quot;</span><span class="p">)</span>
+<span class="c1"># Creates device: &quot;fertilizer_NPK [11, 16]&quot; (1-indexed display)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="field_pm_device.FieldPMDevice.setup_device_relations">
+<span class="sig-name descname"><span class="pre">setup_device_relations</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">field_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">treatment</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vehicle_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mission_id</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/field_pm_device.html#FieldPMDevice.setup_device_relations"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#field_pm_device.FieldPMDevice.setup_device_relations" title="Link to this definition"></a></dt>
+<dd><p>Configure device relationships and attributes for prescription map devices.</p>
+<p>Establishes relationships between prescription map devices and treatment devices,
+and sets comprehensive device attributes for proper identification and tracking
+within the agricultural workflow system.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>field_id</strong> (<em>str</em>) – Unique identifier for the field prescription map device</p></li>
+<li><p><strong>treatment</strong> (<em>str</em>) – Treatment type being applied</p></li>
+<li><p><strong>vehicle_id</strong> (<em>str</em>) – Identifier of the vehicle applying the treatment</p></li>
+<li><p><strong>mission_id</strong> (<em>str</em>) – Identifier of the associated mission</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Relationship Setup:
+1. Creates “CONTAINS” relationship from treatment device to field PM device
+2. Sets server attributes for treatment, mission, vehicle, and field associations
+3. Provides comprehensive device metadata for ThingsBoard organization</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Treatment device relationships are only created if treatment_device reference
+exists and the specific treatment is available in the treatment system.</p>
+</div>
+<p class="rubric">Example</p>
+<p>Device relationships and attributes are set up automatically during
+prescription map device creation. This method is called internally.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="field_pm_device.FieldPMDevice.cleanup">
+<span class="sig-name descname"><span class="pre">cleanup</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">treatment</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/field_pm_device.html#FieldPMDevice.cleanup"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#field_pm_device.FieldPMDevice.cleanup" title="Link to this definition"></a></dt>
+<dd><p>Clean up all prescription map devices associated with a specific treatment.</p>
+<p>Performs comprehensive cleanup of all prescription map devices created for
+the specified treatment type, including relationship removal, device deletion,
+and local storage cleanup. This method is useful for treatment-specific cleanup.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>treatment</strong> (<em>str</em>) – Treatment type to clean up (e.g., “fertilizer_N”)</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Treatment Cleanup Steps:
+1. Identify all field PM devices associated with the treatment
+2. Remove treatment-field relationships from ThingsBoard
+3. Disconnect MQTT clients and delete devices
+4. Remove devices from local storage</p>
+</div>
+<p class="rubric">Example</p>
+<p>Clean up all fertilizer prescription map devices:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Clean up all fertilizer application devices</span>
+<span class="n">field_pm_device</span><span class="o">.</span><span class="n">cleanup</span><span class="p">(</span><span class="s2">&quot;fertilizer_NPK&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;All fertilizer NPK prescription map devices cleaned up&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="field_pm_device.FieldPMDevice.cleanup_by_mission">
+<span class="sig-name descname"><span class="pre">cleanup_by_mission</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mission_id</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/field_pm_device.html#FieldPMDevice.cleanup_by_mission"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#field_pm_device.FieldPMDevice.cleanup_by_mission" title="Link to this definition"></a></dt>
+<dd><p>Clean up all prescription map devices associated with a specific mission.</p>
+<p>Performs comprehensive cleanup of all prescription map devices created during
+the specified mission, regardless of treatment type. This method provides
+mission-based cleanup for complete mission lifecycle management.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>mission_id</strong> (<em>str</em>) – Mission identifier to clean up</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Mission Cleanup Steps:
+1. Identify all field PM devices associated with the mission
+2. Remove treatment-field relationships for each device
+3. Disconnect MQTT clients and delete devices with retry mechanism
+4. Remove all mission devices from local storage</p>
+</div>
+<p class="rubric">Example</p>
+<p>Clean up all prescription map devices for a completed mission:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Mission completed successfully</span>
+<span class="n">mission_id</span> <span class="o">=</span> <span class="s2">&quot;FERTILIZE_2024_001&quot;</span>
+
+<span class="c1"># Clean up all associated prescription map devices</span>
+<span class="n">field_pm_device</span><span class="o">.</span><span class="n">cleanup_by_mission</span><span class="p">(</span><span class="n">mission_id</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;All prescription map devices for mission </span><span class="si">{</span><span class="n">mission_id</span><span class="si">}</span><span class="s2"> cleaned up&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="treatment_device_component.html" class="btn btn-neutral float-left" title="Treatment Device - ThingsBoard" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="metric_device_component.html" class="btn btn-neutral float-right" title="System Metrics Device - ThingsBoard" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, Estela Mora Barba.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,1247 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>pm_manager_fleet &mdash; Fleet Manager 1.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=f2a433a1"></script>
+        <script src="../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+        <script src="../_static/copybutton.js?v=f281be69"></script>
+        <script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script>
+        <script type="module">import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11.12.1/dist/mermaid.esm.min.mjs";
+
+
+
+
+
+const initStyles = () => {
+    const defaultStyle = document.createElement('style');
+    defaultStyle.textContent = `pre.mermaid {
+    /* Same as .mermaid-container > pre */
+    display: block;
+    width: 100%;
+}
+
+pre.mermaid > svg {
+    /* Same as .mermaid-container > pre > svg */
+    height: 500px;
+    width: 100%;
+    max-width: 100% !important;
+}`;
+    document.head.appendChild(defaultStyle);
+
+    const fullscreenStyle = document.createElement('style');
+    fullscreenStyle.textContent = `.mermaid-container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.mermaid-container > pre {
+    display: block;
+    width: 100%;
+}
+
+.mermaid-container > pre > svg {
+    height: 500px;
+    width: 100%;
+    max-width: 100% !important;
+}
+
+.mermaid-fullscreen-btn {
+    width: 28px;
+    height: 28px;
+    background: rgba(255, 255, 255, 0.95);
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    border-radius: 4px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    font-size: 14px;
+    line-height: 1;
+    padding: 0;
+    color: #333;
+}
+
+.mermaid-fullscreen-btn:hover {
+    opacity: 100% !important;
+    background: rgba(255, 255, 255, 1);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+    transform: scale(1.1);
+}
+
+.mermaid-fullscreen-btn.dark-theme {
+    background: rgba(50, 50, 50, 0.95);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: #e0e0e0;
+}
+
+.mermaid-fullscreen-btn.dark-theme:hover {
+    background: rgba(60, 60, 60, 1);
+    box-shadow: 0 3px 10px rgba(255, 255, 255, 0.2);
+}
+
+.mermaid-fullscreen-modal {
+    display: none;
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 95vw;
+    height: 100vh;
+    background: rgba(255, 255, 255, 0.98);
+    z-index: 9999;
+    padding: 20px;
+    overflow: auto;
+}
+
+.mermaid-fullscreen-modal.dark-theme {
+    background: rgba(0, 0, 0, 0.98);
+}
+
+.mermaid-fullscreen-modal.active {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mermaid-container-fullscreen {
+    position: relative;
+    width: 95vw;
+    height: 90vh;
+    max-width: 95vw;
+    max-height: 90vh;
+    background: white;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    overflow: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mermaid-container-fullscreen.dark-theme {
+    background: #1a1a1a;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.8);
+}
+
+.mermaid-container-fullscreen pre.mermaid {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mermaid-container-fullscreen .mermaid svg {
+    height: 100% !important;
+    width: 100% !important;
+    cursor: grab;
+}
+
+.mermaid-fullscreen-close {
+    position: fixed !important;
+    top: 20px !important;
+    right: 20px !important;
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.95);
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    transition: all 0.2s;
+    font-size: 24px;
+    line-height: 1;
+    color: #333;
+}
+
+.mermaid-fullscreen-close:hover {
+    background: white;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+    transform: scale(1.1);
+}
+
+.mermaid-fullscreen-close.dark-theme {
+    background: rgba(50, 50, 50, 0.95);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #e0e0e0;
+}
+
+.mermaid-fullscreen-close.dark-theme:hover {
+    background: rgba(60, 60, 60, 1);
+    box-shadow: 0 6px 16px rgba(255, 255, 255, 0.2);
+}
+
+.mermaid-fullscreen-modal .mermaid-fullscreen-btn {
+    display: none !important;
+}`;
+    document.head.appendChild(fullscreenStyle);
+}
+
+// Detect if page has dark background
+const isDarkTheme = () => {
+    // We use a set of heuristics:
+    // 1. Check for common dark mode classes or attributes
+    // 2. Check computed background color brightness
+    if (document.documentElement.classList.contains('dark') ||
+        document.documentElement.getAttribute('data-theme') === 'dark' ||
+        document.body.classList.contains('dark') ||
+        document.body.getAttribute('data-theme') === 'dark') {
+        // console.log("Dark theme detected via class/attribute");
+        return true;
+    }
+    if (document.documentElement.classList.contains('light') ||
+        document.documentElement.getAttribute('data-theme') === 'light' ||
+        document.body.classList.contains('light') ||
+        document.body.getAttribute('data-theme') === 'light') {
+        // console.log("Light theme detected via class/attribute");
+        return false;
+    }
+    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        // console.log("Dark theme detected via prefers-color-scheme");
+        return true;
+    }
+    const bgColor = window.getComputedStyle(document.body).backgroundColor;
+    const match = bgColor.match(/rgb\((\d+),\s*(\d+),\s*(\d+)/);
+    if (match) {
+        const r = parseInt(match[1]);
+        const g = parseInt(match[2]);
+        const b = parseInt(match[3]);
+        const brightness = (r * 299 + g * 587 + b * 114) / 1000;
+        // console.log("Background color brightness:", brightness);
+        return brightness < 128;
+    }
+    // console.log("No dark or light theme detected, defaulting to light theme");
+    return false;
+};
+
+let darkTheme = isDarkTheme();
+let modal = null;
+let modalContent = null;
+let previousScrollOffset = [window.scrollX, window.scrollY];
+
+const runMermaid = async (rerun) => {
+    console.log("Running mermaid diagrams, rerun =", rerun);
+    // clear all existing mermaid charts
+    let all_mermaids = document.querySelectorAll(".mermaid");
+
+    if (rerun) {
+        all_mermaids.forEach((el) => {
+            if(!el.hasAttribute("data-original-code")) {
+                // store original code
+                // console.log(`Storing original code for first run: `, el.innerHTML);
+                el.setAttribute('data-original-code', el.innerHTML);
+            }
+            if(el.getAttribute("data-processed") === "true") {
+                // remove and restore original
+                el.removeAttribute("data-processed");
+                // console.log(`Restoring original code for re-run: `, el.getAttribute('data-original-code'));
+                el.innerHTML = el.getAttribute('data-original-code');
+            } else {
+                // store original code
+                // console.log(`Storing original code for re-run: `, el.innerHTML);
+                el.setAttribute('data-original-code', el.innerHTML);
+            }
+        });
+        await mermaid.run();
+    }
+
+    all_mermaids = document.querySelectorAll(".mermaid");
+    const mermaids_processed = document.querySelectorAll(".mermaid[data-processed='true']");
+
+    if ("False" === "True") {
+        const mermaids_to_add_zoom = -1 === -1 ? all_mermaids.length : -1;
+        if(mermaids_to_add_zoom > 0) {
+            var svgs = d3.selectAll("");
+            if(all_mermaids.length !== mermaids_processed.length) {
+                setTimeout(() => runMermaid(false), 200);
+                return;
+            } else if(svgs.size() !== mermaids_to_add_zoom) {
+                setTimeout(() => runMermaid(false), 200);
+                return;
+            } else {
+                svgs.each(function() {
+                    var svg = d3.select(this);
+                    svg.html("<g class='wrapper'>" + svg.html() + "</g>");
+                    var inner = svg.select("g");
+                    var zoom = d3.zoom().on("zoom", function(event) {
+                        inner.attr("transform", event.transform);
+                    });
+                    svg.call(zoom);
+                });
+            }
+        }
+    } else if(all_mermaids.length !== mermaids_processed.length) {
+        // Wait for mermaid to process all diagrams
+        setTimeout(() => runMermaid(false), 200);
+        return;
+    }
+
+    // Stop here if not adding fullscreen capability
+    if ("True" !== "True") return;
+
+    if (modal !== null ) {
+        // Destroy existing modal
+        modal.remove();
+        modal = null;
+        modalContent = null;
+    }
+
+    modal = document.createElement('div');
+    modal.className = 'mermaid-fullscreen-modal' + (darkTheme ? ' dark-theme' : '');
+    modal.setAttribute('role', 'dialog');
+    modal.setAttribute('aria-modal', 'true');
+    modal.setAttribute('aria-label', 'Fullscreen diagram viewer');
+    modal.innerHTML = `
+        <button class="mermaid-fullscreen-close${darkTheme ? ' dark-theme' : ''}" aria-label="Close fullscreen">✕</button>
+        <div class="mermaid-container-fullscreen${darkTheme ? ' dark-theme' : ''}"></div>
+    `;
+    document.body.appendChild(modal);
+
+    modalContent = modal.querySelector('.mermaid-container-fullscreen');
+    const closeBtn = modal.querySelector('.mermaid-fullscreen-close');
+
+    const closeModal = () => {
+        modal.classList.remove('active');
+        modalContent.innerHTML = '';
+        document.body.style.overflow = ''
+        window.scrollTo({left: previousScrollOffset[0], top: previousScrollOffset[1], behavior: 'instant'});
+    };
+
+    closeBtn.addEventListener('click', closeModal);
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) closeModal();
+    });
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && modal.classList.contains('active')) {
+            closeModal();
+        }
+    });
+
+    document.querySelectorAll('.mermaid').forEach((mermaidDiv) => {
+        if (mermaidDiv.parentNode.classList.contains('mermaid-container') ||
+            mermaidDiv.closest('.mermaid-fullscreen-modal')) {
+            // Already processed, adjust button class if needed
+            const existingBtn = mermaidDiv.parentNode.querySelector('.mermaid-fullscreen-btn');
+            if (existingBtn) {
+                existingBtn.className = 'mermaid-fullscreen-btn' + (darkTheme ? ' dark-theme' : '');
+            }
+            return;
+        }
+
+        const container = document.createElement('div');
+        container.className = 'mermaid-container';
+        mermaidDiv.parentNode.insertBefore(container, mermaidDiv);
+        container.appendChild(mermaidDiv);
+
+        const fullscreenBtn = document.createElement('button');
+        fullscreenBtn.className = 'mermaid-fullscreen-btn' + (darkTheme ? ' dark-theme' : '');
+        fullscreenBtn.setAttribute('aria-label', 'View diagram in fullscreen');
+        fullscreenBtn.textContent = '⛶';
+        fullscreenBtn.style.opacity = '50%';
+
+        // Calculate dynamic position based on diagram's margin and padding
+        const diagramStyle = window.getComputedStyle(mermaidDiv);
+        const marginTop = parseFloat(diagramStyle.marginTop) || 0;
+        const marginRight = parseFloat(diagramStyle.marginRight) || 0;
+        const paddingTop = parseFloat(diagramStyle.paddingTop) || 0;
+        const paddingRight = parseFloat(diagramStyle.paddingRight) || 0;
+        fullscreenBtn.style.top = `${marginTop + paddingTop + 4}px`;
+        fullscreenBtn.style.right = `${marginRight + paddingRight + 4}px`;
+
+        fullscreenBtn.addEventListener('click', () => {
+            previousScrollOffset = [window.scroll, window.scrollY];
+            const clone = mermaidDiv.cloneNode(true);
+            modalContent.innerHTML = '';
+            modalContent.appendChild(clone);
+
+            const svg = clone.querySelector('svg');
+            if (svg) {
+                svg.removeAttribute('width');
+                svg.removeAttribute('height');
+                svg.style.width = '100%';
+                svg.style.height = 'auto';
+                svg.style.maxWidth = '100%';
+                svg.style.sdisplay = 'block';
+
+                if ("False" === "True") {
+                    setTimeout(() => {
+                        const g = svg.querySelector('g');
+                        if (g) {
+                            var svgD3 = d3.select(svg);
+                            svgD3.html("<g class='wrapper'>" + svgD3.html() + "</g>");
+                            var inner = svgD3.select("g");
+                            var zoom = d3.zoom().on("zoom", function(event) {
+                                inner.attr("transform", event.transform);
+                            });
+                            svgD3.call(zoom);
+                        }
+                    }, 100);
+                }
+            }
+
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+        container.appendChild(fullscreenBtn);
+    });
+};
+
+const load = async () => {
+    initStyles();
+
+    await runMermaid(true);
+
+    const reRunIfThemeChanges = async () => {
+        const newDarkTheme = isDarkTheme();
+        if (newDarkTheme !== darkTheme) {
+            darkTheme = newDarkTheme;
+            console.log("Theme change detected, re-running mermaid with", darkTheme ? "dark" : "default", "theme");
+            await mermaid.initialize(
+                {...JSON.parse(
+                    `{"startOnLoad": false}`
+                ),
+                ...{ darkMode: darkTheme, theme: darkTheme ? 'dark' : 'default' },
+                }
+            );
+            await runMermaid(true);
+        }
+    };
+
+    // Update theme classes when theme changes
+    const themeObserver = new MutationObserver(reRunIfThemeChanges);
+    themeObserver.observe(document.documentElement, {
+        attributes: true,
+        attributeFilter: ['class', 'style', 'data-theme']
+    });
+    themeObserver.observe(document.body, {
+        attributes: true,
+        attributeFilter: ['class', 'style', 'data-theme']
+    });
+};
+
+
+
+
+
+console.log("Initializing mermaid with", darkTheme ? "dark" : "default", "theme");
+mermaid.initialize(
+    {...JSON.parse(
+        `{"startOnLoad": false}`
+    ),
+    ...{ darkMode: darkTheme, theme: darkTheme ? 'dark' : 'default' },
+    }
+);
+
+window.addEventListener("load", load);
+window.runMermaid = runMermaid;</script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="author" title="About these documents" href="../about.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Fleet Manager
+          </a>
+              <div class="version">
+                1.0
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../about.html">About the project</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules.html">Code documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../training.html">Training documentation</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Fleet Manager</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Module code</a></li>
+      <li class="breadcrumb-item active">pm_manager_fleet</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <h1>Source code for pm_manager_fleet</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Prescription Map Manager Fleet Module</span>
+<span class="sd">====================================</span>
+
+<span class="sd">This module provides prescription map (PM) management functionality for the agricultural</span>
+<span class="sd">fleet management system. It handles the generation, validation, and comparison of</span>
+<span class="sd">prescription maps for different vehicle types and agricultural treatments.</span>
+
+<span class="sd">The module manages the complete lifecycle of prescription maps including:</span>
+<span class="sd">- Generation of prescription maps based on treatment requirements</span>
+<span class="sd">- Reception and storage of prescription maps from vehicles</span>
+<span class="sd">- Comparison and validation between generated and received prescription maps</span>
+<span class="sd">- State management for vehicle-specific prescription map operations</span>
+
+<span class="sd">Key Features:</span>
+<span class="sd">    - Multi-process prescription map generation for performance</span>
+<span class="sd">    - Vehicle-specific prescription map tracking and validation</span>
+<span class="sd">    - File-based comparison between generated and received prescription maps</span>
+<span class="sd">    - Support for multiple prescription map types (ISOBUS, Drone, etc.)</span>
+<span class="sd">    - Automatic cleanup and state management per vehicle</span>
+<span class="sd">    - Integration with external prescription map generation scripts</span>
+
+<span class="sd">Usage Example:</span>
+<span class="sd">    ::</span>
+
+<span class="sd">        # Handle prescription map generation request</span>
+<span class="sd">        handle_generate(vehicle_id, generation_message, logger)</span>
+<span class="sd">        </span>
+<span class="sd">        # Handle received prescription map from vehicle</span>
+<span class="sd">        handle_received(vehicle_id, received_message, logger)</span>
+<span class="sd">        </span>
+<span class="sd">        # Handle mission completion signal</span>
+<span class="sd">        handle_finish(vehicle_id, logger)</span>
+
+<span class="sd">Author: Fleet Management System</span>
+<span class="sd">Date: 2025</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">concurrent.futures</span><span class="w"> </span><span class="kn">import</span> <span class="n">ProcessPoolExecutor</span><span class="p">,</span> <span class="n">as_completed</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">json</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">subprocess</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">sys</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">shutil</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">datetime</span>
+
+<span class="c1"># Global variable to control finish status per vehicle_id</span>
+<span class="n">finish_status</span> <span class="o">=</span> <span class="p">{}</span>
+
+<div class="viewcode-block" id="handle_comparison_result">
+<a class="viewcode-back" href="../Fleet_module/PM/pm_manager_component.html#pm_manager_fleet.handle_comparison_result">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">handle_comparison_result</span><span class="p">(</span><span class="n">gen_path</span><span class="p">,</span> <span class="n">rec_path</span><span class="p">,</span> <span class="n">finished_dir</span><span class="p">,</span> <span class="n">logger</span><span class="p">,</span> <span class="n">vehicle_id</span><span class="p">,</span> <span class="n">match</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Handle the result of a prescription map comparison by moving files, </span>
+<span class="sd">    generating error reports, and cleaning up original files.</span>
+<span class="sd">    </span>
+<span class="sd">    Args:</span>
+<span class="sd">        gen_path (str): Path to the generated prescription map file</span>
+<span class="sd">        rec_path (str): Path to the received prescription map file</span>
+<span class="sd">        finished_dir (str): Directory to store finished files</span>
+<span class="sd">        logger: Logger instance for operation tracking</span>
+<span class="sd">        vehicle_id (str): Vehicle identifier for logging</span>
+<span class="sd">        match (bool): True if files match, False otherwise</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">timestamp</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s2">&quot;%Y%m</span><span class="si">%d</span><span class="s2">_%H%M%S&quot;</span><span class="p">)</span>
+        <span class="n">gen_filename</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">gen_path</span><span class="p">)</span>
+        
+        <span class="k">if</span> <span class="n">match</span><span class="p">:</span>
+            <span class="c1"># Mover el archivo generado a Finished con timestamp</span>
+            <span class="n">new_filename</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">timestamp</span><span class="si">}</span><span class="s2">_</span><span class="si">{</span><span class="n">gen_filename</span><span class="si">}</span><span class="s2">&quot;</span>
+            <span class="n">new_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">finished_dir</span><span class="p">,</span> <span class="n">new_filename</span><span class="p">)</span>
+            <span class="n">shutil</span><span class="o">.</span><span class="n">move</span><span class="p">(</span><span class="n">gen_path</span><span class="p">,</span> <span class="n">new_path</span><span class="p">)</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;[PM Manager] - Moved generated file to Finished: </span><span class="si">{</span><span class="n">new_filename</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+            
+            <span class="c1"># Eliminar el archivo recibido</span>
+            <span class="n">os</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">rec_path</span><span class="p">)</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;[PM Manager] - Removed received file: </span><span class="si">{</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">rec_path</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="c1"># Crear archivo de error combinado</span>
+            <span class="n">error_filename</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;ERROR-</span><span class="si">{</span><span class="n">timestamp</span><span class="si">}</span><span class="s2">-</span><span class="si">{</span><span class="n">gen_filename</span><span class="si">}</span><span class="s2">&quot;</span>
+            <span class="n">error_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">finished_dir</span><span class="p">,</span> <span class="n">error_filename</span><span class="p">)</span>
+            
+            <span class="c1"># Leer ambos archivos</span>
+            <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">gen_path</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f1</span><span class="p">,</span> <span class="nb">open</span><span class="p">(</span><span class="n">rec_path</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f2</span><span class="p">:</span>
+                <span class="n">gen_content</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f1</span><span class="p">)</span>
+                <span class="n">rec_content</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f2</span><span class="p">)</span>
+            
+            <span class="c1"># Generar estructura combinada con diferencias</span>
+            <span class="n">combined</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;differences&quot;</span><span class="p">:</span> <span class="p">[]}</span>
+            
+            <span class="c1"># Función recursiva para encontrar diferencias</span>
+            <span class="k">def</span><span class="w"> </span><span class="nf">find_diff</span><span class="p">(</span><span class="n">d1</span><span class="p">,</span> <span class="n">d2</span><span class="p">,</span> <span class="n">path</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">):</span>
+                <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">d1</span><span class="p">,</span> <span class="nb">dict</span><span class="p">)</span> <span class="ow">and</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">d2</span><span class="p">,</span> <span class="nb">dict</span><span class="p">):</span>
+                    <span class="n">keys</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">d1</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span> <span class="o">|</span> <span class="nb">set</span><span class="p">(</span><span class="n">d2</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+                    <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">keys</span><span class="p">:</span>
+                        <span class="n">new_path</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">path</span><span class="si">}</span><span class="s2">.</span><span class="si">{</span><span class="n">key</span><span class="si">}</span><span class="s2">&quot;</span> <span class="k">if</span> <span class="n">path</span> <span class="k">else</span> <span class="n">key</span>
+                        <span class="k">if</span> <span class="n">key</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">d1</span><span class="p">:</span>
+                            <span class="n">combined</span><span class="p">[</span><span class="s2">&quot;differences&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">({</span>
+                                <span class="s2">&quot;field&quot;</span><span class="p">:</span> <span class="n">new_path</span><span class="p">,</span>
+                                <span class="s2">&quot;generated&quot;</span><span class="p">:</span> <span class="s2">&quot;MISSING&quot;</span><span class="p">,</span>
+                                <span class="s2">&quot;received&quot;</span><span class="p">:</span> <span class="n">d2</span><span class="p">[</span><span class="n">key</span><span class="p">]</span>
+                            <span class="p">})</span>
+                        <span class="k">elif</span> <span class="n">key</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">d2</span><span class="p">:</span>
+                            <span class="n">combined</span><span class="p">[</span><span class="s2">&quot;differences&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">({</span>
+                                <span class="s2">&quot;field&quot;</span><span class="p">:</span> <span class="n">new_path</span><span class="p">,</span>
+                                <span class="s2">&quot;generated&quot;</span><span class="p">:</span> <span class="n">d1</span><span class="p">[</span><span class="n">key</span><span class="p">],</span>
+                                <span class="s2">&quot;received&quot;</span><span class="p">:</span> <span class="s2">&quot;MISSING&quot;</span>
+                            <span class="p">})</span>
+                        <span class="k">else</span><span class="p">:</span>
+                            <span class="n">find_diff</span><span class="p">(</span><span class="n">d1</span><span class="p">[</span><span class="n">key</span><span class="p">],</span> <span class="n">d2</span><span class="p">[</span><span class="n">key</span><span class="p">],</span> <span class="n">new_path</span><span class="p">)</span>
+                <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">d1</span><span class="p">,</span> <span class="nb">list</span><span class="p">)</span> <span class="ow">and</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">d2</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>
+                    <span class="n">len1</span><span class="p">,</span> <span class="n">len2</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">d1</span><span class="p">),</span> <span class="nb">len</span><span class="p">(</span><span class="n">d2</span><span class="p">)</span>
+                    <span class="n">max_len</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">len1</span><span class="p">,</span> <span class="n">len2</span><span class="p">)</span>
+                    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">max_len</span><span class="p">):</span>
+                        <span class="n">new_path</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">path</span><span class="si">}</span><span class="s2">[</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">]&quot;</span>
+                        <span class="k">if</span> <span class="n">i</span> <span class="o">&gt;=</span> <span class="n">len1</span><span class="p">:</span>
+                            <span class="n">combined</span><span class="p">[</span><span class="s2">&quot;differences&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">({</span>
+                                <span class="s2">&quot;field&quot;</span><span class="p">:</span> <span class="n">new_path</span><span class="p">,</span>
+                                <span class="s2">&quot;generated&quot;</span><span class="p">:</span> <span class="s2">&quot;MISSING&quot;</span><span class="p">,</span>
+                                <span class="s2">&quot;received&quot;</span><span class="p">:</span> <span class="n">d2</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+                            <span class="p">})</span>
+                        <span class="k">elif</span> <span class="n">i</span> <span class="o">&gt;=</span> <span class="n">len2</span><span class="p">:</span>
+                            <span class="n">combined</span><span class="p">[</span><span class="s2">&quot;differences&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">({</span>
+                                <span class="s2">&quot;field&quot;</span><span class="p">:</span> <span class="n">new_path</span><span class="p">,</span>
+                                <span class="s2">&quot;generated&quot;</span><span class="p">:</span> <span class="n">d1</span><span class="p">[</span><span class="n">i</span><span class="p">],</span>
+                                <span class="s2">&quot;received&quot;</span><span class="p">:</span> <span class="s2">&quot;MISSING&quot;</span>
+                            <span class="p">})</span>
+                        <span class="k">else</span><span class="p">:</span>
+                            <span class="n">find_diff</span><span class="p">(</span><span class="n">d1</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">d2</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">new_path</span><span class="p">)</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="k">if</span> <span class="n">d1</span> <span class="o">!=</span> <span class="n">d2</span><span class="p">:</span>
+                        <span class="n">combined</span><span class="p">[</span><span class="s2">&quot;differences&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">({</span>
+                            <span class="s2">&quot;field&quot;</span><span class="p">:</span> <span class="n">path</span><span class="p">,</span>
+                            <span class="s2">&quot;generated&quot;</span><span class="p">:</span> <span class="n">d1</span><span class="p">,</span>
+                            <span class="s2">&quot;received&quot;</span><span class="p">:</span> <span class="n">d2</span>
+                        <span class="p">})</span>
+            
+            <span class="n">find_diff</span><span class="p">(</span><span class="n">gen_content</span><span class="p">,</span> <span class="n">rec_content</span><span class="p">)</span>
+            
+            <span class="c1"># Añadir contenidos completos para referencia</span>
+            <span class="n">combined</span><span class="p">[</span><span class="s2">&quot;generated_content&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">gen_content</span>
+            <span class="n">combined</span><span class="p">[</span><span class="s2">&quot;received_content&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">rec_content</span>
+            
+            <span class="c1"># Guardar archivo de error</span>
+            <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">error_path</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">ef</span><span class="p">:</span>
+                <span class="n">json</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">combined</span><span class="p">,</span> <span class="n">ef</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;[PM Manager] - Created error file: </span><span class="si">{</span><span class="n">error_filename</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+            
+            <span class="c1"># Eliminar ambos archivos originales</span>
+            <span class="n">os</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">gen_path</span><span class="p">)</span>
+            <span class="n">os</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">rec_path</span><span class="p">)</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;[PM Manager] - Removed original files due to mismatch: </span><span class="si">{</span><span class="n">gen_filename</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">rec_path</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+            
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;[PM Manager] - Error handling comparison result: </span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="comparation">
+<a class="viewcode-back" href="../Fleet_module/PM/pm_manager_component.html#pm_manager_fleet.comparation">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">comparation</span><span class="p">(</span><span class="n">vehicle_id</span><span class="p">,</span> <span class="n">logger</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Compare generated and received prescription maps for a specific vehicle.</span>
+<span class="sd">    </span>
+<span class="sd">    This function performs a comprehensive comparison between prescription maps</span>
+<span class="sd">    that were generated by the system and those that were actually received</span>
+<span class="sd">    from the vehicle after execution. The comparison helps validate that the</span>
+<span class="sd">    vehicle executed the correct prescription map.</span>
+<span class="sd">    </span>
+<span class="sd">    The comparison process includes:</span>
+<span class="sd">    1. Checking if the finish signal has been activated for the vehicle</span>
+<span class="sd">    2. Scanning for received prescription map files</span>
+<span class="sd">    3. Finding matching generated prescription map files</span>
+<span class="sd">    4. Performing content comparison between file pairs</span>
+<span class="sd">    5. Logging results and updating vehicle finish status</span>
+<span class="sd">    </span>
+<span class="sd">    Args:</span>
+<span class="sd">        vehicle_id (str): Unique identifier of the vehicle for which to compare</span>
+<span class="sd">                         prescription maps</span>
+<span class="sd">        logger: Logger instance for operation tracking and debugging</span>
+<span class="sd">        </span>
+<span class="sd">    Note:</span>
+<span class="sd">        This function only executes if the finish status is activated for the</span>
+<span class="sd">        specified vehicle. The finish status is automatically deactivated</span>
+<span class="sd">        after comparison completion.</span>
+<span class="sd">        </span>
+<span class="sd">    Warning:</span>
+<span class="sd">        The function performs file system operations and JSON parsing, which</span>
+<span class="sd">        may raise exceptions for corrupted files or missing directories.</span>
+<span class="sd">        </span>
+<span class="sd">    Example:</span>
+<span class="sd">        ::</span>
+<span class="sd">        </span>
+<span class="sd">            # Compare prescription maps for vehicle after mission completion</span>
+<span class="sd">            comparation(&quot;VEHICLE_001&quot;, logger)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">finish_status</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">vehicle_id</span><span class="p">,</span> <span class="kc">False</span><span class="p">):</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;[PM Manager] - Finish not activated for vehicle </span><span class="si">{</span><span class="n">vehicle_id</span><span class="si">}</span><span class="s2">, skipping comparison&quot;</span><span class="p">)</span>
+            <span class="k">return</span>
+        
+        <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;[PM Manager] - Starting comparison for vehicle </span><span class="si">{</span><span class="n">vehicle_id</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        
+        <span class="n">received_dir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s2">&quot;PrescriptionMap&quot;</span><span class="p">,</span> <span class="s2">&quot;pm_generation&quot;</span><span class="p">,</span> <span class="s2">&quot;Received&quot;</span><span class="p">)</span>
+        <span class="n">generated_base_dir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s2">&quot;PrescriptionMap&quot;</span><span class="p">,</span> <span class="s2">&quot;pm_generation&quot;</span><span class="p">)</span>
+        <span class="n">finished_dir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s2">&quot;PrescriptionMap&quot;</span><span class="p">,</span> <span class="s2">&quot;pm_generation&quot;</span><span class="p">,</span> <span class="s2">&quot;Finished&quot;</span><span class="p">)</span>
+        
+        <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">finished_dir</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        
+        <span class="n">received_files</span> <span class="o">=</span> <span class="p">[</span><span class="n">f</span> <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">received_dir</span><span class="p">)</span> 
+                         <span class="k">if</span> <span class="n">f</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">vehicle_id</span><span class="si">}</span><span class="s2">_&quot;</span><span class="p">)</span> <span class="ow">and</span> <span class="n">f</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">&quot;_received.json&quot;</span><span class="p">)]</span>
+        <span class="n">received_basenames</span> <span class="o">=</span> <span class="p">{</span><span class="n">f</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;_received.json&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span> <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">received_files</span><span class="p">}</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;[PM Manager] - Received files base names: </span><span class="si">{</span><span class="nb">sorted</span><span class="p">(</span><span class="n">received_basenames</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        
+        <span class="n">matched_pairs</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+        <span class="k">for</span> <span class="n">root</span><span class="p">,</span> <span class="n">dirs</span><span class="p">,</span> <span class="n">files</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">walk</span><span class="p">(</span><span class="n">generated_base_dir</span><span class="p">):</span>
+            <span class="k">if</span> <span class="s2">&quot;Received&quot;</span> <span class="ow">in</span> <span class="n">root</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">sep</span><span class="p">)</span> <span class="ow">or</span> <span class="s2">&quot;Finished&quot;</span> <span class="ow">in</span> <span class="n">root</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">sep</span><span class="p">):</span>
+                <span class="k">continue</span>
+            
+            <span class="k">for</span> <span class="n">file</span> <span class="ow">in</span> <span class="n">files</span><span class="p">:</span>
+                <span class="k">if</span> <span class="p">(</span><span class="n">file</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">vehicle_id</span><span class="si">}</span><span class="s2">_&quot;</span><span class="p">)</span> <span class="ow">and</span> 
+                    <span class="n">file</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">&quot;.json&quot;</span><span class="p">)</span> <span class="ow">and</span> 
+                    <span class="ow">not</span> <span class="n">file</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">&quot;_received.json&quot;</span><span class="p">)):</span>
+                    
+                    <span class="n">file_base</span> <span class="o">=</span> <span class="n">file</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;.json&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
+                    <span class="k">if</span> <span class="n">file_base</span> <span class="ow">in</span> <span class="n">received_basenames</span><span class="p">:</span>
+                        <span class="n">rec_file</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">file_base</span><span class="si">}</span><span class="s2">_received.json&quot;</span>
+                        <span class="n">pair</span> <span class="o">=</span> <span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="n">rec_file</span><span class="p">)</span>
+                        <span class="k">if</span> <span class="n">pair</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">matched_pairs</span><span class="p">:</span>
+                            <span class="n">matched_pairs</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">pair</span><span class="p">)</span>
+                            <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;[PM Manager] - Found matching pair: </span><span class="si">{</span><span class="n">file</span><span class="si">}</span><span class="s2"> &lt;-&gt; </span><span class="si">{</span><span class="n">rec_file</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        
+        <span class="n">matched_pairs</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">matched_pairs</span><span class="p">)</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;[PM Manager] - Found </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">matched_pairs</span><span class="p">)</span><span class="si">}</span><span class="s2"> unique matched file pairs for vehicle </span><span class="si">{</span><span class="n">vehicle_id</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">matched_pairs</span><span class="p">:</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;[PM Manager] - No matching file pairs found for vehicle </span><span class="si">{</span><span class="n">vehicle_id</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="k">return</span>
+        
+        <span class="n">all_match</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="k">for</span> <span class="n">gen_file</span><span class="p">,</span> <span class="n">rec_file</span> <span class="ow">in</span> <span class="n">matched_pairs</span><span class="p">:</span>
+            <span class="n">gen_path</span> <span class="o">=</span> <span class="kc">None</span>
+            <span class="k">for</span> <span class="n">root</span><span class="p">,</span> <span class="n">dirs</span><span class="p">,</span> <span class="n">files</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">walk</span><span class="p">(</span><span class="n">generated_base_dir</span><span class="p">):</span>
+                <span class="k">if</span> <span class="s2">&quot;Received&quot;</span> <span class="ow">in</span> <span class="n">root</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">sep</span><span class="p">)</span> <span class="ow">or</span> <span class="s2">&quot;Finished&quot;</span> <span class="ow">in</span> <span class="n">root</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">sep</span><span class="p">):</span>
+                    <span class="k">continue</span>
+                <span class="k">if</span> <span class="n">gen_file</span> <span class="ow">in</span> <span class="n">files</span><span class="p">:</span>
+                    <span class="n">gen_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="n">gen_file</span><span class="p">)</span>
+                    <span class="k">break</span>
+            
+            <span class="n">rec_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">received_dir</span><span class="p">,</span> <span class="n">rec_file</span><span class="p">)</span>
+            
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">gen_path</span> <span class="ow">or</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">gen_path</span><span class="p">):</span>
+                <span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;[PM Manager] - Generated file not found: </span><span class="si">{</span><span class="n">gen_file</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+                <span class="n">all_match</span> <span class="o">=</span> <span class="kc">False</span>
+                <span class="k">continue</span>
+                
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">rec_path</span><span class="p">):</span>
+                <span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;[PM Manager] - Received file not found: </span><span class="si">{</span><span class="n">rec_file</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+                <span class="n">all_match</span> <span class="o">=</span> <span class="kc">False</span>
+                <span class="k">continue</span>
+                
+            <span class="k">try</span><span class="p">:</span>
+                <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">gen_path</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f1</span><span class="p">,</span> <span class="nb">open</span><span class="p">(</span><span class="n">rec_path</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f2</span><span class="p">:</span>
+                    <span class="n">gen_content</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f1</span><span class="p">)</span>
+                    <span class="n">rec_content</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f2</span><span class="p">)</span>
+                    
+                    <span class="k">if</span> <span class="n">gen_content</span> <span class="o">==</span> <span class="n">rec_content</span><span class="p">:</span>
+                        <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;[PM Manager] - Content matches for vehicle </span><span class="si">{</span><span class="n">vehicle_id</span><span class="si">}</span><span class="s2">, file </span><span class="si">{</span><span class="n">gen_file</span><span class="p">[:</span><span class="o">-</span><span class="mi">5</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+                        <span class="c1"># Llamar a la nueva función para manejar archivos coincidentes</span>
+                        <span class="n">handle_comparison_result</span><span class="p">(</span><span class="n">gen_path</span><span class="p">,</span> <span class="n">rec_path</span><span class="p">,</span> <span class="n">finished_dir</span><span class="p">,</span> <span class="n">logger</span><span class="p">,</span> <span class="n">vehicle_id</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span>
+                    <span class="k">else</span><span class="p">:</span>
+                        <span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;[PM Manager] - Content mismatch for vehicle </span><span class="si">{</span><span class="n">vehicle_id</span><span class="si">}</span><span class="s2">, file </span><span class="si">{</span><span class="n">gen_file</span><span class="p">[:</span><span class="o">-</span><span class="mi">5</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+                        <span class="n">all_match</span> <span class="o">=</span> <span class="kc">False</span>
+                        <span class="c1"># Llamar a la nueva función para manejar diferencias</span>
+                        <span class="n">handle_comparison_result</span><span class="p">(</span><span class="n">gen_path</span><span class="p">,</span> <span class="n">rec_path</span><span class="p">,</span> <span class="n">finished_dir</span><span class="p">,</span> <span class="n">logger</span><span class="p">,</span> <span class="n">vehicle_id</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
+            <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+                <span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;[PM Manager] - Error comparing files </span><span class="si">{</span><span class="n">gen_path</span><span class="si">}</span><span class="s2"> and </span><span class="si">{</span><span class="n">rec_path</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+                <span class="n">all_match</span> <span class="o">=</span> <span class="kc">False</span>
+                <span class="c1"># Intentar limpiar archivos incluso si falla la comparación</span>
+                <span class="k">try</span><span class="p">:</span>
+                    <span class="k">if</span> <span class="n">gen_path</span> <span class="ow">and</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">gen_path</span><span class="p">):</span>
+                        <span class="n">os</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">gen_path</span><span class="p">)</span>
+                    <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">rec_path</span><span class="p">):</span>
+                        <span class="n">os</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">rec_path</span><span class="p">)</span>
+                <span class="k">except</span><span class="p">:</span>
+                    <span class="k">pass</span>
+        
+        <span class="k">if</span> <span class="n">all_match</span><span class="p">:</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;[PM Manager] - ALL files match for vehicle </span><span class="si">{</span><span class="n">vehicle_id</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;[PM Manager] - Some files DO NOT match for vehicle </span><span class="si">{</span><span class="n">vehicle_id</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        
+        <span class="n">finish_status</span><span class="p">[</span><span class="n">vehicle_id</span><span class="p">]</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;[PM Manager] - Finish status deactivated for vehicle </span><span class="si">{</span><span class="n">vehicle_id</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;[PM Manager] - Error in comparation: </span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">exc_info</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="handle_finish">
+<a class="viewcode-back" href="../Fleet_module/PM/pm_manager_component.html#pm_manager_fleet.handle_finish">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">handle_finish</span><span class="p">(</span><span class="n">vehicle_id</span><span class="p">,</span> <span class="n">logger</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Handle mission finish signal for a specific vehicle.</span>
+<span class="sd">    </span>
+<span class="sd">    This function processes the finish signal sent when a vehicle completes</span>
+<span class="sd">    its mission. It activates the finish status for the vehicle and immediately</span>
+<span class="sd">    triggers the prescription map comparison process.</span>
+<span class="sd">    </span>
+<span class="sd">    The finish signal indicates that:</span>
+<span class="sd">    - The vehicle has completed executing its prescription map</span>
+<span class="sd">    - All prescription map data should have been received from the vehicle</span>
+<span class="sd">    - Comparison between generated and received maps can now be performed</span>
+<span class="sd">    </span>
+<span class="sd">    Args:</span>
+<span class="sd">        vehicle_id (str): Unique identifier of the vehicle that finished its mission</span>
+<span class="sd">        logger: Logger instance for operation tracking and debugging</span>
+<span class="sd">        </span>
+<span class="sd">    Example:</span>
+<span class="sd">        ::</span>
+<span class="sd">        </span>
+<span class="sd">            # Handle mission completion signal</span>
+<span class="sd">            handle_finish(&quot;VEHICLE_001&quot;, logger)</span>
+<span class="sd">            </span>
+<span class="sd">    Note:</span>
+<span class="sd">        This function automatically triggers the comparation process to validate</span>
+<span class="sd">        prescription map execution immediately after setting the finish status.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;[PM Manager] - Received finish signal for vehicle </span><span class="si">{</span><span class="n">vehicle_id</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="c1"># Activate finish status for this vehicle_id</span>
+        <span class="n">finish_status</span><span class="p">[</span><span class="n">vehicle_id</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;[PM Manager] - Finish status activated for vehicle </span><span class="si">{</span><span class="n">vehicle_id</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        
+        <span class="c1"># Trigger comparison immediately</span>
+        <span class="n">comparation</span><span class="p">(</span><span class="n">vehicle_id</span><span class="p">,</span> <span class="n">logger</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;[PM Manager] - Error in handle_finish: </span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">exc_info</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="handle_received">
+<a class="viewcode-back" href="../Fleet_module/PM/pm_manager_component.html#pm_manager_fleet.handle_received">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">handle_received</span><span class="p">(</span><span class="n">vehicle_id</span><span class="p">,</span> <span class="n">message</span><span class="p">,</span> <span class="n">logger</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Handle received prescription map data from a vehicle.</span>
+<span class="sd">    </span>
+<span class="sd">    This function processes prescription map data that has been received from</span>
+<span class="sd">    a vehicle after executing its mission. The received data is stored in the</span>
+<span class="sd">    Received directory for later comparison with the originally generated</span>
+<span class="sd">    prescription map.</span>
+<span class="sd">    </span>
+<span class="sd">    The function performs the following operations:</span>
+<span class="sd">    1. Extracts prescription map content from the message</span>
+<span class="sd">    2. Validates message structure and filename</span>
+<span class="sd">    3. Saves the received prescription map to the appropriate directory</span>
+<span class="sd">    4. Triggers comparison if finish status is active for the vehicle</span>
+<span class="sd">    </span>
+<span class="sd">    Args:</span>
+<span class="sd">        vehicle_id (str): Unique identifier of the vehicle sending the prescription map</span>
+<span class="sd">        message (dict): Message containing prescription map data with keys:</span>
+<span class="sd">            - content (dict): Nested content structure containing the actual PM data</span>
+<span class="sd">                - content (list/dict): The actual prescription map content array</span>
+<span class="sd">            - filename (str): Original filename of the prescription map</span>
+<span class="sd">        logger: Logger instance for operation tracking and debugging</span>
+<span class="sd">        </span>
+<span class="sd">    Example:</span>
+<span class="sd">        ::</span>
+<span class="sd">        </span>
+<span class="sd">            message = {</span>
+<span class="sd">                &#39;content&#39;: {</span>
+<span class="sd">                    &#39;content&#39;: [</span>
+<span class="sd">                        {&#39;x&#39;: 100, &#39;y&#39;: 200, &#39;treatment&#39;: &#39;pesticide&#39;, &#39;rate&#39;: 2.5},</span>
+<span class="sd">                        {&#39;x&#39;: 150, &#39;y&#39;: 250, &#39;treatment&#39;: &#39;pesticide&#39;, &#39;rate&#39;: 2.3}</span>
+<span class="sd">                    ]</span>
+<span class="sd">                },</span>
+<span class="sd">                &#39;filename&#39;: &#39;pesticide_application.json&#39;</span>
+<span class="sd">            }</span>
+<span class="sd">            handle_received(&quot;VEHICLE_001&quot;, message, logger)</span>
+<span class="sd">            </span>
+<span class="sd">    Note:</span>
+<span class="sd">        The function automatically triggers comparison at the end to check if</span>
+<span class="sd">        the received prescription map matches the generated one, provided the</span>
+<span class="sd">        finish status is active for the vehicle.</span>
+<span class="sd">        </span>
+<span class="sd">    Warning:</span>
+<span class="sd">        Missing &#39;content&#39; field or &#39;filename&#39; in the message will cause the</span>
+<span class="sd">        function to log warnings and return without processing the data.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">try</span><span class="p">:</span>                
+        <span class="c1"># Extract the actual content array from the message</span>
+        <span class="n">pm_data</span> <span class="o">=</span> <span class="n">message</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;content&#39;</span><span class="p">,</span> <span class="p">{})</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;content&#39;</span><span class="p">)</span>
+            
+        <span class="k">if</span> <span class="n">pm_data</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s2">&quot;[PM Manager] - Missing &#39;content&#39; field in message&quot;</span><span class="p">)</span>
+            <span class="k">return</span>
+
+        <span class="c1"># Validate and extract filename from message</span>
+        <span class="n">filename</span> <span class="o">=</span> <span class="n">message</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;filename&#39;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">filename</span><span class="p">:</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s2">&quot;[PM Manager] - Missing filename in message&quot;</span><span class="p">)</span>
+            <span class="k">return</span>
+
+        <span class="c1"># Remove .json extension if present for consistent naming</span>
+        <span class="k">if</span> <span class="n">filename</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">&quot;.json&quot;</span><span class="p">):</span>
+            <span class="n">filename</span> <span class="o">=</span> <span class="n">filename</span><span class="p">[:</span><span class="o">-</span><span class="mi">5</span><span class="p">]</span>
+
+        <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;[PM Manager] - Received PM for vehicle </span><span class="si">{</span><span class="n">vehicle_id</span><span class="si">}</span><span class="s2"> with filename: </span><span class="si">{</span><span class="n">filename</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+        <span class="c1"># Create standardized filename for received prescription map</span>
+        <span class="n">base_filename</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">vehicle_id</span><span class="si">}</span><span class="s2">_</span><span class="si">{</span><span class="n">filename</span><span class="si">}</span><span class="s2">_received.json&quot;</span>
+
+        <span class="c1"># Ensure received directory exists</span>
+        <span class="n">received_dir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s2">&quot;PrescriptionMap&quot;</span><span class="p">,</span> <span class="s2">&quot;pm_generation&quot;</span><span class="p">,</span> <span class="s2">&quot;Received&quot;</span><span class="p">)</span>
+        <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">received_dir</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="n">received_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">received_dir</span><span class="p">,</span> <span class="n">base_filename</span><span class="p">)</span>
+
+        <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;[PM Manager] - Saving received PM to </span><span class="si">{</span><span class="n">received_path</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+        <span class="c1"># Save only the content array directly to file</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">received_path</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+            <span class="n">json</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">pm_data</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+            
+        <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;[PM Manager] - Received PM saved: </span><span class="si">{</span><span class="n">received_path</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        
+        <span class="c1"># Trigger comparison at the end of handle_received</span>
+        <span class="n">comparation</span><span class="p">(</span><span class="n">vehicle_id</span><span class="p">,</span> <span class="n">logger</span><span class="p">)</span>
+        
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;[PM Manager] - Error in handle_received: </span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">exc_info</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="handle_generate">
+<a class="viewcode-back" href="../Fleet_module/PM/pm_manager_component.html#pm_manager_fleet.handle_generate">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">handle_generate</span><span class="p">(</span><span class="n">vehicle_id</span><span class="p">,</span> <span class="n">message</span><span class="p">,</span> <span class="n">logger</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Handle prescription map generation request for a vehicle.</span>
+<span class="sd">    </span>
+<span class="sd">    This function processes requests to generate prescription maps for a specific</span>
+<span class="sd">    vehicle based on treatment requirements, field coordinates, and prescription</span>
+<span class="sd">    map types. It validates the input data and delegates the actual generation</span>
+<span class="sd">    to the generate_pm function.</span>
+<span class="sd">    </span>
+<span class="sd">    The function expects a specific message format containing all necessary</span>
+<span class="sd">    parameters for prescription map generation including treatments, amounts,</span>
+<span class="sd">    field grid, coordinates, and prescription map types.</span>
+<span class="sd">    </span>
+<span class="sd">    Args:</span>
+<span class="sd">        vehicle_id (str): Unique identifier of the vehicle for which to generate</span>
+<span class="sd">                         prescription maps</span>
+<span class="sd">        message (dict): Generation request message containing:</span>
+<span class="sd">            - data (list): List of 5 elements in specific order:</span>
+<span class="sd">                [treatments, amount, grid, coords, pm_types]</span>
+<span class="sd">                - treatments: Treatment specifications</span>
+<span class="sd">                - amount (dict): Treatment amounts/rates</span>
+<span class="sd">                - grid (list): Field grid definition</span>
+<span class="sd">                - coords (list): [latitude, longitude] coordinates</span>
+<span class="sd">                - pm_types (dict): Prescription map types to generate</span>
+<span class="sd">        logger: Logger instance for operation tracking and debugging</span>
+<span class="sd">        </span>
+<span class="sd">    Example:</span>
+<span class="sd">        ::</span>
+<span class="sd">        </span>
+<span class="sd">            message = {</span>
+<span class="sd">                &#39;data&#39;: [</span>
+<span class="sd">                    {&#39;pesticide&#39;: True, &#39;fertilizer&#39;: False},  # treatments</span>
+<span class="sd">                    {&#39;pesticide&#39;: 2.5, &#39;fertilizer&#39;: 0},       # amounts</span>
+<span class="sd">                    [[0, 0], [100, 100]],                      # grid</span>
+<span class="sd">                    [40.4168, -3.7038],                        # coords [lat, long]</span>
+<span class="sd">                    {&#39;ISOBUS&#39;: True, &#39;Drone&#39;: False}           # pm_types</span>
+<span class="sd">                ]</span>
+<span class="sd">            }</span>
+<span class="sd">            handle_generate(&quot;VEHICLE_001&quot;, message, logger)</span>
+<span class="sd">            </span>
+<span class="sd">    Note:</span>
+<span class="sd">        The function validates that exactly 5 elements are provided in the data</span>
+<span class="sd">        array and that pm_types is iterable before proceeding with generation.</span>
+<span class="sd">        </span>
+<span class="sd">    Warning:</span>
+<span class="sd">        Invalid data length or malformed pm_types will cause the function to</span>
+<span class="sd">        log errors and return without generating prescription maps.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="c1"># Validate message data structure</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="n">message</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;data&#39;</span><span class="p">,</span> <span class="p">[])</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">5</span><span class="p">:</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;[PM Manager] - Invalid data length in &#39;Generate&#39; message. Expected 5 elements, got </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="k">return</span>
+
+        <span class="c1"># Unpack message data components</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">treatments</span><span class="p">,</span> <span class="n">amount</span><span class="p">,</span> <span class="n">grid</span><span class="p">,</span> <span class="n">coords</span><span class="p">,</span> <span class="n">pm_types</span> <span class="o">=</span> <span class="n">data</span>
+            <span class="n">lat</span><span class="p">,</span> <span class="n">long</span> <span class="o">=</span> <span class="n">coords</span>
+        <span class="k">except</span> <span class="p">(</span><span class="ne">ValueError</span><span class="p">,</span> <span class="ne">TypeError</span><span class="p">)</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;[PM Manager] - Error unpacking message data: </span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="k">return</span>
+            
+        <span class="c1"># Validate that pm_types is iterable</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">pm_types</span> <span class="ow">or</span> <span class="ow">not</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">pm_types</span><span class="p">,</span> <span class="s1">&#39;__iter__&#39;</span><span class="p">):</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;[PM Manager] - Invalid pm_types format: </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">pm_types</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="k">return</span>
+
+        <span class="c1"># Delegate prescription map generation</span>
+        <span class="n">generate_pm</span><span class="p">(</span><span class="n">vehicle_id</span><span class="p">,</span> <span class="n">pm_types</span><span class="p">,</span> <span class="n">amount</span><span class="p">,</span> <span class="n">grid</span><span class="p">,</span> <span class="n">long</span><span class="p">,</span> <span class="n">lat</span><span class="p">,</span> <span class="n">logger</span><span class="p">)</span>
+
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;[PM Manager] - Critical error in handle_generate: </span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">exc_info</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="generate_pm">
+<a class="viewcode-back" href="../Fleet_module/PM/pm_manager_component.html#pm_manager_fleet.generate_pm">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">generate_pm</span><span class="p">(</span><span class="n">vehicle_id</span><span class="p">,</span> <span class="n">pm_types</span><span class="p">:</span> <span class="nb">dict</span><span class="p">,</span> <span class="n">amount</span><span class="p">:</span> <span class="nb">dict</span><span class="p">,</span> <span class="n">grid</span><span class="p">:</span> <span class="nb">list</span><span class="p">,</span> <span class="n">long</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">lat</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">logger</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Generate prescription maps for a vehicle using external generation scripts.</span>
+<span class="sd">    </span>
+<span class="sd">    This function coordinates the generation of prescription maps by executing</span>
+<span class="sd">    external scripts for each specified prescription map type. It uses a process</span>
+<span class="sd">    pool for parallel execution to improve performance when generating multiple</span>
+<span class="sd">    prescription map types.</span>
+<span class="sd">    </span>
+<span class="sd">    The function performs the following operations:</span>
+<span class="sd">    1. Loads the prescription map types configuration</span>
+<span class="sd">    2. Validates the existence of generation scripts</span>
+<span class="sd">    3. Executes scripts in parallel using ProcessPoolExecutor</span>
+<span class="sd">    4. Monitors execution with timeouts to prevent hanging</span>
+<span class="sd">    5. Logs outputs and handles errors for each generation process</span>
+<span class="sd">    </span>
+<span class="sd">    Args:</span>
+<span class="sd">        vehicle_id (str): Unique identifier of the vehicle</span>
+<span class="sd">        pm_types (dict): Dictionary specifying which PM types to generate</span>
+<span class="sd">        amount (dict): Treatment amounts and application rates</span>
+<span class="sd">        grid (list): Field grid definition for spatial mapping</span>
+<span class="sd">        long (float): Longitude coordinate of the field</span>
+<span class="sd">        lat (float): Latitude coordinate of the field  </span>
+<span class="sd">        logger: Logger instance for operation tracking and debugging</span>
+<span class="sd">        </span>
+<span class="sd">    Returns:</span>
+<span class="sd">        list: Empty list (return value maintained for compatibility)</span>
+<span class="sd">        </span>
+<span class="sd">    Example:</span>
+<span class="sd">        ::</span>
+<span class="sd">        </span>
+<span class="sd">            pm_types = {&#39;ISOBUS&#39;: True, &#39;Drone&#39;: False}</span>
+<span class="sd">            amount = {&#39;pesticide&#39;: 2.5, &#39;fertilizer&#39;: 1.8}</span>
+<span class="sd">            grid = [[0, 0], [100, 50], [100, 100], [0, 50]]</span>
+<span class="sd">            generate_pm(&quot;VEHICLE_001&quot;, pm_types, amount, grid, -3.7038, 40.4168, logger)</span>
+<span class="sd">            </span>
+<span class="sd">    Note:</span>
+<span class="sd">        The function uses timeouts (30s global, 15s per process) to prevent</span>
+<span class="sd">        hanging on unresponsive generation scripts. All outputs are logged</span>
+<span class="sd">        for debugging and monitoring purposes.</span>
+<span class="sd">        </span>
+<span class="sd">    Warning:</span>
+<span class="sd">        Missing pm_types.json configuration file or invalid script paths will</span>
+<span class="sd">        cause the function to return early without generating prescription maps.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># Define path to prescription map types configuration</span>
+    <span class="n">pm_types_path</span> <span class="o">=</span> <span class="s2">&quot;PrescriptionMap/pm_generation/pm_types.json&quot;</span>
+    
+    <span class="c1"># Verify that the pm_types.json configuration file exists</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">pm_types_path</span><span class="p">):</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;[PM Manager] - PM types file not found: </span><span class="si">{</span><span class="n">pm_types_path</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="p">[]</span>
+    
+    <span class="c1"># Load prescription map types configuration</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">pm_types_path</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+            <span class="n">pm_types_dict</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;[PM Manager] - Error loading PM types: </span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">exc_info</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="k">return</span> <span class="p">[]</span>
+
+    <span class="c1"># Filter and map requested PM types to their script paths</span>
+    <span class="n">pm_types_to_run</span> <span class="o">=</span> <span class="p">[</span><span class="n">pm_types_dict</span><span class="p">[</span><span class="n">t</span><span class="p">]</span> <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">pm_types</span> <span class="k">if</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">pm_types_dict</span><span class="p">]</span>
+    
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">pm_types_to_run</span><span class="p">:</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;[PM Manager] - No valid PM types found to run for vehicle </span><span class="si">{</span><span class="n">vehicle_id</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="p">[]</span>
+        
+    <span class="c1"># Validate that all generation scripts exist before execution</span>
+    <span class="n">valid_scripts</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">script_path</span> <span class="ow">in</span> <span class="n">pm_types_to_run</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">script_path</span><span class="p">):</span>
+            <span class="n">valid_scripts</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">script_path</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;[PM Manager] - Script not found: </span><span class="si">{</span><span class="n">script_path</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">valid_scripts</span><span class="p">:</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;[PM Manager] - No valid PM scripts found for vehicle </span><span class="si">{</span><span class="n">vehicle_id</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="p">[]</span>
+
+    <span class="c1"># Execute prescription map generation scripts in parallel</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="k">with</span> <span class="n">ProcessPoolExecutor</span><span class="p">()</span> <span class="k">as</span> <span class="n">executor</span><span class="p">:</span>
+            <span class="n">futures</span> <span class="o">=</span> <span class="p">[]</span>
+            
+            <span class="c1"># Submit each valid script for execution</span>
+            <span class="k">for</span> <span class="n">pm_type_path</span> <span class="ow">in</span> <span class="n">valid_scripts</span><span class="p">:</span>
+                <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;[PM Manager] - Running PM generator: </span><span class="si">{</span><span class="n">pm_type_path</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+                <span class="n">futures</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+                    <span class="n">executor</span><span class="o">.</span><span class="n">submit</span><span class="p">(</span><span class="n">run_script</span><span class="p">,</span> <span class="n">pm_type_path</span><span class="p">,</span> <span class="n">vehicle_id</span><span class="p">,</span> <span class="n">amount</span><span class="p">,</span> <span class="n">grid</span><span class="p">,</span> <span class="n">long</span><span class="p">,</span> <span class="n">lat</span><span class="p">)</span>
+                <span class="p">)</span>
+                
+            <span class="c1"># Process completed futures with timeout handling</span>
+            <span class="k">for</span> <span class="n">future</span> <span class="ow">in</span> <span class="n">as_completed</span><span class="p">(</span><span class="n">futures</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="mi">30</span><span class="p">):</span>  <span class="c1"># Global timeout for all processes</span>
+                <span class="k">try</span><span class="p">:</span>
+                    <span class="n">output</span> <span class="o">=</span> <span class="n">future</span><span class="o">.</span><span class="n">result</span><span class="p">(</span><span class="n">timeout</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>  <span class="c1"># Individual timeout per process</span>
+                    <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;[PM Manager] - PM output: </span><span class="se">\n</span><span class="si">{</span><span class="n">output</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+                <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+                    <span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;[PM Manager] - Future failed or timed out: </span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">exc_info</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+                
+
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;[PM Manager] - Error during PM generation: </span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">exc_info</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="k">return</span> <span class="p">[]</span></div>
+
+
+
+<div class="viewcode-block" id="run_script">
+<a class="viewcode-back" href="../Fleet_module/PM/pm_manager_component.html#pm_manager_fleet.run_script">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">run_script</span><span class="p">(</span><span class="n">path</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">vehicle_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">amount</span><span class="p">:</span> <span class="nb">dict</span><span class="p">,</span> <span class="n">grid</span><span class="p">:</span> <span class="nb">list</span><span class="p">,</span> <span class="n">long</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">lat</span><span class="p">:</span> <span class="nb">float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Execute a prescription map generation script with specified parameters.</span>
+<span class="sd">    </span>
+<span class="sd">    This function runs an external Python script for generating prescription maps,</span>
+<span class="sd">    passing all necessary parameters as command-line arguments. It handles script</span>
+<span class="sd">    execution, output capture, error handling, and timeout management.</span>
+<span class="sd">    </span>
+<span class="sd">    The script is executed as a subprocess with JSON-serialized parameters for</span>
+<span class="sd">    complex data structures like amounts and grid definitions. Both stdout and</span>
+<span class="sd">    stderr are captured for comprehensive logging.</span>
+<span class="sd">    </span>
+<span class="sd">    Args:</span>
+<span class="sd">        path (str): File path to the prescription map generation script</span>
+<span class="sd">        vehicle_id (int): Unique identifier of the vehicle</span>
+<span class="sd">        amount (dict): Treatment amounts and application rates (JSON-serialized)</span>
+<span class="sd">        grid (list): Field grid definition (JSON-serialized)</span>
+<span class="sd">        long (float): Longitude coordinate of the field</span>
+<span class="sd">        lat (float): Latitude coordinate of the field</span>
+<span class="sd">        </span>
+<span class="sd">    Returns:</span>
+<span class="sd">        str: Script output on success, or error description on failure</span>
+<span class="sd">        </span>
+<span class="sd">    Example:</span>
+<span class="sd">        ::</span>
+<span class="sd">        </span>
+<span class="sd">            output = run_script(</span>
+<span class="sd">                &quot;PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py&quot;,</span>
+<span class="sd">                &quot;VEHICLE_001&quot;,</span>
+<span class="sd">                {&#39;pesticide&#39;: 2.5},</span>
+<span class="sd">                [[0, 0], [100, 100]],</span>
+<span class="sd">                -3.7038,</span>
+<span class="sd">                40.4168</span>
+<span class="sd">            )</span>
+<span class="sd">            </span>
+<span class="sd">    Note:</span>
+<span class="sd">        The function uses a 20-second timeout to prevent hanging on unresponsive</span>
+<span class="sd">        scripts. Complex parameters are JSON-serialized for reliable transmission.</span>
+<span class="sd">        </span>
+<span class="sd">    Warning:</span>
+<span class="sd">        Script failures, timeouts, or unexpected errors are captured and returned</span>
+<span class="sd">        as descriptive error messages rather than raising exceptions.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="c1"># Serialize complex parameters to JSON strings</span>
+        <span class="n">amount_str</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">amount</span><span class="p">)</span>
+        <span class="n">grid_str</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">grid</span><span class="p">)</span> 
+
+        <span class="c1"># Execute the script with combined stdout/stderr capture</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="n">subprocess</span><span class="o">.</span><span class="n">run</span><span class="p">(</span>
+            <span class="p">[</span>
+                <span class="n">sys</span><span class="o">.</span><span class="n">executable</span><span class="p">,</span>  <span class="c1"># Use current Python interpreter</span>
+                <span class="n">path</span><span class="p">,</span>            <span class="c1"># Script path</span>
+                <span class="s2">&quot;--vehicle_id&quot;</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">vehicle_id</span><span class="p">),</span>
+                <span class="s2">&quot;--amount&quot;</span><span class="p">,</span> <span class="n">amount_str</span><span class="p">,</span>
+                <span class="s2">&quot;--grid&quot;</span><span class="p">,</span> <span class="n">grid_str</span><span class="p">,</span>
+                <span class="s2">&quot;--long&quot;</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">long</span><span class="p">),</span>
+                <span class="s2">&quot;--lat&quot;</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">lat</span><span class="p">)</span>
+            <span class="p">],</span>
+            <span class="n">stdout</span><span class="o">=</span><span class="n">subprocess</span><span class="o">.</span><span class="n">PIPE</span><span class="p">,</span>
+            <span class="n">stderr</span><span class="o">=</span><span class="n">subprocess</span><span class="o">.</span><span class="n">STDOUT</span><span class="p">,</span>  <span class="c1"># Combine stderr with stdout</span>
+            <span class="n">timeout</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span>                <span class="c1"># 20-second timeout</span>
+            <span class="n">text</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>                 <span class="c1"># Return string output</span>
+            <span class="n">check</span><span class="o">=</span><span class="kc">True</span>                 <span class="c1"># Raise exception on non-zero exit</span>
+        <span class="p">)</span>
+        <span class="k">return</span> <span class="n">result</span><span class="o">.</span><span class="n">stdout</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+        
+    <span class="k">except</span> <span class="n">subprocess</span><span class="o">.</span><span class="n">CalledProcessError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="c1"># Handle script execution failures</span>
+        <span class="n">error_output</span> <span class="o">=</span> <span class="n">e</span><span class="o">.</span><span class="n">stdout</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span> <span class="k">if</span> <span class="n">e</span><span class="o">.</span><span class="n">stdout</span> <span class="k">else</span> <span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">stderr</span><span class="p">)</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;Script failed: </span><span class="si">{</span><span class="n">path</span><span class="si">}</span><span class="se">\n</span><span class="s2">Code: </span><span class="si">{</span><span class="n">e</span><span class="o">.</span><span class="n">returncode</span><span class="si">}</span><span class="se">\n</span><span class="s2">Output: </span><span class="si">{</span><span class="n">error_output</span><span class="si">}</span><span class="s2">&quot;</span>
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="c1"># Handle unexpected errors (timeouts, etc.)</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;Unexpected error in </span><span class="si">{</span><span class="n">path</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span></div>
+
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, Estela Mora Barba.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

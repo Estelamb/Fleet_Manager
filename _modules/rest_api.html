@@ -1,0 +1,1283 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>rest_api &mdash; Fleet Manager 1.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=f2a433a1"></script>
+        <script src="../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+        <script src="../_static/copybutton.js?v=f281be69"></script>
+        <script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script>
+        <script type="module">import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11.12.1/dist/mermaid.esm.min.mjs";
+
+
+
+
+
+const initStyles = () => {
+    const defaultStyle = document.createElement('style');
+    defaultStyle.textContent = `pre.mermaid {
+    /* Same as .mermaid-container > pre */
+    display: block;
+    width: 100%;
+}
+
+pre.mermaid > svg {
+    /* Same as .mermaid-container > pre > svg */
+    height: 500px;
+    width: 100%;
+    max-width: 100% !important;
+}`;
+    document.head.appendChild(defaultStyle);
+
+    const fullscreenStyle = document.createElement('style');
+    fullscreenStyle.textContent = `.mermaid-container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.mermaid-container > pre {
+    display: block;
+    width: 100%;
+}
+
+.mermaid-container > pre > svg {
+    height: 500px;
+    width: 100%;
+    max-width: 100% !important;
+}
+
+.mermaid-fullscreen-btn {
+    width: 28px;
+    height: 28px;
+    background: rgba(255, 255, 255, 0.95);
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    border-radius: 4px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    font-size: 14px;
+    line-height: 1;
+    padding: 0;
+    color: #333;
+}
+
+.mermaid-fullscreen-btn:hover {
+    opacity: 100% !important;
+    background: rgba(255, 255, 255, 1);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+    transform: scale(1.1);
+}
+
+.mermaid-fullscreen-btn.dark-theme {
+    background: rgba(50, 50, 50, 0.95);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: #e0e0e0;
+}
+
+.mermaid-fullscreen-btn.dark-theme:hover {
+    background: rgba(60, 60, 60, 1);
+    box-shadow: 0 3px 10px rgba(255, 255, 255, 0.2);
+}
+
+.mermaid-fullscreen-modal {
+    display: none;
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 95vw;
+    height: 100vh;
+    background: rgba(255, 255, 255, 0.98);
+    z-index: 9999;
+    padding: 20px;
+    overflow: auto;
+}
+
+.mermaid-fullscreen-modal.dark-theme {
+    background: rgba(0, 0, 0, 0.98);
+}
+
+.mermaid-fullscreen-modal.active {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mermaid-container-fullscreen {
+    position: relative;
+    width: 95vw;
+    height: 90vh;
+    max-width: 95vw;
+    max-height: 90vh;
+    background: white;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    overflow: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mermaid-container-fullscreen.dark-theme {
+    background: #1a1a1a;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.8);
+}
+
+.mermaid-container-fullscreen pre.mermaid {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mermaid-container-fullscreen .mermaid svg {
+    height: 100% !important;
+    width: 100% !important;
+    cursor: grab;
+}
+
+.mermaid-fullscreen-close {
+    position: fixed !important;
+    top: 20px !important;
+    right: 20px !important;
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.95);
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    transition: all 0.2s;
+    font-size: 24px;
+    line-height: 1;
+    color: #333;
+}
+
+.mermaid-fullscreen-close:hover {
+    background: white;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+    transform: scale(1.1);
+}
+
+.mermaid-fullscreen-close.dark-theme {
+    background: rgba(50, 50, 50, 0.95);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #e0e0e0;
+}
+
+.mermaid-fullscreen-close.dark-theme:hover {
+    background: rgba(60, 60, 60, 1);
+    box-shadow: 0 6px 16px rgba(255, 255, 255, 0.2);
+}
+
+.mermaid-fullscreen-modal .mermaid-fullscreen-btn {
+    display: none !important;
+}`;
+    document.head.appendChild(fullscreenStyle);
+}
+
+// Detect if page has dark background
+const isDarkTheme = () => {
+    // We use a set of heuristics:
+    // 1. Check for common dark mode classes or attributes
+    // 2. Check computed background color brightness
+    if (document.documentElement.classList.contains('dark') ||
+        document.documentElement.getAttribute('data-theme') === 'dark' ||
+        document.body.classList.contains('dark') ||
+        document.body.getAttribute('data-theme') === 'dark') {
+        // console.log("Dark theme detected via class/attribute");
+        return true;
+    }
+    if (document.documentElement.classList.contains('light') ||
+        document.documentElement.getAttribute('data-theme') === 'light' ||
+        document.body.classList.contains('light') ||
+        document.body.getAttribute('data-theme') === 'light') {
+        // console.log("Light theme detected via class/attribute");
+        return false;
+    }
+    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        // console.log("Dark theme detected via prefers-color-scheme");
+        return true;
+    }
+    const bgColor = window.getComputedStyle(document.body).backgroundColor;
+    const match = bgColor.match(/rgb\((\d+),\s*(\d+),\s*(\d+)/);
+    if (match) {
+        const r = parseInt(match[1]);
+        const g = parseInt(match[2]);
+        const b = parseInt(match[3]);
+        const brightness = (r * 299 + g * 587 + b * 114) / 1000;
+        // console.log("Background color brightness:", brightness);
+        return brightness < 128;
+    }
+    // console.log("No dark or light theme detected, defaulting to light theme");
+    return false;
+};
+
+let darkTheme = isDarkTheme();
+let modal = null;
+let modalContent = null;
+let previousScrollOffset = [window.scrollX, window.scrollY];
+
+const runMermaid = async (rerun) => {
+    console.log("Running mermaid diagrams, rerun =", rerun);
+    // clear all existing mermaid charts
+    let all_mermaids = document.querySelectorAll(".mermaid");
+
+    if (rerun) {
+        all_mermaids.forEach((el) => {
+            if(!el.hasAttribute("data-original-code")) {
+                // store original code
+                // console.log(`Storing original code for first run: `, el.innerHTML);
+                el.setAttribute('data-original-code', el.innerHTML);
+            }
+            if(el.getAttribute("data-processed") === "true") {
+                // remove and restore original
+                el.removeAttribute("data-processed");
+                // console.log(`Restoring original code for re-run: `, el.getAttribute('data-original-code'));
+                el.innerHTML = el.getAttribute('data-original-code');
+            } else {
+                // store original code
+                // console.log(`Storing original code for re-run: `, el.innerHTML);
+                el.setAttribute('data-original-code', el.innerHTML);
+            }
+        });
+        await mermaid.run();
+    }
+
+    all_mermaids = document.querySelectorAll(".mermaid");
+    const mermaids_processed = document.querySelectorAll(".mermaid[data-processed='true']");
+
+    if ("False" === "True") {
+        const mermaids_to_add_zoom = -1 === -1 ? all_mermaids.length : -1;
+        if(mermaids_to_add_zoom > 0) {
+            var svgs = d3.selectAll("");
+            if(all_mermaids.length !== mermaids_processed.length) {
+                setTimeout(() => runMermaid(false), 200);
+                return;
+            } else if(svgs.size() !== mermaids_to_add_zoom) {
+                setTimeout(() => runMermaid(false), 200);
+                return;
+            } else {
+                svgs.each(function() {
+                    var svg = d3.select(this);
+                    svg.html("<g class='wrapper'>" + svg.html() + "</g>");
+                    var inner = svg.select("g");
+                    var zoom = d3.zoom().on("zoom", function(event) {
+                        inner.attr("transform", event.transform);
+                    });
+                    svg.call(zoom);
+                });
+            }
+        }
+    } else if(all_mermaids.length !== mermaids_processed.length) {
+        // Wait for mermaid to process all diagrams
+        setTimeout(() => runMermaid(false), 200);
+        return;
+    }
+
+    // Stop here if not adding fullscreen capability
+    if ("True" !== "True") return;
+
+    if (modal !== null ) {
+        // Destroy existing modal
+        modal.remove();
+        modal = null;
+        modalContent = null;
+    }
+
+    modal = document.createElement('div');
+    modal.className = 'mermaid-fullscreen-modal' + (darkTheme ? ' dark-theme' : '');
+    modal.setAttribute('role', 'dialog');
+    modal.setAttribute('aria-modal', 'true');
+    modal.setAttribute('aria-label', 'Fullscreen diagram viewer');
+    modal.innerHTML = `
+        <button class="mermaid-fullscreen-close${darkTheme ? ' dark-theme' : ''}" aria-label="Close fullscreen">✕</button>
+        <div class="mermaid-container-fullscreen${darkTheme ? ' dark-theme' : ''}"></div>
+    `;
+    document.body.appendChild(modal);
+
+    modalContent = modal.querySelector('.mermaid-container-fullscreen');
+    const closeBtn = modal.querySelector('.mermaid-fullscreen-close');
+
+    const closeModal = () => {
+        modal.classList.remove('active');
+        modalContent.innerHTML = '';
+        document.body.style.overflow = ''
+        window.scrollTo({left: previousScrollOffset[0], top: previousScrollOffset[1], behavior: 'instant'});
+    };
+
+    closeBtn.addEventListener('click', closeModal);
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) closeModal();
+    });
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && modal.classList.contains('active')) {
+            closeModal();
+        }
+    });
+
+    document.querySelectorAll('.mermaid').forEach((mermaidDiv) => {
+        if (mermaidDiv.parentNode.classList.contains('mermaid-container') ||
+            mermaidDiv.closest('.mermaid-fullscreen-modal')) {
+            // Already processed, adjust button class if needed
+            const existingBtn = mermaidDiv.parentNode.querySelector('.mermaid-fullscreen-btn');
+            if (existingBtn) {
+                existingBtn.className = 'mermaid-fullscreen-btn' + (darkTheme ? ' dark-theme' : '');
+            }
+            return;
+        }
+
+        const container = document.createElement('div');
+        container.className = 'mermaid-container';
+        mermaidDiv.parentNode.insertBefore(container, mermaidDiv);
+        container.appendChild(mermaidDiv);
+
+        const fullscreenBtn = document.createElement('button');
+        fullscreenBtn.className = 'mermaid-fullscreen-btn' + (darkTheme ? ' dark-theme' : '');
+        fullscreenBtn.setAttribute('aria-label', 'View diagram in fullscreen');
+        fullscreenBtn.textContent = '⛶';
+        fullscreenBtn.style.opacity = '50%';
+
+        // Calculate dynamic position based on diagram's margin and padding
+        const diagramStyle = window.getComputedStyle(mermaidDiv);
+        const marginTop = parseFloat(diagramStyle.marginTop) || 0;
+        const marginRight = parseFloat(diagramStyle.marginRight) || 0;
+        const paddingTop = parseFloat(diagramStyle.paddingTop) || 0;
+        const paddingRight = parseFloat(diagramStyle.paddingRight) || 0;
+        fullscreenBtn.style.top = `${marginTop + paddingTop + 4}px`;
+        fullscreenBtn.style.right = `${marginRight + paddingRight + 4}px`;
+
+        fullscreenBtn.addEventListener('click', () => {
+            previousScrollOffset = [window.scroll, window.scrollY];
+            const clone = mermaidDiv.cloneNode(true);
+            modalContent.innerHTML = '';
+            modalContent.appendChild(clone);
+
+            const svg = clone.querySelector('svg');
+            if (svg) {
+                svg.removeAttribute('width');
+                svg.removeAttribute('height');
+                svg.style.width = '100%';
+                svg.style.height = 'auto';
+                svg.style.maxWidth = '100%';
+                svg.style.sdisplay = 'block';
+
+                if ("False" === "True") {
+                    setTimeout(() => {
+                        const g = svg.querySelector('g');
+                        if (g) {
+                            var svgD3 = d3.select(svg);
+                            svgD3.html("<g class='wrapper'>" + svgD3.html() + "</g>");
+                            var inner = svgD3.select("g");
+                            var zoom = d3.zoom().on("zoom", function(event) {
+                                inner.attr("transform", event.transform);
+                            });
+                            svgD3.call(zoom);
+                        }
+                    }, 100);
+                }
+            }
+
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+        container.appendChild(fullscreenBtn);
+    });
+};
+
+const load = async () => {
+    initStyles();
+
+    await runMermaid(true);
+
+    const reRunIfThemeChanges = async () => {
+        const newDarkTheme = isDarkTheme();
+        if (newDarkTheme !== darkTheme) {
+            darkTheme = newDarkTheme;
+            console.log("Theme change detected, re-running mermaid with", darkTheme ? "dark" : "default", "theme");
+            await mermaid.initialize(
+                {...JSON.parse(
+                    `{"startOnLoad": false}`
+                ),
+                ...{ darkMode: darkTheme, theme: darkTheme ? 'dark' : 'default' },
+                }
+            );
+            await runMermaid(true);
+        }
+    };
+
+    // Update theme classes when theme changes
+    const themeObserver = new MutationObserver(reRunIfThemeChanges);
+    themeObserver.observe(document.documentElement, {
+        attributes: true,
+        attributeFilter: ['class', 'style', 'data-theme']
+    });
+    themeObserver.observe(document.body, {
+        attributes: true,
+        attributeFilter: ['class', 'style', 'data-theme']
+    });
+};
+
+
+
+
+
+console.log("Initializing mermaid with", darkTheme ? "dark" : "default", "theme");
+mermaid.initialize(
+    {...JSON.parse(
+        `{"startOnLoad": false}`
+    ),
+    ...{ darkMode: darkTheme, theme: darkTheme ? 'dark' : 'default' },
+    }
+);
+
+window.addEventListener("load", load);
+window.runMermaid = runMermaid;</script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="author" title="About these documents" href="../about.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Fleet Manager
+          </a>
+              <div class="version">
+                1.0
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../about.html">About the project</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules.html">Code documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../training.html">Training documentation</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Fleet Manager</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Module code</a></li>
+      <li class="breadcrumb-item active">rest_api</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <h1>Source code for rest_api</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">ThingsBoard REST API Client Module</span>
+
+<span class="sd">.. module:: rest_api</span>
+<span class="sd">    :synopsis: Provides a comprehensive client for ThingsBoard REST API operations</span>
+<span class="sd">    :platform: Linux, Windows, macOS</span>
+<span class="sd">    :author: Fleet Management System Team</span>
+
+<span class="sd">This module implements a complete REST API client for ThingsBoard IoT platform integration.</span>
+<span class="sd">It provides high-level methods for device management, authentication, telemetry operations,</span>
+<span class="sd">and relationship management within the fleet management system.</span>
+
+<span class="sd">.. note::</span>
+<span class="sd">    Key Features:</span>
+<span class="sd">    - Comprehensive device lifecycle management (create, read, update, delete)</span>
+<span class="sd">    - Automatic authentication and session management</span>
+<span class="sd">    - Device relationship and hierarchy management</span>
+<span class="sd">    - Server-side attribute management for device configuration</span>
+<span class="sd">    - Bulk operations for efficient fleet management</span>
+<span class="sd">    - Robust error handling with automatic retry mechanisms</span>
+
+<span class="sd">.. versionadded:: 1.0.0</span>
+<span class="sd">    Initial implementation of ThingsBoard REST API client</span>
+
+<span class="sd">.. seealso::</span>
+<span class="sd">    - `ThingsBoard REST API Documentation &lt;https://thingsboard.io/docs/reference/rest-api/&gt;`_</span>
+<span class="sd">    - :mod:`MQTT.ThingsBoard.tb_manager` for higher-level ThingsBoard operations</span>
+
+<span class="sd">Example:</span>
+<span class="sd">    Basic usage of the ThingsBoard API client::</span>
+
+<span class="sd">        from MQTT.ThingsBoard.rest_api import ThingsBoardAPI</span>
+
+<span class="sd">        # Initialize API client</span>
+<span class="sd">        api = ThingsBoardAPI(&quot;https://your-thingsboard-host&quot;)</span>
+<span class="sd">        </span>
+<span class="sd">        # Authenticate</span>
+<span class="sd">        if api.login(&quot;username&quot;, &quot;password&quot;):</span>
+<span class="sd">            # Create a new device</span>
+<span class="sd">            device_id = api.create_device(&quot;my_device&quot;, &quot;sensor&quot;)</span>
+<span class="sd">            </span>
+<span class="sd">            # Set device attributes</span>
+<span class="sd">            api.set_server_attribute(device_id, &quot;location&quot;, &quot;warehouse_1&quot;)</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">requests</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">requests.packages.urllib3.exceptions</span><span class="w"> </span><span class="kn">import</span> <span class="n">InsecureRequestWarning</span>
+
+<span class="c1"># No certificate</span>
+<span class="n">requests</span><span class="o">.</span><span class="n">packages</span><span class="o">.</span><span class="n">urllib3</span><span class="o">.</span><span class="n">disable_warnings</span><span class="p">(</span><span class="n">InsecureRequestWarning</span><span class="p">)</span>
+
+<div class="viewcode-block" id="ThingsBoardAPI">
+<a class="viewcode-back" href="../Fleet_module/MQTT/ThingsBoard/rest_api_component.html#rest_api.ThingsBoardAPI">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">ThingsBoardAPI</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Comprehensive ThingsBoard REST API client for device and telemetry management.</span>
+<span class="sd">    </span>
+<span class="sd">    This class provides a high-level interface to the ThingsBoard REST API, handling</span>
+<span class="sd">    authentication, session management, and all common device operations. It&#39;s designed</span>
+<span class="sd">    to integrate seamlessly with fleet management systems requiring IoT device control.</span>
+<span class="sd">    </span>
+<span class="sd">    The client automatically manages authentication tokens and provides retry mechanisms</span>
+<span class="sd">    for robust operation in production environments. All methods include comprehensive</span>
+<span class="sd">    error handling and return appropriate status indicators.</span>
+
+<span class="sd">    :param host: ThingsBoard server URL (e.g., &#39;https://demo.thingsboard.io&#39;)</span>
+<span class="sd">    :type host: str</span>
+<span class="sd">    </span>
+<span class="sd">    .. note::</span>
+<span class="sd">        The client maintains a persistent session with automatic token refresh</span>
+<span class="sd">        capabilities for long-running applications.</span>
+<span class="sd">        </span>
+<span class="sd">    .. warning::</span>
+<span class="sd">        Ensure the provided host URL is accessible and the ThingsBoard instance</span>
+<span class="sd">        is properly configured before attempting operations.</span>
+<span class="sd">        </span>
+<span class="sd">    .. versionadded:: 1.0.0</span>
+<span class="sd">        Initial implementation of ThingsBoard API client</span>
+<span class="sd">        </span>
+<span class="sd">    Attributes:</span>
+<span class="sd">        host (str): ThingsBoard server base URL</span>
+<span class="sd">        token (str): Current authentication token (None if not authenticated)</span>
+<span class="sd">        session (requests.Session): Persistent HTTP session for API calls</span>
+<span class="sd">        username (str): Stored username for automatic re-authentication</span>
+<span class="sd">        password (str): Stored password for automatic re-authentication</span>
+<span class="sd">        </span>
+<span class="sd">    Example:</span>
+<span class="sd">        Initialize and authenticate with ThingsBoard::</span>
+<span class="sd">        </span>
+<span class="sd">            api = ThingsBoardAPI(&quot;https://demo.thingsboard.io&quot;)</span>
+<span class="sd">            if api.login(&quot;tenant@thingsboard.org&quot;, &quot;tenant&quot;):</span>
+<span class="sd">                print(&quot;Successfully authenticated&quot;)</span>
+<span class="sd">                # Perform API operations...</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    
+<div class="viewcode-block" id="ThingsBoardAPI.__init__">
+<a class="viewcode-back" href="../Fleet_module/MQTT/ThingsBoard/rest_api_component.html#rest_api.ThingsBoardAPI.__init__">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">host</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Initialize the ThingsBoard API client.</span>
+<span class="sd">        </span>
+<span class="sd">        Sets up the client with the specified ThingsBoard host URL and initializes</span>
+<span class="sd">        the HTTP session for subsequent API calls. No authentication is performed</span>
+<span class="sd">        during initialization.</span>
+<span class="sd">        </span>
+<span class="sd">        :param host: Base URL of the ThingsBoard server</span>
+<span class="sd">        :type host: str</span>
+<span class="sd">        </span>
+<span class="sd">        Example:</span>
+<span class="sd">            Create API client for different environments::</span>
+<span class="sd">            </span>
+<span class="sd">                # Production environment</span>
+<span class="sd">                prod_api = ThingsBoardAPI(&quot;https://thingsboard.company.com&quot;)</span>
+<span class="sd">                </span>
+<span class="sd">                # Development environment  </span>
+<span class="sd">                dev_api = ThingsBoardAPI(&quot;https://localhost:8080&quot;)</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">host</span> <span class="o">=</span> <span class="n">host</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">token</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">session</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">Session</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">username</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">password</span> <span class="o">=</span> <span class="kc">None</span>
+        
+        <span class="c1"># No certificate</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">verify</span> <span class="o">=</span> <span class="kc">False</span></div>
+
+
+<div class="viewcode-block" id="ThingsBoardAPI.login">
+<a class="viewcode-back" href="../Fleet_module/MQTT/ThingsBoard/rest_api_component.html#rest_api.ThingsBoardAPI.login">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">login</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">username</span><span class="p">,</span> <span class="n">password</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Authenticate with ThingsBoard using username and password credentials.</span>
+<span class="sd">        </span>
+<span class="sd">        Performs user authentication with the ThingsBoard server and obtains an</span>
+<span class="sd">        access token for subsequent API calls. The token is automatically added</span>
+<span class="sd">        to the session headers for all future requests.</span>
+<span class="sd">        </span>
+<span class="sd">        Credentials are stored internally to enable automatic re-authentication</span>
+<span class="sd">        if the token expires during long-running operations.</span>
+<span class="sd">        </span>
+<span class="sd">        :param username: ThingsBoard username (e.g., tenant@thingsboard.org)</span>
+<span class="sd">        :type username: str</span>
+<span class="sd">        :param password: ThingsBoard password</span>
+<span class="sd">        :type password: str</span>
+<span class="sd">        :return: True if authentication successful, False otherwise</span>
+<span class="sd">        :rtype: bool</span>
+<span class="sd">        </span>
+<span class="sd">        .. note::</span>
+<span class="sd">            The authentication token is automatically included in all subsequent</span>
+<span class="sd">            API requests via the session headers.</span>
+<span class="sd">            </span>
+<span class="sd">        .. warning::</span>
+<span class="sd">            Credentials are stored in memory for automatic re-authentication.</span>
+<span class="sd">            Ensure proper security measures in production environments.</span>
+<span class="sd">            </span>
+<span class="sd">        Example:</span>
+<span class="sd">            Authenticate with different credential types::</span>
+<span class="sd">            </span>
+<span class="sd">                # Tenant user authentication</span>
+<span class="sd">                success = api.login(&quot;tenant@thingsboard.org&quot;, &quot;tenant&quot;)</span>
+<span class="sd">                </span>
+<span class="sd">                # Customer user authentication</span>
+<span class="sd">                success = api.login(&quot;customer@company.com&quot;, &quot;password123&quot;)</span>
+<span class="sd">                </span>
+<span class="sd">                if success:</span>
+<span class="sd">                    print(&quot;Authentication successful&quot;)</span>
+<span class="sd">                else:</span>
+<span class="sd">                    print(&quot;Authentication failed&quot;)</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># Store credentials for potential re-authentication</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">username</span> <span class="o">=</span> <span class="n">username</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">password</span> <span class="o">=</span> <span class="n">password</span>
+        
+        <span class="c1"># Construct authentication endpoint URL</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">host</span><span class="si">}</span><span class="s2">/api/auth/login&quot;</span>
+        <span class="n">headers</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;Content-Type&quot;</span><span class="p">:</span> <span class="s2">&quot;application/json&quot;</span><span class="p">}</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;username&quot;</span><span class="p">:</span> <span class="n">username</span><span class="p">,</span> <span class="s2">&quot;password&quot;</span><span class="p">:</span> <span class="n">password</span><span class="p">}</span>
+        
+        <span class="c1"># Attempt authentication with ThingsBoard</span>
+        <span class="n">response</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span> <span class="n">json</span><span class="o">=</span><span class="n">data</span><span class="p">)</span>
+        
+        <span class="k">if</span> <span class="n">response</span><span class="o">.</span><span class="n">status_code</span> <span class="o">==</span> <span class="mi">200</span><span class="p">:</span>
+            <span class="c1"># Extract authentication token from response</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">token</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;token&quot;</span><span class="p">)</span>
+            
+            <span class="c1"># Add token to session headers for future requests</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">headers</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s2">&quot;X-Authorization&quot;</span><span class="p">:</span> <span class="sa">f</span><span class="s2">&quot;Bearer </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">token</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">})</span>
+            <span class="k">return</span> <span class="kc">True</span>
+        <span class="k">return</span> <span class="kc">False</span></div>
+
+
+<div class="viewcode-block" id="ThingsBoardAPI.ensure_auth">
+<a class="viewcode-back" href="../Fleet_module/MQTT/ThingsBoard/rest_api_component.html#rest_api.ThingsBoardAPI.ensure_auth">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">ensure_auth</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Ensure valid authentication before API operations.</span>
+<span class="sd">        </span>
+<span class="sd">        Verifies that a valid authentication token exists and is properly</span>
+<span class="sd">        configured in the session headers. If authentication is missing or</span>
+<span class="sd">        invalid, attempts automatic re-authentication using stored credentials.</span>
+<span class="sd">        </span>
+<span class="sd">        This method is called internally before each API operation to ensure</span>
+<span class="sd">        requests are properly authenticated and will succeed.</span>
+<span class="sd">        </span>
+<span class="sd">        :return: True if authentication is valid or successfully refreshed, False otherwise</span>
+<span class="sd">        :rtype: bool</span>
+<span class="sd">        </span>
+<span class="sd">        .. note::</span>
+<span class="sd">            This method is called automatically by all API methods that require</span>
+<span class="sd">            authentication. Manual calls are typically not necessary.</span>
+<span class="sd">            </span>
+<span class="sd">        .. warning::</span>
+<span class="sd">            Requires stored username and password for automatic re-authentication.</span>
+<span class="sd">            If credentials are not available, manual login is required.</span>
+<span class="sd">            </span>
+<span class="sd">        Example:</span>
+<span class="sd">            Manual authentication check (rarely needed)::</span>
+<span class="sd">            </span>
+<span class="sd">                if api.ensure_auth():</span>
+<span class="sd">                    print(&quot;Ready for API operations&quot;)</span>
+<span class="sd">                else:</span>
+<span class="sd">                    print(&quot;Authentication required&quot;)</span>
+<span class="sd">                    api.login(&quot;username&quot;, &quot;password&quot;)</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># Check if token and authorization header are present</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">token</span> <span class="ow">or</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">headers</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;X-Authorization&quot;</span><span class="p">):</span>
+            <span class="c1"># Attempt re-authentication with stored credentials</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">username</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">password</span><span class="p">:</span>
+                <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">login</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">username</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">password</span><span class="p">)</span>
+        <span class="k">return</span> <span class="kc">True</span></div>
+
+
+<div class="viewcode-block" id="ThingsBoardAPI.create_device">
+<a class="viewcode-back" href="../Fleet_module/MQTT/ThingsBoard/rest_api_component.html#rest_api.ThingsBoardAPI.create_device">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">create_device</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">device_name</span><span class="p">,</span> <span class="n">device_type</span><span class="o">=</span><span class="s2">&quot;default&quot;</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Create a new device in ThingsBoard with specified name and type.</span>
+<span class="sd">        </span>
+<span class="sd">        Creates a new IoT device entity in the ThingsBoard platform with the</span>
+<span class="sd">        provided name and type. The device will be associated with the currently</span>
+<span class="sd">        authenticated tenant and can immediately receive telemetry data.</span>
+<span class="sd">        </span>
+<span class="sd">        :param device_name: Unique name for the device within the tenant scope</span>
+<span class="sd">        :type device_name: str</span>
+<span class="sd">        :param device_type: Device type classification (default: &quot;default&quot;)</span>
+<span class="sd">        :type device_type: str</span>
+<span class="sd">        :return: Device ID if creation successful, None otherwise</span>
+<span class="sd">        :rtype: str or None</span>
+<span class="sd">        </span>
+<span class="sd">        .. note::</span>
+<span class="sd">            Device names must be unique within the tenant scope. Device types</span>
+<span class="sd">            are used for organization and can be used for bulk operations.</span>
+<span class="sd">            </span>
+<span class="sd">        .. warning::</span>
+<span class="sd">            Requires valid authentication. Returns None if authentication fails</span>
+<span class="sd">            or if the device name already exists.</span>
+<span class="sd">            </span>
+<span class="sd">        Example:</span>
+<span class="sd">            Create devices with different types::</span>
+<span class="sd">            </span>
+<span class="sd">                # Create a temperature sensor</span>
+<span class="sd">                sensor_id = api.create_device(&quot;temp_sensor_01&quot;, &quot;temperature_sensor&quot;)</span>
+<span class="sd">                </span>
+<span class="sd">                # Create a GPS tracker</span>
+<span class="sd">                tracker_id = api.create_device(&quot;vehicle_tracker_05&quot;, &quot;gps_tracker&quot;)</span>
+<span class="sd">                </span>
+<span class="sd">                # Create device with default type</span>
+<span class="sd">                device_id = api.create_device(&quot;generic_device_01&quot;)</span>
+<span class="sd">                </span>
+<span class="sd">                if device_id:</span>
+<span class="sd">                    print(f&quot;Device created with ID: {device_id}&quot;)</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># Ensure valid authentication before proceeding</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">ensure_auth</span><span class="p">():</span>
+            <span class="k">return</span> <span class="kc">None</span>
+            
+        <span class="c1"># Construct device creation endpoint URL</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">host</span><span class="si">}</span><span class="s2">/api/device&quot;</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="n">device_name</span><span class="p">,</span> <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="n">device_type</span><span class="p">}</span>
+        
+        <span class="c1"># Send device creation request</span>
+        <span class="n">response</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">json</span><span class="o">=</span><span class="n">data</span><span class="p">)</span>
+        
+        <span class="k">if</span> <span class="n">response</span><span class="o">.</span><span class="n">ok</span><span class="p">:</span>
+            <span class="c1"># Extract and return the device ID from the response</span>
+            <span class="k">return</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;id&#39;</span><span class="p">,</span> <span class="p">{})</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;id&#39;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="kc">None</span></div>
+
+
+<div class="viewcode-block" id="ThingsBoardAPI.get_device_access_token">
+<a class="viewcode-back" href="../Fleet_module/MQTT/ThingsBoard/rest_api_component.html#rest_api.ThingsBoardAPI.get_device_access_token">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">get_device_access_token</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">device_id</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Retrieve the access token for a specific device.</span>
+<span class="sd">        </span>
+<span class="sd">        Fetches the device credentials from ThingsBoard and returns the access token</span>
+<span class="sd">        if the device is configured for ACCESS_TOKEN authentication. This token is</span>
+<span class="sd">        required for devices to publish telemetry data to ThingsBoard.</span>
+<span class="sd">        </span>
+<span class="sd">        :param device_id: Unique identifier of the device</span>
+<span class="sd">        :type device_id: str</span>
+<span class="sd">        :return: Device access token if available, None otherwise</span>
+<span class="sd">        :rtype: str or None</span>
+<span class="sd">        </span>
+<span class="sd">        .. note::</span>
+<span class="sd">            Only devices configured with ACCESS_TOKEN credential type will return</span>
+<span class="sd">            a valid token. Other credential types (X.509, MQTT Basic) will return None.</span>
+<span class="sd">            </span>
+<span class="sd">        .. warning::</span>
+<span class="sd">            The access token is sensitive information that should be securely</span>
+<span class="sd">            transmitted to devices and stored safely.</span>
+<span class="sd">            </span>
+<span class="sd">        Example:</span>
+<span class="sd">            Retrieve and use device access token::</span>
+<span class="sd">            </span>
+<span class="sd">                device_id = api.create_device(&quot;sensor_01&quot;, &quot;temperature&quot;)</span>
+<span class="sd">                token = api.get_device_access_token(device_id)</span>
+<span class="sd">                </span>
+<span class="sd">                if token:</span>
+<span class="sd">                    print(f&quot;Device token: {token}&quot;)</span>
+<span class="sd">                    # Configure device with this token for telemetry publishing</span>
+<span class="sd">                else:</span>
+<span class="sd">                    print(&quot;Failed to retrieve device token&quot;)</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># Ensure valid authentication before proceeding</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">ensure_auth</span><span class="p">():</span>
+            <span class="k">return</span> <span class="kc">None</span>
+            
+        <span class="c1"># Construct device credentials endpoint URL</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">host</span><span class="si">}</span><span class="s2">/api/device/</span><span class="si">{</span><span class="n">device_id</span><span class="si">}</span><span class="s2">/credentials&quot;</span>
+        <span class="n">response</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+        
+        <span class="c1"># Check if response is valid and credentials type is ACCESS_TOKEN</span>
+        <span class="k">if</span> <span class="n">response</span><span class="o">.</span><span class="n">ok</span> <span class="ow">and</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;credentialsType&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="s2">&quot;ACCESS_TOKEN&quot;</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;credentialsId&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="kc">None</span></div>
+
+
+<div class="viewcode-block" id="ThingsBoardAPI.delete_device">
+<a class="viewcode-back" href="../Fleet_module/MQTT/ThingsBoard/rest_api_component.html#rest_api.ThingsBoardAPI.delete_device">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">delete_device</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">device_id</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Delete a specific device from ThingsBoard.</span>
+<span class="sd">        </span>
+<span class="sd">        Permanently removes a device and all its associated data (telemetry,</span>
+<span class="sd">        attributes, relationships) from the ThingsBoard platform. This operation</span>
+<span class="sd">        cannot be undone.</span>
+<span class="sd">        </span>
+<span class="sd">        :param device_id: Unique identifier of the device to delete</span>
+<span class="sd">        :type device_id: str</span>
+<span class="sd">        :return: True if deletion successful, False otherwise</span>
+<span class="sd">        :rtype: bool</span>
+<span class="sd">        </span>
+<span class="sd">        .. warning::</span>
+<span class="sd">            This operation permanently deletes the device and ALL associated data.</span>
+<span class="sd">            Ensure proper backup procedures are in place before deletion.</span>
+<span class="sd">            </span>
+<span class="sd">        .. note::</span>
+<span class="sd">            Related entities (relationships, alarms, events) are also removed</span>
+<span class="sd">            as part of the deletion process.</span>
+<span class="sd">            </span>
+<span class="sd">        Example:</span>
+<span class="sd">            Safe device deletion with confirmation::</span>
+<span class="sd">            </span>
+<span class="sd">                device_id = &quot;device-uuid-here&quot;</span>
+<span class="sd">                </span>
+<span class="sd">                # Optionally backup device data before deletion</span>
+<span class="sd">                # backup_device_data(device_id)</span>
+<span class="sd">                </span>
+<span class="sd">                if api.delete_device(device_id):</span>
+<span class="sd">                    print(&quot;Device successfully deleted&quot;)</span>
+<span class="sd">                else:</span>
+<span class="sd">                    print(&quot;Failed to delete device&quot;)</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># Ensure valid authentication before proceeding</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">ensure_auth</span><span class="p">():</span>
+            <span class="k">return</span> <span class="kc">False</span>
+            
+        <span class="c1"># Construct device deletion endpoint URL</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">host</span><span class="si">}</span><span class="s2">/api/device/</span><span class="si">{</span><span class="n">device_id</span><span class="si">}</span><span class="s2">&quot;</span>
+        <span class="n">response</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+        
+        <span class="c1"># Return success status (HTTP 200 indicates successful deletion)</span>
+        <span class="k">return</span> <span class="n">response</span><span class="o">.</span><span class="n">status_code</span> <span class="o">==</span> <span class="mi">200</span></div>
+
+    
+<div class="viewcode-block" id="ThingsBoardAPI.get_devices_by_type">
+<a class="viewcode-back" href="../Fleet_module/MQTT/ThingsBoard/rest_api_component.html#rest_api.ThingsBoardAPI.get_devices_by_type">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">get_devices_by_type</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">device_type</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Retrieve all devices of a specific type from the tenant.</span>
+<span class="sd">        </span>
+<span class="sd">        Fetches a list of all devices belonging to the current tenant that match</span>
+<span class="sd">        the specified device type. This is useful for bulk operations and fleet</span>
+<span class="sd">        management tasks.</span>
+<span class="sd">        </span>
+<span class="sd">        :param device_type: Device type to filter by (e.g., &quot;temperature_sensor&quot;)</span>
+<span class="sd">        :type device_type: str</span>
+<span class="sd">        :return: List of device objects matching the specified type</span>
+<span class="sd">        :rtype: list</span>
+<span class="sd">        </span>
+<span class="sd">        .. note::</span>
+<span class="sd">            The method returns up to 100 devices per call. For tenants with more</span>
+<span class="sd">            devices of the same type, implement pagination using the page parameter.</span>
+<span class="sd">            </span>
+<span class="sd">        .. tip::</span>
+<span class="sd">            Use this method for fleet-wide operations like bulk configuration</span>
+<span class="sd">            updates or status monitoring.</span>
+<span class="sd">            </span>
+<span class="sd">        Example:</span>
+<span class="sd">            Retrieve and process devices by type::</span>
+<span class="sd">            </span>
+<span class="sd">                # Get all temperature sensors</span>
+<span class="sd">                temp_sensors = api.get_devices_by_type(&quot;temperature_sensor&quot;)</span>
+<span class="sd">                </span>
+<span class="sd">                for device in temp_sensors:</span>
+<span class="sd">                    device_id = device.get(&#39;id&#39;, {}).get(&#39;id&#39;)</span>
+<span class="sd">                    device_name = device.get(&#39;name&#39;)</span>
+<span class="sd">                    print(f&quot;Found sensor: {device_name} (ID: {device_id})&quot;)</span>
+<span class="sd">                    </span>
+<span class="sd">                # Get all GPS trackers</span>
+<span class="sd">                trackers = api.get_devices_by_type(&quot;gps_tracker&quot;)</span>
+<span class="sd">                print(f&quot;Found {len(trackers)} GPS trackers&quot;)</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># Construct tenant devices endpoint URL with type filter</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">host</span><span class="si">}</span><span class="s2">/api/tenant/devices&quot;</span>
+        <span class="n">params</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="n">device_type</span><span class="p">,</span>  <span class="c1"># Filter by device type</span>
+            <span class="s2">&quot;pageSize&quot;</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span>      <span class="c1"># Maximum devices per request</span>
+            <span class="s2">&quot;page&quot;</span><span class="p">:</span> <span class="mi">0</span>             <span class="c1"># Start from first page</span>
+        <span class="p">}</span>
+        
+        <span class="c1"># Send request to retrieve devices</span>
+        <span class="n">response</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">params</span><span class="p">)</span>
+        
+        <span class="k">if</span> <span class="n">response</span><span class="o">.</span><span class="n">ok</span><span class="p">:</span>
+            <span class="c1"># Return the data array from the response</span>
+            <span class="k">return</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;data&quot;</span><span class="p">,</span> <span class="p">[])</span>
+        <span class="k">return</span> <span class="p">[]</span></div>
+
+
+<div class="viewcode-block" id="ThingsBoardAPI.delete_all_devices_by_type">
+<a class="viewcode-back" href="../Fleet_module/MQTT/ThingsBoard/rest_api_component.html#rest_api.ThingsBoardAPI.delete_all_devices_by_type">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">delete_all_devices_by_type</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">device_type</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Delete all devices of a specific type from the tenant.</span>
+<span class="sd">        </span>
+<span class="sd">        Performs a bulk deletion of all devices matching the specified type.</span>
+<span class="sd">        This is a powerful operation useful for fleet management scenarios</span>
+<span class="sd">        where entire device categories need to be removed.</span>
+<span class="sd">        </span>
+<span class="sd">        :param device_type: Device type to delete (e.g., &quot;old_sensor_type&quot;)</span>
+<span class="sd">        :type device_type: str</span>
+<span class="sd">        :return: None</span>
+<span class="sd">        :rtype: None</span>
+<span class="sd">        </span>
+<span class="sd">        .. danger::</span>
+<span class="sd">            This operation will permanently delete ALL devices of the specified</span>
+<span class="sd">            type and their associated data. Use with extreme caution.</span>
+<span class="sd">            </span>
+<span class="sd">        .. note::</span>
+<span class="sd">            The operation processes devices in batches and may take time for</span>
+<span class="sd">            large device fleets. Each device is deleted individually.</span>
+<span class="sd">            </span>
+<span class="sd">        .. tip::</span>
+<span class="sd">            Consider implementing logging or confirmation prompts before using</span>
+<span class="sd">            this method in production environments.</span>
+<span class="sd">            </span>
+<span class="sd">        Example:</span>
+<span class="sd">            Bulk device cleanup with safety measures::</span>
+<span class="sd">            </span>
+<span class="sd">                device_type = &quot;deprecated_sensor_v1&quot;</span>
+<span class="sd">                </span>
+<span class="sd">                # Check how many devices will be deleted</span>
+<span class="sd">                devices = api.get_devices_by_type(device_type)</span>
+<span class="sd">                print(f&quot;Will delete {len(devices)} devices of type &#39;{device_type}&#39;&quot;)</span>
+<span class="sd">                </span>
+<span class="sd">                # Confirm deletion (in production, implement proper confirmation)</span>
+<span class="sd">                confirm = input(&quot;Continue? (yes/no): &quot;)</span>
+<span class="sd">                if confirm.lower() == &#39;yes&#39;:</span>
+<span class="sd">                    api.delete_all_devices_by_type(device_type)</span>
+<span class="sd">                    print(&quot;Bulk deletion completed&quot;)</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># Retrieve all devices of the specified type</span>
+        <span class="n">devices</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_devices_by_type</span><span class="p">(</span><span class="n">device_type</span><span class="p">)</span>
+        
+        <span class="c1"># Delete each device individually</span>
+        <span class="k">for</span> <span class="n">device</span> <span class="ow">in</span> <span class="n">devices</span><span class="p">:</span>
+            <span class="n">device_id</span> <span class="o">=</span> <span class="n">device</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;id&#39;</span><span class="p">,</span> <span class="p">{})</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;id&#39;</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">device_id</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">delete_device</span><span class="p">(</span><span class="n">device_id</span><span class="p">)</span></div>
+
+                
+<div class="viewcode-block" id="ThingsBoardAPI.get_device_by_name">
+<a class="viewcode-back" href="../Fleet_module/MQTT/ThingsBoard/rest_api_component.html#rest_api.ThingsBoardAPI.get_device_by_name">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">get_device_by_name</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">device_name</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Retrieve a specific device by its name.</span>
+<span class="sd">        </span>
+<span class="sd">        Searches for and returns a device with the exact name match within</span>
+<span class="sd">        the current tenant scope. Device names are unique within a tenant,</span>
+<span class="sd">        so this method returns at most one device.</span>
+<span class="sd">        </span>
+<span class="sd">        :param device_name: Exact name of the device to find</span>
+<span class="sd">        :type device_name: str</span>
+<span class="sd">        :return: Device object if found, None otherwise</span>
+<span class="sd">        :rtype: dict or None</span>
+<span class="sd">        </span>
+<span class="sd">        .. note::</span>
+<span class="sd">            Device names are case-sensitive and must match exactly. The search</span>
+<span class="sd">            is performed within the current tenant scope only.</span>
+<span class="sd">            </span>
+<span class="sd">        .. tip::</span>
+<span class="sd">            This method is useful when you know the device name but need to</span>
+<span class="sd">            retrieve its ID or other properties for further operations.</span>
+<span class="sd">            </span>
+<span class="sd">        Example:</span>
+<span class="sd">            Find device by name and perform operations::</span>
+<span class="sd">            </span>
+<span class="sd">                device = api.get_device_by_name(&quot;temperature_sensor_hall_A&quot;)</span>
+<span class="sd">                </span>
+<span class="sd">                if device:</span>
+<span class="sd">                    device_id = device.get(&#39;id&#39;, {}).get(&#39;id&#39;)</span>
+<span class="sd">                    device_type = device.get(&#39;type&#39;)</span>
+<span class="sd">                    print(f&quot;Found device: {device_id} (type: {device_type})&quot;)</span>
+<span class="sd">                    </span>
+<span class="sd">                    # Get access token for the device</span>
+<span class="sd">                    token = api.get_device_access_token(device_id)</span>
+<span class="sd">                    print(f&quot;Device token: {token}&quot;)</span>
+<span class="sd">                else:</span>
+<span class="sd">                    print(&quot;Device not found&quot;)</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># Ensure valid authentication before proceeding</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">ensure_auth</span><span class="p">():</span>
+            <span class="k">return</span> <span class="kc">None</span>
+            
+        <span class="c1"># Construct tenant devices endpoint URL with name filter</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">host</span><span class="si">}</span><span class="s2">/api/tenant/devices&quot;</span>
+        <span class="n">params</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s2">&quot;deviceName&quot;</span><span class="p">:</span> <span class="n">device_name</span><span class="p">,</span>  <span class="c1"># Filter by exact device name</span>
+            <span class="s2">&quot;pageSize&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>              <span class="c1"># We expect only one match</span>
+            <span class="s2">&quot;page&quot;</span><span class="p">:</span> <span class="mi">0</span>                   <span class="c1"># Start from first page</span>
+        <span class="p">}</span>
+        
+        <span class="c1"># Send request to search for the device</span>
+        <span class="n">response</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">params</span><span class="p">)</span>
+        
+        <span class="k">if</span> <span class="n">response</span><span class="o">.</span><span class="n">ok</span><span class="p">:</span>
+            <span class="n">devices</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;data&quot;</span><span class="p">,</span> <span class="p">[])</span>
+            <span class="c1"># Verify exact name match (additional safety check)</span>
+            <span class="k">for</span> <span class="n">device</span> <span class="ow">in</span> <span class="n">devices</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">device</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;name&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="n">device_name</span><span class="p">:</span>
+                    <span class="k">return</span> <span class="n">device</span>
+        <span class="k">return</span> <span class="kc">None</span></div>
+
+    
+<div class="viewcode-block" id="ThingsBoardAPI.create_relation">
+<a class="viewcode-back" href="../Fleet_module/MQTT/ThingsBoard/rest_api_component.html#rest_api.ThingsBoardAPI.create_relation">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">create_relation</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">from_id</span><span class="p">,</span> <span class="n">to_id</span><span class="p">,</span> <span class="n">relation_type</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Create a relationship between two devices in ThingsBoard.</span>
+<span class="sd">        </span>
+<span class="sd">        Establishes a directional relationship between two devices, which can be</span>
+<span class="sd">        used to model hierarchical structures, dependencies, or logical groupings</span>
+<span class="sd">        within the IoT device fleet.</span>
+<span class="sd">        </span>
+<span class="sd">        :param from_id: Source device ID in the relationship</span>
+<span class="sd">        :type from_id: str</span>
+<span class="sd">        :param to_id: Target device ID in the relationship</span>
+<span class="sd">        :type to_id: str</span>
+<span class="sd">        :param relation_type: Type of relationship (e.g., &quot;Contains&quot;, &quot;Manages&quot;)</span>
+<span class="sd">        :type relation_type: str</span>
+<span class="sd">        :return: True if relationship created successfully, False otherwise</span>
+<span class="sd">        :rtype: bool</span>
+<span class="sd">        </span>
+<span class="sd">        .. note::</span>
+<span class="sd">            Relationships are directional (from_id -&gt; to_id) and can be used to</span>
+<span class="sd">            create complex device hierarchies and dependencies.</span>
+<span class="sd">            </span>
+<span class="sd">        .. tip::</span>
+<span class="sd">            Common relation types include:</span>
+<span class="sd">            - &quot;Contains&quot;: For parent-child relationships</span>
+<span class="sd">            - &quot;Manages&quot;: For controller-device relationships  </span>
+<span class="sd">            - &quot;Uses&quot;: For dependency relationships</span>
+<span class="sd">            </span>
+<span class="sd">        Example:</span>
+<span class="sd">            Create device relationships for fleet organization::</span>
+<span class="sd">            </span>
+<span class="sd">                # Create a gateway device</span>
+<span class="sd">                gateway_id = api.create_device(&quot;gateway_01&quot;, &quot;gateway&quot;)</span>
+<span class="sd">                </span>
+<span class="sd">                # Create sensor devices</span>
+<span class="sd">                sensor1_id = api.create_device(&quot;sensor_01&quot;, &quot;temperature&quot;)</span>
+<span class="sd">                sensor2_id = api.create_device(&quot;sensor_02&quot;, &quot;humidity&quot;)</span>
+<span class="sd">                </span>
+<span class="sd">                # Establish relationships (gateway contains sensors)</span>
+<span class="sd">                api.create_relation(gateway_id, sensor1_id, &quot;Contains&quot;)</span>
+<span class="sd">                api.create_relation(gateway_id, sensor2_id, &quot;Contains&quot;)</span>
+<span class="sd">                </span>
+<span class="sd">                print(&quot;Device hierarchy created successfully&quot;)</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># Ensure valid authentication before proceeding</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">ensure_auth</span><span class="p">():</span>
+            <span class="k">return</span> <span class="kc">False</span>
+            
+        <span class="c1"># Construct relationship creation endpoint URL</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">host</span><span class="si">}</span><span class="s2">/api/relation&quot;</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s2">&quot;from&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;entityType&quot;</span><span class="p">:</span> <span class="s2">&quot;DEVICE&quot;</span><span class="p">,</span> <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="n">from_id</span><span class="p">},</span>
+            <span class="s2">&quot;to&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;entityType&quot;</span><span class="p">:</span> <span class="s2">&quot;DEVICE&quot;</span><span class="p">,</span> <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="n">to_id</span><span class="p">},</span>
+            <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="n">relation_type</span>
+        <span class="p">}</span>
+        
+        <span class="c1"># Send relationship creation request</span>
+        <span class="n">response</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">json</span><span class="o">=</span><span class="n">data</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">response</span><span class="o">.</span><span class="n">ok</span></div>
+
+        
+<div class="viewcode-block" id="ThingsBoardAPI.delete_relation">
+<a class="viewcode-back" href="../Fleet_module/MQTT/ThingsBoard/rest_api_component.html#rest_api.ThingsBoardAPI.delete_relation">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">delete_relation</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">from_id</span><span class="p">,</span> <span class="n">to_id</span><span class="p">,</span> <span class="n">relation_type</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Delete a specific relationship between two devices.</span>
+<span class="sd">        </span>
+<span class="sd">        Removes an existing directional relationship between two devices.</span>
+<span class="sd">        This operation only affects the relationship itself; the devices</span>
+<span class="sd">        remain unchanged.</span>
+<span class="sd">        </span>
+<span class="sd">        :param from_id: Source device ID in the relationship to delete</span>
+<span class="sd">        :type from_id: str</span>
+<span class="sd">        :param to_id: Target device ID in the relationship to delete</span>
+<span class="sd">        :type to_id: str</span>
+<span class="sd">        :param relation_type: Type of relationship to delete (must match exactly)</span>
+<span class="sd">        :type relation_type: str</span>
+<span class="sd">        :return: True if relationship deleted successfully, False otherwise</span>
+<span class="sd">        :rtype: bool</span>
+<span class="sd">        </span>
+<span class="sd">        .. note::</span>
+<span class="sd">            All relationship parameters (from_id, to_id, relation_type) must</span>
+<span class="sd">            match exactly for the deletion to succeed.</span>
+<span class="sd">            </span>
+<span class="sd">        .. warning::</span>
+<span class="sd">            Deleting relationships may affect business logic that depends on</span>
+<span class="sd">            device hierarchies or dependencies.</span>
+<span class="sd">            </span>
+<span class="sd">        Example:</span>
+<span class="sd">            Remove specific device relationships::</span>
+<span class="sd">            </span>
+<span class="sd">                gateway_id = &quot;gateway-device-id&quot;</span>
+<span class="sd">                sensor_id = &quot;sensor-device-id&quot;</span>
+<span class="sd">                </span>
+<span class="sd">                # Remove the Contains relationship</span>
+<span class="sd">                if api.delete_relation(gateway_id, sensor_id, &quot;Contains&quot;):</span>
+<span class="sd">                    print(&quot;Relationship removed successfully&quot;)</span>
+<span class="sd">                else:</span>
+<span class="sd">                    print(&quot;Failed to remove relationship&quot;)</span>
+<span class="sd">                    </span>
+<span class="sd">                # This would not work (wrong relation type)</span>
+<span class="sd">                api.delete_relation(gateway_id, sensor_id, &quot;Manages&quot;)  # False</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># Ensure valid authentication before proceeding</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">ensure_auth</span><span class="p">():</span>
+            <span class="k">return</span> <span class="kc">False</span>
+            
+        <span class="c1"># Construct relationship deletion endpoint URL</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">host</span><span class="si">}</span><span class="s2">/api/relation&quot;</span>
+        <span class="n">params</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s1">&#39;fromId&#39;</span><span class="p">:</span> <span class="n">from_id</span><span class="p">,</span>
+            <span class="s1">&#39;fromType&#39;</span><span class="p">:</span> <span class="s1">&#39;DEVICE&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;relationType&#39;</span><span class="p">:</span> <span class="n">relation_type</span><span class="p">,</span>
+            <span class="s1">&#39;toId&#39;</span><span class="p">:</span> <span class="n">to_id</span><span class="p">,</span>
+            <span class="s1">&#39;toType&#39;</span><span class="p">:</span> <span class="s1">&#39;DEVICE&#39;</span>
+        <span class="p">}</span>
+        
+        <span class="c1"># Send relationship deletion request</span>
+        <span class="n">response</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">params</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">response</span><span class="o">.</span><span class="n">ok</span></div>
+
+    
+<div class="viewcode-block" id="ThingsBoardAPI.set_server_attribute">
+<a class="viewcode-back" href="../Fleet_module/MQTT/ThingsBoard/rest_api_component.html#rest_api.ThingsBoardAPI.set_server_attribute">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">set_server_attribute</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">device_id</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Set a server-side attribute for a specific device.</span>
+<span class="sd">        </span>
+<span class="sd">        Creates or updates a server-side attribute for the specified device.</span>
+<span class="sd">        Server-side attributes are used for device configuration, metadata,</span>
+<span class="sd">        and other non-telemetry data that should be managed by the server.</span>
+<span class="sd">        </span>
+<span class="sd">        Server-side attributes are typically used for:</span>
+<span class="sd">        - Device configuration parameters</span>
+<span class="sd">        - Location information</span>
+<span class="sd">        - Firmware versions</span>
+<span class="sd">        - Device metadata and tags</span>
+<span class="sd">        </span>
+<span class="sd">        :param device_id: Unique identifier of the target device</span>
+<span class="sd">        :type device_id: str</span>
+<span class="sd">        :param key: Attribute name/key</span>
+<span class="sd">        :type key: str</span>
+<span class="sd">        :param value: Attribute value (can be string, number, boolean, or object)</span>
+<span class="sd">        :type value: Any</span>
+<span class="sd">        :return: True if attribute set successfully, False otherwise</span>
+<span class="sd">        :rtype: bool</span>
+<span class="sd">        </span>
+<span class="sd">        .. note::</span>
+<span class="sd">            Server-side attributes are persistent and can be retrieved by both</span>
+<span class="sd">            the server and client applications. They are ideal for configuration</span>
+<span class="sd">            and metadata that doesn&#39;t change frequently.</span>
+<span class="sd">            </span>
+<span class="sd">        .. tip::</span>
+<span class="sd">            Use consistent naming conventions for attribute keys to maintain</span>
+<span class="sd">            organization across your device fleet.</span>
+<span class="sd">            </span>
+<span class="sd">        Example:</span>
+<span class="sd">            Set various types of device attributes::</span>
+<span class="sd">            </span>
+<span class="sd">                device_id = &quot;device-uuid-here&quot;</span>
+<span class="sd">                </span>
+<span class="sd">                # Set location information</span>
+<span class="sd">                api.set_server_attribute(device_id, &quot;location&quot;, &quot;Building A, Floor 2&quot;)</span>
+<span class="sd">                </span>
+<span class="sd">                # Set configuration parameters</span>
+<span class="sd">                api.set_server_attribute(device_id, &quot;sampling_rate&quot;, 30)</span>
+<span class="sd">                </span>
+<span class="sd">                # Set complex configuration object</span>
+<span class="sd">                config = {</span>
+<span class="sd">                    &quot;wifi_ssid&quot;: &quot;IoT_Network&quot;,</span>
+<span class="sd">                    &quot;sleep_interval&quot;: 300,</span>
+<span class="sd">                    &quot;enabled_sensors&quot;: [&quot;temperature&quot;, &quot;humidity&quot;]</span>
+<span class="sd">                }</span>
+<span class="sd">                api.set_server_attribute(device_id, &quot;device_config&quot;, config)</span>
+<span class="sd">                </span>
+<span class="sd">                # Set boolean flags</span>
+<span class="sd">                api.set_server_attribute(device_id, &quot;maintenance_mode&quot;, False)</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># Ensure valid authentication before proceeding</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">ensure_auth</span><span class="p">():</span>
+            <span class="k">return</span> <span class="kc">False</span>
+            
+        <span class="c1"># Construct server attribute endpoint URL</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">host</span><span class="si">}</span><span class="s2">/api/plugins/telemetry/DEVICE/</span><span class="si">{</span><span class="n">device_id</span><span class="si">}</span><span class="s2">/SERVER_SCOPE&quot;</span>
+        
+        <span class="c1"># Send attribute update request</span>
+        <span class="n">response</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">json</span><span class="o">=</span><span class="p">{</span><span class="n">key</span><span class="p">:</span> <span class="n">value</span><span class="p">})</span>
+        <span class="k">return</span> <span class="n">response</span><span class="o">.</span><span class="n">ok</span></div>
+</div>
+
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, Estela Mora Barba.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

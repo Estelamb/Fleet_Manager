@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>default_controller &mdash; Fleet Manager 1.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=f2a433a1"></script>
+        <script src="../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+        <script src="../_static/copybutton.js?v=f281be69"></script>
+        <script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script>
+        <script type="module">import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11.12.1/dist/mermaid.esm.min.mjs";
+
+
+
+
+
+const initStyles = () => {
+    const defaultStyle = document.createElement('style');
+    defaultStyle.textContent = `pre.mermaid {
+    /* Same as .mermaid-container > pre */
+    display: block;
+    width: 100%;
+}
+
+pre.mermaid > svg {
+    /* Same as .mermaid-container > pre > svg */
+    height: 500px;
+    width: 100%;
+    max-width: 100% !important;
+}`;
+    document.head.appendChild(defaultStyle);
+
+    const fullscreenStyle = document.createElement('style');
+    fullscreenStyle.textContent = `.mermaid-container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.mermaid-container > pre {
+    display: block;
+    width: 100%;
+}
+
+.mermaid-container > pre > svg {
+    height: 500px;
+    width: 100%;
+    max-width: 100% !important;
+}
+
+.mermaid-fullscreen-btn {
+    width: 28px;
+    height: 28px;
+    background: rgba(255, 255, 255, 0.95);
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    border-radius: 4px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    font-size: 14px;
+    line-height: 1;
+    padding: 0;
+    color: #333;
+}
+
+.mermaid-fullscreen-btn:hover {
+    opacity: 100% !important;
+    background: rgba(255, 255, 255, 1);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+    transform: scale(1.1);
+}
+
+.mermaid-fullscreen-btn.dark-theme {
+    background: rgba(50, 50, 50, 0.95);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: #e0e0e0;
+}
+
+.mermaid-fullscreen-btn.dark-theme:hover {
+    background: rgba(60, 60, 60, 1);
+    box-shadow: 0 3px 10px rgba(255, 255, 255, 0.2);
+}
+
+.mermaid-fullscreen-modal {
+    display: none;
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 95vw;
+    height: 100vh;
+    background: rgba(255, 255, 255, 0.98);
+    z-index: 9999;
+    padding: 20px;
+    overflow: auto;
+}
+
+.mermaid-fullscreen-modal.dark-theme {
+    background: rgba(0, 0, 0, 0.98);
+}
+
+.mermaid-fullscreen-modal.active {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mermaid-container-fullscreen {
+    position: relative;
+    width: 95vw;
+    height: 90vh;
+    max-width: 95vw;
+    max-height: 90vh;
+    background: white;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    overflow: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mermaid-container-fullscreen.dark-theme {
+    background: #1a1a1a;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.8);
+}
+
+.mermaid-container-fullscreen pre.mermaid {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mermaid-container-fullscreen .mermaid svg {
+    height: 100% !important;
+    width: 100% !important;
+    cursor: grab;
+}
+
+.mermaid-fullscreen-close {
+    position: fixed !important;
+    top: 20px !important;
+    right: 20px !important;
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.95);
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    transition: all 0.2s;
+    font-size: 24px;
+    line-height: 1;
+    color: #333;
+}
+
+.mermaid-fullscreen-close:hover {
+    background: white;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+    transform: scale(1.1);
+}
+
+.mermaid-fullscreen-close.dark-theme {
+    background: rgba(50, 50, 50, 0.95);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #e0e0e0;
+}
+
+.mermaid-fullscreen-close.dark-theme:hover {
+    background: rgba(60, 60, 60, 1);
+    box-shadow: 0 6px 16px rgba(255, 255, 255, 0.2);
+}
+
+.mermaid-fullscreen-modal .mermaid-fullscreen-btn {
+    display: none !important;
+}`;
+    document.head.appendChild(fullscreenStyle);
+}
+
+// Detect if page has dark background
+const isDarkTheme = () => {
+    // We use a set of heuristics:
+    // 1. Check for common dark mode classes or attributes
+    // 2. Check computed background color brightness
+    if (document.documentElement.classList.contains('dark') ||
+        document.documentElement.getAttribute('data-theme') === 'dark' ||
+        document.body.classList.contains('dark') ||
+        document.body.getAttribute('data-theme') === 'dark') {
+        // console.log("Dark theme detected via class/attribute");
+        return true;
+    }
+    if (document.documentElement.classList.contains('light') ||
+        document.documentElement.getAttribute('data-theme') === 'light' ||
+        document.body.classList.contains('light') ||
+        document.body.getAttribute('data-theme') === 'light') {
+        // console.log("Light theme detected via class/attribute");
+        return false;
+    }
+    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        // console.log("Dark theme detected via prefers-color-scheme");
+        return true;
+    }
+    const bgColor = window.getComputedStyle(document.body).backgroundColor;
+    const match = bgColor.match(/rgb\((\d+),\s*(\d+),\s*(\d+)/);
+    if (match) {
+        const r = parseInt(match[1]);
+        const g = parseInt(match[2]);
+        const b = parseInt(match[3]);
+        const brightness = (r * 299 + g * 587 + b * 114) / 1000;
+        // console.log("Background color brightness:", brightness);
+        return brightness < 128;
+    }
+    // console.log("No dark or light theme detected, defaulting to light theme");
+    return false;
+};
+
+let darkTheme = isDarkTheme();
+let modal = null;
+let modalContent = null;
+let previousScrollOffset = [window.scrollX, window.scrollY];
+
+const runMermaid = async (rerun) => {
+    console.log("Running mermaid diagrams, rerun =", rerun);
+    // clear all existing mermaid charts
+    let all_mermaids = document.querySelectorAll(".mermaid");
+
+    if (rerun) {
+        all_mermaids.forEach((el) => {
+            if(!el.hasAttribute("data-original-code")) {
+                // store original code
+                // console.log(`Storing original code for first run: `, el.innerHTML);
+                el.setAttribute('data-original-code', el.innerHTML);
+            }
+            if(el.getAttribute("data-processed") === "true") {
+                // remove and restore original
+                el.removeAttribute("data-processed");
+                // console.log(`Restoring original code for re-run: `, el.getAttribute('data-original-code'));
+                el.innerHTML = el.getAttribute('data-original-code');
+            } else {
+                // store original code
+                // console.log(`Storing original code for re-run: `, el.innerHTML);
+                el.setAttribute('data-original-code', el.innerHTML);
+            }
+        });
+        await mermaid.run();
+    }
+
+    all_mermaids = document.querySelectorAll(".mermaid");
+    const mermaids_processed = document.querySelectorAll(".mermaid[data-processed='true']");
+
+    if ("False" === "True") {
+        const mermaids_to_add_zoom = -1 === -1 ? all_mermaids.length : -1;
+        if(mermaids_to_add_zoom > 0) {
+            var svgs = d3.selectAll("");
+            if(all_mermaids.length !== mermaids_processed.length) {
+                setTimeout(() => runMermaid(false), 200);
+                return;
+            } else if(svgs.size() !== mermaids_to_add_zoom) {
+                setTimeout(() => runMermaid(false), 200);
+                return;
+            } else {
+                svgs.each(function() {
+                    var svg = d3.select(this);
+                    svg.html("<g class='wrapper'>" + svg.html() + "</g>");
+                    var inner = svg.select("g");
+                    var zoom = d3.zoom().on("zoom", function(event) {
+                        inner.attr("transform", event.transform);
+                    });
+                    svg.call(zoom);
+                });
+            }
+        }
+    } else if(all_mermaids.length !== mermaids_processed.length) {
+        // Wait for mermaid to process all diagrams
+        setTimeout(() => runMermaid(false), 200);
+        return;
+    }
+
+    // Stop here if not adding fullscreen capability
+    if ("True" !== "True") return;
+
+    if (modal !== null ) {
+        // Destroy existing modal
+        modal.remove();
+        modal = null;
+        modalContent = null;
+    }
+
+    modal = document.createElement('div');
+    modal.className = 'mermaid-fullscreen-modal' + (darkTheme ? ' dark-theme' : '');
+    modal.setAttribute('role', 'dialog');
+    modal.setAttribute('aria-modal', 'true');
+    modal.setAttribute('aria-label', 'Fullscreen diagram viewer');
+    modal.innerHTML = `
+        <button class="mermaid-fullscreen-close${darkTheme ? ' dark-theme' : ''}" aria-label="Close fullscreen">✕</button>
+        <div class="mermaid-container-fullscreen${darkTheme ? ' dark-theme' : ''}"></div>
+    `;
+    document.body.appendChild(modal);
+
+    modalContent = modal.querySelector('.mermaid-container-fullscreen');
+    const closeBtn = modal.querySelector('.mermaid-fullscreen-close');
+
+    const closeModal = () => {
+        modal.classList.remove('active');
+        modalContent.innerHTML = '';
+        document.body.style.overflow = ''
+        window.scrollTo({left: previousScrollOffset[0], top: previousScrollOffset[1], behavior: 'instant'});
+    };
+
+    closeBtn.addEventListener('click', closeModal);
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) closeModal();
+    });
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && modal.classList.contains('active')) {
+            closeModal();
+        }
+    });
+
+    document.querySelectorAll('.mermaid').forEach((mermaidDiv) => {
+        if (mermaidDiv.parentNode.classList.contains('mermaid-container') ||
+            mermaidDiv.closest('.mermaid-fullscreen-modal')) {
+            // Already processed, adjust button class if needed
+            const existingBtn = mermaidDiv.parentNode.querySelector('.mermaid-fullscreen-btn');
+            if (existingBtn) {
+                existingBtn.className = 'mermaid-fullscreen-btn' + (darkTheme ? ' dark-theme' : '');
+            }
+            return;
+        }
+
+        const container = document.createElement('div');
+        container.className = 'mermaid-container';
+        mermaidDiv.parentNode.insertBefore(container, mermaidDiv);
+        container.appendChild(mermaidDiv);
+
+        const fullscreenBtn = document.createElement('button');
+        fullscreenBtn.className = 'mermaid-fullscreen-btn' + (darkTheme ? ' dark-theme' : '');
+        fullscreenBtn.setAttribute('aria-label', 'View diagram in fullscreen');
+        fullscreenBtn.textContent = '⛶';
+        fullscreenBtn.style.opacity = '50%';
+
+        // Calculate dynamic position based on diagram's margin and padding
+        const diagramStyle = window.getComputedStyle(mermaidDiv);
+        const marginTop = parseFloat(diagramStyle.marginTop) || 0;
+        const marginRight = parseFloat(diagramStyle.marginRight) || 0;
+        const paddingTop = parseFloat(diagramStyle.paddingTop) || 0;
+        const paddingRight = parseFloat(diagramStyle.paddingRight) || 0;
+        fullscreenBtn.style.top = `${marginTop + paddingTop + 4}px`;
+        fullscreenBtn.style.right = `${marginRight + paddingRight + 4}px`;
+
+        fullscreenBtn.addEventListener('click', () => {
+            previousScrollOffset = [window.scroll, window.scrollY];
+            const clone = mermaidDiv.cloneNode(true);
+            modalContent.innerHTML = '';
+            modalContent.appendChild(clone);
+
+            const svg = clone.querySelector('svg');
+            if (svg) {
+                svg.removeAttribute('width');
+                svg.removeAttribute('height');
+                svg.style.width = '100%';
+                svg.style.height = 'auto';
+                svg.style.maxWidth = '100%';
+                svg.style.sdisplay = 'block';
+
+                if ("False" === "True") {
+                    setTimeout(() => {
+                        const g = svg.querySelector('g');
+                        if (g) {
+                            var svgD3 = d3.select(svg);
+                            svgD3.html("<g class='wrapper'>" + svgD3.html() + "</g>");
+                            var inner = svgD3.select("g");
+                            var zoom = d3.zoom().on("zoom", function(event) {
+                                inner.attr("transform", event.transform);
+                            });
+                            svgD3.call(zoom);
+                        }
+                    }, 100);
+                }
+            }
+
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+        container.appendChild(fullscreenBtn);
+    });
+};
+
+const load = async () => {
+    initStyles();
+
+    await runMermaid(true);
+
+    const reRunIfThemeChanges = async () => {
+        const newDarkTheme = isDarkTheme();
+        if (newDarkTheme !== darkTheme) {
+            darkTheme = newDarkTheme;
+            console.log("Theme change detected, re-running mermaid with", darkTheme ? "dark" : "default", "theme");
+            await mermaid.initialize(
+                {...JSON.parse(
+                    `{"startOnLoad": false}`
+                ),
+                ...{ darkMode: darkTheme, theme: darkTheme ? 'dark' : 'default' },
+                }
+            );
+            await runMermaid(true);
+        }
+    };
+
+    // Update theme classes when theme changes
+    const themeObserver = new MutationObserver(reRunIfThemeChanges);
+    themeObserver.observe(document.documentElement, {
+        attributes: true,
+        attributeFilter: ['class', 'style', 'data-theme']
+    });
+    themeObserver.observe(document.body, {
+        attributes: true,
+        attributeFilter: ['class', 'style', 'data-theme']
+    });
+};
+
+
+
+
+
+console.log("Initializing mermaid with", darkTheme ? "dark" : "default", "theme");
+mermaid.initialize(
+    {...JSON.parse(
+        `{"startOnLoad": false}`
+    ),
+    ...{ darkMode: darkTheme, theme: darkTheme ? 'dark' : 'default' },
+    }
+);
+
+window.addEventListener("load", load);
+window.runMermaid = runMermaid;</script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="author" title="About these documents" href="../about.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Fleet Manager
+          </a>
+              <div class="version">
+                1.0
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../about.html">About the project</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules.html">Code documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../training.html">Training documentation</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Fleet Manager</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Module code</a></li>
+      <li class="breadcrumb-item active">default_controller</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <h1>Source code for default_controller</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">REST API Default Controller Module</span>
+<span class="sd">=================================</span>
+
+<span class="sd">This module provides the core REST API functionality for mission management in the</span>
+<span class="sd">Fleet Management System. It implements HTTP endpoints for mission submission and</span>
+<span class="sd">integrates with gRPC services for processing agricultural mission data.</span>
+
+<span class="sd">The module serves as the primary entry point for external systems to submit</span>
+<span class="sd">agricultural missions to the fleet management system, handling JSON validation,</span>
+<span class="sd">data transformation, and integration with the backend processing pipeline.</span>
+
+<span class="sd">Key Features:</span>
+<span class="sd">    - RESTful mission submission endpoint</span>
+<span class="sd">    - JSON schema validation and deserialization</span>
+<span class="sd">    - gRPC client integration for backend processing</span>
+<span class="sd">    - Comprehensive error handling and status reporting</span>
+<span class="sd">    - Thread-safe concurrent logging with file rotation</span>
+<span class="sd">    - HTTP status code compliance for API standards</span>
+
+<span class="sd">Architecture Overview:</span>
+<span class="sd">    The controller follows a layered architecture where:</span>
+<span class="sd">    - HTTP requests are received via Connexion framework</span>
+<span class="sd">    - JSON payloads are validated against OpenAPI schemas</span>
+<span class="sd">    - Mission objects are deserialized and processed</span>
+<span class="sd">    - Data is forwarded to gRPC services for distribution</span>
+<span class="sd">    - Responses include mission IDs or detailed error messages</span>
+
+<span class="sd">API Endpoints:</span>
+<span class="sd">    - POST /mission: Submit agricultural mission for processing</span>
+
+<span class="sd">Integration Points:</span>
+<span class="sd">    - Mission validation using OpenAPI schema definitions</span>
+<span class="sd">    - gRPC communication for backend service coordination</span>
+<span class="sd">    - Centralized logging for operation monitoring and debugging</span>
+
+<span class="sd">Usage Example:</span>
+<span class="sd">    ::</span>
+
+<span class="sd">        # Submit mission via HTTP POST</span>
+<span class="sd">        curl -X POST http://localhost:8080/mission \\</span>
+<span class="sd">             -H &quot;Content-Type: application/json&quot; \\</span>
+<span class="sd">             -d &#39;{</span>
+<span class="sd">                 &quot;mission_id&quot;: &quot;MISSION_001&quot;,</span>
+<span class="sd">                 &quot;fields&quot;: [...],</span>
+<span class="sd">                 &quot;vehicles&quot;: [...],</span>
+<span class="sd">                 &quot;tasks&quot;: [...]</span>
+<span class="sd">             }&#39;</span>
+
+<span class="sd">Author: Fleet Management System</span>
+<span class="sd">Date: 2025</span>
+
+<span class="sd">.. note::</span>
+<span class="sd">    This module requires:</span>
+<span class="sd">    - Connexion framework for OpenAPI integration</span>
+<span class="sd">    - Valid mission schema definitions</span>
+<span class="sd">    - gRPC service availability for backend processing</span>
+<span class="sd">    </span>
+<span class="sd">.. warning::</span>
+<span class="sd">    Ensure proper error handling for production deployments as mission</span>
+<span class="sd">    submission failures can impact agricultural operations scheduling.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">connexion</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">six</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">json</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">logging</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">concurrent_log_handler</span><span class="w"> </span><span class="kn">import</span> <span class="n">ConcurrentRotatingFileHandler</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">REST.models.mission</span><span class="w"> </span><span class="kn">import</span> <span class="n">Mission</span>  <span class="c1"># noqa: E501</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">REST.models.mission_id_response</span><span class="w"> </span><span class="kn">import</span> <span class="n">MissionIdResponse</span>  <span class="c1"># noqa: E501</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">REST</span><span class="w"> </span><span class="kn">import</span> <span class="n">util</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">REST.grpc_rest</span><span class="w"> </span><span class="kn">import</span> <span class="n">run_rest_client</span>
+
+
+<div class="viewcode-block" id="mission_post">
+<a class="viewcode-back" href="../Fleet_module/REST/default_controller_component.html#default_controller.mission_post">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">mission_post</span><span class="p">(</span><span class="n">body</span><span class="p">):</span>  <span class="c1"># noqa: E501</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Submit an agricultural mission and receive the mission ID confirmation.</span>
+
+<span class="sd">    This endpoint serves as the primary interface for external systems to submit</span>
+<span class="sd">    agricultural missions to the Fleet Management System. It handles complete</span>
+<span class="sd">    mission processing workflow including validation, transformation, and</span>
+<span class="sd">    forwarding to backend gRPC services for execution.</span>
+
+<span class="sd">    Processing Workflow:</span>
+<span class="sd">    1. **Request Validation**: Verify JSON content type and payload structure</span>
+<span class="sd">    2. **Schema Validation**: Deserialize JSON against Mission schema</span>
+<span class="sd">    3. **Data Transformation**: Convert Mission object to JSON for gRPC transport</span>
+<span class="sd">    4. **Backend Integration**: Forward mission to gRPC services for processing</span>
+<span class="sd">    5. **Response Generation**: Return mission ID or detailed error information</span>
+
+<span class="sd">    Mission Schema Requirements:</span>
+<span class="sd">    The mission payload must conform to the OpenAPI Mission schema including:</span>
+<span class="sd">    - mission_id: Unique identifier for the agricultural mission</span>
+<span class="sd">    - fields: Array of field definitions with coordinates and properties</span>
+<span class="sd">    - vehicles: Array of assigned vehicles with capabilities and status</span>
+<span class="sd">    - tasks: Array of agricultural tasks with treatment specifications</span>
+
+<span class="sd">    Error Handling Strategy:</span>
+<span class="sd">    - 400: Invalid JSON format or missing required fields</span>
+<span class="sd">    - 500: Backend processing failures or gRPC communication errors</span>
+<span class="sd">    - 200: Successful mission submission with confirmation ID</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        body: The mission data payload from HTTP request. Expected to be JSON</span>
+<span class="sd">              format conforming to the Mission schema definition. Contains</span>
+<span class="sd">              complete agricultural mission specification including fields,</span>
+<span class="sd">              vehicles, and task definitions.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        tuple: A tuple containing either:</span>
+<span class="sd">            - Success: (MissionIdResponse(mission_id=str), 200)</span>
+<span class="sd">            - Client Error: (str error_message, 400)</span>
+<span class="sd">            - Server Error: (str error_message, 500)</span>
+
+<span class="sd">    Raises:</span>
+<span class="sd">        ValidationError: When input data doesn&#39;t match the expected Mission schema</span>
+<span class="sd">        JSONDecodeError: When payload contains invalid JSON syntax</span>
+<span class="sd">        ConnectionError: When gRPC backend services are unavailable</span>
+
+<span class="sd">    Example:</span>
+<span class="sd">        ::</span>
+
+<span class="sd">            # Successful mission submission</span>
+<span class="sd">            response, status = mission_post({</span>
+<span class="sd">                &quot;mission_id&quot;: &quot;MISSION_001&quot;,</span>
+<span class="sd">                &quot;fields&quot;: [</span>
+<span class="sd">                    {</span>
+<span class="sd">                        &quot;field_id&quot;: &quot;F001&quot;,</span>
+<span class="sd">                        &quot;coordinates&quot;: [[lat, lng], ...],</span>
+<span class="sd">                        &quot;area&quot;: 100.5,</span>
+<span class="sd">                        &quot;crop_type&quot;: &quot;wheat&quot;</span>
+<span class="sd">                    }</span>
+<span class="sd">                ],</span>
+<span class="sd">                &quot;vehicles&quot;: [</span>
+<span class="sd">                    {</span>
+<span class="sd">                        &quot;vehicle_id&quot;: &quot;DRONE_001&quot;, </span>
+<span class="sd">                        &quot;type&quot;: &quot;drone&quot;,</span>
+<span class="sd">                        &quot;capabilities&quot;: [&quot;spraying&quot;, &quot;monitoring&quot;]</span>
+<span class="sd">                    }</span>
+<span class="sd">                ],</span>
+<span class="sd">                &quot;tasks&quot;: [</span>
+<span class="sd">                    {</span>
+<span class="sd">                        &quot;task_id&quot;: &quot;T001&quot;,</span>
+<span class="sd">                        &quot;type&quot;: &quot;pesticide_application&quot;,</span>
+<span class="sd">                        &quot;field_id&quot;: &quot;F001&quot;,</span>
+<span class="sd">                        &quot;vehicle_id&quot;: &quot;DRONE_001&quot;</span>
+<span class="sd">                    }</span>
+<span class="sd">                ]</span>
+<span class="sd">            })</span>
+<span class="sd">            # Returns: (MissionIdResponse(mission_id=&quot;MISSION_001&quot;), 200)</span>
+
+<span class="sd">    Note:</span>
+<span class="sd">        The function creates a logger instance for each request to ensure</span>
+<span class="sd">        proper request tracking and debugging capabilities.</span>
+
+<span class="sd">    Warning:</span>
+<span class="sd">        Mission submission failures can impact agricultural operation scheduling.</span>
+<span class="sd">        Ensure proper monitoring and retry mechanisms for production deployments.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">rest_logger</span> <span class="o">=</span> <span class="n">create_rest_logger</span><span class="p">()</span>
+    
+    <span class="k">if</span> <span class="n">connexion</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">is_json</span><span class="p">:</span>
+        <span class="n">rest_logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;[REST Server] - Received Mission&quot;</span><span class="p">)</span>
+        
+        <span class="c1"># Deserialize JSON input to Mission object</span>
+        <span class="n">mission</span> <span class="o">=</span> <span class="n">Mission</span><span class="o">.</span><span class="n">from_dict</span><span class="p">(</span><span class="n">connexion</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">get_json</span><span class="p">())</span>  <span class="c1"># noqa: E501</span>
+
+        <span class="c1"># Convert Mission object to dictionary and then to JSON string</span>
+        <span class="n">mission_json</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">mission</span><span class="o">.</span><span class="n">to_dict</span><span class="p">())</span>
+
+        <span class="c1"># Send the mission to gRPC client and get confirmation</span>
+        <span class="n">confirmation</span> <span class="o">=</span> <span class="n">run_rest_client</span><span class="p">(</span><span class="n">mission_json</span><span class="p">,</span> <span class="n">rest_logger</span><span class="p">)</span>
+        
+        <span class="k">if</span> <span class="n">confirmation</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">MissionIdResponse</span><span class="p">(</span><span class="n">mission_id</span><span class="o">=</span><span class="n">confirmation</span><span class="p">),</span> <span class="mi">200</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">rest_logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="s2">&quot;Failed to send mission to gRPC client&quot;</span><span class="p">)</span>
+            <span class="k">return</span> <span class="s1">&#39;Failed to process mission submission&#39;</span><span class="p">,</span> <span class="mi">500</span>
+    
+    <span class="n">rest_logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="s2">&quot;Received invalid JSON payload&quot;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="s1">&#39;Invalid request format - expected JSON&#39;</span><span class="p">,</span> <span class="mi">400</span></div>
+
+
+
+<div class="viewcode-block" id="create_rest_logger">
+<a class="viewcode-back" href="../Fleet_module/REST/default_controller_component.html#default_controller.create_rest_logger">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">create_rest_logger</span><span class="p">():</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Create and configure a concurrent logger for REST operations.</span>
+
+<span class="sd">    Configures a logger with:</span>
+<span class="sd">    - Rotating file handler (max 1MB per file, 5 backups)</span>
+<span class="sd">    - Console stream handler</span>
+<span class="sd">    - Unified formatting with timestamp, name, and log level</span>
+
+<span class="sd">    :return: Configured logger instance ready for use</span>
+<span class="sd">    :rtype: logging.Logger</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">rest_logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="s1">&#39;REST&#39;</span><span class="p">)</span>
+    <span class="n">rest_logger</span><span class="o">.</span><span class="n">setLevel</span><span class="p">(</span><span class="n">logging</span><span class="o">.</span><span class="n">INFO</span><span class="p">)</span>
+    
+    <span class="c1"># Configure rotating file handler</span>
+    <span class="n">file_rest</span> <span class="o">=</span> <span class="n">ConcurrentRotatingFileHandler</span><span class="p">(</span>
+        <span class="s2">&quot;Logs/rest.log&quot;</span><span class="p">,</span>
+        <span class="n">maxBytes</span><span class="o">=</span><span class="mi">1000000</span><span class="p">,</span>
+        <span class="n">backupCount</span><span class="o">=</span><span class="mi">5</span>
+    <span class="p">)</span>
+    
+    <span class="c1"># Configure console handler</span>
+    <span class="n">console_rest</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">StreamHandler</span><span class="p">()</span>
+    
+    <span class="c1"># Create unified formatter</span>
+    <span class="n">formatter</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">Formatter</span><span class="p">(</span><span class="s1">&#39;[</span><span class="si">%(asctime)s</span><span class="s1">][</span><span class="si">%(name)s</span><span class="s1">][</span><span class="si">%(levelname)s</span><span class="s1">]</span><span class="si">%(message)s</span><span class="s1">&#39;</span><span class="p">)</span>
+    
+    <span class="c1"># Apply formatter to handlers</span>
+    <span class="n">file_rest</span><span class="o">.</span><span class="n">setFormatter</span><span class="p">(</span><span class="n">formatter</span><span class="p">)</span>
+    <span class="n">console_rest</span><span class="o">.</span><span class="n">setFormatter</span><span class="p">(</span><span class="n">formatter</span><span class="p">)</span>
+    
+    <span class="c1"># Add handlers to logger</span>
+    <span class="n">rest_logger</span><span class="o">.</span><span class="n">addHandler</span><span class="p">(</span><span class="n">file_rest</span><span class="p">)</span>
+    <span class="n">rest_logger</span><span class="o">.</span><span class="n">addHandler</span><span class="p">(</span><span class="n">console_rest</span><span class="p">)</span>
+    
+    <span class="k">return</span> <span class="n">rest_logger</span></div>
+
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, Estela Mora Barba.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

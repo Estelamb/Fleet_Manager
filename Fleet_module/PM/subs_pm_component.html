@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Subscriber Prescription Map Function &mdash; Fleet Manager 1.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../_static/documentation_options.js?v=f2a433a1"></script>
+        <script src="../../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+        <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="author" title="About these documents" href="../../about.html" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="gRPC Prescription Map" href="grpc_pm_component.html" />
+    <link rel="prev" title="Prescription Map - Drone Format" href="pm_drone_component.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            Fleet Manager
+          </a>
+              <div class="version">
+                1.0
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../about.html">About the project</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../getting_started.html">Getting Started</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../modules.html">Code documentation</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../Drone_module/index.html">Drone</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">Fleet Manager</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../init_fleet_component.html">Init Fleet Manager</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../mission_components.html">Mission Management</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ros2_components.html">ROS2 Management</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../rest_components.html">REST Management</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../mqtt_components.html">MQTT Management</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../pm_components.html">Prescription Map Management</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="pm_manager_component.html">Prescription Map Manager</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pm_isobus_component.html">Prescription Map - ISOBUS Format</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pm_drone_component.html">Prescription Map - Drone Format</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Subscriber Prescription Map Function</a></li>
+<li class="toctree-l4"><a class="reference internal" href="grpc_pm_component.html">gRPC Prescription Map</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../metrics_components.html">System Metrics Component</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../clear_fleet_component.html">Clear Fleet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../create_logger_fleet_component.html">Create Logger</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../training.html">Training documentation</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Fleet Manager</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../modules.html">Code documentation</a></li>
+          <li class="breadcrumb-item"><a href="../index.html">Fleet Manager</a></li>
+          <li class="breadcrumb-item"><a href="../pm_components.html">Prescription Map Management</a></li>
+      <li class="breadcrumb-item active">Subscriber Prescription Map Function</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/Fleet_module/PM/subs_pm_component.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="module-subscriber_pm_function">
+<span id="subscriber-prescription-map-function"></span><h1>Subscriber Prescription Map Function<a class="headerlink" href="#module-subscriber_pm_function" title="Link to this heading"></a></h1>
+<section id="dynamic-drone-prescription-map-subscriber-module">
+<h2>Dynamic Drone Prescription Map Subscriber Module<a class="headerlink" href="#dynamic-drone-prescription-map-subscriber-module" title="Link to this heading"></a></h2>
+<p>This module provides a dynamic ROS2 subscriber for receiving prescription map (PM)
+data from multiple drone vehicles in the agricultural fleet management system. It
+automatically discovers new drone topics and creates dedicated subscriptions for
+real-time prescription map data collection.</p>
+<p>The module implements a scalable subscription system that can handle an arbitrary
+number of drones joining and leaving the fleet dynamically, without requiring
+manual configuration or restart of the subscription service.</p>
+<dl>
+<dt>Key Features:</dt><dd><ul class="simple">
+<li><p>Dynamic discovery of new drone prescription map topics</p></li>
+<li><p>Automatic subscription creation for newly detected drones</p></li>
+<li><p>Thread-safe integration with prescription map processing pipeline</p></li>
+<li><p>Regular expression-based topic pattern matching</p></li>
+<li><p>Multi-threaded ROS2 executor for concurrent message processing</p></li>
+<li><p>Robust message parsing with fallback mechanisms</p></li>
+<li><p>Integration with fleet-wide prescription map management</p></li>
+</ul>
+</dd>
+<dt>Architecture:</dt><dd><p>The module follows a dynamic subscription pattern where:
+- A timer-based scanner discovers new drone topics periodically
+- Individual subscriptions are created for each detected drone
+- Message callbacks process and forward PM data to the fleet manager
+- Thread-safe execution ensures concurrent processing capability</p>
+</dd>
+<dt>Topic Pattern:</dt><dd><p>Drone topics follow the pattern: <code class="docutils literal notranslate"><span class="pre">/prescription_map/drone_{ID}</span></code>
+where {ID} is a numeric identifier for each drone in the fleet.</p>
+</dd>
+<dt>Usage Example:</dt><dd><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">logging</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">Logs.create_logger_fleet</span><span class="w"> </span><span class="kn">import</span> <span class="n">create_logger</span>
+
+<span class="c1"># Create configured logger</span>
+<span class="n">pm_logger</span> <span class="o">=</span> <span class="n">create_logger</span><span class="p">(</span><span class="s1">&#39;pm_subscriber&#39;</span><span class="p">,</span> <span class="n">logging</span><span class="o">.</span><span class="n">INFO</span><span class="p">)</span>
+
+<span class="c1"># Start dynamic PM subscriber (non-blocking)</span>
+<span class="n">subscriber</span> <span class="o">=</span> <span class="n">main</span><span class="p">(</span><span class="n">pm_logger</span><span class="o">=</span><span class="n">pm_logger</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+<p>Author: Fleet Management System
+Date: 2025</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This module requires:
+- ROS2 (Robot Operating System 2) environment
+- rclpy for Python ROS2 integration
+- std_msgs for ROS2 message types
+- PrescriptionMap.pm_manager_fleet for data processing</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The subscriber runs in daemon threads. Ensure proper application
+lifecycle management for graceful shutdowns in production deployments.</p>
+</div>
+</section>
+<dl class="py class">
+<dt class="sig sig-object py" id="subscriber_pm_function.DynamicPMSubscriber">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">subscriber_pm_function.</span></span><span class="sig-name descname"><span class="pre">DynamicPMSubscriber</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/subscriber_pm_function.html#DynamicPMSubscriber"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#subscriber_pm_function.DynamicPMSubscriber" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Node</span></code></p>
+<p>Dynamic ROS2 subscriber for drone prescription map topics.</p>
+<p>This class implements a dynamic subscription system that automatically discovers
+and subscribes to prescription map topics from drone vehicles. It maintains
+active subscriptions for all detected drones and processes incoming prescription
+map data in real-time.</p>
+<p>The subscriber uses a timer-based discovery mechanism to periodically scan for
+new drone topics, ensuring that newly deployed drones are automatically
+integrated into the subscription system without manual intervention.</p>
+<p>Key Capabilities:
+- Automatic topic discovery using regex pattern matching
+- Dynamic subscription management for scalable drone fleets
+- Message parsing with robust error handling and fallback mechanisms
+- Integration with prescription map validation and processing pipeline
+- Thread-safe operation for concurrent message processing</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="subscriber_pm_function.DynamicPMSubscriber.active_subscriptions">
+<span class="sig-name descname"><span class="pre">active_subscriptions</span></span><a class="headerlink" href="#subscriber_pm_function.DynamicPMSubscriber.active_subscriptions" title="Link to this definition"></a></dt>
+<dd><p>Registry of active topic subscriptions
+mapped by topic name to subscription objects</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="subscriber_pm_function.DynamicPMSubscriber.pm_logger">
+<span class="sig-name descname"><span class="pre">pm_logger</span></span><a class="headerlink" href="#subscriber_pm_function.DynamicPMSubscriber.pm_logger" title="Link to this definition"></a></dt>
+<dd><p>Configured logger instance for operation tracking and debugging</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="subscriber_pm_function.DynamicPMSubscriber.timer">
+<span class="sig-name descname"><span class="pre">timer</span></span><a class="headerlink" href="#subscriber_pm_function.DynamicPMSubscriber.timer" title="Link to this definition"></a></dt>
+<dd><p>ROS2 timer for periodic drone topic discovery</p>
+</dd></dl>
+
+<p class="rubric">Example</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Subscriber is typically created by the main() function</span>
+<span class="n">subscriber</span> <span class="o">=</span> <span class="n">DynamicPMSubscriber</span><span class="p">(</span><span class="n">pm_logger</span><span class="p">)</span>
+<span class="c1"># Discovery and subscription happen automatically</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The discovery timer runs every 2 seconds to balance responsiveness
+with system resource usage. This interval can be adjusted based on
+deployment requirements.</p>
+</div>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><code class="xref py py-mod docutils literal notranslate"><span class="pre">PrescriptionMap.pm_manager_fleet</span></code>: PM data processing backend
+<code class="xref py py-class docutils literal notranslate"><span class="pre">rclpy.node.Node</span></code>: Base ROS2 node class</p>
+</div>
+<dl class="py method">
+<dt class="sig sig-object py" id="subscriber_pm_function.DynamicPMSubscriber.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pm_logger</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/subscriber_pm_function.html#DynamicPMSubscriber.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#subscriber_pm_function.DynamicPMSubscriber.__init__" title="Link to this definition"></a></dt>
+<dd><p>Initialize the dynamic prescription map subscriber node.</p>
+<p>Sets up the ROS2 node with automatic topic discovery capabilities and
+initializes the subscription management system for drone prescription
+map topics.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>pm_logger</strong> – Configured logger instance for tracking subscription
+operations, drone discovery, and message processing.
+Should be properly configured with appropriate log levels
+and output handlers.</p>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">logging</span>
+<span class="n">pm_logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="s1">&#39;pm_subscriber&#39;</span><span class="p">)</span>
+<span class="n">pm_logger</span><span class="o">.</span><span class="n">setLevel</span><span class="p">(</span><span class="n">logging</span><span class="o">.</span><span class="n">INFO</span><span class="p">)</span>
+<span class="n">subscriber</span> <span class="o">=</span> <span class="n">DynamicPMSubscriber</span><span class="p">(</span><span class="n">pm_logger</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="subscriber_pm_function.DynamicPMSubscriber.scan_for_drones">
+<span class="sig-name descname"><span class="pre">scan_for_drones</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/subscriber_pm_function.html#DynamicPMSubscriber.scan_for_drones"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#subscriber_pm_function.DynamicPMSubscriber.scan_for_drones" title="Link to this definition"></a></dt>
+<dd><p>Discover and subscribe to new drone prescription map topics.</p>
+<p>This method performs periodic scanning of available ROS2 topics to discover
+new drone prescription map publishers. It uses regex pattern matching to
+identify topics that follow the expected drone PM topic naming convention
+and creates subscriptions for newly detected drones.</p>
+<p>Discovery Process:
+1. Retrieve all available topics from the ROS2 topic list
+2. Filter topics using regex pattern for drone PM topics
+3. Check against existing subscriptions to identify new drones
+4. Create subscriptions for newly discovered drone topics</p>
+<dl class="simple">
+<dt>Topic Pattern Matching:</dt><dd><p>Matches topics with pattern: <code class="docutils literal notranslate"><span class="pre">/prescription_map/drone_{numeric_id}</span></code></p>
+</dd>
+<dt>Example Topics:</dt><dd><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">/prescription_map/drone_1</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">/prescription_map/drone_42</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">/prescription_map/drone_101</span></code></p></li>
+</ul>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This method is called automatically by the ROS2 timer every 2 seconds.
+The scanning frequency balances discovery responsiveness with system
+resource usage.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Topic discovery depends on ROS2 topic publication. Drones must be
+actively publishing or have published at least once to be discovered.</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="subscriber_pm_function.DynamicPMSubscriber.extract_drone_id">
+<span class="sig-name descname"><span class="pre">extract_drone_id</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">topic</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/subscriber_pm_function.html#DynamicPMSubscriber.extract_drone_id"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#subscriber_pm_function.DynamicPMSubscriber.extract_drone_id" title="Link to this definition"></a></dt>
+<dd><p>Extract numeric drone identifier from topic name.</p>
+<p>This method parses the drone topic name using regex to extract the
+numeric drone identifier. The identifier is used for message routing
+and subscription management throughout the system.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>topic</strong> (<em>str</em>) – Full topic name in format ‘/prescription_map/drone_{id}’</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><dl class="simple">
+<dt>Numeric drone identifier if successfully extracted,</dt><dd><p>None if the topic name doesn’t match the expected pattern</p>
+</dd>
+</dl>
+</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int or None</p>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Extract ID from valid topic</span>
+<span class="n">drone_id</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">extract_drone_id</span><span class="p">(</span><span class="s1">&#39;/prescription_map/drone_42&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">drone_id</span><span class="p">)</span>  <span class="c1"># Output: 42</span>
+
+<span class="c1"># Handle invalid topic</span>
+<span class="n">drone_id</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">extract_drone_id</span><span class="p">(</span><span class="s1">&#39;/invalid/topic&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">drone_id</span><span class="p">)</span>  <span class="c1"># Output: None</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The method uses regex group matching to reliably extract the
+numeric portion from the topic name, ensuring robust parsing
+even with varied topic naming patterns.</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="subscriber_pm_function.DynamicPMSubscriber.create_drone_subscription">
+<span class="sig-name descname"><span class="pre">create_drone_subscription</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">topic</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">drone_id</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/subscriber_pm_function.html#DynamicPMSubscriber.create_drone_subscription"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#subscriber_pm_function.DynamicPMSubscriber.create_drone_subscription" title="Link to this definition"></a></dt>
+<dd><p>Create ROS2 subscription for a newly discovered drone topic.</p>
+<p>This method establishes a new ROS2 subscription for a specific drone’s
+prescription map topic. It creates a dedicated callback function for
+the drone and registers the subscription in the active subscriptions
+registry for management and cleanup.</p>
+<p>Subscription Configuration:
+- Message type: std_msgs/String (JSON-encoded prescription map data)
+- Queue size: 10 messages (balanced for reliability and memory usage)
+- Callback: Dynamically created with drone context</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>topic</strong> (<em>str</em>) – Full ROS2 topic name for the drone PM data</p></li>
+<li><p><strong>drone_id</strong> (<em>int</em>) – Numeric identifier for the drone</p></li>
+</ul>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create subscription for newly discovered drone</span>
+<span class="bp">self</span><span class="o">.</span><span class="n">create_drone_subscription</span><span class="p">(</span><span class="s1">&#39;/prescription_map/drone_5&#39;</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The method only creates subscriptions for valid drone IDs (not None).
+Each subscription gets a unique callback function that includes the
+drone ID context for proper message routing.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Duplicate subscriptions for the same topic are prevented by checking
+the active_subscriptions registry before creation.</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="subscriber_pm_function.DynamicPMSubscriber.create_callback">
+<span class="sig-name descname"><span class="pre">create_callback</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">drone_id</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/subscriber_pm_function.html#DynamicPMSubscriber.create_callback"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#subscriber_pm_function.DynamicPMSubscriber.create_callback" title="Link to this definition"></a></dt>
+<dd><p>Generate prescription map callback function with drone context.</p>
+<p>This method creates a closure that captures the drone ID context and
+returns a callback function for processing prescription map messages
+from that specific drone. The callback handles message parsing,
+validation, and forwarding to the prescription map processing pipeline.</p>
+<p>Message Processing Pipeline:
+1. Parse incoming JSON/Python data structures
+2. Validate message format and content structure
+3. Format message for prescription map manager
+4. Forward to handle_received for processing
+5. Log processing status and errors</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>drone_id</strong> (<em>int</em>) – Numeric identifier for the drone that will use this callback</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><dl class="simple">
+<dt>Callback function configured for the specific drone that</dt><dd><p>accepts ROS2 String messages and processes PM data</p>
+</dd>
+</dl>
+</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>function</p>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create callback for drone 5</span>
+<span class="n">callback_func</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">create_callback</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+
+<span class="c1"># Callback is used internally by ROS2 subscription</span>
+<span class="c1"># and handles messages automatically</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The callback uses a fallback parsing mechanism, attempting JSON
+parsing first, then falling back to ast.literal_eval for Python
+literal structures.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Message parsing failures are logged but do not crash the callback.
+Invalid message formats are rejected with appropriate error logging.</p>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="subscriber_pm_function.main">
+<span class="sig-prename descclassname"><span class="pre">subscriber_pm_function.</span></span><span class="sig-name descname"><span class="pre">main</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pm_logger</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Logger</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/subscriber_pm_function.html#main"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#subscriber_pm_function.main" title="Link to this definition"></a></dt>
+<dd><p>Initialize and run the dynamic drone prescription map subscriber.</p>
+<p>This function sets up and starts the complete ROS2 subscription system for
+receiving prescription map data from multiple drones. It initializes the
+ROS2 context, creates the dynamic subscriber node, and configures a
+multi-threaded executor for concurrent message processing.</p>
+<p>System Configuration:
+- ROS2 context initialization (if not already initialized)
+- Dynamic PM subscriber node creation
+- Multi-threaded executor setup for concurrent processing
+- Daemon thread execution for non-blocking operation</p>
+<p>Threading Model:
+- Main thread: Returns immediately after setup
+- Daemon thread: Runs ROS2 executor until main process exits
+- Multi-threaded executor: Handles concurrent message callbacks</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>args</strong> (<em>list</em><em>, </em><em>optional</em>) – Command-line arguments for ROS2 initialization.
+Defaults to None for standard initialization.</p></li>
+<li><p><strong>pm_logger</strong> (<em>logging.Logger</em><em>, </em><em>optional</em>) – Configured logger instance for
+tracking subscription operations.
+Must be provided for proper logging.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><dl class="simple">
+<dt>The initialized subscriber node instance for</dt><dd><p>external reference and management</p>
+</dd>
+</dl>
+</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#subscriber_pm_function.DynamicPMSubscriber" title="subscriber_pm_function.DynamicPMSubscriber">DynamicPMSubscriber</a></p>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">logging</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">Logs.create_logger_fleet</span><span class="w"> </span><span class="kn">import</span> <span class="n">create_logger</span>
+
+<span class="c1"># Create configured logger</span>
+<span class="n">pm_logger</span> <span class="o">=</span> <span class="n">create_logger</span><span class="p">(</span><span class="s1">&#39;pm_subscriber&#39;</span><span class="p">,</span> <span class="n">logging</span><span class="o">.</span><span class="n">INFO</span><span class="p">)</span>
+
+<span class="c1"># Start subscriber (non-blocking)</span>
+<span class="n">subscriber</span> <span class="o">=</span> <span class="n">main</span><span class="p">(</span><span class="n">pm_logger</span><span class="o">=</span><span class="n">pm_logger</span><span class="p">)</span>
+
+<span class="c1"># Main application continues...</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;PM subscriber started in background&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The function returns immediately after starting the daemon thread.
+The ROS2 subscriber will continue running in the background until
+the main process exits.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>ROS2 context initialization is handled automatically, but proper
+ROS2 environment setup is required. The executor runs in a daemon
+thread and will be terminated when the main process exits.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><a class="reference internal" href="../create_logger_fleet_component.html#create_logger_fleet.Exception" title="create_logger_fleet.Exception"><strong>Exception</strong></a> – Critical errors during initialization are logged and re-raised
+    to ensure proper error handling by the calling code</p></li>
+<li><p><strong>SystemExit</strong> – May be raised if ROS2 initialization fails</p></li>
+</ul>
+</dd>
+</dl>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="#subscriber_pm_function.DynamicPMSubscriber" title="subscriber_pm_function.DynamicPMSubscriber"><code class="xref py py-class docutils literal notranslate"><span class="pre">DynamicPMSubscriber</span></code></a>: The main subscriber node implementation
+<code class="xref py py-func docutils literal notranslate"><span class="pre">rclpy.init()</span></code>: ROS2 context initialization
+<code class="xref py py-class docutils literal notranslate"><span class="pre">rclpy.executors.MultiThreadedExecutor</span></code>: Concurrent message processing</p>
+</div>
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="pm_drone_component.html" class="btn btn-neutral float-left" title="Prescription Map - Drone Format" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="grpc_pm_component.html" class="btn btn-neutral float-right" title="gRPC Prescription Map" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, Estela Mora Barba.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

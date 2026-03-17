@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>gRPC MQTT &mdash; Fleet Manager 1.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../_static/documentation_options.js?v=f2a433a1"></script>
+        <script src="../../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+        <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="author" title="About these documents" href="../../about.html" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="ThingsBoard" href="thingsboard.html" />
+    <link rel="prev" title="MQTT Management" href="../mqtt_components.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            Fleet Manager
+          </a>
+              <div class="version">
+                1.0
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../about.html">About the project</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../getting_started.html">Getting Started</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../modules.html">Code documentation</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../Drone_module/index.html">Drone</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">Fleet Manager</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../init_fleet_component.html">Init Fleet Manager</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../mission_components.html">Mission Management</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ros2_components.html">ROS2 Management</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../rest_components.html">REST Management</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../mqtt_components.html">MQTT Management</a><ul class="current">
+<li class="toctree-l4 current"><a class="current reference internal" href="#">gRPC MQTT</a></li>
+<li class="toctree-l4"><a class="reference internal" href="thingsboard.html">ThingsBoard</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../pm_components.html">Prescription Map Management</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../metrics_components.html">System Metrics Component</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../clear_fleet_component.html">Clear Fleet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../create_logger_fleet_component.html">Create Logger</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../training.html">Training documentation</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Fleet Manager</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../modules.html">Code documentation</a></li>
+          <li class="breadcrumb-item"><a href="../index.html">Fleet Manager</a></li>
+          <li class="breadcrumb-item"><a href="../mqtt_components.html">MQTT Management</a></li>
+      <li class="breadcrumb-item active">gRPC MQTT</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/Fleet_module/MQTT/grpc_mqtt_component.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="module-grpc_mqtt">
+<span id="grpc-mqtt"></span><h1>gRPC MQTT<a class="headerlink" href="#module-grpc_mqtt" title="Link to this heading"></a></h1>
+<p>gRPC MQTT Communication Server Module</p>
+<p>This module implements a gRPC server for handling MQTT communication within the fleet management
+system. It provides a bridge between MQTT messages and ThingsBoard for telemetry data processing.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Key Features:
+- High-performance gRPC server implementation for MQTT data reception
+- Thread-safe queue integration for reliable data processing
+- Graceful shutdown handling with configurable grace period
+- Comprehensive logging integration with configurable log levels
+- Concurrent request handling via thread pool executor
+- Daemon thread support for background operation</p>
+</div>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 1.0.0: </span>Initial implementation of MQTT gRPC communication service</p>
+</div>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<ul class="simple">
+<li><p><code class="xref py py-mod docutils literal notranslate"><span class="pre">GRPC.mqtt_pb2</span></code> for protocol buffer definitions</p></li>
+<li><p><code class="xref py py-mod docutils literal notranslate"><span class="pre">MQTT.ThingsBoard</span></code> for ThingsBoard integration components</p></li>
+</ul>
+</div>
+<p class="rubric">Example</p>
+<p>Basic usage of the MQTT gRPC server:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">queue</span><span class="w"> </span><span class="kn">import</span> <span class="n">Queue</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">logging</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">MQTT.grpc_mqtt</span><span class="w"> </span><span class="kn">import</span> <span class="n">start_grpc_mqtt</span>
+
+<span class="c1"># Initialize queue and logger</span>
+<span class="n">tb_queue</span> <span class="o">=</span> <span class="n">Queue</span><span class="p">()</span>
+<span class="n">mqtt_logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="s1">&#39;MQTT&#39;</span><span class="p">)</span>
+
+<span class="c1"># Start the gRPC server</span>
+<span class="n">start_grpc_mqtt</span><span class="p">(</span><span class="n">tb_queue</span><span class="p">,</span> <span class="n">mqtt_logger</span><span class="p">)</span>
+</pre></div>
+</div>
+<dl class="py class">
+<dt class="sig sig-object py" id="grpc_mqtt.MQTTCommunicationService">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">grpc_mqtt.</span></span><span class="sig-name descname"><span class="pre">MQTTCommunicationService</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/grpc_mqtt.html#MQTTCommunicationService"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#grpc_mqtt.MQTTCommunicationService" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">MQTTCommunicationServicer</span></code></p>
+<p>gRPC service implementation for MQTT data handling and ThingsBoard integration.</p>
+<p>This class implements the MQTTCommunicationServicer interface to provide
+a gRPC service for receiving and processing MQTT messages within the fleet
+management system. It acts as a bridge between incoming MQTT data and the
+ThingsBoard telemetry system.</p>
+<p>The service handles incoming requests asynchronously and queues data for
+further processing by ThingsBoard components. All operations are thread-safe
+and include comprehensive error handling.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>tb_queue</strong> (<em>Queue</em>) – Thread-safe queue for outgoing data to ThingsBoard</p></li>
+<li><p><strong>mqtt_logger</strong> (<em>Optional</em><em>[</em><em>logging.Logger</em><em>]</em>) – Configured logger instance for MQTT operations</p></li>
+</ul>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The service uses a fail-safe approach where processing errors are logged
+but don’t crash the server, ensuring high availability.</p>
+</div>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 1.0.0: </span>Initial implementation of MQTT communication service</p>
+</div>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="grpc_mqtt.MQTTCommunicationService.tb_queue">
+<span class="sig-name descname"><span class="pre">tb_queue</span></span><a class="headerlink" href="#grpc_mqtt.MQTTCommunicationService.tb_queue" title="Link to this definition"></a></dt>
+<dd><p>Thread-safe queue for ThingsBoard data transmission</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Queue</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="grpc_mqtt.MQTTCommunicationService.mqtt_logger">
+<span class="sig-name descname"><span class="pre">mqtt_logger</span></span><a class="headerlink" href="#grpc_mqtt.MQTTCommunicationService.mqtt_logger" title="Link to this definition"></a></dt>
+<dd><p>Logger instance for operation tracking</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>logging.Logger</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="grpc_mqtt.MQTTCommunicationService.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tb_queue</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Queue</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mqtt_logger</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Logger</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/grpc_mqtt.html#MQTTCommunicationService.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#grpc_mqtt.MQTTCommunicationService.__init__" title="Link to this definition"></a></dt>
+<dd><p>Initialize the MQTT communication service.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>tb_queue</strong> (<em>Queue</em>) – Queue for storing messages destined for ThingsBoard</p></li>
+<li><p><strong>mqtt_logger</strong> (<em>Optional</em><em>[</em><em>logging.Logger</em><em>]</em>) – Logger for MQTT operations (creates default if None)</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="grpc_mqtt.MQTTCommunicationService.SendMQTT">
+<span class="sig-name descname"><span class="pre">SendMQTT</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">context</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">grpc.ServicerContext</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">GRPC.mqtt_pb2.MQTTResponse</span></span></span><a class="reference internal" href="../../_modules/grpc_mqtt.html#MQTTCommunicationService.SendMQTT"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#grpc_mqtt.MQTTCommunicationService.SendMQTT" title="Link to this definition"></a></dt>
+<dd><p>Handle incoming MQTT data requests via gRPC.</p>
+<p>This method processes incoming MQTT messages received through the gRPC interface.
+It extracts the message content, logs the operation, and queues the data for
+transmission to ThingsBoard. The method implements robust error handling to
+ensure service availability even when individual messages fail processing.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>request</strong> (<em>Any</em><em> (</em><em>protocol buffer message type</em><em>)</em>) – gRPC request containing MQTT message data and metadata</p></li>
+<li><p><strong>context</strong> (<em>grpc.ServicerContext</em>) – gRPC connection context for client communication management</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Response confirmation with operation status</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>MQTTResponse</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>grpc.RpcError</strong> – For critical processing errors that prevent message handling</p>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Processing Pipeline:
+1. Extract MQTT message content from the gRPC request
+2. Log successful message receipt for audit purposes
+3. Add message to ThingsBoard processing queue
+4. Return success confirmation to client</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>If an exception occurs during processing, the error is logged and
+a gRPC error status is set, but the service continues operating.</p>
+</div>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 1.0.0: </span>Initial implementation of MQTT message handling</p>
+</div>
+<p class="rubric">Example</p>
+<p>The method is called automatically by the gRPC framework when
+clients send MQTT data:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Client-side call (handled automatically)</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">stub</span><span class="o">.</span><span class="n">SendMQTT</span><span class="p">(</span><span class="n">mqtt_request</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">confirmation</span><span class="p">)</span>  <span class="c1"># &quot;Data queued successfully&quot;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="grpc_mqtt.run_grpc_mqtt_server">
+<span class="sig-prename descclassname"><span class="pre">grpc_mqtt.</span></span><span class="sig-name descname"><span class="pre">run_grpc_mqtt_server</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tb_queue</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Queue</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mqtt_logger</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Logger</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../../_modules/grpc_mqtt.html#run_grpc_mqtt_server"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#grpc_mqtt.run_grpc_mqtt_server" title="Link to this definition"></a></dt>
+<dd><p>Run the gRPC server for MQTT communication with blocking execution.</p>
+<p>This function creates and starts a gRPC server that listens for MQTT communication
+requests. The server runs with a thread pool executor for handling concurrent
+requests and includes graceful shutdown capabilities.</p>
+<p>The server binds to the configured address and runs indefinitely until interrupted
+by a keyboard signal (Ctrl+C). Upon interruption, it performs a graceful shutdown
+allowing pending requests to complete within the configured grace period.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>tb_queue</strong> (<em>Queue</em>) – Shared thread-safe queue for ThingsBoard-bound data</p></li>
+<li><p><strong>mqtt_logger</strong> (<em>Optional</em><em>[</em><em>logging.Logger</em><em>]</em>) – Configured logger instance for operation tracking</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None (function runs until interrupted)</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Server Configuration:
+- Uses ThreadPoolExecutor with configurable maximum workers
+- Binds to IPv6 address (with IPv4 compatibility)
+- Implements graceful shutdown with configurable timeout
+- Provides comprehensive logging for monitoring</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This function blocks the calling thread. Use <a class="reference internal" href="#grpc_mqtt.start_grpc_mqtt" title="grpc_mqtt.start_grpc_mqtt"><code class="xref py py-func docutils literal notranslate"><span class="pre">start_grpc_mqtt()</span></code></a>
+for non-blocking daemon thread execution.</p>
+</div>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 1.0.0: </span>Initial implementation of MQTT gRPC server</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>KeyboardInterrupt</strong> – Caught and handled gracefully for server shutdown</p>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<p>Direct server execution (blocking):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">queue</span><span class="w"> </span><span class="kn">import</span> <span class="n">Queue</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">logging</span>
+
+<span class="n">queue</span> <span class="o">=</span> <span class="n">Queue</span><span class="p">()</span>
+<span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="s1">&#39;MQTT&#39;</span><span class="p">)</span>
+<span class="n">run_grpc_mqtt_server</span><span class="p">(</span><span class="n">queue</span><span class="p">,</span> <span class="n">logger</span><span class="p">)</span>  <span class="c1"># Blocks until Ctrl+C</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="grpc_mqtt.start_grpc_mqtt">
+<span class="sig-prename descclassname"><span class="pre">grpc_mqtt.</span></span><span class="sig-name descname"><span class="pre">start_grpc_mqtt</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tb_queue</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Queue</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mqtt_logger</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Logger</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../../_modules/grpc_mqtt.html#start_grpc_mqtt"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#grpc_mqtt.start_grpc_mqtt" title="Link to this definition"></a></dt>
+<dd><p>Initialize and start the gRPC MQTT server in a daemon background thread.</p>
+<p>This function provides a convenient way to start the MQTT gRPC server without
+blocking the main application thread. The server runs as a daemon thread,
+meaning it will automatically terminate when the main program exits.</p>
+<p>This is the preferred method for integrating the MQTT gRPC server into larger
+applications where other components need to run concurrently.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>tb_queue</strong> (<em>Queue</em>) – Shared thread-safe queue for outgoing ThingsBoard data</p></li>
+<li><p><strong>mqtt_logger</strong> (<em>Optional</em><em>[</em><em>logging.Logger</em><em>]</em>) – Configured logger instance for operation tracking</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None (server starts in background thread)</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Thread Configuration:
+- Runs as daemon thread (terminates with main process)
+- Named thread for easier debugging and monitoring
+- Non-blocking operation allows concurrent application components</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Use this function when integrating the MQTT server into a larger
+fleet management application that needs to run multiple services
+simultaneously.</p>
+</div>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 1.0.0: </span>Initial implementation of background MQTT server startup</p>
+</div>
+<p class="rubric">Example</p>
+<p>Non-blocking server startup for integration:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">queue</span><span class="w"> </span><span class="kn">import</span> <span class="n">Queue</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">logging</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">MQTT.grpc_mqtt</span><span class="w"> </span><span class="kn">import</span> <span class="n">start_grpc_mqtt</span>
+
+<span class="c1"># Setup</span>
+<span class="n">tb_queue</span> <span class="o">=</span> <span class="n">Queue</span><span class="p">()</span>
+<span class="n">mqtt_logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="s1">&#39;MQTT&#39;</span><span class="p">)</span>
+
+<span class="c1"># Start server in background</span>
+<span class="n">start_grpc_mqtt</span><span class="p">(</span><span class="n">tb_queue</span><span class="p">,</span> <span class="n">mqtt_logger</span><span class="p">)</span>
+
+<span class="c1"># Continue with other application components</span>
+<span class="c1"># ... rest of application code ...</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../mqtt_components.html" class="btn btn-neutral float-left" title="MQTT Management" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="thingsboard.html" class="btn btn-neutral float-right" title="ThingsBoard" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, Estela Mora Barba.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

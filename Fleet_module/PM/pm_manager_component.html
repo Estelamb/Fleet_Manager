@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Prescription Map Manager &mdash; Fleet Manager 1.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../_static/documentation_options.js?v=f2a433a1"></script>
+        <script src="../../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+        <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="author" title="About these documents" href="../../about.html" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Prescription Map - ISOBUS Format" href="pm_isobus_component.html" />
+    <link rel="prev" title="Prescription Map Management" href="../pm_components.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            Fleet Manager
+          </a>
+              <div class="version">
+                1.0
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../about.html">About the project</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../getting_started.html">Getting Started</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../modules.html">Code documentation</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../Drone_module/index.html">Drone</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">Fleet Manager</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../init_fleet_component.html">Init Fleet Manager</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../mission_components.html">Mission Management</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ros2_components.html">ROS2 Management</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../rest_components.html">REST Management</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../mqtt_components.html">MQTT Management</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../pm_components.html">Prescription Map Management</a><ul class="current">
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Prescription Map Manager</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pm_isobus_component.html">Prescription Map - ISOBUS Format</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pm_drone_component.html">Prescription Map - Drone Format</a></li>
+<li class="toctree-l4"><a class="reference internal" href="subs_pm_component.html">Subscriber Prescription Map Function</a></li>
+<li class="toctree-l4"><a class="reference internal" href="grpc_pm_component.html">gRPC Prescription Map</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../metrics_components.html">System Metrics Component</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../clear_fleet_component.html">Clear Fleet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../create_logger_fleet_component.html">Create Logger</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../training.html">Training documentation</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Fleet Manager</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../modules.html">Code documentation</a></li>
+          <li class="breadcrumb-item"><a href="../index.html">Fleet Manager</a></li>
+          <li class="breadcrumb-item"><a href="../pm_components.html">Prescription Map Management</a></li>
+      <li class="breadcrumb-item active">Prescription Map Manager</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/Fleet_module/PM/pm_manager_component.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="module-pm_manager_fleet">
+<span id="prescription-map-manager"></span><h1>Prescription Map Manager<a class="headerlink" href="#module-pm_manager_fleet" title="Link to this heading"></a></h1>
+<section id="prescription-map-manager-fleet-module">
+<h2>Prescription Map Manager Fleet Module<a class="headerlink" href="#prescription-map-manager-fleet-module" title="Link to this heading"></a></h2>
+<p>This module provides prescription map (PM) management functionality for the agricultural
+fleet management system. It handles the generation, validation, and comparison of
+prescription maps for different vehicle types and agricultural treatments.</p>
+<p>The module manages the complete lifecycle of prescription maps including:
+- Generation of prescription maps based on treatment requirements
+- Reception and storage of prescription maps from vehicles
+- Comparison and validation between generated and received prescription maps
+- State management for vehicle-specific prescription map operations</p>
+<dl>
+<dt>Key Features:</dt><dd><ul class="simple">
+<li><p>Multi-process prescription map generation for performance</p></li>
+<li><p>Vehicle-specific prescription map tracking and validation</p></li>
+<li><p>File-based comparison between generated and received prescription maps</p></li>
+<li><p>Support for multiple prescription map types (ISOBUS, Drone, etc.)</p></li>
+<li><p>Automatic cleanup and state management per vehicle</p></li>
+<li><p>Integration with external prescription map generation scripts</p></li>
+</ul>
+</dd>
+<dt>Usage Example:</dt><dd><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Handle prescription map generation request</span>
+<span class="n">handle_generate</span><span class="p">(</span><span class="n">vehicle_id</span><span class="p">,</span> <span class="n">generation_message</span><span class="p">,</span> <span class="n">logger</span><span class="p">)</span>
+
+<span class="c1"># Handle received prescription map from vehicle</span>
+<span class="n">handle_received</span><span class="p">(</span><span class="n">vehicle_id</span><span class="p">,</span> <span class="n">received_message</span><span class="p">,</span> <span class="n">logger</span><span class="p">)</span>
+
+<span class="c1"># Handle mission completion signal</span>
+<span class="n">handle_finish</span><span class="p">(</span><span class="n">vehicle_id</span><span class="p">,</span> <span class="n">logger</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+<p>Author: Fleet Management System
+Date: 2025</p>
+</section>
+<dl class="py function">
+<dt class="sig sig-object py" id="pm_manager_fleet.handle_comparison_result">
+<span class="sig-prename descclassname"><span class="pre">pm_manager_fleet.</span></span><span class="sig-name descname"><span class="pre">handle_comparison_result</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">gen_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rec_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">finished_dir</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">logger</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vehicle_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">match</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pm_manager_fleet.html#handle_comparison_result"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pm_manager_fleet.handle_comparison_result" title="Link to this definition"></a></dt>
+<dd><p>Handle the result of a prescription map comparison by moving files,
+generating error reports, and cleaning up original files.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>gen_path</strong> (<em>str</em>) – Path to the generated prescription map file</p></li>
+<li><p><strong>rec_path</strong> (<em>str</em>) – Path to the received prescription map file</p></li>
+<li><p><strong>finished_dir</strong> (<em>str</em>) – Directory to store finished files</p></li>
+<li><p><strong>logger</strong> – Logger instance for operation tracking</p></li>
+<li><p><strong>vehicle_id</strong> (<em>str</em>) – Vehicle identifier for logging</p></li>
+<li><p><strong>match</strong> (<em>bool</em>) – True if files match, False otherwise</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pm_manager_fleet.comparation">
+<span class="sig-prename descclassname"><span class="pre">pm_manager_fleet.</span></span><span class="sig-name descname"><span class="pre">comparation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">vehicle_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">logger</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pm_manager_fleet.html#comparation"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pm_manager_fleet.comparation" title="Link to this definition"></a></dt>
+<dd><p>Compare generated and received prescription maps for a specific vehicle.</p>
+<p>This function performs a comprehensive comparison between prescription maps
+that were generated by the system and those that were actually received
+from the vehicle after execution. The comparison helps validate that the
+vehicle executed the correct prescription map.</p>
+<p>The comparison process includes:
+1. Checking if the finish signal has been activated for the vehicle
+2. Scanning for received prescription map files
+3. Finding matching generated prescription map files
+4. Performing content comparison between file pairs
+5. Logging results and updating vehicle finish status</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>vehicle_id</strong> (<em>str</em>) – Unique identifier of the vehicle for which to compare
+prescription maps</p></li>
+<li><p><strong>logger</strong> – Logger instance for operation tracking and debugging</p></li>
+</ul>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This function only executes if the finish status is activated for the
+specified vehicle. The finish status is automatically deactivated
+after comparison completion.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The function performs file system operations and JSON parsing, which
+may raise exceptions for corrupted files or missing directories.</p>
+</div>
+<p class="rubric">Example</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Compare prescription maps for vehicle after mission completion</span>
+<span class="n">comparation</span><span class="p">(</span><span class="s2">&quot;VEHICLE_001&quot;</span><span class="p">,</span> <span class="n">logger</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pm_manager_fleet.handle_finish">
+<span class="sig-prename descclassname"><span class="pre">pm_manager_fleet.</span></span><span class="sig-name descname"><span class="pre">handle_finish</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">vehicle_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">logger</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pm_manager_fleet.html#handle_finish"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pm_manager_fleet.handle_finish" title="Link to this definition"></a></dt>
+<dd><p>Handle mission finish signal for a specific vehicle.</p>
+<p>This function processes the finish signal sent when a vehicle completes
+its mission. It activates the finish status for the vehicle and immediately
+triggers the prescription map comparison process.</p>
+<p>The finish signal indicates that:
+- The vehicle has completed executing its prescription map
+- All prescription map data should have been received from the vehicle
+- Comparison between generated and received maps can now be performed</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>vehicle_id</strong> (<em>str</em>) – Unique identifier of the vehicle that finished its mission</p></li>
+<li><p><strong>logger</strong> – Logger instance for operation tracking and debugging</p></li>
+</ul>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Handle mission completion signal</span>
+<span class="n">handle_finish</span><span class="p">(</span><span class="s2">&quot;VEHICLE_001&quot;</span><span class="p">,</span> <span class="n">logger</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This function automatically triggers the comparation process to validate
+prescription map execution immediately after setting the finish status.</p>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pm_manager_fleet.handle_received">
+<span class="sig-prename descclassname"><span class="pre">pm_manager_fleet.</span></span><span class="sig-name descname"><span class="pre">handle_received</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">vehicle_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">message</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">logger</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pm_manager_fleet.html#handle_received"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pm_manager_fleet.handle_received" title="Link to this definition"></a></dt>
+<dd><p>Handle received prescription map data from a vehicle.</p>
+<p>This function processes prescription map data that has been received from
+a vehicle after executing its mission. The received data is stored in the
+Received directory for later comparison with the originally generated
+prescription map.</p>
+<p>The function performs the following operations:
+1. Extracts prescription map content from the message
+2. Validates message structure and filename
+3. Saves the received prescription map to the appropriate directory
+4. Triggers comparison if finish status is active for the vehicle</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>vehicle_id</strong> (<em>str</em>) – Unique identifier of the vehicle sending the prescription map</p></li>
+<li><p><strong>message</strong> (<em>dict</em>) – <p>Message containing prescription map data with keys:
+- content (dict): Nested content structure containing the actual PM data</p>
+<blockquote>
+<div><ul>
+<li><p>content (list/dict): The actual prescription map content array</p></li>
+</ul>
+</div></blockquote>
+<ul>
+<li><p>filename (str): Original filename of the prescription map</p></li>
+</ul>
+</p></li>
+<li><p><strong>logger</strong> – Logger instance for operation tracking and debugging</p></li>
+</ul>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">message</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;content&#39;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s1">&#39;content&#39;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="p">{</span><span class="s1">&#39;x&#39;</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span> <span class="s1">&#39;y&#39;</span><span class="p">:</span> <span class="mi">200</span><span class="p">,</span> <span class="s1">&#39;treatment&#39;</span><span class="p">:</span> <span class="s1">&#39;pesticide&#39;</span><span class="p">,</span> <span class="s1">&#39;rate&#39;</span><span class="p">:</span> <span class="mf">2.5</span><span class="p">},</span>
+            <span class="p">{</span><span class="s1">&#39;x&#39;</span><span class="p">:</span> <span class="mi">150</span><span class="p">,</span> <span class="s1">&#39;y&#39;</span><span class="p">:</span> <span class="mi">250</span><span class="p">,</span> <span class="s1">&#39;treatment&#39;</span><span class="p">:</span> <span class="s1">&#39;pesticide&#39;</span><span class="p">,</span> <span class="s1">&#39;rate&#39;</span><span class="p">:</span> <span class="mf">2.3</span><span class="p">}</span>
+        <span class="p">]</span>
+    <span class="p">},</span>
+    <span class="s1">&#39;filename&#39;</span><span class="p">:</span> <span class="s1">&#39;pesticide_application.json&#39;</span>
+<span class="p">}</span>
+<span class="n">handle_received</span><span class="p">(</span><span class="s2">&quot;VEHICLE_001&quot;</span><span class="p">,</span> <span class="n">message</span><span class="p">,</span> <span class="n">logger</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The function automatically triggers comparison at the end to check if
+the received prescription map matches the generated one, provided the
+finish status is active for the vehicle.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Missing ‘content’ field or ‘filename’ in the message will cause the
+function to log warnings and return without processing the data.</p>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pm_manager_fleet.handle_generate">
+<span class="sig-prename descclassname"><span class="pre">pm_manager_fleet.</span></span><span class="sig-name descname"><span class="pre">handle_generate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">vehicle_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">message</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">logger</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pm_manager_fleet.html#handle_generate"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pm_manager_fleet.handle_generate" title="Link to this definition"></a></dt>
+<dd><p>Handle prescription map generation request for a vehicle.</p>
+<p>This function processes requests to generate prescription maps for a specific
+vehicle based on treatment requirements, field coordinates, and prescription
+map types. It validates the input data and delegates the actual generation
+to the generate_pm function.</p>
+<p>The function expects a specific message format containing all necessary
+parameters for prescription map generation including treatments, amounts,
+field grid, coordinates, and prescription map types.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>vehicle_id</strong> (<em>str</em>) – Unique identifier of the vehicle for which to generate
+prescription maps</p></li>
+<li><p><strong>message</strong> (<em>dict</em>) – <p>Generation request message containing:
+- data (list): List of 5 elements in specific order:</p>
+<blockquote>
+<div><p>[treatments, amount, grid, coords, pm_types]
+- treatments: Treatment specifications
+- amount (dict): Treatment amounts/rates
+- grid (list): Field grid definition
+- coords (list): [latitude, longitude] coordinates
+- pm_types (dict): Prescription map types to generate</p>
+</div></blockquote>
+</p></li>
+<li><p><strong>logger</strong> – Logger instance for operation tracking and debugging</p></li>
+</ul>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">message</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;data&#39;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span><span class="s1">&#39;pesticide&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span> <span class="s1">&#39;fertilizer&#39;</span><span class="p">:</span> <span class="kc">False</span><span class="p">},</span>  <span class="c1"># treatments</span>
+        <span class="p">{</span><span class="s1">&#39;pesticide&#39;</span><span class="p">:</span> <span class="mf">2.5</span><span class="p">,</span> <span class="s1">&#39;fertilizer&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">},</span>       <span class="c1"># amounts</span>
+        <span class="p">[[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">]],</span>                      <span class="c1"># grid</span>
+        <span class="p">[</span><span class="mf">40.4168</span><span class="p">,</span> <span class="o">-</span><span class="mf">3.7038</span><span class="p">],</span>                        <span class="c1"># coords [lat, long]</span>
+        <span class="p">{</span><span class="s1">&#39;ISOBUS&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span> <span class="s1">&#39;Drone&#39;</span><span class="p">:</span> <span class="kc">False</span><span class="p">}</span>           <span class="c1"># pm_types</span>
+    <span class="p">]</span>
+<span class="p">}</span>
+<span class="n">handle_generate</span><span class="p">(</span><span class="s2">&quot;VEHICLE_001&quot;</span><span class="p">,</span> <span class="n">message</span><span class="p">,</span> <span class="n">logger</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The function validates that exactly 5 elements are provided in the data
+array and that pm_types is iterable before proceeding with generation.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Invalid data length or malformed pm_types will cause the function to
+log errors and return without generating prescription maps.</p>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pm_manager_fleet.generate_pm">
+<span class="sig-prename descclassname"><span class="pre">pm_manager_fleet.</span></span><span class="sig-name descname"><span class="pre">generate_pm</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">vehicle_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pm_types</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">amount</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">grid</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">long</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lat</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">logger</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span></span></span><a class="reference internal" href="../../_modules/pm_manager_fleet.html#generate_pm"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pm_manager_fleet.generate_pm" title="Link to this definition"></a></dt>
+<dd><p>Generate prescription maps for a vehicle using external generation scripts.</p>
+<p>This function coordinates the generation of prescription maps by executing
+external scripts for each specified prescription map type. It uses a process
+pool for parallel execution to improve performance when generating multiple
+prescription map types.</p>
+<p>The function performs the following operations:
+1. Loads the prescription map types configuration
+2. Validates the existence of generation scripts
+3. Executes scripts in parallel using ProcessPoolExecutor
+4. Monitors execution with timeouts to prevent hanging
+5. Logs outputs and handles errors for each generation process</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>vehicle_id</strong> (<em>str</em>) – Unique identifier of the vehicle</p></li>
+<li><p><strong>pm_types</strong> (<em>dict</em>) – Dictionary specifying which PM types to generate</p></li>
+<li><p><strong>amount</strong> (<em>dict</em>) – Treatment amounts and application rates</p></li>
+<li><p><strong>grid</strong> (<em>list</em>) – Field grid definition for spatial mapping</p></li>
+<li><p><strong>long</strong> (<em>float</em>) – Longitude coordinate of the field</p></li>
+<li><p><strong>lat</strong> (<em>float</em>) – Latitude coordinate of the field</p></li>
+<li><p><strong>logger</strong> – Logger instance for operation tracking and debugging</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Empty list (return value maintained for compatibility)</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pm_types</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;ISOBUS&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span> <span class="s1">&#39;Drone&#39;</span><span class="p">:</span> <span class="kc">False</span><span class="p">}</span>
+<span class="n">amount</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;pesticide&#39;</span><span class="p">:</span> <span class="mf">2.5</span><span class="p">,</span> <span class="s1">&#39;fertilizer&#39;</span><span class="p">:</span> <span class="mf">1.8</span><span class="p">}</span>
+<span class="n">grid</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">100</span><span class="p">,</span> <span class="mi">50</span><span class="p">],</span> <span class="p">[</span><span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">50</span><span class="p">]]</span>
+<span class="n">generate_pm</span><span class="p">(</span><span class="s2">&quot;VEHICLE_001&quot;</span><span class="p">,</span> <span class="n">pm_types</span><span class="p">,</span> <span class="n">amount</span><span class="p">,</span> <span class="n">grid</span><span class="p">,</span> <span class="o">-</span><span class="mf">3.7038</span><span class="p">,</span> <span class="mf">40.4168</span><span class="p">,</span> <span class="n">logger</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The function uses timeouts (30s global, 15s per process) to prevent
+hanging on unresponsive generation scripts. All outputs are logged
+for debugging and monitoring purposes.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Missing pm_types.json configuration file or invalid script paths will
+cause the function to return early without generating prescription maps.</p>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pm_manager_fleet.run_script">
+<span class="sig-prename descclassname"><span class="pre">pm_manager_fleet.</span></span><span class="sig-name descname"><span class="pre">run_script</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vehicle_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">amount</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">grid</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">long</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lat</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="../../_modules/pm_manager_fleet.html#run_script"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pm_manager_fleet.run_script" title="Link to this definition"></a></dt>
+<dd><p>Execute a prescription map generation script with specified parameters.</p>
+<p>This function runs an external Python script for generating prescription maps,
+passing all necessary parameters as command-line arguments. It handles script
+execution, output capture, error handling, and timeout management.</p>
+<p>The script is executed as a subprocess with JSON-serialized parameters for
+complex data structures like amounts and grid definitions. Both stdout and
+stderr are captured for comprehensive logging.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>path</strong> (<em>str</em>) – File path to the prescription map generation script</p></li>
+<li><p><strong>vehicle_id</strong> (<em>int</em>) – Unique identifier of the vehicle</p></li>
+<li><p><strong>amount</strong> (<em>dict</em>) – Treatment amounts and application rates (JSON-serialized)</p></li>
+<li><p><strong>grid</strong> (<em>list</em>) – Field grid definition (JSON-serialized)</p></li>
+<li><p><strong>long</strong> (<em>float</em>) – Longitude coordinate of the field</p></li>
+<li><p><strong>lat</strong> (<em>float</em>) – Latitude coordinate of the field</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Script output on success, or error description on failure</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">output</span> <span class="o">=</span> <span class="n">run_script</span><span class="p">(</span>
+    <span class="s2">&quot;PrescriptionMap/pm_generation/ISOBUS/pm_isobus_fleet.py&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;VEHICLE_001&quot;</span><span class="p">,</span>
+    <span class="p">{</span><span class="s1">&#39;pesticide&#39;</span><span class="p">:</span> <span class="mf">2.5</span><span class="p">},</span>
+    <span class="p">[[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">]],</span>
+    <span class="o">-</span><span class="mf">3.7038</span><span class="p">,</span>
+    <span class="mf">40.4168</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The function uses a 20-second timeout to prevent hanging on unresponsive
+scripts. Complex parameters are JSON-serialized for reliable transmission.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Script failures, timeouts, or unexpected errors are captured and returned
+as descriptive error messages rather than raising exceptions.</p>
+</div>
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../pm_components.html" class="btn btn-neutral float-left" title="Prescription Map Management" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="pm_isobus_component.html" class="btn btn-neutral float-right" title="Prescription Map - ISOBUS Format" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, Estela Mora Barba.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

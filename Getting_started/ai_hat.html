@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI HAT+ with Hailo8-8L and Pi Camera Module Installation &mdash; Fleet Manager 1.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=f2a433a1"></script>
+        <script src="../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+        <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="author" title="About these documents" href="../about.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Getting Started with RPI5 and Hailo8-8L" href="hailo_rpi5.html" />
+    <link rel="prev" title="Drone Fleet Manager Guide" href="how_to_run.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Fleet Manager
+          </a>
+              <div class="version">
+                1.0
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../about.html">About the project</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../getting_started.html">Getting Started</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="how_to_run.html">Drone Fleet Manager Guide</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">AI HAT+ with Hailo8-8L and Pi Camera Module Installation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#update-the-system">Update the system</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#configure-pcie-and-pi-camera-module">Configure PCIe and Pi Camera Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#install-hailo-dependencies">Install Hailo Dependencies</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#verify-hailo-installation">Verify Hailo Installation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#test-the-pi-camera-module">Test the Pi Camera Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#run-demos-optional">Run Demos (Optional)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#references">References</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="hailo_rpi5.html">Getting Started with RPI5 and Hailo8-8L</a></li>
+<li class="toctree-l2"><a class="reference internal" href="docker.html">Docker Engine on the RPI5</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../modules.html">Code documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../training.html">Training documentation</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Fleet Manager</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../getting_started.html">Getting Started</a></li>
+      <li class="breadcrumb-item active">AI HAT+ with Hailo8-8L and Pi Camera Module Installation</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/Getting_started/ai_hat.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="ai-hat-with-hailo8-8l-and-pi-camera-module-installation">
+<h1>AI HAT+ with Hailo8-8L and Pi Camera Module Installation<a class="headerlink" href="#ai-hat-with-hailo8-8l-and-pi-camera-module-installation" title="Link to this heading"></a></h1>
+<section id="update-the-system">
+<h2>Update the system<a class="headerlink" href="#update-the-system" title="Link to this heading"></a></h2>
+<p>First, make sure your Raspberry Pi is running the latest software:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>apt<span class="w"> </span>update<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>sudo<span class="w"> </span>apt<span class="w"> </span>full-upgrade
+</pre></div>
+</div>
+<p>Then, update the firmware:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>rpi-eeprom-update<span class="w"> </span>-a
+</pre></div>
+</div>
+<p>Reboot the system to apply the changes:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>reboot
+</pre></div>
+</div>
+</section>
+<section id="configure-pcie-and-pi-camera-module">
+<h2>Configure PCIe and Pi Camera Module<a class="headerlink" href="#configure-pcie-and-pi-camera-module" title="Link to this heading"></a></h2>
+<p>Connect the RPI Camera, then open the configuration tool:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>raspi-config
+</pre></div>
+</div>
+<p>Follow these steps:</p>
+<ol class="arabic simple">
+<li><p>Select <code class="docutils literal notranslate"><span class="pre">Advanced</span> <span class="pre">Options</span></code>.</p></li>
+<li><p>Select <code class="docutils literal notranslate"><span class="pre">PCIe</span> <span class="pre">Speed</span></code>.</p></li>
+<li><p>Choose <code class="docutils literal notranslate"><span class="pre">Yes</span></code> to enable PCIe Gen 3 mode.</p></li>
+<li><p>Select <code class="docutils literal notranslate"><span class="pre">Finish</span></code> to exit.</p></li>
+<li><p>Reboot your Raspberry Pi for your changes to take effect.</p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>reboot
+</pre></div>
+</div>
+</section>
+<section id="install-hailo-dependencies">
+<h2>Install Hailo Dependencies<a class="headerlink" href="#install-hailo-dependencies" title="Link to this heading"></a></h2>
+<p>Install the required packages for the Hailo AI module:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>hailo-all
+</pre></div>
+</div>
+<p>Reboot again after installation:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>reboot
+</pre></div>
+</div>
+</section>
+<section id="verify-hailo-installation">
+<h2>Verify Hailo Installation<a class="headerlink" href="#verify-hailo-installation" title="Link to this heading"></a></h2>
+<p>To confirm that the NPU and its software dependencies are working correctly, run:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>hailortcli<span class="w"> </span>fw-control<span class="w"> </span>identify
+</pre></div>
+</div>
+<p>You should see output similar to:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Executing on device: 0000:01:00.0
+Identifying board
+Control Protocol Version: 2
+Firmware Version: 4.17.0 (release,app,extended context switch buffer)
+Logger Version: 0
+Board Name: Hailo-8
+Device Architecture: HAILO8L (or HAILO8)
+Serial Number: HLDDLBB234500054
+Part Number: HM21LB1C2LAE
+Product Name: HAILO-8L AI ACC M.2 B+M KEY MODULE EXT TMP
+</pre></div>
+</div>
+<p>Getting N/A for Serial Number, Part Number, and Product Name is normal for the AI HAT.</p>
+</section>
+<section id="test-the-pi-camera-module">
+<h2>Test the Pi Camera Module<a class="headerlink" href="#test-the-pi-camera-module" title="Link to this heading"></a></h2>
+<p>To verify the camera is functioning properly, run:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>rpicam-hello<span class="w"> </span>-t<span class="w"> </span>10s
+</pre></div>
+</div>
+</section>
+<section id="run-demos-optional">
+<h2>Run Demos (Optional)<a class="headerlink" href="#run-demos-optional" title="Link to this heading"></a></h2>
+<p>You can try out sample demos by visiting:</p>
+<p><a class="reference external" href="https://www.raspberrypi.com/documentation/computers/ai.html">Demos - AI Kit and AI HAT+ software</a></p>
+</section>
+<section id="references">
+<h2>References<a class="headerlink" href="#references" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>Raspberry Pi – AI Kit and HAT+ Software Demos: <a class="reference external" href="https://www.raspberrypi.com/documentation/computers/ai.html">https://www.raspberrypi.com/documentation/computers/ai.html</a></p></li>
+<li><p>Raspberry Pi – AI HAT+ Documentation: <a class="reference external" href="https://www.raspberrypi.com/documentation/accessories/ai-hat-plus.html">https://www.raspberrypi.com/documentation/accessories/ai-hat-plus.html</a></p></li>
+</ul>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="how_to_run.html" class="btn btn-neutral float-left" title="Drone Fleet Manager Guide" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="hailo_rpi5.html" class="btn btn-neutral float-right" title="Getting Started with RPI5 and Hailo8-8L" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, Estela Mora Barba.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

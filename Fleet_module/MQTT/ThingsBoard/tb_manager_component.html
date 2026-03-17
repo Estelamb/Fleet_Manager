@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Thingsboard Manager &mdash; Fleet Manager 1.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../../_static/documentation_options.js?v=f2a433a1"></script>
+        <script src="../../../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
+        <script src="../../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="author" title="About these documents" href="../../../about.html" />
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="REST API ThingsBoard" href="rest_api_component.html" />
+    <link rel="prev" title="ThingsBoard" href="../thingsboard.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../../index.html" class="icon icon-home">
+            Fleet Manager
+          </a>
+              <div class="version">
+                1.0
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../about.html">About the project</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../getting_started.html">Getting Started</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../../modules.html">Code documentation</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../../Drone_module/index.html">Drone</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../index.html">Fleet Manager</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../../init_fleet_component.html">Init Fleet Manager</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../mission_components.html">Mission Management</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../ros2_components.html">ROS2 Management</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../rest_components.html">REST Management</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../../mqtt_components.html">MQTT Management</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="../grpc_mqtt_component.html">gRPC MQTT</a></li>
+<li class="toctree-l4 current"><a class="reference internal" href="../thingsboard.html">ThingsBoard</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../pm_components.html">Prescription Map Management</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../metrics_components.html">System Metrics Component</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../clear_fleet_component.html">Clear Fleet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../create_logger_fleet_component.html">Create Logger</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../training.html">Training documentation</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Fleet Manager</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../../modules.html">Code documentation</a></li>
+          <li class="breadcrumb-item"><a href="../../index.html">Fleet Manager</a></li>
+          <li class="breadcrumb-item"><a href="../../mqtt_components.html">MQTT Management</a></li>
+          <li class="breadcrumb-item"><a href="../thingsboard.html">ThingsBoard</a></li>
+      <li class="breadcrumb-item active">Thingsboard Manager</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../_sources/Fleet_module/MQTT/ThingsBoard/tb_manager_component.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="module-tb_manager">
+<span id="thingsboard-manager"></span><h1>Thingsboard Manager<a class="headerlink" href="#module-tb_manager" title="Link to this heading"></a></h1>
+<p>ThingsBoard Manager Module</p>
+<p>This module provides a comprehensive ThingsBoard management system that handles device
+lifecycle, telemetry processing, and MQTT message routing for the fleet management platform.
+It implements a multi-threaded architecture for efficient real-time data processing.</p>
+<p>The module integrates with the ThingsBoard IoT platform to manage various device types
+including drones, missions, fields, and treatment systems. It provides automatic device
+cleanup, message processing, and telemetry forwarding capabilities.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Key Features:
+- Multi-threaded message processing for high throughput
+- Automatic device type management and cleanup
+- Robust message parsing and error handling
+- Real-time telemetry forwarding to ThingsBoard
+- Support for multiple message formats (JSON, string, list)
+- Comprehensive logging and monitoring integration</p>
+</div>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 1.0.0: </span>Initial implementation of ThingsBoard management system</p>
+</div>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<ul class="simple">
+<li><p><code class="xref py py-mod docutils literal notranslate"><span class="pre">MQTT.ThingsBoard.rest_api</span></code> for ThingsBoard REST API operations</p></li>
+<li><p><code class="xref py py-mod docutils literal notranslate"><span class="pre">MQTT.ThingsBoard.devices.devices_manager</span></code> for device-specific management</p></li>
+</ul>
+</div>
+<p class="rubric">Example</p>
+<p>Basic usage of the ThingsBoard manager:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">queue</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">logging</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">MQTT.ThingsBoard.tb_manager</span><span class="w"> </span><span class="kn">import</span> <span class="n">start_tb_manager</span>
+
+<span class="c1"># Initialize message queue and logger</span>
+<span class="n">tb_queue</span> <span class="o">=</span> <span class="n">queue</span><span class="o">.</span><span class="n">Queue</span><span class="p">()</span>
+<span class="n">mqtt_logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="s1">&#39;MQTT&#39;</span><span class="p">)</span>
+
+<span class="c1"># Start ThingsBoard manager</span>
+<span class="n">tb_thread</span> <span class="o">=</span> <span class="n">start_tb_manager</span><span class="p">(</span><span class="n">tb_queue</span><span class="p">,</span> <span class="n">mqtt_logger</span><span class="p">)</span>
+
+<span class="c1"># Manager is now running and processing messages</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;ThingsBoard manager started successfully&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<dl class="py data">
+<dt class="sig sig-object py" id="tb_manager.TB_HOST">
+<span class="sig-prename descclassname"><span class="pre">tb_manager.</span></span><span class="sig-name descname"><span class="pre">TB_HOST</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'https://srv-iot.diatel.upm.es'</span></em><a class="headerlink" href="#tb_manager.TB_HOST" title="Link to this definition"></a></dt>
+<dd><p>ThingsBoard server host URL for REST API operations</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="tb_manager.USERNAME">
+<span class="sig-prename descclassname"><span class="pre">tb_manager.</span></span><span class="sig-name descname"><span class="pre">USERNAME</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'estela.mora.barba&#64;alumnos.upm.es'</span></em><a class="headerlink" href="#tb_manager.USERNAME" title="Link to this definition"></a></dt>
+<dd><p>Username for ThingsBoard authentication</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="tb_manager.PASSWORD">
+<span class="sig-prename descclassname"><span class="pre">tb_manager.</span></span><span class="sig-name descname"><span class="pre">PASSWORD</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'fleet_manager'</span></em><a class="headerlink" href="#tb_manager.PASSWORD" title="Link to this definition"></a></dt>
+<dd><p>Password for ThingsBoard authentication (consider using environment variables in production)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="tb_manager.THINGSBOARD_HOST">
+<span class="sig-prename descclassname"><span class="pre">tb_manager.</span></span><span class="sig-name descname"><span class="pre">THINGSBOARD_HOST</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'srv-iot.diatel.upm.es'</span></em><a class="headerlink" href="#tb_manager.THINGSBOARD_HOST" title="Link to this definition"></a></dt>
+<dd><p>ThingsBoard host for MQTT telemetry connections</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="tb_manager.PORT">
+<span class="sig-prename descclassname"><span class="pre">tb_manager.</span></span><span class="sig-name descname"><span class="pre">PORT</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">8883</span></em><a class="headerlink" href="#tb_manager.PORT" title="Link to this definition"></a></dt>
+<dd><p>MQTT port for secure telemetry transmission (8883 for TLS)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="tb_manager.TELEMETRY_TOPIC">
+<span class="sig-prename descclassname"><span class="pre">tb_manager.</span></span><span class="sig-name descname"><span class="pre">TELEMETRY_TOPIC</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'v1/devices/me/telemetry'</span></em><a class="headerlink" href="#tb_manager.TELEMETRY_TOPIC" title="Link to this definition"></a></dt>
+<dd><p>MQTT topic for device telemetry data transmission</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="tb_manager.ThingsboardThread">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">tb_manager.</span></span><span class="sig-name descname"><span class="pre">ThingsboardThread</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tb</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tb_queue</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mqtt_logger</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tb_host</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">telemetry_topic</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/tb_manager.html#ThingsboardThread"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tb_manager.ThingsboardThread" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Thread</span></code></p>
+<p>Dedicated thread for processing ThingsBoard messages and managing device operations.</p>
+<p>This class implements a worker thread that continuously processes MQTT messages
+from a queue and forwards them to the appropriate device managers in ThingsBoard.
+It handles various message formats and provides robust error handling for
+production environments.</p>
+<p>The thread operates independently and processes messages asynchronously, allowing
+the main application to continue operating while telemetry data is being processed
+and forwarded to ThingsBoard in real-time.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>tb</strong> (<a class="reference internal" href="rest_api_component.html#rest_api.ThingsBoardAPI" title="rest_api.ThingsBoardAPI"><em>ThingsBoardAPI</em></a>) – Authenticated ThingsBoard API client instance</p></li>
+<li><p><strong>tb_queue</strong> (<em>queue.Queue</em>) – Thread-safe queue containing messages to process</p></li>
+<li><p><strong>mqtt_logger</strong> (<em>logging.Logger</em>) – Logger instance for operation tracking and debugging</p></li>
+<li><p><strong>tb_host</strong> (<em>str</em>) – ThingsBoard host for MQTT connections</p></li>
+<li><p><strong>port</strong> (<em>int</em>) – MQTT port for telemetry transmission</p></li>
+<li><p><strong>telemetry_topic</strong> (<em>str</em>) – MQTT topic for device telemetry</p></li>
+</ul>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This thread runs indefinitely until the parent process terminates.
+All exceptions are caught and logged to ensure continuous operation.</p>
+</div>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 1.0.0: </span>Initial implementation of ThingsBoard message processing thread</p>
+</div>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="tb_manager.ThingsboardThread.tb_queue">
+<span class="sig-name descname"><span class="pre">tb_queue</span></span><a class="headerlink" href="#tb_manager.ThingsboardThread.tb_queue" title="Link to this definition"></a></dt>
+<dd><p>Message queue for processing</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>queue.Queue</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="tb_manager.ThingsboardThread.devices_manager">
+<span class="sig-name descname"><span class="pre">devices_manager</span></span><a class="headerlink" href="#tb_manager.ThingsboardThread.devices_manager" title="Link to this definition"></a></dt>
+<dd><p>Manager for device-specific operations</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="Devices/devices_manager_component.html#devices_manager.DevicesManager" title="devices_manager.DevicesManager">DevicesManager</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="tb_manager.ThingsboardThread.mqtt_logger">
+<span class="sig-name descname"><span class="pre">mqtt_logger</span></span><a class="headerlink" href="#tb_manager.ThingsboardThread.mqtt_logger" title="Link to this definition"></a></dt>
+<dd><p>Logger for operation tracking</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>logging.Logger</p>
+</dd>
+</dl>
+</dd></dl>
+
+<p class="rubric">Example</p>
+<p>Create and start a ThingsBoard processing thread:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">tb_api</span> <span class="o">=</span> <span class="n">ThingsBoardAPI</span><span class="p">(</span><span class="s2">&quot;https://thingsboard.company.com&quot;</span><span class="p">)</span>
+<span class="n">tb_api</span><span class="o">.</span><span class="n">login</span><span class="p">(</span><span class="s2">&quot;username&quot;</span><span class="p">,</span> <span class="s2">&quot;password&quot;</span><span class="p">)</span>
+
+<span class="n">tb_thread</span> <span class="o">=</span> <span class="n">ThingsboardThread</span><span class="p">(</span>
+    <span class="n">tb</span><span class="o">=</span><span class="n">tb_api</span><span class="p">,</span>
+    <span class="n">tb_queue</span><span class="o">=</span><span class="n">message_queue</span><span class="p">,</span>
+    <span class="n">mqtt_logger</span><span class="o">=</span><span class="n">logger</span><span class="p">,</span>
+    <span class="n">tb_host</span><span class="o">=</span><span class="s2">&quot;thingsboard.company.com&quot;</span><span class="p">,</span>
+    <span class="n">port</span><span class="o">=</span><span class="mi">8883</span><span class="p">,</span>
+    <span class="n">telemetry_topic</span><span class="o">=</span><span class="s2">&quot;v1/devices/me/telemetry&quot;</span>
+<span class="p">)</span>
+<span class="n">tb_thread</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+</pre></div>
+</div>
+<dl class="py method">
+<dt class="sig sig-object py" id="tb_manager.ThingsboardThread.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tb</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tb_queue</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mqtt_logger</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tb_host</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">telemetry_topic</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/tb_manager.html#ThingsboardThread.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tb_manager.ThingsboardThread.__init__" title="Link to this definition"></a></dt>
+<dd><p>Initialize the ThingsBoard processing thread.</p>
+<p>Sets up the thread with all necessary components for message processing
+including the devices manager, queue, and logging infrastructure.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>tb</strong> (<a class="reference internal" href="rest_api_component.html#rest_api.ThingsBoardAPI" title="rest_api.ThingsBoardAPI"><em>ThingsBoardAPI</em></a>) – Authenticated ThingsBoard API client</p></li>
+<li><p><strong>tb_queue</strong> (<em>queue.Queue</em>) – Queue for incoming messages</p></li>
+<li><p><strong>mqtt_logger</strong> (<em>logging.Logger</em>) – Logger for operations</p></li>
+<li><p><strong>tb_host</strong> (<em>str</em>) – ThingsBoard host address</p></li>
+<li><p><strong>port</strong> (<em>int</em>) – MQTT connection port</p></li>
+<li><p><strong>telemetry_topic</strong> (<em>str</em>) – MQTT topic for telemetry</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="tb_manager.ThingsboardThread.run">
+<span class="sig-name descname"><span class="pre">run</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/tb_manager.html#ThingsboardThread.run"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tb_manager.ThingsboardThread.run" title="Link to this definition"></a></dt>
+<dd><p>Main thread execution loop for processing ThingsBoard messages.</p>
+<p>Continuously processes messages from the queue, handling various message
+formats and routing them to the appropriate device managers. The method
+implements robust error handling to ensure the thread continues operating
+even when individual messages fail processing.</p>
+<p>The processing loop handles three message formats:
+1. Dictionary objects (direct JSON)
+2. String objects (JSON strings to parse)
+3. List objects (joined and parsed as JSON)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None (runs indefinitely until thread termination)</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This method runs in an infinite loop and only terminates when the
+thread is stopped externally or the parent process ends.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>All exceptions are caught and logged to prevent thread termination.
+Monitor logs for processing errors that may indicate data issues.</p>
+</div>
+<dl class="simple">
+<dt>Message Processing Flow:</dt><dd><ol class="arabic simple">
+<li><p>Retrieve message from queue (blocking operation)</p></li>
+<li><p>Determine message format and parse accordingly</p></li>
+<li><p>Forward parsed message to devices manager</p></li>
+<li><p>Log any processing errors and continue</p></li>
+</ol>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<p>The run method is called automatically when the thread starts:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">tb_thread</span> <span class="o">=</span> <span class="n">ThingsboardThread</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
+<span class="n">tb_thread</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>  <span class="c1"># This calls run() in a separate thread</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="tb_manager.start_tb_manager">
+<span class="sig-prename descclassname"><span class="pre">tb_manager.</span></span><span class="sig-name descname"><span class="pre">start_tb_manager</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tb_queue</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Queue</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mqtt_logger</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Logger</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/tb_manager.html#start_tb_manager"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tb_manager.start_tb_manager" title="Link to this definition"></a></dt>
+<dd><p>Initialize and start the ThingsBoard management system.</p>
+<p>This function sets up the complete ThingsBoard integration system, including
+authentication, device cleanup, and message processing thread initialization.
+It performs a fresh start by cleaning up existing devices and then starts
+continuous processing of telemetry messages.</p>
+<p>The function performs the following initialization steps:
+1. Creates and authenticates ThingsBoard API client
+2. Performs cleanup of existing device types for fresh start
+3. Initializes and starts the message processing thread
+4. Returns the running thread for monitoring purposes</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>tb_queue</strong> (<em>queue.Queue</em>) – Thread-safe queue for incoming MQTT messages</p></li>
+<li><p><strong>mqtt_logger</strong> (<em>logging.Logger</em>) – Logger instance for operation tracking and debugging</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Running ThingsBoard processing thread instance</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#tb_manager.ThingsboardThread" title="tb_manager.ThingsboardThread">ThingsboardThread</a></p>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Device Cleanup Types:
+The function automatically removes all existing devices of these types:
+- Drone: Unmanned aerial vehicle devices
+- Mission: Mission management and tracking devices
+- Field: Agricultural field monitoring devices
+- Feedback: User feedback and response devices
+- Treatment: Agricultural treatment application devices
+- Field_PM: Field prescription map devices
+- RPI5: Raspberry Pi 5 controller devices</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This function performs bulk device deletion on startup. Ensure this
+behavior is appropriate for your production environment.</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Consider implementing selective cleanup or backup procedures before
+using this function in production environments with valuable device data.</p>
+</div>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 1.0.0: </span>Initial implementation of ThingsBoard manager startup</p>
+</div>
+<p class="rubric">Example</p>
+<p>Start ThingsBoard manager in a fleet management application:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">queue</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">logging</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">MQTT.ThingsBoard.tb_manager</span><span class="w"> </span><span class="kn">import</span> <span class="n">start_tb_manager</span>
+
+<span class="c1"># Setup logging</span>
+<span class="n">logging</span><span class="o">.</span><span class="n">basicConfig</span><span class="p">(</span><span class="n">level</span><span class="o">=</span><span class="n">logging</span><span class="o">.</span><span class="n">INFO</span><span class="p">)</span>
+<span class="n">mqtt_logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="s1">&#39;MQTT&#39;</span><span class="p">)</span>
+
+<span class="c1"># Create message queue</span>
+<span class="n">tb_queue</span> <span class="o">=</span> <span class="n">queue</span><span class="o">.</span><span class="n">Queue</span><span class="p">()</span>
+
+<span class="c1"># Start ThingsBoard manager</span>
+<span class="n">tb_thread</span> <span class="o">=</span> <span class="n">start_tb_manager</span><span class="p">(</span><span class="n">tb_queue</span><span class="p">,</span> <span class="n">mqtt_logger</span><span class="p">)</span>
+
+<span class="c1"># Manager is now running and ready to process messages</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;ThingsBoard manager started successfully&quot;</span><span class="p">)</span>
+
+<span class="c1"># Add messages to queue for processing</span>
+<span class="n">tb_queue</span><span class="o">.</span><span class="n">put</span><span class="p">({</span><span class="s2">&quot;device_id&quot;</span><span class="p">:</span> <span class="s2">&quot;sensor_01&quot;</span><span class="p">,</span> <span class="s2">&quot;temperature&quot;</span><span class="p">:</span> <span class="mf">25.5</span><span class="p">})</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="../../create_logger_fleet_component.html#create_logger_fleet.Exception" title="create_logger_fleet.Exception"><strong>Exception</strong></a> – If ThingsBoard authentication fails or thread startup encounters errors</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../thingsboard.html" class="btn btn-neutral float-left" title="ThingsBoard" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="rest_api_component.html" class="btn btn-neutral float-right" title="REST API ThingsBoard" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, Estela Mora Barba.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

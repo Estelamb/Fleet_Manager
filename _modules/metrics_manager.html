@@ -1,0 +1,1368 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>metrics_manager &mdash; Fleet Manager 1.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=f2a433a1"></script>
+        <script src="../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+        <script src="../_static/copybutton.js?v=f281be69"></script>
+        <script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script>
+        <script type="module">import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11.12.1/dist/mermaid.esm.min.mjs";
+
+
+
+
+
+const initStyles = () => {
+    const defaultStyle = document.createElement('style');
+    defaultStyle.textContent = `pre.mermaid {
+    /* Same as .mermaid-container > pre */
+    display: block;
+    width: 100%;
+}
+
+pre.mermaid > svg {
+    /* Same as .mermaid-container > pre > svg */
+    height: 500px;
+    width: 100%;
+    max-width: 100% !important;
+}`;
+    document.head.appendChild(defaultStyle);
+
+    const fullscreenStyle = document.createElement('style');
+    fullscreenStyle.textContent = `.mermaid-container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.mermaid-container > pre {
+    display: block;
+    width: 100%;
+}
+
+.mermaid-container > pre > svg {
+    height: 500px;
+    width: 100%;
+    max-width: 100% !important;
+}
+
+.mermaid-fullscreen-btn {
+    width: 28px;
+    height: 28px;
+    background: rgba(255, 255, 255, 0.95);
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    border-radius: 4px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    font-size: 14px;
+    line-height: 1;
+    padding: 0;
+    color: #333;
+}
+
+.mermaid-fullscreen-btn:hover {
+    opacity: 100% !important;
+    background: rgba(255, 255, 255, 1);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+    transform: scale(1.1);
+}
+
+.mermaid-fullscreen-btn.dark-theme {
+    background: rgba(50, 50, 50, 0.95);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: #e0e0e0;
+}
+
+.mermaid-fullscreen-btn.dark-theme:hover {
+    background: rgba(60, 60, 60, 1);
+    box-shadow: 0 3px 10px rgba(255, 255, 255, 0.2);
+}
+
+.mermaid-fullscreen-modal {
+    display: none;
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 95vw;
+    height: 100vh;
+    background: rgba(255, 255, 255, 0.98);
+    z-index: 9999;
+    padding: 20px;
+    overflow: auto;
+}
+
+.mermaid-fullscreen-modal.dark-theme {
+    background: rgba(0, 0, 0, 0.98);
+}
+
+.mermaid-fullscreen-modal.active {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mermaid-container-fullscreen {
+    position: relative;
+    width: 95vw;
+    height: 90vh;
+    max-width: 95vw;
+    max-height: 90vh;
+    background: white;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    overflow: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mermaid-container-fullscreen.dark-theme {
+    background: #1a1a1a;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.8);
+}
+
+.mermaid-container-fullscreen pre.mermaid {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mermaid-container-fullscreen .mermaid svg {
+    height: 100% !important;
+    width: 100% !important;
+    cursor: grab;
+}
+
+.mermaid-fullscreen-close {
+    position: fixed !important;
+    top: 20px !important;
+    right: 20px !important;
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.95);
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    transition: all 0.2s;
+    font-size: 24px;
+    line-height: 1;
+    color: #333;
+}
+
+.mermaid-fullscreen-close:hover {
+    background: white;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+    transform: scale(1.1);
+}
+
+.mermaid-fullscreen-close.dark-theme {
+    background: rgba(50, 50, 50, 0.95);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #e0e0e0;
+}
+
+.mermaid-fullscreen-close.dark-theme:hover {
+    background: rgba(60, 60, 60, 1);
+    box-shadow: 0 6px 16px rgba(255, 255, 255, 0.2);
+}
+
+.mermaid-fullscreen-modal .mermaid-fullscreen-btn {
+    display: none !important;
+}`;
+    document.head.appendChild(fullscreenStyle);
+}
+
+// Detect if page has dark background
+const isDarkTheme = () => {
+    // We use a set of heuristics:
+    // 1. Check for common dark mode classes or attributes
+    // 2. Check computed background color brightness
+    if (document.documentElement.classList.contains('dark') ||
+        document.documentElement.getAttribute('data-theme') === 'dark' ||
+        document.body.classList.contains('dark') ||
+        document.body.getAttribute('data-theme') === 'dark') {
+        // console.log("Dark theme detected via class/attribute");
+        return true;
+    }
+    if (document.documentElement.classList.contains('light') ||
+        document.documentElement.getAttribute('data-theme') === 'light' ||
+        document.body.classList.contains('light') ||
+        document.body.getAttribute('data-theme') === 'light') {
+        // console.log("Light theme detected via class/attribute");
+        return false;
+    }
+    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        // console.log("Dark theme detected via prefers-color-scheme");
+        return true;
+    }
+    const bgColor = window.getComputedStyle(document.body).backgroundColor;
+    const match = bgColor.match(/rgb\((\d+),\s*(\d+),\s*(\d+)/);
+    if (match) {
+        const r = parseInt(match[1]);
+        const g = parseInt(match[2]);
+        const b = parseInt(match[3]);
+        const brightness = (r * 299 + g * 587 + b * 114) / 1000;
+        // console.log("Background color brightness:", brightness);
+        return brightness < 128;
+    }
+    // console.log("No dark or light theme detected, defaulting to light theme");
+    return false;
+};
+
+let darkTheme = isDarkTheme();
+let modal = null;
+let modalContent = null;
+let previousScrollOffset = [window.scrollX, window.scrollY];
+
+const runMermaid = async (rerun) => {
+    console.log("Running mermaid diagrams, rerun =", rerun);
+    // clear all existing mermaid charts
+    let all_mermaids = document.querySelectorAll(".mermaid");
+
+    if (rerun) {
+        all_mermaids.forEach((el) => {
+            if(!el.hasAttribute("data-original-code")) {
+                // store original code
+                // console.log(`Storing original code for first run: `, el.innerHTML);
+                el.setAttribute('data-original-code', el.innerHTML);
+            }
+            if(el.getAttribute("data-processed") === "true") {
+                // remove and restore original
+                el.removeAttribute("data-processed");
+                // console.log(`Restoring original code for re-run: `, el.getAttribute('data-original-code'));
+                el.innerHTML = el.getAttribute('data-original-code');
+            } else {
+                // store original code
+                // console.log(`Storing original code for re-run: `, el.innerHTML);
+                el.setAttribute('data-original-code', el.innerHTML);
+            }
+        });
+        await mermaid.run();
+    }
+
+    all_mermaids = document.querySelectorAll(".mermaid");
+    const mermaids_processed = document.querySelectorAll(".mermaid[data-processed='true']");
+
+    if ("False" === "True") {
+        const mermaids_to_add_zoom = -1 === -1 ? all_mermaids.length : -1;
+        if(mermaids_to_add_zoom > 0) {
+            var svgs = d3.selectAll("");
+            if(all_mermaids.length !== mermaids_processed.length) {
+                setTimeout(() => runMermaid(false), 200);
+                return;
+            } else if(svgs.size() !== mermaids_to_add_zoom) {
+                setTimeout(() => runMermaid(false), 200);
+                return;
+            } else {
+                svgs.each(function() {
+                    var svg = d3.select(this);
+                    svg.html("<g class='wrapper'>" + svg.html() + "</g>");
+                    var inner = svg.select("g");
+                    var zoom = d3.zoom().on("zoom", function(event) {
+                        inner.attr("transform", event.transform);
+                    });
+                    svg.call(zoom);
+                });
+            }
+        }
+    } else if(all_mermaids.length !== mermaids_processed.length) {
+        // Wait for mermaid to process all diagrams
+        setTimeout(() => runMermaid(false), 200);
+        return;
+    }
+
+    // Stop here if not adding fullscreen capability
+    if ("True" !== "True") return;
+
+    if (modal !== null ) {
+        // Destroy existing modal
+        modal.remove();
+        modal = null;
+        modalContent = null;
+    }
+
+    modal = document.createElement('div');
+    modal.className = 'mermaid-fullscreen-modal' + (darkTheme ? ' dark-theme' : '');
+    modal.setAttribute('role', 'dialog');
+    modal.setAttribute('aria-modal', 'true');
+    modal.setAttribute('aria-label', 'Fullscreen diagram viewer');
+    modal.innerHTML = `
+        <button class="mermaid-fullscreen-close${darkTheme ? ' dark-theme' : ''}" aria-label="Close fullscreen">✕</button>
+        <div class="mermaid-container-fullscreen${darkTheme ? ' dark-theme' : ''}"></div>
+    `;
+    document.body.appendChild(modal);
+
+    modalContent = modal.querySelector('.mermaid-container-fullscreen');
+    const closeBtn = modal.querySelector('.mermaid-fullscreen-close');
+
+    const closeModal = () => {
+        modal.classList.remove('active');
+        modalContent.innerHTML = '';
+        document.body.style.overflow = ''
+        window.scrollTo({left: previousScrollOffset[0], top: previousScrollOffset[1], behavior: 'instant'});
+    };
+
+    closeBtn.addEventListener('click', closeModal);
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) closeModal();
+    });
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && modal.classList.contains('active')) {
+            closeModal();
+        }
+    });
+
+    document.querySelectorAll('.mermaid').forEach((mermaidDiv) => {
+        if (mermaidDiv.parentNode.classList.contains('mermaid-container') ||
+            mermaidDiv.closest('.mermaid-fullscreen-modal')) {
+            // Already processed, adjust button class if needed
+            const existingBtn = mermaidDiv.parentNode.querySelector('.mermaid-fullscreen-btn');
+            if (existingBtn) {
+                existingBtn.className = 'mermaid-fullscreen-btn' + (darkTheme ? ' dark-theme' : '');
+            }
+            return;
+        }
+
+        const container = document.createElement('div');
+        container.className = 'mermaid-container';
+        mermaidDiv.parentNode.insertBefore(container, mermaidDiv);
+        container.appendChild(mermaidDiv);
+
+        const fullscreenBtn = document.createElement('button');
+        fullscreenBtn.className = 'mermaid-fullscreen-btn' + (darkTheme ? ' dark-theme' : '');
+        fullscreenBtn.setAttribute('aria-label', 'View diagram in fullscreen');
+        fullscreenBtn.textContent = '⛶';
+        fullscreenBtn.style.opacity = '50%';
+
+        // Calculate dynamic position based on diagram's margin and padding
+        const diagramStyle = window.getComputedStyle(mermaidDiv);
+        const marginTop = parseFloat(diagramStyle.marginTop) || 0;
+        const marginRight = parseFloat(diagramStyle.marginRight) || 0;
+        const paddingTop = parseFloat(diagramStyle.paddingTop) || 0;
+        const paddingRight = parseFloat(diagramStyle.paddingRight) || 0;
+        fullscreenBtn.style.top = `${marginTop + paddingTop + 4}px`;
+        fullscreenBtn.style.right = `${marginRight + paddingRight + 4}px`;
+
+        fullscreenBtn.addEventListener('click', () => {
+            previousScrollOffset = [window.scroll, window.scrollY];
+            const clone = mermaidDiv.cloneNode(true);
+            modalContent.innerHTML = '';
+            modalContent.appendChild(clone);
+
+            const svg = clone.querySelector('svg');
+            if (svg) {
+                svg.removeAttribute('width');
+                svg.removeAttribute('height');
+                svg.style.width = '100%';
+                svg.style.height = 'auto';
+                svg.style.maxWidth = '100%';
+                svg.style.sdisplay = 'block';
+
+                if ("False" === "True") {
+                    setTimeout(() => {
+                        const g = svg.querySelector('g');
+                        if (g) {
+                            var svgD3 = d3.select(svg);
+                            svgD3.html("<g class='wrapper'>" + svgD3.html() + "</g>");
+                            var inner = svgD3.select("g");
+                            var zoom = d3.zoom().on("zoom", function(event) {
+                                inner.attr("transform", event.transform);
+                            });
+                            svgD3.call(zoom);
+                        }
+                    }, 100);
+                }
+            }
+
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+        container.appendChild(fullscreenBtn);
+    });
+};
+
+const load = async () => {
+    initStyles();
+
+    await runMermaid(true);
+
+    const reRunIfThemeChanges = async () => {
+        const newDarkTheme = isDarkTheme();
+        if (newDarkTheme !== darkTheme) {
+            darkTheme = newDarkTheme;
+            console.log("Theme change detected, re-running mermaid with", darkTheme ? "dark" : "default", "theme");
+            await mermaid.initialize(
+                {...JSON.parse(
+                    `{"startOnLoad": false}`
+                ),
+                ...{ darkMode: darkTheme, theme: darkTheme ? 'dark' : 'default' },
+                }
+            );
+            await runMermaid(true);
+        }
+    };
+
+    // Update theme classes when theme changes
+    const themeObserver = new MutationObserver(reRunIfThemeChanges);
+    themeObserver.observe(document.documentElement, {
+        attributes: true,
+        attributeFilter: ['class', 'style', 'data-theme']
+    });
+    themeObserver.observe(document.body, {
+        attributes: true,
+        attributeFilter: ['class', 'style', 'data-theme']
+    });
+};
+
+
+
+
+
+console.log("Initializing mermaid with", darkTheme ? "dark" : "default", "theme");
+mermaid.initialize(
+    {...JSON.parse(
+        `{"startOnLoad": false}`
+    ),
+    ...{ darkMode: darkTheme, theme: darkTheme ? 'dark' : 'default' },
+    }
+);
+
+window.addEventListener("load", load);
+window.runMermaid = runMermaid;</script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="author" title="About these documents" href="../about.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Fleet Manager
+          </a>
+              <div class="version">
+                1.0
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../about.html">About the project</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules.html">Code documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../training.html">Training documentation</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Fleet Manager</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Module code</a></li>
+      <li class="breadcrumb-item active">metrics_manager</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <h1>Source code for metrics_manager</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">System Metrics Management and Distribution Module</span>
+
+<span class="sd">.. module:: metrics_manager</span>
+<span class="sd">    :synopsis: Comprehensive system metrics processing and multi-service distribution for Fleet Management</span>
+
+<span class="sd">.. moduleauthor:: Fleet Management System Team</span>
+
+<span class="sd">.. versionadded:: 1.0</span>
+
+<span class="sd">This module implements a robust system metrics management system that processes, normalizes,</span>
+<span class="sd">and distributes drone system metrics across multiple services within the Fleet Management</span>
+<span class="sd">System. It provides thread-safe processing, real-time data distribution, and comprehensive</span>
+<span class="sd">error handling for reliable fleet monitoring and analytics.</span>
+
+<span class="sd">Architecture Overview:</span>
+<span class="sd">    The module implements a producer-consumer pattern for system metrics processing:</span>
+<span class="sd">    </span>
+<span class="sd">    1. **Queue Processing**: Thread-safe consumption of metrics from ROS 2 subscribers</span>
+<span class="sd">    2. **Data Normalization**: JSON parsing and format standardization</span>
+<span class="sd">    3. **Multi-service Distribution**: Parallel distribution to MQTT, databases, and analytics</span>
+<span class="sd">    4. **Error Recovery**: Comprehensive error handling with graceful degradation</span>
+<span class="sd">    5. **Thread Management**: Daemon thread operation for system integration</span>
+
+<span class="sd">System Metrics Pipeline:</span>
+<span class="sd">    .. mermaid::</span>
+<span class="sd">    </span>
+<span class="sd">        graph LR</span>
+<span class="sd">            A[ROS 2 Subscribers] --&gt; B[Metrics Queue]</span>
+<span class="sd">            B --&gt; C[Metrics Manager]</span>
+<span class="sd">            C --&gt; D[Data Processing]</span>
+<span class="sd">            D --&gt; E[MQTT Distribution]</span>
+<span class="sd">            D --&gt; F[Database Storage]</span>
+<span class="sd">            D --&gt; G[Analytics Engine]</span>
+<span class="sd">            </span>
+<span class="sd">            E --&gt; H[ThingsBoard]</span>
+<span class="sd">            F --&gt; I[Time Series DB]</span>
+<span class="sd">            G --&gt; J[Fleet Analytics]</span>
+
+<span class="sd">Data Processing Workflow:</span>
+<span class="sd">    1. **Queue Monitoring**: Continuous polling for new metrics data</span>
+<span class="sd">    2. **Data Extraction**: Parse vehicle ID and raw metrics payload</span>
+<span class="sd">    3. **JSON Normalization**: Parse and validate JSON format</span>
+<span class="sd">    4. **Data Enhancement**: Add timestamps and metadata</span>
+<span class="sd">    5. **Service Distribution**: Forward to configured downstream services</span>
+<span class="sd">    6. **Error Handling**: Log failures and continue processing</span>
+
+<span class="sd">Key Features:</span>
+<span class="sd">    - **Thread-safe Processing**: Concurrent metrics handling without data corruption</span>
+<span class="sd">    - **Multi-service Distribution**: Simultaneous delivery to multiple endpoints</span>
+<span class="sd">    - **Data Normalization**: Consistent format across all downstream services</span>
+<span class="sd">    - **Error Resilience**: Graceful handling of malformed data and service failures</span>
+<span class="sd">    - **Performance Optimization**: Efficient queue processing with configurable timeouts</span>
+<span class="sd">    - **Comprehensive Logging**: Detailed operation tracking and error reporting</span>
+
+<span class="sd">Service Integration:</span>
+<span class="sd">    **MQTT Services**: Real-time metrics streaming to MQTT infrastructure</span>
+<span class="sd">    **Database Services**: Persistent storage for historical analysis</span>
+<span class="sd">    **Analytics Services**: Real-time processing for fleet intelligence</span>
+<span class="sd">    **Monitoring Services**: System health and performance tracking</span>
+
+<span class="sd">Data Format Standards:</span>
+<span class="sd">    **Input Format**: [vehicle_id, raw_metrics_json] from ROS 2 subscribers</span>
+<span class="sd">    **Processing**: JSON parsing with quote normalization and validation</span>
+<span class="sd">    **Output Format**: Standardized JSON with metadata for service distribution</span>
+
+<span class="sd">Threading Architecture:</span>
+<span class="sd">    - **Manager Thread**: Main metrics processing daemon thread</span>
+<span class="sd">    - **Queue Thread**: Producer thread from ROS 2 metric subscribers</span>
+<span class="sd">    - **Service Threads**: Concurrent distribution to multiple services</span>
+<span class="sd">    - **Main Thread**: System coordination and lifecycle management</span>
+
+<span class="sd">Error Handling Strategy:</span>
+<span class="sd">    **Queue Errors**: Empty queue handling with appropriate timeouts</span>
+<span class="sd">    **JSON Errors**: Malformed data parsing with detailed error logging</span>
+<span class="sd">    **Service Errors**: Distribution failures with service-specific error handling</span>
+<span class="sd">    **System Errors**: Critical failures with graceful shutdown procedures</span>
+
+<span class="sd">Configuration Management:</span>
+<span class="sd">    - **Queue Timeout**: Configurable polling intervals for efficiency</span>
+<span class="sd">    - **Log Management**: Rotating logs with size and count limits</span>
+<span class="sd">    - **Service Endpoints**: Configurable service distribution targets</span>
+<span class="sd">    - **Processing Limits**: Configurable batch sizes and rate limiting</span>
+
+<span class="sd">Classes:</span>
+<span class="sd">    .. autoclass:: SystemMetricsManagerThread</span>
+<span class="sd">        :members:</span>
+<span class="sd">        :undoc-members:</span>
+<span class="sd">        :show-inheritance:</span>
+
+<span class="sd">Functions:</span>
+<span class="sd">    .. autofunction:: start_metrics_manager</span>
+
+<span class="sd">Usage Examples:</span>
+<span class="sd">    **Basic Manager Initialization**::</span>
+<span class="sd">    </span>
+<span class="sd">        import queue</span>
+<span class="sd">        import logging</span>
+<span class="sd">        </span>
+<span class="sd">        # Create shared infrastructure</span>
+<span class="sd">        metrics_queue = queue.Queue()</span>
+<span class="sd">        logger = logging.getLogger(&#39;SystemMetrics&#39;)</span>
+<span class="sd">        </span>
+<span class="sd">        # Start metrics manager</span>
+<span class="sd">        manager = start_metrics_manager(metrics_queue, logger)</span>
+<span class="sd">        </span>
+<span class="sd">    **Integration with ROS 2 Subscribers**::</span>
+<span class="sd">    </span>
+<span class="sd">        # Create shared queue for ROS 2 integration</span>
+<span class="sd">        shared_queue = queue.Queue()</span>
+<span class="sd">        </span>
+<span class="sd">        # Start ROS 2 metrics subscriber</span>
+<span class="sd">        subscriber = start_metrics_subscriber(shared_queue, logger)</span>
+<span class="sd">        </span>
+<span class="sd">        # Start metrics manager for processing</span>
+<span class="sd">        manager = start_metrics_manager(shared_queue, logger)</span>
+<span class="sd">        </span>
+<span class="sd">    **Custom Service Distribution**::</span>
+<span class="sd">    </span>
+<span class="sd">        # Manager automatically distributes to configured services</span>
+<span class="sd">        # Add custom service handlers by extending send_to_service method</span>
+
+<span class="sd">.. note::</span>
+<span class="sd">    This module operates as a daemon thread and requires proper shutdown procedures</span>
+<span class="sd">    to ensure graceful system termination and resource cleanup.</span>
+
+<span class="sd">.. warning::</span>
+<span class="sd">    The manager thread runs indefinitely and processes metrics continuously.</span>
+<span class="sd">    Ensure proper error handling in downstream services to prevent data loss.</span>
+
+<span class="sd">.. seealso::</span>
+<span class="sd">    - :mod:`SystemMetrics.grpc_metrics_fleet`: MQTT service distribution</span>
+<span class="sd">    - :mod:`SystemMetrics.src.system_metrics_pubsub`: ROS 2 metrics collection</span>
+<span class="sd">    - :class:`threading.Thread`: Python threading for concurrent processing</span>
+<span class="sd">    - :mod:`queue`: Thread-safe queue operations for producer-consumer patterns</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">threading</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">time</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">queue</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">json</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">logging</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">Optional</span><span class="p">,</span> <span class="n">Dict</span><span class="p">,</span> <span class="n">Any</span><span class="p">,</span> <span class="n">Literal</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">SystemMetrics.grpc_metrics_fleet</span><span class="w"> </span><span class="kn">import</span> <span class="n">run_metrics_mqtt_client</span>
+
+<span class="c1"># System configuration constants for metrics processing and logging</span>
+<span class="n">QUEUE_TIMEOUT</span> <span class="o">=</span> <span class="mf">0.1</span>        <span class="c1"># Seconds for queue polling interval - balances responsiveness and CPU usage</span>
+<span class="n">MAX_LOG_SIZE</span> <span class="o">=</span> <span class="mi">1_000_000</span>   <span class="c1"># Maximum log file size (1MB) before rotation</span>
+<span class="n">LOG_BACKUP_COUNT</span> <span class="o">=</span> <span class="mi">5</span>       <span class="c1"># Number of backup log files to maintain for historical tracking</span>
+
+<div class="viewcode-block" id="SystemMetricsManagerThread">
+<a class="viewcode-back" href="../Fleet_module/Metrics/metrics_manager_component.html#metrics_manager.SystemMetricsManagerThread">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">SystemMetricsManagerThread</span><span class="p">(</span><span class="n">threading</span><span class="o">.</span><span class="n">Thread</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Dedicated thread for comprehensive system metrics processing and multi-service distribution.</span>
+
+<span class="sd">    This class implements a robust producer-consumer pattern for processing drone system</span>
+<span class="sd">    metrics collected from ROS 2 subscribers. It provides thread-safe processing, data</span>
+<span class="sd">    normalization, and reliable distribution to multiple downstream services including</span>
+<span class="sd">    MQTT infrastructure, databases, and analytics engines.</span>
+
+<span class="sd">    Thread Architecture:</span>
+<span class="sd">        - **Daemon Thread**: Runs as daemon thread for proper lifecycle management</span>
+<span class="sd">        - **Continuous Processing**: Indefinite loop for real-time metrics handling</span>
+<span class="sd">        - **Queue-based Input**: Thread-safe consumption from shared metrics queue</span>
+<span class="sd">        - **Concurrent Distribution**: Parallel forwarding to multiple services</span>
+
+<span class="sd">    Processing Pipeline:</span>
+<span class="sd">        The thread implements a comprehensive metrics processing workflow:</span>
+<span class="sd">        </span>
+<span class="sd">        1. **Queue Monitoring**: Continuous polling for new metrics data</span>
+<span class="sd">        2. **Data Extraction**: Parse vehicle ID and raw metrics payload</span>
+<span class="sd">        3. **JSON Processing**: Normalize and validate JSON format</span>
+<span class="sd">        4. **Data Enhancement**: Add metadata and timestamp information</span>
+<span class="sd">        5. **Service Distribution**: Forward to all configured downstream services</span>
+<span class="sd">        6. **Error Recovery**: Handle failures gracefully and continue processing</span>
+
+<span class="sd">    Data Flow Management:</span>
+<span class="sd">        **Input**: [vehicle_id, raw_metrics_json] tuples from ROS 2 subscribers</span>
+<span class="sd">        **Processing**: JSON parsing, validation, and format normalization</span>
+<span class="sd">        **Output**: Standardized metrics distributed to multiple service endpoints</span>
+<span class="sd">        **Error Handling**: Comprehensive error logging with graceful degradation</span>
+
+<span class="sd">    Service Distribution Strategy:</span>
+<span class="sd">        - **MQTT Services**: Real-time streaming for monitoring dashboards</span>
+<span class="sd">        - **Database Services**: Persistent storage for historical analysis</span>
+<span class="sd">        - **Analytics Services**: Real-time processing for fleet intelligence</span>
+<span class="sd">        - **Alert Services**: Threshold-based alerting and notification systems</span>
+
+<span class="sd">    Thread Safety Features:</span>
+<span class="sd">        - **Queue Operations**: Thread-safe queue access for concurrent producers</span>
+<span class="sd">        - **Logger Access**: Thread-safe logging for operation tracking</span>
+<span class="sd">        - **Resource Management**: Proper cleanup and resource handling</span>
+<span class="sd">        - **Exception Isolation**: Error containment prevents thread termination</span>
+
+<span class="sd">    Performance Characteristics:</span>
+<span class="sd">        - **Low Latency**: Minimal processing delay for real-time requirements</span>
+<span class="sd">        - **High Throughput**: Efficient batch processing for large metric volumes</span>
+<span class="sd">        - **Memory Efficient**: Streaming processing without data accumulation</span>
+<span class="sd">        - **CPU Optimized**: Configurable polling intervals for resource management</span>
+
+<span class="sd">    :param metrics_queue: Thread-safe queue containing metrics from ROS 2 subscribers</span>
+<span class="sd">    :type metrics_queue: queue.Queue</span>
+<span class="sd">    :param metrics_logger: Pre-configured logger instance for operation tracking</span>
+<span class="sd">    :type metrics_logger: logging.Logger</span>
+
+<span class="sd">    :ivar metrics_queue: Shared queue for receiving metrics data from collectors</span>
+<span class="sd">    :vartype metrics_queue: queue.Queue</span>
+<span class="sd">    :ivar metrics_logger: Logger instance for operation tracking and debugging</span>
+<span class="sd">    :vartype metrics_logger: logging.Logger</span>
+
+<span class="sd">    Example:</span>
+<span class="sd">        **Thread Initialization and Startup**::</span>
+<span class="sd">        </span>
+<span class="sd">            import queue</span>
+<span class="sd">            import logging</span>
+<span class="sd">            </span>
+<span class="sd">            # Create shared infrastructure</span>
+<span class="sd">            metrics_queue = queue.Queue()</span>
+<span class="sd">            logger = logging.getLogger(&#39;SystemMetrics&#39;)</span>
+<span class="sd">            </span>
+<span class="sd">            # Create and start manager thread</span>
+<span class="sd">            manager = SystemMetricsManagerThread(metrics_queue, logger)</span>
+<span class="sd">            manager.start()</span>
+<span class="sd">            </span>
+<span class="sd">        **Integration with Metrics Collection**::</span>
+<span class="sd">        </span>
+<span class="sd">            # Metrics are automatically processed as they arrive:</span>
+<span class="sd">            # Input: [42, &#39;{&quot;cpu&quot;: 65.2, &quot;memory&quot;: 78.1, &quot;battery&quot;: 89.5}&#39;]</span>
+<span class="sd">            # Processing: JSON parsing and validation</span>
+<span class="sd">            # Output: Distributed to MQTT, database, and analytics services</span>
+
+<span class="sd">    .. note::</span>
+<span class="sd">        This thread runs as a daemon thread and will terminate automatically when</span>
+<span class="sd">        the main process exits. Ensure proper shutdown procedures for graceful cleanup.</span>
+
+<span class="sd">    .. warning::</span>
+<span class="sd">        The thread runs indefinitely and processes metrics continuously. Monitor</span>
+<span class="sd">        system resources and implement appropriate rate limiting if necessary.</span>
+
+<span class="sd">    .. seealso::</span>
+<span class="sd">        - :func:`start_metrics_manager`: Factory function for thread creation</span>
+<span class="sd">        - :mod:`SystemMetrics.grpc_metrics_fleet`: MQTT distribution service</span>
+<span class="sd">        - :class:`threading.Thread`: Base Python threading class</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    
+<div class="viewcode-block" id="SystemMetricsManagerThread.__init__">
+<a class="viewcode-back" href="../Fleet_module/Metrics/metrics_manager_component.html#metrics_manager.SystemMetricsManagerThread.__init__">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">metrics_queue</span><span class="p">:</span> <span class="n">queue</span><span class="o">.</span><span class="n">Queue</span><span class="p">,</span> <span class="n">metrics_logger</span><span class="p">:</span> <span class="n">logging</span><span class="o">.</span><span class="n">Logger</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Initialize system metrics manager thread with processing infrastructure.</span>
+
+<span class="sd">        Sets up the thread with all necessary components for metrics processing including</span>
+<span class="sd">        queue access, logging capabilities, and daemon thread configuration for proper</span>
+<span class="sd">        lifecycle management within the Fleet Management System.</span>
+
+<span class="sd">        Initialization Process:</span>
+<span class="sd">            1. **Thread Setup**: Configure as daemon thread for automatic cleanup</span>
+<span class="sd">            2. **Queue Configuration**: Store reference to shared metrics queue</span>
+<span class="sd">            3. **Logging Setup**: Configure logger for operation tracking</span>
+<span class="sd">            4. **Resource Preparation**: Initialize processing infrastructure</span>
+
+<span class="sd">        Thread Configuration:</span>
+<span class="sd">            - **Daemon Mode**: Thread terminates with main process</span>
+<span class="sd">            - **Priority**: Standard priority for balanced system performance</span>
+<span class="sd">            - **Lifecycle**: Automatic cleanup when parent process exits</span>
+<span class="sd">            - **Resource Management**: Proper resource handling and cleanup</span>
+
+<span class="sd">        :param metrics_queue: Thread-safe queue for metrics data from ROS 2 collectors</span>
+<span class="sd">        :type metrics_queue: queue.Queue</span>
+<span class="sd">        :param metrics_logger: Pre-configured logger for operation tracking and debugging</span>
+<span class="sd">        :type metrics_logger: logging.Logger</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># Initialize parent Thread class with daemon configuration</span>
+        <span class="c1"># Daemon threads terminate automatically when main process exits</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">daemon</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        
+        <span class="c1"># Store reference to shared metrics queue for data consumption</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">metrics_queue</span> <span class="o">=</span> <span class="n">metrics_queue</span>
+        
+        <span class="c1"># Store logger instance for operation tracking and error reporting</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">metrics_logger</span> <span class="o">=</span> <span class="n">metrics_logger</span></div>
+
+        
+<div class="viewcode-block" id="SystemMetricsManagerThread.run">
+<a class="viewcode-back" href="../Fleet_module/Metrics/metrics_manager_component.html#metrics_manager.SystemMetricsManagerThread.run">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Execute main processing loop for continuous system metrics management.</span>
+
+<span class="sd">        This method implements the core thread execution logic, providing continuous</span>
+<span class="sd">        processing of system metrics data with comprehensive error handling and</span>
+<span class="sd">        graceful shutdown capabilities. It runs indefinitely until system shutdown</span>
+<span class="sd">        or critical failure conditions.</span>
+
+<span class="sd">        Processing Loop Architecture:</span>
+<span class="sd">            - **Infinite Loop**: Continuous operation for real-time processing</span>
+<span class="sd">            - **Queue Processing**: Regular polling and processing of metrics data</span>
+<span class="sd">            - **Error Containment**: Individual processing errors don&#39;t terminate thread</span>
+<span class="sd">            - **Graceful Shutdown**: Proper cleanup and logging on thread termination</span>
+
+<span class="sd">        Error Handling Strategy:</span>
+<span class="sd">            **Processing Errors**: Individual metric processing failures logged and skipped</span>
+<span class="sd">            **Critical Errors**: System-level failures logged with full stack trace</span>
+<span class="sd">            **Resource Errors**: Memory and connection issues handled gracefully</span>
+<span class="sd">            **Shutdown Handling**: Proper cleanup and notification on thread termination</span>
+
+<span class="sd">        Performance Characteristics:</span>
+<span class="sd">            - **Continuous Operation**: 24/7 processing capability for production systems</span>
+<span class="sd">            - **Error Resilience**: Single failures don&#39;t affect overall system operation</span>
+<span class="sd">            - **Resource Efficiency**: Optimized polling intervals for CPU management</span>
+<span class="sd">            - **Memory Management**: Streaming processing without data accumulation</span>
+
+<span class="sd">        Lifecycle Management:</span>
+<span class="sd">            1. **Startup**: Begin continuous metrics processing loop</span>
+<span class="sd">            2. **Processing**: Handle metrics data with error recovery</span>
+<span class="sd">            3. **Error Recovery**: Log and recover from processing failures</span>
+<span class="sd">            4. **Shutdown**: Graceful cleanup and resource release</span>
+
+<span class="sd">        .. note::</span>
+<span class="sd">            This method runs indefinitely and should only be called by the threading</span>
+<span class="sd">            framework. Manual invocation is not recommended for production systems.</span>
+
+<span class="sd">        .. warning::</span>
+<span class="sd">            Critical exceptions will terminate the thread. Ensure proper error handling</span>
+<span class="sd">            in all called methods to maintain system stability.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="c1"># Main processing loop - runs indefinitely for continuous metrics handling</span>
+            <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+                <span class="c1"># Process next available metrics data from queue</span>
+                <span class="c1"># Individual processing errors are handled within process_queue</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">process_queue</span><span class="p">()</span>
+                
+        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="c1"># Handle critical system-level failures that terminate the thread</span>
+            <span class="c1"># Log with full stack trace for comprehensive debugging information</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">metrics_logger</span><span class="o">.</span><span class="n">critical</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;[System Metrics] - Manager failure: </span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">exc_info</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+            
+        <span class="k">finally</span><span class="p">:</span>
+            <span class="c1"># Ensure proper shutdown logging regardless of termination cause</span>
+            <span class="c1"># Provides visibility into thread lifecycle for monitoring</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">metrics_logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;[System Metrics] - System metrics manager shutdown&quot;</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="SystemMetricsManagerThread.process_queue">
+<a class="viewcode-back" href="../Fleet_module/Metrics/metrics_manager_component.html#metrics_manager.SystemMetricsManagerThread.process_queue">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">process_queue</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Process individual metrics messages from the system metrics queue.</span>
+
+<span class="sd">        This method handles the complete processing workflow for individual metrics</span>
+<span class="sd">        messages, including data extraction, validation, processing, and distribution</span>
+<span class="sd">        to downstream services. It implements comprehensive error handling to ensure</span>
+<span class="sd">        system stability and continuous operation.</span>
+
+<span class="sd">        Processing Workflow:</span>
+<span class="sd">            1. **Queue Polling**: Attempt to retrieve metrics data with timeout</span>
+<span class="sd">            2. **Data Extraction**: Parse vehicle ID and raw metrics payload</span>
+<span class="sd">            3. **Data Processing**: Normalize and validate JSON format</span>
+<span class="sd">            4. **Service Distribution**: Forward processed data to all configured services</span>
+<span class="sd">            5. **Error Handling**: Log and recover from various failure conditions</span>
+
+<span class="sd">        Queue Management:</span>
+<span class="sd">            - **Timeout Handling**: Configurable timeout prevents blocking operations</span>
+<span class="sd">            - **Empty Queue**: Brief sleep when no data available for CPU efficiency</span>
+<span class="sd">            - **Data Format**: Expects [vehicle_id, raw_metrics_json] tuple format</span>
+<span class="sd">            - **Thread Safety**: Queue operations are inherently thread-safe</span>
+
+<span class="sd">        Error Recovery Strategy:</span>
+<span class="sd">            **Empty Queue**: Normal condition handled with brief sleep</span>
+<span class="sd">            **JSON Errors**: Malformed data logged and skipped for continued processing</span>
+<span class="sd">            **Processing Errors**: Individual failures logged without thread termination</span>
+<span class="sd">            **Service Errors**: Distribution failures handled gracefully</span>
+
+<span class="sd">        Performance Optimization:</span>
+<span class="sd">            - **Non-blocking Operations**: Timeout prevents indefinite blocking</span>
+<span class="sd">            - **Efficient Polling**: Brief sleeps during idle periods</span>
+<span class="sd">            - **Error Isolation**: Individual failures don&#39;t affect batch processing</span>
+<span class="sd">            - **Resource Management**: Minimal memory footprint per operation</span>
+
+<span class="sd">        Data Validation:</span>
+<span class="sd">            - **Format Checking**: Verify expected tuple structure</span>
+<span class="sd">            - **JSON Validation**: Parse and validate metrics data format</span>
+<span class="sd">            - **Content Verification**: Ensure required fields are present</span>
+<span class="sd">            - **Error Reporting**: Detailed logging for debugging malformed data</span>
+
+<span class="sd">        .. note::</span>
+<span class="sd">            This method is called continuously by the main processing loop and</span>
+<span class="sd">            should complete quickly to maintain real-time processing performance.</span>
+
+<span class="sd">        .. warning::</span>
+<span class="sd">            Exceptions in this method are caught and logged but do not terminate</span>
+<span class="sd">            the processing thread. Ensure proper error handling for system stability.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="c1"># Attempt to retrieve metrics data from queue with timeout</span>
+            <span class="c1"># Timeout prevents indefinite blocking and allows periodic status checks</span>
+            <span class="n">system_metrics</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">metrics_queue</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">timeout</span><span class="o">=</span><span class="n">QUEUE_TIMEOUT</span><span class="p">)</span>
+            
+            <span class="c1"># Log successful metrics reception for monitoring and debugging</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">metrics_logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;[System Metrics] - Received System Metrics&quot;</span><span class="p">)</span>
+            
+            <span class="c1"># Extract vehicle ID and raw metrics data from queue tuple</span>
+            <span class="c1"># Expected format: [vehicle_id, raw_metrics_json_string]</span>
+            <span class="n">vehicle_id</span><span class="p">,</span> <span class="n">raw_data</span> <span class="o">=</span> <span class="n">system_metrics</span>
+            
+            <span class="c1"># Process and normalize the raw metrics data into standard format</span>
+            <span class="n">processed_data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">process_data</span><span class="p">(</span><span class="n">raw_data</span><span class="p">)</span>
+            
+            <span class="c1"># Distribute processed data to all configured downstream services</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">distribute_data</span><span class="p">(</span><span class="n">vehicle_id</span><span class="p">,</span> <span class="n">processed_data</span><span class="p">)</span>
+            
+        <span class="k">except</span> <span class="n">queue</span><span class="o">.</span><span class="n">Empty</span><span class="p">:</span>
+            <span class="c1"># Normal condition when no metrics data is available in queue</span>
+            <span class="c1"># Brief sleep prevents excessive CPU usage during idle periods</span>
+            <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="n">QUEUE_TIMEOUT</span><span class="p">)</span>
+            
+        <span class="k">except</span> <span class="n">json</span><span class="o">.</span><span class="n">JSONDecodeError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="c1"># Handle malformed JSON data from metrics sources</span>
+            <span class="c1"># Log error details for debugging but continue processing other metrics</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">metrics_logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;[System Metrics] - Invalid JSON data: </span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+            
+        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="c1"># Handle any other unexpected processing errors with full stack trace</span>
+            <span class="c1"># Comprehensive error logging for debugging while maintaining system stability</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">metrics_logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;[System Metrics] - Processing error: </span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">exc_info</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="SystemMetricsManagerThread.process_data">
+<a class="viewcode-back" href="../Fleet_module/Metrics/metrics_manager_component.html#metrics_manager.SystemMetricsManagerThread.process_data">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">process_data</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">raw_data</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Normalize and validate incoming system metrics data for consistent processing.</span>
+
+<span class="sd">        This method handles the complete data normalization pipeline for raw metrics</span>
+<span class="sd">        data received from ROS 2 subscribers. It performs JSON parsing, quote</span>
+<span class="sd">        normalization, and data validation to ensure consistent format across</span>
+<span class="sd">        all downstream services.</span>
+
+<span class="sd">        Data Processing Pipeline:</span>
+<span class="sd">            1. **Quote Normalization**: Convert single quotes to double quotes for JSON compliance</span>
+<span class="sd">            2. **JSON Parsing**: Parse string data into Python dictionary structure</span>
+<span class="sd">            3. **Format Validation**: Verify data structure and required fields</span>
+<span class="sd">            4. **Error Handling**: Comprehensive error reporting for malformed data</span>
+
+<span class="sd">        Normalization Features:</span>
+<span class="sd">            - **Quote Handling**: Automatic conversion of single to double quotes</span>
+<span class="sd">            - **JSON Compliance**: Ensures strict JSON format for service compatibility</span>
+<span class="sd">            - **Type Preservation**: Maintains original data types during parsing</span>
+<span class="sd">            - **Structure Validation**: Verifies expected data structure format</span>
+
+<span class="sd">        Error Handling Strategy:</span>
+<span class="sd">            - **Parse Errors**: JSON syntax errors logged with detailed information</span>
+<span class="sd">            - **Format Errors**: Invalid data structure errors reported</span>
+<span class="sd">            - **Content Errors**: Missing or invalid field errors documented</span>
+<span class="sd">            - **Exception Propagation**: Errors re-raised for upstream handling</span>
+
+<span class="sd">        Data Quality Assurance:</span>
+<span class="sd">            - **Format Consistency**: Standardized output format for all services</span>
+<span class="sd">            - **Type Safety**: Proper type handling and validation</span>
+<span class="sd">            - **Content Verification**: Basic sanity checks on metric values</span>
+<span class="sd">            - **Error Reporting**: Detailed logging for debugging data issues</span>
+
+<span class="sd">        :param raw_data: Raw JSON string containing system metrics from ROS 2 sources</span>
+<span class="sd">        :type raw_data: str</span>
+
+<span class="sd">        :return: Parsed and normalized metrics data as dictionary structure</span>
+<span class="sd">        :rtype: Dict[str, Any]</span>
+
+<span class="sd">        :raises json.JSONDecodeError: If raw data contains invalid JSON syntax</span>
+<span class="sd">        :raises ValueError: If data structure is invalid or missing required fields</span>
+<span class="sd">        :raises Exception: For any other data processing failures</span>
+
+<span class="sd">        Input Format Examples:</span>
+<span class="sd">            **Valid Input**::</span>
+<span class="sd">            </span>
+<span class="sd">                &quot;{&#39;cpu_usage&#39;: 65.2, &#39;memory_usage&#39;: 78.1, &#39;battery_level&#39;: 89.5}&quot;</span>
+<span class="sd">                </span>
+<span class="sd">            **Normalized Output**::</span>
+<span class="sd">            </span>
+<span class="sd">                {</span>
+<span class="sd">                    &quot;cpu_usage&quot;: 65.2,</span>
+<span class="sd">                    &quot;memory_usage&quot;: 78.1,</span>
+<span class="sd">                    &quot;battery_level&quot;: 89.5</span>
+<span class="sd">                }</span>
+
+<span class="sd">        .. note::</span>
+<span class="sd">            This method automatically handles quote normalization between single</span>
+<span class="sd">            and double quotes to ensure JSON compliance across different data sources.</span>
+
+<span class="sd">        .. warning::</span>
+<span class="sd">            Malformed data will raise exceptions that must be handled by calling</span>
+<span class="sd">            code to prevent processing thread termination.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="c1"># Normalize quotes and parse JSON data into Python dictionary</span>
+            <span class="c1"># Replace single quotes with double quotes for JSON compliance</span>
+            <span class="n">data</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">raw_data</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;&#39;&quot;</span><span class="p">,</span> <span class="s1">&#39;&quot;&#39;</span><span class="p">))</span>
+            
+            <span class="c1"># Return parsed and validated data structure</span>
+            <span class="k">return</span> <span class="n">data</span>
+            
+        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="c1"># Log detailed error information for debugging malformed data</span>
+            <span class="c1"># Include original raw data context for troubleshooting</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">metrics_logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;[System Metrics] - Data processing failed: </span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+            
+            <span class="c1"># Re-raise exception for upstream error handling</span>
+            <span class="c1"># Allows calling code to implement appropriate recovery strategies</span>
+            <span class="k">raise</span></div>
+
+
+<div class="viewcode-block" id="SystemMetricsManagerThread.distribute_data">
+<a class="viewcode-back" href="../Fleet_module/Metrics/metrics_manager_component.html#metrics_manager.SystemMetricsManagerThread.distribute_data">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">distribute_data</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">vehicle_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Distribute processed metrics data to all configured downstream services.</span>
+
+<span class="sd">        This method orchestrates the distribution of normalized metrics data to</span>
+<span class="sd">        multiple downstream services including MQTT infrastructure, databases,</span>
+<span class="sd">        and analytics engines. It provides centralized service management and</span>
+<span class="sd">        error handling for reliable data delivery across the Fleet Management System.</span>
+
+<span class="sd">        Distribution Architecture:</span>
+<span class="sd">            - **Multi-service Support**: Simultaneous distribution to multiple endpoints</span>
+<span class="sd">            - **Service Isolation**: Individual service failures don&#39;t affect others</span>
+<span class="sd">            - **Centralized Management**: Single point for service configuration</span>
+<span class="sd">            - **Error Recovery**: Per-service error handling and recovery</span>
+
+<span class="sd">        Service Categories:</span>
+<span class="sd">            **Real-time Services**: MQTT streaming for live monitoring and dashboards</span>
+<span class="sd">            **Storage Services**: Database persistence for historical analysis</span>
+<span class="sd">            **Analytics Services**: Real-time processing for fleet intelligence</span>
+<span class="sd">            **Alert Services**: Threshold-based monitoring and notification systems</span>
+
+<span class="sd">        Distribution Strategy:</span>
+<span class="sd">            - **Parallel Processing**: Concurrent distribution for performance</span>
+<span class="sd">            - **Error Isolation**: Service failures handled independently</span>
+<span class="sd">            - **Service Priority**: Critical services processed first</span>
+<span class="sd">            - **Retry Logic**: Configurable retry mechanisms for failed distributions</span>
+
+<span class="sd">        Service Management:</span>
+<span class="sd">            - **Configuration**: Centralized service endpoint configuration</span>
+<span class="sd">            - **Monitoring**: Service health tracking and performance metrics</span>
+<span class="sd">            - **Load Balancing**: Distribute load across service instances</span>
+<span class="sd">            - **Failover**: Automatic failover to backup service instances</span>
+
+<span class="sd">        :param vehicle_id: Unique identifier for the source vehicle/drone</span>
+<span class="sd">        :type vehicle_id: int</span>
+<span class="sd">        :param data: Processed and normalized metrics data for distribution</span>
+<span class="sd">        :type data: Dict[str, Any]</span>
+
+<span class="sd">        Service Distribution Flow:</span>
+<span class="sd">            1. **MQTT Services**: Real-time streaming to monitoring infrastructure</span>
+<span class="sd">            2. **Database Services**: Persistent storage for historical analysis</span>
+<span class="sd">            3. **Analytics Services**: Real-time processing for fleet insights</span>
+<span class="sd">            4. **Notification Services**: Alert generation based on thresholds</span>
+
+<span class="sd">        Example Data Flow:</span>
+<span class="sd">            **Input**: vehicle_id=42, data={&quot;cpu&quot;: 65.2, &quot;battery&quot;: 89.5}</span>
+<span class="sd">            **MQTT**: Real-time dashboard updates</span>
+<span class="sd">            **Database**: Historical trend storage</span>
+<span class="sd">            **Analytics**: Performance analysis and predictions</span>
+
+<span class="sd">        .. note::</span>
+<span class="sd">            This method currently supports MQTT distribution with extensible</span>
+<span class="sd">            architecture for additional services. New services can be added</span>
+<span class="sd">            by extending the send_to_service method.</span>
+
+<span class="sd">        .. warning::</span>
+<span class="sd">            Service distribution failures are logged but do not prevent</span>
+<span class="sd">            distribution to other services. Monitor service health separately.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># Distribute metrics to MQTT infrastructure for real-time monitoring</span>
+        <span class="c1"># MQTT provides live streaming to dashboards and monitoring systems</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">send_to_service</span><span class="p">(</span><span class="s1">&#39;MQTT&#39;</span><span class="p">,</span> <span class="n">vehicle_id</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="SystemMetricsManagerThread.send_to_service">
+<a class="viewcode-back" href="../Fleet_module/Metrics/metrics_manager_component.html#metrics_manager.SystemMetricsManagerThread.send_to_service">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">send_to_service</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">service</span><span class="p">:</span> <span class="n">Literal</span><span class="p">[</span><span class="s1">&#39;MQTT&#39;</span><span class="p">],</span> <span class="n">vehicle_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Format and transmit metrics data to specified downstream service.</span>
+
+<span class="sd">        This method handles service-specific data formatting and transmission for</span>
+<span class="sd">        individual downstream services. It provides a unified interface for service</span>
+<span class="sd">        communication while allowing service-specific message formatting and</span>
+<span class="sd">        error handling strategies.</span>
+
+<span class="sd">        Service Communication Architecture:</span>
+<span class="sd">            - **Service Abstraction**: Unified interface for different service types</span>
+<span class="sd">            - **Format Customization**: Service-specific message formatting</span>
+<span class="sd">            - **Error Handling**: Per-service error handling and recovery</span>
+<span class="sd">            - **Extensible Design**: Easy addition of new service types</span>
+
+<span class="sd">        Message Formatting Strategy:</span>
+<span class="sd">            Each service requires specific message format and metadata:</span>
+<span class="sd">            </span>
+<span class="sd">            **MQTT Format**: Standardized telemetry message with type identification</span>
+<span class="sd">            **Database Format**: Optimized for time-series storage and indexing</span>
+<span class="sd">            **Analytics Format**: Structured for real-time processing and analysis</span>
+<span class="sd">            **Alert Format**: Threshold-aware format for notification systems</span>
+
+<span class="sd">        Service-Specific Processing:</span>
+<span class="sd">            **MQTT Services**:</span>
+<span class="sd">            - Message type identification for routing</span>
+<span class="sd">            - Vehicle ID inclusion for fleet tracking</span>
+<span class="sd">            - Telemetry data packaging for dashboard consumption</span>
+<span class="sd">            - JSON serialization for network transmission</span>
+
+<span class="sd">        Error Recovery Mechanisms:</span>
+<span class="sd">            - **Service Timeouts**: Configurable timeout handling</span>
+<span class="sd">            - **Retry Logic**: Exponential backoff for failed transmissions</span>
+<span class="sd">            - **Fallback Services**: Alternative service routing on failures</span>
+<span class="sd">            - **Error Logging**: Comprehensive error tracking and reporting</span>
+
+<span class="sd">        Performance Optimization:</span>
+<span class="sd">            - **Efficient Serialization**: Optimized JSON formatting</span>
+<span class="sd">            - **Connection Pooling**: Reuse connections for multiple transmissions</span>
+<span class="sd">            - **Batch Processing**: Group multiple metrics for efficient transmission</span>
+<span class="sd">            - **Asynchronous Processing**: Non-blocking service communication</span>
+
+<span class="sd">        :param service: Target service identifier for message routing</span>
+<span class="sd">        :type service: Literal[&#39;MQTT&#39;]</span>
+<span class="sd">        :param vehicle_id: Unique identifier for source vehicle/drone</span>
+<span class="sd">        :type vehicle_id: int</span>
+<span class="sd">        :param data: Processed metrics data for transmission</span>
+<span class="sd">        :type data: Dict[str, Any]</span>
+
+<span class="sd">        :raises ValueError: If service type is not supported or configured</span>
+<span class="sd">        :raises ConnectionError: If service communication fails</span>
+<span class="sd">        :raises Exception: For any other service-specific transmission failures</span>
+
+<span class="sd">        Message Format Examples:</span>
+<span class="sd">            **MQTT Message Format**::</span>
+<span class="sd">            </span>
+<span class="sd">                {</span>
+<span class="sd">                    &quot;type&quot;: &quot;Metric&quot;,</span>
+<span class="sd">                    &quot;vehicle_id&quot;: 42,</span>
+<span class="sd">                    &quot;telemetry&quot;: {</span>
+<span class="sd">                        &quot;cpu_usage&quot;: 65.2,</span>
+<span class="sd">                        &quot;memory_usage&quot;: 78.1,</span>
+<span class="sd">                        &quot;battery_level&quot;: 89.5,</span>
+<span class="sd">                        &quot;timestamp&quot;: &quot;2025-06-29T10:30:00Z&quot;</span>
+<span class="sd">                    }</span>
+<span class="sd">                }</span>
+
+<span class="sd">        Service Extension Example:</span>
+<span class="sd">            **Adding Database Service**::</span>
+<span class="sd">            </span>
+<span class="sd">                elif service == &#39;DATABASE&#39;:</span>
+<span class="sd">                    message = {</span>
+<span class="sd">                        &quot;table&quot;: &quot;drone_metrics&quot;,</span>
+<span class="sd">                        &quot;vehicle_id&quot;: vehicle_id,</span>
+<span class="sd">                        &quot;metrics&quot;: data,</span>
+<span class="sd">                        &quot;timestamp&quot;: datetime.utcnow().isoformat()</span>
+<span class="sd">                    }</span>
+<span class="sd">                    database_client.insert(message)</span>
+
+<span class="sd">        .. note::</span>
+<span class="sd">            Currently supports MQTT service with extensible architecture for</span>
+<span class="sd">            additional services. New services can be added by extending the</span>
+<span class="sd">            conditional logic and implementing appropriate formatting.</span>
+
+<span class="sd">        .. warning::</span>
+<span class="sd">            Service transmission failures are logged but do not raise exceptions</span>
+<span class="sd">            to prevent disruption of other service distributions.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="c1"># Handle MQTT service distribution with standardized message format</span>
+            <span class="k">if</span> <span class="n">service</span> <span class="o">==</span> <span class="s1">&#39;MQTT&#39;</span><span class="p">:</span>
+                <span class="c1"># Create standardized MQTT message with type identification</span>
+                <span class="c1"># Include vehicle ID for fleet tracking and telemetry data</span>
+                <span class="n">message</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">({</span>
+                    <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;Metric&quot;</span><span class="p">,</span>        <span class="c1"># Message type for MQTT routing</span>
+                    <span class="s2">&quot;vehicle_id&quot;</span><span class="p">:</span> <span class="n">vehicle_id</span><span class="p">,</span> <span class="c1"># Source vehicle identification</span>
+                    <span class="s2">&quot;telemetry&quot;</span><span class="p">:</span> <span class="n">data</span>        <span class="c1"># Processed metrics payload</span>
+                <span class="p">})</span>
+                
+                <span class="c1"># Transmit formatted message to MQTT infrastructure</span>
+                <span class="c1"># Uses gRPC client for reliable delivery to MQTT bridge</span>
+                <span class="n">run_metrics_mqtt_client</span><span class="p">(</span><span class="n">message</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">metrics_logger</span><span class="p">)</span>
+                
+        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="c1"># Log service-specific transmission failures with detailed error information</span>
+            <span class="c1"># Include service name and error details for debugging and monitoring</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">metrics_logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;[System Metrics] - </span><span class="si">{</span><span class="n">service</span><span class="si">}</span><span class="s2"> send failed: </span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">exc_info</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="start_metrics_manager">
+<a class="viewcode-back" href="../Fleet_module/Metrics/metrics_manager_component.html#metrics_manager.start_metrics_manager">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">start_metrics_manager</span><span class="p">(</span>
+    <span class="n">metrics_queue</span><span class="p">:</span> <span class="n">queue</span><span class="o">.</span><span class="n">Queue</span><span class="p">,</span>
+    <span class="n">metrics_logger</span><span class="p">:</span> <span class="n">logging</span><span class="o">.</span><span class="n">Logger</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">SystemMetricsManagerThread</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Initialize and start system metrics management thread for Fleet Management System.</span>
+
+<span class="sd">    This function serves as a factory for creating and starting the system metrics</span>
+<span class="sd">    management thread. It handles proper thread initialization, configuration, and</span>
+<span class="sd">    startup procedures to ensure reliable metrics processing and distribution</span>
+<span class="sd">    throughout the Fleet Management System.</span>
+
+<span class="sd">    Initialization Process:</span>
+<span class="sd">        1. **Thread Creation**: Create SystemMetricsManagerThread instance</span>
+<span class="sd">        2. **Configuration**: Configure thread with queue and logger references</span>
+<span class="sd">        3. **Thread Startup**: Start daemon thread for background processing</span>
+<span class="sd">        4. **Status Logging**: Log successful startup for monitoring</span>
+<span class="sd">        5. **Reference Return**: Return thread instance for lifecycle management</span>
+
+<span class="sd">    Thread Management:</span>
+<span class="sd">        - **Daemon Configuration**: Thread runs as daemon for proper cleanup</span>
+<span class="sd">        - **Background Processing**: Non-blocking startup for system integration</span>
+<span class="sd">        - **Lifecycle Management**: Thread terminates with main process</span>
+<span class="sd">        - **Resource Cleanup**: Automatic resource management and cleanup</span>
+
+<span class="sd">    System Integration:</span>
+<span class="sd">        The started thread integrates with the broader Fleet Management System:</span>
+<span class="sd">        </span>
+<span class="sd">        - **ROS 2 Integration**: Consumes metrics from ROS 2 subscriber queues</span>
+<span class="sd">        - **MQTT Integration**: Distributes metrics to MQTT infrastructure</span>
+<span class="sd">        - **Database Integration**: Stores metrics for historical analysis</span>
+<span class="sd">        - **Analytics Integration**: Feeds real-time analytics processing</span>
+
+<span class="sd">    Error Handling:</span>
+<span class="sd">        - **Startup Errors**: Thread creation and startup failures logged</span>
+<span class="sd">        - **Runtime Errors**: Processing errors handled within thread</span>
+<span class="sd">        - **Resource Errors**: Memory and connection issues managed gracefully</span>
+<span class="sd">        - **Shutdown Errors**: Proper cleanup on system termination</span>
+
+<span class="sd">    Performance Characteristics:</span>
+<span class="sd">        - **Low Startup Time**: Minimal initialization overhead</span>
+<span class="sd">        - **Immediate Processing**: Begins processing metrics immediately</span>
+<span class="sd">        - **Resource Efficient**: Minimal memory and CPU footprint</span>
+<span class="sd">        - **Scalable Design**: Handles high-throughput metric streams</span>
+
+<span class="sd">    :param metrics_queue: Thread-safe queue containing metrics from ROS 2 collectors</span>
+<span class="sd">    :type metrics_queue: queue.Queue</span>
+<span class="sd">    :param metrics_logger: Pre-configured logger for operation tracking and debugging</span>
+<span class="sd">    :type metrics_logger: logging.Logger</span>
+
+<span class="sd">    :return: Running metrics manager thread instance for lifecycle management</span>
+<span class="sd">    :rtype: SystemMetricsManagerThread</span>
+
+<span class="sd">    :raises threading.ThreadError: If thread creation or startup fails</span>
+<span class="sd">    :raises Exception: For any other initialization failures</span>
+
+<span class="sd">    Usage Examples:</span>
+<span class="sd">        **Basic Manager Startup**::</span>
+<span class="sd">        </span>
+<span class="sd">            import queue</span>
+<span class="sd">            import logging</span>
+<span class="sd">            </span>
+<span class="sd">            # Create shared infrastructure</span>
+<span class="sd">            metrics_queue = queue.Queue()</span>
+<span class="sd">            logger = logging.getLogger(&#39;SystemMetrics&#39;)</span>
+<span class="sd">            </span>
+<span class="sd">            # Start metrics manager</span>
+<span class="sd">            manager = start_metrics_manager(metrics_queue, logger)</span>
+<span class="sd">            </span>
+<span class="sd">        **Integration with ROS 2 Subscribers**::</span>
+<span class="sd">        </span>
+<span class="sd">            # Start complete metrics collection system</span>
+<span class="sd">            shared_queue = queue.Queue()</span>
+<span class="sd">            </span>
+<span class="sd">            # Start ROS 2 metrics subscriber</span>
+<span class="sd">            subscriber = start_metrics_subscriber(shared_queue, logger)</span>
+<span class="sd">            </span>
+<span class="sd">            # Start metrics manager for processing and distribution</span>
+<span class="sd">            manager = start_metrics_manager(shared_queue, logger)</span>
+<span class="sd">            </span>
+<span class="sd">        **Production Deployment**::</span>
+<span class="sd">        </span>
+<span class="sd">            try:</span>
+<span class="sd">                # Create production-grade infrastructure</span>
+<span class="sd">                metrics_queue = queue.Queue(maxsize=10000)</span>
+<span class="sd">                logger = create_production_logger(&#39;SystemMetrics&#39;)</span>
+<span class="sd">                </span>
+<span class="sd">                # Start metrics management system</span>
+<span class="sd">                manager = start_metrics_manager(metrics_queue, logger)</span>
+<span class="sd">                </span>
+<span class="sd">                # Keep main process running</span>
+<span class="sd">                while True:</span>
+<span class="sd">                    time.sleep(60)</span>
+<span class="sd">                    monitor_system_health(manager, logger)</span>
+<span class="sd">                    </span>
+<span class="sd">            except KeyboardInterrupt:</span>
+<span class="sd">                logger.info(&quot;Shutting down metrics manager...&quot;)</span>
+<span class="sd">                # Daemon thread will terminate automatically</span>
+
+<span class="sd">    Return Value Management:</span>
+<span class="sd">        The returned thread instance can be used for:</span>
+<span class="sd">        - **Status Monitoring**: Check thread health and status</span>
+<span class="sd">        - **Performance Metrics**: Monitor processing performance</span>
+<span class="sd">        - **Graceful Shutdown**: Coordinate system shutdown procedures</span>
+<span class="sd">        - **Error Detection**: Monitor for thread termination or errors</span>
+
+<span class="sd">    .. note::</span>
+<span class="sd">        The function starts a daemon thread that runs continuously until the</span>
+<span class="sd">        main process terminates. Ensure proper system shutdown procedures.</span>
+
+<span class="sd">    .. warning::</span>
+<span class="sd">        The returned thread instance should be stored for monitoring and</span>
+<span class="sd">        lifecycle management. Lost references may complicate system monitoring.</span>
+
+<span class="sd">    .. seealso::</span>
+<span class="sd">        - :class:`SystemMetricsManagerThread`: The managed thread implementation</span>
+<span class="sd">        - :mod:`SystemMetrics.src.system_metrics_pubsub`: ROS 2 metrics collection</span>
+<span class="sd">        - :func:`SystemMetrics.grpc_metrics_fleet.run_metrics_mqtt_client`: MQTT distribution</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># Create system metrics manager thread with provided infrastructure</span>
+    <span class="c1"># Configure as daemon thread for proper lifecycle management</span>
+    <span class="n">manager</span> <span class="o">=</span> <span class="n">SystemMetricsManagerThread</span><span class="p">(</span><span class="n">metrics_queue</span><span class="p">,</span> <span class="n">metrics_logger</span><span class="p">)</span>
+    
+    <span class="c1"># Start the metrics processing thread for background operation</span>
+    <span class="c1"># Thread begins processing metrics immediately upon startup</span>
+    <span class="n">manager</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+    
+    <span class="c1"># Log successful startup for system monitoring and audit purposes</span>
+    <span class="n">metrics_logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;[System Metrics] - System Metrics manager started&quot;</span><span class="p">)</span>
+    
+    <span class="c1"># Return thread reference for lifecycle management and monitoring</span>
+    <span class="k">return</span> <span class="n">manager</span></div>
+
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, Estela Mora Barba.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

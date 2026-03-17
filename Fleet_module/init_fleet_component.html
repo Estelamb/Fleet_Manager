@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Init Fleet Manager &mdash; Fleet Manager 1.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=f2a433a1"></script>
+        <script src="../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+        <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="author" title="About these documents" href="../about.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Mission Management" href="mission_components.html" />
+    <link rel="prev" title="Fleet Manager" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Fleet Manager
+          </a>
+              <div class="version">
+                1.0
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../about.html">About the project</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started.html">Getting Started</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../modules.html">Code documentation</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../Drone_module/index.html">Drone</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">Fleet Manager</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Init Fleet Manager</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#init_fleet.main"><code class="docutils literal notranslate"><span class="pre">main()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#init_fleet.initialize_loggers"><code class="docutils literal notranslate"><span class="pre">initialize_loggers()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#init_fleet.initialize_mission_system"><code class="docutils literal notranslate"><span class="pre">initialize_mission_system()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#init_fleet.initialize_ros2_system"><code class="docutils literal notranslate"><span class="pre">initialize_ros2_system()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#init_fleet.initialize_mqtt_system"><code class="docutils literal notranslate"><span class="pre">initialize_mqtt_system()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#init_fleet.initialize_pm_system"><code class="docutils literal notranslate"><span class="pre">initialize_pm_system()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#init_fleet.initialize_metrics_system"><code class="docutils literal notranslate"><span class="pre">initialize_metrics_system()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#init_fleet.initialize_rest_system"><code class="docutils literal notranslate"><span class="pre">initialize_rest_system()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#init_fleet.initialize_state_vector_system"><code class="docutils literal notranslate"><span class="pre">initialize_state_vector_system()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#init_fleet.clean"><code class="docutils literal notranslate"><span class="pre">clean()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="mission_components.html">Mission Management</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ros2_components.html">ROS2 Management</a></li>
+<li class="toctree-l3"><a class="reference internal" href="rest_components.html">REST Management</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mqtt_components.html">MQTT Management</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pm_components.html">Prescription Map Management</a></li>
+<li class="toctree-l3"><a class="reference internal" href="metrics_components.html">System Metrics Component</a></li>
+<li class="toctree-l3"><a class="reference internal" href="clear_fleet_component.html">Clear Fleet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="create_logger_fleet_component.html">Create Logger</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../training.html">Training documentation</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Fleet Manager</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../modules.html">Code documentation</a></li>
+          <li class="breadcrumb-item"><a href="index.html">Fleet Manager</a></li>
+      <li class="breadcrumb-item active">Init Fleet Manager</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/Fleet_module/init_fleet_component.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="module-0">
+<span id="init-fleet-manager"></span><h1>Init Fleet Manager<a class="headerlink" href="#module-0" title="Link to this heading"></a></h1>
+<p>System Initialization and Coordination Module</p>
+<div class="versionadded" id="module-init_fleet">
+<p><span class="versionmodified added">Added in version 1.0.</span></p>
+</div>
+<p>This module serves as the central orchestrator for the Fleet Management System,
+coordinating the initialization and startup of all distributed system components.</p>
+<dl class="simple">
+<dt>Architecture Overview:</dt><dd><p>The system follows a microservices architecture with the following components:</p>
+<ol class="arabic simple">
+<li><p><strong>Mission Management System</strong>: Handles mission planning, execution, and monitoring</p></li>
+<li><p><strong>ROS2 Interface</strong>: Provides communication with robotic vehicles and systems</p></li>
+<li><p><strong>MQTT Communication</strong>: Manages IoT device communication and telemetry</p></li>
+<li><p><strong>REST API Interface</strong>: Exposes HTTP endpoints for external system integration</p></li>
+<li><p><strong>Prescription Map System</strong>: Handles agricultural prescription map generation and management</p></li>
+<li><p><strong>System Metrics</strong>: Monitors system performance and health metrics</p></li>
+<li><p><strong>State Vector Management</strong>: Processes and distributes vehicle state vectors</p></li>
+</ol>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>All components are initialized with proper error handling and logging.
+System uses queue-based inter-process communication for reliability.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>System requires proper configuration of all external dependencies:
+- ROS2 environment
+- MQTT broker configuration
+- Database connectivity
+- ThingsBoard platform access</p>
+</div>
+<dl class="py function">
+<dt class="sig sig-object py" id="init_fleet.main">
+<span class="sig-prename descclassname"><span class="pre">init_fleet.</span></span><span class="sig-name descname"><span class="pre">main</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../_modules/init_fleet.html#main"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#init_fleet.main" title="Link to this definition"></a></dt>
+<dd><p>Orchestrates system initialization and component startup.</p>
+<p>This function serves as the main entry point for the Fleet Management System,
+coordinating the sequential initialization of all system components. It follows
+a specific order to ensure proper dependency resolution and system stability.</p>
+<dl class="simple">
+<dt>Initialization Workflow:</dt><dd><ol class="arabic simple">
+<li><p><strong>Logger Configuration</strong>: Set up component-specific logging systems</p></li>
+<li><p><strong>Environment Cleanup</strong>: Remove temporary files and reset state</p></li>
+<li><p><strong>Mission System</strong>: Initialize mission management and inter-service queues</p></li>
+<li><p><strong>ROS2 Interface</strong>: Start robotic communication layer</p></li>
+<li><p><strong>MQTT System</strong>: Configure IoT device communication</p></li>
+<li><p><strong>Prescription Maps</strong>: Initialize agricultural map management</p></li>
+<li><p><strong>System Metrics</strong>: Start performance monitoring</p></li>
+<li><p><strong>REST API</strong>: Launch external interface server</p></li>
+</ol>
+</dd>
+<dt>Error Handling:</dt><dd><ul class="simple">
+<li><p>Each initialization step includes comprehensive error handling</p></li>
+<li><p>Critical failures result in SystemError to prevent partial system startup</p></li>
+<li><p>All errors are logged with full stack traces for debugging</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>SystemError</strong> – If any critical initialization step fails</p></li>
+<li><p><strong>RuntimeError</strong> – If logger initialization fails specifically</p></li>
+</ul>
+</dd>
+</dl>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#init_fleet.initialize_loggers" title="init_fleet.initialize_loggers"><code class="xref py py-func docutils literal notranslate"><span class="pre">initialize_loggers()</span></code></a>: Logger configuration details</p></li>
+<li><p><a class="reference internal" href="#init_fleet.initialize_mission_system" title="init_fleet.initialize_mission_system"><code class="xref py py-func docutils literal notranslate"><span class="pre">initialize_mission_system()</span></code></a>: Mission system startup</p></li>
+<li><p><a class="reference internal" href="#init_fleet.clean" title="init_fleet.clean"><code class="xref py py-func docutils literal notranslate"><span class="pre">clean()</span></code></a>: Environment cleanup procedures</p></li>
+</ul>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This function should only be called once during system startup.
+Multiple calls may result in resource conflicts.</p>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="init_fleet.initialize_loggers">
+<span class="sig-prename descclassname"><span class="pre">init_fleet.</span></span><span class="sig-name descname"><span class="pre">initialize_loggers</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></span><a class="reference internal" href="../_modules/init_fleet.html#initialize_loggers"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#init_fleet.initialize_loggers" title="Link to this definition"></a></dt>
+<dd><p>Configures component-specific logging systems for the entire fleet management system.</p>
+<p>Creates and configures individual logger instances for each major system component,
+enabling centralized logging with component-specific log files for better debugging
+and system monitoring.</p>
+<dl class="simple">
+<dt>Logger Configuration:</dt><dd><ul class="simple">
+<li><p><strong>FLEET</strong>: Main system logging</p></li>
+<li><p><strong>REST</strong>: HTTP API request/response logging</p></li>
+<li><p><strong>MISSION</strong>: Mission planning and execution logs</p></li>
+<li><p><strong>ROS2</strong>: Robotic system communication logs</p></li>
+<li><p><strong>MQTT</strong>: IoT device communication logs</p></li>
+<li><p><strong>PM</strong>: Prescription map generation and management logs</p></li>
+<li><p><strong>METRICS</strong>: System performance and health metrics logs</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Dictionary mapping component names to configured Logger instances,
+or None if initialization fails</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>Optional[Dict[str, logging.Logger]]</p>
+</dd>
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="create_logger_fleet_component.html#create_logger_fleet.Exception" title="create_logger_fleet.Exception"><strong>Exception</strong></a> – If any logger creation fails</p>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Each logger writes to a separate log file in the ‘Logs/’ directory
+for better organization and debugging capabilities.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>If this function returns None, the system should not proceed with
+initialization as logging is critical for system monitoring.</p>
+</div>
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">loggers</span> <span class="o">=</span> <span class="n">initialize_loggers</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">if</span> <span class="n">loggers</span><span class="p">:</span>
+<span class="gp">... </span>    <span class="n">loggers</span><span class="p">[</span><span class="s1">&#39;mission&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Mission system starting&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="init_fleet.initialize_mission_system">
+<span class="sig-prename descclassname"><span class="pre">init_fleet.</span></span><span class="sig-name descname"><span class="pre">initialize_mission_system</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mission_logger</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Logger</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../_modules/init_fleet.html#initialize_mission_system"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#init_fleet.initialize_mission_system" title="Link to this definition"></a></dt>
+<dd><p>Initializes the mission management subsystem with inter-service communication.</p>
+<p>Sets up the core mission management system including all necessary communication
+queues for coordinating between different system components. This is the central
+hub that orchestrates mission planning, execution, and monitoring.</p>
+<dl class="simple">
+<dt>Communication Queue Architecture:</dt><dd><ul class="simple">
+<li><p><strong>send_rest</strong>: Queue for sending data to REST API endpoints</p></li>
+<li><p><strong>send_vehicle</strong>: Queue for sending commands to vehicle systems</p></li>
+<li><p><strong>receive_vehicle</strong>: Queue for receiving vehicle status and responses</p></li>
+<li><p><strong>send_mqtt</strong>: Queue for sending data to MQTT/IoT systems</p></li>
+<li><p><strong>send_pm</strong>: Queue for sending prescription map requests</p></li>
+</ul>
+</dd>
+<dt>GRPC Services Started:</dt><dd><ol class="arabic simple">
+<li><p><strong>Mission-REST Interface</strong>: Handles HTTP API mission requests</p></li>
+<li><p><strong>Mission-Vehicle Interface</strong>: Manages vehicle command/control</p></li>
+<li><p><strong>Mission-MQTT Interface</strong>: Coordinates IoT device communication</p></li>
+<li><p><strong>Mission-PM Interface</strong>: Manages prescription map integration</p></li>
+</ol>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>mission_logger</strong> (<em>logging.Logger</em>) – Pre-configured logger instance for mission system events</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="create_logger_fleet_component.html#create_logger_fleet.Exception" title="create_logger_fleet.Exception"><strong>Exception</strong></a> – If any GRPC service fails to start or queue creation fails</p>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>All queues use thread-safe implementations to handle concurrent access
+from multiple system components.</p>
+</div>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<ul class="simple">
+<li><p><code class="xref py py-func docutils literal notranslate"><span class="pre">start_grpc_mission_rest()</span></code>: REST interface details</p></li>
+<li><p><code class="xref py py-func docutils literal notranslate"><span class="pre">start_grpc_mission_vehicle()</span></code>: Vehicle interface details</p></li>
+</ul>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="init_fleet.initialize_ros2_system">
+<span class="sig-prename descclassname"><span class="pre">init_fleet.</span></span><span class="sig-name descname"><span class="pre">initialize_ros2_system</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ros2_logger</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Logger</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../_modules/init_fleet.html#initialize_ros2_system"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#init_fleet.initialize_ros2_system" title="Link to this definition"></a></dt>
+<dd><p>Initializes ROS2 communication interface for robotic system integration.</p>
+<p>Sets up the ROS2 communication layer that enables the fleet management system
+to interact with robotic vehicles and autonomous systems. This includes action
+servers, topic publishers/subscribers, and service clients.</p>
+<dl class="simple">
+<dt>ROS2 Components:</dt><dd><ul class="simple">
+<li><p><strong>Action Queue</strong>: Thread-safe queue for ROS2 action requests</p></li>
+<li><p><strong>GRPC Service</strong>: Bridge between fleet manager and ROS2 ecosystem</p></li>
+<li><p><strong>Node Management</strong>: Handles ROS2 node lifecycle and communication</p></li>
+</ul>
+</dd>
+<dt>Communication Flow:</dt><dd><p>Fleet Manager –&gt; Action Queue –&gt; ROS2 GRPC Service –&gt; ROS2 Network</p>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>ros2_logger</strong> (<em>logging.Logger</em>) – Pre-configured logger instance for ROS2 system events</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="create_logger_fleet_component.html#create_logger_fleet.Exception" title="create_logger_fleet.Exception"><strong>Exception</strong></a> – If ROS2 environment is not properly configured or
+GRPC service fails to start</p>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Requires ROS2 environment to be properly sourced and configured
+before system startup.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>ROS2 system failure will prevent vehicle communication and should
+be treated as a critical error.</p>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="init_fleet.initialize_mqtt_system">
+<span class="sig-prename descclassname"><span class="pre">init_fleet.</span></span><span class="sig-name descname"><span class="pre">initialize_mqtt_system</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mqtt_logger</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Logger</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../_modules/init_fleet.html#initialize_mqtt_system"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#init_fleet.initialize_mqtt_system" title="Link to this definition"></a></dt>
+<dd><p>Configures MQTT communication layer for IoT device integration.</p>
+<p>Initializes the MQTT communication system including ThingsBoard integration
+for IoT device management, telemetry collection, and real-time monitoring.
+This system handles all wireless sensor networks and field device communication.</p>
+<dl class="simple">
+<dt>MQTT Architecture:</dt><dd><ul class="simple">
+<li><p><strong>MQTT GRPC Service</strong>: Handles MQTT message routing and processing</p></li>
+<li><p><strong>ThingsBoard Manager</strong>: Manages device registration and telemetry</p></li>
+<li><p><strong>Communication Queue</strong>: Thread-safe message queue for MQTT operations</p></li>
+</ul>
+</dd>
+<dt>ThingsBoard Integration:</dt><dd><ul class="simple">
+<li><p>Device provisioning and management</p></li>
+<li><p>Telemetry data collection and storage</p></li>
+<li><p>Real-time dashboard and alerts</p></li>
+<li><p>Rule engine for automated responses</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>mqtt_logger</strong> (<em>logging.Logger</em>) – Pre-configured logger instance for MQTT system events</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="create_logger_fleet_component.html#create_logger_fleet.Exception" title="create_logger_fleet.Exception"><strong>Exception</strong></a> – If MQTT broker connection fails or ThingsBoard
+authentication is invalid</p>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Requires valid MQTT broker configuration and ThingsBoard
+platform credentials.</p>
+</div>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<ul class="simple">
+<li><p><code class="xref py py-func docutils literal notranslate"><span class="pre">start_grpc_mqtt()</span></code>: MQTT GRPC service implementation</p></li>
+<li><p><code class="xref py py-func docutils literal notranslate"><span class="pre">start_tb_manager()</span></code>: ThingsBoard manager details</p></li>
+</ul>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="init_fleet.initialize_pm_system">
+<span class="sig-prename descclassname"><span class="pre">init_fleet.</span></span><span class="sig-name descname"><span class="pre">initialize_pm_system</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pm_logger</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Logger</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../_modules/init_fleet.html#initialize_pm_system"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#init_fleet.initialize_pm_system" title="Link to this definition"></a></dt>
+<dd><p>Initializes prescription map management system for agricultural operations.</p>
+<p>Sets up the prescription map (PM) system that handles the generation, processing,
+and distribution of agricultural prescription maps for precision farming operations.
+This includes support for multiple vehicle types and standardized formats.</p>
+<dl class="simple">
+<dt>Prescription Map Components:</dt><dd><ul class="simple">
+<li><p><strong>PM Manager</strong>: Core prescription map processing engine</p></li>
+<li><p><strong>GRPC Service</strong>: API interface for prescription map requests</p></li>
+<li><p><strong>ROS2 Subscriber</strong>: Receives prescription map data from field systems</p></li>
+<li><p><strong>Format Support</strong>: ISOBUS XML, JSON, and proprietary formats</p></li>
+</ul>
+</dd>
+<dt>Supported Vehicle Types:</dt><dd><ul class="simple">
+<li><p><strong>Drones</strong>: Aerial application and monitoring</p></li>
+<li><p><strong>ISOBUS Tractors</strong>: Standardized agricultural machinery</p></li>
+<li><p><strong>Autonomous Vehicles</strong>: Self-guided field operations</p></li>
+</ul>
+</dd>
+<dt>Cleanup Management:</dt><dd><ul class="simple">
+<li><p>Automatic cleanup of temporary files on system shutdown</p></li>
+<li><p>Thread-safe shutdown procedures</p></li>
+<li><p>Resource deallocation and file system maintenance</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>pm_logger</strong> (<em>logging.Logger</em>) – Pre-configured logger instance for prescription map events</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="create_logger_fleet_component.html#create_logger_fleet.Exception" title="create_logger_fleet.Exception"><strong>Exception</strong></a> – If PM manager thread fails to start or ROS2 subscriber
+cannot be initialized</p>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>System automatically registers cleanup functions to ensure proper
+resource deallocation on shutdown.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>PM system is critical for agricultural operations. Failure may
+result in inability to execute field missions.</p>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="init_fleet.initialize_metrics_system">
+<span class="sig-prename descclassname"><span class="pre">init_fleet.</span></span><span class="sig-name descname"><span class="pre">initialize_metrics_system</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">metrics_logger</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Logger</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../_modules/init_fleet.html#initialize_metrics_system"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#init_fleet.initialize_metrics_system" title="Link to this definition"></a></dt>
+<dd><p>Initializes system metrics management and monitoring infrastructure.</p>
+<p>Sets up comprehensive system monitoring including performance metrics,
+health checks, resource utilization tracking, and real-time system
+status reporting. This system provides observability into fleet operations.</p>
+<dl class="simple">
+<dt>Metrics Collection:</dt><dd><ul class="simple">
+<li><p><strong>CPU Utilization</strong>: System and process-level CPU usage</p></li>
+<li><p><strong>Memory Usage</strong>: RAM consumption and memory leaks detection</p></li>
+<li><p><strong>Network Statistics</strong>: Bandwidth usage and connection health</p></li>
+<li><p><strong>Disk I/O</strong>: Storage performance and space utilization</p></li>
+<li><p><strong>Queue Metrics</strong>: Inter-service communication queue depths</p></li>
+<li><p><strong>Service Health</strong>: Component availability and response times</p></li>
+</ul>
+</dd>
+<dt>Monitoring Components:</dt><dd><ul class="simple">
+<li><p><strong>ROS2 Subscriber</strong>: Receives metrics from distributed components</p></li>
+<li><p><strong>Metrics Manager</strong>: Aggregates and processes metric data</p></li>
+<li><p><strong>Real-time Processing</strong>: Live system monitoring and alerting</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>metrics_logger</strong> (<em>logging.Logger</em>) – Pre-configured logger instance for system metrics events</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="create_logger_fleet_component.html#create_logger_fleet.Exception" title="create_logger_fleet.Exception"><strong>Exception</strong></a> – If metrics subscriber fails to start or metrics manager
+cannot be initialized</p>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Metrics are collected in real-time and can be used for system
+optimization and predictive maintenance.</p>
+</div>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<ul class="simple">
+<li><p><code class="xref py py-func docutils literal notranslate"><span class="pre">start_metrics_subs()</span></code>: Metrics subscriber implementation</p></li>
+<li><p><code class="xref py py-func docutils literal notranslate"><span class="pre">start_metrics_manager()</span></code>: Metrics processing details</p></li>
+</ul>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="init_fleet.initialize_rest_system">
+<span class="sig-prename descclassname"><span class="pre">init_fleet.</span></span><span class="sig-name descname"><span class="pre">initialize_rest_system</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rest_logger</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Logger</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../_modules/init_fleet.html#initialize_rest_system"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#init_fleet.initialize_rest_system" title="Link to this definition"></a></dt>
+<dd><p>Launches REST API interface for external system integration.</p>
+<p>Initializes the HTTP REST API server that provides external access to
+fleet management functionality. This includes mission management endpoints,
+system status queries, and integration with third-party systems.</p>
+<dl class="simple">
+<dt>REST API Features:</dt><dd><ul class="simple">
+<li><p><strong>Mission Management</strong>: Create, update, and monitor missions</p></li>
+<li><p><strong>Vehicle Control</strong>: Send commands and receive status updates</p></li>
+<li><p><strong>System Status</strong>: Health checks and system information</p></li>
+<li><p><strong>Data Export</strong>: Download logs, reports, and telemetry data</p></li>
+<li><p><strong>Authentication</strong>: Secure access control and API key management</p></li>
+</ul>
+</dd>
+<dt>Server Configuration:</dt><dd><ul class="simple">
+<li><p><strong>GRPC Bridge</strong>: Connects REST endpoints to internal GRPC services</p></li>
+<li><p><strong>HTTP Server</strong>: Flask-based REST API server</p></li>
+<li><p><strong>OpenAPI Documentation</strong>: Swagger/OpenAPI specification</p></li>
+<li><p><strong>CORS Support</strong>: Cross-origin resource sharing for web clients</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>rest_logger</strong> (<em>logging.Logger</em>) – Pre-configured logger instance for REST API events</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="create_logger_fleet_component.html#create_logger_fleet.Exception" title="create_logger_fleet.Exception"><strong>Exception</strong></a> – If GRPC REST service fails to start or HTTP server
+cannot bind to the configured port</p>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This is typically the last system to initialize as it depends on
+all other systems being operational.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>REST API server failure will prevent external system integration
+and web-based fleet management interfaces.</p>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="init_fleet.initialize_state_vector_system">
+<span class="sig-prename descclassname"><span class="pre">init_fleet.</span></span><span class="sig-name descname"><span class="pre">initialize_state_vector_system</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sv_logger</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Logger</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../_modules/init_fleet.html#initialize_state_vector_system"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#init_fleet.initialize_state_vector_system" title="Link to this definition"></a></dt>
+<dd><p>Initializes state vector management.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>sv_logger</strong> – Configured state vector logger instance</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="init_fleet.clean">
+<span class="sig-prename descclassname"><span class="pre">init_fleet.</span></span><span class="sig-name descname"><span class="pre">clean</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../_modules/init_fleet.html#clean"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#init_fleet.clean" title="Link to this definition"></a></dt>
+<dd><p>Cleans up temporary files and directories before system initialization.</p>
+<p>Performs comprehensive cleanup of temporary files, cached data, and
+state directories to ensure a clean system startup. This prevents
+issues from previous runs and ensures consistent system behavior.</p>
+<dl class="simple">
+<dt>Cleanup Operations:</dt><dd><ul class="simple">
+<li><p><strong>Received Directory</strong>: Clears incoming prescription map files</p></li>
+<li><p><strong>PMs Directory</strong>: Removes cached prescription map data</p></li>
+<li><p><strong>PM Generation Subfolders</strong>: Cleans vehicle-specific PM caches</p></li>
+</ul>
+</dd>
+<dt>Directory Targets:</dt><dd><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">PrescriptionMap/pm_generation/Received/</span></code>: Incoming PM files</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">PMs/</span></code>: Generated prescription map cache</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">PrescriptionMap/pm_generation/*/</span></code>: Vehicle-specific PM folders</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>OSError</strong> – If directory cleanup operations fail due to permissions
+or file system errors</p>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This function is called early in the initialization process to
+ensure clean system state.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This operation will permanently delete temporary files. Ensure
+no critical data is stored in these directories.</p>
+</div>
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="index.html" class="btn btn-neutral float-left" title="Fleet Manager" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="mission_components.html" class="btn btn-neutral float-right" title="Mission Management" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, Estela Mora Barba.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

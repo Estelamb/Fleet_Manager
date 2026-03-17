@@ -1,0 +1,1239 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>grpc_ros2 &mdash; Fleet Manager 1.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=f2a433a1"></script>
+        <script src="../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+        <script src="../_static/copybutton.js?v=f281be69"></script>
+        <script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script>
+        <script type="module">import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11.12.1/dist/mermaid.esm.min.mjs";
+
+
+
+
+
+const initStyles = () => {
+    const defaultStyle = document.createElement('style');
+    defaultStyle.textContent = `pre.mermaid {
+    /* Same as .mermaid-container > pre */
+    display: block;
+    width: 100%;
+}
+
+pre.mermaid > svg {
+    /* Same as .mermaid-container > pre > svg */
+    height: 500px;
+    width: 100%;
+    max-width: 100% !important;
+}`;
+    document.head.appendChild(defaultStyle);
+
+    const fullscreenStyle = document.createElement('style');
+    fullscreenStyle.textContent = `.mermaid-container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.mermaid-container > pre {
+    display: block;
+    width: 100%;
+}
+
+.mermaid-container > pre > svg {
+    height: 500px;
+    width: 100%;
+    max-width: 100% !important;
+}
+
+.mermaid-fullscreen-btn {
+    width: 28px;
+    height: 28px;
+    background: rgba(255, 255, 255, 0.95);
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    border-radius: 4px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    font-size: 14px;
+    line-height: 1;
+    padding: 0;
+    color: #333;
+}
+
+.mermaid-fullscreen-btn:hover {
+    opacity: 100% !important;
+    background: rgba(255, 255, 255, 1);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+    transform: scale(1.1);
+}
+
+.mermaid-fullscreen-btn.dark-theme {
+    background: rgba(50, 50, 50, 0.95);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: #e0e0e0;
+}
+
+.mermaid-fullscreen-btn.dark-theme:hover {
+    background: rgba(60, 60, 60, 1);
+    box-shadow: 0 3px 10px rgba(255, 255, 255, 0.2);
+}
+
+.mermaid-fullscreen-modal {
+    display: none;
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 95vw;
+    height: 100vh;
+    background: rgba(255, 255, 255, 0.98);
+    z-index: 9999;
+    padding: 20px;
+    overflow: auto;
+}
+
+.mermaid-fullscreen-modal.dark-theme {
+    background: rgba(0, 0, 0, 0.98);
+}
+
+.mermaid-fullscreen-modal.active {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mermaid-container-fullscreen {
+    position: relative;
+    width: 95vw;
+    height: 90vh;
+    max-width: 95vw;
+    max-height: 90vh;
+    background: white;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    overflow: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mermaid-container-fullscreen.dark-theme {
+    background: #1a1a1a;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.8);
+}
+
+.mermaid-container-fullscreen pre.mermaid {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mermaid-container-fullscreen .mermaid svg {
+    height: 100% !important;
+    width: 100% !important;
+    cursor: grab;
+}
+
+.mermaid-fullscreen-close {
+    position: fixed !important;
+    top: 20px !important;
+    right: 20px !important;
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.95);
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    transition: all 0.2s;
+    font-size: 24px;
+    line-height: 1;
+    color: #333;
+}
+
+.mermaid-fullscreen-close:hover {
+    background: white;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+    transform: scale(1.1);
+}
+
+.mermaid-fullscreen-close.dark-theme {
+    background: rgba(50, 50, 50, 0.95);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #e0e0e0;
+}
+
+.mermaid-fullscreen-close.dark-theme:hover {
+    background: rgba(60, 60, 60, 1);
+    box-shadow: 0 6px 16px rgba(255, 255, 255, 0.2);
+}
+
+.mermaid-fullscreen-modal .mermaid-fullscreen-btn {
+    display: none !important;
+}`;
+    document.head.appendChild(fullscreenStyle);
+}
+
+// Detect if page has dark background
+const isDarkTheme = () => {
+    // We use a set of heuristics:
+    // 1. Check for common dark mode classes or attributes
+    // 2. Check computed background color brightness
+    if (document.documentElement.classList.contains('dark') ||
+        document.documentElement.getAttribute('data-theme') === 'dark' ||
+        document.body.classList.contains('dark') ||
+        document.body.getAttribute('data-theme') === 'dark') {
+        // console.log("Dark theme detected via class/attribute");
+        return true;
+    }
+    if (document.documentElement.classList.contains('light') ||
+        document.documentElement.getAttribute('data-theme') === 'light' ||
+        document.body.classList.contains('light') ||
+        document.body.getAttribute('data-theme') === 'light') {
+        // console.log("Light theme detected via class/attribute");
+        return false;
+    }
+    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        // console.log("Dark theme detected via prefers-color-scheme");
+        return true;
+    }
+    const bgColor = window.getComputedStyle(document.body).backgroundColor;
+    const match = bgColor.match(/rgb\((\d+),\s*(\d+),\s*(\d+)/);
+    if (match) {
+        const r = parseInt(match[1]);
+        const g = parseInt(match[2]);
+        const b = parseInt(match[3]);
+        const brightness = (r * 299 + g * 587 + b * 114) / 1000;
+        // console.log("Background color brightness:", brightness);
+        return brightness < 128;
+    }
+    // console.log("No dark or light theme detected, defaulting to light theme");
+    return false;
+};
+
+let darkTheme = isDarkTheme();
+let modal = null;
+let modalContent = null;
+let previousScrollOffset = [window.scrollX, window.scrollY];
+
+const runMermaid = async (rerun) => {
+    console.log("Running mermaid diagrams, rerun =", rerun);
+    // clear all existing mermaid charts
+    let all_mermaids = document.querySelectorAll(".mermaid");
+
+    if (rerun) {
+        all_mermaids.forEach((el) => {
+            if(!el.hasAttribute("data-original-code")) {
+                // store original code
+                // console.log(`Storing original code for first run: `, el.innerHTML);
+                el.setAttribute('data-original-code', el.innerHTML);
+            }
+            if(el.getAttribute("data-processed") === "true") {
+                // remove and restore original
+                el.removeAttribute("data-processed");
+                // console.log(`Restoring original code for re-run: `, el.getAttribute('data-original-code'));
+                el.innerHTML = el.getAttribute('data-original-code');
+            } else {
+                // store original code
+                // console.log(`Storing original code for re-run: `, el.innerHTML);
+                el.setAttribute('data-original-code', el.innerHTML);
+            }
+        });
+        await mermaid.run();
+    }
+
+    all_mermaids = document.querySelectorAll(".mermaid");
+    const mermaids_processed = document.querySelectorAll(".mermaid[data-processed='true']");
+
+    if ("False" === "True") {
+        const mermaids_to_add_zoom = -1 === -1 ? all_mermaids.length : -1;
+        if(mermaids_to_add_zoom > 0) {
+            var svgs = d3.selectAll("");
+            if(all_mermaids.length !== mermaids_processed.length) {
+                setTimeout(() => runMermaid(false), 200);
+                return;
+            } else if(svgs.size() !== mermaids_to_add_zoom) {
+                setTimeout(() => runMermaid(false), 200);
+                return;
+            } else {
+                svgs.each(function() {
+                    var svg = d3.select(this);
+                    svg.html("<g class='wrapper'>" + svg.html() + "</g>");
+                    var inner = svg.select("g");
+                    var zoom = d3.zoom().on("zoom", function(event) {
+                        inner.attr("transform", event.transform);
+                    });
+                    svg.call(zoom);
+                });
+            }
+        }
+    } else if(all_mermaids.length !== mermaids_processed.length) {
+        // Wait for mermaid to process all diagrams
+        setTimeout(() => runMermaid(false), 200);
+        return;
+    }
+
+    // Stop here if not adding fullscreen capability
+    if ("True" !== "True") return;
+
+    if (modal !== null ) {
+        // Destroy existing modal
+        modal.remove();
+        modal = null;
+        modalContent = null;
+    }
+
+    modal = document.createElement('div');
+    modal.className = 'mermaid-fullscreen-modal' + (darkTheme ? ' dark-theme' : '');
+    modal.setAttribute('role', 'dialog');
+    modal.setAttribute('aria-modal', 'true');
+    modal.setAttribute('aria-label', 'Fullscreen diagram viewer');
+    modal.innerHTML = `
+        <button class="mermaid-fullscreen-close${darkTheme ? ' dark-theme' : ''}" aria-label="Close fullscreen">✕</button>
+        <div class="mermaid-container-fullscreen${darkTheme ? ' dark-theme' : ''}"></div>
+    `;
+    document.body.appendChild(modal);
+
+    modalContent = modal.querySelector('.mermaid-container-fullscreen');
+    const closeBtn = modal.querySelector('.mermaid-fullscreen-close');
+
+    const closeModal = () => {
+        modal.classList.remove('active');
+        modalContent.innerHTML = '';
+        document.body.style.overflow = ''
+        window.scrollTo({left: previousScrollOffset[0], top: previousScrollOffset[1], behavior: 'instant'});
+    };
+
+    closeBtn.addEventListener('click', closeModal);
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) closeModal();
+    });
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && modal.classList.contains('active')) {
+            closeModal();
+        }
+    });
+
+    document.querySelectorAll('.mermaid').forEach((mermaidDiv) => {
+        if (mermaidDiv.parentNode.classList.contains('mermaid-container') ||
+            mermaidDiv.closest('.mermaid-fullscreen-modal')) {
+            // Already processed, adjust button class if needed
+            const existingBtn = mermaidDiv.parentNode.querySelector('.mermaid-fullscreen-btn');
+            if (existingBtn) {
+                existingBtn.className = 'mermaid-fullscreen-btn' + (darkTheme ? ' dark-theme' : '');
+            }
+            return;
+        }
+
+        const container = document.createElement('div');
+        container.className = 'mermaid-container';
+        mermaidDiv.parentNode.insertBefore(container, mermaidDiv);
+        container.appendChild(mermaidDiv);
+
+        const fullscreenBtn = document.createElement('button');
+        fullscreenBtn.className = 'mermaid-fullscreen-btn' + (darkTheme ? ' dark-theme' : '');
+        fullscreenBtn.setAttribute('aria-label', 'View diagram in fullscreen');
+        fullscreenBtn.textContent = '⛶';
+        fullscreenBtn.style.opacity = '50%';
+
+        // Calculate dynamic position based on diagram's margin and padding
+        const diagramStyle = window.getComputedStyle(mermaidDiv);
+        const marginTop = parseFloat(diagramStyle.marginTop) || 0;
+        const marginRight = parseFloat(diagramStyle.marginRight) || 0;
+        const paddingTop = parseFloat(diagramStyle.paddingTop) || 0;
+        const paddingRight = parseFloat(diagramStyle.paddingRight) || 0;
+        fullscreenBtn.style.top = `${marginTop + paddingTop + 4}px`;
+        fullscreenBtn.style.right = `${marginRight + paddingRight + 4}px`;
+
+        fullscreenBtn.addEventListener('click', () => {
+            previousScrollOffset = [window.scroll, window.scrollY];
+            const clone = mermaidDiv.cloneNode(true);
+            modalContent.innerHTML = '';
+            modalContent.appendChild(clone);
+
+            const svg = clone.querySelector('svg');
+            if (svg) {
+                svg.removeAttribute('width');
+                svg.removeAttribute('height');
+                svg.style.width = '100%';
+                svg.style.height = 'auto';
+                svg.style.maxWidth = '100%';
+                svg.style.sdisplay = 'block';
+
+                if ("False" === "True") {
+                    setTimeout(() => {
+                        const g = svg.querySelector('g');
+                        if (g) {
+                            var svgD3 = d3.select(svg);
+                            svgD3.html("<g class='wrapper'>" + svgD3.html() + "</g>");
+                            var inner = svgD3.select("g");
+                            var zoom = d3.zoom().on("zoom", function(event) {
+                                inner.attr("transform", event.transform);
+                            });
+                            svgD3.call(zoom);
+                        }
+                    }, 100);
+                }
+            }
+
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+        container.appendChild(fullscreenBtn);
+    });
+};
+
+const load = async () => {
+    initStyles();
+
+    await runMermaid(true);
+
+    const reRunIfThemeChanges = async () => {
+        const newDarkTheme = isDarkTheme();
+        if (newDarkTheme !== darkTheme) {
+            darkTheme = newDarkTheme;
+            console.log("Theme change detected, re-running mermaid with", darkTheme ? "dark" : "default", "theme");
+            await mermaid.initialize(
+                {...JSON.parse(
+                    `{"startOnLoad": false}`
+                ),
+                ...{ darkMode: darkTheme, theme: darkTheme ? 'dark' : 'default' },
+                }
+            );
+            await runMermaid(true);
+        }
+    };
+
+    // Update theme classes when theme changes
+    const themeObserver = new MutationObserver(reRunIfThemeChanges);
+    themeObserver.observe(document.documentElement, {
+        attributes: true,
+        attributeFilter: ['class', 'style', 'data-theme']
+    });
+    themeObserver.observe(document.body, {
+        attributes: true,
+        attributeFilter: ['class', 'style', 'data-theme']
+    });
+};
+
+
+
+
+
+console.log("Initializing mermaid with", darkTheme ? "dark" : "default", "theme");
+mermaid.initialize(
+    {...JSON.parse(
+        `{"startOnLoad": false}`
+    ),
+    ...{ darkMode: darkTheme, theme: darkTheme ? 'dark' : 'default' },
+    }
+);
+
+window.addEventListener("load", load);
+window.runMermaid = runMermaid;</script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="author" title="About these documents" href="../about.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Fleet Manager
+          </a>
+              <div class="version">
+                1.0
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../about.html">About the project</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules.html">Code documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../training.html">Training documentation</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Fleet Manager</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Module code</a></li>
+      <li class="breadcrumb-item active">grpc_ros2</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <h1>Source code for grpc_ros2</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">gRPC ROS 2 Communication Bridge Module</span>
+
+<span class="sd">.. module:: grpc_ros2</span>
+<span class="sd">    :synopsis: Bidirectional gRPC communication bridge for ROS 2 command execution and result reporting</span>
+
+<span class="sd">.. moduleauthor:: Fleet Management System Team</span>
+
+<span class="sd">.. versionadded:: 1.0</span>
+
+<span class="sd">This module implements a comprehensive communication bridge between the Fleet Management System</span>
+<span class="sd">and ROS 2 environments. It provides bidirectional gRPC services for drone plan distribution</span>
+<span class="sd">and result collection, enabling seamless integration between fleet management and autonomous</span>
+<span class="sd">vehicle control systems.</span>
+
+<span class="sd">Architecture Overview:</span>
+<span class="sd">    The module follows a dual-service architecture:</span>
+<span class="sd">    </span>
+<span class="sd">    1. **gRPC Server**: Receives drone plans from Mission Management System</span>
+<span class="sd">    2. **gRPC Client**: Sends execution results back to Mission Management System</span>
+<span class="sd">    3. **ROS 2 Action Client**: Interfaces with ROS 2 action servers for command execution</span>
+<span class="sd">    4. **Queue-based Communication**: Thread-safe result passing between components</span>
+
+<span class="sd">Communication Flow:</span>
+<span class="sd">    .. mermaid::</span>
+<span class="sd">    </span>
+<span class="sd">        graph LR</span>
+<span class="sd">            A[Mission Management] --&gt; B[gRPC Server]</span>
+<span class="sd">            B --&gt; C[ROS 2 Action Client]</span>
+<span class="sd">            C --&gt; D[ROS 2 Action Server]</span>
+<span class="sd">            D --&gt; E[Vehicle Control]</span>
+<span class="sd">            E --&gt; F[Result Queue]</span>
+<span class="sd">            F --&gt; G[gRPC Client]</span>
+<span class="sd">            G --&gt; A</span>
+
+<span class="sd">Key Features:</span>
+<span class="sd">    - **Bidirectional Communication**: Full duplex communication with Mission Management</span>
+<span class="sd">    - **ROS 2 Integration**: Native ROS 2 action client for vehicle command execution</span>
+<span class="sd">    - **Thread-safe Operations**: Queue-based communication between gRPC and ROS 2 components</span>
+<span class="sd">    - **JSON Protocol**: Standardized JSON messaging for plan and result data</span>
+<span class="sd">    - **Error Recovery**: Comprehensive error handling and connection management</span>
+<span class="sd">    - **Concurrent Processing**: Multi-threaded operation for high throughput</span>
+
+<span class="sd">ROS 2 Integration:</span>
+<span class="sd">    The module integrates with ROS 2 through action clients, providing:</span>
+<span class="sd">    - **Action Goal Submission**: Send drone commands as ROS 2 action goals</span>
+<span class="sd">    - **Result Collection**: Gather execution results from ROS 2 action servers</span>
+<span class="sd">    - **Status Monitoring**: Track action execution status and progress</span>
+<span class="sd">    - **Error Handling**: Manage ROS 2 communication failures and timeouts</span>
+
+<span class="sd">gRPC Services:</span>
+<span class="sd">    **Plan Communication Service** (Port 50099):</span>
+<span class="sd">    - Receives drone plans from Mission Management</span>
+<span class="sd">    - Parses JSON-formatted plan data</span>
+<span class="sd">    - Submits goals to ROS 2 action clients</span>
+<span class="sd">    </span>
+<span class="sd">    **Result Communication Client** (Port 50070):</span>
+<span class="sd">    - Monitors result queue for completed actions</span>
+<span class="sd">    - Sends results back to Mission Management</span>
+<span class="sd">    - Handles connection failures with retry logic</span>
+
+<span class="sd">Data Formats:</span>
+<span class="sd">    **Drone Plan Format**::</span>
+<span class="sd">    </span>
+<span class="sd">        [drone_id, [command1_json, command2_json, ...]]</span>
+<span class="sd">        </span>
+<span class="sd">    **Command Format**::</span>
+<span class="sd">    </span>
+<span class="sd">        {</span>
+<span class="sd">            &quot;command_type&quot;: &quot;MOVE_TO&quot;,</span>
+<span class="sd">            &quot;parameters&quot;: {...},</span>
+<span class="sd">            &quot;sequence&quot;: 1</span>
+<span class="sd">        }</span>
+
+<span class="sd">Thread Management:</span>
+<span class="sd">    - **Server Thread**: Handles incoming gRPC plan requests</span>
+<span class="sd">    - **Client Thread**: Processes outgoing result submissions</span>
+<span class="sd">    - **Action Thread**: Manages ROS 2 action client operations</span>
+<span class="sd">    - **Main Thread**: Coordinates overall system operation</span>
+
+<span class="sd">Network Configuration:</span>
+<span class="sd">    - **Server Port**: 50099 (Plan reception from Mission Management)</span>
+<span class="sd">    - **Client Target**: localhost:50070 (Result submission to Mission Management)</span>
+<span class="sd">    - **Protocol**: gRPC with HTTP/2 transport</span>
+<span class="sd">    - **Security**: Insecure channels (internal communication)</span>
+
+<span class="sd">Classes:</span>
+<span class="sd">    .. autoclass:: PlanCommunicationService</span>
+<span class="sd">        :members:</span>
+<span class="sd">        :undoc-members:</span>
+<span class="sd">        :show-inheritance:</span>
+
+<span class="sd">Functions:</span>
+<span class="sd">    .. autofunction:: run_ros2_server</span>
+<span class="sd">    .. autofunction:: run_ros2_client</span>
+<span class="sd">    .. autofunction:: start_grpc_ros2</span>
+<span class="sd">    .. autofunction:: create_logger</span>
+
+<span class="sd">.. note::</span>
+<span class="sd">    This module requires a running ROS 2 environment with appropriate action</span>
+<span class="sd">    servers for vehicle control. Ensure ROS 2 workspace is properly sourced.</span>
+
+<span class="sd">.. warning::</span>
+<span class="sd">    The module uses insecure gRPC channels suitable for internal communication.</span>
+<span class="sd">    Implement proper authentication for external deployments.</span>
+
+<span class="sd">.. seealso::</span>
+<span class="sd">    - :mod:`MissionManager.grpc_mission_vehicle`: Mission Management counterpart</span>
+<span class="sd">    - :mod:`ROS2.src.commands_action_interface`: ROS 2 action client implementation</span>
+<span class="sd">    - :mod:`GRPC`: Protocol Buffer definitions for plan and result messages</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">concurrent</span><span class="w"> </span><span class="kn">import</span> <span class="n">futures</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">json</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">grpc</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">time</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">queue</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">threading</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">logging</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">GRPC.plan_pb2</span><span class="w"> </span><span class="kn">import</span> <span class="n">DronePlanResponse</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">GRPC.plan_pb2_grpc</span><span class="w"> </span><span class="kn">import</span> <span class="n">PlanCommunicationServicer</span><span class="p">,</span> <span class="n">add_PlanCommunicationServicer_to_server</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">GRPC.result_pb2</span><span class="w"> </span><span class="kn">import</span> <span class="n">DroneResultRequest</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">GRPC.result_pb2_grpc</span><span class="w"> </span><span class="kn">import</span> <span class="n">ResultCommunicationStub</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">ROS2.src.commands_action_interface.commands_action_interface</span><span class="w"> </span><span class="kn">import</span> <span class="n">commands_action_client</span> <span class="k">as</span> <span class="n">action</span>
+
+
+<div class="viewcode-block" id="PlanCommunicationService">
+<a class="viewcode-back" href="../Fleet_module/ROS2/grpc_ros2_component.html#grpc_ros2.PlanCommunicationService">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">PlanCommunicationService</span><span class="p">(</span><span class="n">PlanCommunicationServicer</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;gRPC service implementation for processing drone plans and submitting them to ROS 2.</span>
+
+<span class="sd">    This class extends the auto-generated PlanCommunicationServicer to provide concrete</span>
+<span class="sd">    implementation for receiving drone plans from the Mission Management System and</span>
+<span class="sd">    converting them into ROS 2 action goals for vehicle execution.</span>
+
+<span class="sd">    Service Responsibilities:</span>
+<span class="sd">        - **Plan Reception**: Receive gRPC requests containing drone plan data</span>
+<span class="sd">        - **Data Parsing**: Parse JSON-formatted plan and command structures</span>
+<span class="sd">        - **Format Conversion**: Convert plan data to ROS 2 action goal format</span>
+<span class="sd">        - **Goal Submission**: Submit action goals to ROS 2 action clients</span>
+<span class="sd">        - **Response Generation**: Provide confirmation responses to Mission Management</span>
+
+<span class="sd">    Plan Processing Workflow:</span>
+<span class="sd">        1. **Request Reception**: Receive gRPC request with serialized plan data</span>
+<span class="sd">        2. **Data Extraction**: Extract drone_plan list from request</span>
+<span class="sd">        3. **JSON Parsing**: Parse concatenated JSON string to extract plan structure</span>
+<span class="sd">        4. **Component Extraction**: Separate drone_id and command list</span>
+<span class="sd">        5. **Command Processing**: Parse individual commands and normalize JSON format</span>
+<span class="sd">        6. **Goal Submission**: Send processed commands to ROS 2 action client</span>
+<span class="sd">        7. **Response Generation**: Return confirmation to Mission Management</span>
+
+<span class="sd">    Data Format Handling:</span>
+<span class="sd">        **Input Format** (from Mission Management)::</span>
+<span class="sd">        </span>
+<span class="sd">            drone_plan = [drone_id, [raw_command1, raw_command2, ...]]</span>
+<span class="sd">            </span>
+<span class="sd">        **Processing Steps**:</span>
+<span class="sd">        - Convert gRPC repeated field to Python list</span>
+<span class="sd">        - Join list elements into single JSON string</span>
+<span class="sd">        - Parse JSON to extract drone_id and raw_commands_list</span>
+<span class="sd">        - Process each raw command (handle quote normalization)</span>
+<span class="sd">        - Convert processed commands back to JSON strings</span>
+
+<span class="sd">    ROS 2 Integration:</span>
+<span class="sd">        The service interfaces with ROS 2 through an action client that:</span>
+<span class="sd">        - Accepts drone_id for vehicle identification</span>
+<span class="sd">        - Receives command list in JSON string format</span>
+<span class="sd">        - Submits goals to appropriate ROS 2 action servers</span>
+<span class="sd">        - Handles action execution and result collection</span>
+
+<span class="sd">    :param action_client: Initialized ROS 2 action client for goal submission</span>
+<span class="sd">    :type action_client: commands_action_client.ActionClient</span>
+<span class="sd">    :param ros2_logger: Configured logger instance for operation tracking</span>
+<span class="sd">    :type ros2_logger: logging.Logger</span>
+
+<span class="sd">    :ivar action_client: ROS 2 action client for command execution</span>
+<span class="sd">    :vartype action_client: commands_action_client.ActionClient</span>
+<span class="sd">    :ivar ros2_logger: Logger instance for service operation tracking</span>
+<span class="sd">    :vartype ros2_logger: logging.Logger</span>
+
+<span class="sd">    Example:</span>
+<span class="sd">        **Service Instantiation** (typically done by gRPC server)::</span>
+<span class="sd">        </span>
+<span class="sd">            action_client = create_ros2_action_client(queue, logger)</span>
+<span class="sd">            service = PlanCommunicationService(action_client, logger)</span>
+<span class="sd">            add_PlanCommunicationServicer_to_server(service, server)</span>
+
+<span class="sd">    .. note::</span>
+<span class="sd">        The service handles JSON quote normalization to ensure compatibility</span>
+<span class="sd">        between Mission Management and ROS 2 JSON parsing requirements.</span>
+
+<span class="sd">    .. warning::</span>
+<span class="sd">        Command parsing failures will result in error responses being sent</span>
+<span class="sd">        back to Mission Management. Ensure proper error handling in clients.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+<div class="viewcode-block" id="PlanCommunicationService.__init__">
+<a class="viewcode-back" href="../Fleet_module/ROS2/grpc_ros2_component.html#grpc_ros2.PlanCommunicationService.__init__">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">action_client</span><span class="p">,</span> <span class="n">ros2_logger</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Initialize gRPC service with ROS 2 action client and logging.</span>
+
+<span class="sd">        Sets up the service with necessary components for plan processing and</span>
+<span class="sd">        ROS 2 integration. Configures logging for operation tracking and debugging.</span>
+
+<span class="sd">        :param action_client: Pre-configured ROS 2 action client for goal submission</span>
+<span class="sd">        :type action_client: commands_action_client.ActionClient</span>
+<span class="sd">        :param ros2_logger: Pre-configured logger for service operations</span>
+<span class="sd">        :type ros2_logger: logging.Logger</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># Initialize parent gRPC servicer class</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+        
+        <span class="c1"># Store ROS 2 action client for command submission</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">action_client</span> <span class="o">=</span> <span class="n">action_client</span>
+        
+        <span class="c1"># Store logger instance for operation tracking</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">ros2_logger</span> <span class="o">=</span> <span class="n">ros2_logger</span></div>
+
+
+<div class="viewcode-block" id="PlanCommunicationService.SendPlan">
+<a class="viewcode-back" href="../Fleet_module/ROS2/grpc_ros2_component.html#grpc_ros2.PlanCommunicationService.SendPlan">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">SendPlan</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">request</span><span class="p">,</span> <span class="n">context</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Process incoming drone plan requests and submit them to ROS 2 action servers.</span>
+
+<span class="sd">        This method implements the core gRPC service interface for receiving drone plans</span>
+<span class="sd">        from the Mission Management System, parsing the plan data, and converting it into</span>
+<span class="sd">        ROS 2 action goals for vehicle execution.</span>
+
+<span class="sd">        Processing Workflow:</span>
+<span class="sd">            1. **Data Extraction**: Convert gRPC repeated field to Python list</span>
+<span class="sd">            2. **JSON Reconstruction**: Join list elements into complete JSON string</span>
+<span class="sd">            3. **Plan Parsing**: Parse JSON to extract drone_id and command list</span>
+<span class="sd">            4. **Command Processing**: Normalize and parse individual commands</span>
+<span class="sd">            5. **Goal Submission**: Send processed commands to ROS 2 action client</span>
+<span class="sd">            6. **Response Generation**: Return confirmation to Mission Management</span>
+
+<span class="sd">        Data Format Processing:</span>
+<span class="sd">            **Input Structure**::</span>
+<span class="sd">            </span>
+<span class="sd">                request.drone_plan = [&quot;[&quot;, &quot;123&quot;, &quot;,&quot;, &quot;[&quot;, &quot;command1&quot;, &quot;,&quot;, &quot;command2&quot;, &quot;]&quot;, &quot;]&quot;]</span>
+<span class="sd">                </span>
+<span class="sd">            **Reconstructed JSON**::</span>
+<span class="sd">            </span>
+<span class="sd">                &quot;[123, [\&quot;command1\&quot;, \&quot;command2\&quot;]]&quot;</span>
+<span class="sd">                </span>
+<span class="sd">            **Parsed Structure**::</span>
+<span class="sd">            </span>
+<span class="sd">                [123, [&quot;command1&quot;, &quot;command2&quot;]]</span>
+
+<span class="sd">        Command Normalization:</span>
+<span class="sd">            - **Quote Handling**: Convert single quotes to double quotes for JSON compliance</span>
+<span class="sd">            - **JSON Parsing**: Parse each command string as individual JSON objects</span>
+<span class="sd">            - **Re-serialization**: Convert parsed commands back to JSON strings</span>
+<span class="sd">            - **Format Validation**: Ensure commands are valid JSON format</span>
+
+<span class="sd">        Error Handling Strategy:</span>
+<span class="sd">            - **JSON Parsing Errors**: Caught and logged with detailed error information</span>
+<span class="sd">            - **Action Client Errors**: Handled by action client with appropriate timeouts</span>
+<span class="sd">            - **Response Generation**: Error responses sent back to Mission Management</span>
+<span class="sd">            - **Exception Logging**: Full stack traces logged for debugging</span>
+
+<span class="sd">        :param request: gRPC request containing serialized drone plan data</span>
+<span class="sd">        :type request: plan_pb2.DronePlanRequest</span>
+<span class="sd">        :param context: gRPC connection context for metadata and error handling</span>
+<span class="sd">        :type context: grpc.ServicerContext</span>
+
+<span class="sd">        :return: Confirmation response with processing status</span>
+<span class="sd">        :rtype: plan_pb2.DronePlanResponse</span>
+
+<span class="sd">        :raises json.JSONDecodeError: If plan data contains invalid JSON syntax</span>
+<span class="sd">        :raises KeyError: If required plan components (drone_id, commands) are missing</span>
+<span class="sd">        :raises Exception: For any other processing failures during plan execution</span>
+
+<span class="sd">        Example:</span>
+<span class="sd">            **Successful Processing**::</span>
+<span class="sd">            </span>
+<span class="sd">                # Input: drone_plan for drone 123 with two commands</span>
+<span class="sd">                # Output: DronePlanResponse(confirmation=&quot;Plan 123 received and sent&quot;)</span>
+<span class="sd">                </span>
+<span class="sd">            **Error Processing**::</span>
+<span class="sd">            </span>
+<span class="sd">                # Input: malformed JSON data</span>
+<span class="sd">                # Output: DronePlanResponse(confirmation=&quot;Error processing plan&quot;)</span>
+
+<span class="sd">        .. note::</span>
+<span class="sd">            The method expects the plan data to follow the specific format used by</span>
+<span class="sd">            the Mission Management System with drone_id as first element.</span>
+
+<span class="sd">        .. warning::</span>
+<span class="sd">            All processing exceptions are caught and logged, but only generic error</span>
+<span class="sd">            messages are returned to clients for security reasons.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="c1"># Convert the gRPC repeated field to a Python list</span>
+            <span class="c1"># The drone_plan comes as separate string elements that need reconstruction</span>
+            <span class="n">drone_plan</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">request</span><span class="o">.</span><span class="n">drone_plan</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">ros2_logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;[gRPC ROS2] - Plan received from Mission Management&quot;</span><span class="p">)</span>
+            
+            <span class="c1"># Reconstruct the complete JSON string from individual elements</span>
+            <span class="c1"># Mission Management sends plan as fragmented string parts</span>
+            <span class="n">drone_plan_str</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">drone_plan</span><span class="p">)</span>
+            
+            <span class="c1"># Parse the reconstructed JSON string to extract plan structure</span>
+            <span class="c1"># Expected format: [drone_id, [command1, command2, ...]]</span>
+            <span class="n">drone_plan</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">drone_plan_str</span><span class="p">)</span>
+
+            <span class="c1"># Extract drone_id (first element) and raw command list (second element)</span>
+            <span class="c1"># drone_id identifies the target vehicle for command execution</span>
+            <span class="n">drone_id</span> <span class="o">=</span> <span class="n">drone_plan</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+            <span class="n">raw_commands_list</span> <span class="o">=</span> <span class="n">drone_plan</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+
+            <span class="c1"># Process each command in the command list to ensure proper JSON formatting</span>
+            <span class="c1"># Commands may have quote inconsistencies that need normalization</span>
+            <span class="n">commands_list</span> <span class="o">=</span> <span class="p">[]</span>
+            <span class="k">for</span> <span class="n">raw_command</span> <span class="ow">in</span> <span class="n">raw_commands_list</span><span class="p">:</span>
+                <span class="c1"># Parse the raw command and convert single quotes to double quotes</span>
+                <span class="c1"># This ensures JSON compliance for ROS 2 action processing</span>
+                <span class="n">command</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">raw_command</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;&#39;&quot;</span><span class="p">,</span> <span class="s1">&#39;&quot;&#39;</span><span class="p">))</span>  <span class="c1"># Normalize quotes for JSON parsing</span>
+                
+                <span class="c1"># Convert the parsed command back to a properly formatted JSON string</span>
+                <span class="c1"># This ensures consistent formatting for ROS 2 action client</span>
+                <span class="n">commands_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">command</span><span class="p">))</span>
+
+            <span class="c1"># Send the processed goal to the ROS 2 action client</span>
+            <span class="c1"># Action client handles goal submission and execution tracking</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">action_client</span><span class="o">.</span><span class="n">send_goal</span><span class="p">(</span><span class="n">drone_id</span><span class="p">,</span> <span class="n">commands_list</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">ros2_logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;[gRPC ROS2][Vehicle </span><span class="si">{</span><span class="n">drone_id</span><span class="si">}</span><span class="s2">] - Goal sent&quot;</span><span class="p">)</span>
+
+            <span class="c1"># Return success confirmation to Mission Management</span>
+            <span class="k">return</span> <span class="n">DronePlanResponse</span><span class="p">(</span><span class="n">confirmation</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;Plan </span><span class="si">{</span><span class="n">drone_id</span><span class="si">}</span><span class="s2"> received and sent&quot;</span><span class="p">)</span>
+            
+        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="c1"># Log detailed error information for debugging and monitoring</span>
+            <span class="c1"># Include full stack trace for comprehensive error analysis</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">ros2_logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;[gRPC ROS2] - Error in SendPlan: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">exc_info</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+            
+            <span class="c1"># Return generic error response to Mission Management</span>
+            <span class="c1"># Avoid exposing internal error details for security reasons</span>
+            <span class="k">return</span> <span class="n">DronePlanResponse</span><span class="p">(</span><span class="n">confirmation</span><span class="o">=</span><span class="s2">&quot;Error processing plan&quot;</span><span class="p">)</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="run_ros2_server">
+<a class="viewcode-back" href="../Fleet_module/ROS2/grpc_ros2_component.html#grpc_ros2.run_ros2_server">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">run_ros2_server</span><span class="p">(</span><span class="n">action_client</span><span class="p">,</span> <span class="n">ros2_logger</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Start and manage gRPC server instance for drone plan reception.</span>
+
+<span class="sd">    This function initializes and manages a gRPC server that receives drone plans from</span>
+<span class="sd">    the Mission Management System. It configures the server with appropriate threading,</span>
+<span class="sd">    service registration, and connection handling for high-throughput plan processing.</span>
+
+<span class="sd">    Server Configuration:</span>
+<span class="sd">        - **Thread Pool**: ThreadPoolExecutor with 10 concurrent workers</span>
+<span class="sd">        - **Service Registration**: PlanCommunicationService for plan processing</span>
+<span class="sd">        - **Network Binding**: Insecure port 50099 for internal communication</span>
+<span class="sd">        - **Protocol**: gRPC over HTTP/2 for efficient message handling</span>
+
+<span class="sd">    Lifecycle Management:</span>
+<span class="sd">        1. **Server Creation**: Initialize gRPC server with thread pool executor</span>
+<span class="sd">        2. **Service Registration**: Add PlanCommunicationService to server</span>
+<span class="sd">        3. **Port Binding**: Bind to port 50099 for plan reception</span>
+<span class="sd">        4. **Server Startup**: Start server and begin accepting connections</span>
+<span class="sd">        5. **Continuous Operation**: Run indefinitely until interruption</span>
+<span class="sd">        6. **Graceful Shutdown**: Handle keyboard interrupts with proper cleanup</span>
+
+<span class="sd">    Threading Architecture:</span>
+<span class="sd">        The server uses a ThreadPoolExecutor to handle concurrent plan requests:</span>
+<span class="sd">        - **Worker Threads**: Up to 10 concurrent plan processing threads</span>
+<span class="sd">        - **Request Isolation**: Each plan request handled independently</span>
+<span class="sd">        - **Resource Management**: Automatic thread lifecycle management</span>
+<span class="sd">        - **Blocking Operations**: Long-running plan processing won&#39;t block other requests</span>
+
+<span class="sd">    Network Configuration:</span>
+<span class="sd">        - **Binding Address**: [::]:50099 (all interfaces, port 50099)</span>
+<span class="sd">        - **Protocol**: Insecure gRPC (suitable for internal communication)</span>
+<span class="sd">        - **Client Source**: Mission Management System on same network</span>
+<span class="sd">        - **Message Format**: Protocol Buffer messages for plan data</span>
+
+<span class="sd">    Error Handling:</span>
+<span class="sd">        - **Startup Errors**: Server initialization failures logged and propagated</span>
+<span class="sd">        - **Runtime Errors**: Individual request errors handled by service implementation</span>
+<span class="sd">        - **Shutdown Handling**: KeyboardInterrupt triggers graceful server shutdown</span>
+<span class="sd">        - **Connection Issues**: Handled by gRPC infrastructure with automatic retry</span>
+
+<span class="sd">    :param action_client: Pre-configured ROS 2 action client for goal submission</span>
+<span class="sd">    :type action_client: commands_action_client.CommandsActionClient</span>
+<span class="sd">    :param ros2_logger: Pre-configured logger instance for server operations</span>
+<span class="sd">    :type ros2_logger: logging.Logger</span>
+
+<span class="sd">    :raises grpc.RpcError: If server cannot bind to specified port</span>
+<span class="sd">    :raises OSError: If network interface is unavailable</span>
+<span class="sd">    :raises Exception: For any other server initialization failures</span>
+
+<span class="sd">    Example:</span>
+<span class="sd">        **Server Startup**::</span>
+<span class="sd">        </span>
+<span class="sd">            action_client = create_ros2_action_client(queue, logger)</span>
+<span class="sd">            # This function runs indefinitely, typically in a separate thread</span>
+<span class="sd">            run_ros2_server(action_client, logger)</span>
+
+<span class="sd">    .. note::</span>
+<span class="sd">        This function runs indefinitely and should typically be executed in a</span>
+<span class="sd">        separate thread or process to avoid blocking the main application.</span>
+
+<span class="sd">    .. warning::</span>
+<span class="sd">        The server uses insecure gRPC channels suitable only for internal</span>
+<span class="sd">        communication. Implement proper authentication for external deployments.</span>
+
+<span class="sd">    .. seealso::</span>
+<span class="sd">        - :class:`PlanCommunicationService`: Service implementation for plan processing</span>
+<span class="sd">        - :func:`start_grpc_ros2`: Main function that starts server in separate thread</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># Initialize gRPC server with ThreadPoolExecutor for concurrent request handling</span>
+    <span class="c1"># ThreadPoolExecutor allows multiple plan requests to be processed simultaneously</span>
+    <span class="n">server</span> <span class="o">=</span> <span class="n">grpc</span><span class="o">.</span><span class="n">server</span><span class="p">(</span><span class="n">futures</span><span class="o">.</span><span class="n">ThreadPoolExecutor</span><span class="p">(</span><span class="n">max_workers</span><span class="o">=</span><span class="mi">10</span><span class="p">))</span>
+    
+    <span class="c1"># Register the PlanCommunicationService with the server</span>
+    <span class="c1"># This service handles incoming drone plan requests from Mission Management</span>
+    <span class="n">add_PlanCommunicationServicer_to_server</span><span class="p">(</span>
+        <span class="n">PlanCommunicationService</span><span class="p">(</span><span class="n">action_client</span><span class="p">,</span> <span class="n">ros2_logger</span><span class="p">),</span> <span class="n">server</span><span class="p">)</span>
+    
+    <span class="c1"># Bind server to port 50099 on all network interfaces</span>
+    <span class="c1"># Uses insecure channel for internal Fleet Management System communication</span>
+    <span class="n">server</span><span class="o">.</span><span class="n">add_insecure_port</span><span class="p">(</span><span class="s1">&#39;[::]:50099&#39;</span><span class="p">)</span>
+    
+    <span class="c1"># Start the gRPC server and begin accepting connections</span>
+    <span class="n">server</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+    <span class="n">ros2_logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;[gRPC ROS2] - Server running on port [::]:50099&quot;</span><span class="p">)</span>
+    
+    <span class="k">try</span><span class="p">:</span>
+        <span class="c1"># Keep server running indefinitely</span>
+        <span class="c1"># Sleep for 24 hours in a loop to maintain server operation</span>
+        <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+            <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">86400</span><span class="p">)</span>  <span class="c1"># Sleep for 24 hours</span>
+    <span class="k">except</span> <span class="ne">KeyboardInterrupt</span><span class="p">:</span>
+        <span class="c1"># Handle graceful shutdown on keyboard interrupt (Ctrl+C)</span>
+        <span class="c1"># Stop server with 0-second grace period for immediate shutdown</span>
+        <span class="n">server</span><span class="o">.</span><span class="n">stop</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="run_ros2_client">
+<a class="viewcode-back" href="../Fleet_module/ROS2/grpc_ros2_component.html#grpc_ros2.run_ros2_client">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">run_ros2_client</span><span class="p">(</span><span class="n">ros2_action_queue</span><span class="p">,</span> <span class="n">ros2_logger</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Continuously monitor result queue and transmit drone results to Mission Management.</span>
+
+<span class="sd">    This function implements a persistent gRPC client that monitors the ROS 2 action</span>
+<span class="sd">    result queue and transmits completed drone execution results back to the Mission</span>
+<span class="sd">    Management System. It provides reliable result delivery with automatic error</span>
+<span class="sd">    recovery and connection management.</span>
+
+<span class="sd">    Client Architecture:</span>
+<span class="sd">        - **Persistent Connection**: Maintains long-lived gRPC channel to Mission Management</span>
+<span class="sd">        - **Queue Monitoring**: Continuously polls result queue for new completion data</span>
+<span class="sd">        - **Automatic Retry**: Handles connection failures with exponential backoff</span>
+<span class="sd">        - **Result Forwarding**: Transmits results using ResultCommunication gRPC service</span>
+
+<span class="sd">    Result Processing Workflow:</span>
+<span class="sd">        1. **Queue Monitoring**: Continuously check result queue for new data</span>
+<span class="sd">        2. **Result Extraction**: Extract drone execution results from queue</span>
+<span class="sd">        3. **gRPC Transmission**: Send results to Mission Management via gRPC</span>
+<span class="sd">        4. **Acknowledgment**: Wait for and log confirmation from Mission Management</span>
+<span class="sd">        5. **Error Handling**: Retry failed transmissions with appropriate delays</span>
+
+<span class="sd">    Connection Management:</span>
+<span class="sd">        - **Target Server**: Mission Management System on localhost:50070</span>
+<span class="sd">        - **Channel Type**: Insecure gRPC channel for internal communication</span>
+<span class="sd">        - **Persistence**: Channel maintained throughout function lifetime</span>
+<span class="sd">        - **Automatic Reconnection**: gRPC handles connection recovery automatically</span>
+
+<span class="sd">    Error Recovery Strategy:</span>
+<span class="sd">        **Queue Empty**: Brief sleep to prevent excessive CPU usage during idle periods</span>
+<span class="sd">        **gRPC Errors**: Longer sleep with error logging for connection recovery</span>
+<span class="sd">        **Network Issues**: Automatic retry with exponential backoff</span>
+<span class="sd">        **Persistent Failures**: Continuous operation with periodic retry attempts</span>
+
+<span class="sd">    Queue Integration:</span>
+<span class="sd">        The function interfaces with the shared result queue:</span>
+<span class="sd">        - **Thread Safety**: Queue operations are inherently thread-safe</span>
+<span class="sd">        - **Blocking Get**: Uses queue.get() without timeout for immediate processing</span>
+<span class="sd">        - **Data Format**: Expects JSON-serialized result data from ROS 2 actions</span>
+<span class="sd">        - **Result Types**: Handles feedback, status updates, and final results</span>
+
+<span class="sd">    Result Transmission Format:</span>
+<span class="sd">        Results are transmitted using DroneResultRequest protocol buffers:</span>
+<span class="sd">        - **Message Type**: DroneResultRequest containing serialized result data</span>
+<span class="sd">        - **Data Format**: JSON string with execution results and status information</span>
+<span class="sd">        - **Service Method**: SendResult() on ResultCommunication service</span>
+<span class="sd">        - **Response Handling**: Acknowledgment messages logged for confirmation</span>
+
+<span class="sd">    :param ros2_action_queue: Thread-safe queue containing drone execution results</span>
+<span class="sd">    :type ros2_action_queue: queue.Queue</span>
+<span class="sd">    :param ros2_logger: Pre-configured logger instance for client operations</span>
+<span class="sd">    :type ros2_logger: logging.Logger</span>
+
+<span class="sd">    :raises grpc.RpcError: For gRPC communication failures (logged and retried)</span>
+<span class="sd">    :raises queue.Empty: For empty queue conditions (handled with brief sleep)</span>
+<span class="sd">    :raises Exception: For any other processing failures during result transmission</span>
+
+<span class="sd">    Example:</span>
+<span class="sd">        **Client Operation**::</span>
+<span class="sd">        </span>
+<span class="sd">            result_queue = queue.Queue()</span>
+<span class="sd">            logger = logging.getLogger(&#39;ROS2&#39;)</span>
+<span class="sd">            # This function runs indefinitely, typically in a separate thread</span>
+<span class="sd">            run_ros2_client(result_queue, logger)</span>
+<span class="sd">            </span>
+<span class="sd">        **Queue Data Format**::</span>
+<span class="sd">        </span>
+<span class="sd">            # Results added to queue by ROS 2 action client</span>
+<span class="sd">            queue.put(&#39;{&quot;drone_id&quot;: 123, &quot;status&quot;: &quot;completed&quot;, &quot;results&quot;: [...]}&#39;)</span>
+
+<span class="sd">    .. note::</span>
+<span class="sd">        This function runs indefinitely and should be executed in a separate thread</span>
+<span class="sd">        to avoid blocking other system components.</span>
+
+<span class="sd">    .. warning::</span>
+<span class="sd">        The client expects the Mission Management System to be available on</span>
+<span class="sd">        localhost:50070. Ensure proper service availability before starting.</span>
+
+<span class="sd">    .. seealso::</span>
+<span class="sd">        - :func:`start_grpc_ros2`: Main function that starts client in separate thread</span>
+<span class="sd">        - :mod:`MissionManager.grpc_mission_vehicle`: Mission Management result receiver</span>
+<span class="sd">        - :class:`commands_action_client.CommandsActionClient`: Source of result data</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># Establish persistent gRPC channel to Mission Management System</span>
+    <span class="c1"># Uses insecure channel for internal Fleet Management System communication</span>
+    <span class="n">channel</span> <span class="o">=</span> <span class="n">grpc</span><span class="o">.</span><span class="n">insecure_channel</span><span class="p">(</span><span class="s1">&#39;localhost:50070&#39;</span><span class="p">)</span>
+    
+    <span class="c1"># Create gRPC client stub for ResultCommunication service</span>
+    <span class="c1"># This stub provides access to result transmission methods</span>
+    <span class="n">stub</span> <span class="o">=</span> <span class="n">ResultCommunicationStub</span><span class="p">(</span><span class="n">channel</span><span class="p">)</span>
+
+    <span class="c1"># Main client loop - continuously monitor and transmit results</span>
+    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="c1"># Block until a result is available in the queue</span>
+            <span class="c1"># This is thread-safe and prevents busy-waiting</span>
+            <span class="n">drone_result</span> <span class="o">=</span> <span class="n">ros2_action_queue</span><span class="o">.</span><span class="n">get</span><span class="p">()</span>
+            
+            <span class="c1"># Log result transmission for monitoring and debugging</span>
+            <span class="n">ros2_logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;[gRPC ROS2] - Sending drone result to Mission Management&quot;</span><span class="p">)</span>
+            
+            <span class="c1"># Transmit result to Mission Management via gRPC</span>
+            <span class="c1"># DroneResultRequest contains the serialized result data</span>
+            <span class="n">response</span> <span class="o">=</span> <span class="n">stub</span><span class="o">.</span><span class="n">SendResult</span><span class="p">(</span><span class="n">DroneResultRequest</span><span class="p">(</span><span class="n">drone_result</span><span class="o">=</span><span class="n">drone_result</span><span class="p">))</span>
+            
+            <span class="c1"># Log successful acknowledgment from Mission Management</span>
+            <span class="n">ros2_logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;[gRPC ROS2] - ACK received from Mission Management&quot;</span><span class="p">)</span>
+            
+        <span class="k">except</span> <span class="n">queue</span><span class="o">.</span><span class="n">Empty</span><span class="p">:</span>
+            <span class="c1"># Queue is empty - brief sleep to prevent excessive CPU usage</span>
+            <span class="c1"># This exception rarely occurs with blocking queue.get()</span>
+            <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.1</span><span class="p">)</span>
+            
+        <span class="k">except</span> <span class="n">grpc</span><span class="o">.</span><span class="n">RpcError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="c1"># Handle gRPC communication errors (network issues, server unavailable)</span>
+            <span class="c1"># Log error details and sleep before retry for connection recovery</span>
+            <span class="n">ros2_logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;[gRPC ROS2] - Connection error: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>  <span class="c1"># Wait before retry to allow connection recovery</span></div>
+
+
+
+<div class="viewcode-block" id="start_grpc_ros2">
+<a class="viewcode-back" href="../Fleet_module/ROS2/grpc_ros2_component.html#grpc_ros2.start_grpc_ros2">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">start_grpc_ros2</span><span class="p">(</span><span class="n">ros2_action_queue</span><span class="p">:</span> <span class="n">queue</span><span class="o">.</span><span class="n">Queue</span><span class="p">,</span> <span class="n">ros2_logger</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Initialize and start comprehensive ROS 2 communication infrastructure.</span>
+
+<span class="sd">    This function serves as the main entry point for setting up the complete ROS 2</span>
+<span class="sd">    communication system. It initializes all necessary components and starts both</span>
+<span class="sd">    server and client threads for bidirectional communication with the Mission</span>
+<span class="sd">    Management System.</span>
+
+<span class="sd">    System Architecture Setup:</span>
+<span class="sd">        The function establishes a complete communication infrastructure:</span>
+<span class="sd">        </span>
+<span class="sd">        1. **ROS 2 Action Client**: For interfacing with ROS 2 action servers</span>
+<span class="sd">        2. **gRPC Server Thread**: For receiving drone plans from Mission Management</span>
+<span class="sd">        3. **gRPC Client Thread**: For sending results back to Mission Management</span>
+<span class="sd">        4. **Queue Communication**: Thread-safe result passing between components</span>
+
+<span class="sd">    Component Initialization:</span>
+<span class="sd">        **ROS 2 Action Client**:</span>
+<span class="sd">        - Interfaces with ROS 2 action servers on drone vehicles</span>
+<span class="sd">        - Handles goal submission, feedback processing, and result collection</span>
+<span class="sd">        - Publishes results to shared queue for transmission to Mission Management</span>
+<span class="sd">        </span>
+<span class="sd">        **gRPC Server Thread**:</span>
+<span class="sd">        - Receives drone plans from Mission Management System</span>
+<span class="sd">        - Processes and validates incoming plan data</span>
+<span class="sd">        - Converts plans to ROS 2 action goals for vehicle execution</span>
+<span class="sd">        </span>
+<span class="sd">        **gRPC Client Thread**:</span>
+<span class="sd">        - Monitors result queue for completed action results</span>
+<span class="sd">        - Transmits results back to Mission Management System</span>
+<span class="sd">        - Handles connection management and error recovery</span>
+
+<span class="sd">    Threading Strategy:</span>
+<span class="sd">        - **Daemon Threads**: Both server and client threads run as daemon threads</span>
+<span class="sd">        - **Background Operation**: Threads continue running without blocking main process</span>
+<span class="sd">        - **Automatic Cleanup**: Daemon threads terminate when main process exits</span>
+<span class="sd">        - **Independent Operation**: Each thread operates independently for fault isolation</span>
+
+<span class="sd">    Queue-based Communication:</span>
+<span class="sd">        The system uses a shared queue for inter-component communication:</span>
+<span class="sd">        - **Thread Safety**: Queue operations are inherently thread-safe</span>
+<span class="sd">        - **Asynchronous Processing**: ROS 2 results queued for later transmission</span>
+<span class="sd">        - **Decoupled Components**: ROS 2 and gRPC components operate independently</span>
+<span class="sd">        - **Buffering**: Queue provides buffering for high-throughput scenarios</span>
+
+<span class="sd">    Startup Sequence:</span>
+<span class="sd">        1. **Action Client Creation**: Initialize ROS 2 action client with queue and logger</span>
+<span class="sd">        2. **Thread Configuration**: Create and configure server and client threads</span>
+<span class="sd">        3. **Daemon Mode Setup**: Set threads as daemons for proper lifecycle management</span>
+<span class="sd">        4. **Thread Startup**: Start both threads for concurrent operation</span>
+<span class="sd">        5. **System Ready**: Complete communication infrastructure is operational</span>
+
+<span class="sd">    :param ros2_action_queue: Shared queue for passing results between ROS 2 and gRPC components</span>
+<span class="sd">    :type ros2_action_queue: queue.Queue</span>
+<span class="sd">    :param ros2_logger: Pre-configured logger instance for system operations</span>
+<span class="sd">    :type ros2_logger: logging.Logger</span>
+
+<span class="sd">    :raises rclpy.exceptions.RCLError: If ROS 2 initialization fails</span>
+<span class="sd">    :raises grpc.RpcError: If gRPC server cannot start on specified port</span>
+<span class="sd">    :raises threading.ThreadError: If thread creation or startup fails</span>
+<span class="sd">    :raises Exception: For any other system initialization failures</span>
+
+<span class="sd">    Thread Management:</span>
+<span class="sd">        Both threads are configured as daemon threads with the following characteristics:</span>
+<span class="sd">        - **Automatic Termination**: Threads terminate when main process exits</span>
+<span class="sd">        - **Background Processing**: Do not prevent program termination</span>
+<span class="sd">        - **Independent Lifecycle**: Each thread manages its own lifecycle</span>
+<span class="sd">        - **Error Isolation**: Thread failures do not affect other components</span>
+
+<span class="sd">    Example:</span>
+<span class="sd">        **System Startup**::</span>
+<span class="sd">        </span>
+<span class="sd">            import queue</span>
+<span class="sd">            import logging</span>
+<span class="sd">            </span>
+<span class="sd">            # Create shared queue and logger</span>
+<span class="sd">            result_queue = queue.Queue()</span>
+<span class="sd">            logger = logging.getLogger(&#39;ROS2&#39;)</span>
+<span class="sd">            </span>
+<span class="sd">            # Start complete ROS 2 communication system</span>
+<span class="sd">            start_grpc_ros2(result_queue, logger)</span>
+<span class="sd">            </span>
+<span class="sd">            # System now ready to:</span>
+<span class="sd">            # - Receive plans from Mission Management (port 50099)</span>
+<span class="sd">            # - Send results to Mission Management (port 50070)</span>
+<span class="sd">            # - Interface with ROS 2 action servers on vehicles</span>
+
+<span class="sd">    .. note::</span>
+<span class="sd">        This function starts daemon threads that run indefinitely. Ensure proper</span>
+<span class="sd">        system shutdown procedures to clean up resources appropriately.</span>
+
+<span class="sd">    .. warning::</span>
+<span class="sd">        Both server and client use insecure gRPC channels suitable only for</span>
+<span class="sd">        internal communication. Implement authentication for external deployments.</span>
+
+<span class="sd">    .. seealso::</span>
+<span class="sd">        - :func:`run_ros2_server`: gRPC server implementation for plan reception</span>
+<span class="sd">        - :func:`run_ros2_client`: gRPC client implementation for result transmission</span>
+<span class="sd">        - :class:`commands_action_client.CommandsActionClient`: ROS 2 action client</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># Initialize ROS 2 action client for interfacing with vehicle action servers</span>
+    <span class="c1"># This client handles goal submission and result collection from ROS 2 ecosystem</span>
+    <span class="n">action_client</span> <span class="o">=</span> <span class="n">action</span><span class="o">.</span><span class="n">create_ros2_action_client</span><span class="p">(</span><span class="n">ros2_action_queue</span> <span class="o">=</span> <span class="n">ros2_action_queue</span><span class="p">,</span> <span class="n">ros2_logger</span> <span class="o">=</span> <span class="n">ros2_logger</span><span class="p">)</span>
+
+    <span class="c1"># Create server thread for handling incoming drone plans from Mission Management</span>
+    <span class="c1"># This thread runs the gRPC server that receives plan requests</span>
+    <span class="n">server_ros2_thread</span> <span class="o">=</span> <span class="n">threading</span><span class="o">.</span><span class="n">Thread</span><span class="p">(</span><span class="n">target</span><span class="o">=</span><span class="n">run_ros2_server</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">(</span><span class="n">action_client</span><span class="p">,</span> <span class="n">ros2_logger</span><span class="p">,))</span>
+    
+    <span class="c1"># Create client thread for transmitting results back to Mission Management</span>
+    <span class="c1"># This thread monitors the result queue and sends completed results via gRPC</span>
+    <span class="n">client_ros2_thread</span> <span class="o">=</span> <span class="n">threading</span><span class="o">.</span><span class="n">Thread</span><span class="p">(</span><span class="n">target</span><span class="o">=</span><span class="n">run_ros2_client</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">(</span><span class="n">ros2_action_queue</span><span class="p">,</span> <span class="n">ros2_logger</span><span class="p">,))</span>
+
+    <span class="c1"># Configure both threads as daemon threads for proper lifecycle management</span>
+    <span class="c1"># Daemon threads will terminate automatically when the main process exits</span>
+    <span class="n">server_ros2_thread</span><span class="o">.</span><span class="n">daemon</span> <span class="o">=</span> <span class="kc">True</span>
+    <span class="n">client_ros2_thread</span><span class="o">.</span><span class="n">daemon</span> <span class="o">=</span> <span class="kc">True</span>
+
+    <span class="c1"># Start both threads to begin bidirectional communication</span>
+    <span class="c1"># Server thread handles incoming plans, client thread handles outgoing results</span>
+    <span class="n">server_ros2_thread</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+    <span class="n">client_ros2_thread</span><span class="o">.</span><span class="n">start</span><span class="p">()</span></div>
+
+
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, Estela Mora Barba.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

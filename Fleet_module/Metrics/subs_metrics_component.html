@@ -1,0 +1,1771 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Subscriber System Metrics Function &mdash; Fleet Manager 1.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../_static/documentation_options.js?v=f2a433a1"></script>
+        <script src="../../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+        <script src="../../_static/copybutton.js?v=f281be69"></script>
+        <script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script>
+        <script type="module">import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11.12.1/dist/mermaid.esm.min.mjs";
+
+
+
+
+
+const initStyles = () => {
+    const defaultStyle = document.createElement('style');
+    defaultStyle.textContent = `pre.mermaid {
+    /* Same as .mermaid-container > pre */
+    display: block;
+    width: 100%;
+}
+
+pre.mermaid > svg {
+    /* Same as .mermaid-container > pre > svg */
+    height: 500px;
+    width: 100%;
+    max-width: 100% !important;
+}`;
+    document.head.appendChild(defaultStyle);
+
+    const fullscreenStyle = document.createElement('style');
+    fullscreenStyle.textContent = `.mermaid-container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.mermaid-container > pre {
+    display: block;
+    width: 100%;
+}
+
+.mermaid-container > pre > svg {
+    height: 500px;
+    width: 100%;
+    max-width: 100% !important;
+}
+
+.mermaid-fullscreen-btn {
+    width: 28px;
+    height: 28px;
+    background: rgba(255, 255, 255, 0.95);
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    border-radius: 4px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    font-size: 14px;
+    line-height: 1;
+    padding: 0;
+    color: #333;
+}
+
+.mermaid-fullscreen-btn:hover {
+    opacity: 100% !important;
+    background: rgba(255, 255, 255, 1);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+    transform: scale(1.1);
+}
+
+.mermaid-fullscreen-btn.dark-theme {
+    background: rgba(50, 50, 50, 0.95);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: #e0e0e0;
+}
+
+.mermaid-fullscreen-btn.dark-theme:hover {
+    background: rgba(60, 60, 60, 1);
+    box-shadow: 0 3px 10px rgba(255, 255, 255, 0.2);
+}
+
+.mermaid-fullscreen-modal {
+    display: none;
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 95vw;
+    height: 100vh;
+    background: rgba(255, 255, 255, 0.98);
+    z-index: 9999;
+    padding: 20px;
+    overflow: auto;
+}
+
+.mermaid-fullscreen-modal.dark-theme {
+    background: rgba(0, 0, 0, 0.98);
+}
+
+.mermaid-fullscreen-modal.active {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mermaid-container-fullscreen {
+    position: relative;
+    width: 95vw;
+    height: 90vh;
+    max-width: 95vw;
+    max-height: 90vh;
+    background: white;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    overflow: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mermaid-container-fullscreen.dark-theme {
+    background: #1a1a1a;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.8);
+}
+
+.mermaid-container-fullscreen pre.mermaid {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mermaid-container-fullscreen .mermaid svg {
+    height: 100% !important;
+    width: 100% !important;
+    cursor: grab;
+}
+
+.mermaid-fullscreen-close {
+    position: fixed !important;
+    top: 20px !important;
+    right: 20px !important;
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.95);
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    transition: all 0.2s;
+    font-size: 24px;
+    line-height: 1;
+    color: #333;
+}
+
+.mermaid-fullscreen-close:hover {
+    background: white;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+    transform: scale(1.1);
+}
+
+.mermaid-fullscreen-close.dark-theme {
+    background: rgba(50, 50, 50, 0.95);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #e0e0e0;
+}
+
+.mermaid-fullscreen-close.dark-theme:hover {
+    background: rgba(60, 60, 60, 1);
+    box-shadow: 0 6px 16px rgba(255, 255, 255, 0.2);
+}
+
+.mermaid-fullscreen-modal .mermaid-fullscreen-btn {
+    display: none !important;
+}`;
+    document.head.appendChild(fullscreenStyle);
+}
+
+// Detect if page has dark background
+const isDarkTheme = () => {
+    // We use a set of heuristics:
+    // 1. Check for common dark mode classes or attributes
+    // 2. Check computed background color brightness
+    if (document.documentElement.classList.contains('dark') ||
+        document.documentElement.getAttribute('data-theme') === 'dark' ||
+        document.body.classList.contains('dark') ||
+        document.body.getAttribute('data-theme') === 'dark') {
+        // console.log("Dark theme detected via class/attribute");
+        return true;
+    }
+    if (document.documentElement.classList.contains('light') ||
+        document.documentElement.getAttribute('data-theme') === 'light' ||
+        document.body.classList.contains('light') ||
+        document.body.getAttribute('data-theme') === 'light') {
+        // console.log("Light theme detected via class/attribute");
+        return false;
+    }
+    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        // console.log("Dark theme detected via prefers-color-scheme");
+        return true;
+    }
+    const bgColor = window.getComputedStyle(document.body).backgroundColor;
+    const match = bgColor.match(/rgb\((\d+),\s*(\d+),\s*(\d+)/);
+    if (match) {
+        const r = parseInt(match[1]);
+        const g = parseInt(match[2]);
+        const b = parseInt(match[3]);
+        const brightness = (r * 299 + g * 587 + b * 114) / 1000;
+        // console.log("Background color brightness:", brightness);
+        return brightness < 128;
+    }
+    // console.log("No dark or light theme detected, defaulting to light theme");
+    return false;
+};
+
+let darkTheme = isDarkTheme();
+let modal = null;
+let modalContent = null;
+let previousScrollOffset = [window.scrollX, window.scrollY];
+
+const runMermaid = async (rerun) => {
+    console.log("Running mermaid diagrams, rerun =", rerun);
+    // clear all existing mermaid charts
+    let all_mermaids = document.querySelectorAll(".mermaid");
+
+    if (rerun) {
+        all_mermaids.forEach((el) => {
+            if(!el.hasAttribute("data-original-code")) {
+                // store original code
+                // console.log(`Storing original code for first run: `, el.innerHTML);
+                el.setAttribute('data-original-code', el.innerHTML);
+            }
+            if(el.getAttribute("data-processed") === "true") {
+                // remove and restore original
+                el.removeAttribute("data-processed");
+                // console.log(`Restoring original code for re-run: `, el.getAttribute('data-original-code'));
+                el.innerHTML = el.getAttribute('data-original-code');
+            } else {
+                // store original code
+                // console.log(`Storing original code for re-run: `, el.innerHTML);
+                el.setAttribute('data-original-code', el.innerHTML);
+            }
+        });
+        await mermaid.run();
+    }
+
+    all_mermaids = document.querySelectorAll(".mermaid");
+    const mermaids_processed = document.querySelectorAll(".mermaid[data-processed='true']");
+
+    if ("False" === "True") {
+        const mermaids_to_add_zoom = -1 === -1 ? all_mermaids.length : -1;
+        if(mermaids_to_add_zoom > 0) {
+            var svgs = d3.selectAll("");
+            if(all_mermaids.length !== mermaids_processed.length) {
+                setTimeout(() => runMermaid(false), 200);
+                return;
+            } else if(svgs.size() !== mermaids_to_add_zoom) {
+                setTimeout(() => runMermaid(false), 200);
+                return;
+            } else {
+                svgs.each(function() {
+                    var svg = d3.select(this);
+                    svg.html("<g class='wrapper'>" + svg.html() + "</g>");
+                    var inner = svg.select("g");
+                    var zoom = d3.zoom().on("zoom", function(event) {
+                        inner.attr("transform", event.transform);
+                    });
+                    svg.call(zoom);
+                });
+            }
+        }
+    } else if(all_mermaids.length !== mermaids_processed.length) {
+        // Wait for mermaid to process all diagrams
+        setTimeout(() => runMermaid(false), 200);
+        return;
+    }
+
+    // Stop here if not adding fullscreen capability
+    if ("True" !== "True") return;
+
+    if (modal !== null ) {
+        // Destroy existing modal
+        modal.remove();
+        modal = null;
+        modalContent = null;
+    }
+
+    modal = document.createElement('div');
+    modal.className = 'mermaid-fullscreen-modal' + (darkTheme ? ' dark-theme' : '');
+    modal.setAttribute('role', 'dialog');
+    modal.setAttribute('aria-modal', 'true');
+    modal.setAttribute('aria-label', 'Fullscreen diagram viewer');
+    modal.innerHTML = `
+        <button class="mermaid-fullscreen-close${darkTheme ? ' dark-theme' : ''}" aria-label="Close fullscreen">✕</button>
+        <div class="mermaid-container-fullscreen${darkTheme ? ' dark-theme' : ''}"></div>
+    `;
+    document.body.appendChild(modal);
+
+    modalContent = modal.querySelector('.mermaid-container-fullscreen');
+    const closeBtn = modal.querySelector('.mermaid-fullscreen-close');
+
+    const closeModal = () => {
+        modal.classList.remove('active');
+        modalContent.innerHTML = '';
+        document.body.style.overflow = ''
+        window.scrollTo({left: previousScrollOffset[0], top: previousScrollOffset[1], behavior: 'instant'});
+    };
+
+    closeBtn.addEventListener('click', closeModal);
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) closeModal();
+    });
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && modal.classList.contains('active')) {
+            closeModal();
+        }
+    });
+
+    document.querySelectorAll('.mermaid').forEach((mermaidDiv) => {
+        if (mermaidDiv.parentNode.classList.contains('mermaid-container') ||
+            mermaidDiv.closest('.mermaid-fullscreen-modal')) {
+            // Already processed, adjust button class if needed
+            const existingBtn = mermaidDiv.parentNode.querySelector('.mermaid-fullscreen-btn');
+            if (existingBtn) {
+                existingBtn.className = 'mermaid-fullscreen-btn' + (darkTheme ? ' dark-theme' : '');
+            }
+            return;
+        }
+
+        const container = document.createElement('div');
+        container.className = 'mermaid-container';
+        mermaidDiv.parentNode.insertBefore(container, mermaidDiv);
+        container.appendChild(mermaidDiv);
+
+        const fullscreenBtn = document.createElement('button');
+        fullscreenBtn.className = 'mermaid-fullscreen-btn' + (darkTheme ? ' dark-theme' : '');
+        fullscreenBtn.setAttribute('aria-label', 'View diagram in fullscreen');
+        fullscreenBtn.textContent = '⛶';
+        fullscreenBtn.style.opacity = '50%';
+
+        // Calculate dynamic position based on diagram's margin and padding
+        const diagramStyle = window.getComputedStyle(mermaidDiv);
+        const marginTop = parseFloat(diagramStyle.marginTop) || 0;
+        const marginRight = parseFloat(diagramStyle.marginRight) || 0;
+        const paddingTop = parseFloat(diagramStyle.paddingTop) || 0;
+        const paddingRight = parseFloat(diagramStyle.paddingRight) || 0;
+        fullscreenBtn.style.top = `${marginTop + paddingTop + 4}px`;
+        fullscreenBtn.style.right = `${marginRight + paddingRight + 4}px`;
+
+        fullscreenBtn.addEventListener('click', () => {
+            previousScrollOffset = [window.scroll, window.scrollY];
+            const clone = mermaidDiv.cloneNode(true);
+            modalContent.innerHTML = '';
+            modalContent.appendChild(clone);
+
+            const svg = clone.querySelector('svg');
+            if (svg) {
+                svg.removeAttribute('width');
+                svg.removeAttribute('height');
+                svg.style.width = '100%';
+                svg.style.height = 'auto';
+                svg.style.maxWidth = '100%';
+                svg.style.sdisplay = 'block';
+
+                if ("False" === "True") {
+                    setTimeout(() => {
+                        const g = svg.querySelector('g');
+                        if (g) {
+                            var svgD3 = d3.select(svg);
+                            svgD3.html("<g class='wrapper'>" + svgD3.html() + "</g>");
+                            var inner = svgD3.select("g");
+                            var zoom = d3.zoom().on("zoom", function(event) {
+                                inner.attr("transform", event.transform);
+                            });
+                            svgD3.call(zoom);
+                        }
+                    }, 100);
+                }
+            }
+
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+        container.appendChild(fullscreenBtn);
+    });
+};
+
+const load = async () => {
+    initStyles();
+
+    await runMermaid(true);
+
+    const reRunIfThemeChanges = async () => {
+        const newDarkTheme = isDarkTheme();
+        if (newDarkTheme !== darkTheme) {
+            darkTheme = newDarkTheme;
+            console.log("Theme change detected, re-running mermaid with", darkTheme ? "dark" : "default", "theme");
+            await mermaid.initialize(
+                {...JSON.parse(
+                    `{"startOnLoad": false}`
+                ),
+                ...{ darkMode: darkTheme, theme: darkTheme ? 'dark' : 'default' },
+                }
+            );
+            await runMermaid(true);
+        }
+    };
+
+    // Update theme classes when theme changes
+    const themeObserver = new MutationObserver(reRunIfThemeChanges);
+    themeObserver.observe(document.documentElement, {
+        attributes: true,
+        attributeFilter: ['class', 'style', 'data-theme']
+    });
+    themeObserver.observe(document.body, {
+        attributes: true,
+        attributeFilter: ['class', 'style', 'data-theme']
+    });
+};
+
+
+
+
+
+console.log("Initializing mermaid with", darkTheme ? "dark" : "default", "theme");
+mermaid.initialize(
+    {...JSON.parse(
+        `{"startOnLoad": false}`
+    ),
+    ...{ darkMode: darkTheme, theme: darkTheme ? 'dark' : 'default' },
+    }
+);
+
+window.addEventListener("load", load);
+window.runMermaid = runMermaid;</script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="author" title="About these documents" href="../../about.html" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="gRPC System Metrics" href="grpc_metrics_component.html" />
+    <link rel="prev" title="System Metrics Manager" href="metrics_manager_component.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            Fleet Manager
+          </a>
+              <div class="version">
+                1.0
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../about.html">About the project</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../getting_started.html">Getting Started</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../modules.html">Code documentation</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../Drone_module/index.html">Drone</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">Fleet Manager</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../init_fleet_component.html">Init Fleet Manager</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../mission_components.html">Mission Management</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ros2_components.html">ROS2 Management</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../rest_components.html">REST Management</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../mqtt_components.html">MQTT Management</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../pm_components.html">Prescription Map Management</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../metrics_components.html">System Metrics Component</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="metrics_manager_component.html">System Metrics Manager</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Subscriber System Metrics Function</a></li>
+<li class="toctree-l4"><a class="reference internal" href="grpc_metrics_component.html">gRPC System Metrics</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../clear_fleet_component.html">Clear Fleet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../create_logger_fleet_component.html">Create Logger</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../training.html">Training documentation</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Fleet Manager</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../modules.html">Code documentation</a></li>
+          <li class="breadcrumb-item"><a href="../index.html">Fleet Manager</a></li>
+          <li class="breadcrumb-item"><a href="../metrics_components.html">System Metrics Component</a></li>
+      <li class="breadcrumb-item active">Subscriber System Metrics Function</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/Fleet_module/Metrics/subs_metrics_component.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="module-0">
+<span id="subscriber-system-metrics-function"></span><h1>Subscriber System Metrics Function<a class="headerlink" href="#module-0" title="Link to this heading"></a></h1>
+<p>Dynamic Drone State Vector Subscriber Module for System Metrics Collection</p>
+<div class="versionadded" id="module-subscriber_metrics_function">
+<p><span class="versionmodified added">Added in version 1.0.</span></p>
+</div>
+<p>This module implements a dynamic ROS 2 subscriber system for collecting system metrics
+from multiple drones in the Fleet Management System. It provides automatic topic
+discovery, real-time subscription management, and thread-safe data collection for
+comprehensive fleet monitoring and performance analysis.</p>
+<dl>
+<dt>Architecture Overview:</dt><dd><p>The module implements a self-managing subscription system that:</p>
+<ol class="arabic simple">
+<li><p><strong>Dynamic Discovery</strong>: Continuously scans for new drone metric topics</p></li>
+<li><p><strong>Automatic Subscription</strong>: Creates subscriptions for newly discovered drones</p></li>
+<li><p><strong>Real-time Collection</strong>: Collects system metrics in real-time</p></li>
+<li><p><strong>Queue Integration</strong>: Thread-safe data passing to metrics processing systems</p></li>
+<li><p><strong>Scalable Design</strong>: Handles arbitrary numbers of drones automatically</p></li>
+</ol>
+</dd>
+<dt>System Metrics Collection:</dt><dd><p>The subscriber system collects comprehensive system metrics including:</p>
+<ul class="simple">
+<li><p><strong>Performance Metrics</strong>: CPU usage, memory consumption, system load</p></li>
+<li><p><strong>Network Statistics</strong>: Communication latency, bandwidth utilization</p></li>
+<li><p><strong>Hardware Status</strong>: Battery levels, sensor readings, actuator states</p></li>
+<li><p><strong>Flight Parameters</strong>: Position, velocity, orientation, altitude</p></li>
+<li><p><strong>Error Conditions</strong>: System warnings, error states, diagnostic information</p></li>
+</ul>
+</dd>
+<dt>Topic Discovery Mechanism:</dt><dd><p><strong>Pattern Matching</strong>: Uses regular expressions to identify drone metric topics
+<strong>Topic Format</strong>: <code class="docutils literal notranslate"><span class="pre">/system_metrics/drone_{id}</span></code> (e.g., /system_metrics/drone_1)
+<strong>Scan Frequency</strong>: 2-second intervals for balanced responsiveness and efficiency
+<strong>Automatic Management</strong>: Maintains active subscription list without manual intervention</p>
+</dd>
+<dt>ROS 2 Integration:</dt><dd><p><strong>Node Architecture</strong>: Single dynamic subscriber node managing multiple subscriptions
+<strong>Message Type</strong>: std_msgs/String for flexible JSON-formatted metric data
+<strong>QoS Settings</strong>: Queue depth of 10 for reliable message delivery
+<strong>Executor Type</strong>: MultiThreadedExecutor for concurrent callback processing</p>
+</dd>
+<dt>Data Flow Architecture:</dt><dd><pre  class="mermaid">
+        graph LR
+    A[Drone 1 Metrics] --&gt; B[Topic /system_metrics/drone_1]
+    C[Drone 2 Metrics] --&gt; D[Topic /system_metrics/drone_2]
+    E[Drone N Metrics] --&gt; F[Topic /system_metrics/drone_n]
+
+    B --&gt; G[Dynamic Subscriber]
+    D --&gt; G
+    F --&gt; G
+
+    G --&gt; H[Metrics Queue]
+    H --&gt; I[Fleet Management]
+    </pre></dd>
+<dt>Threading Architecture:</dt><dd><ul class="simple">
+<li><p><strong>Discovery Thread</strong>: Periodic topic scanning and subscription management</p></li>
+<li><p><strong>Callback Threads</strong>: Individual metric processing for each drone</p></li>
+<li><p><strong>Executor Thread</strong>: ROS 2 node spinning for message handling</p></li>
+<li><p><strong>Queue Thread</strong>: Asynchronous data transmission to Fleet Management</p></li>
+</ul>
+</dd>
+<dt>Data Format:</dt><dd><p><strong>Message Structure</strong>: JSON-formatted strings containing metric data
+<strong>Queue Format</strong>: [drone_id, metrics_data] tuples for identification
+<strong>Metric Categories</strong>: Performance, network, hardware, flight, diagnostics</p>
+</dd>
+<dt>Scalability Features:</dt><dd><ul class="simple">
+<li><p><strong>Dynamic Scaling</strong>: Automatically handles fleet size changes</p></li>
+<li><p><strong>Memory Efficiency</strong>: Minimal memory footprint per subscription</p></li>
+<li><p><strong>Performance Optimization</strong>: Efficient topic scanning and callback management</p></li>
+<li><p><strong>Error Resilience</strong>: Robust error handling for connection failures</p></li>
+</ul>
+</dd>
+<dt>Classes:</dt><dd><dl class="py class">
+<dt class="sig sig-object py" id="subscriber_metrics_function.DynamicMetricsSubscriber">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">subscriber_metrics_function.</span></span><span class="sig-name descname"><span class="pre">DynamicMetricsSubscriber</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/subscriber_metrics_function.html#DynamicMetricsSubscriber"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#subscriber_metrics_function.DynamicMetricsSubscriber" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Node</span></code></p>
+<p>Dynamic ROS 2 subscriber node for comprehensive drone system metrics collection.</p>
+<p>This class implements an intelligent subscription management system that automatically
+discovers and subscribes to drone system metrics topics. It provides real-time metric
+collection with dynamic fleet scaling capabilities and thread-safe data handling.</p>
+<dl class="simple">
+<dt>Node Architecture:</dt><dd><ul class="simple">
+<li><p><strong>Node Name</strong>: ‘dynamic_metrics_subscriber’</p></li>
+<li><p><strong>Discovery Method</strong>: Periodic topic scanning with regex pattern matching</p></li>
+<li><p><strong>Subscription Type</strong>: std_msgs/String for flexible JSON metric data</p></li>
+<li><p><strong>Queue Integration</strong>: Thread-safe metric data queuing for external processing</p></li>
+</ul>
+</dd>
+<dt>Dynamic Discovery System:</dt><dd><p>The node implements an intelligent discovery mechanism:</p>
+<ul class="simple">
+<li><p><strong>Pattern Recognition</strong>: Identifies drone topics using regex patterns</p></li>
+<li><p><strong>Automatic Subscription</strong>: Creates subscriptions for newly discovered drones</p></li>
+<li><p><strong>Subscription Management</strong>: Maintains active subscription registry</p></li>
+<li><p><strong>Scalable Design</strong>: Handles arbitrary fleet sizes without configuration</p></li>
+</ul>
+</dd>
+<dt>Topic Pattern Recognition:</dt><dd><p><strong>Standard Pattern</strong>: <code class="docutils literal notranslate"><span class="pre">/system_metrics/drone_{id}</span></code>
+<strong>Examples</strong>:
+- /system_metrics/drone_1 (Drone ID: 1)
+- /system_metrics/drone_42 (Drone ID: 42)
+- /system_metrics/drone_999 (Drone ID: 999)</p>
+</dd>
+<dt>Metrics Collection Workflow:</dt><dd><ol class="arabic simple">
+<li><p><strong>Topic Discovery</strong>: Scan ROS 2 topic namespace for new drone metrics</p></li>
+<li><p><strong>Pattern Matching</strong>: Apply regex filter to identify drone metric topics</p></li>
+<li><p><strong>ID Extraction</strong>: Parse drone IDs from topic names</p></li>
+<li><p><strong>Subscription Creation</strong>: Create new subscriptions for discovered drones</p></li>
+<li><p><strong>Data Collection</strong>: Receive and queue metric data from active subscriptions</p></li>
+<li><p><strong>Queue Management</strong>: Thread-safe forwarding to metrics processing systems</p></li>
+</ol>
+</dd>
+<dt>Real-time Processing:</dt><dd><ul class="simple">
+<li><p><strong>Timer-based Scanning</strong>: 2-second intervals for discovery updates</p></li>
+<li><p><strong>Concurrent Callbacks</strong>: Multi-threaded callback processing</p></li>
+<li><p><strong>Immediate Queuing</strong>: Real-time metric data forwarding</p></li>
+<li><p><strong>Memory Efficient</strong>: Minimal overhead per subscription</p></li>
+</ul>
+</dd>
+<dt>Data Handling:</dt><dd><p><strong>Input Format</strong>: std_msgs/String containing JSON-formatted metrics
+<strong>Output Format</strong>: [drone_id, metrics_data] tuples in shared queue
+<strong>Thread Safety</strong>: All queue operations are inherently thread-safe
+<strong>Error Resilience</strong>: Robust handling of malformed or missing data</p>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>metrics_queue</strong> (<em>queue.Queue</em>) – Thread-safe queue for metric data transmission to Fleet Management</p></li>
+<li><p><strong>metrics_logger</strong> (<em>logging.Logger</em>) – Pre-configured logger instance for subscriber operations</p></li>
+</ul>
+</dd>
+<dt class="field-even">Variables<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>active_subscriptions</strong> (<em>Dict</em><em>[</em><em>str</em><em>, </em><em>rclpy.subscription.Subscription</em><em>]</em>) – Registry of active topic subscriptions (topic → subscription)</p></li>
+<li><p><strong>metrics_queue</strong> (<em>queue.Queue</em>) – Queue for metric data transmission to external systems</p></li>
+<li><p><strong>metrics_logger</strong> (<em>logging.Logger</em>) – Logger instance for operation tracking and debugging</p></li>
+<li><p><strong>timer</strong> (<em>rclpy.timer.Timer</em>) – ROS 2 timer for periodic topic discovery (2-second intervals)</p></li>
+</ul>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<p><strong>Node Initialization</strong>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">queue</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">logging</span>
+
+<span class="n">metrics_queue</span> <span class="o">=</span> <span class="n">queue</span><span class="o">.</span><span class="n">Queue</span><span class="p">()</span>
+<span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="s1">&#39;MetricsSubscriber&#39;</span><span class="p">)</span>
+<span class="n">subscriber</span> <span class="o">=</span> <span class="n">DynamicMetricsSubscriber</span><span class="p">(</span><span class="n">metrics_queue</span><span class="p">,</span> <span class="n">logger</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Automatic Discovery Process</strong>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Node automatically discovers topics like:</span>
+<span class="c1"># /system_metrics/drone_1, /system_metrics/drone_2, etc.</span>
+<span class="c1"># Creates subscriptions and begins collecting metrics</span>
+</pre></div>
+</div>
+<p><strong>Metric Data Flow</strong>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Received metrics automatically queued as:</span>
+<span class="c1"># [1, &#39;{&quot;cpu&quot;: 45.2, &quot;memory&quot;: 78.1, &quot;battery&quot;: 89.5}&#39;]</span>
+<span class="c1"># [2, &#39;{&quot;cpu&quot;: 52.1, &quot;memory&quot;: 65.3, &quot;battery&quot;: 92.1}&#39;]</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The node uses a 2-second discovery timer to balance responsiveness with
+system performance. This interval can be adjusted based on fleet dynamics.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Ensure drone metric publishers use the standard topic naming convention
+for automatic discovery to function correctly.</p>
+</div>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#id6" title="subscriber_metrics_function.main"><code class="xref py py-func docutils literal notranslate"><span class="pre">main()</span></code></a>: Factory function for node initialization</p></li>
+<li><p><code class="xref py py-mod docutils literal notranslate"><span class="pre">std_msgs.msg</span></code>: ROS 2 standard message types</p></li>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">rclpy.node.Node</span></code>: Base ROS 2 node class</p></li>
+</ul>
+</div>
+<dl class="py method">
+<dt class="sig sig-object py" id="subscriber_metrics_function.DynamicMetricsSubscriber.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">metrics_queue</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">metrics_logger</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/subscriber_metrics_function.html#DynamicMetricsSubscriber.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#subscriber_metrics_function.DynamicMetricsSubscriber.__init__" title="Link to this definition"></a></dt>
+<dd><p>Initialize dynamic subscriber node with metric collection infrastructure.</p>
+<p>Sets up the ROS 2 node with all necessary components for automatic drone discovery
+and real-time metric collection. Configures timing, storage, and logging systems
+for comprehensive fleet monitoring capabilities.</p>
+<dl class="simple">
+<dt>Initialization Process:</dt><dd><ol class="arabic simple">
+<li><p><strong>Node Creation</strong>: Initialize ROS 2 node with descriptive name</p></li>
+<li><p><strong>Storage Setup</strong>: Initialize subscription registry for topic management</p></li>
+<li><p><strong>Communication Setup</strong>: Configure queue and logger references</p></li>
+<li><p><strong>Discovery Timer</strong>: Create periodic timer for topic scanning</p></li>
+<li><p><strong>System Ready</strong>: Log initialization completion and begin operations</p></li>
+</ol>
+</dd>
+<dt>Timer Configuration:</dt><dd><ul class="simple">
+<li><p><strong>Frequency</strong>: 2.0 seconds between discovery scans</p></li>
+<li><p><strong>Purpose</strong>: Balance between responsiveness and system resource usage</p></li>
+<li><p><strong>Callback</strong>: Executes scan_for_drones() method for topic discovery</p></li>
+<li><p><strong>Persistence</strong>: Continues throughout node lifetime for ongoing discovery</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>metrics_queue</strong> (<em>queue.Queue</em>) – Thread-safe queue for metric data transmission</p></li>
+<li><p><strong>metrics_logger</strong> (<em>logging.Logger</em>) – Pre-configured logger for operation tracking</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="subscriber_metrics_function.DynamicMetricsSubscriber.scan_for_drones">
+<span class="sig-name descname"><span class="pre">scan_for_drones</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/subscriber_metrics_function.html#DynamicMetricsSubscriber.scan_for_drones"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#subscriber_metrics_function.DynamicMetricsSubscriber.scan_for_drones" title="Link to this definition"></a></dt>
+<dd><p>Discover and subscribe to new drone system metrics topics automatically.</p>
+<p>This method implements the core discovery algorithm that continuously monitors
+the ROS 2 topic namespace for new drone metric publishers. It uses pattern
+matching to identify valid drone topics and creates subscriptions for newly
+discovered drones.</p>
+<dl>
+<dt>Discovery Algorithm:</dt><dd><ol class="arabic simple">
+<li><p><strong>Topic Enumeration</strong>: Query ROS 2 system for all available topics</p></li>
+<li><p><strong>Pattern Filtering</strong>: Apply regex filter to identify drone metric topics</p></li>
+<li><p><strong>New Topic Detection</strong>: Compare against existing subscriptions</p></li>
+<li><p><strong>ID Extraction</strong>: Parse drone IDs from topic names</p></li>
+<li><p><strong>Subscription Creation</strong>: Create new subscriptions for discovered drones</p></li>
+</ol>
+</dd>
+<dt>Topic Pattern Matching:</dt><dd><p><strong>Regex Pattern</strong>: <code class="docutils literal notranslate"><span class="pre">r'/system_metrics/drone_\d+'</span></code>
+<strong>Valid Examples</strong>:
+- /system_metrics/drone_1
+- /system_metrics/drone_42
+- /system_metrics/drone_999</p>
+<p><strong>Invalid Examples</strong> (ignored):
+- /metrics/drone_1 (wrong namespace)
+- /system_metrics/vehicle_1 (wrong prefix)
+- /system_metrics/drone_abc (non-numeric ID)</p>
+</dd>
+<dt>Performance Considerations:</dt><dd><ul class="simple">
+<li><p><strong>Efficient Scanning</strong>: Minimal overhead for topic enumeration</p></li>
+<li><p><strong>Duplicate Prevention</strong>: Checks existing subscriptions before creation</p></li>
+<li><p><strong>Scalable Design</strong>: Handles large numbers of drones efficiently</p></li>
+<li><p><strong>Memory Management</strong>: No memory leaks from repeated scanning</p></li>
+</ul>
+</dd>
+<dt>Error Handling:</dt><dd><ul class="simple">
+<li><p><strong>Topic Query Failures</strong>: Gracefully handle ROS 2 communication issues</p></li>
+<li><p><strong>Pattern Match Errors</strong>: Robust regex handling for malformed topics</p></li>
+<li><p><strong>Subscription Failures</strong>: Log and continue on individual subscription errors</p></li>
+</ul>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This method is called automatically every 2 seconds by the ROS 2 timer.
+It operates efficiently even with large drone fleets.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Topic discovery relies on ROS 2 topic enumeration. Ensure proper ROS 2
+network connectivity for reliable drone detection.</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="subscriber_metrics_function.DynamicMetricsSubscriber.extract_drone_id">
+<span class="sig-name descname"><span class="pre">extract_drone_id</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">topic</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/subscriber_metrics_function.html#DynamicMetricsSubscriber.extract_drone_id"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#subscriber_metrics_function.DynamicMetricsSubscriber.extract_drone_id" title="Link to this definition"></a></dt>
+<dd><p>Extract numeric drone identifier from standardized topic name.</p>
+<p>This method parses drone topic names to extract unique numeric identifiers
+used for drone identification throughout the Fleet Management System. It uses
+regex pattern matching to ensure robust ID extraction from topic strings.</p>
+<dl class="simple">
+<dt>Topic Name Parsing:</dt><dd><p><strong>Input Format</strong>: /system_metrics/drone_{numeric_id}
+<strong>Regex Pattern</strong>: <code class="docutils literal notranslate"><span class="pre">r'drone_(\d+)'</span></code>
+<strong>Extraction Method</strong>: Captures numeric group from pattern match</p>
+</dd>
+<dt>ID Validation:</dt><dd><ul class="simple">
+<li><p><strong>Numeric Validation</strong>: Ensures extracted ID is a valid integer</p></li>
+<li><p><strong>Range Checking</strong>: Accepts any positive integer value</p></li>
+<li><p><strong>Error Handling</strong>: Returns None for invalid or missing IDs</p></li>
+<li><p><strong>Type Conversion</strong>: Converts string digits to integer type</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>topic</strong> (<em>str</em>) – Complete ROS 2 topic name containing drone identifier</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Extracted drone ID as integer, or None if extraction fails</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int or None</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>ValueError</strong> – If extracted ID cannot be converted to integer</p></li>
+<li><p><strong>AttributeError</strong> – If regex match fails (handled gracefully)</p></li>
+</ul>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<p><strong>Valid Extractions</strong>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>extract_drone_id(&#39;/system_metrics/drone_1&#39;) → 1
+extract_drone_id(&#39;/system_metrics/drone_42&#39;) → 42
+extract_drone_id(&#39;/system_metrics/drone_999&#39;) → 999
+</pre></div>
+</div>
+<p><strong>Invalid Inputs</strong>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>extract_drone_id(&#39;/metrics/drone_1&#39;) → None (wrong namespace)
+extract_drone_id(&#39;/system_metrics/vehicle_1&#39;) → None (wrong prefix)
+extract_drone_id(&#39;/system_metrics/drone_abc&#39;) → None (non-numeric)
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This method is called during topic discovery to associate subscriptions
+with specific drone identifiers for data routing.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Returns None for any topic that doesn’t match the expected drone topic
+pattern. Ensure topic names follow the standard convention.</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="subscriber_metrics_function.DynamicMetricsSubscriber.create_drone_subscription">
+<span class="sig-name descname"><span class="pre">create_drone_subscription</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">topic</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">drone_id</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/subscriber_metrics_function.html#DynamicMetricsSubscriber.create_drone_subscription"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#subscriber_metrics_function.DynamicMetricsSubscriber.create_drone_subscription" title="Link to this definition"></a></dt>
+<dd><p>Create and register ROS 2 subscription for newly discovered drone metrics.</p>
+<p>This method handles the complete subscription creation process for individual
+drone metric topics. It configures message handling, creates appropriate
+callbacks, and registers the subscription for lifecycle management.</p>
+<dl class="simple">
+<dt>Subscription Configuration:</dt><dd><ul class="simple">
+<li><p><strong>Message Type</strong>: std_msgs/String for flexible JSON data format</p></li>
+<li><p><strong>QoS Profile</strong>: Queue depth of 10 for reliable message delivery</p></li>
+<li><p><strong>Callback Function</strong>: Dynamically generated with drone context</p></li>
+<li><p><strong>Topic Binding</strong>: Direct subscription to drone-specific topic</p></li>
+</ul>
+</dd>
+<dt>Callback Generation:</dt><dd><p>Each subscription receives a unique callback function that:
+- Maintains drone ID context for data identification
+- Processes incoming metric messages immediately
+- Forwards data to shared queue for Fleet Management consumption
+- Logs message reception for monitoring and debugging</p>
+</dd>
+<dt>Registration Process:</dt><dd><ol class="arabic simple">
+<li><p><strong>ID Validation</strong>: Verify extracted drone ID is valid</p></li>
+<li><p><strong>Discovery Logging</strong>: Log new drone discovery event</p></li>
+<li><p><strong>Subscription Creation</strong>: Create ROS 2 subscription with configured parameters</p></li>
+<li><p><strong>Callback Assignment</strong>: Assign dynamically generated callback function</p></li>
+<li><p><strong>Registry Update</strong>: Store subscription in active subscriptions dictionary</p></li>
+</ol>
+</dd>
+<dt>Error Handling:</dt><dd><ul class="simple">
+<li><p><strong>Invalid IDs</strong>: Skip subscription creation for None drone IDs</p></li>
+<li><p><strong>Subscription Failures</strong>: Log errors and continue operation</p></li>
+<li><p><strong>Callback Errors</strong>: Individual callback failures don’t affect other drones</p></li>
+<li><p><strong>Memory Management</strong>: Proper subscription cleanup on errors</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>topic</strong> (<em>str</em>) – Complete ROS 2 topic name for drone metrics</p></li>
+<li><p><strong>drone_id</strong> (<em>int</em><em> or </em><em>None</em>) – Extracted numeric drone identifier</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>rclpy.exceptions.InvalidTopicNameException</strong> – If topic name is invalid</p></li>
+<li><p><strong>rclpy.exceptions.QoSException</strong> – If QoS settings are incompatible</p></li>
+<li><p><a class="reference internal" href="../create_logger_fleet_component.html#create_logger_fleet.Exception" title="create_logger_fleet.Exception"><strong>Exception</strong></a> – For any other subscription creation failures</p></li>
+</ul>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<p><strong>Subscription Creation Process</strong>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Input: &#39;/system_metrics/drone_42&#39;, 42</span>
+<span class="c1"># Creates subscription for drone 42 metrics</span>
+<span class="c1"># Registers callback with drone ID context</span>
+<span class="c1"># Adds to active_subscriptions registry</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This method is called automatically during topic discovery for each
+newly detected drone. Manual invocation is not typically necessary.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Subscription creation will be skipped if drone_id is None. Ensure
+proper topic naming conventions for successful subscription creation.</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="subscriber_metrics_function.DynamicMetricsSubscriber.create_callback">
+<span class="sig-name descname"><span class="pre">create_callback</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">drone_id</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/subscriber_metrics_function.html#DynamicMetricsSubscriber.create_callback"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#subscriber_metrics_function.DynamicMetricsSubscriber.create_callback" title="Link to this definition"></a></dt>
+<dd><p>Generate drone-specific callback function for metric message processing.</p>
+<p>This method implements a callback factory pattern that creates customized
+callback functions for each drone subscription. Each callback maintains
+drone identification context and handles metric data processing with
+appropriate logging and queue forwarding.</p>
+<dl class="simple">
+<dt>Callback Factory Pattern:</dt><dd><ul class="simple">
+<li><p><strong>Context Preservation</strong>: Each callback retains drone ID for identification</p></li>
+<li><p><strong>Dynamic Generation</strong>: Creates unique callbacks for each drone</p></li>
+<li><p><strong>Closure Mechanism</strong>: Uses Python closures to maintain drone context</p></li>
+<li><p><strong>Thread Safety</strong>: Generated callbacks are inherently thread-safe</p></li>
+</ul>
+</dd>
+<dt>Callback Function Behavior:</dt><dd><p>The generated callback function:
+1. <strong>Message Reception</strong>: Receives std_msgs/String containing metric data
+2. <strong>Data Logging</strong>: Logs message reception with drone identification
+3. <strong>Data Extraction</strong>: Extracts JSON metric data from message
+4. <strong>Queue Forwarding</strong>: Sends [drone_id, data] tuple to shared queue
+5. <strong>Error Handling</strong>: Gracefully handles processing errors</p>
+</dd>
+<dt>Data Processing Flow:</dt><dd><p><strong>Input</strong>: std_msgs/String message with JSON metric data
+<strong>Processing</strong>: Extract message.data field containing metrics
+<strong>Output</strong>: [drone_id, metrics_data] tuple queued for Fleet Management
+<strong>Thread Safety</strong>: Queue operations are inherently thread-safe</p>
+</dd>
+<dt>Message Format Handling:</dt><dd><ul class="simple">
+<li><p><strong>Expected Format</strong>: JSON string containing system metrics</p></li>
+<li><p><strong>Flexible Schema</strong>: Accepts any valid JSON metric structure</p></li>
+<li><p><strong>Error Resilience</strong>: Handles malformed or empty messages gracefully</p></li>
+<li><p><strong>Logging Integration</strong>: All processing events logged for debugging</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>drone_id</strong> (<em>int</em>) – Unique numeric identifier for drone context</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Configured callback function with drone context</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Callable[[std_msgs.msg.String], None]</p>
+</dd>
+</dl>
+<dl>
+<dt>Callback Function Signature:</dt><dd><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">callback</span><span class="p">(</span><span class="n">msg</span><span class="p">:</span> <span class="n">std_msgs</span><span class="o">.</span><span class="n">msg</span><span class="o">.</span><span class="n">String</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="c1"># Process message with drone_id context</span>
+    <span class="c1"># Forward data to metrics queue</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<p><strong>Callback Generation and Usage</strong>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Generate callback for drone 42</span>
+<span class="n">callback_func</span> <span class="o">=</span> <span class="n">create_callback</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
+
+<span class="c1"># Callback processes messages like:</span>
+<span class="c1"># msg.data = &#39;{&quot;cpu&quot;: 65.2, &quot;memory&quot;: 78.1, &quot;battery&quot;: 91.5}&#39;</span>
+<span class="c1"># Queues: [42, &#39;{&quot;cpu&quot;: 65.2, &quot;memory&quot;: 78.1, &quot;battery&quot;: 91.5}&#39;]</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This method uses Python closures to maintain drone ID context within
+the generated callback function for proper data identification.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Generated callbacks assume valid JSON data in message.data field.
+Malformed data will be logged but processing will continue.</p>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+</dd>
+<dt>Functions:</dt><dd><dl class="py function">
+<dt class="sig sig-object py" id="subscriber_metrics_function.main">
+<span class="sig-prename descclassname"><span class="pre">subscriber_metrics_function.</span></span><span class="sig-name descname"><span class="pre">main</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">metrics_queue</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">metrics_logger</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Logger</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/subscriber_metrics_function.html#main"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#subscriber_metrics_function.main" title="Link to this definition"></a></dt>
+<dd><p>Initialize and configure dynamic drone metrics subscriber system.</p>
+<p>This function serves as the main entry point for the dynamic drone metrics
+subscription system. It handles ROS 2 initialization, node creation, executor
+configuration, and threading setup for comprehensive fleet metrics collection.</p>
+<dl class="simple">
+<dt>System Initialization Process:</dt><dd><ol class="arabic simple">
+<li><p><strong>ROS 2 Setup</strong>: Initialize ROS 2 runtime environment if needed</p></li>
+<li><p><strong>Node Creation</strong>: Create DynamicMetricsSubscriber instance</p></li>
+<li><p><strong>Executor Configuration</strong>: Set up MultiThreadedExecutor for concurrent processing</p></li>
+<li><p><strong>Threading Setup</strong>: Start executor in daemon thread for background operation</p></li>
+<li><p><strong>Reference Return</strong>: Provide node reference for lifecycle management</p></li>
+</ol>
+</dd>
+<dt>ROS 2 Environment Management:</dt><dd><ul class="simple">
+<li><p><strong>Initialization Check</strong>: Verifies ROS 2 runtime status before initialization</p></li>
+<li><p><strong>Conditional Setup</strong>: Only initializes ROS 2 if not already running</p></li>
+<li><p><strong>Resource Management</strong>: Proper handling of ROS 2 lifecycle and cleanup</p></li>
+<li><p><strong>Error Recovery</strong>: Comprehensive error handling for initialization failures</p></li>
+</ul>
+</dd>
+<dt>Threading Architecture:</dt><dd><p><strong>Main Thread</strong>: Function execution and node creation
+<strong>Executor Thread</strong>: Dedicated daemon thread for ROS 2 message processing
+<strong>Callback Threads</strong>: Individual threads for each drone metric callback
+<strong>Timer Thread</strong>: Periodic drone discovery and subscription management</p>
+</dd>
+<dt>Executor Configuration:</dt><dd><ul class="simple">
+<li><p><strong>Type</strong>: MultiThreadedExecutor for concurrent callback processing</p></li>
+<li><p><strong>Node Management</strong>: Single node with multiple subscriptions</p></li>
+<li><p><strong>Thread Safety</strong>: Inherent thread safety for ROS 2 operations</p></li>
+<li><p><strong>Background Operation</strong>: Daemon thread prevents blocking main process</p></li>
+</ul>
+</dd>
+<dt>Error Handling Strategy:</dt><dd><ul class="simple">
+<li><p><strong>Initialization Errors</strong>: ROS 2 setup failures logged and propagated</p></li>
+<li><p><strong>Node Creation Errors</strong>: Comprehensive error logging with stack traces</p></li>
+<li><p><strong>Threading Errors</strong>: Executor thread failures handled gracefully</p></li>
+<li><p><strong>Runtime Errors</strong>: Continuous operation despite individual failures</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>args</strong> (<em>List</em><em>[</em><em>str</em><em>] or </em><em>None</em>) – ROS 2 command line arguments for node configuration</p></li>
+<li><p><strong>metrics_queue</strong> (<em>queue.Queue</em><em> or </em><em>None</em>) – Thread-safe queue for metric data transmission to Fleet Management</p></li>
+<li><p><strong>metrics_logger</strong> (<em>logging.Logger</em><em> or </em><em>None</em>) – Pre-configured logger instance for system operations</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Initialized subscriber node instance for lifecycle management</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#id0" title="subscriber_metrics_function.DynamicMetricsSubscriber">DynamicMetricsSubscriber</a> or None</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>rclpy.exceptions.RCLError</strong> – If ROS 2 initialization or node creation fails</p></li>
+<li><p><strong>threading.ThreadError</strong> – If executor thread creation or startup fails</p></li>
+<li><p><a class="reference internal" href="../create_logger_fleet_component.html#create_logger_fleet.Exception" title="create_logger_fleet.Exception"><strong>Exception</strong></a> – For any other critical system initialization failures</p></li>
+</ul>
+</dd>
+</dl>
+<dl>
+<dt>Usage Examples:</dt><dd><p><strong>Basic Initialization</strong>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">queue</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">logging</span>
+
+<span class="n">metrics_queue</span> <span class="o">=</span> <span class="n">queue</span><span class="o">.</span><span class="n">Queue</span><span class="p">()</span>
+<span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="s1">&#39;MetricsSubscriber&#39;</span><span class="p">)</span>
+
+<span class="c1"># Start metrics collection system</span>
+<span class="n">node</span> <span class="o">=</span> <span class="n">main</span><span class="p">(</span><span class="n">metrics_queue</span><span class="o">=</span><span class="n">metrics_queue</span><span class="p">,</span> <span class="n">metrics_logger</span><span class="o">=</span><span class="n">logger</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Integration with Fleet Management</strong>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create shared infrastructure</span>
+<span class="n">fleet_metrics_queue</span> <span class="o">=</span> <span class="n">queue</span><span class="o">.</span><span class="n">Queue</span><span class="p">()</span>
+<span class="n">fleet_logger</span> <span class="o">=</span> <span class="n">create_fleet_logger</span><span class="p">(</span><span class="s1">&#39;metrics&#39;</span><span class="p">)</span>
+
+<span class="c1"># Initialize subscriber system</span>
+<span class="n">subscriber</span> <span class="o">=</span> <span class="n">main</span><span class="p">(</span>
+    <span class="n">args</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+    <span class="n">metrics_queue</span><span class="o">=</span><span class="n">fleet_metrics_queue</span><span class="p">,</span>
+    <span class="n">metrics_logger</span><span class="o">=</span><span class="n">fleet_logger</span>
+<span class="p">)</span>
+
+<span class="c1"># Process collected metrics</span>
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="n">drone_id</span><span class="p">,</span> <span class="n">metrics_data</span> <span class="o">=</span> <span class="n">fleet_metrics_queue</span><span class="o">.</span><span class="n">get</span><span class="p">()</span>
+    <span class="n">process_drone_metrics</span><span class="p">(</span><span class="n">drone_id</span><span class="p">,</span> <span class="n">metrics_data</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Command Line Integration</strong>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">sys</span>
+
+<span class="c1"># Pass command line arguments to ROS 2</span>
+<span class="n">node</span> <span class="o">=</span> <span class="n">main</span><span class="p">(</span><span class="n">args</span><span class="o">=</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">:],</span>
+           <span class="n">metrics_queue</span><span class="o">=</span><span class="n">shared_queue</span><span class="p">,</span>
+           <span class="n">metrics_logger</span><span class="o">=</span><span class="n">system_logger</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd>
+<dt>Return Value:</dt><dd><p>Returns the initialized DynamicMetricsSubscriber instance for:
+- <strong>Lifecycle Management</strong>: Proper node shutdown and cleanup
+- <strong>Subscription Control</strong>: Runtime subscription management
+- <strong>Monitoring Access</strong>: Node status and performance monitoring
+- <strong>Error Handling</strong>: Runtime error detection and recovery</p>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This function starts a daemon thread for ROS 2 processing. The node will
+continue operating until the main process terminates or explicit shutdown.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Ensure proper cleanup of the returned node instance to avoid resource
+leaks. Use appropriate shutdown procedures in production environments.</p>
+</div>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#id0" title="subscriber_metrics_function.DynamicMetricsSubscriber"><code class="xref py py-class docutils literal notranslate"><span class="pre">DynamicMetricsSubscriber</span></code></a>: Main subscriber node implementation</p></li>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">rclpy.executors.MultiThreadedExecutor</span></code>: ROS 2 executor for threading</p></li>
+<li><p><code class="xref py py-mod docutils literal notranslate"><span class="pre">threading</span></code>: Python threading module for concurrent processing</p></li>
+</ul>
+</div>
+</dd></dl>
+
+</dd>
+<dt>Usage Examples:</dt><dd><p><strong>Basic Subscriber Initialization</strong>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">queue</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">logging</span>
+
+<span class="n">metrics_queue</span> <span class="o">=</span> <span class="n">queue</span><span class="o">.</span><span class="n">Queue</span><span class="p">()</span>
+<span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="s1">&#39;MetricsSubscriber&#39;</span><span class="p">)</span>
+<span class="n">subscriber</span> <span class="o">=</span> <span class="n">main</span><span class="p">(</span><span class="n">metrics_queue</span><span class="o">=</span><span class="n">metrics_queue</span><span class="p">,</span> <span class="n">metrics_logger</span><span class="o">=</span><span class="n">logger</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Integration with Fleet Management</strong>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create shared queue for metrics collection</span>
+<span class="n">fleet_metrics_queue</span> <span class="o">=</span> <span class="n">queue</span><span class="o">.</span><span class="n">Queue</span><span class="p">()</span>
+
+<span class="c1"># Start dynamic subscriber</span>
+<span class="n">subscriber</span> <span class="o">=</span> <span class="n">main</span><span class="p">(</span><span class="n">metrics_queue</span><span class="o">=</span><span class="n">fleet_metrics_queue</span><span class="p">,</span> <span class="n">metrics_logger</span><span class="o">=</span><span class="n">logger</span><span class="p">)</span>
+
+<span class="c1"># Process collected metrics</span>
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="n">drone_id</span><span class="p">,</span> <span class="n">metrics_data</span> <span class="o">=</span> <span class="n">fleet_metrics_queue</span><span class="o">.</span><span class="n">get</span><span class="p">()</span>
+    <span class="n">process_drone_metrics</span><span class="p">(</span><span class="n">drone_id</span><span class="p">,</span> <span class="n">metrics_data</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This module requires a properly configured ROS 2 environment with drones
+publishing metrics on standardized topic patterns.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The subscriber uses MultiThreadedExecutor for concurrent processing. Ensure
+proper queue thread safety when integrating with external systems.</p>
+</div>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<ul class="simple">
+<li><p><code class="xref py py-mod docutils literal notranslate"><span class="pre">SystemMetrics.metrics_manager</span></code>: Main metrics processing module</p></li>
+<li><p><code class="xref py py-mod docutils literal notranslate"><span class="pre">SystemMetrics.grpc_metrics_fleet</span></code>: gRPC metrics communication</p></li>
+<li><p><span class="xref std std-doc">ROS 2 Node Tutorial</span></p></li>
+</ul>
+</div>
+<dl class="py class">
+<dt class="sig sig-object py" id="id0">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">subscriber_metrics_function.</span></span><span class="sig-name descname"><span class="pre">DynamicMetricsSubscriber</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/subscriber_metrics_function.html#DynamicMetricsSubscriber"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id0" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Node</span></code></p>
+<p>Dynamic ROS 2 subscriber node for comprehensive drone system metrics collection.</p>
+<p>This class implements an intelligent subscription management system that automatically
+discovers and subscribes to drone system metrics topics. It provides real-time metric
+collection with dynamic fleet scaling capabilities and thread-safe data handling.</p>
+<dl class="simple">
+<dt>Node Architecture:</dt><dd><ul class="simple">
+<li><p><strong>Node Name</strong>: ‘dynamic_metrics_subscriber’</p></li>
+<li><p><strong>Discovery Method</strong>: Periodic topic scanning with regex pattern matching</p></li>
+<li><p><strong>Subscription Type</strong>: std_msgs/String for flexible JSON metric data</p></li>
+<li><p><strong>Queue Integration</strong>: Thread-safe metric data queuing for external processing</p></li>
+</ul>
+</dd>
+<dt>Dynamic Discovery System:</dt><dd><p>The node implements an intelligent discovery mechanism:</p>
+<ul class="simple">
+<li><p><strong>Pattern Recognition</strong>: Identifies drone topics using regex patterns</p></li>
+<li><p><strong>Automatic Subscription</strong>: Creates subscriptions for newly discovered drones</p></li>
+<li><p><strong>Subscription Management</strong>: Maintains active subscription registry</p></li>
+<li><p><strong>Scalable Design</strong>: Handles arbitrary fleet sizes without configuration</p></li>
+</ul>
+</dd>
+<dt>Topic Pattern Recognition:</dt><dd><p><strong>Standard Pattern</strong>: <code class="docutils literal notranslate"><span class="pre">/system_metrics/drone_{id}</span></code>
+<strong>Examples</strong>:
+- /system_metrics/drone_1 (Drone ID: 1)
+- /system_metrics/drone_42 (Drone ID: 42)
+- /system_metrics/drone_999 (Drone ID: 999)</p>
+</dd>
+<dt>Metrics Collection Workflow:</dt><dd><ol class="arabic simple">
+<li><p><strong>Topic Discovery</strong>: Scan ROS 2 topic namespace for new drone metrics</p></li>
+<li><p><strong>Pattern Matching</strong>: Apply regex filter to identify drone metric topics</p></li>
+<li><p><strong>ID Extraction</strong>: Parse drone IDs from topic names</p></li>
+<li><p><strong>Subscription Creation</strong>: Create new subscriptions for discovered drones</p></li>
+<li><p><strong>Data Collection</strong>: Receive and queue metric data from active subscriptions</p></li>
+<li><p><strong>Queue Management</strong>: Thread-safe forwarding to metrics processing systems</p></li>
+</ol>
+</dd>
+<dt>Real-time Processing:</dt><dd><ul class="simple">
+<li><p><strong>Timer-based Scanning</strong>: 2-second intervals for discovery updates</p></li>
+<li><p><strong>Concurrent Callbacks</strong>: Multi-threaded callback processing</p></li>
+<li><p><strong>Immediate Queuing</strong>: Real-time metric data forwarding</p></li>
+<li><p><strong>Memory Efficient</strong>: Minimal overhead per subscription</p></li>
+</ul>
+</dd>
+<dt>Data Handling:</dt><dd><p><strong>Input Format</strong>: std_msgs/String containing JSON-formatted metrics
+<strong>Output Format</strong>: [drone_id, metrics_data] tuples in shared queue
+<strong>Thread Safety</strong>: All queue operations are inherently thread-safe
+<strong>Error Resilience</strong>: Robust handling of malformed or missing data</p>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>metrics_queue</strong> (<em>queue.Queue</em>) – Thread-safe queue for metric data transmission to Fleet Management</p></li>
+<li><p><strong>metrics_logger</strong> (<em>logging.Logger</em>) – Pre-configured logger instance for subscriber operations</p></li>
+</ul>
+</dd>
+<dt class="field-even">Variables<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>active_subscriptions</strong> (<em>Dict</em><em>[</em><em>str</em><em>, </em><em>rclpy.subscription.Subscription</em><em>]</em>) – Registry of active topic subscriptions (topic → subscription)</p></li>
+<li><p><strong>metrics_queue</strong> (<em>queue.Queue</em>) – Queue for metric data transmission to external systems</p></li>
+<li><p><strong>metrics_logger</strong> (<em>logging.Logger</em>) – Logger instance for operation tracking and debugging</p></li>
+<li><p><strong>timer</strong> (<em>rclpy.timer.Timer</em>) – ROS 2 timer for periodic topic discovery (2-second intervals)</p></li>
+</ul>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<p><strong>Node Initialization</strong>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">queue</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">logging</span>
+
+<span class="n">metrics_queue</span> <span class="o">=</span> <span class="n">queue</span><span class="o">.</span><span class="n">Queue</span><span class="p">()</span>
+<span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="s1">&#39;MetricsSubscriber&#39;</span><span class="p">)</span>
+<span class="n">subscriber</span> <span class="o">=</span> <span class="n">DynamicMetricsSubscriber</span><span class="p">(</span><span class="n">metrics_queue</span><span class="p">,</span> <span class="n">logger</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Automatic Discovery Process</strong>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Node automatically discovers topics like:</span>
+<span class="c1"># /system_metrics/drone_1, /system_metrics/drone_2, etc.</span>
+<span class="c1"># Creates subscriptions and begins collecting metrics</span>
+</pre></div>
+</div>
+<p><strong>Metric Data Flow</strong>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Received metrics automatically queued as:</span>
+<span class="c1"># [1, &#39;{&quot;cpu&quot;: 45.2, &quot;memory&quot;: 78.1, &quot;battery&quot;: 89.5}&#39;]</span>
+<span class="c1"># [2, &#39;{&quot;cpu&quot;: 52.1, &quot;memory&quot;: 65.3, &quot;battery&quot;: 92.1}&#39;]</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The node uses a 2-second discovery timer to balance responsiveness with
+system performance. This interval can be adjusted based on fleet dynamics.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Ensure drone metric publishers use the standard topic naming convention
+for automatic discovery to function correctly.</p>
+</div>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#id6" title="subscriber_metrics_function.main"><code class="xref py py-func docutils literal notranslate"><span class="pre">main()</span></code></a>: Factory function for node initialization</p></li>
+<li><p><code class="xref py py-mod docutils literal notranslate"><span class="pre">std_msgs.msg</span></code>: ROS 2 standard message types</p></li>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">rclpy.node.Node</span></code>: Base ROS 2 node class</p></li>
+</ul>
+</div>
+<dl class="py method">
+<dt class="sig sig-object py" id="id1">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">metrics_queue</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">metrics_logger</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/subscriber_metrics_function.html#DynamicMetricsSubscriber.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id1" title="Link to this definition"></a></dt>
+<dd><p>Initialize dynamic subscriber node with metric collection infrastructure.</p>
+<p>Sets up the ROS 2 node with all necessary components for automatic drone discovery
+and real-time metric collection. Configures timing, storage, and logging systems
+for comprehensive fleet monitoring capabilities.</p>
+<dl class="simple">
+<dt>Initialization Process:</dt><dd><ol class="arabic simple">
+<li><p><strong>Node Creation</strong>: Initialize ROS 2 node with descriptive name</p></li>
+<li><p><strong>Storage Setup</strong>: Initialize subscription registry for topic management</p></li>
+<li><p><strong>Communication Setup</strong>: Configure queue and logger references</p></li>
+<li><p><strong>Discovery Timer</strong>: Create periodic timer for topic scanning</p></li>
+<li><p><strong>System Ready</strong>: Log initialization completion and begin operations</p></li>
+</ol>
+</dd>
+<dt>Timer Configuration:</dt><dd><ul class="simple">
+<li><p><strong>Frequency</strong>: 2.0 seconds between discovery scans</p></li>
+<li><p><strong>Purpose</strong>: Balance between responsiveness and system resource usage</p></li>
+<li><p><strong>Callback</strong>: Executes scan_for_drones() method for topic discovery</p></li>
+<li><p><strong>Persistence</strong>: Continues throughout node lifetime for ongoing discovery</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>metrics_queue</strong> (<em>queue.Queue</em>) – Thread-safe queue for metric data transmission</p></li>
+<li><p><strong>metrics_logger</strong> (<em>logging.Logger</em>) – Pre-configured logger for operation tracking</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="id2">
+<span class="sig-name descname"><span class="pre">scan_for_drones</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/subscriber_metrics_function.html#DynamicMetricsSubscriber.scan_for_drones"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id2" title="Link to this definition"></a></dt>
+<dd><p>Discover and subscribe to new drone system metrics topics automatically.</p>
+<p>This method implements the core discovery algorithm that continuously monitors
+the ROS 2 topic namespace for new drone metric publishers. It uses pattern
+matching to identify valid drone topics and creates subscriptions for newly
+discovered drones.</p>
+<dl>
+<dt>Discovery Algorithm:</dt><dd><ol class="arabic simple">
+<li><p><strong>Topic Enumeration</strong>: Query ROS 2 system for all available topics</p></li>
+<li><p><strong>Pattern Filtering</strong>: Apply regex filter to identify drone metric topics</p></li>
+<li><p><strong>New Topic Detection</strong>: Compare against existing subscriptions</p></li>
+<li><p><strong>ID Extraction</strong>: Parse drone IDs from topic names</p></li>
+<li><p><strong>Subscription Creation</strong>: Create new subscriptions for discovered drones</p></li>
+</ol>
+</dd>
+<dt>Topic Pattern Matching:</dt><dd><p><strong>Regex Pattern</strong>: <code class="docutils literal notranslate"><span class="pre">r'/system_metrics/drone_\d+'</span></code>
+<strong>Valid Examples</strong>:
+- /system_metrics/drone_1
+- /system_metrics/drone_42
+- /system_metrics/drone_999</p>
+<p><strong>Invalid Examples</strong> (ignored):
+- /metrics/drone_1 (wrong namespace)
+- /system_metrics/vehicle_1 (wrong prefix)
+- /system_metrics/drone_abc (non-numeric ID)</p>
+</dd>
+<dt>Performance Considerations:</dt><dd><ul class="simple">
+<li><p><strong>Efficient Scanning</strong>: Minimal overhead for topic enumeration</p></li>
+<li><p><strong>Duplicate Prevention</strong>: Checks existing subscriptions before creation</p></li>
+<li><p><strong>Scalable Design</strong>: Handles large numbers of drones efficiently</p></li>
+<li><p><strong>Memory Management</strong>: No memory leaks from repeated scanning</p></li>
+</ul>
+</dd>
+<dt>Error Handling:</dt><dd><ul class="simple">
+<li><p><strong>Topic Query Failures</strong>: Gracefully handle ROS 2 communication issues</p></li>
+<li><p><strong>Pattern Match Errors</strong>: Robust regex handling for malformed topics</p></li>
+<li><p><strong>Subscription Failures</strong>: Log and continue on individual subscription errors</p></li>
+</ul>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This method is called automatically every 2 seconds by the ROS 2 timer.
+It operates efficiently even with large drone fleets.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Topic discovery relies on ROS 2 topic enumeration. Ensure proper ROS 2
+network connectivity for reliable drone detection.</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="id3">
+<span class="sig-name descname"><span class="pre">extract_drone_id</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">topic</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/subscriber_metrics_function.html#DynamicMetricsSubscriber.extract_drone_id"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id3" title="Link to this definition"></a></dt>
+<dd><p>Extract numeric drone identifier from standardized topic name.</p>
+<p>This method parses drone topic names to extract unique numeric identifiers
+used for drone identification throughout the Fleet Management System. It uses
+regex pattern matching to ensure robust ID extraction from topic strings.</p>
+<dl class="simple">
+<dt>Topic Name Parsing:</dt><dd><p><strong>Input Format</strong>: /system_metrics/drone_{numeric_id}
+<strong>Regex Pattern</strong>: <code class="docutils literal notranslate"><span class="pre">r'drone_(\d+)'</span></code>
+<strong>Extraction Method</strong>: Captures numeric group from pattern match</p>
+</dd>
+<dt>ID Validation:</dt><dd><ul class="simple">
+<li><p><strong>Numeric Validation</strong>: Ensures extracted ID is a valid integer</p></li>
+<li><p><strong>Range Checking</strong>: Accepts any positive integer value</p></li>
+<li><p><strong>Error Handling</strong>: Returns None for invalid or missing IDs</p></li>
+<li><p><strong>Type Conversion</strong>: Converts string digits to integer type</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>topic</strong> (<em>str</em>) – Complete ROS 2 topic name containing drone identifier</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Extracted drone ID as integer, or None if extraction fails</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int or None</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>ValueError</strong> – If extracted ID cannot be converted to integer</p></li>
+<li><p><strong>AttributeError</strong> – If regex match fails (handled gracefully)</p></li>
+</ul>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<p><strong>Valid Extractions</strong>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>extract_drone_id(&#39;/system_metrics/drone_1&#39;) → 1
+extract_drone_id(&#39;/system_metrics/drone_42&#39;) → 42
+extract_drone_id(&#39;/system_metrics/drone_999&#39;) → 999
+</pre></div>
+</div>
+<p><strong>Invalid Inputs</strong>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>extract_drone_id(&#39;/metrics/drone_1&#39;) → None (wrong namespace)
+extract_drone_id(&#39;/system_metrics/vehicle_1&#39;) → None (wrong prefix)
+extract_drone_id(&#39;/system_metrics/drone_abc&#39;) → None (non-numeric)
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This method is called during topic discovery to associate subscriptions
+with specific drone identifiers for data routing.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Returns None for any topic that doesn’t match the expected drone topic
+pattern. Ensure topic names follow the standard convention.</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="id4">
+<span class="sig-name descname"><span class="pre">create_drone_subscription</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">topic</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">drone_id</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/subscriber_metrics_function.html#DynamicMetricsSubscriber.create_drone_subscription"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id4" title="Link to this definition"></a></dt>
+<dd><p>Create and register ROS 2 subscription for newly discovered drone metrics.</p>
+<p>This method handles the complete subscription creation process for individual
+drone metric topics. It configures message handling, creates appropriate
+callbacks, and registers the subscription for lifecycle management.</p>
+<dl class="simple">
+<dt>Subscription Configuration:</dt><dd><ul class="simple">
+<li><p><strong>Message Type</strong>: std_msgs/String for flexible JSON data format</p></li>
+<li><p><strong>QoS Profile</strong>: Queue depth of 10 for reliable message delivery</p></li>
+<li><p><strong>Callback Function</strong>: Dynamically generated with drone context</p></li>
+<li><p><strong>Topic Binding</strong>: Direct subscription to drone-specific topic</p></li>
+</ul>
+</dd>
+<dt>Callback Generation:</dt><dd><p>Each subscription receives a unique callback function that:
+- Maintains drone ID context for data identification
+- Processes incoming metric messages immediately
+- Forwards data to shared queue for Fleet Management consumption
+- Logs message reception for monitoring and debugging</p>
+</dd>
+<dt>Registration Process:</dt><dd><ol class="arabic simple">
+<li><p><strong>ID Validation</strong>: Verify extracted drone ID is valid</p></li>
+<li><p><strong>Discovery Logging</strong>: Log new drone discovery event</p></li>
+<li><p><strong>Subscription Creation</strong>: Create ROS 2 subscription with configured parameters</p></li>
+<li><p><strong>Callback Assignment</strong>: Assign dynamically generated callback function</p></li>
+<li><p><strong>Registry Update</strong>: Store subscription in active subscriptions dictionary</p></li>
+</ol>
+</dd>
+<dt>Error Handling:</dt><dd><ul class="simple">
+<li><p><strong>Invalid IDs</strong>: Skip subscription creation for None drone IDs</p></li>
+<li><p><strong>Subscription Failures</strong>: Log errors and continue operation</p></li>
+<li><p><strong>Callback Errors</strong>: Individual callback failures don’t affect other drones</p></li>
+<li><p><strong>Memory Management</strong>: Proper subscription cleanup on errors</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>topic</strong> (<em>str</em>) – Complete ROS 2 topic name for drone metrics</p></li>
+<li><p><strong>drone_id</strong> (<em>int</em><em> or </em><em>None</em>) – Extracted numeric drone identifier</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>rclpy.exceptions.InvalidTopicNameException</strong> – If topic name is invalid</p></li>
+<li><p><strong>rclpy.exceptions.QoSException</strong> – If QoS settings are incompatible</p></li>
+<li><p><a class="reference internal" href="../create_logger_fleet_component.html#create_logger_fleet.Exception" title="create_logger_fleet.Exception"><strong>Exception</strong></a> – For any other subscription creation failures</p></li>
+</ul>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<p><strong>Subscription Creation Process</strong>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Input: &#39;/system_metrics/drone_42&#39;, 42</span>
+<span class="c1"># Creates subscription for drone 42 metrics</span>
+<span class="c1"># Registers callback with drone ID context</span>
+<span class="c1"># Adds to active_subscriptions registry</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This method is called automatically during topic discovery for each
+newly detected drone. Manual invocation is not typically necessary.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Subscription creation will be skipped if drone_id is None. Ensure
+proper topic naming conventions for successful subscription creation.</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="id5">
+<span class="sig-name descname"><span class="pre">create_callback</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">drone_id</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/subscriber_metrics_function.html#DynamicMetricsSubscriber.create_callback"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id5" title="Link to this definition"></a></dt>
+<dd><p>Generate drone-specific callback function for metric message processing.</p>
+<p>This method implements a callback factory pattern that creates customized
+callback functions for each drone subscription. Each callback maintains
+drone identification context and handles metric data processing with
+appropriate logging and queue forwarding.</p>
+<dl class="simple">
+<dt>Callback Factory Pattern:</dt><dd><ul class="simple">
+<li><p><strong>Context Preservation</strong>: Each callback retains drone ID for identification</p></li>
+<li><p><strong>Dynamic Generation</strong>: Creates unique callbacks for each drone</p></li>
+<li><p><strong>Closure Mechanism</strong>: Uses Python closures to maintain drone context</p></li>
+<li><p><strong>Thread Safety</strong>: Generated callbacks are inherently thread-safe</p></li>
+</ul>
+</dd>
+<dt>Callback Function Behavior:</dt><dd><p>The generated callback function:
+1. <strong>Message Reception</strong>: Receives std_msgs/String containing metric data
+2. <strong>Data Logging</strong>: Logs message reception with drone identification
+3. <strong>Data Extraction</strong>: Extracts JSON metric data from message
+4. <strong>Queue Forwarding</strong>: Sends [drone_id, data] tuple to shared queue
+5. <strong>Error Handling</strong>: Gracefully handles processing errors</p>
+</dd>
+<dt>Data Processing Flow:</dt><dd><p><strong>Input</strong>: std_msgs/String message with JSON metric data
+<strong>Processing</strong>: Extract message.data field containing metrics
+<strong>Output</strong>: [drone_id, metrics_data] tuple queued for Fleet Management
+<strong>Thread Safety</strong>: Queue operations are inherently thread-safe</p>
+</dd>
+<dt>Message Format Handling:</dt><dd><ul class="simple">
+<li><p><strong>Expected Format</strong>: JSON string containing system metrics</p></li>
+<li><p><strong>Flexible Schema</strong>: Accepts any valid JSON metric structure</p></li>
+<li><p><strong>Error Resilience</strong>: Handles malformed or empty messages gracefully</p></li>
+<li><p><strong>Logging Integration</strong>: All processing events logged for debugging</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>drone_id</strong> (<em>int</em>) – Unique numeric identifier for drone context</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Configured callback function with drone context</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Callable[[std_msgs.msg.String], None]</p>
+</dd>
+</dl>
+<dl>
+<dt>Callback Function Signature:</dt><dd><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">callback</span><span class="p">(</span><span class="n">msg</span><span class="p">:</span> <span class="n">std_msgs</span><span class="o">.</span><span class="n">msg</span><span class="o">.</span><span class="n">String</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="c1"># Process message with drone_id context</span>
+    <span class="c1"># Forward data to metrics queue</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<p><strong>Callback Generation and Usage</strong>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Generate callback for drone 42</span>
+<span class="n">callback_func</span> <span class="o">=</span> <span class="n">create_callback</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
+
+<span class="c1"># Callback processes messages like:</span>
+<span class="c1"># msg.data = &#39;{&quot;cpu&quot;: 65.2, &quot;memory&quot;: 78.1, &quot;battery&quot;: 91.5}&#39;</span>
+<span class="c1"># Queues: [42, &#39;{&quot;cpu&quot;: 65.2, &quot;memory&quot;: 78.1, &quot;battery&quot;: 91.5}&#39;]</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This method uses Python closures to maintain drone ID context within
+the generated callback function for proper data identification.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Generated callbacks assume valid JSON data in message.data field.
+Malformed data will be logged but processing will continue.</p>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="id6">
+<span class="sig-prename descclassname"><span class="pre">subscriber_metrics_function.</span></span><span class="sig-name descname"><span class="pre">main</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">metrics_queue</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">metrics_logger</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Logger</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/subscriber_metrics_function.html#main"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id6" title="Link to this definition"></a></dt>
+<dd><p>Initialize and configure dynamic drone metrics subscriber system.</p>
+<p>This function serves as the main entry point for the dynamic drone metrics
+subscription system. It handles ROS 2 initialization, node creation, executor
+configuration, and threading setup for comprehensive fleet metrics collection.</p>
+<dl class="simple">
+<dt>System Initialization Process:</dt><dd><ol class="arabic simple">
+<li><p><strong>ROS 2 Setup</strong>: Initialize ROS 2 runtime environment if needed</p></li>
+<li><p><strong>Node Creation</strong>: Create DynamicMetricsSubscriber instance</p></li>
+<li><p><strong>Executor Configuration</strong>: Set up MultiThreadedExecutor for concurrent processing</p></li>
+<li><p><strong>Threading Setup</strong>: Start executor in daemon thread for background operation</p></li>
+<li><p><strong>Reference Return</strong>: Provide node reference for lifecycle management</p></li>
+</ol>
+</dd>
+<dt>ROS 2 Environment Management:</dt><dd><ul class="simple">
+<li><p><strong>Initialization Check</strong>: Verifies ROS 2 runtime status before initialization</p></li>
+<li><p><strong>Conditional Setup</strong>: Only initializes ROS 2 if not already running</p></li>
+<li><p><strong>Resource Management</strong>: Proper handling of ROS 2 lifecycle and cleanup</p></li>
+<li><p><strong>Error Recovery</strong>: Comprehensive error handling for initialization failures</p></li>
+</ul>
+</dd>
+<dt>Threading Architecture:</dt><dd><p><strong>Main Thread</strong>: Function execution and node creation
+<strong>Executor Thread</strong>: Dedicated daemon thread for ROS 2 message processing
+<strong>Callback Threads</strong>: Individual threads for each drone metric callback
+<strong>Timer Thread</strong>: Periodic drone discovery and subscription management</p>
+</dd>
+<dt>Executor Configuration:</dt><dd><ul class="simple">
+<li><p><strong>Type</strong>: MultiThreadedExecutor for concurrent callback processing</p></li>
+<li><p><strong>Node Management</strong>: Single node with multiple subscriptions</p></li>
+<li><p><strong>Thread Safety</strong>: Inherent thread safety for ROS 2 operations</p></li>
+<li><p><strong>Background Operation</strong>: Daemon thread prevents blocking main process</p></li>
+</ul>
+</dd>
+<dt>Error Handling Strategy:</dt><dd><ul class="simple">
+<li><p><strong>Initialization Errors</strong>: ROS 2 setup failures logged and propagated</p></li>
+<li><p><strong>Node Creation Errors</strong>: Comprehensive error logging with stack traces</p></li>
+<li><p><strong>Threading Errors</strong>: Executor thread failures handled gracefully</p></li>
+<li><p><strong>Runtime Errors</strong>: Continuous operation despite individual failures</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>args</strong> (<em>List</em><em>[</em><em>str</em><em>] or </em><em>None</em>) – ROS 2 command line arguments for node configuration</p></li>
+<li><p><strong>metrics_queue</strong> (<em>queue.Queue</em><em> or </em><em>None</em>) – Thread-safe queue for metric data transmission to Fleet Management</p></li>
+<li><p><strong>metrics_logger</strong> (<em>logging.Logger</em><em> or </em><em>None</em>) – Pre-configured logger instance for system operations</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Initialized subscriber node instance for lifecycle management</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#id0" title="subscriber_metrics_function.DynamicMetricsSubscriber">DynamicMetricsSubscriber</a> or None</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>rclpy.exceptions.RCLError</strong> – If ROS 2 initialization or node creation fails</p></li>
+<li><p><strong>threading.ThreadError</strong> – If executor thread creation or startup fails</p></li>
+<li><p><a class="reference internal" href="../create_logger_fleet_component.html#create_logger_fleet.Exception" title="create_logger_fleet.Exception"><strong>Exception</strong></a> – For any other critical system initialization failures</p></li>
+</ul>
+</dd>
+</dl>
+<dl>
+<dt>Usage Examples:</dt><dd><p><strong>Basic Initialization</strong>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">queue</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">logging</span>
+
+<span class="n">metrics_queue</span> <span class="o">=</span> <span class="n">queue</span><span class="o">.</span><span class="n">Queue</span><span class="p">()</span>
+<span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="s1">&#39;MetricsSubscriber&#39;</span><span class="p">)</span>
+
+<span class="c1"># Start metrics collection system</span>
+<span class="n">node</span> <span class="o">=</span> <span class="n">main</span><span class="p">(</span><span class="n">metrics_queue</span><span class="o">=</span><span class="n">metrics_queue</span><span class="p">,</span> <span class="n">metrics_logger</span><span class="o">=</span><span class="n">logger</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Integration with Fleet Management</strong>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create shared infrastructure</span>
+<span class="n">fleet_metrics_queue</span> <span class="o">=</span> <span class="n">queue</span><span class="o">.</span><span class="n">Queue</span><span class="p">()</span>
+<span class="n">fleet_logger</span> <span class="o">=</span> <span class="n">create_fleet_logger</span><span class="p">(</span><span class="s1">&#39;metrics&#39;</span><span class="p">)</span>
+
+<span class="c1"># Initialize subscriber system</span>
+<span class="n">subscriber</span> <span class="o">=</span> <span class="n">main</span><span class="p">(</span>
+    <span class="n">args</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+    <span class="n">metrics_queue</span><span class="o">=</span><span class="n">fleet_metrics_queue</span><span class="p">,</span>
+    <span class="n">metrics_logger</span><span class="o">=</span><span class="n">fleet_logger</span>
+<span class="p">)</span>
+
+<span class="c1"># Process collected metrics</span>
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="n">drone_id</span><span class="p">,</span> <span class="n">metrics_data</span> <span class="o">=</span> <span class="n">fleet_metrics_queue</span><span class="o">.</span><span class="n">get</span><span class="p">()</span>
+    <span class="n">process_drone_metrics</span><span class="p">(</span><span class="n">drone_id</span><span class="p">,</span> <span class="n">metrics_data</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Command Line Integration</strong>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">sys</span>
+
+<span class="c1"># Pass command line arguments to ROS 2</span>
+<span class="n">node</span> <span class="o">=</span> <span class="n">main</span><span class="p">(</span><span class="n">args</span><span class="o">=</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">:],</span>
+           <span class="n">metrics_queue</span><span class="o">=</span><span class="n">shared_queue</span><span class="p">,</span>
+           <span class="n">metrics_logger</span><span class="o">=</span><span class="n">system_logger</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd>
+<dt>Return Value:</dt><dd><p>Returns the initialized DynamicMetricsSubscriber instance for:
+- <strong>Lifecycle Management</strong>: Proper node shutdown and cleanup
+- <strong>Subscription Control</strong>: Runtime subscription management
+- <strong>Monitoring Access</strong>: Node status and performance monitoring
+- <strong>Error Handling</strong>: Runtime error detection and recovery</p>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This function starts a daemon thread for ROS 2 processing. The node will
+continue operating until the main process terminates or explicit shutdown.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Ensure proper cleanup of the returned node instance to avoid resource
+leaks. Use appropriate shutdown procedures in production environments.</p>
+</div>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#id0" title="subscriber_metrics_function.DynamicMetricsSubscriber"><code class="xref py py-class docutils literal notranslate"><span class="pre">DynamicMetricsSubscriber</span></code></a>: Main subscriber node implementation</p></li>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">rclpy.executors.MultiThreadedExecutor</span></code>: ROS 2 executor for threading</p></li>
+<li><p><code class="xref py py-mod docutils literal notranslate"><span class="pre">threading</span></code>: Python threading module for concurrent processing</p></li>
+</ul>
+</div>
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="metrics_manager_component.html" class="btn btn-neutral float-left" title="System Metrics Manager" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="grpc_metrics_component.html" class="btn btn-neutral float-right" title="gRPC System Metrics" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, Estela Mora Barba.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

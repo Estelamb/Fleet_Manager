@@ -1,0 +1,877 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>metric_device &mdash; Fleet Manager 1.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=f2a433a1"></script>
+        <script src="../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+        <script src="../_static/copybutton.js?v=f281be69"></script>
+        <script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script>
+        <script type="module">import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11.12.1/dist/mermaid.esm.min.mjs";
+
+
+
+
+
+const initStyles = () => {
+    const defaultStyle = document.createElement('style');
+    defaultStyle.textContent = `pre.mermaid {
+    /* Same as .mermaid-container > pre */
+    display: block;
+    width: 100%;
+}
+
+pre.mermaid > svg {
+    /* Same as .mermaid-container > pre > svg */
+    height: 500px;
+    width: 100%;
+    max-width: 100% !important;
+}`;
+    document.head.appendChild(defaultStyle);
+
+    const fullscreenStyle = document.createElement('style');
+    fullscreenStyle.textContent = `.mermaid-container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.mermaid-container > pre {
+    display: block;
+    width: 100%;
+}
+
+.mermaid-container > pre > svg {
+    height: 500px;
+    width: 100%;
+    max-width: 100% !important;
+}
+
+.mermaid-fullscreen-btn {
+    width: 28px;
+    height: 28px;
+    background: rgba(255, 255, 255, 0.95);
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    border-radius: 4px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    font-size: 14px;
+    line-height: 1;
+    padding: 0;
+    color: #333;
+}
+
+.mermaid-fullscreen-btn:hover {
+    opacity: 100% !important;
+    background: rgba(255, 255, 255, 1);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+    transform: scale(1.1);
+}
+
+.mermaid-fullscreen-btn.dark-theme {
+    background: rgba(50, 50, 50, 0.95);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: #e0e0e0;
+}
+
+.mermaid-fullscreen-btn.dark-theme:hover {
+    background: rgba(60, 60, 60, 1);
+    box-shadow: 0 3px 10px rgba(255, 255, 255, 0.2);
+}
+
+.mermaid-fullscreen-modal {
+    display: none;
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 95vw;
+    height: 100vh;
+    background: rgba(255, 255, 255, 0.98);
+    z-index: 9999;
+    padding: 20px;
+    overflow: auto;
+}
+
+.mermaid-fullscreen-modal.dark-theme {
+    background: rgba(0, 0, 0, 0.98);
+}
+
+.mermaid-fullscreen-modal.active {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mermaid-container-fullscreen {
+    position: relative;
+    width: 95vw;
+    height: 90vh;
+    max-width: 95vw;
+    max-height: 90vh;
+    background: white;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    overflow: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mermaid-container-fullscreen.dark-theme {
+    background: #1a1a1a;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.8);
+}
+
+.mermaid-container-fullscreen pre.mermaid {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mermaid-container-fullscreen .mermaid svg {
+    height: 100% !important;
+    width: 100% !important;
+    cursor: grab;
+}
+
+.mermaid-fullscreen-close {
+    position: fixed !important;
+    top: 20px !important;
+    right: 20px !important;
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.95);
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    transition: all 0.2s;
+    font-size: 24px;
+    line-height: 1;
+    color: #333;
+}
+
+.mermaid-fullscreen-close:hover {
+    background: white;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+    transform: scale(1.1);
+}
+
+.mermaid-fullscreen-close.dark-theme {
+    background: rgba(50, 50, 50, 0.95);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #e0e0e0;
+}
+
+.mermaid-fullscreen-close.dark-theme:hover {
+    background: rgba(60, 60, 60, 1);
+    box-shadow: 0 6px 16px rgba(255, 255, 255, 0.2);
+}
+
+.mermaid-fullscreen-modal .mermaid-fullscreen-btn {
+    display: none !important;
+}`;
+    document.head.appendChild(fullscreenStyle);
+}
+
+// Detect if page has dark background
+const isDarkTheme = () => {
+    // We use a set of heuristics:
+    // 1. Check for common dark mode classes or attributes
+    // 2. Check computed background color brightness
+    if (document.documentElement.classList.contains('dark') ||
+        document.documentElement.getAttribute('data-theme') === 'dark' ||
+        document.body.classList.contains('dark') ||
+        document.body.getAttribute('data-theme') === 'dark') {
+        // console.log("Dark theme detected via class/attribute");
+        return true;
+    }
+    if (document.documentElement.classList.contains('light') ||
+        document.documentElement.getAttribute('data-theme') === 'light' ||
+        document.body.classList.contains('light') ||
+        document.body.getAttribute('data-theme') === 'light') {
+        // console.log("Light theme detected via class/attribute");
+        return false;
+    }
+    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        // console.log("Dark theme detected via prefers-color-scheme");
+        return true;
+    }
+    const bgColor = window.getComputedStyle(document.body).backgroundColor;
+    const match = bgColor.match(/rgb\((\d+),\s*(\d+),\s*(\d+)/);
+    if (match) {
+        const r = parseInt(match[1]);
+        const g = parseInt(match[2]);
+        const b = parseInt(match[3]);
+        const brightness = (r * 299 + g * 587 + b * 114) / 1000;
+        // console.log("Background color brightness:", brightness);
+        return brightness < 128;
+    }
+    // console.log("No dark or light theme detected, defaulting to light theme");
+    return false;
+};
+
+let darkTheme = isDarkTheme();
+let modal = null;
+let modalContent = null;
+let previousScrollOffset = [window.scrollX, window.scrollY];
+
+const runMermaid = async (rerun) => {
+    console.log("Running mermaid diagrams, rerun =", rerun);
+    // clear all existing mermaid charts
+    let all_mermaids = document.querySelectorAll(".mermaid");
+
+    if (rerun) {
+        all_mermaids.forEach((el) => {
+            if(!el.hasAttribute("data-original-code")) {
+                // store original code
+                // console.log(`Storing original code for first run: `, el.innerHTML);
+                el.setAttribute('data-original-code', el.innerHTML);
+            }
+            if(el.getAttribute("data-processed") === "true") {
+                // remove and restore original
+                el.removeAttribute("data-processed");
+                // console.log(`Restoring original code for re-run: `, el.getAttribute('data-original-code'));
+                el.innerHTML = el.getAttribute('data-original-code');
+            } else {
+                // store original code
+                // console.log(`Storing original code for re-run: `, el.innerHTML);
+                el.setAttribute('data-original-code', el.innerHTML);
+            }
+        });
+        await mermaid.run();
+    }
+
+    all_mermaids = document.querySelectorAll(".mermaid");
+    const mermaids_processed = document.querySelectorAll(".mermaid[data-processed='true']");
+
+    if ("False" === "True") {
+        const mermaids_to_add_zoom = -1 === -1 ? all_mermaids.length : -1;
+        if(mermaids_to_add_zoom > 0) {
+            var svgs = d3.selectAll("");
+            if(all_mermaids.length !== mermaids_processed.length) {
+                setTimeout(() => runMermaid(false), 200);
+                return;
+            } else if(svgs.size() !== mermaids_to_add_zoom) {
+                setTimeout(() => runMermaid(false), 200);
+                return;
+            } else {
+                svgs.each(function() {
+                    var svg = d3.select(this);
+                    svg.html("<g class='wrapper'>" + svg.html() + "</g>");
+                    var inner = svg.select("g");
+                    var zoom = d3.zoom().on("zoom", function(event) {
+                        inner.attr("transform", event.transform);
+                    });
+                    svg.call(zoom);
+                });
+            }
+        }
+    } else if(all_mermaids.length !== mermaids_processed.length) {
+        // Wait for mermaid to process all diagrams
+        setTimeout(() => runMermaid(false), 200);
+        return;
+    }
+
+    // Stop here if not adding fullscreen capability
+    if ("True" !== "True") return;
+
+    if (modal !== null ) {
+        // Destroy existing modal
+        modal.remove();
+        modal = null;
+        modalContent = null;
+    }
+
+    modal = document.createElement('div');
+    modal.className = 'mermaid-fullscreen-modal' + (darkTheme ? ' dark-theme' : '');
+    modal.setAttribute('role', 'dialog');
+    modal.setAttribute('aria-modal', 'true');
+    modal.setAttribute('aria-label', 'Fullscreen diagram viewer');
+    modal.innerHTML = `
+        <button class="mermaid-fullscreen-close${darkTheme ? ' dark-theme' : ''}" aria-label="Close fullscreen">✕</button>
+        <div class="mermaid-container-fullscreen${darkTheme ? ' dark-theme' : ''}"></div>
+    `;
+    document.body.appendChild(modal);
+
+    modalContent = modal.querySelector('.mermaid-container-fullscreen');
+    const closeBtn = modal.querySelector('.mermaid-fullscreen-close');
+
+    const closeModal = () => {
+        modal.classList.remove('active');
+        modalContent.innerHTML = '';
+        document.body.style.overflow = ''
+        window.scrollTo({left: previousScrollOffset[0], top: previousScrollOffset[1], behavior: 'instant'});
+    };
+
+    closeBtn.addEventListener('click', closeModal);
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) closeModal();
+    });
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && modal.classList.contains('active')) {
+            closeModal();
+        }
+    });
+
+    document.querySelectorAll('.mermaid').forEach((mermaidDiv) => {
+        if (mermaidDiv.parentNode.classList.contains('mermaid-container') ||
+            mermaidDiv.closest('.mermaid-fullscreen-modal')) {
+            // Already processed, adjust button class if needed
+            const existingBtn = mermaidDiv.parentNode.querySelector('.mermaid-fullscreen-btn');
+            if (existingBtn) {
+                existingBtn.className = 'mermaid-fullscreen-btn' + (darkTheme ? ' dark-theme' : '');
+            }
+            return;
+        }
+
+        const container = document.createElement('div');
+        container.className = 'mermaid-container';
+        mermaidDiv.parentNode.insertBefore(container, mermaidDiv);
+        container.appendChild(mermaidDiv);
+
+        const fullscreenBtn = document.createElement('button');
+        fullscreenBtn.className = 'mermaid-fullscreen-btn' + (darkTheme ? ' dark-theme' : '');
+        fullscreenBtn.setAttribute('aria-label', 'View diagram in fullscreen');
+        fullscreenBtn.textContent = '⛶';
+        fullscreenBtn.style.opacity = '50%';
+
+        // Calculate dynamic position based on diagram's margin and padding
+        const diagramStyle = window.getComputedStyle(mermaidDiv);
+        const marginTop = parseFloat(diagramStyle.marginTop) || 0;
+        const marginRight = parseFloat(diagramStyle.marginRight) || 0;
+        const paddingTop = parseFloat(diagramStyle.paddingTop) || 0;
+        const paddingRight = parseFloat(diagramStyle.paddingRight) || 0;
+        fullscreenBtn.style.top = `${marginTop + paddingTop + 4}px`;
+        fullscreenBtn.style.right = `${marginRight + paddingRight + 4}px`;
+
+        fullscreenBtn.addEventListener('click', () => {
+            previousScrollOffset = [window.scroll, window.scrollY];
+            const clone = mermaidDiv.cloneNode(true);
+            modalContent.innerHTML = '';
+            modalContent.appendChild(clone);
+
+            const svg = clone.querySelector('svg');
+            if (svg) {
+                svg.removeAttribute('width');
+                svg.removeAttribute('height');
+                svg.style.width = '100%';
+                svg.style.height = 'auto';
+                svg.style.maxWidth = '100%';
+                svg.style.sdisplay = 'block';
+
+                if ("False" === "True") {
+                    setTimeout(() => {
+                        const g = svg.querySelector('g');
+                        if (g) {
+                            var svgD3 = d3.select(svg);
+                            svgD3.html("<g class='wrapper'>" + svgD3.html() + "</g>");
+                            var inner = svgD3.select("g");
+                            var zoom = d3.zoom().on("zoom", function(event) {
+                                inner.attr("transform", event.transform);
+                            });
+                            svgD3.call(zoom);
+                        }
+                    }, 100);
+                }
+            }
+
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+        container.appendChild(fullscreenBtn);
+    });
+};
+
+const load = async () => {
+    initStyles();
+
+    await runMermaid(true);
+
+    const reRunIfThemeChanges = async () => {
+        const newDarkTheme = isDarkTheme();
+        if (newDarkTheme !== darkTheme) {
+            darkTheme = newDarkTheme;
+            console.log("Theme change detected, re-running mermaid with", darkTheme ? "dark" : "default", "theme");
+            await mermaid.initialize(
+                {...JSON.parse(
+                    `{"startOnLoad": false}`
+                ),
+                ...{ darkMode: darkTheme, theme: darkTheme ? 'dark' : 'default' },
+                }
+            );
+            await runMermaid(true);
+        }
+    };
+
+    // Update theme classes when theme changes
+    const themeObserver = new MutationObserver(reRunIfThemeChanges);
+    themeObserver.observe(document.documentElement, {
+        attributes: true,
+        attributeFilter: ['class', 'style', 'data-theme']
+    });
+    themeObserver.observe(document.body, {
+        attributes: true,
+        attributeFilter: ['class', 'style', 'data-theme']
+    });
+};
+
+
+
+
+
+console.log("Initializing mermaid with", darkTheme ? "dark" : "default", "theme");
+mermaid.initialize(
+    {...JSON.parse(
+        `{"startOnLoad": false}`
+    ),
+    ...{ darkMode: darkTheme, theme: darkTheme ? 'dark' : 'default' },
+    }
+);
+
+window.addEventListener("load", load);
+window.runMermaid = runMermaid;</script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="author" title="About these documents" href="../about.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Fleet Manager
+          </a>
+              <div class="version">
+                1.0
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../about.html">About the project</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules.html">Code documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../training.html">Training documentation</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Fleet Manager</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Module code</a></li>
+      <li class="breadcrumb-item active">metric_device</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <h1>Source code for metric_device</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Metric Device Management Module</span>
+
+<span class="sd">.. module:: metric_device</span>
+<span class="sd">    :synopsis: Specialized device handler for vehicle system metrics and performance monitoring</span>
+<span class="sd">    :platform: Linux, Windows, macOS</span>
+<span class="sd">    :author: Fleet Management System Team</span>
+
+<span class="sd">This module implements the MetricDevice class, which manages system metric collection</span>
+<span class="sd">devices for vehicle fleet monitoring. It handles the creation, management, and cleanup</span>
+<span class="sd">of metric devices that track vehicle performance, system health, and operational</span>
+<span class="sd">parameters during fleet operations.</span>
+
+<span class="sd">The metric system provides comprehensive monitoring capabilities for vehicle-mounted</span>
+<span class="sd">systems (typically Raspberry Pi 5 devices), including CPU usage, memory consumption,</span>
+<span class="sd">network statistics, and custom operational metrics for fleet management.</span>
+
+<span class="sd">.. note::</span>
+<span class="sd">    Key Features:</span>
+<span class="sd">    - Dynamic metric device creation per vehicle</span>
+<span class="sd">    - Real-time system performance monitoring</span>
+<span class="sd">    - Vehicle-specific metric collection and transmission</span>
+<span class="sd">    - Comprehensive telemetry data handling for system health</span>
+<span class="sd">    - Efficient resource management and cleanup</span>
+<span class="sd">    - Support for Raspberry Pi 5 and similar embedded systems</span>
+
+<span class="sd">.. versionadded:: 1.0.0</span>
+<span class="sd">    Initial implementation of metric device management</span>
+
+<span class="sd">.. seealso::</span>
+<span class="sd">    - :mod:`MQTT.ThingsBoard.devices.base_device` for base device functionality</span>
+<span class="sd">    - :mod:`MQTT.ThingsBoard.devices.vehicle_device` for vehicle coordination</span>
+
+<span class="sd">Example:</span>
+<span class="sd">    Basic usage of metric device management::</span>
+
+<span class="sd">        from MQTT.ThingsBoard.devices.metric_device import MetricDevice</span>
+<span class="sd">        from MQTT.ThingsBoard.rest_api import ThingsBoardAPI</span>
+<span class="sd">        </span>
+<span class="sd">        # Initialize ThingsBoard API</span>
+<span class="sd">        tb_api = ThingsBoardAPI(&quot;https://thingsboard.company.com&quot;)</span>
+<span class="sd">        tb_api.login(&quot;username&quot;, &quot;password&quot;)</span>
+<span class="sd">        </span>
+<span class="sd">        # Create metric device handler</span>
+<span class="sd">        metric_device = MetricDevice(</span>
+<span class="sd">            tb_api=tb_api,</span>
+<span class="sd">            mqtt_logger=logger,</span>
+<span class="sd">            tb_host=&quot;thingsboard.company.com&quot;,</span>
+<span class="sd">            port=8883,</span>
+<span class="sd">            telemetry_topic=&quot;v1/devices/me/telemetry&quot;</span>
+<span class="sd">        )</span>
+<span class="sd">        </span>
+<span class="sd">        # Process vehicle system metrics</span>
+<span class="sd">        metric_msg = {</span>
+<span class="sd">            &quot;vehicle_id&quot;: &quot;V001&quot;,</span>
+<span class="sd">            &quot;telemetry&quot;: {</span>
+<span class="sd">                &quot;cpu_usage&quot;: 45.2,</span>
+<span class="sd">                &quot;memory_usage&quot;: 78.5,</span>
+<span class="sd">                &quot;temperature&quot;: 62.1,</span>
+<span class="sd">                &quot;disk_usage&quot;: 34.7,</span>
+<span class="sd">                &quot;network_rx&quot;: 1024768,</span>
+<span class="sd">                &quot;network_tx&quot;: 892345</span>
+<span class="sd">            }</span>
+<span class="sd">        }</span>
+<span class="sd">        metric_device.handle_message(metric_msg)</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">MQTT.ThingsBoard.devices.base_device</span><span class="w"> </span><span class="kn">import</span> <span class="n">BaseDevice</span>
+
+
+<div class="viewcode-block" id="MetricDevice">
+<a class="viewcode-back" href="../Fleet_module/MQTT/ThingsBoard/Devices/metric_device_component.html#metric_device.MetricDevice">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">MetricDevice</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Specialized device handler for managing vehicle system metrics and performance monitoring.</span>
+<span class="sd">    </span>
+<span class="sd">    This class manages the creation and lifecycle of metric devices that monitor</span>
+<span class="sd">    system performance and operational parameters of vehicle-mounted computing systems.</span>
+<span class="sd">    It provides real-time telemetry collection for fleet health monitoring and</span>
+<span class="sd">    performance optimization.</span>
+<span class="sd">    </span>
+<span class="sd">    The metric system is designed to work with embedded systems like Raspberry Pi 5</span>
+<span class="sd">    devices mounted on vehicles, collecting system health data, performance metrics,</span>
+<span class="sd">    and operational statistics for comprehensive fleet monitoring.</span>
+<span class="sd">    </span>
+<span class="sd">    :param tb_api: Authenticated ThingsBoard REST API client</span>
+<span class="sd">    :type tb_api: ThingsBoardAPI</span>
+<span class="sd">    :param mqtt_logger: Logger instance for MQTT operations and debugging</span>
+<span class="sd">    :type mqtt_logger: logging.Logger</span>
+<span class="sd">    :param tb_host: ThingsBoard server hostname for MQTT connections</span>
+<span class="sd">    :type tb_host: str</span>
+<span class="sd">    :param port: MQTT port for secure connections (typically 8883 for TLS)</span>
+<span class="sd">    :type port: int</span>
+<span class="sd">    :param telemetry_topic: MQTT topic for publishing device telemetry data</span>
+<span class="sd">    :type telemetry_topic: str</span>
+<span class="sd">    </span>
+<span class="sd">    .. note::</span>
+<span class="sd">        Device Type Classification:</span>
+<span class="sd">        Metric devices are created with type &quot;RPI5&quot; to indicate Raspberry Pi 5</span>
+<span class="sd">        systems, but can be adapted for other embedded computing platforms.</span>
+<span class="sd">        </span>
+<span class="sd">    .. warning::</span>
+<span class="sd">        Metric devices must be properly cleaned up when vehicles are decommissioned</span>
+<span class="sd">        to prevent resource accumulation and maintain system performance.</span>
+<span class="sd">        </span>
+<span class="sd">    .. versionadded:: 1.0.0</span>
+<span class="sd">        Initial implementation of metric device management</span>
+<span class="sd">        </span>
+<span class="sd">    Attributes:</span>
+<span class="sd">        base (BaseDevice): Base device functionality for ThingsBoard operations</span>
+<span class="sd">        metrics (dict): Dictionary mapping vehicle IDs to metric device data</span>
+<span class="sd">        mqtt_logger (logging.Logger): Logger for operation tracking and debugging</span>
+<span class="sd">        </span>
+<span class="sd">    Example:</span>
+<span class="sd">        Initialize and use metric device handler::</span>
+<span class="sd">        </span>
+<span class="sd">            metric_handler = MetricDevice(tb_api, logger, &quot;thingsboard.com&quot;, 8883, &quot;v1/devices/me/telemetry&quot;)</span>
+<span class="sd">            </span>
+<span class="sd">            # Process vehicle system metrics</span>
+<span class="sd">            system_metrics = {</span>
+<span class="sd">                &quot;vehicle_id&quot;: &quot;TRUCK_001&quot;,</span>
+<span class="sd">                &quot;telemetry&quot;: {</span>
+<span class="sd">                    &quot;cpu_usage&quot;: 42.5,</span>
+<span class="sd">                    &quot;memory_usage&quot;: 67.8,</span>
+<span class="sd">                    &quot;disk_usage&quot;: 28.3,</span>
+<span class="sd">                    &quot;temperature&quot;: 58.9,</span>
+<span class="sd">                    &quot;uptime&quot;: 86400,</span>
+<span class="sd">                    &quot;load_average&quot;: 0.75</span>
+<span class="sd">                }</span>
+<span class="sd">            }</span>
+<span class="sd">            metric_handler.handle_message(system_metrics)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    
+<div class="viewcode-block" id="MetricDevice.__init__">
+<a class="viewcode-back" href="../Fleet_module/MQTT/ThingsBoard/Devices/metric_device_component.html#metric_device.MetricDevice.__init__">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">tb_api</span><span class="p">,</span> <span class="n">mqtt_logger</span><span class="p">,</span> <span class="n">tb_host</span><span class="p">,</span> <span class="n">port</span><span class="p">,</span> <span class="n">telemetry_topic</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Initialize the metric device handler with ThingsBoard integration.</span>
+<span class="sd">        </span>
+<span class="sd">        Sets up the metric device management system with base device functionality</span>
+<span class="sd">        and initializes storage for vehicle-specific metric devices.</span>
+<span class="sd">        </span>
+<span class="sd">        :param tb_api: Authenticated ThingsBoard API client</span>
+<span class="sd">        :type tb_api: ThingsBoardAPI</span>
+<span class="sd">        :param mqtt_logger: Logger for MQTT operations</span>
+<span class="sd">        :type mqtt_logger: logging.Logger</span>
+<span class="sd">        :param tb_host: ThingsBoard server hostname</span>
+<span class="sd">        :type tb_host: str</span>
+<span class="sd">        :param port: MQTT connection port</span>
+<span class="sd">        :type port: int</span>
+<span class="sd">        :param telemetry_topic: MQTT topic for telemetry</span>
+<span class="sd">        :type telemetry_topic: str</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">base</span> <span class="o">=</span> <span class="n">BaseDevice</span><span class="p">(</span><span class="n">tb_api</span><span class="p">,</span> <span class="n">mqtt_logger</span><span class="p">,</span> <span class="n">tb_host</span><span class="p">,</span> <span class="n">port</span><span class="p">,</span> <span class="n">telemetry_topic</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">metrics</span> <span class="o">=</span> <span class="p">{}</span>  <span class="c1"># Dictionary: vehicle_id -&gt; metric device data</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">mqtt_logger</span> <span class="o">=</span> <span class="n">mqtt_logger</span></div>
+
+    
+<div class="viewcode-block" id="MetricDevice.handle_message">
+<a class="viewcode-back" href="../Fleet_module/MQTT/ThingsBoard/Devices/metric_device_component.html#metric_device.MetricDevice.handle_message">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">handle_message</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">message</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Process metric messages and create corresponding vehicle system monitoring devices.</span>
+<span class="sd">        </span>
+<span class="sd">        Creates metric devices for vehicle system monitoring, establishes MQTT connections,</span>
+<span class="sd">        and transmits system performance telemetry data. Each vehicle gets a dedicated</span>
+<span class="sd">        metric device for comprehensive system health tracking.</span>
+<span class="sd">        </span>
+<span class="sd">        The method handles the complete metric collection workflow including device</span>
+<span class="sd">        creation for new vehicles and real-time telemetry transmission for system</span>
+<span class="sd">        performance monitoring.</span>
+<span class="sd">        </span>
+<span class="sd">        :param message: Metric message containing vehicle ID and telemetry data</span>
+<span class="sd">        :type message: dict</span>
+<span class="sd">        :return: None</span>
+<span class="sd">        :rtype: None</span>
+<span class="sd">        </span>
+<span class="sd">        .. note::</span>
+<span class="sd">            Message Processing Steps:</span>
+<span class="sd">            1. Extract vehicle ID from the message</span>
+<span class="sd">            2. Create metric device if not exists for the vehicle</span>
+<span class="sd">            3. Establish MQTT client connection for telemetry transmission</span>
+<span class="sd">            4. Store device information for future metric transmissions</span>
+<span class="sd">            5. Transmit system metric telemetry data to ThingsBoard</span>
+<span class="sd">            </span>
+<span class="sd">        .. warning::</span>
+<span class="sd">            The message must contain a &#39;vehicle_id&#39; field for device identification</span>
+<span class="sd">            and a &#39;telemetry&#39; object with metric data. Missing fields will prevent</span>
+<span class="sd">            proper metric collection.</span>
+<span class="sd">            </span>
+<span class="sd">        .. tip:</span>
+<span class="sd">            Metric devices are automatically named &quot;Vehicle {vehicle_id}&quot; for easy</span>
+<span class="sd">            identification in ThingsBoard dashboards and device management.</span>
+<span class="sd">            </span>
+<span class="sd">        Message Structure:</span>
+<span class="sd">            Expected message format::</span>
+<span class="sd">            </span>
+<span class="sd">                {</span>
+<span class="sd">                    &quot;vehicle_id&quot;: &quot;vehicle_identifier&quot;,</span>
+<span class="sd">                    &quot;telemetry&quot;: {</span>
+<span class="sd">                        &quot;cpu_usage&quot;: float,          # CPU utilization percentage</span>
+<span class="sd">                        &quot;memory_usage&quot;: float,       # Memory utilization percentage</span>
+<span class="sd">                        &quot;disk_usage&quot;: float,         # Disk utilization percentage</span>
+<span class="sd">                        &quot;temperature&quot;: float,        # System temperature in Celsius</span>
+<span class="sd">                        &quot;uptime&quot;: int,              # System uptime in seconds</span>
+<span class="sd">                        &quot;load_average&quot;: float,       # System load average</span>
+<span class="sd">                        &quot;network_rx&quot;: int,          # Network bytes received</span>
+<span class="sd">                        &quot;network_tx&quot;: int,          # Network bytes transmitted</span>
+<span class="sd">                        &quot;battery_level&quot;: float,      # Battery level percentage (if applicable)</span>
+<span class="sd">                        &quot;gps_quality&quot;: int,         # GPS signal quality (if applicable)</span>
+<span class="sd">                        &quot;custom_metrics&quot;: {}        # Additional vehicle-specific metrics</span>
+<span class="sd">                    }</span>
+<span class="sd">                }</span>
+<span class="sd">        </span>
+<span class="sd">        Example:</span>
+<span class="sd">            Process various types of vehicle system metrics::</span>
+<span class="sd">            </span>
+<span class="sd">                # Standard system metrics</span>
+<span class="sd">                system_msg = {</span>
+<span class="sd">                    &quot;vehicle_id&quot;: &quot;TRACTOR_001&quot;,</span>
+<span class="sd">                    &quot;telemetry&quot;: {</span>
+<span class="sd">                        &quot;cpu_usage&quot;: 35.7,</span>
+<span class="sd">                        &quot;memory_usage&quot;: 62.3,</span>
+<span class="sd">                        &quot;disk_usage&quot;: 18.9,</span>
+<span class="sd">                        &quot;temperature&quot;: 55.4,</span>
+<span class="sd">                        &quot;uptime&quot;: 172800,           # 48 hours</span>
+<span class="sd">                        &quot;load_average&quot;: 0.65</span>
+<span class="sd">                    }</span>
+<span class="sd">                }</span>
+<span class="sd">                metric_device.handle_message(system_msg)</span>
+<span class="sd">                </span>
+<span class="sd">                # Extended metrics with networking and GPS</span>
+<span class="sd">                extended_msg = {</span>
+<span class="sd">                    &quot;vehicle_id&quot;: &quot;DRONE_005&quot;,</span>
+<span class="sd">                    &quot;telemetry&quot;: {</span>
+<span class="sd">                        &quot;cpu_usage&quot;: 78.2,</span>
+<span class="sd">                        &quot;memory_usage&quot;: 84.1,</span>
+<span class="sd">                        &quot;temperature&quot;: 71.5,</span>
+<span class="sd">                        &quot;battery_level&quot;: 67.8,</span>
+<span class="sd">                        &quot;gps_quality&quot;: 8,           # GPS satellites</span>
+<span class="sd">                        &quot;network_rx&quot;: 2048576,</span>
+<span class="sd">                        &quot;network_tx&quot;: 1536789,</span>
+<span class="sd">                        &quot;flight_time&quot;: 1847,        # Custom metric</span>
+<span class="sd">                        &quot;altitude&quot;: 120.5           # Custom metric</span>
+<span class="sd">                    }</span>
+<span class="sd">                }</span>
+<span class="sd">                metric_device.handle_message(extended_msg)</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># Extract vehicle identifier from message</span>
+        <span class="n">vehicle_id</span> <span class="o">=</span> <span class="n">message</span><span class="p">[</span><span class="s1">&#39;vehicle_id&#39;</span><span class="p">]</span>
+        
+        <span class="c1"># Create metric device if not exists for this vehicle</span>
+        <span class="k">if</span> <span class="n">vehicle_id</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">metrics</span><span class="p">:</span>
+            <span class="c1"># Generate descriptive device name for vehicle metrics</span>
+            <span class="n">device_name</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;RPI5 - Vehicle </span><span class="si">{</span><span class="n">vehicle_id</span><span class="si">}</span><span class="s2">&quot;</span>
+            
+            <span class="c1"># Create ThingsBoard device with RPI5 type for embedded systems</span>
+            <span class="n">device_id</span><span class="p">,</span> <span class="n">access_token</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">base</span><span class="o">.</span><span class="n">create_device</span><span class="p">(</span><span class="n">device_name</span><span class="p">,</span> <span class="s2">&quot;RPI5&quot;</span><span class="p">)</span>
+            
+            <span class="k">if</span> <span class="n">device_id</span> <span class="ow">and</span> <span class="n">access_token</span><span class="p">:</span>
+                <span class="c1"># Create MQTT client for metric telemetry transmission</span>
+                <span class="n">client</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">base</span><span class="o">.</span><span class="n">create_client</span><span class="p">(</span><span class="n">access_token</span><span class="p">)</span>
+                
+                <span class="c1"># Store metric device information for future transmissions</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">metrics</span><span class="p">[</span><span class="n">vehicle_id</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span>
+                    <span class="s1">&#39;device_id&#39;</span><span class="p">:</span> <span class="n">device_id</span><span class="p">,</span>
+                    <span class="s1">&#39;client&#39;</span><span class="p">:</span> <span class="n">client</span>
+                <span class="p">}</span>
+        
+        <span class="c1"># Transmit vehicle system metrics telemetry if device exists and telemetry data available</span>
+        <span class="k">if</span> <span class="n">vehicle_id</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">metrics</span> <span class="ow">and</span> <span class="s1">&#39;telemetry&#39;</span> <span class="ow">in</span> <span class="n">message</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">base</span><span class="o">.</span><span class="n">send_telemetry</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">metrics</span><span class="p">[</span><span class="n">vehicle_id</span><span class="p">][</span><span class="s1">&#39;client&#39;</span><span class="p">],</span> <span class="n">message</span><span class="p">[</span><span class="s1">&#39;telemetry&#39;</span><span class="p">])</span></div>
+
+    
+<div class="viewcode-block" id="MetricDevice.cleanup">
+<a class="viewcode-back" href="../Fleet_module/MQTT/ThingsBoard/Devices/metric_device_component.html#metric_device.MetricDevice.cleanup">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">cleanup</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">vehicle_id</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Clean up metric device associated with a specific vehicle.</span>
+<span class="sd">        </span>
+<span class="sd">        Performs comprehensive cleanup of the metric device created for the</span>
+<span class="sd">        specified vehicle, including MQTT client disconnection, device deletion</span>
+<span class="sd">        from ThingsBoard, and removal from local storage. This ensures proper</span>
+<span class="sd">        resource management when vehicles are decommissioned or removed from service.</span>
+<span class="sd">        </span>
+<span class="sd">        :param vehicle_id: Unique identifier of the vehicle to clean up</span>
+<span class="sd">        :type vehicle_id: str</span>
+<span class="sd">        :return: None</span>
+<span class="sd">        :rtype: None</span>
+<span class="sd">        </span>
+<span class="sd">        .. note::</span>
+<span class="sd">            Cleanup Operations:</span>
+<span class="sd">            1. Disconnect MQTT client for the vehicle&#39;s metric device</span>
+<span class="sd">            2. Delete metric device from ThingsBoard using retry mechanism</span>
+<span class="sd">            3. Remove vehicle metric data from local storage</span>
+<span class="sd">            </span>
+<span class="sd">        .. warning:</span>
+<span class="sd">            This operation is irreversible and will permanently delete the</span>
+<span class="sd">            metric device and all its associated telemetry data from ThingsBoard.</span>
+<span class="sd">            </span>
+<span class="sd">        .. tip:</span>
+<span class="sd">            Call this method when vehicles are permanently removed from the fleet</span>
+<span class="sd">            or when metric collection is no longer needed for specific vehicles.</span>
+<span class="sd">            </span>
+<span class="sd">        Example:</span>
+<span class="sd">            Clean up metric device for decommissioned vehicle::</span>
+<span class="sd">            </span>
+<span class="sd">                # Vehicle being removed from fleet</span>
+<span class="sd">                vehicle_id = &quot;TRACTOR_001&quot;</span>
+<span class="sd">                </span>
+<span class="sd">                # Clean up associated metric device</span>
+<span class="sd">                metric_device.cleanup(vehicle_id)</span>
+<span class="sd">                </span>
+<span class="sd">                print(f&quot;Metric device for vehicle {vehicle_id} cleaned up&quot;)</span>
+<span class="sd">                </span>
+<span class="sd">        Cleanup Process:</span>
+<span class="sd">            The method uses the retry mechanism from base device functionality</span>
+<span class="sd">            to ensure reliable device deletion even under network stress or</span>
+<span class="sd">            ThingsBoard server load conditions, maintaining system reliability.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># Check if vehicle has metric device to clean up</span>
+        <span class="k">if</span> <span class="n">vehicle_id</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">metrics</span><span class="p">:</span>
+            <span class="c1"># Disconnect and clean up MQTT client</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">base</span><span class="o">.</span><span class="n">delete_client</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">metrics</span><span class="p">[</span><span class="n">vehicle_id</span><span class="p">][</span><span class="s1">&#39;client&#39;</span><span class="p">])</span>
+            
+            <span class="c1"># Delete metric device from ThingsBoard with retry mechanism</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">base</span><span class="o">.</span><span class="n">delete_device_with_retry</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">metrics</span><span class="p">[</span><span class="n">vehicle_id</span><span class="p">][</span><span class="s1">&#39;device_id&#39;</span><span class="p">])</span>
+            
+            <span class="c1"># Remove vehicle metric data from local storage</span>
+            <span class="k">del</span> <span class="bp">self</span><span class="o">.</span><span class="n">metrics</span><span class="p">[</span><span class="n">vehicle_id</span><span class="p">]</span></div>
+</div>
+
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, Estela Mora Barba.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

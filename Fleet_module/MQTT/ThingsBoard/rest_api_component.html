@@ -1,0 +1,824 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>REST API ThingsBoard &mdash; Fleet Manager 1.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../../_static/documentation_options.js?v=f2a433a1"></script>
+        <script src="../../../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
+        <script src="../../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="author" title="About these documents" href="../../../about.html" />
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="ThingsBoard Devices" href="devices.html" />
+    <link rel="prev" title="Thingsboard Manager" href="tb_manager_component.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../../index.html" class="icon icon-home">
+            Fleet Manager
+          </a>
+              <div class="version">
+                1.0
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../about.html">About the project</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../getting_started.html">Getting Started</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../../modules.html">Code documentation</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../../Drone_module/index.html">Drone</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../index.html">Fleet Manager</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../../init_fleet_component.html">Init Fleet Manager</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../mission_components.html">Mission Management</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../ros2_components.html">ROS2 Management</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../rest_components.html">REST Management</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../../mqtt_components.html">MQTT Management</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="../grpc_mqtt_component.html">gRPC MQTT</a></li>
+<li class="toctree-l4 current"><a class="reference internal" href="../thingsboard.html">ThingsBoard</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../pm_components.html">Prescription Map Management</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../metrics_components.html">System Metrics Component</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../clear_fleet_component.html">Clear Fleet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../create_logger_fleet_component.html">Create Logger</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../training.html">Training documentation</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Fleet Manager</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../../modules.html">Code documentation</a></li>
+          <li class="breadcrumb-item"><a href="../../index.html">Fleet Manager</a></li>
+          <li class="breadcrumb-item"><a href="../../mqtt_components.html">MQTT Management</a></li>
+          <li class="breadcrumb-item"><a href="../thingsboard.html">ThingsBoard</a></li>
+      <li class="breadcrumb-item active">REST API ThingsBoard</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../_sources/Fleet_module/MQTT/ThingsBoard/rest_api_component.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="module-rest_api">
+<span id="rest-api-thingsboard"></span><h1>REST API ThingsBoard<a class="headerlink" href="#module-rest_api" title="Link to this heading"></a></h1>
+<p>ThingsBoard REST API Client Module</p>
+<p>This module implements a complete REST API client for ThingsBoard IoT platform integration.
+It provides high-level methods for device management, authentication, telemetry operations,
+and relationship management within the fleet management system.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Key Features:
+- Comprehensive device lifecycle management (create, read, update, delete)
+- Automatic authentication and session management
+- Device relationship and hierarchy management
+- Server-side attribute management for device configuration
+- Bulk operations for efficient fleet management
+- Robust error handling with automatic retry mechanisms</p>
+</div>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 1.0.0: </span>Initial implementation of ThingsBoard REST API client</p>
+</div>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://thingsboard.io/docs/reference/rest-api/">ThingsBoard REST API Documentation</a></p></li>
+<li><p><code class="xref py py-mod docutils literal notranslate"><span class="pre">MQTT.ThingsBoard.tb_manager</span></code> for higher-level ThingsBoard operations</p></li>
+</ul>
+</div>
+<p class="rubric">Example</p>
+<p>Basic usage of the ThingsBoard API client:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">MQTT.ThingsBoard.rest_api</span><span class="w"> </span><span class="kn">import</span> <span class="n">ThingsBoardAPI</span>
+
+<span class="c1"># Initialize API client</span>
+<span class="n">api</span> <span class="o">=</span> <span class="n">ThingsBoardAPI</span><span class="p">(</span><span class="s2">&quot;https://your-thingsboard-host&quot;</span><span class="p">)</span>
+
+<span class="c1"># Authenticate</span>
+<span class="k">if</span> <span class="n">api</span><span class="o">.</span><span class="n">login</span><span class="p">(</span><span class="s2">&quot;username&quot;</span><span class="p">,</span> <span class="s2">&quot;password&quot;</span><span class="p">):</span>
+    <span class="c1"># Create a new device</span>
+    <span class="n">device_id</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">create_device</span><span class="p">(</span><span class="s2">&quot;my_device&quot;</span><span class="p">,</span> <span class="s2">&quot;sensor&quot;</span><span class="p">)</span>
+
+    <span class="c1"># Set device attributes</span>
+    <span class="n">api</span><span class="o">.</span><span class="n">set_server_attribute</span><span class="p">(</span><span class="n">device_id</span><span class="p">,</span> <span class="s2">&quot;location&quot;</span><span class="p">,</span> <span class="s2">&quot;warehouse_1&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<dl class="py class">
+<dt class="sig sig-object py" id="rest_api.ThingsBoardAPI">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">rest_api.</span></span><span class="sig-name descname"><span class="pre">ThingsBoardAPI</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">host</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/rest_api.html#ThingsBoardAPI"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#rest_api.ThingsBoardAPI" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Comprehensive ThingsBoard REST API client for device and telemetry management.</p>
+<p>This class provides a high-level interface to the ThingsBoard REST API, handling
+authentication, session management, and all common device operations. It’s designed
+to integrate seamlessly with fleet management systems requiring IoT device control.</p>
+<p>The client automatically manages authentication tokens and provides retry mechanisms
+for robust operation in production environments. All methods include comprehensive
+error handling and return appropriate status indicators.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>host</strong> (<em>str</em>) – ThingsBoard server URL (e.g., ‘<a class="reference external" href="https://demo.thingsboard.io">https://demo.thingsboard.io</a>’)</p>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The client maintains a persistent session with automatic token refresh
+capabilities for long-running applications.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Ensure the provided host URL is accessible and the ThingsBoard instance
+is properly configured before attempting operations.</p>
+</div>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 1.0.0: </span>Initial implementation of ThingsBoard API client</p>
+</div>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="rest_api.ThingsBoardAPI.host">
+<span class="sig-name descname"><span class="pre">host</span></span><a class="headerlink" href="#rest_api.ThingsBoardAPI.host" title="Link to this definition"></a></dt>
+<dd><p>ThingsBoard server base URL</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="rest_api.ThingsBoardAPI.token">
+<span class="sig-name descname"><span class="pre">token</span></span><a class="headerlink" href="#rest_api.ThingsBoardAPI.token" title="Link to this definition"></a></dt>
+<dd><p>Current authentication token (None if not authenticated)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="rest_api.ThingsBoardAPI.session">
+<span class="sig-name descname"><span class="pre">session</span></span><a class="headerlink" href="#rest_api.ThingsBoardAPI.session" title="Link to this definition"></a></dt>
+<dd><p>Persistent HTTP session for API calls</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>requests.Session</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="rest_api.ThingsBoardAPI.username">
+<span class="sig-name descname"><span class="pre">username</span></span><a class="headerlink" href="#rest_api.ThingsBoardAPI.username" title="Link to this definition"></a></dt>
+<dd><p>Stored username for automatic re-authentication</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="rest_api.ThingsBoardAPI.password">
+<span class="sig-name descname"><span class="pre">password</span></span><a class="headerlink" href="#rest_api.ThingsBoardAPI.password" title="Link to this definition"></a></dt>
+<dd><p>Stored password for automatic re-authentication</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<p class="rubric">Example</p>
+<p>Initialize and authenticate with ThingsBoard:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">api</span> <span class="o">=</span> <span class="n">ThingsBoardAPI</span><span class="p">(</span><span class="s2">&quot;https://demo.thingsboard.io&quot;</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">api</span><span class="o">.</span><span class="n">login</span><span class="p">(</span><span class="s2">&quot;tenant@thingsboard.org&quot;</span><span class="p">,</span> <span class="s2">&quot;tenant&quot;</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Successfully authenticated&quot;</span><span class="p">)</span>
+    <span class="c1"># Perform API operations...</span>
+</pre></div>
+</div>
+<dl class="py method">
+<dt class="sig sig-object py" id="rest_api.ThingsBoardAPI.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">host</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/rest_api.html#ThingsBoardAPI.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#rest_api.ThingsBoardAPI.__init__" title="Link to this definition"></a></dt>
+<dd><p>Initialize the ThingsBoard API client.</p>
+<p>Sets up the client with the specified ThingsBoard host URL and initializes
+the HTTP session for subsequent API calls. No authentication is performed
+during initialization.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>host</strong> (<em>str</em>) – Base URL of the ThingsBoard server</p>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<p>Create API client for different environments:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Production environment</span>
+<span class="n">prod_api</span> <span class="o">=</span> <span class="n">ThingsBoardAPI</span><span class="p">(</span><span class="s2">&quot;https://thingsboard.company.com&quot;</span><span class="p">)</span>
+
+<span class="c1"># Development environment</span>
+<span class="n">dev_api</span> <span class="o">=</span> <span class="n">ThingsBoardAPI</span><span class="p">(</span><span class="s2">&quot;https://localhost:8080&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="rest_api.ThingsBoardAPI.login">
+<span class="sig-name descname"><span class="pre">login</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">username</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">password</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/rest_api.html#ThingsBoardAPI.login"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#rest_api.ThingsBoardAPI.login" title="Link to this definition"></a></dt>
+<dd><p>Authenticate with ThingsBoard using username and password credentials.</p>
+<p>Performs user authentication with the ThingsBoard server and obtains an
+access token for subsequent API calls. The token is automatically added
+to the session headers for all future requests.</p>
+<p>Credentials are stored internally to enable automatic re-authentication
+if the token expires during long-running operations.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>username</strong> (<em>str</em>) – ThingsBoard username (e.g., <a class="reference external" href="mailto:tenant&#37;&#52;&#48;thingsboard&#46;org">tenant<span>&#64;</span>thingsboard<span>&#46;</span>org</a>)</p></li>
+<li><p><strong>password</strong> (<em>str</em>) – ThingsBoard password</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>True if authentication successful, False otherwise</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The authentication token is automatically included in all subsequent
+API requests via the session headers.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Credentials are stored in memory for automatic re-authentication.
+Ensure proper security measures in production environments.</p>
+</div>
+<p class="rubric">Example</p>
+<p>Authenticate with different credential types:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Tenant user authentication</span>
+<span class="n">success</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">login</span><span class="p">(</span><span class="s2">&quot;tenant@thingsboard.org&quot;</span><span class="p">,</span> <span class="s2">&quot;tenant&quot;</span><span class="p">)</span>
+
+<span class="c1"># Customer user authentication</span>
+<span class="n">success</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">login</span><span class="p">(</span><span class="s2">&quot;customer@company.com&quot;</span><span class="p">,</span> <span class="s2">&quot;password123&quot;</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="n">success</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Authentication successful&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Authentication failed&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="rest_api.ThingsBoardAPI.ensure_auth">
+<span class="sig-name descname"><span class="pre">ensure_auth</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/rest_api.html#ThingsBoardAPI.ensure_auth"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#rest_api.ThingsBoardAPI.ensure_auth" title="Link to this definition"></a></dt>
+<dd><p>Ensure valid authentication before API operations.</p>
+<p>Verifies that a valid authentication token exists and is properly
+configured in the session headers. If authentication is missing or
+invalid, attempts automatic re-authentication using stored credentials.</p>
+<p>This method is called internally before each API operation to ensure
+requests are properly authenticated and will succeed.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>True if authentication is valid or successfully refreshed, False otherwise</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>bool</p>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This method is called automatically by all API methods that require
+authentication. Manual calls are typically not necessary.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Requires stored username and password for automatic re-authentication.
+If credentials are not available, manual login is required.</p>
+</div>
+<p class="rubric">Example</p>
+<p>Manual authentication check (rarely needed):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">api</span><span class="o">.</span><span class="n">ensure_auth</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Ready for API operations&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Authentication required&quot;</span><span class="p">)</span>
+    <span class="n">api</span><span class="o">.</span><span class="n">login</span><span class="p">(</span><span class="s2">&quot;username&quot;</span><span class="p">,</span> <span class="s2">&quot;password&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="rest_api.ThingsBoardAPI.create_device">
+<span class="sig-name descname"><span class="pre">create_device</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">device_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">device_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'default'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/rest_api.html#ThingsBoardAPI.create_device"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#rest_api.ThingsBoardAPI.create_device" title="Link to this definition"></a></dt>
+<dd><p>Create a new device in ThingsBoard with specified name and type.</p>
+<p>Creates a new IoT device entity in the ThingsBoard platform with the
+provided name and type. The device will be associated with the currently
+authenticated tenant and can immediately receive telemetry data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>device_name</strong> (<em>str</em>) – Unique name for the device within the tenant scope</p></li>
+<li><p><strong>device_type</strong> (<em>str</em>) – Device type classification (default: “default”)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Device ID if creation successful, None otherwise</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str or None</p>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Device names must be unique within the tenant scope. Device types
+are used for organization and can be used for bulk operations.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Requires valid authentication. Returns None if authentication fails
+or if the device name already exists.</p>
+</div>
+<p class="rubric">Example</p>
+<p>Create devices with different types:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create a temperature sensor</span>
+<span class="n">sensor_id</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">create_device</span><span class="p">(</span><span class="s2">&quot;temp_sensor_01&quot;</span><span class="p">,</span> <span class="s2">&quot;temperature_sensor&quot;</span><span class="p">)</span>
+
+<span class="c1"># Create a GPS tracker</span>
+<span class="n">tracker_id</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">create_device</span><span class="p">(</span><span class="s2">&quot;vehicle_tracker_05&quot;</span><span class="p">,</span> <span class="s2">&quot;gps_tracker&quot;</span><span class="p">)</span>
+
+<span class="c1"># Create device with default type</span>
+<span class="n">device_id</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">create_device</span><span class="p">(</span><span class="s2">&quot;generic_device_01&quot;</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="n">device_id</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Device created with ID: </span><span class="si">{</span><span class="n">device_id</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="rest_api.ThingsBoardAPI.get_device_access_token">
+<span class="sig-name descname"><span class="pre">get_device_access_token</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">device_id</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/rest_api.html#ThingsBoardAPI.get_device_access_token"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#rest_api.ThingsBoardAPI.get_device_access_token" title="Link to this definition"></a></dt>
+<dd><p>Retrieve the access token for a specific device.</p>
+<p>Fetches the device credentials from ThingsBoard and returns the access token
+if the device is configured for ACCESS_TOKEN authentication. This token is
+required for devices to publish telemetry data to ThingsBoard.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>device_id</strong> (<em>str</em>) – Unique identifier of the device</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Device access token if available, None otherwise</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str or None</p>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Only devices configured with ACCESS_TOKEN credential type will return
+a valid token. Other credential types (X.509, MQTT Basic) will return None.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The access token is sensitive information that should be securely
+transmitted to devices and stored safely.</p>
+</div>
+<p class="rubric">Example</p>
+<p>Retrieve and use device access token:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">device_id</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">create_device</span><span class="p">(</span><span class="s2">&quot;sensor_01&quot;</span><span class="p">,</span> <span class="s2">&quot;temperature&quot;</span><span class="p">)</span>
+<span class="n">token</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">get_device_access_token</span><span class="p">(</span><span class="n">device_id</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="n">token</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Device token: </span><span class="si">{</span><span class="n">token</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="c1"># Configure device with this token for telemetry publishing</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Failed to retrieve device token&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="rest_api.ThingsBoardAPI.delete_device">
+<span class="sig-name descname"><span class="pre">delete_device</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">device_id</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/rest_api.html#ThingsBoardAPI.delete_device"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#rest_api.ThingsBoardAPI.delete_device" title="Link to this definition"></a></dt>
+<dd><p>Delete a specific device from ThingsBoard.</p>
+<p>Permanently removes a device and all its associated data (telemetry,
+attributes, relationships) from the ThingsBoard platform. This operation
+cannot be undone.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>device_id</strong> (<em>str</em>) – Unique identifier of the device to delete</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>True if deletion successful, False otherwise</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This operation permanently deletes the device and ALL associated data.
+Ensure proper backup procedures are in place before deletion.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Related entities (relationships, alarms, events) are also removed
+as part of the deletion process.</p>
+</div>
+<p class="rubric">Example</p>
+<p>Safe device deletion with confirmation:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">device_id</span> <span class="o">=</span> <span class="s2">&quot;device-uuid-here&quot;</span>
+
+<span class="c1"># Optionally backup device data before deletion</span>
+<span class="c1"># backup_device_data(device_id)</span>
+
+<span class="k">if</span> <span class="n">api</span><span class="o">.</span><span class="n">delete_device</span><span class="p">(</span><span class="n">device_id</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Device successfully deleted&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Failed to delete device&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="rest_api.ThingsBoardAPI.get_devices_by_type">
+<span class="sig-name descname"><span class="pre">get_devices_by_type</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">device_type</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/rest_api.html#ThingsBoardAPI.get_devices_by_type"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#rest_api.ThingsBoardAPI.get_devices_by_type" title="Link to this definition"></a></dt>
+<dd><p>Retrieve all devices of a specific type from the tenant.</p>
+<p>Fetches a list of all devices belonging to the current tenant that match
+the specified device type. This is useful for bulk operations and fleet
+management tasks.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>device_type</strong> (<em>str</em>) – Device type to filter by (e.g., “temperature_sensor”)</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>List of device objects matching the specified type</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The method returns up to 100 devices per call. For tenants with more
+devices of the same type, implement pagination using the page parameter.</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Use this method for fleet-wide operations like bulk configuration
+updates or status monitoring.</p>
+</div>
+<p class="rubric">Example</p>
+<p>Retrieve and process devices by type:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Get all temperature sensors</span>
+<span class="n">temp_sensors</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">get_devices_by_type</span><span class="p">(</span><span class="s2">&quot;temperature_sensor&quot;</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">device</span> <span class="ow">in</span> <span class="n">temp_sensors</span><span class="p">:</span>
+    <span class="n">device_id</span> <span class="o">=</span> <span class="n">device</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;id&#39;</span><span class="p">,</span> <span class="p">{})</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;id&#39;</span><span class="p">)</span>
+    <span class="n">device_name</span> <span class="o">=</span> <span class="n">device</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;name&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Found sensor: </span><span class="si">{</span><span class="n">device_name</span><span class="si">}</span><span class="s2"> (ID: </span><span class="si">{</span><span class="n">device_id</span><span class="si">}</span><span class="s2">)&quot;</span><span class="p">)</span>
+
+<span class="c1"># Get all GPS trackers</span>
+<span class="n">trackers</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">get_devices_by_type</span><span class="p">(</span><span class="s2">&quot;gps_tracker&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Found </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">trackers</span><span class="p">)</span><span class="si">}</span><span class="s2"> GPS trackers&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="rest_api.ThingsBoardAPI.delete_all_devices_by_type">
+<span class="sig-name descname"><span class="pre">delete_all_devices_by_type</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">device_type</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/rest_api.html#ThingsBoardAPI.delete_all_devices_by_type"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#rest_api.ThingsBoardAPI.delete_all_devices_by_type" title="Link to this definition"></a></dt>
+<dd><p>Delete all devices of a specific type from the tenant.</p>
+<p>Performs a bulk deletion of all devices matching the specified type.
+This is a powerful operation useful for fleet management scenarios
+where entire device categories need to be removed.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>device_type</strong> (<em>str</em>) – Device type to delete (e.g., “old_sensor_type”)</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+<div class="admonition danger">
+<p class="admonition-title">Danger</p>
+<p>This operation will permanently delete ALL devices of the specified
+type and their associated data. Use with extreme caution.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The operation processes devices in batches and may take time for
+large device fleets. Each device is deleted individually.</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Consider implementing logging or confirmation prompts before using
+this method in production environments.</p>
+</div>
+<p class="rubric">Example</p>
+<p>Bulk device cleanup with safety measures:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">device_type</span> <span class="o">=</span> <span class="s2">&quot;deprecated_sensor_v1&quot;</span>
+
+<span class="c1"># Check how many devices will be deleted</span>
+<span class="n">devices</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">get_devices_by_type</span><span class="p">(</span><span class="n">device_type</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Will delete </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">devices</span><span class="p">)</span><span class="si">}</span><span class="s2"> devices of type &#39;</span><span class="si">{</span><span class="n">device_type</span><span class="si">}</span><span class="s2">&#39;&quot;</span><span class="p">)</span>
+
+<span class="c1"># Confirm deletion (in production, implement proper confirmation)</span>
+<span class="n">confirm</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Continue? (yes/no): &quot;</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">confirm</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">==</span> <span class="s1">&#39;yes&#39;</span><span class="p">:</span>
+    <span class="n">api</span><span class="o">.</span><span class="n">delete_all_devices_by_type</span><span class="p">(</span><span class="n">device_type</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Bulk deletion completed&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="rest_api.ThingsBoardAPI.get_device_by_name">
+<span class="sig-name descname"><span class="pre">get_device_by_name</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">device_name</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/rest_api.html#ThingsBoardAPI.get_device_by_name"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#rest_api.ThingsBoardAPI.get_device_by_name" title="Link to this definition"></a></dt>
+<dd><p>Retrieve a specific device by its name.</p>
+<p>Searches for and returns a device with the exact name match within
+the current tenant scope. Device names are unique within a tenant,
+so this method returns at most one device.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>device_name</strong> (<em>str</em>) – Exact name of the device to find</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Device object if found, None otherwise</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict or None</p>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Device names are case-sensitive and must match exactly. The search
+is performed within the current tenant scope only.</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>This method is useful when you know the device name but need to
+retrieve its ID or other properties for further operations.</p>
+</div>
+<p class="rubric">Example</p>
+<p>Find device by name and perform operations:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">device</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">get_device_by_name</span><span class="p">(</span><span class="s2">&quot;temperature_sensor_hall_A&quot;</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="n">device</span><span class="p">:</span>
+    <span class="n">device_id</span> <span class="o">=</span> <span class="n">device</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;id&#39;</span><span class="p">,</span> <span class="p">{})</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;id&#39;</span><span class="p">)</span>
+    <span class="n">device_type</span> <span class="o">=</span> <span class="n">device</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;type&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Found device: </span><span class="si">{</span><span class="n">device_id</span><span class="si">}</span><span class="s2"> (type: </span><span class="si">{</span><span class="n">device_type</span><span class="si">}</span><span class="s2">)&quot;</span><span class="p">)</span>
+
+    <span class="c1"># Get access token for the device</span>
+    <span class="n">token</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">get_device_access_token</span><span class="p">(</span><span class="n">device_id</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Device token: </span><span class="si">{</span><span class="n">token</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Device not found&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="rest_api.ThingsBoardAPI.create_relation">
+<span class="sig-name descname"><span class="pre">create_relation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">from_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">to_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">relation_type</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/rest_api.html#ThingsBoardAPI.create_relation"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#rest_api.ThingsBoardAPI.create_relation" title="Link to this definition"></a></dt>
+<dd><p>Create a relationship between two devices in ThingsBoard.</p>
+<p>Establishes a directional relationship between two devices, which can be
+used to model hierarchical structures, dependencies, or logical groupings
+within the IoT device fleet.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>from_id</strong> (<em>str</em>) – Source device ID in the relationship</p></li>
+<li><p><strong>to_id</strong> (<em>str</em>) – Target device ID in the relationship</p></li>
+<li><p><strong>relation_type</strong> (<em>str</em>) – Type of relationship (e.g., “Contains”, “Manages”)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>True if relationship created successfully, False otherwise</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Relationships are directional (from_id -&gt; to_id) and can be used to
+create complex device hierarchies and dependencies.</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Common relation types include:
+- “Contains”: For parent-child relationships
+- “Manages”: For controller-device relationships
+- “Uses”: For dependency relationships</p>
+</div>
+<p class="rubric">Example</p>
+<p>Create device relationships for fleet organization:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create a gateway device</span>
+<span class="n">gateway_id</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">create_device</span><span class="p">(</span><span class="s2">&quot;gateway_01&quot;</span><span class="p">,</span> <span class="s2">&quot;gateway&quot;</span><span class="p">)</span>
+
+<span class="c1"># Create sensor devices</span>
+<span class="n">sensor1_id</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">create_device</span><span class="p">(</span><span class="s2">&quot;sensor_01&quot;</span><span class="p">,</span> <span class="s2">&quot;temperature&quot;</span><span class="p">)</span>
+<span class="n">sensor2_id</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">create_device</span><span class="p">(</span><span class="s2">&quot;sensor_02&quot;</span><span class="p">,</span> <span class="s2">&quot;humidity&quot;</span><span class="p">)</span>
+
+<span class="c1"># Establish relationships (gateway contains sensors)</span>
+<span class="n">api</span><span class="o">.</span><span class="n">create_relation</span><span class="p">(</span><span class="n">gateway_id</span><span class="p">,</span> <span class="n">sensor1_id</span><span class="p">,</span> <span class="s2">&quot;Contains&quot;</span><span class="p">)</span>
+<span class="n">api</span><span class="o">.</span><span class="n">create_relation</span><span class="p">(</span><span class="n">gateway_id</span><span class="p">,</span> <span class="n">sensor2_id</span><span class="p">,</span> <span class="s2">&quot;Contains&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Device hierarchy created successfully&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="rest_api.ThingsBoardAPI.delete_relation">
+<span class="sig-name descname"><span class="pre">delete_relation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">from_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">to_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">relation_type</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/rest_api.html#ThingsBoardAPI.delete_relation"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#rest_api.ThingsBoardAPI.delete_relation" title="Link to this definition"></a></dt>
+<dd><p>Delete a specific relationship between two devices.</p>
+<p>Removes an existing directional relationship between two devices.
+This operation only affects the relationship itself; the devices
+remain unchanged.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>from_id</strong> (<em>str</em>) – Source device ID in the relationship to delete</p></li>
+<li><p><strong>to_id</strong> (<em>str</em>) – Target device ID in the relationship to delete</p></li>
+<li><p><strong>relation_type</strong> (<em>str</em>) – Type of relationship to delete (must match exactly)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>True if relationship deleted successfully, False otherwise</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>All relationship parameters (from_id, to_id, relation_type) must
+match exactly for the deletion to succeed.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Deleting relationships may affect business logic that depends on
+device hierarchies or dependencies.</p>
+</div>
+<p class="rubric">Example</p>
+<p>Remove specific device relationships:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gateway_id</span> <span class="o">=</span> <span class="s2">&quot;gateway-device-id&quot;</span>
+<span class="n">sensor_id</span> <span class="o">=</span> <span class="s2">&quot;sensor-device-id&quot;</span>
+
+<span class="c1"># Remove the Contains relationship</span>
+<span class="k">if</span> <span class="n">api</span><span class="o">.</span><span class="n">delete_relation</span><span class="p">(</span><span class="n">gateway_id</span><span class="p">,</span> <span class="n">sensor_id</span><span class="p">,</span> <span class="s2">&quot;Contains&quot;</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Relationship removed successfully&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Failed to remove relationship&quot;</span><span class="p">)</span>
+
+<span class="c1"># This would not work (wrong relation type)</span>
+<span class="n">api</span><span class="o">.</span><span class="n">delete_relation</span><span class="p">(</span><span class="n">gateway_id</span><span class="p">,</span> <span class="n">sensor_id</span><span class="p">,</span> <span class="s2">&quot;Manages&quot;</span><span class="p">)</span>  <span class="c1"># False</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="rest_api.ThingsBoardAPI.set_server_attribute">
+<span class="sig-name descname"><span class="pre">set_server_attribute</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">device_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">key</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/rest_api.html#ThingsBoardAPI.set_server_attribute"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#rest_api.ThingsBoardAPI.set_server_attribute" title="Link to this definition"></a></dt>
+<dd><p>Set a server-side attribute for a specific device.</p>
+<p>Creates or updates a server-side attribute for the specified device.
+Server-side attributes are used for device configuration, metadata,
+and other non-telemetry data that should be managed by the server.</p>
+<p>Server-side attributes are typically used for:
+- Device configuration parameters
+- Location information
+- Firmware versions
+- Device metadata and tags</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>device_id</strong> (<em>str</em>) – Unique identifier of the target device</p></li>
+<li><p><strong>key</strong> (<em>str</em>) – Attribute name/key</p></li>
+<li><p><strong>value</strong> (<em>Any</em>) – Attribute value (can be string, number, boolean, or object)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>True if attribute set successfully, False otherwise</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Server-side attributes are persistent and can be retrieved by both
+the server and client applications. They are ideal for configuration
+and metadata that doesn’t change frequently.</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Use consistent naming conventions for attribute keys to maintain
+organization across your device fleet.</p>
+</div>
+<p class="rubric">Example</p>
+<p>Set various types of device attributes:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">device_id</span> <span class="o">=</span> <span class="s2">&quot;device-uuid-here&quot;</span>
+
+<span class="c1"># Set location information</span>
+<span class="n">api</span><span class="o">.</span><span class="n">set_server_attribute</span><span class="p">(</span><span class="n">device_id</span><span class="p">,</span> <span class="s2">&quot;location&quot;</span><span class="p">,</span> <span class="s2">&quot;Building A, Floor 2&quot;</span><span class="p">)</span>
+
+<span class="c1"># Set configuration parameters</span>
+<span class="n">api</span><span class="o">.</span><span class="n">set_server_attribute</span><span class="p">(</span><span class="n">device_id</span><span class="p">,</span> <span class="s2">&quot;sampling_rate&quot;</span><span class="p">,</span> <span class="mi">30</span><span class="p">)</span>
+
+<span class="c1"># Set complex configuration object</span>
+<span class="n">config</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;wifi_ssid&quot;</span><span class="p">:</span> <span class="s2">&quot;IoT_Network&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;sleep_interval&quot;</span><span class="p">:</span> <span class="mi">300</span><span class="p">,</span>
+    <span class="s2">&quot;enabled_sensors&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;temperature&quot;</span><span class="p">,</span> <span class="s2">&quot;humidity&quot;</span><span class="p">]</span>
+<span class="p">}</span>
+<span class="n">api</span><span class="o">.</span><span class="n">set_server_attribute</span><span class="p">(</span><span class="n">device_id</span><span class="p">,</span> <span class="s2">&quot;device_config&quot;</span><span class="p">,</span> <span class="n">config</span><span class="p">)</span>
+
+<span class="c1"># Set boolean flags</span>
+<span class="n">api</span><span class="o">.</span><span class="n">set_server_attribute</span><span class="p">(</span><span class="n">device_id</span><span class="p">,</span> <span class="s2">&quot;maintenance_mode&quot;</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="tb_manager_component.html" class="btn btn-neutral float-left" title="Thingsboard Manager" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="devices.html" class="btn btn-neutral float-right" title="ThingsBoard Devices" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, Estela Mora Barba.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

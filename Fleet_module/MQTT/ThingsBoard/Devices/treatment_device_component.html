@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Treatment Device - ThingsBoard &mdash; Fleet Manager 1.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../../../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../../../../_static/copybutton.css?v=76b2166b" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../../../_static/documentation_options.js?v=f2a433a1"></script>
+        <script src="../../../../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../../../../_static/clipboard.min.js?v=a7894cd8"></script>
+        <script src="../../../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../../../_static/js/theme.js"></script>
+    <link rel="author" title="About these documents" href="../../../../about.html" />
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+    <link rel="next" title="Field PM Device - ThingsBoard" href="field_pm_device_component.html" />
+    <link rel="prev" title="Vehicle Device - ThingsBoard" href="vehicle_device_component.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../../../index.html" class="icon icon-home">
+            Fleet Manager
+          </a>
+              <div class="version">
+                1.0
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../../about.html">About the project</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../getting_started.html">Getting Started</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../../../modules.html">Code documentation</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../../../Drone_module/index.html">Drone</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../../index.html">Fleet Manager</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../../../init_fleet_component.html">Init Fleet Manager</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../mission_components.html">Mission Management</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../ros2_components.html">ROS2 Management</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../rest_components.html">REST Management</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../../../mqtt_components.html">MQTT Management</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="../../grpc_mqtt_component.html">gRPC MQTT</a></li>
+<li class="toctree-l4 current"><a class="reference internal" href="../../thingsboard.html">ThingsBoard</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../pm_components.html">Prescription Map Management</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../metrics_components.html">System Metrics Component</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../clear_fleet_component.html">Clear Fleet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../create_logger_fleet_component.html">Create Logger</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../training.html">Training documentation</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../index.html">Fleet Manager</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../../../modules.html">Code documentation</a></li>
+          <li class="breadcrumb-item"><a href="../../../index.html">Fleet Manager</a></li>
+          <li class="breadcrumb-item"><a href="../../../mqtt_components.html">MQTT Management</a></li>
+          <li class="breadcrumb-item"><a href="../../thingsboard.html">ThingsBoard</a></li>
+          <li class="breadcrumb-item"><a href="../devices.html">ThingsBoard Devices</a></li>
+      <li class="breadcrumb-item active">Treatment Device - ThingsBoard</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../../_sources/Fleet_module/MQTT/ThingsBoard/Devices/treatment_device_component.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="treatment-device-thingsboard">
+<h1>Treatment Device - ThingsBoard<a class="headerlink" href="#treatment-device-thingsboard" title="Link to this heading"></a></h1>
+<section id="treatment-device-module">
+<span id="module-treatment_device"></span><h2>Treatment Device Module<a class="headerlink" href="#treatment-device-module" title="Link to this heading"></a></h2>
+<p>This module provides the <cite>TreatmentDevice</cite> class for managing ThingsBoard devices
+that represent agricultural treatments in the fleet management system.</p>
+<p>The <cite>TreatmentDevice</cite> class handles the creation, management, and cleanup of ThingsBoard
+devices that track treatment applications, including pesticide/fertilizer applications,
+field-treatment relationships, and treatment-specific telemetry data.</p>
+<dl>
+<dt>Key Features:</dt><dd><ul class="simple">
+<li><p>Treatment device lifecycle management</p></li>
+<li><p>Treatment-field prescription map relationships</p></li>
+<li><p>Vehicle-treatment association tracking</p></li>
+<li><p>Telemetry data collection for treatment monitoring</p></li>
+<li><p>Automatic device cleanup by treatment or mission</p></li>
+<li><p>Integration with field prescription map devices</p></li>
+</ul>
+</dd>
+<dt>Usage Example:</dt><dd><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">treatment_device</span> <span class="o">=</span> <span class="n">TreatmentDevice</span><span class="p">(</span><span class="n">tb_api</span><span class="p">,</span> <span class="n">mqtt_logger</span><span class="p">,</span> <span class="n">tb_host</span><span class="p">,</span> <span class="n">port</span><span class="p">,</span> <span class="n">telemetry_topic</span><span class="p">)</span>
+<span class="n">treatment_device</span><span class="o">.</span><span class="n">handle_message</span><span class="p">(</span><span class="n">treatment_message</span><span class="p">)</span>
+<span class="n">treatment_device</span><span class="o">.</span><span class="n">add_field_pm</span><span class="p">(</span><span class="n">treatment_id</span><span class="p">,</span> <span class="n">field_pm_device_id</span><span class="p">,</span> <span class="s2">&quot;CONTAINS&quot;</span><span class="p">)</span>
+<span class="c1"># ... treatment execution ...</span>
+<span class="n">treatment_device</span><span class="o">.</span><span class="n">cleanup</span><span class="p">(</span><span class="n">treatment_id</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+<p>Author: Fleet Management System
+Date: 2025</p>
+</section>
+<dl class="py class">
+<dt class="sig sig-object py" id="treatment_device.TreatmentDevice">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">treatment_device.</span></span><span class="sig-name descname"><span class="pre">TreatmentDevice</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tb_api</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mqtt_logger</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tb_host</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">telemetry_topic</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/treatment_device.html#TreatmentDevice"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#treatment_device.TreatmentDevice" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>ThingsBoard device manager for agricultural treatment monitoring.</p>
+<p>This class manages ThingsBoard devices that represent treatments in the agricultural
+fleet management system. Each treatment gets its own device for tracking treatment
+applications, field associations, vehicle assignments, and related telemetry data.</p>
+<p>The class maintains a registry of active treatments with their associated device
+information, field prescription map relationships, and mission context. It provides
+methods for creating treatment devices, handling treatment messages, managing
+field relationships, and cleaning up resources.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="treatment_device.TreatmentDevice.base">
+<span class="sig-name descname"><span class="pre">base</span></span><a class="headerlink" href="#treatment_device.TreatmentDevice.base" title="Link to this definition"></a></dt>
+<dd><p>Base device manager for ThingsBoard operations</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="base_device_component.html#base_device.BaseDevice" title="base_device.BaseDevice">BaseDevice</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="treatment_device.TreatmentDevice.treatments">
+<span class="sig-name descname"><span class="pre">treatments</span></span><a class="headerlink" href="#treatment_device.TreatmentDevice.treatments" title="Link to this definition"></a></dt>
+<dd><p>Registry of active treatments with device and relationship info</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="treatment_device.TreatmentDevice.mqtt_logger">
+<span class="sig-name descname"><span class="pre">mqtt_logger</span></span><a class="headerlink" href="#treatment_device.TreatmentDevice.mqtt_logger" title="Link to this definition"></a></dt>
+<dd><p>Logger instance for MQTT operations</p>
+</dd></dl>
+
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Treatment devices are automatically linked to field prescription map devices
+when treatments are applied to specific field areas.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Ensure proper cleanup of treatment devices and their relationships to prevent
+resource leaks in the ThingsBoard platform.</p>
+</div>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><code class="xref py py-class docutils literal notranslate"><span class="pre">BaseDevice</span></code>: Base class for ThingsBoard device operations
+<a class="reference internal" href="field_pm_device_component.html#field_pm_device.FieldPMDevice" title="field_pm_device.FieldPMDevice"><code class="xref py py-class docutils literal notranslate"><span class="pre">field_pm_device.FieldPMDevice</span></code></a>: Field prescription map device manager
+<code class="xref py py-mod docutils literal notranslate"><span class="pre">MQTT.ThingsBoard.tb_manager</span></code>: ThingsBoard connection manager</p>
+</div>
+<dl class="py method">
+<dt class="sig sig-object py" id="treatment_device.TreatmentDevice.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tb_api</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mqtt_logger</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tb_host</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">telemetry_topic</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/treatment_device.html#TreatmentDevice.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#treatment_device.TreatmentDevice.__init__" title="Link to this definition"></a></dt>
+<dd><p>Initialize the treatment device manager.</p>
+<p>Sets up the base device manager and initializes the treatment registry
+for tracking active treatments and their associated ThingsBoard devices.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>tb_api</strong> – ThingsBoard REST API client instance</p></li>
+<li><p><strong>mqtt_logger</strong> – Logger instance for MQTT operations and debugging</p></li>
+<li><p><strong>tb_host</strong> (<em>str</em>) – ThingsBoard server hostname or IP address</p></li>
+<li><p><strong>port</strong> (<em>int</em>) – ThingsBoard MQTT port (typically 1883)</p></li>
+<li><p><strong>telemetry_topic</strong> (<em>str</em>) – MQTT topic for telemetry data transmission</p></li>
+</ul>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">tb_api</span> <span class="o">=</span> <span class="n">RestClientCE</span><span class="p">(</span><span class="n">base_url</span><span class="o">=</span><span class="s2">&quot;http://localhost:8080&quot;</span><span class="p">)</span>
+<span class="n">treatment_device</span> <span class="o">=</span> <span class="n">TreatmentDevice</span><span class="p">(</span>
+    <span class="n">tb_api</span><span class="o">=</span><span class="n">tb_api</span><span class="p">,</span>
+    <span class="n">mqtt_logger</span><span class="o">=</span><span class="n">logger</span><span class="p">,</span>
+    <span class="n">tb_host</span><span class="o">=</span><span class="s2">&quot;localhost&quot;</span><span class="p">,</span>
+    <span class="n">port</span><span class="o">=</span><span class="mi">1883</span><span class="p">,</span>
+    <span class="n">telemetry_topic</span><span class="o">=</span><span class="s2">&quot;v1/devices/me/telemetry&quot;</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="treatment_device.TreatmentDevice.handle_message">
+<span class="sig-name descname"><span class="pre">handle_message</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">message</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/treatment_device.html#TreatmentDevice.handle_message"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#treatment_device.TreatmentDevice.handle_message" title="Link to this definition"></a></dt>
+<dd><p>Process treatment message and create/update corresponding ThingsBoard device.</p>
+<p>This method handles incoming treatment messages by creating new treatment devices
+or updating existing ones. Each treatment gets a dedicated ThingsBoard device
+for monitoring treatment applications and collecting telemetry data.</p>
+<p>The method performs the following operations:
+1. Extracts treatment information from the message
+2. Creates a new ThingsBoard device for the treatment if it doesn’t exist
+3. Establishes MQTT client connection with the device token
+4. Sets server attributes for searchability (treatment_id, mission_id, vehicle_id)
+5. Sends initial telemetry data to the device</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>message</strong> (<em>dict</em>) – <p>Treatment message containing treatment details with keys:
+- telemetry (dict): Treatment telemetry data including:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>treatment (str): Treatment identifier/name</p></li>
+<li><p>vehicle_id (str, optional): Assigned vehicle ID</p></li>
+</ul>
+</div></blockquote>
+<ul class="simple">
+<li><p>mission_id (str, optional): Associated mission identifier</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">message</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;mission_id&#39;</span><span class="p">:</span> <span class="s1">&#39;MISSION_001&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;telemetry&#39;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s1">&#39;treatment&#39;</span><span class="p">:</span> <span class="s1">&#39;PESTICIDE_APP_001&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;vehicle_id&#39;</span><span class="p">:</span> <span class="s1">&#39;VEHICLE_001&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;application_rate&#39;</span><span class="p">:</span> <span class="mf">2.5</span><span class="p">,</span>
+        <span class="s1">&#39;pressure&#39;</span><span class="p">:</span> <span class="mf">3.2</span><span class="p">,</span>
+        <span class="s1">&#39;timestamp&#39;</span><span class="p">:</span> <span class="s1">&#39;2025-01-15T14:30:00Z&#39;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="n">treatment_device</span><span class="o">.</span><span class="n">handle_message</span><span class="p">(</span><span class="n">message</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Server attributes are set on the device to facilitate searches and
+relationship management in the ThingsBoard platform.</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="treatment_device.TreatmentDevice.add_field_pm">
+<span class="sig-name descname"><span class="pre">add_field_pm</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">treatment</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">field_pm_device_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">relation_type</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/treatment_device.html#TreatmentDevice.add_field_pm"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#treatment_device.TreatmentDevice.add_field_pm" title="Link to this definition"></a></dt>
+<dd><p>Associate a field prescription map device with a treatment device.</p>
+<p>This method creates a relationship between a treatment device and a field
+prescription map device, indicating that the treatment is applied to a
+specific field area defined by the prescription map.</p>
+<p>The relationship is created in ThingsBoard and tracked locally for cleanup
+purposes. This enables tracking which treatments are applied to which
+field areas and supports complex agricultural operation monitoring.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>treatment</strong> (<em>str</em>) – Treatment identifier/name</p></li>
+<li><p><strong>field_pm_device_id</strong> (<em>str</em>) – ThingsBoard device ID of the field prescription map</p></li>
+<li><p><strong>relation_type</strong> (<em>str</em>) – Type of relationship (typically “CONTAINS”)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>True if the relationship was successfully created, False otherwise</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Associate treatment with field prescription map</span>
+<span class="n">success</span> <span class="o">=</span> <span class="n">treatment_device</span><span class="o">.</span><span class="n">add_field_pm</span><span class="p">(</span>
+    <span class="s2">&quot;PESTICIDE_APP_001&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;field_pm_device_123&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;CONTAINS&quot;</span>
+<span class="p">)</span>
+<span class="k">if</span> <span class="n">success</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Treatment-field relationship created successfully&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This method is typically called by FieldPMDevice to notify about
+new field prescription map associations with treatments.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Duplicate relationships for the same treatment-field pair are prevented
+to avoid relationship conflicts in ThingsBoard.</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="treatment_device.TreatmentDevice.cleanup">
+<span class="sig-name descname"><span class="pre">cleanup</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">treatment</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/treatment_device.html#TreatmentDevice.cleanup"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#treatment_device.TreatmentDevice.cleanup" title="Link to this definition"></a></dt>
+<dd><p>Clean up treatment device and all its relationships.</p>
+<p>This method performs comprehensive cleanup for a treatment by:
+1. Deleting all relationships with field prescription map devices
+2. Closing the MQTT client connection
+3. Deleting the ThingsBoard device
+4. Removing the treatment from the local registry</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>treatment</strong> (<em>str</em>) – Treatment identifier/name to clean up</p>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Clean up completed treatment</span>
+<span class="n">treatment_device</span><span class="o">.</span><span class="n">cleanup</span><span class="p">(</span><span class="s1">&#39;PESTICIDE_APP_001&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This method ensures complete cleanup of all resources associated
+with the treatment, including ThingsBoard relationships and MQTT connections.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>After cleanup, the treatment device will no longer be accessible in
+ThingsBoard and all associated telemetry data collection will stop.</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="treatment_device.TreatmentDevice.cleanup_by_mission">
+<span class="sig-name descname"><span class="pre">cleanup_by_mission</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mission_id</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/treatment_device.html#TreatmentDevice.cleanup_by_mission"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#treatment_device.TreatmentDevice.cleanup_by_mission" title="Link to this definition"></a></dt>
+<dd><p>Clean up all treatments associated with a specific mission.</p>
+<p>This method identifies and cleans up all treatments that belong to a
+specific mission. It’s typically called when a mission is completed
+or canceled to ensure all related treatment devices are properly cleaned up.</p>
+<p>The method performs the following operations:
+1. Identifies all treatments associated with the given mission ID
+2. Calls cleanup() for each identified treatment
+3. Ensures complete cleanup of all mission-related treatment resources</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>mission_id</strong> (<em>str</em>) – Mission identifier for which to clean up treatments</p>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Clean up all treatments for completed mission</span>
+<span class="n">treatment_device</span><span class="o">.</span><span class="n">cleanup_by_mission</span><span class="p">(</span><span class="s1">&#39;MISSION_001&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This method is useful for bulk cleanup operations when missions
+are completed, ensuring no orphaned treatment devices remain.</p>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="vehicle_device_component.html" class="btn btn-neutral float-left" title="Vehicle Device - ThingsBoard" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="field_pm_device_component.html" class="btn btn-neutral float-right" title="Field PM Device - ThingsBoard" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, Estela Mora Barba.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

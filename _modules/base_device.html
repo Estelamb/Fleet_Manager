@@ -1,0 +1,1132 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>base_device &mdash; Fleet Manager 1.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=f2a433a1"></script>
+        <script src="../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+        <script src="../_static/copybutton.js?v=f281be69"></script>
+        <script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script>
+        <script type="module">import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11.12.1/dist/mermaid.esm.min.mjs";
+
+
+
+
+
+const initStyles = () => {
+    const defaultStyle = document.createElement('style');
+    defaultStyle.textContent = `pre.mermaid {
+    /* Same as .mermaid-container > pre */
+    display: block;
+    width: 100%;
+}
+
+pre.mermaid > svg {
+    /* Same as .mermaid-container > pre > svg */
+    height: 500px;
+    width: 100%;
+    max-width: 100% !important;
+}`;
+    document.head.appendChild(defaultStyle);
+
+    const fullscreenStyle = document.createElement('style');
+    fullscreenStyle.textContent = `.mermaid-container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.mermaid-container > pre {
+    display: block;
+    width: 100%;
+}
+
+.mermaid-container > pre > svg {
+    height: 500px;
+    width: 100%;
+    max-width: 100% !important;
+}
+
+.mermaid-fullscreen-btn {
+    width: 28px;
+    height: 28px;
+    background: rgba(255, 255, 255, 0.95);
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    border-radius: 4px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    font-size: 14px;
+    line-height: 1;
+    padding: 0;
+    color: #333;
+}
+
+.mermaid-fullscreen-btn:hover {
+    opacity: 100% !important;
+    background: rgba(255, 255, 255, 1);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+    transform: scale(1.1);
+}
+
+.mermaid-fullscreen-btn.dark-theme {
+    background: rgba(50, 50, 50, 0.95);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: #e0e0e0;
+}
+
+.mermaid-fullscreen-btn.dark-theme:hover {
+    background: rgba(60, 60, 60, 1);
+    box-shadow: 0 3px 10px rgba(255, 255, 255, 0.2);
+}
+
+.mermaid-fullscreen-modal {
+    display: none;
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 95vw;
+    height: 100vh;
+    background: rgba(255, 255, 255, 0.98);
+    z-index: 9999;
+    padding: 20px;
+    overflow: auto;
+}
+
+.mermaid-fullscreen-modal.dark-theme {
+    background: rgba(0, 0, 0, 0.98);
+}
+
+.mermaid-fullscreen-modal.active {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mermaid-container-fullscreen {
+    position: relative;
+    width: 95vw;
+    height: 90vh;
+    max-width: 95vw;
+    max-height: 90vh;
+    background: white;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    overflow: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mermaid-container-fullscreen.dark-theme {
+    background: #1a1a1a;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.8);
+}
+
+.mermaid-container-fullscreen pre.mermaid {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mermaid-container-fullscreen .mermaid svg {
+    height: 100% !important;
+    width: 100% !important;
+    cursor: grab;
+}
+
+.mermaid-fullscreen-close {
+    position: fixed !important;
+    top: 20px !important;
+    right: 20px !important;
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.95);
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    transition: all 0.2s;
+    font-size: 24px;
+    line-height: 1;
+    color: #333;
+}
+
+.mermaid-fullscreen-close:hover {
+    background: white;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+    transform: scale(1.1);
+}
+
+.mermaid-fullscreen-close.dark-theme {
+    background: rgba(50, 50, 50, 0.95);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #e0e0e0;
+}
+
+.mermaid-fullscreen-close.dark-theme:hover {
+    background: rgba(60, 60, 60, 1);
+    box-shadow: 0 6px 16px rgba(255, 255, 255, 0.2);
+}
+
+.mermaid-fullscreen-modal .mermaid-fullscreen-btn {
+    display: none !important;
+}`;
+    document.head.appendChild(fullscreenStyle);
+}
+
+// Detect if page has dark background
+const isDarkTheme = () => {
+    // We use a set of heuristics:
+    // 1. Check for common dark mode classes or attributes
+    // 2. Check computed background color brightness
+    if (document.documentElement.classList.contains('dark') ||
+        document.documentElement.getAttribute('data-theme') === 'dark' ||
+        document.body.classList.contains('dark') ||
+        document.body.getAttribute('data-theme') === 'dark') {
+        // console.log("Dark theme detected via class/attribute");
+        return true;
+    }
+    if (document.documentElement.classList.contains('light') ||
+        document.documentElement.getAttribute('data-theme') === 'light' ||
+        document.body.classList.contains('light') ||
+        document.body.getAttribute('data-theme') === 'light') {
+        // console.log("Light theme detected via class/attribute");
+        return false;
+    }
+    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        // console.log("Dark theme detected via prefers-color-scheme");
+        return true;
+    }
+    const bgColor = window.getComputedStyle(document.body).backgroundColor;
+    const match = bgColor.match(/rgb\((\d+),\s*(\d+),\s*(\d+)/);
+    if (match) {
+        const r = parseInt(match[1]);
+        const g = parseInt(match[2]);
+        const b = parseInt(match[3]);
+        const brightness = (r * 299 + g * 587 + b * 114) / 1000;
+        // console.log("Background color brightness:", brightness);
+        return brightness < 128;
+    }
+    // console.log("No dark or light theme detected, defaulting to light theme");
+    return false;
+};
+
+let darkTheme = isDarkTheme();
+let modal = null;
+let modalContent = null;
+let previousScrollOffset = [window.scrollX, window.scrollY];
+
+const runMermaid = async (rerun) => {
+    console.log("Running mermaid diagrams, rerun =", rerun);
+    // clear all existing mermaid charts
+    let all_mermaids = document.querySelectorAll(".mermaid");
+
+    if (rerun) {
+        all_mermaids.forEach((el) => {
+            if(!el.hasAttribute("data-original-code")) {
+                // store original code
+                // console.log(`Storing original code for first run: `, el.innerHTML);
+                el.setAttribute('data-original-code', el.innerHTML);
+            }
+            if(el.getAttribute("data-processed") === "true") {
+                // remove and restore original
+                el.removeAttribute("data-processed");
+                // console.log(`Restoring original code for re-run: `, el.getAttribute('data-original-code'));
+                el.innerHTML = el.getAttribute('data-original-code');
+            } else {
+                // store original code
+                // console.log(`Storing original code for re-run: `, el.innerHTML);
+                el.setAttribute('data-original-code', el.innerHTML);
+            }
+        });
+        await mermaid.run();
+    }
+
+    all_mermaids = document.querySelectorAll(".mermaid");
+    const mermaids_processed = document.querySelectorAll(".mermaid[data-processed='true']");
+
+    if ("False" === "True") {
+        const mermaids_to_add_zoom = -1 === -1 ? all_mermaids.length : -1;
+        if(mermaids_to_add_zoom > 0) {
+            var svgs = d3.selectAll("");
+            if(all_mermaids.length !== mermaids_processed.length) {
+                setTimeout(() => runMermaid(false), 200);
+                return;
+            } else if(svgs.size() !== mermaids_to_add_zoom) {
+                setTimeout(() => runMermaid(false), 200);
+                return;
+            } else {
+                svgs.each(function() {
+                    var svg = d3.select(this);
+                    svg.html("<g class='wrapper'>" + svg.html() + "</g>");
+                    var inner = svg.select("g");
+                    var zoom = d3.zoom().on("zoom", function(event) {
+                        inner.attr("transform", event.transform);
+                    });
+                    svg.call(zoom);
+                });
+            }
+        }
+    } else if(all_mermaids.length !== mermaids_processed.length) {
+        // Wait for mermaid to process all diagrams
+        setTimeout(() => runMermaid(false), 200);
+        return;
+    }
+
+    // Stop here if not adding fullscreen capability
+    if ("True" !== "True") return;
+
+    if (modal !== null ) {
+        // Destroy existing modal
+        modal.remove();
+        modal = null;
+        modalContent = null;
+    }
+
+    modal = document.createElement('div');
+    modal.className = 'mermaid-fullscreen-modal' + (darkTheme ? ' dark-theme' : '');
+    modal.setAttribute('role', 'dialog');
+    modal.setAttribute('aria-modal', 'true');
+    modal.setAttribute('aria-label', 'Fullscreen diagram viewer');
+    modal.innerHTML = `
+        <button class="mermaid-fullscreen-close${darkTheme ? ' dark-theme' : ''}" aria-label="Close fullscreen">✕</button>
+        <div class="mermaid-container-fullscreen${darkTheme ? ' dark-theme' : ''}"></div>
+    `;
+    document.body.appendChild(modal);
+
+    modalContent = modal.querySelector('.mermaid-container-fullscreen');
+    const closeBtn = modal.querySelector('.mermaid-fullscreen-close');
+
+    const closeModal = () => {
+        modal.classList.remove('active');
+        modalContent.innerHTML = '';
+        document.body.style.overflow = ''
+        window.scrollTo({left: previousScrollOffset[0], top: previousScrollOffset[1], behavior: 'instant'});
+    };
+
+    closeBtn.addEventListener('click', closeModal);
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) closeModal();
+    });
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && modal.classList.contains('active')) {
+            closeModal();
+        }
+    });
+
+    document.querySelectorAll('.mermaid').forEach((mermaidDiv) => {
+        if (mermaidDiv.parentNode.classList.contains('mermaid-container') ||
+            mermaidDiv.closest('.mermaid-fullscreen-modal')) {
+            // Already processed, adjust button class if needed
+            const existingBtn = mermaidDiv.parentNode.querySelector('.mermaid-fullscreen-btn');
+            if (existingBtn) {
+                existingBtn.className = 'mermaid-fullscreen-btn' + (darkTheme ? ' dark-theme' : '');
+            }
+            return;
+        }
+
+        const container = document.createElement('div');
+        container.className = 'mermaid-container';
+        mermaidDiv.parentNode.insertBefore(container, mermaidDiv);
+        container.appendChild(mermaidDiv);
+
+        const fullscreenBtn = document.createElement('button');
+        fullscreenBtn.className = 'mermaid-fullscreen-btn' + (darkTheme ? ' dark-theme' : '');
+        fullscreenBtn.setAttribute('aria-label', 'View diagram in fullscreen');
+        fullscreenBtn.textContent = '⛶';
+        fullscreenBtn.style.opacity = '50%';
+
+        // Calculate dynamic position based on diagram's margin and padding
+        const diagramStyle = window.getComputedStyle(mermaidDiv);
+        const marginTop = parseFloat(diagramStyle.marginTop) || 0;
+        const marginRight = parseFloat(diagramStyle.marginRight) || 0;
+        const paddingTop = parseFloat(diagramStyle.paddingTop) || 0;
+        const paddingRight = parseFloat(diagramStyle.paddingRight) || 0;
+        fullscreenBtn.style.top = `${marginTop + paddingTop + 4}px`;
+        fullscreenBtn.style.right = `${marginRight + paddingRight + 4}px`;
+
+        fullscreenBtn.addEventListener('click', () => {
+            previousScrollOffset = [window.scroll, window.scrollY];
+            const clone = mermaidDiv.cloneNode(true);
+            modalContent.innerHTML = '';
+            modalContent.appendChild(clone);
+
+            const svg = clone.querySelector('svg');
+            if (svg) {
+                svg.removeAttribute('width');
+                svg.removeAttribute('height');
+                svg.style.width = '100%';
+                svg.style.height = 'auto';
+                svg.style.maxWidth = '100%';
+                svg.style.sdisplay = 'block';
+
+                if ("False" === "True") {
+                    setTimeout(() => {
+                        const g = svg.querySelector('g');
+                        if (g) {
+                            var svgD3 = d3.select(svg);
+                            svgD3.html("<g class='wrapper'>" + svgD3.html() + "</g>");
+                            var inner = svgD3.select("g");
+                            var zoom = d3.zoom().on("zoom", function(event) {
+                                inner.attr("transform", event.transform);
+                            });
+                            svgD3.call(zoom);
+                        }
+                    }, 100);
+                }
+            }
+
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+        container.appendChild(fullscreenBtn);
+    });
+};
+
+const load = async () => {
+    initStyles();
+
+    await runMermaid(true);
+
+    const reRunIfThemeChanges = async () => {
+        const newDarkTheme = isDarkTheme();
+        if (newDarkTheme !== darkTheme) {
+            darkTheme = newDarkTheme;
+            console.log("Theme change detected, re-running mermaid with", darkTheme ? "dark" : "default", "theme");
+            await mermaid.initialize(
+                {...JSON.parse(
+                    `{"startOnLoad": false}`
+                ),
+                ...{ darkMode: darkTheme, theme: darkTheme ? 'dark' : 'default' },
+                }
+            );
+            await runMermaid(true);
+        }
+    };
+
+    // Update theme classes when theme changes
+    const themeObserver = new MutationObserver(reRunIfThemeChanges);
+    themeObserver.observe(document.documentElement, {
+        attributes: true,
+        attributeFilter: ['class', 'style', 'data-theme']
+    });
+    themeObserver.observe(document.body, {
+        attributes: true,
+        attributeFilter: ['class', 'style', 'data-theme']
+    });
+};
+
+
+
+
+
+console.log("Initializing mermaid with", darkTheme ? "dark" : "default", "theme");
+mermaid.initialize(
+    {...JSON.parse(
+        `{"startOnLoad": false}`
+    ),
+    ...{ darkMode: darkTheme, theme: darkTheme ? 'dark' : 'default' },
+    }
+);
+
+window.addEventListener("load", load);
+window.runMermaid = runMermaid;</script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="author" title="About these documents" href="../about.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Fleet Manager
+          </a>
+              <div class="version">
+                1.0
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../about.html">About the project</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules.html">Code documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../training.html">Training documentation</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Fleet Manager</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Module code</a></li>
+      <li class="breadcrumb-item active">base_device</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <h1>Source code for base_device</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Base Device Management Module</span>
+
+<span class="sd">.. module:: base_device</span>
+<span class="sd">    :synopsis: Core device management functionality for ThingsBoard integration</span>
+<span class="sd">    :platform: Linux, Windows, macOS</span>
+<span class="sd">    :author: Fleet Management System Team</span>
+
+<span class="sd">This module provides the foundational base class for all ThingsBoard device types</span>
+<span class="sd">within the fleet management system. It implements common device operations including</span>
+<span class="sd">creation, MQTT client management, telemetry transmission, and device lifecycle management.</span>
+
+<span class="sd">The BaseDevice class serves as the parent class for all specialized device types,</span>
+<span class="sd">providing standardized methods for ThingsBoard integration, connection management,</span>
+<span class="sd">and error handling across the entire device ecosystem.</span>
+
+<span class="sd">.. note::</span>
+<span class="sd">    Key Features:</span>
+<span class="sd">    - Robust device creation with automatic retry mechanisms</span>
+<span class="sd">    - Secure MQTT client management with TLS encryption</span>
+<span class="sd">    - Real-time telemetry transmission to ThingsBoard</span>
+<span class="sd">    - Automatic device cleanup and relationship management</span>
+<span class="sd">    - Comprehensive error handling and logging integration</span>
+<span class="sd">    - Connection state monitoring and recovery</span>
+
+<span class="sd">.. versionadded:: 1.0.0</span>
+<span class="sd">    Initial implementation of base device management</span>
+
+<span class="sd">.. seealso::</span>
+<span class="sd">    - :mod:`MQTT.ThingsBoard.rest_api` for ThingsBoard REST API operations</span>
+<span class="sd">    - :mod:`paho.mqtt.client` for MQTT client functionality</span>
+
+<span class="sd">Example:</span>
+<span class="sd">    Basic usage as a parent class for device implementations::</span>
+
+<span class="sd">        from MQTT.ThingsBoard.devices.base_device import BaseDevice</span>
+<span class="sd">        </span>
+<span class="sd">        class SensorDevice(BaseDevice):</span>
+<span class="sd">            def __init__(self, tb_api, mqtt_logger, tb_host, port, telemetry_topic):</span>
+<span class="sd">                super().__init__(tb_api, mqtt_logger, tb_host, port, telemetry_topic)</span>
+<span class="sd">                </span>
+<span class="sd">            def process_sensor_data(self, data):</span>
+<span class="sd">                # Specialized sensor processing</span>
+<span class="sd">                device_id, token = self.create_device(&quot;sensor_01&quot;, &quot;temperature&quot;)</span>
+<span class="sd">                client = self.create_client(token)</span>
+<span class="sd">                self.send_telemetry(client, data)</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">json</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">paho.mqtt.client</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">mqtt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">time</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">logging</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">ssl</span> <span class="c1"># No certificate</span>
+
+
+<div class="viewcode-block" id="BaseDevice">
+<a class="viewcode-back" href="../Fleet_module/MQTT/ThingsBoard/Devices/base_device_component.html#base_device.BaseDevice">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">BaseDevice</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Base class for all ThingsBoard device implementations in the fleet management system.</span>
+<span class="sd">    </span>
+<span class="sd">    This class provides the fundamental functionality required for managing IoT devices</span>
+<span class="sd">    within the ThingsBoard platform. It handles device lifecycle operations, MQTT</span>
+<span class="sd">    connectivity, telemetry transmission, and relationship management.</span>
+<span class="sd">    </span>
+<span class="sd">    The class is designed to be inherited by specialized device types that need</span>
+<span class="sd">    ThingsBoard integration. It provides standardized methods for common operations</span>
+<span class="sd">    while allowing specialized classes to implement device-specific logic.</span>
+<span class="sd">    </span>
+<span class="sd">    :param tb_api: Authenticated ThingsBoard REST API client</span>
+<span class="sd">    :type tb_api: ThingsBoardAPI</span>
+<span class="sd">    :param mqtt_logger: Logger instance for MQTT operations and debugging</span>
+<span class="sd">    :type mqtt_logger: logging.Logger</span>
+<span class="sd">    :param tb_host: ThingsBoard server hostname for MQTT connections</span>
+<span class="sd">    :type tb_host: str</span>
+<span class="sd">    :param port: MQTT port for secure connections (typically 8883 for TLS)</span>
+<span class="sd">    :type port: int</span>
+<span class="sd">    :param telemetry_topic: MQTT topic for publishing device telemetry data</span>
+<span class="sd">    :type telemetry_topic: str</span>
+<span class="sd">    </span>
+<span class="sd">    .. note::</span>
+<span class="sd">        This class maintains a dictionary of active MQTT clients to support</span>
+<span class="sd">        multiple concurrent device connections efficiently.</span>
+<span class="sd">        </span>
+<span class="sd">    .. warning::</span>
+<span class="sd">        Always ensure proper cleanup of MQTT clients using delete_client()</span>
+<span class="sd">        to prevent resource leaks in long-running applications.</span>
+<span class="sd">        </span>
+<span class="sd">    .. versionadded:: 1.0.0</span>
+<span class="sd">        Initial implementation of base device management</span>
+<span class="sd">        </span>
+<span class="sd">    Attributes:</span>
+<span class="sd">        tb (ThingsBoardAPI): ThingsBoard REST API client instance</span>
+<span class="sd">        mqtt_logger (logging.Logger): Logger for operation tracking</span>
+<span class="sd">        tb_host (str): ThingsBoard server hostname</span>
+<span class="sd">        port (int): MQTT connection port</span>
+<span class="sd">        telemetry_topic (str): MQTT topic for telemetry data</span>
+<span class="sd">        clients (dict): Dictionary of active MQTT client connections</span>
+<span class="sd">        </span>
+<span class="sd">    Example:</span>
+<span class="sd">        Inherit from BaseDevice for specialized implementations::</span>
+<span class="sd">        </span>
+<span class="sd">            class TemperatureSensor(BaseDevice):</span>
+<span class="sd">                def __init__(self, tb_api, mqtt_logger, tb_host, port, telemetry_topic):</span>
+<span class="sd">                    super().__init__(tb_api, mqtt_logger, tb_host, port, telemetry_topic)</span>
+<span class="sd">                    </span>
+<span class="sd">                def send_temperature(self, device_name, temperature):</span>
+<span class="sd">                    device_id, token = self.create_device(device_name, &quot;temperature_sensor&quot;)</span>
+<span class="sd">                    if device_id and token:</span>
+<span class="sd">                        client = self.create_client(token)</span>
+<span class="sd">                        self.send_telemetry(client, {&quot;temperature&quot;: temperature})</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    
+<div class="viewcode-block" id="BaseDevice.__init__">
+<a class="viewcode-back" href="../Fleet_module/MQTT/ThingsBoard/Devices/base_device_component.html#base_device.BaseDevice.__init__">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">tb_api</span><span class="p">,</span> <span class="n">mqtt_logger</span><span class="p">,</span> <span class="n">tb_host</span><span class="p">,</span> <span class="n">port</span><span class="p">,</span> <span class="n">telemetry_topic</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Initialize the base device with ThingsBoard connection parameters.</span>
+<span class="sd">        </span>
+<span class="sd">        Sets up the device with all necessary components for ThingsBoard integration</span>
+<span class="sd">        including API client, logging, and connection configuration.</span>
+<span class="sd">        </span>
+<span class="sd">        :param tb_api: Authenticated ThingsBoard API client</span>
+<span class="sd">        :type tb_api: ThingsBoardAPI</span>
+<span class="sd">        :param mqtt_logger: Logger for MQTT operations</span>
+<span class="sd">        :type mqtt_logger: logging.Logger</span>
+<span class="sd">        :param tb_host: ThingsBoard server hostname</span>
+<span class="sd">        :type tb_host: str</span>
+<span class="sd">        :param port: MQTT connection port</span>
+<span class="sd">        :type port: int</span>
+<span class="sd">        :param telemetry_topic: MQTT topic for telemetry</span>
+<span class="sd">        :type telemetry_topic: str</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">tb</span> <span class="o">=</span> <span class="n">tb_api</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">mqtt_logger</span> <span class="o">=</span> <span class="n">mqtt_logger</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">tb_host</span> <span class="o">=</span> <span class="n">tb_host</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">port</span> <span class="o">=</span> <span class="n">port</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">telemetry_topic</span> <span class="o">=</span> <span class="n">telemetry_topic</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">clients</span> <span class="o">=</span> <span class="p">{}</span></div>
+
+    
+<div class="viewcode-block" id="BaseDevice.create_device">
+<a class="viewcode-back" href="../Fleet_module/MQTT/ThingsBoard/Devices/base_device_component.html#base_device.BaseDevice.create_device">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">create_device</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">device_name</span><span class="p">,</span> <span class="n">device_type</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Create or recreate a device in ThingsBoard with robust retry mechanism.</span>
+<span class="sd">        </span>
+<span class="sd">        Attempts to create a new device in ThingsBoard, handling existing devices</span>
+<span class="sd">        by deleting and recreating them. This ensures a clean device state and</span>
+<span class="sd">        prevents conflicts from previous device instances.</span>
+<span class="sd">        </span>
+<span class="sd">        The method implements a retry mechanism to handle temporary network issues</span>
+<span class="sd">        or ThingsBoard server load, ensuring reliable device creation in production</span>
+<span class="sd">        environments.</span>
+<span class="sd">        </span>
+<span class="sd">        :param device_name: Unique name for the device within the tenant</span>
+<span class="sd">        :type device_name: str</span>
+<span class="sd">        :param device_type: Device type classification for organization</span>
+<span class="sd">        :type device_type: str</span>
+<span class="sd">        :return: Tuple of (device_id, access_token) if successful, (None, None) if failed</span>
+<span class="sd">        :rtype: tuple[str, str] or tuple[None, None]</span>
+<span class="sd">        </span>
+<span class="sd">        .. note::</span>
+<span class="sd">            The method automatically handles existing devices by deleting them</span>
+<span class="sd">            first, ensuring a clean slate for new device creation.</span>
+<span class="sd">            </span>
+<span class="sd">        .. warning::</span>
+<span class="sd">            Deleting existing devices will remove all associated telemetry data.</span>
+<span class="sd">            Consider backup procedures if historical data is important.</span>
+<span class="sd">            </span>
+<span class="sd">        .. tip::</span>
+<span class="sd">            Use descriptive device names that include location or function</span>
+<span class="sd">            information for easier fleet management.</span>
+<span class="sd">            </span>
+<span class="sd">        Example:</span>
+<span class="sd">            Create various types of devices::</span>
+<span class="sd">            </span>
+<span class="sd">                # Create a temperature sensor</span>
+<span class="sd">                device_id, token = self.create_device(&quot;temp_sensor_hall_A&quot;, &quot;temperature_sensor&quot;)</span>
+<span class="sd">                </span>
+<span class="sd">                # Create a GPS tracker</span>
+<span class="sd">                device_id, token = self.create_device(&quot;vehicle_tracker_01&quot;, &quot;gps_tracker&quot;)</span>
+<span class="sd">                </span>
+<span class="sd">                if device_id and token:</span>
+<span class="sd">                    print(f&quot;Device created: {device_id} with token: {token}&quot;)</span>
+<span class="sd">                else:</span>
+<span class="sd">                    print(&quot;Failed to create device after all retries&quot;)</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">max_retries</span> <span class="o">=</span> <span class="mi">3</span>  <span class="c1"># Maximum number of creation attempts</span>
+        
+        <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">max_retries</span><span class="p">):</span>
+            <span class="c1"># Check if device already exists</span>
+            <span class="n">existing_device</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">tb</span><span class="o">.</span><span class="n">get_device_by_name</span><span class="p">(</span><span class="n">device_name</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">existing_device</span><span class="p">:</span>
+                <span class="c1"># Extract device ID from existing device</span>
+                <span class="n">existing_device_id</span> <span class="o">=</span> <span class="n">existing_device</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;id&#39;</span><span class="p">,</span> <span class="p">{})</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;id&#39;</span><span class="p">)</span>
+                <span class="k">if</span> <span class="n">existing_device_id</span><span class="p">:</span>
+                    <span class="c1"># Delete existing device to ensure clean state</span>
+                    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">tb</span><span class="o">.</span><span class="n">delete_device</span><span class="p">(</span><span class="n">existing_device_id</span><span class="p">):</span>
+                        <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>  <span class="c1"># Wait for deletion to complete</span>
+                        
+            <span class="c1"># Attempt to create new device</span>
+            <span class="n">device_id</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">tb</span><span class="o">.</span><span class="n">create_device</span><span class="p">(</span><span class="n">device_name</span><span class="p">,</span> <span class="n">device_type</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">device_id</span><span class="p">:</span>
+                <span class="c1"># Get access token for the new device</span>
+                <span class="n">access_token</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">tb</span><span class="o">.</span><span class="n">get_device_access_token</span><span class="p">(</span><span class="n">device_id</span><span class="p">)</span>
+                <span class="k">if</span> <span class="n">access_token</span><span class="p">:</span>
+                    <span class="k">return</span> <span class="n">device_id</span><span class="p">,</span> <span class="n">access_token</span>
+                    
+            <span class="c1"># Brief delay before retry</span>
+            <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)</span>
+            
+        <span class="c1"># All retries failed</span>
+        <span class="k">return</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span></div>
+
+
+<div class="viewcode-block" id="BaseDevice.create_client">
+<a class="viewcode-back" href="../Fleet_module/MQTT/ThingsBoard/Devices/base_device_component.html#base_device.BaseDevice.create_client">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">create_client</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">access_token</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Create and configure a secure MQTT client for ThingsBoard communication.</span>
+<span class="sd">        </span>
+<span class="sd">        Establishes a secure MQTT connection to ThingsBoard using the provided</span>
+<span class="sd">        access token for authentication. The client is configured with TLS encryption</span>
+<span class="sd">        and automatic connection monitoring.</span>
+<span class="sd">        </span>
+<span class="sd">        The method handles connection establishment, authentication, and initial</span>
+<span class="sd">        setup required for reliable telemetry transmission to ThingsBoard.</span>
+<span class="sd">        </span>
+<span class="sd">        :param access_token: Device access token from ThingsBoard for authentication</span>
+<span class="sd">        :type access_token: str</span>
+<span class="sd">        :return: Connected MQTT client if successful, None if connection failed</span>
+<span class="sd">        :rtype: paho.mqtt.client.Client or None</span>
+<span class="sd">        </span>
+<span class="sd">        .. note::</span>
+<span class="sd">            The client is configured with:</span>
+<span class="sd">            - TLS encryption for secure communication</span>
+<span class="sd">            - Username/password authentication using access token</span>
+<span class="sd">            - Connection state monitoring with timeout</span>
+<span class="sd">            - Automatic keep-alive mechanism</span>
+<span class="sd">            </span>
+<span class="sd">        .. warning::</span>
+<span class="sd">            Failed connections return None. Always check the return value</span>
+<span class="sd">            before attempting to use the client for telemetry transmission.</span>
+<span class="sd">            </span>
+<span class="sd">        .. tip::</span>
+<span class="sd">            Store the returned client instance and reuse it for multiple</span>
+<span class="sd">            telemetry transmissions to optimize connection overhead.</span>
+<span class="sd">            </span>
+<span class="sd">        Example:</span>
+<span class="sd">            Create and use an MQTT client for telemetry::</span>
+<span class="sd">            </span>
+<span class="sd">                # Get device credentials</span>
+<span class="sd">                device_id, token = self.create_device(&quot;sensor_01&quot;, &quot;temperature&quot;)</span>
+<span class="sd">                </span>
+<span class="sd">                # Create MQTT client</span>
+<span class="sd">                client = self.create_client(token)</span>
+<span class="sd">                if client:</span>
+<span class="sd">                    # Send telemetry data</span>
+<span class="sd">                    self.send_telemetry(client, {&quot;temperature&quot;: 25.5})</span>
+<span class="sd">                    </span>
+<span class="sd">                    # Clean up when done</span>
+<span class="sd">                    self.delete_client(client)</span>
+<span class="sd">                else:</span>
+<span class="sd">                    print(&quot;Failed to establish MQTT connection&quot;)</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># Validate access token</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">access_token</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">None</span>
+
+        <span class="c1"># Create and configure MQTT client</span>
+        <span class="n">client</span> <span class="o">=</span> <span class="n">mqtt</span><span class="o">.</span><span class="n">Client</span><span class="p">()</span>
+        <span class="c1">#client.tls_set()  # Enable TLS encryption for secure communication</span>
+        
+        <span class="c1"># No certificate</span>
+        <span class="n">client</span><span class="o">.</span><span class="n">tls_set</span><span class="p">(</span>
+            <span class="n">ca_certs</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+            <span class="n">certfile</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+            <span class="n">keyfile</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+            <span class="n">cert_reqs</span><span class="o">=</span><span class="n">ssl</span><span class="o">.</span><span class="n">CERT_NONE</span><span class="p">,</span>  <span class="c1"># No requerir verificación de certificado</span>
+            <span class="n">tls_version</span><span class="o">=</span><span class="n">ssl</span><span class="o">.</span><span class="n">PROTOCOL_TLS</span>
+        <span class="p">)</span>
+        <span class="c1"># No certificate</span>
+        <span class="n">client</span><span class="o">.</span><span class="n">tls_insecure_set</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+        
+        <span class="n">client</span><span class="o">.</span><span class="n">on_connect</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">on_connect</span>  <span class="c1"># Set connection callback</span>
+        <span class="n">client</span><span class="o">.</span><span class="n">username_pw_set</span><span class="p">(</span><span class="n">access_token</span><span class="p">)</span>  <span class="c1"># Set authentication credentials</span>
+        <span class="n">client</span><span class="o">.</span><span class="n">connected_flag</span> <span class="o">=</span> <span class="kc">False</span>  <span class="c1"># Initialize connection state flag</span>
+
+        <span class="k">try</span><span class="p">:</span>
+            <span class="c1"># Attempt connection to ThingsBoard</span>
+            <span class="n">client</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="n">host</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">tb_host</span><span class="p">,</span> <span class="n">port</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">port</span><span class="p">,</span> <span class="n">keepalive</span><span class="o">=</span><span class="mi">60</span><span class="p">)</span>
+            <span class="n">client</span><span class="o">.</span><span class="n">loop_start</span><span class="p">()</span>  <span class="c1"># Start network loop for message processing</span>
+
+            <span class="c1"># Wait for connection establishment with timeout</span>
+            <span class="n">wait_time</span> <span class="o">=</span> <span class="mi">0</span>
+            <span class="k">while</span> <span class="ow">not</span> <span class="n">client</span><span class="o">.</span><span class="n">connected_flag</span> <span class="ow">and</span> <span class="n">wait_time</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">:</span>
+                <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)</span>
+                <span class="n">wait_time</span> <span class="o">+=</span> <span class="mf">0.5</span>
+
+            <span class="c1"># Check if connection was successful</span>
+            <span class="k">if</span> <span class="n">client</span><span class="o">.</span><span class="n">connected_flag</span><span class="p">:</span>
+                <span class="k">return</span> <span class="n">client</span>
+                
+            <span class="c1"># Connection failed, clean up</span>
+            <span class="n">client</span><span class="o">.</span><span class="n">loop_stop</span><span class="p">()</span>
+            <span class="k">return</span> <span class="kc">None</span>
+            
+        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="c1"># Log connection errors and return None</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">mqtt_logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot; - Connection error: </span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="k">return</span> <span class="kc">None</span></div>
+
+        
+<div class="viewcode-block" id="BaseDevice.delete_client">
+<a class="viewcode-back" href="../Fleet_module/MQTT/ThingsBoard/Devices/base_device_component.html#base_device.BaseDevice.delete_client">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">delete_client</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">client</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Safely disconnect and clean up an MQTT client connection.</span>
+<span class="sd">        </span>
+<span class="sd">        Performs proper cleanup of an MQTT client by stopping the network loop,</span>
+<span class="sd">        disconnecting from the server, and allowing time for graceful shutdown.</span>
+<span class="sd">        This prevents resource leaks and ensures clean connection termination.</span>
+<span class="sd">        </span>
+<span class="sd">        :param client: MQTT client instance to disconnect and clean up</span>
+<span class="sd">        :type client: paho.mqtt.client.Client or None</span>
+<span class="sd">        :return: None</span>
+<span class="sd">        :rtype: None</span>
+<span class="sd">        </span>
+<span class="sd">        .. note::</span>
+<span class="sd">            The method handles None clients gracefully and includes exception</span>
+<span class="sd">            handling to ensure cleanup always completes successfully.</span>
+<span class="sd">            </span>
+<span class="sd">        .. tip::</span>
+<span class="sd">            Always call this method when finished with an MQTT client to</span>
+<span class="sd">            prevent connection leaks and optimize resource usage.</span>
+<span class="sd">            </span>
+<span class="sd">        Example:</span>
+<span class="sd">            Proper client lifecycle management::</span>
+<span class="sd">            </span>
+<span class="sd">                # Create client</span>
+<span class="sd">                client = self.create_client(access_token)</span>
+<span class="sd">                </span>
+<span class="sd">                try:</span>
+<span class="sd">                    # Use client for telemetry</span>
+<span class="sd">                    self.send_telemetry(client, telemetry_data)</span>
+<span class="sd">                finally:</span>
+<span class="sd">                    # Always clean up, even if errors occur</span>
+<span class="sd">                    self.delete_client(client)</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">client</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="c1"># Stop the network processing loop</span>
+                <span class="n">client</span><span class="o">.</span><span class="n">loop_stop</span><span class="p">()</span>
+                
+                <span class="c1"># Disconnect from ThingsBoard server</span>
+                <span class="n">client</span><span class="o">.</span><span class="n">disconnect</span><span class="p">()</span>
+            <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+                <span class="c1"># Ignore cleanup exceptions to ensure method completes</span>
+                <span class="k">pass</span>
+                
+            <span class="c1"># Brief delay to allow connection cleanup to complete</span>
+            <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)</span></div>
+
+        
+<div class="viewcode-block" id="BaseDevice.send_telemetry">
+<a class="viewcode-back" href="../Fleet_module/MQTT/ThingsBoard/Devices/base_device_component.html#base_device.BaseDevice.send_telemetry">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">send_telemetry</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">client</span><span class="p">,</span> <span class="n">telemetry</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Send telemetry data to ThingsBoard via MQTT.</span>
+<span class="sd">        </span>
+<span class="sd">        Publishes telemetry data to ThingsBoard using the configured MQTT client</span>
+<span class="sd">        and telemetry topic. The data is automatically serialized to JSON format</span>
+<span class="sd">        for transmission.</span>
+<span class="sd">        </span>
+<span class="sd">        :param client: Connected MQTT client for data transmission</span>
+<span class="sd">        :type client: paho.mqtt.client.Client or None</span>
+<span class="sd">        :param telemetry: Telemetry data dictionary to send to ThingsBoard</span>
+<span class="sd">        :type telemetry: dict</span>
+<span class="sd">        :return: None</span>
+<span class="sd">        :rtype: None</span>
+<span class="sd">        </span>
+<span class="sd">        .. note::</span>
+<span class="sd">            Telemetry data should be a dictionary with key-value pairs representing</span>
+<span class="sd">            sensor readings, status information, or other device metrics.</span>
+<span class="sd">            </span>
+<span class="sd">        .. warning::</span>
+<span class="sd">            Ensure the client is connected before calling this method. No validation</span>
+<span class="sd">            is performed on the client connection state.</span>
+<span class="sd">            </span>
+<span class="sd">        .. tip::</span>
+<span class="sd">            Use descriptive telemetry keys that match your ThingsBoard device</span>
+<span class="sd">            profile configuration for proper data visualization.</span>
+<span class="sd">            </span>
+<span class="sd">        Example:</span>
+<span class="sd">            Send various types of telemetry data::</span>
+<span class="sd">            </span>
+<span class="sd">                # Temperature sensor data</span>
+<span class="sd">                temp_data = {</span>
+<span class="sd">                    &quot;temperature&quot;: 23.5,</span>
+<span class="sd">                    &quot;humidity&quot;: 65.2,</span>
+<span class="sd">                    &quot;battery&quot;: 87</span>
+<span class="sd">                }</span>
+<span class="sd">                self.send_telemetry(client, temp_data)</span>
+<span class="sd">                </span>
+<span class="sd">                # GPS location data</span>
+<span class="sd">                gps_data = {</span>
+<span class="sd">                    &quot;latitude&quot;: 40.7128,</span>
+<span class="sd">                    &quot;longitude&quot;: -74.0060,</span>
+<span class="sd">                    &quot;altitude&quot;: 10.5,</span>
+<span class="sd">                    &quot;speed&quot;: 15.2</span>
+<span class="sd">                }</span>
+<span class="sd">                self.send_telemetry(client, gps_data)</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># Validate client availability</span>
+        <span class="k">if</span> <span class="n">client</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span>
+            
+        <span class="k">try</span><span class="p">:</span>
+            <span class="c1"># Serialize telemetry data to JSON and publish to ThingsBoard</span>
+            <span class="n">client</span><span class="o">.</span><span class="n">publish</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">telemetry_topic</span><span class="p">,</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">telemetry</span><span class="p">))</span>
+        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="c1"># Log publish errors for debugging</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">mqtt_logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Publish error: </span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span></div>
+
+    
+<div class="viewcode-block" id="BaseDevice.delete_device_with_retry">
+<a class="viewcode-back" href="../Fleet_module/MQTT/ThingsBoard/Devices/base_device_component.html#base_device.BaseDevice.delete_device_with_retry">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">delete_device_with_retry</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">device_id</span><span class="p">,</span> <span class="n">max_retries</span><span class="o">=</span><span class="mi">3</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Delete a device from ThingsBoard with automatic retry mechanism.</span>
+<span class="sd">        </span>
+<span class="sd">        Attempts to delete a device from ThingsBoard with configurable retry logic</span>
+<span class="sd">        to handle temporary network issues or server load. This ensures reliable</span>
+<span class="sd">        device cleanup in production environments.</span>
+<span class="sd">        </span>
+<span class="sd">        :param device_id: Unique identifier of the device to delete</span>
+<span class="sd">        :type device_id: str or None</span>
+<span class="sd">        :param max_retries: Maximum number of deletion attempts (default: 3)</span>
+<span class="sd">        :type max_retries: int</span>
+<span class="sd">        :return: True if deletion successful, False if all retries failed</span>
+<span class="sd">        :rtype: bool</span>
+<span class="sd">        </span>
+<span class="sd">        .. note::</span>
+<span class="sd">            The method includes automatic delays between retry attempts to</span>
+<span class="sd">            avoid overwhelming the ThingsBoard server during high load periods.</span>
+<span class="sd">            </span>
+<span class="sd">        .. warning::</span>
+<span class="sd">            Device deletion is permanent and removes all associated telemetry</span>
+<span class="sd">            data, attributes, and relationships. Ensure proper backup procedures.</span>
+<span class="sd">            </span>
+<span class="sd">        .. tip::</span>
+<span class="sd">            Use this method instead of direct deletion for improved reliability</span>
+<span class="sd">            in production environments with network variability.</span>
+<span class="sd">            </span>
+<span class="sd">        Example:</span>
+<span class="sd">            Reliable device cleanup with retry logic::</span>
+<span class="sd">            </span>
+<span class="sd">                device_id = &quot;device-uuid-to-delete&quot;</span>
+<span class="sd">                </span>
+<span class="sd">                # Attempt deletion with default retries</span>
+<span class="sd">                if self.delete_device_with_retry(device_id):</span>
+<span class="sd">                    print(&quot;Device deleted successfully&quot;)</span>
+<span class="sd">                else:</span>
+<span class="sd">                    print(&quot;Failed to delete device after all retries&quot;)</span>
+<span class="sd">                    </span>
+<span class="sd">                # Custom retry count for critical operations</span>
+<span class="sd">                success = self.delete_device_with_retry(device_id, max_retries=5)</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># Validate device ID</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">device_id</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">False</span>
+            
+        <span class="c1"># Attempt deletion with retry logic</span>
+        <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">max_retries</span><span class="p">):</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">tb</span><span class="o">.</span><span class="n">delete_device</span><span class="p">(</span><span class="n">device_id</span><span class="p">):</span>
+                <span class="k">return</span> <span class="kc">True</span>
+                
+            <span class="c1"># Wait before retry to avoid overwhelming server</span>
+            <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+            
+        <span class="c1"># All retries failed</span>
+        <span class="k">return</span> <span class="kc">False</span></div>
+
+    
+<div class="viewcode-block" id="BaseDevice.on_connect">
+<a class="viewcode-back" href="../Fleet_module/MQTT/ThingsBoard/Devices/base_device_component.html#base_device.BaseDevice.on_connect">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">on_connect</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">client</span><span class="p">,</span> <span class="n">userdata</span><span class="p">,</span> <span class="n">flags</span><span class="p">,</span> <span class="n">rc</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;MQTT connection callback handler for monitoring connection status.</span>
+<span class="sd">        </span>
+<span class="sd">        This callback is automatically invoked by the MQTT client when a connection</span>
+<span class="sd">        attempt completes. It updates the client&#39;s connection flag based on the</span>
+<span class="sd">        result code to enable connection state monitoring.</span>
+<span class="sd">        </span>
+<span class="sd">        :param client: MQTT client instance that triggered the callback</span>
+<span class="sd">        :type client: paho.mqtt.client.Client</span>
+<span class="sd">        :param userdata: User data passed to the client (unused)</span>
+<span class="sd">        :type userdata: Any</span>
+<span class="sd">        :param flags: Connection flags from the broker (unused)</span>
+<span class="sd">        :type flags: dict</span>
+<span class="sd">        :param rc: Connection result code (0 = success, &gt;0 = failure)</span>
+<span class="sd">        :type rc: int</span>
+<span class="sd">        :return: None</span>
+<span class="sd">        :rtype: None</span>
+<span class="sd">        </span>
+<span class="sd">        .. note::</span>
+<span class="sd">            Result Codes:</span>
+<span class="sd">            - 0: Connection successful</span>
+<span class="sd">            - 1: Incorrect protocol version</span>
+<span class="sd">            - 2: Invalid client identifier</span>
+<span class="sd">            - 3: Server unavailable</span>
+<span class="sd">            - 4: Bad username or password</span>
+<span class="sd">            - 5: Not authorized</span>
+<span class="sd">            </span>
+<span class="sd">        .. tip::</span>
+<span class="sd">            This method is used internally by the MQTT client and typically</span>
+<span class="sd">            doesn&#39;t need to be called directly by user code.</span>
+<span class="sd">            </span>
+<span class="sd">        Example:</span>
+<span class="sd">            The callback is automatically triggered during connection::</span>
+<span class="sd">            </span>
+<span class="sd">                client = mqtt.Client()</span>
+<span class="sd">                client.on_connect = self.on_connect  # Set callback</span>
+<span class="sd">                client.connect(host, port)  # This triggers the callback</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">rc</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="c1"># Connection successful</span>
+            <span class="n">client</span><span class="o">.</span><span class="n">connected_flag</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="c1"># Connection failed</span>
+            <span class="n">client</span><span class="o">.</span><span class="n">connected_flag</span> <span class="o">=</span> <span class="kc">False</span></div>
+
+            
+<div class="viewcode-block" id="BaseDevice.create_relation">
+<a class="viewcode-back" href="../Fleet_module/MQTT/ThingsBoard/Devices/base_device_component.html#base_device.BaseDevice.create_relation">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">create_relation</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">from_id</span><span class="p">,</span> <span class="n">to_id</span><span class="p">,</span> <span class="n">relation_type</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Create a relationship between two devices in ThingsBoard.</span>
+<span class="sd">        </span>
+<span class="sd">        Establishes a directional relationship between two devices using the</span>
+<span class="sd">        ThingsBoard REST API. Relationships are used to model device hierarchies,</span>
+<span class="sd">        dependencies, and logical groupings within the IoT fleet.</span>
+<span class="sd">        </span>
+<span class="sd">        :param from_id: Source device ID for the relationship</span>
+<span class="sd">        :type from_id: str</span>
+<span class="sd">        :param to_id: Target device ID for the relationship</span>
+<span class="sd">        :type to_id: str</span>
+<span class="sd">        :param relation_type: Type of relationship (e.g., &quot;Contains&quot;, &quot;Manages&quot;)</span>
+<span class="sd">        :type relation_type: str</span>
+<span class="sd">        :return: True if relationship created successfully, False otherwise</span>
+<span class="sd">        :rtype: bool</span>
+<span class="sd">        </span>
+<span class="sd">        .. note::</span>
+<span class="sd">            Common relationship types include:</span>
+<span class="sd">            - &quot;Contains&quot;: For parent-child hierarchies</span>
+<span class="sd">            - &quot;Manages&quot;: For controller-device relationships</span>
+<span class="sd">            - &quot;Uses&quot;: For dependency relationships</span>
+<span class="sd">            - &quot;Located&quot;: For location-based relationships</span>
+<span class="sd">            </span>
+<span class="sd">        .. warning::</span>
+<span class="sd">            Both devices must exist in ThingsBoard before creating relationships.</span>
+<span class="sd">            Invalid device IDs will cause the operation to fail.</span>
+<span class="sd">            </span>
+<span class="sd">        .. tip:</span>
+<span class="sd">            Use consistent relationship types across your fleet for better</span>
+<span class="sd">            organization and easier querying of device hierarchies.</span>
+<span class="sd">            </span>
+<span class="sd">        Example:</span>
+<span class="sd">            Create device relationships for fleet organization::</span>
+<span class="sd">            </span>
+<span class="sd">                # Create gateway-sensor relationship</span>
+<span class="sd">                gateway_id = &quot;gateway-device-uuid&quot;</span>
+<span class="sd">                sensor_id = &quot;sensor-device-uuid&quot;</span>
+<span class="sd">                </span>
+<span class="sd">                # Gateway contains sensor</span>
+<span class="sd">                success = self.create_relation(gateway_id, sensor_id, &quot;Contains&quot;)</span>
+<span class="sd">                if success:</span>
+<span class="sd">                    print(&quot;Relationship created successfully&quot;)</span>
+<span class="sd">                else:</span>
+<span class="sd">                    print(&quot;Failed to create relationship&quot;)</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="c1"># Attempt to create the relationship using ThingsBoard API</span>
+            <span class="n">result</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">tb</span><span class="o">.</span><span class="n">create_relation</span><span class="p">(</span><span class="n">from_id</span><span class="p">,</span> <span class="n">to_id</span><span class="p">,</span> <span class="n">relation_type</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">result</span>
+        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="c1"># Log exceptions and return failure status</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">mqtt_logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Excepción creando relación: </span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="k">return</span> <span class="kc">False</span></div>
+</div>
+
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, Estela Mora Barba.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

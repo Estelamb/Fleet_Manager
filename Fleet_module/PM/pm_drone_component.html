@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Prescription Map - Drone Format &mdash; Fleet Manager 1.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../_static/documentation_options.js?v=f2a433a1"></script>
+        <script src="../../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+        <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="author" title="About these documents" href="../../about.html" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Subscriber Prescription Map Function" href="subs_pm_component.html" />
+    <link rel="prev" title="Prescription Map - ISOBUS Format" href="pm_isobus_component.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            Fleet Manager
+          </a>
+              <div class="version">
+                1.0
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../about.html">About the project</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../getting_started.html">Getting Started</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../modules.html">Code documentation</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../Drone_module/index.html">Drone</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">Fleet Manager</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../init_fleet_component.html">Init Fleet Manager</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../mission_components.html">Mission Management</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ros2_components.html">ROS2 Management</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../rest_components.html">REST Management</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../mqtt_components.html">MQTT Management</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../pm_components.html">Prescription Map Management</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="pm_manager_component.html">Prescription Map Manager</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pm_isobus_component.html">Prescription Map - ISOBUS Format</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Prescription Map - Drone Format</a></li>
+<li class="toctree-l4"><a class="reference internal" href="subs_pm_component.html">Subscriber Prescription Map Function</a></li>
+<li class="toctree-l4"><a class="reference internal" href="grpc_pm_component.html">gRPC Prescription Map</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../metrics_components.html">System Metrics Component</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../clear_fleet_component.html">Clear Fleet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../create_logger_fleet_component.html">Create Logger</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../training.html">Training documentation</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Fleet Manager</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../modules.html">Code documentation</a></li>
+          <li class="breadcrumb-item"><a href="../index.html">Fleet Manager</a></li>
+          <li class="breadcrumb-item"><a href="../pm_components.html">Prescription Map Management</a></li>
+      <li class="breadcrumb-item active">Prescription Map - Drone Format</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/Fleet_module/PM/pm_drone_component.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="module-pm_drone_fleet">
+<span id="prescription-map-drone-format"></span><h1>Prescription Map - Drone Format<a class="headerlink" href="#module-pm_drone_fleet" title="Link to this heading"></a></h1>
+<section id="drone-prescription-map-generator-module">
+<h2>Drone Prescription Map Generator Module<a class="headerlink" href="#drone-prescription-map-generator-module" title="Link to this heading"></a></h2>
+<p>This module provides prescription map generation functionality specifically for
+drone vehicles in the agricultural fleet management system. It creates and manages
+JSON-based prescription maps that can be used by autonomous drones for precise
+application of treatments across agricultural fields.</p>
+<p>The module implements a grid-based prescription map system where each cell
+represents a specific field location with associated treatment values. Drone
+prescription maps are optimized for aerial application patterns and support
+multiple treatment types with flexible grid dimensions.</p>
+<dl>
+<dt>Key Features:</dt><dd><ul class="simple">
+<li><p>Grid-based prescription map generation for drone operations</p></li>
+<li><p>JSON file format for lightweight data exchange</p></li>
+<li><p>Dynamic grid expansion for flexible field coverage</p></li>
+<li><p>Multiple treatment type support per drone mission</p></li>
+<li><p>File-based persistence with automatic directory creation</p></li>
+<li><p>Command-line interface for external system integration</p></li>
+<li><p>Robust error handling for corrupted or missing files</p></li>
+</ul>
+</dd>
+<dt>Drone-Specific Considerations:</dt><dd><ul class="simple">
+<li><p>Optimized for aerial application patterns</p></li>
+<li><p>Supports variable-rate treatment application</p></li>
+<li><p>Compatible with drone flight path planning</p></li>
+<li><p>Lightweight data format for onboard processing</p></li>
+<li><p>Grid-based approach suitable for drone navigation systems</p></li>
+</ul>
+</dd>
+<dt>File Structure:</dt><dd><ul class="simple">
+<li><p>Output directory: PrescriptionMap/pm_generation/Drone/PMs/</p></li>
+<li><p>File naming: {vehicle_id}_{treatment_name}.json</p></li>
+<li><p>Grid format: 2D array with [row][column] indexing</p></li>
+<li><p>Values: Numeric treatment amounts per grid cell</p></li>
+</ul>
+</dd>
+<dt>Usage Example:</dt><dd><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Command line usage</span>
+<span class="n">python</span> <span class="n">pm_drone_fleet</span><span class="o">.</span><span class="n">py</span> <span class="o">--</span><span class="n">vehicle_id</span> <span class="n">DRONE_001</span>
+                         <span class="o">--</span><span class="n">amount</span> <span class="s1">&#39;{&quot;fertilizer&quot;: 2.5, &quot;pesticide&quot;: 1.8}&#39;</span>
+                         <span class="o">--</span><span class="n">grid</span> <span class="s1">&#39;[5, 10]&#39;</span>
+
+<span class="c1"># Programmatic usage</span>
+<span class="n">generate_pm</span><span class="p">(</span><span class="s2">&quot;DRONE_001&quot;</span><span class="p">,</span> <span class="s2">&quot;fertilizer&quot;</span><span class="p">,</span> <span class="mf">2.5</span><span class="p">,</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">])</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+<p>Author: Fleet Management System
+Date: 2025</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This module requires:
+- Write permissions to the output directory
+- Valid JSON input for amount and grid parameters
+- Non-negative grid coordinates for field positioning</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Grid expansion is automatic but can result in large files for sparse
+coverage patterns. Consider field optimization for efficient drone operations.</p>
+</div>
+</section>
+<dl class="py function">
+<dt class="sig sig-object py" id="pm_drone_fleet.generate_pm">
+<span class="sig-prename descclassname"><span class="pre">pm_drone_fleet.</span></span><span class="sig-name descname"><span class="pre">generate_pm</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">vehicle_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">grid</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../../_modules/pm_drone_fleet.html#generate_pm"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pm_drone_fleet.generate_pm" title="Link to this definition"></a></dt>
+<dd><p>Generate or update a drone prescription map JSON file with treatment value at grid location.</p>
+<p>This function creates or updates a prescription map file for a specific drone and
+treatment type. The prescription map uses a 2D grid structure where each cell
+represents a field location with an associated treatment value for drone application.</p>
+<p>Grid Management:
+- Automatic expansion of rows and columns as needed
+- Sparse grid support with None values for unspecified cells
+- 0-based indexing for row and column coordinates
+- Dynamic file creation if prescription map doesn’t exist</p>
+<p>File Operations:
+- Creates output directory if it doesn’t exist
+- Loads existing prescription map or initializes new one
+- Handles corrupted files by reinitializing empty grid
+- Saves updated prescription map with formatted JSON</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>vehicle_id</strong> (<em>str</em>) – Unique identifier for the drone vehicle. Used as filename prefix
+to distinguish prescription maps between different drones.</p></li>
+<li><p><strong>filename</strong> (<em>str</em>) – Treatment type identifier that becomes part of the output filename.
+Examples: “fertilizer”, “pesticide”, “herbicide”</p></li>
+<li><p><strong>value</strong> (<em>int</em>) – Treatment amount or application rate to store at the specified grid
+location. Units depend on treatment type (e.g., kg/ha, L/ha).</p></li>
+<li><p><strong>grid</strong> (<em>list</em>) – Grid coordinates as [row, column] specifying the field location
+for the treatment value. Must be non-negative integers.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Function performs file I/O operations but returns no value.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>ValueError</strong> – If grid coordinates contain negative values.</p></li>
+<li><p><a class="reference internal" href="../create_logger_fleet_component.html#create_logger_fleet.IOError" title="create_logger_fleet.IOError"><strong>IOError</strong></a> – If file operations fail due to permission or disk space issues.</p></li>
+<li><p><strong>json.JSONDecodeError</strong> – If existing prescription map file contains invalid JSON.</p></li>
+</ul>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create fertilizer prescription for drone at grid position [10, 15]</span>
+<span class="n">generate_pm</span><span class="p">(</span><span class="s2">&quot;DRONE_001&quot;</span><span class="p">,</span> <span class="s2">&quot;fertilizer&quot;</span><span class="p">,</span> <span class="mi">120</span><span class="p">,</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">15</span><span class="p">])</span>
+
+<span class="c1"># Create pesticide prescription for the same drone at different location</span>
+<span class="n">generate_pm</span><span class="p">(</span><span class="s2">&quot;DRONE_001&quot;</span><span class="p">,</span> <span class="s2">&quot;pesticide&quot;</span><span class="p">,</span> <span class="mf">2.5</span><span class="p">,</span> <span class="p">[</span><span class="mi">8</span><span class="p">,</span> <span class="mi">12</span><span class="p">])</span>
+
+<span class="c1"># Update existing prescription map</span>
+<span class="n">generate_pm</span><span class="p">(</span><span class="s2">&quot;DRONE_001&quot;</span><span class="p">,</span> <span class="s2">&quot;fertilizer&quot;</span><span class="p">,</span> <span class="mi">150</span><span class="p">,</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">16</span><span class="p">])</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The function automatically creates the output directory structure and
+handles grid expansion dynamically. Prescription maps are stored as
+JSON files with formatted output for human readability.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Large grid coordinates can result in significant memory usage and
+file sizes due to automatic grid expansion with None padding.</p>
+</div>
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="pm_isobus_component.html" class="btn btn-neutral float-left" title="Prescription Map - ISOBUS Format" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="subs_pm_component.html" class="btn btn-neutral float-right" title="Subscriber Prescription Map Function" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, Estela Mora Barba.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

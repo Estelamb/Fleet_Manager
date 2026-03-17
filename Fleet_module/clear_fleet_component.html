@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Clear Fleet &mdash; Fleet Manager 1.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=f2a433a1"></script>
+        <script src="../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+        <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="author" title="About these documents" href="../about.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Create Logger" href="create_logger_fleet_component.html" />
+    <link rel="prev" title="gRPC System Metrics" href="Metrics/grpc_metrics_component.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Fleet Manager
+          </a>
+              <div class="version">
+                1.0
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../about.html">About the project</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started.html">Getting Started</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../modules.html">Code documentation</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../Drone_module/index.html">Drone</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">Fleet Manager</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="init_fleet_component.html">Init Fleet Manager</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mission_components.html">Mission Management</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ros2_components.html">ROS2 Management</a></li>
+<li class="toctree-l3"><a class="reference internal" href="rest_components.html">REST Management</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mqtt_components.html">MQTT Management</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pm_components.html">Prescription Map Management</a></li>
+<li class="toctree-l3"><a class="reference internal" href="metrics_components.html">System Metrics Component</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Clear Fleet</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#clear_fleet.clean_directory"><code class="docutils literal notranslate"><span class="pre">clean_directory()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#clear_fleet.clean_pms_subfolders"><code class="docutils literal notranslate"><span class="pre">clean_pms_subfolders()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="create_logger_fleet_component.html">Create Logger</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../training.html">Training documentation</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Fleet Manager</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../modules.html">Code documentation</a></li>
+          <li class="breadcrumb-item"><a href="index.html">Fleet Manager</a></li>
+      <li class="breadcrumb-item active">Clear Fleet</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/Fleet_module/clear_fleet_component.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="module-0">
+<span id="clear-fleet"></span><h1>Clear Fleet<a class="headerlink" href="#module-0" title="Link to this heading"></a></h1>
+<p>Fleet Management System - Directory Cleanup Utilities</p>
+<div class="versionadded" id="module-clear_fleet">
+<p><span class="versionmodified added">Added in version 1.0.</span></p>
+</div>
+<p>This module provides essential directory cleanup functionality for the Fleet Management System,
+ensuring proper maintenance of temporary files, cached data, and system state directories.
+It supports both individual directory cleanup and recursive subfolder maintenance.</p>
+<dl class="simple">
+<dt>Key Features:</dt><dd><ul class="simple">
+<li><p><strong>Safe Directory Cleanup</strong>: Removes contents while preserving directory structure</p></li>
+<li><p><strong>Recursive Subfolder Management</strong>: Handles nested directory structures</p></li>
+<li><p><strong>Error Resilience</strong>: Continues operation even if individual files fail to delete</p></li>
+<li><p><strong>Logging Integration</strong>: Provides detailed feedback on cleanup operations</p></li>
+</ul>
+</dd>
+<dt>Typical Usage:</dt><dd><p>The cleanup utilities are primarily used during system initialization and shutdown
+to ensure clean system state and prevent accumulation of temporary files.</p>
+</dd>
+</dl>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>These functions permanently delete files and directories. Use with caution
+and ensure no critical data is stored in target directories.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>All cleanup operations are designed to be idempotent - they can be safely
+called multiple times without adverse effects.</p>
+</div>
+<dl class="py function">
+<dt class="sig sig-object py" id="clear_fleet.clean_directory">
+<span class="sig-prename descclassname"><span class="pre">clear_fleet.</span></span><span class="sig-name descname"><span class="pre">clean_directory</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dir_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../_modules/clear_fleet.html#clean_directory"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#clear_fleet.clean_directory" title="Link to this definition"></a></dt>
+<dd><p>Safely deletes all contents of a directory while preserving the directory structure.</p>
+<p>This function provides a safe way to clean directory contents without removing
+the parent directory itself. It handles both files and subdirectories, with
+comprehensive error handling to ensure partial failures don’t stop the cleanup process.</p>
+<dl class="simple">
+<dt>Cleanup Workflow:</dt><dd><ol class="arabic simple">
+<li><p><strong>Validation</strong>: Check if target directory exists</p></li>
+<li><p><strong>Enumeration</strong>: List all items in the directory</p></li>
+<li><p><strong>Classification</strong>: Identify files, symbolic links, and subdirectories</p></li>
+<li><p><strong>Deletion</strong>: Remove items using appropriate methods:
+- Files and symlinks: <code class="xref py py-func docutils literal notranslate"><span class="pre">os.unlink()</span></code>
+- Directories: <code class="xref py py-func docutils literal notranslate"><span class="pre">shutil.rmtree()</span></code></p></li>
+<li><p><strong>Error Handling</strong>: Log failures but continue with remaining items</p></li>
+<li><p><strong>Completion</strong>: Report successful cleanup</p></li>
+</ol>
+</dd>
+<dt>Supported Item Types:</dt><dd><ul class="simple">
+<li><p><strong>Regular Files</strong>: Standard files of any type and size</p></li>
+<li><p><strong>Symbolic Links</strong>: Both file and directory symlinks</p></li>
+<li><p><strong>Subdirectories</strong>: Recursive directory tree removal</p></li>
+<li><p><strong>Special Files</strong>: Device files, pipes, and other special filesystem objects</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>dir_path</strong> (<em>str</em>) – Absolute or relative path to the directory to be cleaned</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>OSError</strong> – Individual file deletion failures are caught and logged,
+but don’t stop the overall cleanup process</p>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The function is designed to be non-destructive to the parent directory
+structure, making it safe for cleaning cache and temporary directories.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This operation is irreversible. Ensure the target directory contains
+only disposable files and subdirectories.</p>
+</div>
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">clean_directory</span><span class="p">(</span><span class="s2">&quot;/tmp/fleet_cache&quot;</span><span class="p">)</span>
+<span class="go">Contents of /tmp/fleet_cache deleted</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">clean_directory</span><span class="p">(</span><span class="s2">&quot;/nonexistent/path&quot;</span><span class="p">)</span>
+<span class="go">Directory not found: /nonexistent/path</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="clear_fleet.clean_pms_subfolders">
+<span class="sig-prename descclassname"><span class="pre">clear_fleet.</span></span><span class="sig-name descname"><span class="pre">clean_pms_subfolders</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">base_dir</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../_modules/clear_fleet.html#clean_pms_subfolders"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#clear_fleet.clean_pms_subfolders" title="Link to this definition"></a></dt>
+<dd><p>Recursively finds and cleans all ‘PMs’ subfolders within a base directory structure.</p>
+<p>This function is specifically designed for the Fleet Management System’s prescription
+map (PM) directory structure. It searches through all subdirectories of the base
+directory looking for ‘PMs’ folders and cleans their contents while preserving
+the folder structure itself.</p>
+<dl>
+<dt>Directory Structure Expected:</dt><dd><div class="highlight-text notranslate"><div class="highlight"><pre><span></span>base_dir/
+├── VehicleType1/
+│   └── PMs/          # ← Cleaned
+│       ├── file1.json
+│       └── file2.xml
+├── VehicleType2/
+│   └── PMs/          # ← Cleaned
+│       └── cached_pm.dat
+└── VehicleType3/
+    └── Other/        # ← Ignored (not named &#39;PMs&#39;)
+</pre></div>
+</div>
+</dd>
+<dt>Cleanup Workflow:</dt><dd><ol class="arabic simple">
+<li><p><strong>Base Validation</strong>: Verify base directory exists</p></li>
+<li><p><strong>Directory Enumeration</strong>: List all first-level subdirectories</p></li>
+<li><p><strong>PMs Folder Detection</strong>: Look for ‘PMs’ subfolder in each directory</p></li>
+<li><p><strong>Targeted Cleanup</strong>: Clean contents of found ‘PMs’ directories</p></li>
+<li><p><strong>Status Reporting</strong>: Log success/failure for each operation</p></li>
+</ol>
+</dd>
+<dt>Use Cases:</dt><dd><ul class="simple">
+<li><p><strong>System Initialization</strong>: Clean cached prescription maps before startup</p></li>
+<li><p><strong>Memory Management</strong>: Free up storage space used by temporary PM files</p></li>
+<li><p><strong>State Reset</strong>: Ensure clean state for prescription map generation</p></li>
+<li><p><strong>Maintenance</strong>: Regular cleanup of accumulated cache files</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>base_dir</strong> (<em>str</em>) – Path to the base directory containing vehicle-specific subdirectories</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>OSError</strong> – Directory access failures are caught and logged individually</p>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This function specifically targets directories named ‘PMs’ and ignores
+all other subdirectories, making it safe for mixed-content directories.</p>
+</div>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#clear_fleet.clean_directory" title="clear_fleet.clean_directory"><code class="xref py py-func docutils literal notranslate"><span class="pre">clean_directory()</span></code></a>: Core directory cleaning functionality used internally</p></li>
+</ul>
+</div>
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">clean_pms_subfolders</span><span class="p">(</span><span class="s2">&quot;PrescriptionMap/pm_generation&quot;</span><span class="p">)</span>
+<span class="go">Contents of PrescriptionMap/pm_generation/Drone/PMs deleted</span>
+<span class="go">Contents of PrescriptionMap/pm_generation/ISOBUS/PMs deleted</span>
+<span class="go">PMs not found in Config</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">clean_pms_subfolders</span><span class="p">(</span><span class="s2">&quot;/invalid/path&quot;</span><span class="p">)</span>
+<span class="go">Base directory not found: /invalid/path</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="Metrics/grpc_metrics_component.html" class="btn btn-neutral float-left" title="gRPC System Metrics" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="create_logger_fleet_component.html" class="btn btn-neutral float-right" title="Create Logger" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, Estela Mora Barba.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
