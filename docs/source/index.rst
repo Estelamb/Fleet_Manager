@@ -1,7 +1,7 @@
-Welcome to SMART-PM's Documentation
+Welcome to Fleet Manager's Documentation
 ========================================
 
-Welcome to the documentation of the SMART-PM project. This document provides a comprehensive guide to understanding, using, and developing a smart device for unmanned autonomous vehicles in precision agriculture on edge.
+Welcome to the documentation of the Fleet Manager project. This document provides a comprehensive guide to understanding, using, and developing a smart device for unmanned autonomous vehicles in precision agriculture on edge.
 
 In this documentation, you will find detailed explanations of the system's architecture, information models, core functionalities, and deployment processes. Additionally, the document covers the design principles, implementation guidelines, and usage instructions to facilitate smooth integration and further development.
 

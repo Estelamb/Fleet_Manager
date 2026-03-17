@@ -9319,3 +9319,15 @@ ISOBUS PM updated at PrescriptionMap/pm_generation/ISOBUS/PMs/isobus_pm.json wit
 [2026-03-16 15:49:44,431][Drone 1][INFO][gRPC Commands] - Command received
 [2026-03-16 15:49:44,431][Drone 1][INFO][COMMANDS] - Processing NAV_LAND command
 [2026-03-16 15:49:44,432][Drone 1][INFO][NAV_LAND] - Landing...
+[2026-03-16 15:49:46,432][Drone 1][INFO][NAV_LAND] - Landing successful
+[2026-03-16 15:49:46,432][Drone 1][INFO][COMMANDS] - Command executed successfully
+[2026-03-16 15:49:46,435][Drone 1][INFO][gRPC Commands] - Feedback sent to ROS2
+[2026-03-16 15:49:47,464][Drone 1][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2026-03-16 15:49:57,502][Drone 1][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2026-03-16 15:50:07,540][Drone 1][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2026-03-16 15:50:17,576][Drone 1][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2026-03-16 15:50:27,613][Drone 1][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2026-03-16 15:50:37,645][Drone 1][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2026-03-16 15:50:47,678][Drone 1][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2026-03-16 15:50:57,712][Drone 1][INFO][gRPC Metrics] - System Metrics sent to ROS2
+[2026-03-16 15:51:07,747][Drone 1][INFO][gRPC Metrics] - System Metrics sent to ROS2

@@ -1,97 +1,125 @@
-How to run
-==========
+Drone Fleet Manager Guide
+=============================
 
-Requirements
-------------
-- Raspberry Pi 5 with Raspberry Pi OS (64-bit).
-- AI HAT + with Hailo8/Hailo8L.
-- Pi Camera Module.
+This guide covers the initial installation and the subsequent steps to run the drone fleet management project using Raspberry Pi 5, ThingsBoard, and Docker.
 
-Installation
-------------
+Hardware Requirements
+---------------------
+* **Raspberry Pi 5** with Raspberry Pi OS (64-bit).
+* **AI HAT+** with Hailo8/Hailo8L.
+* **Pi Camera Module**.
 
-Begin by following the installation instructions in the following tutorials:
+Credentials & Environment
+-------------------------
 
-- :doc:`ai_hat`
-- :doc:`hailo_rpi5`
-- :doc:`docker`
+**Raspberry Pi 5**
+* **Hostname:** ``grysberry5ai26``
+* **User:** ``estela``
+* **Password:** ``estela``
 
-Fleet Manager
--------------
+**ThingsBoard Platform**
+* **URL:** https://srv-iot.diatel.upm.es/
+* **User:** ``estela.mora.barba@alumnos.upm.es``
+* **Password:** ``fleet_manager``
 
-First, allow Docker to run without `sudo` by executing the following commands:
+Installation (First Time Only)
+------------------------------
+
+Before running the project for the first time, ensure the following components are installed:
+
+* :doc:`ai_hat`
+* :doc:`hailo_rpi5`
+* :doc:`docker`
+
+**Docker Permissions**
+Allow Docker to run without ``sudo``:
 
 .. code-block:: bash
+
    sudo groupadd docker
    sudo usermod -aG docker $USER
    newgrp docker
 
-In the ``FleetManager`` directory, run the following commands:
+**System Dependencies**
+Run these commands in the ``Drone`` directory to prepare the OS:
+
+.. code-block:: bash
+
+   sudo apt update && sudo apt full-upgrade -y
+   sudo apt install -y libssl-dev libcap-dev libcamera-dev python3-libcamera python3-picamera2 libraspberrypi-bin
+   sudo usermod -aG video $USER
+   sudo reboot
+
+Operational Quick Start
+-----------------------
+
+1. Launch Cloud Server
+~~~~~~~~~~~~~~~~~~~~~~
+Start the server to enable the interface and mission management:
+
+.. code-block:: bash
+
+   cd Fleet_Manager/Cloud
+   python server_8090.py
+
+* **UI Access:** Open ``http://<IP_RPI5>:8090`` in your web browser.
+* **Missions:** Upload mission files from ``Fleet_Manager/Cloud/Missions``.
+
+2. Launch Fleet Manager
+~~~~~~~~~~~~~~~~~~~~~~~
+In the ``FleetManager`` directory, create the network (if it doesn't exist) and start the services:
 
 .. code-block:: bash
 
    docker network create --driver=bridge --subnet=192.168.100.0/24 --gateway=192.168.100.1 fleet_net
+   cd Fleet_Manager/FleetManager
+   docker compose up --build
 
-To start the ``Fleet Manager``, execute:
+3. Launch Drones
+~~~~~~~~~~~~~~~~
+From the ``Fleet_Manager`` root directory, choose a launch method:
 
-.. code-block:: bash
++--------------------+----------------------------------+-----------------------------+
+| Method             | Description                      | Command                     |
++====================+==================================+=============================+
+| MobaXterm SSH      | Launch all drones simultaneously | ``./launch_moba.sh``        |
++--------------------+----------------------------------+-----------------------------+
+| Raspbian           | Launch all drones simultaneously | ``./launch_drones.sh``      |
++--------------------+----------------------------------+-----------------------------+
+| VSCode             | Launch drones one by one         | ``./launch_vscode.sh <ID>`` |
++--------------------+----------------------------------+-----------------------------+
 
-   docker compose build
-   docker compose up
+Manual Drone Control (Individual)
+---------------------------------
 
-Drone
------
+If you need to launch a specific drone manually, follow this **strict order**:
 
-To execute the ``ROS2-Drone`` part, in the ``Drone/ROS2`` directory, execute:
-
-.. code-block:: bash
-
-   docker compose build
-   docker compose up
-
-In a **separate terminal**, navigate to the ``Drone`` directory and run:
-
-.. code-block:: bash
-
-   sudo apt update
-   sudo apt full-upgrade
-   sudo apt install libssl-dev
-   sudo apt install -y libcap-dev libcamera-dev python3-libcamera python3-picamera2
-   sudo apt install libraspberrypi-bin
-   sudo reboot
-
-After rebooting, set up the Python environment:
+**Step A: ROS2 Interface (Terminal 1)**
 
 .. code-block:: bash
 
-   python3 -m venv --system-site-packages .venv
+   cd FleetManager/Drone_<ID>/ROS2
+   docker compose up --build
+
+**Step B: Drone Logic (Terminal 2)**
+
+.. code-block:: bash
+
+   cd FleetManager/Drone_<ID>
    source .venv/bin/activate
-   pip install -r requirements.txt
-   sudo usermod -aG video $USER
-
-Then, activate the environment and run the ``RPI-Drone``:
-
-.. code-block:: bash
-
-   source .venv/bin/activate
-   python -m init_drone --drone_id 1
+   python init_drone.py --drone_id <ID>
 
 .. warning::
+   It is critical to execute the **ROS2-Drone** part before the **Drone Logic** (init_drone) part.
 
-   It is very important to execute first the ``ROS2-Drone`` part and then, the ``RPI-Drone`` part, in that specific order.
+Sending Missions via API
+------------------------
 
-Send a Mission
---------------
-
-To send a mission, go to the ``Missions`` directory and execute:
+Alternatively, you can send a mission using ``curl``:
 
 .. code-block:: bash
 
+   cd Missions
    curl -X POST -H "Content-Type: application/json" --data-binary @<json file>.json http://127.0.0.1:8082/mission
 
-Replace ``<json file>`` with the name of your mission file (without the ``.json`` extension).
-
-ThingsBoard
------------
-
-You can access the ThingsBoard dashboard at: https://srv-iot.diatel.upm.es/
+*Replace <json file> with the name of your file (without the .json extension).*

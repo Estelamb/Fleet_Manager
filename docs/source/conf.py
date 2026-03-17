@@ -9,7 +9,7 @@ import sys
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
-project = 'SMART-PM'
+project = 'Fleet Manager'
 copyright = '2025, Estela Mora Barba'
 author = 'Estela Mora Barba'
 
